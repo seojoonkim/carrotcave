@@ -28,8 +28,10 @@ test('post slugs and Telegram message IDs are unique', () => {
   assert.equal(new Set(messageIds).size, messageIds.length);
 });
 
-test('all five editorial axes are first-class navigation entries', () => {
+test('home exposes one editorial-axis navigation layer', () => {
   for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(homeSource, new RegExp(axis));
+  assert.match(homeSource, /<nav className="axis-rail" aria-label="편집 축">/);
+  assert.doesNotMatch(headerSource, /className="cc-nav"/);
 });
 
 test('Liao Heng archive preserves the complete reader contract', () => {
