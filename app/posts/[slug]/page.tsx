@@ -6,6 +6,7 @@ import TimelineView from '@/components/TimelineView';
 import KnowledgeGraphWrapper from '@/components/KnowledgeGraphWrapper';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
+import SiteHeader from '@/components/SiteHeader';
 import relationsData from '@/data/relations.json';
 
 export async function generateStaticParams() {
@@ -203,28 +204,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #060A14 0%, #080E1A 15%, #0A1220 50%, #080E1A 100%)', color: '#F0E4CC' }}>
-      {/* Header bar */}
-      <div
-        className="sticky top-0 z-30"
-        style={{
-          background: 'rgba(4,7,14,0.98)',
-          backdropFilter: 'blur(12px)',
-          borderBottom: '1px solid rgba(212,146,42,0.12)',
-        }}
-      >
-        <div
-          className="flex items-center"
-          style={{ maxWidth: '1000px', margin: '0 auto', padding: '0.75rem 1.25rem', gap: '0.75rem' }}
-        >
-          <Link
-            href="/"
-            className="hover-amber text-sm flex items-center"
-            style={{ color: 'rgba(240,228,204,0.35)', gap: '0.25rem' }}
-          >
-            ← CARROT CAVE
-          </Link>
-        </div>
-      </div>
+      <SiteHeader />
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '3.5rem 1.5rem 5rem' }}>
         {/* Category */}
