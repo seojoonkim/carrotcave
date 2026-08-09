@@ -221,7 +221,7 @@ export default async function PostPage({ params }: PostPageProps) {
             className="hover-amber text-sm flex items-center"
             style={{ color: 'rgba(240,228,204,0.35)', gap: '0.25rem' }}
           >
-            ← Rabbit Crypt
+            ← CARROT CAVE
           </Link>
         </div>
       </div>
@@ -392,7 +392,7 @@ export default async function PostPage({ params }: PostPageProps) {
             ❤️ <strong style={{ color: 'rgba(240,228,204,0.55)' }}>{post.reactions}</strong>
           </span>
           <a
-            href="https://t.me/simon_rabbit_hole"
+            href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
             target="_blank"
             rel="noopener noreferrer"
             className="ml-auto text-xs hover-amber"

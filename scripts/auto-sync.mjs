@@ -5,7 +5,7 @@
  * 토끼굴 Telegram 채널 → Rabbit Crypt 웹사이트 자동 동기화
  * 
  * 기능:
- *   1. t.me/s/simon_rabbit_hole 전체 스크래핑 (페이지네이션)
+ *   1. t.me/s/carrotcave 전체 스크래핑 (페이지네이션)
  *   2. 새 글 감지 (sync-state.json 기반)
  *   3. 텍스트 2중 검증 (재요청 비교)
  *   4. 이미지/영상 다운로드 + 2중 검증
@@ -15,7 +15,7 @@
  *   8. Git commit + push → Vercel 자동 배포
  *   9. Telegram DM 결과 보고
  * 
- * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all]
+ * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--no-git]
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream } from 'fs';
@@ -31,7 +31,7 @@ const ROOT = join(__dirname, '..');
 // ─────────────────────────────────────────────
 // Config
 // ─────────────────────────────────────────────
-const CHANNEL = 'simon_rabbit_hole';
+const CHANNEL = 'carrotcave';
 const BASE_URL = `https://t.me/s/${CHANNEL}`;
 const POSTS_PATH = join(ROOT, 'data', 'posts.ts');
 const SCRAPED_PATH = join(ROOT, 'data', 'scraped-posts.json');
@@ -45,6 +45,7 @@ const MAX_RETRIES = 3;
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_ALL = process.argv.includes('--force-all');
+const NO_GIT = process.argv.includes('--no-git');
 
 // ─────────────────────────────────────────────
 // Helpers
@@ -543,10 +544,10 @@ function buildPostObject(msg, metadata, localImageUrls, localVideoUrls) {
     id: '${slug}',
     slug: '${slug}',
     telegramMsgId: ${msg.id},
-    title: '${title.replace(/'/g, "\\'")}',
-    category: '${category}',
-    depth: '${depth}',
-    summary: '${summary.replace(/'/g, "\\'")}',
+    title: ${JSON.stringify(title)},
+    category: ${JSON.stringify(category)},
+    depth: ${JSON.stringify(depth)},
+    summary: ${JSON.stringify(summary)},
     content: \`${content}\`,
     date: '${date}',
     reactions: ${reactions},
@@ -605,8 +606,8 @@ function ensureTypeHasTelegramMsgId(src) {
 // Git: commit + push
 // ─────────────────────────────────────────────
 function gitCommitAndPush(newPostSlugs, updatedReactions, editedSlugs = []) {
-  if (DRY_RUN) {
-    log('DRY_RUN: Skipping git commit');
+  if (DRY_RUN || NO_GIT) {
+    log(`${DRY_RUN ? 'DRY_RUN' : 'NO_GIT'}: Skipping git commit and push`);
     return;
   }
   

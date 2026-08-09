@@ -47,8 +47,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Rabbit Crypt · 토끼굴',
-  description: 'Simon(@simonkim_nft)의 토끼굴 블로그. 읽기 전과 읽은 후의 세계가 한 뼘 정도 어긋나 있는 글.',
+  metadataBase: new URL('https://carrotcave.com'),
+  title: 'CARROT CAVE · 토끼를 따라왔는데, 생각이 길을 잃었습니다.',
+  description: 'Simon Kim의 기술, 사람, 시장과 미래에 관한 개인 출판 아카이브.',
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -57,14 +58,14 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'Rabbit Crypt · 토끼굴',
-    description: '기술, 크립토, AI의 심층을 파고드는 블로그',
+    title: 'CARROT CAVE',
+    description: 'Followed the rabbit. Lost in thought.',
     type: 'website',
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#080E1A',
+  themeColor: '#292c33',
 };
 
 export default function RootLayout({
@@ -76,7 +77,7 @@ export default function RootLayout({
     <html lang="ko" className={`${notoSerif.variable} ${jetbrains.variable} ${playfairDisplay.variable} ${notoSans.variable} ${inter.variable} ${cormorant.variable}`}>
       <body
         className="antialiased min-h-screen"
-        style={{ background: '#080E1A', color: '#F0E4CC' }}
+        style={{ background: '#292c33', color: '#f2f1ec' }}
       >
         {children}
       </body>
