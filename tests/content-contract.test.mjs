@@ -10,6 +10,8 @@ const interviewSource = readFileSync(new URL('../data/interviews.ts', import.met
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
+const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
+const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
   assert.match(syncSource, /const CHANNEL = 'carrotcave';/);
@@ -44,13 +46,16 @@ test('Liao Heng archive preserves the complete reader contract', () => {
 test('every first-party page surface keeps the CARROT CAVE title visible', () => {
   assert.match(headerSource, />CARROT CAVE</);
   assert.match(postSource, /<SiteHeader\s*\/>/);
-  assert.match(voiceReaderSource, /href="\/"[^>]*>CARROT CAVE</);
+  assert.match(liaoReaderSource, /class="brand" href="\/"[^>]*>[\s\S]*CARROT CAVE/);
 });
 
-test('voice reader separates the home and voices return destinations', () => {
-  assert.match(voiceReaderSource, /href="\/"[^>]*>CARROT CAVE</);
-  assert.match(voiceReaderSource, /href="\/voices"[^>]*>목소리 목록/);
-  assert.match(voiceReaderSource, /aria-label="CARROT CAVE와 목소리 탐색"/);
+test('voice reader uses one header with home and voices return navigation', () => {
+  assert.doesNotMatch(voiceReaderSource, /<header className="voice-reader-header">/);
+  assert.doesNotMatch(voiceReaderSource, /voice-reader-source|>원본/);
+  assert.match(liaoReaderSource, /class="brand" href="\/"/);
+  assert.match(liaoReaderSource, /class="reader-back" href="\/voices"[^>]*>[^<]*돌아가기/);
+  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*CARROT CAVE[\s\S]*돌아가기[\s\S]*<\/header>/);
+  assert.match(liaoReaderStyles, /\.site-header\s*\{[^}]*grid-template-columns:/);
 });
 
 test('every post with media renders its first image as the card background', () => {
