@@ -41,6 +41,9 @@ test('home and voice list share one editorial-axis navigation component', () => 
   assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
+  assert.doesNotMatch(axisRailSource, /<small>/);
+  assert.match(stylesSource, /\.cc-intro__identity\{[^}]*white-space:nowrap/);
+  assert.doesNotMatch(stylesSource, /\.cc-intro__identity\{max-width:175px/);
 });
 
 test('Liao Heng archive preserves the complete reader contract', () => {
@@ -49,13 +52,24 @@ test('Liao Heng archive preserves the complete reader contract', () => {
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
 });
 
+test('voice cards render an interview thumbnail when the archive provides one', () => {
+  assert.match(interviewSource, /thumbnailUrl\?: string/);
+  assert.match(interviewSource, /thumbnailUrl: '\/voices\/liao-heng\/assets\/liao-heng-portrait\.webp'/);
+  assert.match(voiceListSource, /import Image from 'next\/image'/);
+  assert.match(voiceListSource, /\{item\.thumbnailUrl && \(\s*<Image/);
+  assert.match(voiceListSource, /src=\{item\.thumbnailUrl\}/);
+  assert.match(voiceListSource, /className="wall-card__image wall-card__image--voice"/);
+  assert.match(voiceListSource, /item\.thumbnailUrl \? ' wall-card--with-image' : ''/);
+  assert.match(stylesSource, /\.wall-card__image--voice\{[^}]*object-position:/);
+});
+
 test('voice list uses the same archive navigation and editorial wall as every other axis', () => {
   assert.match(voiceListSource, /className="cc-intro"/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell"/);
   assert.match(voiceListSource, /className="editorial-wall editorial-wall--voices"/);
-  assert.match(voiceListSource, /className="wall-card wall-card--voice"/);
+  assert.match(voiceListSource, /className=\{`wall-card wall-card--voice\$\{/);
   assert.match(stylesSource, /\.wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
   assert.match(stylesSource, /\.wall-card--voice \.wall-card__meta\{margin-bottom:0\}/);
   assert.match(stylesSource, /\.editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);

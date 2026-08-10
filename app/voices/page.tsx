@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail from '@/components/AxisRail';
 import { interviews } from '@/data/interviews';
@@ -30,8 +31,19 @@ export default function VoicesPage() {
             <Link
               key={item.slug}
               href={`/voices/${item.slug}`}
-              className="wall-card wall-card--voice"
+              className={`wall-card wall-card--voice${item.thumbnailUrl ? ' wall-card--with-image' : ''}`}
             >
+              {item.thumbnailUrl && (
+                <Image
+                  className="wall-card__image wall-card__image--voice"
+                  src={item.thumbnailUrl}
+                  alt=""
+                  width={658}
+                  height={370}
+                  sizes="(max-width: 520px) 100vw, 94vw"
+                  priority={index === 0}
+                />
+              )}
               <div className="wall-card__body">
                 <div className="wall-card__meta">
                   <span>{String(index + 1).padStart(3, '0')}</span>
