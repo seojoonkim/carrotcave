@@ -5,6 +5,7 @@ import { readFileSync } from 'node:fs';
 const syncSource = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
 const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), 'utf8');
 const homeSource = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+const stylesSource = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 const interviewSource = readFileSync(new URL('../data/interviews.ts', import.meta.url), 'utf8');
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
@@ -50,6 +51,20 @@ test('voice reader separates the home and voices return destinations', () => {
   assert.match(voiceReaderSource, /href="\/"[^>]*>CARROT CAVE</);
   assert.match(voiceReaderSource, /href="\/voices"[^>]*>목소리 목록/);
   assert.match(voiceReaderSource, /aria-label="CARROT CAVE와 목소리 탐색"/);
+});
+
+test('every post with media renders its first image as the card background', () => {
+  assert.match(homeSource, /\{hasImage && \(\s*<Image/);
+  assert.match(homeSource, /wall-card--with-image/);
+  assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
+});
+
+test('home keeps the archive intro compact and all six axes visible on mobile', () => {
+  assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
+  assert.match(homeSource, /className="cc-intro__identity"/);
+
+  assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
+  assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
 
 test('home uses one repeating editorial system for the complete post archive', () => {

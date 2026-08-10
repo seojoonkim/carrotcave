@@ -33,11 +33,11 @@ function WallCard({ post, index }: { post: Post; index: number }) {
 
   return (
     <Link
-      className={`wall-card wall-card--actual-${pattern}`}
+      className={`wall-card wall-card--actual-${pattern}${hasImage ? ' wall-card--with-image' : ''}`}
       data-axis={axisOf(post)}
       href={`/posts/${post.slug}`}
     >
-      {hasImage && ['portal', 'portrait', 'landscape'].includes(pattern) && (
+      {hasImage && (
         <Image
           className="wall-card__image"
           src={post.mediaUrls![0]}
@@ -72,10 +72,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       <SiteHeader />
 
       <section className="cc-intro">
-        <div>
-          <p><span>PERSONAL ARCHIVE</span> SIMON KIM · SEOUL / EVERYWHERE</p>
-          <h1>토끼를 따라왔는데, <em>생각이 길을 잃었습니다.</em></h1>
-        </div>
+        <h1 className="cc-intro__identity"><span>PERSONAL ARCHIVE</span> SIMON KIM · SEOUL / EVERYWHERE</h1>
         <div className="cc-intro__note">
           <p>기술, 사람, 시장과 아직 오지 않은 세계를 탐험합니다. 완성된 답보다 오래 남은 질문을 모읍니다.</p>
           <span>{posts.length} WRITINGS · {interviews.length} VOICE ARCHIVE</span>
