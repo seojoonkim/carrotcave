@@ -188,14 +188,14 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(editorialCardSource, /<span className="wall-card__axis">\{axis\}<\/span>/);
   assert.match(editorialCardSource, /<h2>\{title\}<\/h2>/);
   assert.match(editorialCardSource, /<p>\{summary\}<\/p>/);
-  assert.match(editorialCardSource, /\{eyebrow && <span className="wall-card__eyebrow">\{eyebrow\}<\/span>\}/);
-  assert.match(voiceListSource, /eyebrow=\{item\.eyebrow\}/);
+  assert.doesNotMatch(editorialCardSource, /eyebrow|doorLabel|wall-card__eyebrow|wall-card__door/);
+  assert.doesNotMatch(voiceListSource, /eyebrow=|doorLabel=/);
   assert.doesNotMatch(voiceListSource, /<h2>|<p>\{item\.description\}|wall-card__meta/);
   for (const date of ['2026-07-25', '2024-11-27', '2025-08-27']) {
     assert.match(interviewSource, new RegExp(`sourcePublishedAt: '${date}'`));
   }
   assert.match(interviewSource, /Publication date of sourceUrl, not the date the interview occurred/);
-  assert.match(stylesSource, /\.wall-card__eyebrow\{[^}]*min-width:0[^}]*text-overflow:ellipsis/);
+  assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
   assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto\}/);
   assert.match(stylesSource, /\.wall-card--voice h2\{font-size:17px/);
   assert.match(stylesSource, /\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);

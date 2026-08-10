@@ -24,13 +24,11 @@ export default function VoicesPage() {
               href={`/voices/${item.slug}`}
               date={item.sourcePublishedAt}
               axis="목소리"
-              eyebrow={item.eyebrow}
               title={`${item.name} · ${item.title}`}
               summary={item.description}
               imageUrl={item.thumbnailUrl}
               className="wall-card--voice"
               priority={index === 0}
-              doorLabel="OPEN FIELD NOTE ↗"
             />
           ))}
         </div>

@@ -5,26 +5,22 @@ interface EditorialCardProps {
   href: string;
   date: string;
   axis: string;
-  eyebrow?: string;
   title: string;
   summary?: string;
   imageUrl?: string;
   className?: string;
   priority?: boolean;
-  doorLabel?: string;
 }
 
 export default function EditorialCard({
   href,
   date,
   axis,
-  eyebrow,
   title,
   summary,
   imageUrl,
   className = '',
   priority = false,
-  doorLabel = 'ENTER ↗',
 }: EditorialCardProps) {
   return (
     <Link
@@ -53,12 +49,10 @@ export default function EditorialCard({
               ))}
             </span>
           </time>
-          {eyebrow && <span className="wall-card__eyebrow">{eyebrow}</span>}
           <span className="wall-card__axis">{axis}</span>
         </div>
         <h2>{title}</h2>
         {summary && <p>{summary}</p>}
-        <span className="wall-card__door" aria-hidden="true">{doorLabel}</span>
       </div>
     </Link>
   );

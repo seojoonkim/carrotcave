@@ -41,21 +41,21 @@ const render = (props) => renderToStaticMarkup(React.createElement(EditorialCard
 }));
 
 test('EditorialCard renders the complete shared visual and semantic contract', () => {
-  const html = render({ eyebrow: 'KIMI / AGENTIC LLM / AGI' });
+  const html = render({});
   assert.match(html, /class="wall-card wall-card--with-image wall-card--voice"/);
   assert.match(html, /data-axis="목소리"/);
   assert.match(html, /<time class="wall-card__date" dateTime="2025-08-27">/);
-  assert.match(html, /<span class="wall-card__eyebrow">KIMI \/ AGENTIC LLM \/ AGI<\/span>/);
   assert.match(html, /<span class="wall-card__axis">목소리<\/span>/);
   assert.match(html, /<h2>양즈린 · 무한의 시작에 서서<\/h2>/);
   assert.match(html, /<p>Moonshot AI와 Kimi 창업자의 대화 앞부분입니다.<\/p>/);
   assert.match(html, /<img class="wall-card__image"[^>]*src="\/portrait.jpg"/);
+  assert.doesNotMatch(html, /wall-card__eyebrow|wall-card__door|ENTER|OPEN FIELD NOTE/);
 });
 
 test('EditorialCard omits only optional content and keeps the base contract', () => {
-  const html = render({ eyebrow: undefined, summary: undefined, imageUrl: undefined, className: '' });
+  const html = render({ summary: undefined, imageUrl: undefined, className: '' });
   assert.match(html, /class="wall-card"/);
-  assert.doesNotMatch(html, /wall-card__eyebrow|<p>|<img/);
+  assert.doesNotMatch(html, /wall-card__eyebrow|wall-card__door|<p>|<img/);
   assert.match(html, /<time class="wall-card__date"/);
   assert.match(html, /<h2>/);
 });
