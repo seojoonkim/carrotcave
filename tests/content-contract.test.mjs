@@ -14,6 +14,8 @@ const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.me
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
+const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
+const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
   assert.match(syncSource, /const CHANNEL = 'carrotcave';/);
@@ -46,10 +48,25 @@ test('home and voice list share one editorial-axis navigation component', () => 
   assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
 });
 
-test('Liao Heng archive preserves the complete reader contract', () => {
+test('all three voice archives preserve their complete reader contracts', () => {
   assert.match(interviewSource, /chapters: 7/);
   assert.match(interviewSource, /segments: 8142/);
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]*chapters: 5,[\s\S]*segments: 122,[\s\S]*\/voices\/liang-wenfeng\/index\.html/);
+  assert.match(interviewSource, /slug: 'yang-zhilin'[\s\S]*chapters: 6,[\s\S]*segments: 2531,[\s\S]*\/voices\/yang-zhilin\/index\.html/);
+  for (const source of [liangReaderSource, yangReaderSource]) {
+    assert.match(source, /class="hero-portrait"/);
+    assert.match(source, /class="transcript-disclaimer"/);
+    assert.match(source, /property="og:image"/);
+    assert.match(source, /prefers-reduced-motion|script\.js/);
+  }
+  const yangBoundaries = [...yangReaderSource.matchAll(/data-start="(\d+)" data-end="(\d+)"/g)]
+    .map(([, start, end]) => [Number(start), Number(end)]);
+  assert.deepEqual(yangBoundaries, [
+    [0, 1011], [1011, 1987], [1987, 2987],
+    [2987, 3918], [3918, 4982], [4982, 6059],
+  ]);
+  assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
 });
 
 test('post thumbnails replace sequence numbers with a prominent publication-date stamp', () => {
@@ -111,9 +128,13 @@ test('the header symbol is slightly larger without changing header height', () =
   assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:34px[^}]*height:34px[^}]*flex-basis:34px/);
 });
 
-test('voice cards render an interview thumbnail when the archive provides one', () => {
+test('voice cards render a verified portrait thumbnail for every interview archive', () => {
   assert.match(interviewSource, /thumbnailUrl\?: string/);
   assert.match(interviewSource, /thumbnailUrl: '\/voices\/liao-heng\/assets\/liao-heng-portrait\.webp'/);
+  assert.match(interviewSource, /thumbnailUrl: '\/voices\/liang-wenfeng\/assets\/liang-wenfeng-portrait\.webp'/);
+  assert.match(interviewSource, /thumbnailUrl: '\/voices\/yang-zhilin\/assets\/yang-zhilin-portrait\.jpg'/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'/);
+  assert.match(interviewSource, /slug: 'yang-zhilin'/);
   assert.match(voiceListSource, /import Image from 'next\/image'/);
   assert.match(voiceListSource, /\{item\.thumbnailUrl && \(\s*<Image/);
   assert.match(voiceListSource, /src=\{item\.thumbnailUrl\}/);
