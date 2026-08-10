@@ -7,6 +7,7 @@ import KnowledgeGraphWrapper from '@/components/KnowledgeGraphWrapper';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
 import SiteHeader from '@/components/SiteHeader';
+import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import relationsData from '@/data/relations.json';
 
 export async function generateStaticParams() {
@@ -271,14 +272,9 @@ export default async function PostPage({ params }: PostPageProps) {
         {/* Media section — images (top, skip if video exists) */}
         {post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0) && (
           <div
-            style={{
-              marginBottom: '2.5rem',
-              marginLeft: '-2rem',
-              marginRight: '-2rem',
-              display: 'grid',
-              gridTemplateColumns: post.mediaUrls.length === 1 ? '1fr' : 'repeat(2, 1fr)',
-              gap: '0.75rem',
-            }}
+            className="post-media-grid"
+            data-count={post.mediaUrls.length}
+            style={{ marginBottom: '2.5rem' }}
           >
             {post.mediaUrls.map((url, i) => (
               <img
@@ -566,11 +562,11 @@ export default async function PostPage({ params }: PostPageProps) {
         {/* Back */}
         <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
           <Link
-            href="/"
+            href={`/?section=${encodeURIComponent(axisOf(post))}`}
             className="inline-flex items-center text-sm hover-amber"
             style={{ color: 'rgba(212,146,42,0.55)', gap: '0.5rem' }}
           >
-            🐇 탐험로 돌아가기
+            {axisDestinationLabel(post)}
           </Link>
         </div>
       </article>

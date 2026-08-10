@@ -16,6 +16,14 @@ export function axisOf(post: Post) {
   return post.category.replace(/^[^\p{L}]+/u, '');
 }
 
+export function axisDestinationLabel(post: Post) {
+  const axis = axisOf(post);
+  const finalCode = axis.charCodeAt(axis.length - 1) - 0xac00;
+  const jongseong = finalCode >= 0 && finalCode <= 11171 ? finalCode % 28 : 0;
+  const particle = jongseong === 0 || jongseong === 8 ? '로' : '으로';
+  return `${post.category}${particle} 돌아가기`;
+}
+
 export default function AxisRail({ active }: { active?: EditorialAxis }) {
   return (
     <nav className="axis-rail" aria-label="편집 축">

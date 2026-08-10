@@ -100,13 +100,20 @@
     });
     groups.forEach((segments, index) => {
       const container = chapters[index].querySelector('.transcript-segments');
-      for (let offset = 0; offset < segments.length; offset += 6) {
-        const part = segments.slice(offset, offset + 6);
-        const text = part.map(segment => segment.text.trim()).filter(Boolean).join(' ');
-        const paragraph = makeParagraph(text || '무음', part[0].start, part);
-        if (!text) paragraph.classList.add('transcript-silence');
+      const formatter = globalThis.TranscriptFormatting;
+      const paragraphs = formatter && typeof formatter.groupSegments === 'function'
+        ? formatter.groupSegments(segments)
+        : segments.map(segment => ({
+            start: segment.start,
+            segments: [segment],
+            text: segment.text.trim() || '무음',
+            silence: !segment.text.trim(),
+          }));
+      paragraphs.forEach(part => {
+        const paragraph = makeParagraph(part.text, part.start, part.segments);
+        if (part.silence) paragraph.classList.add('transcript-silence');
         container.append(paragraph);
-      }
+      });
     });
     return data.segments.length;
   };

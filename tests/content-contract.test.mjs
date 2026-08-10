@@ -17,6 +17,7 @@ const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
+const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
   assert.match(syncSource, /const CHANNEL = 'carrotcave';/);
@@ -68,6 +69,37 @@ test('all three voice archives preserve their complete reader contracts', () => 
     [2987, 3918], [3918, 4982], [4982, 6059],
   ]);
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
+});
+
+test('Yang Zhilin transcript uses sentence-aware paragraphs instead of fixed segment batches', () => {
+  assert.match(yangReaderSource, /transcript-format\.js/);
+  assert.match(yangReaderScript, /formatter\.groupSegments\(segments\)/);
+  assert.doesNotMatch(yangReaderScript, /offset \+= 6|slice\(offset, offset \+ 6\)/);
+  assert.match(yangReaderScript, /typeof formatter\.groupSegments === 'function'/);
+  assert.match(yangReaderScript, /if \(part\.silence\) paragraph\.classList\.add\('transcript-silence'\)/);
+});
+
+test('post media stays inside the article viewport on mobile', () => {
+  assert.match(postSource, /className="post-media-grid"/);
+  assert.match(stylesSource, /\.post-media-grid\{[^}]*width:100%[^}]*min-width:0[^}]*grid-template-columns:/);
+  assert.match(stylesSource, /\.post-media-grid img\{[^}]*max-width:100%[^}]*min-width:0/);
+  assert.doesNotMatch(postSource, /marginLeft: '-2rem'|marginRight: '-2rem'/);
+});
+
+test('development logs are categorized as building rather than exploration', () => {
+  for (const title of [
+    '기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트',
+    'MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위',
+    'MemKraft v0.6 – v0.8 개발 후기',
+    'MemKraft v0.2 – v0.5 개발 후기',
+    'MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템',
+  ]) {
+    const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    assert.match(postsSource, new RegExp(`title: '${escaped}',[\\s\\S]{0,160}?category: '🛠️ 빌딩'`));
+  }
+  assert.match(postSource, /href=\{`\/\?section=\$\{encodeURIComponent\(axisOf\(post\)\)/);
+  assert.match(postSource, /\{axisDestinationLabel\(post\)\}/);
+  assert.doesNotMatch(postSource, /🐇 탐험로 돌아가기/);
 });
 
 test('post thumbnails replace sequence numbers with a prominent publication-date stamp', () => {

@@ -98,7 +98,7 @@ BYD와 지리 같은 업체들은 이미 DeepSeek를 차량 시스템에 연결�
     slug: 'post-189',
     telegramMsgId: 189,
     title: '기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "몇 달 전 MemKraft의 LongMemEval 98.0%를 알린 뒤로 토끼굴에 공지를 못 했다. MemKraft를 개인 에이전트에 붙여 매일...",
     content: `몇 달 전 MemKraft의 LongMemEval 98.0%를 알린 뒤로 토끼굴에 공지를 못 했다. MemKraft를 개인 에이전트에 붙여 매일 쓰면서 문제를 하나씩 고치다 보니 어느새 v3가 되어 있었다. 많이 기억하고 잘 찾으면 된다고 생각했는데, 기억이 늘어날수록 더 어려운 질문들이 나타났다.
@@ -597,7 +597,7 @@ www.prophetic.com
     slug: 'post-152',
     telegramMsgId: 152,
     title: 'MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "AI 에이전트가 얼마나 잘 기억하는지 측정하는 LongMemEval이라는 벤치마크가 있다. 다양한 라이브러리가 도전했고, 지금까지 잘 알려진 오...",
     content: `AI 에이전트가 얼마나 잘 기억하는지 측정하는 LongMemEval이라는 벤치마크가 있다. 다양한 라이브러리가 도전했고, 지금까지 잘 알려진 오픈소스 중 가장 높은 점수는 MemPalace의 96.6%였다.
@@ -744,7 +744,7 @@ AI는 그 시험을 순식간에 만점으로 푼다. 고장 난 분류 기계 �
     slug: 'post-149',
     telegramMsgId: 149,
     title: 'MemKraft v0.6 – v0.8 개발 후기',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다. 대화를 하면 할수록 알아서 똑똑해진다. 며...",
     content: `MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다. 대화를 하면 할수록 알아서 똑똑해진다. 며칠 전 v0.2 – v0.5 개발 후기를 올렸다.
@@ -821,7 +821,7 @@ https://github.com/seojoonkim/memkraft
     slug: 'post-146',
     telegramMsgId: 146,
     title: 'MemKraft v0.2 – v0.5 개발 후기',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다. 대화를 하면 할수록 알아서 똑똑해진다. 이...",
     content: `MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다. 대화를 하면 할수록 알아서 똑똑해진다. 이틀 전 v0.1 개발 후기를 올렸다.
@@ -939,7 +939,7 @@ Simon: 좋은 소식이네요. 감사합니다.
     slug: 'post-143',
     telegramMsgId: 143,
     title: 'MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "AI 에이전트를 오래 돌려본 사람은 안다. 에이전트는 학습하지 않는다. 검색할 뿐이다. 어제 알려준 맥락을 오늘 다시 알려줘야 하고, 지난주에...",
     content: `AI 에이전트를 오래 돌려본 사람은 안다. 에이전트는 학습하지 않는다. 검색할 뿐이다. 어제 알려준 맥락을 오늘 다시 알려줘야 하고, 지난주에 했던 실수를 이번 주에 또 한다. 세션이 끊기면 모든 게 리셋된다. 100번째 대화의 품질이 1번째 대화와 동일하다는 건, 그 사이 99번의 대화가 전부 휘발됐다는 뜻이다.
