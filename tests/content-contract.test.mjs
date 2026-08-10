@@ -42,8 +42,8 @@ test('home and voice list share one editorial-axis navigation component', () => 
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
   assert.doesNotMatch(axisRailSource, /<small>/);
-  assert.match(stylesSource, /\.cc-intro__identity\{[^}]*white-space:nowrap/);
-  assert.doesNotMatch(stylesSource, /\.cc-intro__identity\{max-width:175px/);
+  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
+  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
 });
 
 test('Liao Heng archive preserves the complete reader contract', () => {
@@ -72,10 +72,14 @@ test('voice cards render an interview thumbnail when the archive provides one', 
   assert.match(stylesSource, /\.wall-card__image--voice\{[^}]*object-position:/);
 });
 
-test('voice list moves directly from the site header into archive navigation', () => {
+test('home and voice list omit the intro strip and move directly into archive navigation', () => {
+  assert.doesNotMatch(homeSource, /className="cc-intro"/);
   assert.doesNotMatch(voiceListSource, /className="cc-intro"/);
+  assert.doesNotMatch(homeSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
   assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
   assert.doesNotMatch(voiceListSource, /공개된 대화를 선별해 번역하고/);
+  assert.doesNotMatch(stylesSource, /\.cc-intro(?:__identity|__note)?/);
+  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
   assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
@@ -135,22 +139,22 @@ test('every post with media renders its first image as the card background', () 
   assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
 });
 
-test('archive intro avoids counts already exposed by the axis menu', () => {
+test('archive pages avoid redundant intro and counts already exposed by the axis menu', () => {
   assert.doesNotMatch(homeSource, /WRITINGS|VOICE ARCHIVE/);
   assert.doesNotMatch(voiceListSource, /WRITINGS|VOICE ARCHIVE/);
-  assert.match(stylesSource, /@media\(max-width:520px\).*?\.cc-intro__note\{display:none\}/s);
+  assert.doesNotMatch(homeSource, /className="cc-intro"/);
+  assert.doesNotMatch(voiceListSource, /className="cc-intro"/);
 });
 
-test('home keeps the archive intro compact and all six axes visible on mobile', () => {
+test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
-  assert.match(homeSource, /className="cc-intro__identity"/);
-
   assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
 
 test('home uses one repeating editorial system for the complete post archive', () => {
-  assert.match(homeSource, /className="cc-intro"/);
+  assert.match(homeSource, /<h1 id="wall-heading">/);
+  assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
   assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
   assert.match(homeSource, /className="editorial-wall"/);

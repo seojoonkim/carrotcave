@@ -58,21 +58,13 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
   return (
     <main>
       <SiteHeader />
-
-      <section className="cc-intro">
-        <h1 className="cc-intro__identity"><span>PERSONAL ARCHIVE</span> SIMON KIM · SEOUL / EVERYWHERE</h1>
-        <div className="cc-intro__note">
-          <p>기술, 사람, 시장과 아직 오지 않은 세계를 탐험합니다. 완성된 답보다 오래 남은 질문을 모읍니다.</p>
-        </div>
-      </section>
-
       <AxisRail active={active} />
 
       <section className="wall-shell" aria-labelledby="wall-heading">
         <header className="wall-heading">
           <div>
             <p>{active ? `SECTION / ${active}` : 'THE CAVE WALL / NEWEST FIRST'}</p>
-            <h2 id="wall-heading">{active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}</h2>
+            <h1 id="wall-heading">{active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}</h1>
           </div>
           <span>{visiblePosts.length} ENTRIES</span>
         </header>
