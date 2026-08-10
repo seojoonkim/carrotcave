@@ -16,7 +16,6 @@ function WallCard({ post, index }: { post: Post; index: number }) {
   const pattern = hasImage || !['portal', 'portrait', 'landscape'].includes(wallPattern)
     ? wallPattern
     : index % 2 === 0 ? 'quote' : 'deep';
-  const number = String(index + 1).padStart(3, '0');
   const showSummary = hasImage || ['portal', 'quote', 'deep', 'landscape'].includes(pattern);
 
   return (
@@ -38,9 +37,15 @@ function WallCard({ post, index }: { post: Post; index: number }) {
       )}
       <div className="wall-card__body">
         <div className="wall-card__meta">
-          <span>{number}</span>
-          <span>{axisOf(post)}</span>
-          <time dateTime={post.date}>{post.date.replaceAll('-', '.')}</time>
+          <time className="wall-card__date" dateTime={post.date}>
+            <span className="sr-only">발행일 {post.date.replaceAll('-', '.')}</span>
+            <span className="wall-card__date-visual" aria-hidden="true">
+              {post.date.split('-').map((part, partIndex) => (
+                <span className="wall-card__date-part" key={`${part}-${partIndex}`}>{part}</span>
+              ))}
+            </span>
+          </time>
+          <span className="wall-card__axis">{axisOf(post)}</span>
         </div>
         <h2>{post.title}</h2>
         {showSummary && <p>{post.summary}</p>}

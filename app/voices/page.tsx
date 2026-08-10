@@ -38,8 +38,7 @@ export default function VoicesPage() {
               )}
               <div className="wall-card__body">
                 <div className="wall-card__meta">
-                  <span>{String(index + 1).padStart(3, '0')}</span>
-                  <span>목소리</span>
+                  <span className="wall-card__axis">목소리</span>
                   <span>{item.eyebrow}</span>
                 </div>
                 <h2>{item.name} · {item.title}</h2>

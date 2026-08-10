@@ -52,6 +52,26 @@ test('Liao Heng archive preserves the complete reader contract', () => {
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
 });
 
+test('post thumbnails replace sequence numbers with a prominent publication-date stamp', () => {
+  assert.doesNotMatch(homeSource, /const number = String\(index \+ 1\)\.padStart/);
+  assert.doesNotMatch(homeSource, /<span>\{number\}<\/span>/);
+  assert.match(homeSource, /<time className="wall-card__date" dateTime=\{post\.date\}>/);
+  assert.doesNotMatch(homeSource, /<time[^>]*aria-label=/);
+  assert.match(homeSource, /<span className="sr-only">발행일 \{post\.date\.replaceAll\('-', '\.'\)\}<\/span>/);
+  assert.match(homeSource, /<span className="wall-card__date-visual" aria-hidden="true">/);
+  assert.match(homeSource, /post\.date\.split\('-'\)\.map/);
+  assert.match(homeSource, /className="wall-card__date-part"/);
+  assert.match(stylesSource, /\.sr-only\{[^}]*position:absolute[^}]*clip:/);
+  assert.doesNotMatch(voiceListSource, /String\(index \+ 1\)\.padStart/);
+  assert.match(stylesSource, /\.wall-card__date\{[^}]*display:flex[^}]*font:/);
+  assert.match(stylesSource, /\.wall-card__date-part\{[^}]*border-right:/);
+  assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{margin-left:auto\}/);
+  assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{display:none\}/);
+  assert.match(stylesSource, /\.wall-card--actual-quote \.wall-card__date\{color:#555\}/);
+  assert.doesNotMatch(stylesSource, /(?:^|})\.wall-card__axis\{[^}]*margin-left:auto/);
+  assert.match(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card__axis\{margin-left:auto\}/);
+});
+
 test('every image-backed wall card keeps a two-to-three-line text preview', () => {
   assert.match(homeSource, /const showSummary = hasImage \|\| \['portal', 'quote', 'deep', 'landscape'\]\.includes\(pattern\)/);
   assert.match(homeSource, /\{showSummary && <p>\{post\.summary\}<\/p>\}/);
