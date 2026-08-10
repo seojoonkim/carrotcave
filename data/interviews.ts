@@ -34,15 +34,15 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'liang-wenfeng',
     name: '량원펑',
-    eyebrow: 'DEEPSEEK / AGI / INNOVATION',
-    title: '중국 기술 이상주의의 궁극적 서사',
-    description: 'DeepSeek 창업자 량원펑의 2024년 7월 장문 Q&A 전체 보존본을 출처 관계와 함께 한국어로 옮겼습니다.',
-    sourcePublishedAt: '2024-11-27', // ChinaTalk page: datePublished for sourceUrl.
+    eyebrow: 'DEEPSEEK / PRIVATE MEETING / AGI',
+    title: 'AGI를 향한 절제',
+    description: '2026년 5월 비공개 투자자 회의의 유출 ASR 자료를 출처 한계와 함께 검토한 5장 편집 리더입니다.',
+    sourcePublishedAt: '2026-07-27', // Zaobao report publication date for sourceUrl.
     thumbnailUrl: '/voices/liang-wenfeng/assets/liang-wenfeng-portrait.webp',
-    sourceUrl: 'https://www.chinatalk.media/p/deepseek-ceo-interview-with-chinas',
-    duration: 'LONG Q&A',
+    sourceUrl: 'https://www.zaobao.com.sg/news/china/story20260727-9427115',
+    duration: 'EDITORIAL READER',
     chapters: 5,
-    segments: 122,
+    segments: 0,
     embedPath: '/voices/liang-wenfeng/index.html',
     status: 'published',
   },
