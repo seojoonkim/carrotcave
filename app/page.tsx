@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail, { axisNotes, axisOf, editorialAxes } from '@/components/AxisRail';
+import EditorialCard from '@/components/EditorialCard';
 import { posts, Post } from '@/data/posts';
 
 const wallPatterns = [
@@ -19,39 +18,16 @@ function WallCard({ post, index }: { post: Post; index: number }) {
   const showSummary = hasImage || ['portal', 'quote', 'deep', 'landscape'].includes(pattern);
 
   return (
-    <Link
-      className={`wall-card wall-card--actual-${pattern}${hasImage ? ' wall-card--with-image' : ' wall-card--generated'}`}
-      data-axis={axisOf(post)}
+    <EditorialCard
       href={`/posts/${post.slug}`}
-    >
-      {hasImage && (
-        <Image
-          className="wall-card__image"
-          src={post.mediaUrls![0]}
-          alt=""
-          width={900}
-          height={650}
-          sizes="(max-width: 520px) 100vw, (max-width: 900px) 66vw, 58vw"
-          priority={index < 4}
-        />
-      )}
-      <div className="wall-card__body">
-        <div className="wall-card__meta">
-          <time className="wall-card__date" dateTime={post.date}>
-            <span className="sr-only">발행일 {post.date.replaceAll('-', '.')}</span>
-            <span className="wall-card__date-visual" aria-hidden="true">
-              {post.date.split('-').map((part, partIndex) => (
-                <span className="wall-card__date-part" key={`${part}-${partIndex}`}>{part}</span>
-              ))}
-            </span>
-          </time>
-          <span className="wall-card__axis">{axisOf(post)}</span>
-        </div>
-        <h2>{post.title}</h2>
-        {showSummary && <p>{post.summary}</p>}
-        <span className="wall-card__door" aria-hidden="true">ENTER ↗</span>
-      </div>
-    </Link>
+      date={post.date}
+      axis={axisOf(post)}
+      title={post.title}
+      summary={showSummary ? post.summary : undefined}
+      imageUrl={post.mediaUrls?.[0]}
+      className={`wall-card--actual-${pattern}${hasImage ? '' : ' wall-card--generated'}`}
+      priority={index < 4}
+    />
   );
 }
 

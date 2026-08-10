@@ -1,7 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail from '@/components/AxisRail';
+import EditorialCard from '@/components/EditorialCard';
 import { interviews } from '@/data/interviews';
 
 export default function VoicesPage() {
@@ -20,32 +19,19 @@ export default function VoicesPage() {
         </header>
         <div className="editorial-wall editorial-wall--voices">
           {interviews.map((item, index) => (
-            <Link
+            <EditorialCard
               key={item.slug}
               href={`/voices/${item.slug}`}
-              className={`wall-card wall-card--voice${item.thumbnailUrl ? ' wall-card--with-image' : ''}`}
-            >
-              {item.thumbnailUrl && (
-                <Image
-                  className="wall-card__image wall-card__image--voice"
-                  src={item.thumbnailUrl}
-                  alt=""
-                  width={658}
-                  height={370}
-                  sizes="(max-width: 520px) 100vw, 94vw"
-                  priority={index === 0}
-                />
-              )}
-              <div className="wall-card__body">
-                <div className="wall-card__meta">
-                  <span className="wall-card__axis">목소리</span>
-                  <span>{item.eyebrow}</span>
-                </div>
-                <h2>{item.name} · {item.title}</h2>
-                <p>{item.description}</p>
-                <span className="wall-card__door" aria-hidden="true">OPEN FIELD NOTE ↗</span>
-              </div>
-            </Link>
+              date={item.sourcePublishedAt}
+              axis="목소리"
+              eyebrow={item.eyebrow}
+              title={`${item.name} · ${item.title}`}
+              summary={item.description}
+              imageUrl={item.thumbnailUrl}
+              className="wall-card--voice"
+              priority={index === 0}
+              doorLabel="OPEN FIELD NOTE ↗"
+            />
           ))}
         </div>
       </section>
