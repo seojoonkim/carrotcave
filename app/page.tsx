@@ -17,7 +17,7 @@ function WallCard({ post, index }: { post: Post; index: number }) {
     ? wallPattern
     : index % 2 === 0 ? 'quote' : 'deep';
   const number = String(index + 1).padStart(3, '0');
-  const showSummary = ['portal', 'quote', 'deep', 'landscape'].includes(pattern);
+  const showSummary = hasImage || ['portal', 'quote', 'deep', 'landscape'].includes(pattern);
 
   return (
     <Link

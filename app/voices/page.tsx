@@ -8,14 +8,6 @@ export default function VoicesPage() {
   return (
     <main>
       <SiteHeader />
-
-      <section className="cc-intro">
-        <p className="cc-intro__identity"><span>PERSONAL ARCHIVE</span> SIMON KIM · SEOUL / EVERYWHERE</p>
-        <div className="cc-intro__note">
-          <p>공개된 대화를 선별해 번역하고, 실제 발언과 맥락을 다시 확인해 오래 읽을 기록으로 남깁니다.</p>
-        </div>
-      </section>
-
       <AxisRail active="목소리" />
 
       <section className="wall-shell" aria-labelledby="wall-heading">

@@ -52,6 +52,15 @@ test('Liao Heng archive preserves the complete reader contract', () => {
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
 });
 
+test('every image-backed wall card keeps a two-to-three-line text preview', () => {
+  assert.match(homeSource, /const showSummary = hasImage \|\| \['portal', 'quote', 'deep', 'landscape'\]\.includes\(pattern\)/);
+  assert.match(homeSource, /\{showSummary && <p>\{post\.summary\}<\/p>\}/);
+  assert.match(stylesSource, /\.wall-card p\{[^}]*-webkit-line-clamp:3/);
+  assert.match(stylesSource, /@media\(max-width:520px\)[\s\S]*\.wall-card p\{[^}]*-webkit-line-clamp:2/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(12n\+5\):not\(\.wall-card--with-image\) p/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(12n\+10\):not\(\.wall-card--with-image\) p/);
+});
+
 test('voice cards render an interview thumbnail when the archive provides one', () => {
   assert.match(interviewSource, /thumbnailUrl\?: string/);
   assert.match(interviewSource, /thumbnailUrl: '\/voices\/liao-heng\/assets\/liao-heng-portrait\.webp'/);
@@ -63,8 +72,11 @@ test('voice cards render an interview thumbnail when the archive provides one', 
   assert.match(stylesSource, /\.wall-card__image--voice\{[^}]*object-position:/);
 });
 
-test('voice list uses the same archive navigation and editorial wall as every other axis', () => {
-  assert.match(voiceListSource, /className="cc-intro"/);
+test('voice list moves directly from the site header into archive navigation', () => {
+  assert.doesNotMatch(voiceListSource, /className="cc-intro"/);
+  assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
+  assert.doesNotMatch(voiceListSource, /공개된 대화를 선별해 번역하고/);
+  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell"/);
@@ -76,8 +88,6 @@ test('voice list uses the same archive navigation and editorial wall as every ot
   assert.match(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1;grid-row:auto\}/);
   assert.doesNotMatch(voiceListSource, /voices-route|voices-hero|voices-list|voice-card/);
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
-  assert.match(voiceListSource, /공개된 대화를 선별해 번역하고/);
-  assert.match(voiceListSource, /<p className="cc-intro__identity">/);
   assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
