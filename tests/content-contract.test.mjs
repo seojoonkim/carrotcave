@@ -81,17 +81,34 @@ test('the archive wall preserves complete titles and gives image-free cards an a
   assert.match(stylesSource, /\.wall-card--generated:after\{[^}]*repeating-linear-gradient/);
   assert.match(stylesSource, /\.wall-card--with-image \.wall-card__body\{[^}]*linear-gradient[^}]*linear-gradient/);
   assert.match(stylesSource, /\.wall-card h2\{[^}]*overflow:visible/);
-  assert.match(stylesSource, /@supports\(animation-timeline:view\(\)\)/);
+  assert.match(stylesSource, /\.wall-card--generated:hover:after\{[^}]*transform:/);
   assert.match(stylesSource, /@media\(prefers-reduced-motion:reduce\)[\s\S]*animation:none!important/);
 });
 
-test('every image-backed wall card keeps a two-to-three-line text preview', () => {
-  assert.match(homeSource, /const showSummary = hasImage \|\| \['portal', 'quote', 'deep', 'landscape'\]\.includes\(pattern\)/);
+test('the archive wall has no reserved holes and every card keeps consistent metadata and typography', () => {
+  assert.doesNotMatch(stylesSource, /grid-column:6\/span 7/);
+  assert.doesNotMatch(stylesSource, /grid-column:auto/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(n\)\{grid-column:span 4;grid-row:span 4\}/);
+  assert.match(stylesSource, /@media\(min-width:901px\)\{\.wall-card:last-child:nth-child\(3n\+1\)\{grid-column:span 12\}/);
+  assert.match(stylesSource, /\.wall-card:nth-last-child\(2\):nth-child\(3n\+1\),\.wall-card:last-child:nth-child\(3n\+2\)\{grid-column:span 6\}/);
+  assert.match(stylesSource, /\.wall-card:last-child:nth-child\(odd\)\{grid-column:span 2\}/);
+  assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+4\) h2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+(?:5|10)\):not\(\.wall-card--with-image\)/);
+  assert.doesNotMatch(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card\{[^}]*animation:/);
+  assert.doesNotMatch(stylesSource, /@keyframes cave-card-reveal/);
+  assert.match(homeSource, /<time className="wall-card__date" dateTime=\{post\.date\}>/);
   assert.match(homeSource, /\{showSummary && <p>\{post\.summary\}<\/p>\}/);
+  assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
+  assert.match(stylesSource, /\.wall-card p\{[^}]*var\(--serif\)/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--actual-quote h2\{[^}]*var\(--serif\)/);
+  assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
   assert.match(stylesSource, /\.wall-card p\{[^}]*-webkit-line-clamp:3/);
   assert.match(stylesSource, /@media\(max-width:520px\)[\s\S]*\.wall-card p\{[^}]*-webkit-line-clamp:2/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(12n\+5\):not\(\.wall-card--with-image\) p/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(12n\+10\):not\(\.wall-card--with-image\) p/);
+});
+
+test('the header symbol is slightly larger without changing header height', () => {
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px[^}]*height:36px[^}]*flex:0 0 36px/);
+  assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:34px[^}]*height:34px[^}]*flex-basis:34px/);
 });
 
 test('voice cards render an interview thumbnail when the archive provides one', () => {
@@ -146,7 +163,7 @@ test('home keeps the CARROT CAVE wordmark while reading headers use logo divider
 test('brand logo asset and rendered marks are square', () => {
   assert.match(headerSource, /width=\{192\} height=\{192\}/);
   assert.match(liaoReaderSource, /width="192" height="192"/);
-  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:32px;[^}]*height:32px/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px;[^}]*height:36px/);
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
 
