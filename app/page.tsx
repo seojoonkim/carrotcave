@@ -20,7 +20,7 @@ function WallCard({ post, index }: { post: Post; index: number }) {
 
   return (
     <Link
-      className={`wall-card wall-card--actual-${pattern}${hasImage ? ' wall-card--with-image' : ''}`}
+      className={`wall-card wall-card--actual-${pattern}${hasImage ? ' wall-card--with-image' : ' wall-card--generated'}`}
       data-axis={axisOf(post)}
       href={`/posts/${post.slug}`}
     >

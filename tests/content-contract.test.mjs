@@ -72,6 +72,19 @@ test('post thumbnails replace sequence numbers with a prominent publication-date
   assert.match(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card__axis\{margin-left:auto\}/);
 });
 
+test('the archive wall preserves complete titles and gives image-free cards an atmospheric dense treatment', () => {
+  assert.match(postsSource, /게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처/);
+  assert.doesNotMatch(postsSource, /다음 10년의 신뢰 아키['"]/);
+  assert.match(homeSource, /wall-card--generated/);
+  assert.match(stylesSource, /\.editorial-wall\{[^}]*gap:1px/);
+  assert.match(stylesSource, /\.wall-card--generated\{[^}]*--card-glow:/);
+  assert.match(stylesSource, /\.wall-card--generated:after\{[^}]*repeating-linear-gradient/);
+  assert.match(stylesSource, /\.wall-card--with-image \.wall-card__body\{[^}]*linear-gradient[^}]*linear-gradient/);
+  assert.match(stylesSource, /\.wall-card h2\{[^}]*overflow:visible/);
+  assert.match(stylesSource, /@supports\(animation-timeline:view\(\)\)/);
+  assert.match(stylesSource, /@media\(prefers-reduced-motion:reduce\)[\s\S]*animation:none!important/);
+});
+
 test('every image-backed wall card keeps a two-to-three-line text preview', () => {
   assert.match(homeSource, /const showSummary = hasImage \|\| \['portal', 'quote', 'deep', 'landscape'\]\.includes\(pattern\)/);
   assert.match(homeSource, /\{showSummary && <p>\{post\.summary\}<\/p>\}/);

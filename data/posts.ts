@@ -219,7 +219,7 @@ Claude가 세 가지 방향을 제시해도 어느 것이 실제 1인지는 자�
     id: 'post-186',
     slug: 'post-186',
     telegramMsgId: 186,
-    title: '< 게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키',
+    title: '게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처',
     category: '🐇 탐험',
     depth: 'mid',
     summary: "게이머로서 NDC(Nexon Developer Conference)는 오랜 시간 동경하던 행사였다. 그 무대에 연사로 초대받아 '게임과 AI 에...",
