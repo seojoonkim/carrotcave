@@ -26,13 +26,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .chapter-progress { position:absolute; inset:auto 0 0; height:3px; overflow:hidden; background:color-mix(in srgb,var(--line) 72%,transparent); }
 .chapter-progress-fill { display:block; width:100%; height:100%; transform:scaleX(0); transform-origin:left center; background:linear-gradient(90deg,var(--cyan),var(--ansi-bright-cyan) 68%,var(--amber)); transition:transform 90ms linear; will-change:transform; }
 .chapter-progress-fill.is-chapter-change { transition:none; }
-.reader-nav { display:flex; align-items:center; gap:16px; min-width:0; }
+.reader-nav { display:flex; align-items:center; min-width:0; }
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--foreground); font: 700 13px/1.1 "IBM Plex Mono", monospace; letter-spacing: .08em; white-space:nowrap; }
-.reader-back { min-height:44px; display:flex; align-items:center; padding-left:16px; border-left:1px solid var(--line); color:var(--cyan); text-decoration:none; white-space:nowrap; font:500 11px "IBM Plex Mono",monospace; letter-spacing:.06em; }
-.reader-back::before { content:'←'; margin-right:7px; }
 .brand b { color: var(--cyan); font-weight: 500; }
-.brand-mark { width: 18px; height: 18px; display: inline-block; border: 1px solid var(--cyan); border-radius: 50%; box-shadow: inset 0 0 0 4px var(--ink); background: var(--cyan); position: relative; flex: 0 0 auto; }
-.brand-mark::after { content:""; position:absolute; width:6px; height:1px; right:-5px; top:8px; background:var(--cyan); }
+.brand-mark { width:auto; height:28px; display:block; object-fit:contain; flex:0 0 auto; }
 .header-status { min-width: 0; display: flex; align-items: center; gap: 7px; color: var(--muted); font: 10px "IBM Plex Mono", monospace; letter-spacing: .06em; white-space: nowrap; overflow: hidden; }
 .header-titles { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 2px; overflow: hidden; }
 .header-site-title { color: var(--cyan); font: 500 11px/1.1 var(--font-sans); letter-spacing: .02em; }
@@ -134,9 +131,7 @@ body.drawer-open{overflow:hidden}
   .site-header { grid-template-columns:auto minmax(0,1fr) auto; gap: 10px; padding-inline: 12px; }
   .reader-nav { gap:9px; }
   .brand { font-size:11px; }
-  .brand-mark { width:12px; height:12px; box-shadow:inset 0 0 0 3px var(--ink); }
-  .brand-mark::after { top:5px; }
-  .reader-back { padding-left:9px; font-size:10px; }
+  .brand-mark { width:auto; height:24px; }
   .header-status { flex: 1 1 auto; font-size: 11px; }
   .header-status #readingStatus { min-width:0; font-size:16px; }
   .menu-button { flex: 0 0 44px; min-width: 44px; width: 44px; min-height: 44px; justify-content: center; }

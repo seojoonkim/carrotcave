@@ -49,13 +49,20 @@ test('every first-party page surface keeps the CARROT CAVE title visible', () =>
   assert.match(liaoReaderSource, /class="brand" href="\/"[^>]*>[\s\S]*CARROT CAVE/);
 });
 
-test('voice reader uses one header with home and voices return navigation', () => {
+test('voice reader uses one uncluttered header without source or return links', () => {
   assert.doesNotMatch(voiceReaderSource, /<header className="voice-reader-header">/);
   assert.doesNotMatch(voiceReaderSource, /voice-reader-source|>원본/);
   assert.match(liaoReaderSource, /class="brand" href="\/"/);
-  assert.match(liaoReaderSource, /class="reader-back" href="\/voices"[^>]*>[^<]*돌아가기/);
-  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*CARROT CAVE[\s\S]*돌아가기[\s\S]*<\/header>/);
+  assert.doesNotMatch(liaoReaderSource, /reader-back|>돌아가기</);
+  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*CARROT CAVE[\s\S]*<\/header>/);
   assert.match(liaoReaderStyles, /\.site-header\s*\{[^}]*grid-template-columns:/);
+});
+
+test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot marks', () => {
+  assert.match(headerSource, /src="\/carrot-cave-symbol\.png"/);
+  assert.match(liaoReaderSource, /<img class="brand-mark"[^>]*src="\/carrot-cave-symbol\.png"/);
+  assert.doesNotMatch(headerSource, /<i aria-hidden="true"\s*\/>/);
+  assert.doesNotMatch(liaoReaderStyles, /\.brand-mark[^}]*border-radius:\s*50%/);
 });
 
 test('every post with media renders its first image as the card background', () => {
