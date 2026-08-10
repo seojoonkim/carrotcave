@@ -16,6 +16,7 @@ const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', 
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
+const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 
@@ -54,7 +55,7 @@ test('all three voice archives preserve their complete reader contracts', () => 
   assert.match(interviewSource, /chapters: 7/);
   assert.match(interviewSource, /segments: 8142/);
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
-  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]*sourcePublishedAt: '2026-07-27'[\s\S]*chapters: 5,[\s\S]*segments: 0,[\s\S]*\/voices\/liang-wenfeng\/index\.html/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]*sourcePublishedAt: '2026-07-27'[\s\S]*chapters: 5,[\s\S]*segments: 19,[\s\S]*\/voices\/liang-wenfeng\/index\.html/);
   assert.match(interviewSource, /slug: 'yang-zhilin'[\s\S]*chapters: 6,[\s\S]*segments: 2531,[\s\S]*\/voices\/yang-zhilin\/index\.html/);
   for (const source of [liangReaderSource, yangReaderSource]) {
     assert.match(source, /class="hero-portrait"/);
@@ -71,24 +72,57 @@ test('all three voice archives preserve their complete reader contracts', () => 
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
 });
 
-test('Liang Wenfeng reader is a source-critical digest of the leaked 2026 private meeting', () => {
+test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-critical long record', () => {
   assert.match(liangReaderSource, /2026년 5월 20일/);
   assert.match(liangReaderSource, /비공개 투자자 회의/);
   assert.match(liangReaderSource, /비공식 유출 자료/);
   assert.match(liangReaderSource, /화자 구분이 없/);
+  assert.match(liangReaderSource, /특정 인물에게 귀속할 수 없/);
   assert.match(liangReaderSource, /원음.*확인할 수 없/);
   assert.match(liangReaderSource, /음성인식.*오류/);
   assert.match(liangReaderSource, /직접 인용.*없음/);
-  assert.equal((liangReaderSource.match(/화자 미확정·직접 인용 아님/g) || []).length, 4);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
+  assert.equal(liangLongReader.length, 19);
+  const timestamps = liangLongReader.map((section) => section.timestamp);
+  assert.equal(new Set(timestamps).size, 19);
+  const seconds = timestamps.map((stamp) => stamp.split(':').reduce((sum, part) => sum * 60 + Number(part), 0));
+  assert.ok(seconds.every((value, index) => index === 0 || value > seconds[index - 1]));
+  assert.deepEqual([timestamps[0], timestamps.at(-1)], ['00:00:01', '03:41:02']);
+  assert.equal((liangReaderSource.match(/class="topic long-record"/g) || []).length, 19);
+  assert.equal((liangReaderSource.match(/id="time-\d{2}-\d{2}-\d{2}"/g) || []).length, 19);
+  const koreanBody = liangLongReader.flatMap((section) => section.paragraphs).join('');
+  assert.ok(koreanBody.length >= 30_000);
+  assert.ok(liangLongReader.every((section) => section.paragraphs.join('').length >= 1_000));
+  assert.doesNotMatch(koreanBody, /“|”|—/);
+  assert.doesNotMatch(liangReaderSource, /—/);
+  const escapeHtml = (value) => value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+  for (const section of liangLongReader) {
+    assert.match(liangReaderSource, new RegExp(`id="time-${section.timestamp.replaceAll(':', '-')}"`));
+    assert.ok(liangReaderSource.includes(`<h3>${escapeHtml(section.title_ko)}</h3>`));
+    for (const paragraph of section.paragraphs) {
+      assert.ok(liangReaderSource.includes(`<p>${escapeHtml(paragraph)}</p>`));
+    }
+    for (const caveat of section.caveats) {
+      assert.ok(liangReaderSource.includes(`<li>${escapeHtml(caveat)}</li>`));
+    }
+    assert.ok(liangReaderSource.includes(`원자료 묶음: ${escapeHtml(section.source_file)}`));
+  }
+  assert.match(liangReaderSource, /href="long-reader-ko\.json"/);
   assert.match(liangReaderSource, /https:\/\/github\.com\/KnightQuals\/deepseek-investor-meeting/);
   assert.match(liangReaderSource, /https:\/\/www\.zaobao\.com\.sg\/news\/china\/story20260727-9427115/);
   assert.match(liangReaderSource, /https:\/\/www\.chinatalk\.media\/p\/deepseek-ceo-interview-with-chinas/);
   assert.equal((liangReaderSource.match(/class="content-section chapter transcript-chapter"/g) || []).length, 5);
   assert.doesNotMatch(liangReaderSource, /전체 한국어 번역 전사|전체 보존본|122 SEGMENTS|한국어 번역 전사/);
-  assert.doesNotMatch(liangReaderSource, /transcript-ko\.json|<script src="script\.js"/);
+  assert.match(liangReaderSource, /https:\/\/github\.com\/QFOI\/Transcript-of-Liang-Wenfengs-DeepSeek-Founder-4-Hour-Investor-Meeting/);
+  assert.match(liangReaderSource, /https:\/\/github\.com\/iamsophie\/deepseek-liang-wenfeng-investor-meeting/);
+  assert.doesNotMatch(liangReaderSource, /<script src="script\.js"/);
   assert.doesNotMatch(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?segments: 122/);
-  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?duration: 'EDITORIAL READER'/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?duration: '19-SECTION LONG READER'/);
 });
 
 test('Yang Zhilin transcript uses sentence-aware paragraphs instead of fixed segment batches', () => {
