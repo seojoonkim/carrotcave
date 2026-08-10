@@ -43,10 +43,23 @@ test('Liao Heng archive preserves the complete reader contract', () => {
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
 });
 
-test('every first-party page surface keeps the CARROT CAVE title visible', () => {
-  assert.match(headerSource, />CARROT CAVE</);
-  assert.match(postSource, /<SiteHeader\s*\/>/);
-  assert.match(liaoReaderSource, /class="brand" href="\/"[^>]*>[\s\S]*CARROT CAVE/);
+test('home keeps the CARROT CAVE wordmark while reading headers use logo divider and title information', () => {
+  assert.match(headerSource, /readingTitle\?: string/);
+  assert.match(headerSource, /cc-reading-divider/);
+  assert.match(headerSource, /cc-reading-title/);
+  assert.match(headerSource, /readingTitle \? 'cc-header cc-header--reading' : 'cc-header'/);
+  assert.match(headerSource, /\{!readingTitle && [\s\S]*CARROT CAVE/);
+  assert.match(postSource, /<SiteHeader readingTitle=\{post\.title\} readingMeta=/);
+  assert.doesNotMatch(postSource, /<SiteHeader\s*\/>/);
+  assert.match(liaoReaderSource, /class="reader-divider"/);
+  assert.doesNotMatch(liaoReaderSource, /<span>CARROT CAVE<\/span>/);
+});
+
+test('brand logo asset and rendered marks are square', () => {
+  assert.match(headerSource, /width=\{192\} height=\{192\}/);
+  assert.match(liaoReaderSource, /width="192" height="192"/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:32px;[^}]*height:32px/);
+  assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
 
 test('voice reader uses one uncluttered header without source or return links', () => {
@@ -54,7 +67,7 @@ test('voice reader uses one uncluttered header without source or return links', 
   assert.doesNotMatch(voiceReaderSource, /voice-reader-source|>원본/);
   assert.match(liaoReaderSource, /class="brand" href="\/"/);
   assert.doesNotMatch(liaoReaderSource, /reader-back|>돌아가기</);
-  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*CARROT CAVE[\s\S]*<\/header>/);
+  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*class="reader-divider"[\s\S]*class="header-status"[\s\S]*<\/header>/);
   assert.match(liaoReaderStyles, /\.site-header\s*\{[^}]*grid-template-columns:/);
 });
 

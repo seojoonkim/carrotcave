@@ -204,7 +204,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #060A14 0%, #080E1A 15%, #0A1220 50%, #080E1A 100%)', color: '#F0E4CC' }}>
-      <SiteHeader />
+      <SiteHeader readingTitle={post.title} readingMeta={post.category.replace(/^[^\p{L}]+/u, '')} />
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '3.5rem 1.5rem 5rem' }}>
         {/* Category */}
