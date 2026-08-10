@@ -171,7 +171,7 @@ test('voice cards render a verified portrait thumbnail for every interview archi
   assert.match(voiceListSource, /imageUrl=\{item\.thumbnailUrl\}/);
   assert.match(editorialCardSource, /className="wall-card__image"/);
   assert.match(editorialCardSource, /imageUrl \? ' wall-card--with-image' : ''/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__image\{[^}]*object-position:/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__image\{[^}]*object-position:/);
 });
 
 test('post and voice thumbnails share one complete editorial card contract', () => {
