@@ -8,7 +8,9 @@ const homeSource = readFileSync(new URL('../app/page.tsx', import.meta.url), 'ut
 const stylesSource = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 const interviewSource = readFileSync(new URL('../data/interviews.ts', import.meta.url), 'utf8');
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
+const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.meta.url), 'utf8');
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
@@ -31,9 +33,13 @@ test('post slugs and Telegram message IDs are unique', () => {
   assert.equal(new Set(messageIds).size, messageIds.length);
 });
 
-test('home exposes one editorial-axis navigation layer', () => {
-  for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(homeSource, new RegExp(axis));
-  assert.match(homeSource, /<nav className="axis-rail" aria-label="편집 축">/);
+test('home and voice list share one editorial-axis navigation component', () => {
+  for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(axisRailSource, new RegExp(axis));
+  assert.match(axisRailSource, /<nav className="axis-rail" aria-label="편집 축">/);
+  assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
+  assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
+  assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
+  assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
 });
 
@@ -41,6 +47,27 @@ test('Liao Heng archive preserves the complete reader contract', () => {
   assert.match(interviewSource, /chapters: 7/);
   assert.match(interviewSource, /segments: 8142/);
   assert.match(interviewSource, /\/voices\/liao-heng\/index\.html/);
+});
+
+test('voice list uses the same archive navigation and editorial wall as every other axis', () => {
+  assert.match(voiceListSource, /className="cc-intro"/);
+  assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
+  assert.match(axisRailSource, /active === '목소리'/);
+  assert.match(voiceListSource, /className="wall-shell"/);
+  assert.match(voiceListSource, /className="editorial-wall editorial-wall--voices"/);
+  assert.match(voiceListSource, /className="wall-card wall-card--voice"/);
+  assert.match(stylesSource, /\.wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
+  assert.match(stylesSource, /\.wall-card--voice \.wall-card__meta\{margin-bottom:0\}/);
+  assert.match(stylesSource, /\.editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
+  assert.match(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1;grid-row:auto\}/);
+  assert.doesNotMatch(voiceListSource, /voices-route|voices-hero|voices-list|voice-card/);
+  assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
+  assert.match(voiceListSource, /공개된 대화를 선별해 번역하고/);
+  assert.match(voiceListSource, /<p className="cc-intro__identity">/);
+  assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
+  assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
+  assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
+  assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
 
 test('home keeps the CARROT CAVE wordmark while reading headers use logo divider and title information', () => {
@@ -84,6 +111,12 @@ test('every post with media renders its first image as the card background', () 
   assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
 });
 
+test('archive intro avoids counts already exposed by the axis menu', () => {
+  assert.doesNotMatch(homeSource, /WRITINGS|VOICE ARCHIVE/);
+  assert.doesNotMatch(voiceListSource, /WRITINGS|VOICE ARCHIVE/);
+  assert.match(stylesSource, /@media\(max-width:520px\).*?\.cc-intro__note\{display:none\}/s);
+});
+
 test('home keeps the archive intro compact and all six axes visible on mobile', () => {
   assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
   assert.match(homeSource, /className="cc-intro__identity"/);
@@ -94,7 +127,8 @@ test('home keeps the archive intro compact and all six axes visible on mobile', 
 
 test('home uses one repeating editorial system for the complete post archive', () => {
   assert.match(homeSource, /className="cc-intro"/);
-  assert.match(homeSource, /className="axis-rail"/);
+  assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
+  assert.match(axisRailSource, /className="axis-rail"/);
   assert.match(homeSource, /className="editorial-wall"/);
   assert.match(homeSource, /visiblePosts\.map\(\(post, index\)/);
   assert.match(homeSource, /wallPatterns\[index % wallPatterns\.length\]/);

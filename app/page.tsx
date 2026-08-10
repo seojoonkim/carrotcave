@@ -1,26 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import SiteHeader from '@/components/SiteHeader';
+import AxisRail, { axisNotes, axisOf, editorialAxes } from '@/components/AxisRail';
 import { posts, Post } from '@/data/posts';
-import { interviews } from '@/data/interviews';
-
-const axes = ['탐험', '빌딩', '낙서', '소설'] as const;
-const axisNotes: Record<string, string> = {
-  탐험: '기술과 시장, 낯선 미래',
-  빌딩: '직접 만들고 부딪힌 기록',
-  낙서: '완성 전의 생각과 관찰',
-  소설: '사실 밖의 가능한 세계',
-};
 
 const wallPatterns = [
   'portal', 'index', 'portrait', 'quote',
   'compact', 'landscape', 'index', 'deep',
   'quote', 'compact', 'portrait', 'index',
 ] as const;
-
-function axisOf(post: Post) {
-  return post.category.replace(/^[^\p{L}]+/u, '');
-}
 
 function WallCard({ post, index }: { post: Post; index: number }) {
   const wallPattern = wallPatterns[index % wallPatterns.length];
@@ -64,7 +52,7 @@ function WallCard({ post, index }: { post: Post; index: number }) {
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string }> }) {
   const { section } = await searchParams;
-  const active = axes.includes(section as typeof axes[number]) ? section : undefined;
+  const active = editorialAxes.includes(section as typeof editorialAxes[number]) ? section as typeof editorialAxes[number] : undefined;
   const visiblePosts = active ? posts.filter((post) => axisOf(post) === active) : posts;
 
   return (
@@ -75,30 +63,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
         <h1 className="cc-intro__identity"><span>PERSONAL ARCHIVE</span> SIMON KIM · SEOUL / EVERYWHERE</h1>
         <div className="cc-intro__note">
           <p>기술, 사람, 시장과 아직 오지 않은 세계를 탐험합니다. 완성된 답보다 오래 남은 질문을 모읍니다.</p>
-          <span>{posts.length} WRITINGS · {interviews.length} VOICE ARCHIVE</span>
         </div>
       </section>
 
-      <nav className="axis-rail" aria-label="편집 축">
-        <Link className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
-          <small>00</small><b>전체</b><span>{posts.length}</span>
-        </Link>
-        {axes.map((axis, index) => {
-          const count = posts.filter((post) => axisOf(post) === axis).length;
-          return (
-            <Link
-              key={axis}
-              className={active === axis ? 'active' : ''}
-              href={`/?section=${axis}`}
-              aria-current={active === axis ? 'page' : undefined}
-              title={axisNotes[axis]}
-            >
-              <small>0{index + 1}</small><b>{axis}</b><span>{count}</span>
-            </Link>
-          );
-        })}
-        <Link href="/voices"><small>05</small><b>목소리</b><span>{interviews.length}</span></Link>
-      </nav>
+      <AxisRail active={active} />
 
       <section className="wall-shell" aria-labelledby="wall-heading">
         <header className="wall-heading">
