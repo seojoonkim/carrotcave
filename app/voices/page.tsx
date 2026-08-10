@@ -43,11 +43,6 @@ export default function VoicesPage() {
                 </div>
                 <h2>{item.name} · {item.title}</h2>
                 <p>{item.description}</p>
-                <dl className="wall-card__facts">
-                  <div><dt>러닝타임</dt><dd>{item.duration}</dd></div>
-                  <div><dt>구성</dt><dd>{item.chapters} CHAPTERS</dd></div>
-                  <div><dt>번역 전사</dt><dd>{item.segments.toLocaleString()} SEGMENTS</dd></div>
-                </dl>
                 <span className="wall-card__door" aria-hidden="true">OPEN FIELD NOTE ↗</span>
               </div>
             </Link>

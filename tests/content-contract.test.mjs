@@ -157,10 +157,10 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(voiceListSource, /className="wall-shell"/);
   assert.match(voiceListSource, /className="editorial-wall editorial-wall--voices"/);
   assert.match(voiceListSource, /className=\{`wall-card wall-card--voice\$\{/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__meta\{margin-bottom:0\}/);
-  assert.match(stylesSource, /\.editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
-  assert.match(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1;grid-row:auto\}/);
+  assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card--actual-\$\{pattern\}/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
+  assert.doesNotMatch(stylesSource, /\.editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
+  assert.doesNotMatch(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1/);
   assert.doesNotMatch(voiceListSource, /voices-route|voices-hero|voices-list|voice-card/);
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
   assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
@@ -215,6 +215,28 @@ test('archive pages avoid redundant intro and counts already exposed by the axis
   assert.doesNotMatch(voiceListSource, /WRITINGS|VOICE ARCHIVE/);
   assert.doesNotMatch(homeSource, /className="cc-intro"/);
   assert.doesNotMatch(voiceListSource, /className="cc-intro"/);
+});
+
+test('all voice readers use one flat mobile chapter menu without quoted summary rows', () => {
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource]) {
+    const drawer = source.match(/<aside class="toc-drawer"[\s\S]*?<\/aside>/)?.[0] || '';
+    assert.ok(drawer, 'reader must include the mobile table of contents');
+    assert.doesNotMatch(drawer, /<details|<summary|<ul|<li/);
+    assert.match(drawer, /class="summary-link"[^>]*><span>00<\/span><span>전체 요약<\/span>/);
+    assert.match(drawer, /class="toc-chapter-link"[^>]*data-nav-chapter="1"[^>]*><span>01<\/span><span>/);
+    for (const [, target] of drawer.matchAll(/href="#([^"]+)"/g)) {
+      assert.match(source, new RegExp(`id="${target}"`), `drawer target #${target} must exist`);
+    }
+  }
+});
+
+test('voice thumbnails use the same editorial card system as other archive entries', () => {
+  assert.match(voiceListSource, /className=\{`wall-card wall-card--voice\$\{/);
+  assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card--actual-\$\{pattern\}/);
+  assert.doesNotMatch(voiceListSource, /wall-card__facts|<dl|<dt|<dd/);
+  assert.doesNotMatch(stylesSource, /editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
+  assert.doesNotMatch(stylesSource, /wall-card\.wall-card--voice\{grid-column:1\/-1/);
+  assert.doesNotMatch(stylesSource, /wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
 });
 
 test('home keeps all six axes visible on mobile', () => {
