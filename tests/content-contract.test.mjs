@@ -115,13 +115,13 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.doesNotMatch(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card\{[^}]*animation:/);
   assert.doesNotMatch(stylesSource, /@keyframes cave-card-reveal/);
   assert.match(homeSource, /date=\{post\.date\}/);
-  assert.match(homeSource, /summary=\{showSummary \? post\.summary : undefined\}/);
+  assert.match(homeSource, /summary=\{post\.summary\}/);
+  assert.doesNotMatch(homeSource, /showSummary|wall-card--actual-/);
   assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
   assert.match(stylesSource, /\.wall-card p\{[^}]*var\(--serif\)/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--actual-quote h2\{[^}]*var\(--serif\)/);
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
-  assert.match(stylesSource, /\.wall-card p\{[^}]*-webkit-line-clamp:3/);
-  assert.match(stylesSource, /@media\(max-width:520px\)[\s\S]*\.wall-card p\{[^}]*-webkit-line-clamp:2/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform p,\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
@@ -147,6 +147,11 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(voiceListSource, /import EditorialCard from '@\/components\/EditorialCard'/);
   assert.match(homeSource, /<EditorialCard/);
   assert.match(voiceListSource, /<EditorialCard/);
+  assert.match(homeSource, /summary=\{post\.summary\}/);
+  assert.match(homeSource, /className=\{`wall-card--uniform\$\{hasImage \? '' : ' wall-card--generated'\}`\}/);
+  assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform p,\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);
   assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
   assert.match(editorialCardSource, /<span className="wall-card__axis">\{axis\}<\/span>/);
   assert.match(editorialCardSource, /<h2>\{title\}<\/h2>/);
@@ -275,7 +280,8 @@ test('home uses one repeating editorial system for the complete post archive', (
   assert.match(axisRailSource, /className="axis-rail"/);
   assert.match(homeSource, /className="editorial-wall"/);
   assert.match(homeSource, /visiblePosts\.map\(\(post, index\)/);
-  assert.match(homeSource, /wallPatterns\[index % wallPatterns\.length\]/);
+  assert.match(homeSource, /summary=\{post\.summary\}/);
+  assert.doesNotMatch(homeSource, /wallPatterns|showSummary|wall-card--actual-/);
 
   assert.doesNotMatch(homeSource, /visiblePosts\.slice\(0, 8\)/);
   assert.doesNotMatch(homeSource, /className="archive-list"/);

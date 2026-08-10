@@ -3,19 +3,8 @@ import AxisRail, { axisNotes, axisOf, editorialAxes } from '@/components/AxisRai
 import EditorialCard from '@/components/EditorialCard';
 import { posts, Post } from '@/data/posts';
 
-const wallPatterns = [
-  'portal', 'index', 'portrait', 'quote',
-  'compact', 'landscape', 'index', 'deep',
-  'quote', 'compact', 'portrait', 'index',
-] as const;
-
 function WallCard({ post, index }: { post: Post; index: number }) {
-  const wallPattern = wallPatterns[index % wallPatterns.length];
   const hasImage = Boolean(post.mediaUrls?.[0]);
-  const pattern = hasImage || !['portal', 'portrait', 'landscape'].includes(wallPattern)
-    ? wallPattern
-    : index % 2 === 0 ? 'quote' : 'deep';
-  const showSummary = hasImage || ['portal', 'quote', 'deep', 'landscape'].includes(pattern);
 
   return (
     <EditorialCard
@@ -23,9 +12,9 @@ function WallCard({ post, index }: { post: Post; index: number }) {
       date={post.date}
       axis={axisOf(post)}
       title={post.title}
-      summary={showSummary ? post.summary : undefined}
+      summary={post.summary}
       imageUrl={post.mediaUrls?.[0]}
-      className={`wall-card--actual-${pattern}${hasImage ? '' : ' wall-card--generated'}`}
+      className={`wall-card--uniform${hasImage ? '' : ' wall-card--generated'}`}
       priority={index < 4}
     />
   );
