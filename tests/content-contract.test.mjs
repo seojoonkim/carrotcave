@@ -76,16 +76,18 @@ test('all three voice archives preserve their complete reader contracts', () => 
 test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-critical long record', () => {
   assert.match(liangReaderSource, /2026년 5월 20일/);
   assert.match(liangReaderSource, /비공개 투자자 회의/);
-  assert.match(liangReaderSource, /비공식 유출 자료/);
-  assert.match(liangReaderSource, /화자 구분이 없/);
-  assert.match(liangReaderSource, /특정 인물에게 귀속할 수 없/);
-  assert.match(liangReaderSource, /원음.*확인할 수 없/);
-  assert.match(liangReaderSource, /음성인식.*오류/);
+  assert.match(liangReaderSource, /2026년 5월 20일 열린 것으로 알려진 비공개 투자자 회의/);
+  assert.match(liangReaderSource, /DeepSeek가 공식 인터뷰로 공개하거나 내용을 확인한 자료가 아니/);
+  assert.match(liangReaderSource, /참석자와 질문자 표시 없이 인터넷에 퍼진 중국어 문서/);
+  assert.match(liangReaderSource, /자동 음성인식과 AI 정리 과정을 거쳐 글로 만든 것으로 보인다/);
+  assert.match(liangReaderSource, /누가 한 말인지 확정할 수 없/);
+  assert.match(liangReaderSource, /말을 잘못 알아들은 부분/);
+  assert.match(liangReaderSource, /실제 발언을 처음부터 끝까지 그대로 옮긴 기록으로 보기는 어렵다/);
   assert.doesNotMatch(liangReaderSource, /직접 인용.*없음/);
-  assert.match(liangReaderSource, /공개 정리본을 최소한으로 손질한 한국어 번역이며, 음성 대조로 검증한 축자 기록이 아니다/);
+  assert.doesNotMatch(liangReaderSource, /축자 기록|귀속|오청/);
   assert.match(liangReaderSource, /화자나 발화 기능을 화면에 표시하지 않으며/);
   assert.match(liangReaderSource, /독립적인 의미, 핵심 교훈, 앞뒤 맥락 없이 이해 가능한지/);
-  assert.match(liangReaderSource, /기능 분류는 편집상 추정이며 확인된 화자 귀속이 아니다/);
+  assert.match(liangReaderSource, /기능 분류는 편집 과정의 추정이며 누가 한 말인지 확인한 정보가 아니다/);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
   assert.equal(liangLongReader.length, 19);
   const dialogueParagraphs = liangLongReader.flatMap((section) => section.paragraphs);
@@ -119,11 +121,8 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
     assert.ok(liangReaderSource.includes(`<h3>${escapeHtml(section.title_ko)}</h3>`));
     assert.equal((liangReaderSource.match(/class="utterance"/g) || []).length, 447);
     assert.doesNotMatch(liangReaderSource, /class="utterance-tag"|\[(?:질문|답변|미상|진행|불명)\]/);
-    for (const caveat of section.caveats) {
-      assert.ok(liangReaderSource.includes(`<li>${escapeHtml(caveat)}</li>`));
-    }
-    assert.ok(liangReaderSource.includes(`원자료 묶음: ${escapeHtml(section.source_file)}`));
   }
+  assert.doesNotMatch(liangReaderSource, /class="source-caveats"|출처 주의|원자료 묶음:/);
   assert.match(liangReaderSource, /href="long-reader-ko\.json"/);
   assert.match(liangReaderSource, /https:\/\/github\.com\/KnightQuals\/deepseek-investor-meeting/);
   assert.match(liangReaderSource, /https:\/\/www\.zaobao\.com\.sg\/news\/china\/story20260727-9427115/);
