@@ -1522,7 +1522,7 @@ Peter Thiel이 대학을 버블이라고 불렀던 것도 같은 문제의식이
     slug: 'post-111',
     telegramMsgId: 111,
     title: '다가오는 30개의 균열',
-    category: '🛠️ 빌딩',
+    category: '🐇 탐험',
     depth: 'deep',
     summary: '오늘 하루 바이브 코딩 중간중간 대기 시간을 모아 메모했다. 에이전트 시대가 오면 세상이 어떻게 바뀔지, 평소 스쳐지나가던 생각들을 순서나 중요...',
     content: `다가오는 30개의 균열
