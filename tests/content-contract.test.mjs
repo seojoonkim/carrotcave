@@ -185,6 +185,9 @@ test('Liao Heng reader exposes literal transcript search and stable paragraph sh
   assert.match(liaoReaderScript, /document\.execCommand\('copy'\)/);
   assert.match(liaoReaderScript, /document\.querySelector\('link\[rel="canonical"\]'\)/);
   assert.match(liaoReaderScript, /source\.href = `\$\{VIDEO_URL\}\?t=\$\{Math\.floor\(paragraph\.start\)\}`/);
+  assert.match(liaoReaderScript, /return \(header \? header\.getBoundingClientRect\(\)\.height : 64\) \+ 8;/);
+  assert.match(liaoReaderStyles, /scroll-margin-top:calc\(var\(--header\) \+ 8px\)/);
+  assert.match(liaoReaderStyles, /\.transcript-paragraph:target,\.transcript-paragraph\.hash-target \{ outline:1px solid var\(--amber\); outline-offset:3px; \}/);
   assert.match(liaoReaderStyles, /\.transcript-highlights a \{ min-height: 44px/);
   assert.match(liaoReaderStyles, /\.paragraph-actions a,\.paragraph-actions button \{ min-height:44px/);
   assert.match(liaoReaderStyles, /\.highlight-time \{ display: inline-flex; min-height: 44px/);

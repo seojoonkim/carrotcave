@@ -173,7 +173,7 @@
 
   const headerOffset = () => {
     const header = document.querySelector('.site-header');
-    return (header ? header.getBoundingClientRect().height : 64) + 18;
+    return (header ? header.getBoundingClientRect().height : 64) + 8;
   };
 
   const resolveHashTarget = hash => {
