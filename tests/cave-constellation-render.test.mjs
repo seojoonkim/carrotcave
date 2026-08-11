@@ -1,27 +1,17 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { createRequire } from 'node:module';
 import test from 'node:test';
 import vm from 'node:vm';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { transformSync } from 'next/dist/build/swc/index.js';
 
-const require = createRequire(import.meta.url);
-const files = [
-  'CaveConstellation.tsx',
-  'CaveConstellationGraph.tsx',
-  'CaveConstellationEvidence.tsx',
-  'CaveConstellationList.tsx',
-];
-const sources = Object.fromEntries(files.map((file) => [file, readFileSync(new URL(`../components/${file}`, import.meta.url), 'utf8')]));
+const source = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
-const cache = new Map();
 
-function load(file) {
-  if (cache.has(file)) return cache.get(file).exports;
-  const { code } = transformSync(sources[file], {
-    filename: file,
+function loadComponent() {
+  const { code } = transformSync(source, {
+    filename: 'CaveConstellation.tsx',
     isModule: true,
     jsc: {
       parser: { syntax: 'typescript', tsx: true },
@@ -31,124 +21,85 @@ function load(file) {
     module: { type: 'commonjs' },
   });
   const module = { exports: {} };
-  cache.set(file, module);
-  const localRequire = (id) => {
-    if (id === 'next/navigation') return { useRouter: () => ({ push() {} }) };
-    if (id.startsWith('./CaveConstellation')) return load(`${id.slice(2)}.tsx`);
-    return require(id);
-  };
-  vm.runInNewContext(code, { module, exports: module.exports, require: localRequire, React }, { filename: file });
-  return module.exports;
+  const Link = ({ href, children, ...props }) => React.createElement('a', { href, ...props }, children);
+  vm.runInNewContext(code, {
+    module,
+    exports: module.exports,
+    React,
+    require(id) {
+      if (id === 'next/link') return { __esModule: true, default: Link };
+      return {};
+    },
+  });
+  return module.exports.default;
 }
 
-const CaveConstellation = load('CaveConstellation.tsx').default;
+const CaveConstellation = loadComponent();
+const center = { slug: 'now', title: '현재 글', category: '🐇 탐험', hop: 0 };
 const nodes = [
-  { slug: 'now', title: '현재 글', category: '🐇 탐험', hop: 0 },
-  { slug: 'ore', title: '광물 표본', category: '🛠️ 빌딩', hop: 1 },
-  { slug: 'echo', title: '메아리 글', category: '✍️ 낙서', hop: 1 },
-  { slug: 'deep', title: '깊은 글', category: '🛠️ 빌딩', hop: 2 },
+  center,
+  { slug: 'first', title: '첫 번째 글', category: '🛠️ 빌딩', hop: 1 },
+  { slug: 'second', title: '두 번째 글', category: '✍️ 낙서', hop: 1 },
+  { slug: 'third', title: '세 번째 글', category: '📖 소설', hop: 1 },
+  { slug: 'fourth', title: '보이면 안 되는 글', category: '🐇 탐험', hop: 1 },
+  { slug: 'deep', title: '2홉 글', category: '🛠️ 빌딩', hop: 2 },
 ];
+const edge = (to, type, strength, label) => ({
+  from: 'now', to, type, strength, label,
+  sourceEvidence: `현재 글 근거 ${to}`,
+  targetEvidence: `추천 글 근거 ${to}`,
+  status: 'approved', signals: [], sourceClaimId: 'c1', source: 'test',
+});
 const relationships = [
-  { from: 'now', to: 'ore', type: 'DEEPENS', sourceEvidence: '현재 글의 근거', targetEvidence: '광물 글의 근거' },
-  { from: 'now', to: 'echo', type: 'CHALLENGES', sourceEvidence: '주장 A', targetEvidence: '반론 B' },
-  { from: 'ore', to: 'deep', type: 'APPLIES', sourceEvidence: '단서', targetEvidence: '확장' },
-  { from: 'echo', to: 'deep', type: 'REFRAMES', sourceEvidence: '울림', targetEvidence: '반향' },
-  { from: 'now', to: 'deep', type: 'RESONATES', sourceEvidence: '원문', targetEvidence: '맥락' },
+  edge('first', 'DEEPENS', .96, '첫 번째 연결 이유'),
+  edge('second', 'REFRAMES', .82, '두 번째 연결 이유'),
+  edge('third', 'APPLIES', .64, '세 번째 연결 이유'),
+  edge('fourth', 'RESONATES', .41, '네 번째 연결 이유'),
+  { ...edge('deep', 'DEEPENS', .99, '2홉 연결 이유'), from: 'first' },
 ];
-const render = () => renderToStaticMarkup(React.createElement(CaveConstellation, { subgraph: { center: nodes[0], nodes, edges: relationships } }));
+const render = () => renderToStaticMarkup(React.createElement(CaveConstellation, {
+  subgraph: { center, nodes, edges: relationships },
+}));
 
-test('source contract uses deterministic SVG rather than d3/force simulation', () => {
-  const all = Object.values(sources).join('\n');
-  assert.doesNotMatch(all, /from ['"]d3|import\(['"]d3|forceSimulation/);
-  assert.match(sources['CaveConstellationGraph.tsx'], /positionNode/);
-  assert.match(sources['CaveConstellationGraph.tsx'], /AXIS_ANGLES/);
-  assert.match(sources['CaveConstellationGraph.tsx'], /hop === 2/);
+test('renders exactly three direct recommendations in descending strength order', () => {
+  const html = render();
+  assert.equal((html.match(/class="cave-constellation__recommendation"/g) ?? []).length, 3);
+  assert.ok(html.indexOf('첫 번째 글') < html.indexOf('두 번째 글'));
+  assert.ok(html.indexOf('두 번째 글') < html.indexOf('세 번째 글'));
+  assert.doesNotMatch(html, /보이면 안 되는 글|2홉 글/);
+  assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('geometry uses the four real axes, per-axis slots, and separate hop radii', () => {
-  const graph = sources['CaveConstellationGraph.tsx'];
-  for (const category of ['🐇 탐험', '🛠️ 빌딩', '✍️ 낙서', '📖 소설']) assert.match(graph, new RegExp(category));
-  assert.match(graph, /HOP_RADII/);
-  assert.match(graph, /axisSlot/);
-  assert.match(graph, /axisCount/);
-  assert.doesNotMatch(graph, /fanOffset\s*=\s*index/);
+test('shows title, relationship meaning, reason, both quotes and navigation without interaction', () => {
   const html = render();
-  assert.match(html, /data-axis-slot="0"/);
-  assert.match(html, /data-axis-count="1"/);
-  assert.match(html, /data-hop-radius="198"/);
+  for (const value of [
+    '첫 번째 글', '더 깊어짐', '첫 번째 연결 이유',
+    '현재 글 근거 first', '추천 글 근거 first', '이어서 읽기',
+  ]) assert.match(html, new RegExp(value));
+  assert.match(html, /href="\/posts\/first"/);
+  assert.match(html, /<span>추천<\/span> 01/);
+  assert.match(html, /role="group" aria-label="추천 근거"/);
 });
 
-test('renders visible cave graph with center, broken rings, minerals, and five luminous vein patterns', () => {
+test('merges graph and list into one static recommendation view', () => {
   const html = render();
-  assert.match(html, /<svg[^>]*class="cave-constellation__svg cave-constellation__motion"/);
-  assert.match(html, /role="img"/);
-  assert.match(html, /현재 글을 중심으로 한 온톨로지 관계도/);
-  assert.match(html, /data-node-id="now"[^>]*data-x="400"[^>]*data-y="240"/);
-  assert.match(html, /cave-constellation__limestone-ring/);
-  assert.match(html, /cave-constellation__mineral/);
-  for (const type of ['DEEPENS', 'CHALLENGES', 'APPLIES', 'REFRAMES', 'RESONATES']) {
-    assert.match(html, new RegExp(`cave-constellation__vein--${type}`));
-    assert.match(html, new RegExp(`data-relationship-type="${type}"`));
+  assert.doesNotMatch(html, /<svg|관계 목록으로 보기|관계도로 보기|광물을 선택|aria-expanded/);
+  assert.doesNotMatch(source, /useState|useRouter|matchMedia|CaveConstellationGraph|CaveConstellationList|CaveConstellationEvidence/);
+  assert.match(html, /<ol class="cave-constellation__recommendations"/);
+});
+
+test('keeps all Korean relationship meanings available', () => {
+  for (const label of ['더 깊어짐', '균열을 냄', '현실이 됨', '다른 세계로 옮김', '멀리 공명함']) {
+    assert.match(source, new RegExp(label));
   }
-  for (const dash of ['none', '12 5', '3 5', '16 4 3 4', '2 3']) assert.match(html, new RegExp(`stroke-dasharray="${dash}"`));
 });
 
-test('renders focusable node controls and a shared-data accessible linear-list toggle', () => {
-  const html = render();
-  assert.match(html, /<button[^>]*class="cave-constellation__node-control/);
-  assert.match(html, /aria-label="광물 표본 선택"/);
-  assert.match(html, /aria-expanded="false"/);
-  assert.match(html, /aria-controls="cave-constellation-linear-list"/);
-  assert.match(html, /관계 목록으로 보기/);
-  assert.match(html, /id="cave-constellation-linear-list"[^>]*hidden=""/);
-  assert.match(html, /현재 글/);
-  assert.match(html, /광물 표본/);
-});
-
-test('source contract selects first, exposes evidence, and navigates only through explicit action', () => {
-  const shell = sources['CaveConstellation.tsx'];
-  const graph = sources['CaveConstellationGraph.tsx'];
-  assert.match(shell, /setSelectedNodeId/);
-  assert.match(shell, /event\.key === 'Escape'/);
-  assert.match(graph, /event\.key === 'Enter' \|\| event\.key === ' '/);
-  assert.match(shell, /router\.push\(hrefForSlug\(selectedNode\.slug\)\)/);
-  assert.doesNotMatch(graph, /router\.push|window\.location/);
-  const evidence = sources['CaveConstellationEvidence.tsx'];
-  assert.match(evidence, /sourceEvidence/);
-  assert.match(evidence, /targetEvidence/);
-  assert.match(evidence, /relationship\.label/);
-  assert.match(evidence, /관계 유형/);
-  assert.match(evidence, /글로 이동/);
-});
-
-test('selection contracts identify one edge, its endpoints, and fade only under active selection', () => {
-  const shell = sources['CaveConstellation.tsx'];
-  const graph = sources['CaveConstellationGraph.tsx'];
-  assert.match(shell, /selectedNode\.hop === 2/);
-  assert.match(shell, /otherNode\?\.hop === 1/);
-  assert.match(graph, /selectedRelationship/);
-  assert.match(graph, /is-connected/);
-  assert.match(graph, /is-unrelated/);
-  assert.match(graph, /is-selected-edge/);
-  assert.match(graph, /data-selected-edge/);
-  assert.match(graph, /data-connected/);
-});
-
-test('CARROT CAVE CSS provides wide bleed, mobile-safe graph, touch targets, fissures and motion', () => {
-  assert.match(css, /\.cave-constellation-shell\s*\{[^}]*width:min\(1180px,calc\(100vw - 40px\)\)/s);
-  assert.match(css, /\.cave-constellation__graph-view\s*\{[^}]*overflow:hidden/s);
-  assert.match(css, /\.cave-constellation__svg\s*\{[^}]*min-height:580px/s);
-  assert.match(css, /\.cave-constellation__node-control\s*\{[^}]*min-width:44px[^}]*min-height:44px/s);
-  assert.match(css, /\.cave-constellation__evidence::before/);
-  assert.match(css, /@keyframes cave-entrance/);
-  assert.match(css, /prefers-reduced-motion:reduce[^}]*cave-constellation/s);
-  assert.match(css, /\.cave-constellation[^}]*:focus-visible/s);
-});
-
-test('Korean labels and reduced-motion CSS hooks are explicit', () => {
-  const html = render();
-  for (const label of ['심화', '도전', '적용', '재구성', '공명']) assert.match(html, new RegExp(label));
-  assert.match(html, /cave-constellation--reduced-motion-ready/);
-  assert.match(html, /cave-constellation__motion/);
-  assert.match(html, /cave-constellation__vein/);
+test('responsive CSS preserves readable evidence and accessible links', () => {
+  assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(1040px,calc\(100vw - 40px\)\)/s);
+  assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
+  assert.match(css, /\.cave-constellation__navigate\{[^}]*min-height:44px/s);
+  assert.match(css, /@media\(max-width:760px\)[^{]*\{[\s\S]*\.cave-constellation__evidence-pair\{grid-template-columns:1fr/s);
+  assert.match(css, /overflow-wrap:anywhere/);
+  assert.match(css, /prefers-reduced-motion:reduce/);
+  assert.match(css, /\.cave-constellation :focus-visible/);
 });

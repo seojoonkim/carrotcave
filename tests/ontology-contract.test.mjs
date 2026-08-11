@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { posts } from '../data/posts.ts';
 import { normalizeReadableText } from '../lib/content/normalize-readable-text.ts';
-import { buildSubgraph } from '../lib/ontology/build-subgraph.ts';
+import { buildSubgraph, buildTopRecommendations } from '../lib/ontology/build-subgraph.ts';
 
 const readJson = (path) => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const annotations = readJson('../data/ontology/posts.json');
@@ -133,6 +133,20 @@ test('subgraph slices are deterministic, bounded, and contain no unapproved or d
     assertSlice(buildSubgraph(post.slug, index, { viewport: 'desktop' }), 8, 12);
   }
   assert.equal(buildSubgraph('not-a-post', index, { viewport: 'mobile' }), null);
+});
+
+test('top recommendations are the exact three strongest approved direct edges', () => {
+  for (const post of posts) {
+    const recommendations = buildTopRecommendations(post.slug, index);
+    assert.ok(recommendations);
+    const expected = (index.outgoing[post.slug] ?? []).map((edgeIndex) => index.edges[edgeIndex])
+      .filter((edge) => edge?.status === 'approved')
+      .sort((a, b) => b.strength - a.strength || a.type.localeCompare(b.type) || a.to.localeCompare(b.to))
+      .slice(0, 3);
+    assert.deepEqual(recommendations.edges.map((edge) => edge.to), expected.map((edge) => edge.to), post.slug);
+    assert.equal(recommendations.edges.length, 3, post.slug);
+    assert.ok(recommendations.edges.every((edge) => edge.from === post.slug), post.slug);
+  }
 });
 
 test('generated index is byte-consistent and ontology audit passes closed', () => {

@@ -8,7 +8,7 @@ import TweetEmbed from '@/components/TweetEmbed';
 import SiteHeader from '@/components/SiteHeader';
 import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import ontologyIndex from '@/data/ontology/index.json';
-import { buildSubgraph } from '@/lib/ontology/build-subgraph';
+import { buildTopRecommendations } from '@/lib/ontology/build-subgraph';
 import type { OntologyIndex } from '@/lib/ontology/types';
 
 export async function generateStaticParams() {
@@ -162,8 +162,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (!post) notFound();
 
-  const constellation = buildSubgraph(slug, ontologyIndex as OntologyIndex, { viewport: 'mobile' });
-  const desktopConstellation = buildSubgraph(slug, ontologyIndex as OntologyIndex, { viewport: 'desktop' });
+  const constellation = buildTopRecommendations(slug, ontologyIndex as OntologyIndex);
 
   return (
     <div className="post-reader-page min-h-screen">
@@ -302,9 +301,9 @@ export default async function PostPage({ params }: PostPageProps) {
         {constellation && (
           <div className="cave-constellation-shell">
             <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
-            <h2 className="cave-constellation-heading">이 글이 닿아 있는 동굴</h2>
-            <p className="cave-constellation-intro">광물을 눌러 두 생각 사이의 광맥과 원문 근거를 읽어보세요.</p>
-            <CaveConstellation subgraph={constellation} desktopSubgraph={desktopConstellation ?? undefined} />
+            <h2 className="cave-constellation-heading">이 글 다음에 읽을 세 편</h2>
+            <p className="cave-constellation-intro">가장 강하게 이어지는 글부터, 연결 이유와 양쪽 원문을 함께 보여드립니다.</p>
+            <CaveConstellation subgraph={constellation} />
           </div>
         )}
 

@@ -33,3 +33,20 @@ export function buildSubgraph(slug: string, index: OntologyIndex, options: {view
   const nodes:SubgraphNode[]=[center,...firstEdges.map((edge)=>({...index.nodes[edge.to],hop:1 as const})),...secondEdges.map((edge)=>({...index.nodes[edge.to],hop:2 as const,via:edge.from}))];
   return {center,nodes,edges:[...firstEdges,...secondEdges]};
 }
+
+/** Direct, approved recommendations ranked only by editorial recommendation strength. */
+export function buildTopRecommendations(slug: string, index: OntologyIndex, limit = 3): OntologySubgraph | null {
+  const centerNode = index.nodes[slug];
+  if (!centerNode || centerNode.reviewStatus !== 'approved') return null;
+  const blocked = new Set(index.overrides?.block ?? []);
+  const deprecated = new Set(index.overrides?.deprecate ?? []);
+  const edges = (index.outgoing[slug] ?? [])
+    .map((edgeIndex) => index.edges[edgeIndex])
+    .filter((edge): edge is OntologyEdge => Boolean(edge))
+    .filter((edge) => edge.status === 'approved' && !blocked.has(edgeKey(edge)) && !deprecated.has(edgeKey(edge)) && index.nodes[edge.to]?.reviewStatus === 'approved')
+    .sort((a, b) => b.strength - a.strength || a.type.localeCompare(b.type) || a.to.localeCompare(b.to))
+    .slice(0, limit);
+  const center: SubgraphNode = { ...centerNode, hop: 0 };
+  const nodes: SubgraphNode[] = [center, ...edges.map((edge) => ({ ...index.nodes[edge.to], hop: 1 as const }))];
+  return { center, nodes, edges };
+}
