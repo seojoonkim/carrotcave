@@ -170,28 +170,21 @@ test('all three voice archives preserve their complete reader contracts', () => 
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
 });
 
-test('Liao Heng reader exposes literal transcript search and stable paragraph sharing', () => {
-  assert.match(liaoReaderSource, /transcript-search\.js/);
-  assert.match(liaoReaderSource, /<form class="transcript-search" id="transcriptSearch" role="search">/);
-  assert.match(liaoReaderSource, /<label for="transcriptSearchInput">전체 전사 검색<\/label>/);
-  assert.match(liaoReaderSource, /id="transcriptSearchStatus" role="status" aria-live="polite" aria-atomic="true"/);
-  assert.match(liaoReaderScript, /searchApi\.buildIndex\(\[\.\.\.paragraphRecords\.values\(\)\]\.map\(record => record\.data\)\)/);
-  assert.match(liaoReaderScript, /searchApi\.findMatches\(searchIndex, searchInput\.value\)/);
-  assert.match(liaoReaderScript, /compositionstart/);
-  assert.match(liaoReaderScript, /compositionend/);
-  assert.match(liaoReaderScript, /event\.isComposing/);
+test('Liao Heng reader keeps stable timestamp anchors without transcript search or per-paragraph action clutter', () => {
+  assert.doesNotMatch(liaoReaderSource, /transcript-search\.js/);
+  assert.doesNotMatch(liaoReaderSource, /id="transcriptSearch"|전체 전사 검색|readerActionStatus/);
+  assert.doesNotMatch(liaoReaderScript, /TranscriptSearch|transcriptSearch|search(?:Status|Input|Form|Api|Index|Results|Timer)|paragraph-source|paragraph-copy-link|data-copy-paragraph|copyText/);
+  assert.doesNotMatch(liaoReaderStyles, /\.transcript-search|\.search-input-row|\.search-navigation|\.search-hit|\.paragraph-source|\.paragraph-copy-link/);
   assert.match(liaoReaderScript, /paragraph\.id = `p-\$\{paragraphData\.id\}`/);
-  assert.match(liaoReaderScript, /navigator\.clipboard\?\.writeText/);
-  assert.match(liaoReaderScript, /document\.execCommand\('copy'\)/);
-  assert.match(liaoReaderScript, /document\.querySelector\('link\[rel="canonical"\]'\)/);
-  assert.match(liaoReaderScript, /source\.href = `\$\{VIDEO_URL\}\?t=\$\{Math\.floor\(paragraph\.start\)\}`/);
+  assert.match(liaoReaderScript, /permalink\.href = `#p-\$\{paragraph\.id\}`/);
+  assert.match(liaoReaderScript, /actions\.append\(permalink\)/);
+  assert.match(liaoReaderScript, /span\.id = `segment-\$\{segment\.id\}`/);
   assert.match(liaoReaderScript, /return \(header \? header\.getBoundingClientRect\(\)\.height : 64\) \+ 8;/);
   assert.match(liaoReaderStyles, /scroll-margin-top:calc\(var\(--header\) \+ 8px\)/);
   assert.match(liaoReaderStyles, /\.transcript-paragraph:target,\.transcript-paragraph\.hash-target \{ outline:1px solid var\(--amber\); outline-offset:3px; \}/);
   assert.match(liaoReaderStyles, /\.transcript-highlights a \{ min-height: 44px/);
-  assert.match(liaoReaderStyles, /\.paragraph-actions a,\.paragraph-actions button \{ min-height:44px/);
+  assert.match(liaoReaderStyles, /\.paragraph-permalink \{ min-height:44px/);
   assert.match(liaoReaderStyles, /\.highlight-time \{ display: inline-flex; min-height: 44px/);
-  assert.match(liaoReaderStyles, /\.search-input-row input \{ min-width:0; width:100%; min-height:48px/);
   assert.match(liaoReaderStyles, /\.hero-actions \{ display:grid; grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.match(liaoReaderStyles, /@media \(max-width:599px\)[\s\S]*?\.hero-actions \{ grid-template-columns:minmax\(0,1fr\); \}/);
 });
