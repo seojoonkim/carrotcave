@@ -11,6 +11,7 @@ const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import
 const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const editorialCardSource = readFileSync(new URL('../components/EditorialCard.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+const layoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
 const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.meta.url), 'utf8');
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
@@ -31,6 +32,15 @@ test('all voice reader headers match the shared menu header surface', () => {
     assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/);
     assert.doesNotMatch(readerStyles, /\.site-header \{[^}]*background: rgba\(47,50,57,\.94\)/);
   }
+});
+
+test('iOS webviews extend the graphite header through the top safe area', () => {
+  assert.match(layoutSource, /viewportFit: 'cover'/);
+  assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
+  assert.match(stylesSource, /--cc-header-height:calc\(78px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
+  assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
