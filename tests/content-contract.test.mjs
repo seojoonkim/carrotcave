@@ -271,6 +271,17 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
 });
 
+test('post details hide granular Telegram reaction emoji counts without removing the channel link', () => {
+  assert.doesNotMatch(postSource, /\{post\.reactions\}/);
+  assert.match(postSource, />텔레그램 반응<\/span>/);
+  assert.match(postSource, /채널에서 보기 →/);
+  assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
+  assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
+  assert.match(syncSource, /content: stripTrailingReactionSignature\(content \|\| fullText\)/);
+  assert.match(syncSource, /escapeBacktick\(stripTrailingReactionSignature\(msg\.content/);
+  assert.match(syncSource, /escapeBacktick\(stripTrailingReactionSignature\(newText\)\)/);
+});
+
 test('post media stays inside the article viewport on mobile', () => {
   assert.match(postSource, /className="post-media-grid"/);
   assert.match(stylesSource, /\.post-media-grid\{[^}]*width:100%[^}]*min-width:0[^}]*grid-template-columns:/);

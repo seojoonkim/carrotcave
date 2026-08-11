@@ -14,6 +14,10 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
+function stripTrailingReactionSignature(content: string) {
+  return content.replace(/(?:^|\n)\s*(?:\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*\s*\d+\s*)+\s*$/u, '').trimEnd();
+}
+
 function renderContent(content: string, relatedPosts: Post[]) {
   const lines = content.split('\n');
 
@@ -182,12 +186,6 @@ export default async function PostPage({ params }: PostPageProps) {
               day: 'numeric',
             })}
           </span>
-          <span
-            className="text-sm ml-auto flex items-center"
-            style={{ gap: '0.25rem' }}
-          >
-            ❤️ {post.reactions}
-          </span>
         </div>
         </header>
 
@@ -246,7 +244,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Content */}
         <div className="post-content">
-          {renderContent(post.content, related)}
+          {renderContent(stripTrailingReactionSignature(post.content), related)}
         </div>
 
         {/* videos rendered at top — see above */}
@@ -283,9 +281,6 @@ export default async function PostPage({ params }: PostPageProps) {
           style={{ marginTop: '1.5rem', gap: '0.75rem', color: 'rgba(240,228,204,0.3)' }}
         >
           <span>텔레그램 반응</span>
-          <span className="flex items-center" style={{ gap: '0.25rem', color: '#C08888' }}>
-            ❤️ <strong style={{ color: 'rgba(240,228,204,0.55)' }}>{post.reactions}</strong>
-          </span>
           <a
             href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
             target="_blank"

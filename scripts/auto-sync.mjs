@@ -66,6 +66,10 @@ function escapeBacktick(s) {
   return s.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$\{/g, '\\${');
 }
 
+function stripTrailingReactionSignature(content) {
+  return content.replace(/(?:^|\n)\s*(?:\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*\s*\d+\s*)+\s*$/u, '').trimEnd();
+}
+
 function slugify(text) {
   return text
     .toLowerCase()
@@ -223,7 +227,7 @@ function parseMessages(html) {
       id: msgNum,
       postId,
       title,
-      content: content || fullText,
+      content: stripTrailingReactionSignature(content || fullText),
       fullText,
       date,
       reactions: totalReactions,
@@ -529,7 +533,7 @@ function loadExistingPosts() {
 function buildPostObject(msg, metadata, localImageUrls, localVideoUrls) {
   const { slug, title, category, depth, summary, tags } = metadata;
   const date = msg.date || new Date().toISOString().split('T')[0];
-  const content = escapeBacktick(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim());
+  const content = escapeBacktick(stripTrailingReactionSignature(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim()));
   const reactions = msg.reactions || 0;
   
   const mediaLine = localImageUrls.length > 0
@@ -587,7 +591,7 @@ function updateContent(src, slug, newText) {
     `(id:\\s*'${escapedSlug}'[\\s\\S]*?content:\\s*\`)[\\s\\S]*?(\`\\s*,)`,
     'm'
   );
-  const escaped = escapeBacktick(newText);
+  const escaped = escapeBacktick(stripTrailingReactionSignature(newText));
   return src.replace(contentRegex, `$1${escaped}$2`);
 }
 
