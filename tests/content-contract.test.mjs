@@ -43,12 +43,24 @@ test('Telegram sync can write locally without committing or pushing', () => {
   assert.match(syncSource, /if \(DRY_RUN \|\| NO_GIT\)/);
 });
 
-test('post slugs and Telegram message IDs are unique', () => {
-  const slugs = [...postsSource.matchAll(/^\s+id:\s*'([^']+)'/gm)].map((match) => match[1]);
-  const messageIds = [...postsSource.matchAll(/telegramMsgId:\s*(\d+)/g)].map((match) => Number(match[1]));
+test('post slugs, Telegram message IDs, and full article bodies are unique', async () => {
+  const { posts } = await import('../data/posts.ts');
+  const messageIds = posts.map((post) => post.telegramMsgId).filter(Boolean);
 
-  assert.equal(new Set(slugs).size, slugs.length);
+  assert.equal(new Set(posts.map((post) => post.slug)).size, posts.length);
   assert.equal(new Set(messageIds).size, messageIds.length);
+  assert.equal(new Set(posts.map((post) => post.content.trim())).size, posts.length);
+});
+
+test('post corrections and newest-first ordering stay explicit', async () => {
+  const { posts } = await import('../data/posts.ts');
+  const melgeek = posts.find((post) => post.slug === 'melgeek-evangelion-centauri-keyboard-review');
+  const promptGuard = posts.find((post) => post.slug === 'prompt-guard-dev');
+
+  assert.equal(melgeek?.category, '✍️ 낙서');
+  assert.deepEqual(promptGuard?.mediaUrls, undefined);
+  assert.equal(posts.filter((post) => post.title === 'Hashed Vibe Labs Fellows 소개').length, 1);
+  assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
 });
 
 test('home and voice list share one editorial-axis navigation component', () => {

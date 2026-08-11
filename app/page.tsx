@@ -23,7 +23,8 @@ function WallCard({ post, index }: { post: Post; index: number }) {
 export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string }> }) {
   const { section } = await searchParams;
   const active = editorialAxes.includes(section as typeof editorialAxes[number]) ? section as typeof editorialAxes[number] : undefined;
-  const visiblePosts = active ? posts.filter((post) => axisOf(post) === active) : posts;
+  const visiblePosts = (active ? posts.filter((post) => axisOf(post) === active) : [...posts])
+    .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? Number(b.id)) || 0) - ((a.telegramMsgId ?? Number(a.id)) || 0));
 
   return (
     <main>
