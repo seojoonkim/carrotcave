@@ -16,6 +16,7 @@ const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', 
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
+const liangReaderStyles = readFileSync(new URL('../public/voices/liang-wenfeng/styles.css', import.meta.url), 'utf8');
 const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
 const liangKeySentences = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/key-sentences.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
@@ -213,21 +214,31 @@ test('Yang Zhilin transcript uses sentence-aware paragraphs instead of fixed seg
   assert.match(yangReaderScript, /if \(part\.silence\) paragraph\.classList\.add\('transcript-silence'\)/);
 });
 
-test('Yang Zhilin transcript removes the duplicated program greeting but preserves the real introduction', () => {
-  const removedIds = new Set([17, 18, 19]);
+test('Yang Zhilin transcript starts at the real introduction after removing the preview and duplicated greeting', () => {
+  const removedIds = new Set(Array.from({ length: 20 }, (_, id) => id));
   assert.ok(yangTranscript.segments.every((segment) => !removedIds.has(segment.id)));
-  assert.ok(!yangTranscript.segments.some((segment) => segment.start >= 53 && segment.end <= 57 && [
-    '안녕하세요, 여러분',
-    '장샤오쥔(张小珺)의 《전통》을 들어주셔서 감사합니다',
-    '장샤오쥔(张小珺)의 비즈니스 인터뷰를 들어주셔서 감사합니다',
-  ].includes(segment.text)));
+  assert.ok(yangTranscript.segments.every((segment) => segment.start >= 57));
+  assert.equal(yangTranscript.segments[0].id, 20);
+  assert.equal(yangTranscript.segments[0].start, 57);
+  assert.equal(yangTranscript.segments[0].text, '저는 샤오쥔입니다');
   const text = yangTranscript.segments.map((segment) => segment.text).join('\n');
-  assert.match(text, /저는 샤오쥔입니다/);
+  assert.doesNotMatch(text, /보고 싶지 않은 건가요\?/);
+  assert.doesNotMatch(text, /장샤오쥔\(张小珺\)의 《전통》을 들어주셔서 감사합니다/);
+  assert.doesNotMatch(text, /장샤오쥔\(张小珺\)의 비즈니스 인터뷰를 들어주셔서 감사합니다/);
   assert.match(text, /이 프로그램은 ‘언어 및 세계 스튜디오’가 제작한 심층 인터뷰 프로그램입니다/);
   assert.match(text, /오늘의 게스트는 Moonshot AI\(문샷 AI\)의 창립자 겸 CEO 양즈린\(杨植麟\)입니다/);
   assert.ok(yangTranscript.segments.some((segment) => segment.start > 70 && segment.text === '안녕하세요, 여러분'));
-  assert.equal(yangTranscript.segments.length, 2528);
-  assert.equal(new Set(yangTranscript.segments.map((segment) => segment.id)).size, 2528);
+  assert.equal(yangTranscript.segments.length, 2511);
+  assert.equal(new Set(yangTranscript.segments.map((segment) => segment.id)).size, 2511);
+});
+
+test('Liang Wenfeng header exposes the same live chapter contract as the other voice readers', () => {
+  assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
+  assert.match(liangReaderSource, /id="readingStatus">OVERVIEW<\/span>/);
+  assert.match(liangReaderSource, /current\?\.querySelector\('h2'\)\?\.textContent\|\|'OVERVIEW'/);
+  assert.match(liangReaderSource, /number\.textContent=n\?`CH \$\{String\(n\)\.padStart\(2,'0'\)\}`:'00'/);
+  assert.match(liangReaderStyles, /\.header-status #readingStatus \{[^}]*text-overflow:ellipsis/);
+  assert.doesNotMatch(liangReaderStyles, /#readingStatus\s*\{[^}]*display\s*:\s*none/);
 });
 
 test('post media stays inside the article viewport on mobile', () => {
