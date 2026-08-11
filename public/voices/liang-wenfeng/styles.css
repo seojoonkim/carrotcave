@@ -73,8 +73,13 @@ h1 em { color:var(--cyan); font-style:normal; } h1 span { color:var(--foreground
 .topic p { margin:10px 0 0; color:var(--foreground); font:400 16.5px/1.78 var(--font-sans); letter-spacing:-.01em; }
 .long-record { scroll-margin-top:calc(var(--header) + 18px); }
 .long-record-body { margin-top:24px; }
-.long-record-body p { margin:0 0 24px; line-height:1.92; }
-.source-caveats { margin:30px 0 0 48px; padding:0 16px; border-left:2px solid var(--amber); background:color-mix(in srgb,var(--amber) 5%,transparent); }
+.long-record-body .utterance { display:grid; grid-template-columns:max-content minmax(0,1fr); align-items:start; column-gap:10px; margin:0 0 24px; line-height:1.92; }
+.utterance-tag { padding-top:4px; color:var(--muted); font:700 10px/1.4 var(--font-mono); letter-spacing:.02em; white-space:nowrap; }
+.utterance[data-tag="질문"] .utterance-tag { color:var(--cyan); }
+.utterance[data-tag="답변"] .utterance-tag { color:var(--amber); }
+.utterance[data-tag="진행"] .utterance-tag,.utterance[data-tag="불명"] .utterance-tag { color:var(--ansi-yellow); }
+.utterance-text { min-width:0; }
+.source-caveats { margin:30px 0 0 52px; padding:0 16px; border-left:2px solid var(--amber); background:color-mix(in srgb,var(--amber) 5%,transparent); }
 .source-caveats summary { min-height:48px; display:flex; align-items:center; gap:8px; color:var(--amber); cursor:pointer; font:600 13px/1.5 var(--font-sans); }
 .source-caveats summary::before { content:'▸'; color:var(--cyan); transition:transform .18s ease; }
 .source-caveats[open] summary::before { transform:rotate(90deg); }
@@ -153,6 +158,7 @@ body.drawer-open{overflow:hidden}
   .chapter-summary { padding:17px 0 20px; }
   .chapter-summary p { font-size:15.5px; line-height:1.75; }
   .transcript-paragraph { padding-bottom:22px; font-size: 16.5px; line-height: 1.9; }
+  .long-record-body .utterance { font-size:16.5px; line-height:1.9; }
   .segment-timestamp.paragraph-timestamp { font-size: 12px; }
   .highlight-marker { margin-top: 44px; padding: 16px 0 13px; }
   .highlight-marker h3 { font-size: 24px; }
