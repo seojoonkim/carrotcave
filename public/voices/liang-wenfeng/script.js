@@ -45,16 +45,6 @@
       anchor.dataset.end = String(segment.end);
       paragraph.append(anchor);
     });
-    if (type === 'segments') {
-      const timestamp = document.createElement('a');
-      timestamp.className = 'segment-timestamp paragraph-timestamp';
-      timestamp.href = sourceAt(start);
-      timestamp.target = '_blank';
-      timestamp.rel = 'noopener noreferrer';
-      timestamp.textContent = formatTime(start);
-      timestamp.setAttribute('aria-label', `${formatTime(start)} 원본 영상에서 보기`);
-      paragraph.append(timestamp);
-    }
     const copy = document.createElement('span');
     copy.className = 'paragraph-text';
     copy.textContent = text;

@@ -197,18 +197,6 @@
   });
   window.addEventListener('popstate', () => moveToHash(location.hash, { smooth: false }));
 
-  const makeParagraphActions = paragraph => {
-    const actions = document.createElement('span');
-    actions.className = 'paragraph-actions';
-    const permalink = document.createElement('a');
-    permalink.className = 'paragraph-permalink';
-    permalink.href = `#p-${paragraph.id}`;
-    permalink.textContent = formatTime(paragraph.start);
-    permalink.setAttribute('aria-label', `${formatTime(paragraph.start)} 문단으로 이동`);
-    actions.append(permalink);
-    return actions;
-  };
-
   const makeSegmentAnchor = segment => {
     const span = document.createElement('span');
     span.className = 'segment-anchor';
@@ -292,7 +280,6 @@
         paragraph.classList.add('highlighted');
         paragraph.dataset.highlight = String(activeHighlight.id);
       }
-      paragraph.append(makeParagraphActions(paragraphData));
       for (let id = paragraphData.segmentStartId; id <= paragraphData.segmentEndId; id += 1) {
         const segment = segmentsById.get(Number(id));
         if (!segment) throw new Error(`Missing segment ${id}`);

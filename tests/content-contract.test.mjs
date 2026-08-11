@@ -23,6 +23,7 @@ const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles
 const liaoReaderScript = readFileSync(new URL('../public/voices/liao-heng/script.js', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
 const liangReaderStyles = readFileSync(new URL('../public/voices/liang-wenfeng/styles.css', import.meta.url), 'utf8');
+const liangReaderScript = readFileSync(new URL('../public/voices/liang-wenfeng/script.js', import.meta.url), 'utf8');
 const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
 const liangKeySentences = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/key-sentences.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
@@ -170,20 +171,35 @@ test('all three voice archives preserve their complete reader contracts', () => 
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
 });
 
+test('all voice readers show timestamps only at chapter and editorial subchapter boundaries', () => {
+  for (const script of [liaoReaderScript, liangReaderScript, yangReaderScript]) {
+    assert.doesNotMatch(script, /paragraph-permalink|paragraph-timestamp/);
+  }
+  for (const styles of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
+    assert.doesNotMatch(styles, /\.paragraph-permalink|\.paragraph-timestamp/);
+    assert.match(styles, /\.chapter-time/);
+  }
+  assert.equal((liaoReaderSource.match(/class="chapter-time"/g) || []).length, 7);
+  assert.equal((liangReaderSource.match(/class="chapter-time"/g) || []).length, 5);
+  assert.equal((yangReaderSource.match(/class="chapter-time"/g) || []).length, 6);
+  assert.match(liaoReaderScript, /time\.className = 'highlight-time'/);
+  assert.equal((liangReaderSource.match(/id="time-\d{2}-\d{2}-\d{2}"/g) || []).length, 19);
+  assert.match(liaoReaderScript, /span\.id = `segment-\$\{segment\.id\}`/);
+  assert.match(liangReaderScript, /anchor\.id = `segment-\$\{segment\.id\}`/);
+  assert.match(yangReaderScript, /anchor\.id = `segment-\$\{segment\.id\}`/);
+});
+
 test('Liao Heng reader keeps stable timestamp anchors without transcript search or per-paragraph action clutter', () => {
   assert.doesNotMatch(liaoReaderSource, /transcript-search\.js/);
   assert.doesNotMatch(liaoReaderSource, /id="transcriptSearch"|전체 전사 검색|readerActionStatus/);
   assert.doesNotMatch(liaoReaderScript, /TranscriptSearch|transcriptSearch|search(?:Status|Input|Form|Api|Index|Results|Timer)|paragraph-source|paragraph-copy-link|data-copy-paragraph|copyText/);
   assert.doesNotMatch(liaoReaderStyles, /\.transcript-search|\.search-input-row|\.search-navigation|\.search-hit|\.paragraph-source|\.paragraph-copy-link/);
   assert.match(liaoReaderScript, /paragraph\.id = `p-\$\{paragraphData\.id\}`/);
-  assert.match(liaoReaderScript, /permalink\.href = `#p-\$\{paragraph\.id\}`/);
-  assert.match(liaoReaderScript, /actions\.append\(permalink\)/);
   assert.match(liaoReaderScript, /span\.id = `segment-\$\{segment\.id\}`/);
   assert.match(liaoReaderScript, /return \(header \? header\.getBoundingClientRect\(\)\.height : 64\) \+ 8;/);
   assert.match(liaoReaderStyles, /scroll-margin-top:calc\(var\(--header\) \+ 8px\)/);
   assert.match(liaoReaderStyles, /\.transcript-paragraph:target,\.transcript-paragraph\.hash-target \{ outline:1px solid var\(--amber\); outline-offset:3px; \}/);
   assert.match(liaoReaderStyles, /\.transcript-highlights a \{ min-height: 44px/);
-  assert.match(liaoReaderStyles, /\.paragraph-permalink \{ min-height:44px/);
   assert.match(liaoReaderStyles, /\.highlight-time \{ display: inline-flex; min-height: 44px/);
   assert.match(liaoReaderStyles, /\.hero-actions \{ display:grid; grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.match(liaoReaderStyles, /@media \(max-width:599px\)[\s\S]*?\.hero-actions \{ grid-template-columns:minmax\(0,1fr\); \}/);

@@ -108,9 +108,6 @@ body.drawer-open{overflow:hidden}
 .segment-anchor { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; scroll-margin-top: calc(var(--header) + 18px); }
 .paragraph-text { display: block; min-width:0; width:100%; }
 .key-sentence { color: var(--ansi-yellow); background: none; padding: 0; font: inherit; }
-.segment-timestamp { display: inline-block; }
-.segment-timestamp.paragraph-timestamp { position: static; justify-self:start; width:max-content; margin:0 0 8px; overflow: visible; opacity: 1; pointer-events: auto; color: var(--ansi-bright-cyan); text-decoration: none; font: 500 11px/1.3 "IBM Plex Mono", monospace; letter-spacing: .01em; }
-.transcript-paragraph.highlighted .segment-timestamp.paragraph-timestamp { color: var(--ansi-yellow); }
 
 .highlight-marker { position: relative; margin: 54px 0 28px; padding: 18px 0 16px; scroll-margin-top: calc(var(--header) + 18px); border: 0; border-top: 1px solid color-mix(in srgb,var(--amber) 35%,transparent); background: transparent; box-shadow: none; }
 .highlight-marker:target { border-top-color: var(--amber); }
@@ -122,7 +119,6 @@ body.drawer-open{overflow:hidden}
 
 /* Existing 10/10.5/11px visible utility type is raised by one pixel. */
 .brand,.header-status,.kicker,.eyebrow,.hero-byline,.hero-stats dt,.source-button small,.scroll-cue,.chapter-index,.transcript-highlights::before,.transcript-highlights a span,.highlight-time,footer,.footer-byline,.back-to-top span { font-size:11px; }
-.menu-button,.segment-timestamp.paragraph-timestamp,.highlight-index { font-size:12px; }
 .chapter-index { font-size:14px; }
 
 @media (max-width:999px) {
@@ -145,7 +141,6 @@ body.drawer-open{overflow:hidden}
   .chapter-summary p { font-size:15.5px; line-height:1.75; }
   .transcript-paragraph { padding-bottom:22px; font-size: 16.5px; line-height: 1.9; }
   .long-record-body .utterance { font-size:16.5px; line-height:1.9; }
-  .segment-timestamp.paragraph-timestamp { font-size: 12px; }
   .highlight-marker { margin-top: 44px; padding: 16px 0 13px; }
   .highlight-marker h3 { font-size: 24px; }
 
