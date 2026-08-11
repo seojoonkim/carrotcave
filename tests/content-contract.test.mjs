@@ -279,7 +279,9 @@ test('post details share a clean action pair without Telegram reaction labels or
   assert.match(postSource, /텔레그램 채널에서 보기/);
   assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
   assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
-  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:46px/);
+  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#3a3d45/);
+  assert.match(stylesSource, /\.post-reader-action--telegram\{[^}]*background:#167f78/);
+  assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\);gap:8px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
   assert.match(syncSource, /content: stripTrailingReactionSignature\(content \|\| fullText\)/);
