@@ -244,10 +244,14 @@ test('Yang Zhilin transcript starts at the real introduction after removing the 
 
 test('Liang Wenfeng header exposes the same live chapter contract as the other voice readers', () => {
   assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
+  assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: Overview<\/span>/);
   assert.match(liangReaderSource, /id="readingStatus">OVERVIEW<\/span>/);
+  assert.match(liangReaderSource, /mobileTitle=document\.querySelector\('\.header-mobile-title'\)/);
   assert.match(liangReaderSource, /current\?\.querySelector\('h2'\)\?\.textContent\|\|'OVERVIEW'/);
   assert.match(liangReaderSource, /number\.textContent=n\?`CH \$\{String\(n\)\.padStart\(2,'0'\)\}`:'00'/);
+  assert.match(liangReaderSource, /mobileTitle\.textContent=n\?`\$\{name\}: Chapter \$\{String\(n\)\.padStart\(2,'0'\)\}`:`\$\{name\}: Overview`/);
   assert.match(liangReaderStyles, /\.header-status #readingStatus \{[^}]*text-overflow:ellipsis/);
+  assert.match(liangReaderStyles, /@media \(max-width:999px\) \{[\s\S]*?#currentChapterNumber, \.header-site-title \{ display:none; \}[\s\S]*?\.header-mobile-title \{ display:block;/);
   assert.doesNotMatch(liangReaderStyles, /#readingStatus\s*\{[^}]*display\s*:\s*none/);
 });
 
