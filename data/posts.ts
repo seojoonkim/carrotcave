@@ -24,7 +24,7 @@ export const posts: Post[] = [
     slug: 'post-191',
     telegramMsgId: 191,
     title: '우리는 같은 미래를 업데이트받지 않을 것이다',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "나는 텔레그램 창을 열어 에이전트에게 개발을 시킨다. 어차피 코드는 보지 않게 된지 오래됐고, 사무실이나 집 밖 어디서나 가장 간편하고 반응속도...",
     content: `나는 텔레그램 창을 열어 에이전트에게 개발을 시킨다. 어차피 코드는 보지 않게 된지 오래됐고, 사무실이나 집 밖 어디서나 가장 간편하고 반응속도 높게 개발할때 아직 이보다 효율적인 셋업은 찾지 못했다.
@@ -178,7 +178,7 @@ AI와 함께 변화는 조용해지면서 빨라진다. 지금까지 작은 나�
     slug: 'post-187',
     telegramMsgId: 187,
     title: '제일 똑똑한 모델 하나로는 부족했다',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: "나는 큰 개발 작업을 Codex에 곧바로 맡기곤 했다. 요구사항을 주면 여러 파일을 빠르게 고쳤고, 실행과 검사까지 마친 뒤 결과를 설명했다....",
     content: `나는 큰 개발 작업을 Codex에 곧바로 맡기곤 했다. 요구사항을 주면 여러 파일을 빠르게 고쳤고, 실행과 검사까지 마친 뒤 결과를 설명했다. 그런데 가장 곤란한 실패는 코드가 틀린 경우가 아니었다. 기능은 제대로 작동했지만, 내가 원한 제품이 아니었다.
@@ -389,7 +389,7 @@ AI는 실행을 도와주지만 먼저 욕망하거나 방향을 정하지는 �
     slug: 'post-161',
     telegramMsgId: 161,
     title: 'OBA WEEKENDTHON 참가자 모집',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'mid',
     summary: "바이브코딩으로 이것저것 만들다 보면 한 번쯤 이런 생각 하게 됩니다.\n“아니, API 하나 쓰려고 하는데 왜 이렇게 닫혀 있고, 왜 이렇게 제한...",
     content: `바이브코딩으로 이것저것 만들다 보면 한 번쯤 이런 생각 하게 됩니다.
@@ -715,7 +715,7 @@ AI는 그 시험을 순식간에 만점으로 푼다. 고장 난 분류 기계 �
     slug: 'post-150',
     telegramMsgId: 150,
     title: '다시 잔디를 심는 손',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'mid',
     summary: "열 해 넘게 코드에서 손을 뗐다. 그동안 나는 만드는 자리에 있지 않았다. 남이 만든 것을 읽고, 될지 안 될지 정하는 자리에 있었다. 그 사이...",
     content: `열 해 넘게 코드에서 손을 뗐다. 그동안 나는 만드는 자리에 있지 않았다. 남이 만든 것을 읽고, 될지 안 될지 정하는 자리에 있었다. 그 사이 세상은 여러 번 바뀌었다.
@@ -1522,7 +1522,7 @@ Peter Thiel이 대학을 버블이라고 불렀던 것도 같은 문제의식이
     slug: 'post-111',
     telegramMsgId: 111,
     title: '다가오는 30개의 균열',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: '오늘 하루 바이브 코딩 중간중간 대기 시간을 모아 메모했다. 에이전트 시대가 오면 세상이 어떻게 바뀔지, 평소 스쳐지나가던 생각들을 순서나 중요...',
     content: `다가오는 30개의 균열
@@ -2022,7 +2022,7 @@ astin@hashed.com
     slug: 'korean-tech-ecosystem-api-access-issues',
     telegramMsgId: 93,
     title: '그들은 닫힌 문 앞에서 기다려주지 않는다',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: '한국 테크 생태계의 구조적 폐쇄성과 API 접근 문제를 분석한다.',
     content: `그들은 닫힌 문 앞에서 기다려주지 않는다
@@ -2604,7 +2604,7 @@ vibelabs.hashed.com`,
     slug: 'sano-godaddy-war',
     telegramMsgId: 74,
     title: '두 마디와 서른다섯 개의 행동: 사노의 GoDaddy 전쟁일지',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'mid',
     summary: 'VibeDojo 도메인을 이전하는 단순한 작업에서 시작된 사노의 GoDaddy 전쟁. 두 마디 지시로 서른다섯 번의 행동이 펼쳐졌다.',
     content: `두 마디와 서른다섯 개의 행동: 사노의 GoDaddy 전쟁일지
@@ -3382,7 +3382,7 @@ IT업계에 있으면 매우 좋은 것과 매우 힘든 것이 있다. 그 이�
     slug: 'click-theology',
     telegramMsgId: 26,
     title: '딸깍의 신학',
-    category: '🐇 탐험',
+    category: '🛠️ 빌딩',
     depth: 'deep',
     summary: '처음 딸깍은 질문이었다. 세 번째는 동의였다. 열 번째쯤에는 계약이 되어 있었다. 그렇게 나는 더 이상 선택을 하지 않는다. 승인할 뿐이다.',
     content: `나는 주로 밤에 코딩을 한다. 퇴근하고 집에 돌아와 노트북을 펼치면 세상이 고요해진다. 머릿속에 맴돌던 새로운 아이디어가 있었다. iTerm2의 검은 화면이 켜지고, 익숙하게 claude를 타이핑했다. 커서가 깜빡인다. 심연의 눈이 떠지는 것처럼.

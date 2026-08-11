@@ -63,6 +63,8 @@ test('post corrections and newest-first ordering stay explicit', async () => {
   const vibeLabs = posts.filter((post) => post.title === 'vibelabs.hashed.com을 만든 이야기');
   assert.deepEqual(vibeLabs.map((post) => [post.slug, post.telegramMsgId]), [['vibe-labs-landing-page-creation', 8]]);
   assert.doesNotMatch(postsSource, /slug:\s*'vibelabs-landing'/);
+  const directlyBuiltSlugs = ['post-191', 'post-187', 'post-161', 'post-150', 'post-111', 'korean-tech-ecosystem-api-access-issues', 'sano-godaddy-war', 'click-theology'];
+  for (const slug of directlyBuiltSlugs) assert.equal(posts.find((post) => post.slug === slug)?.category, '🛠️ 빌딩');
   assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
 });
 
