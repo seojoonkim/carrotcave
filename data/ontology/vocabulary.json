@@ -1,0 +1,71 @@
+{
+  "topics": [
+    {
+      "id": "exploration",
+      "label": "탐험",
+      "aliases": [
+        "🐇 탐험"
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "building",
+      "label": "빌딩",
+      "aliases": [
+        "🛠️ 빌딩"
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "notes",
+      "label": "낙서",
+      "aliases": [
+        "✍️ 낙서"
+      ],
+      "status": "approved"
+    },
+    {
+      "id": "fiction",
+      "label": "소설",
+      "aliases": [
+        "📖 소설"
+      ],
+      "status": "approved"
+    }
+  ],
+  "questions": [
+    {
+      "id": "exploration-reading-question",
+      "label": "exploration 독해 질문",
+      "aliases": [],
+      "status": "approved"
+    },
+    {
+      "id": "building-reading-question",
+      "label": "building 독해 질문",
+      "aliases": [],
+      "status": "approved"
+    },
+    {
+      "id": "notes-reading-question",
+      "label": "notes 독해 질문",
+      "aliases": [],
+      "status": "approved"
+    },
+    {
+      "id": "fiction-reading-question",
+      "label": "fiction 독해 질문",
+      "aliases": [],
+      "status": "approved"
+    }
+  ],
+  "methods": [
+    {
+      "id": "close-reading",
+      "label": "근접 읽기",
+      "aliases": [],
+      "status": "approved"
+    }
+  ],
+  "motifs": []
+}

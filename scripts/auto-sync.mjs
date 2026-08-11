@@ -19,9 +19,9 @@
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream } from 'fs';
-import { join, dirname, extname } from 'path';
+import { join, dirname, extname, resolve } from 'path';
 import { fileURLToPath } from 'url';
-import { execSync } from 'child_process';
+import { execFileSync, execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
 
@@ -644,14 +644,34 @@ function ensureTypeHasTelegramMsgId(src) {
 // ─────────────────────────────────────────────
 // Git: commit + push
 // ─────────────────────────────────────────────
-function gitCommitAndPush(newPostSlugs, updatedReactions, editedSlugs = []) {
+export function gitCommitAndPush(newPostSlugs, updatedReactions, editedSlugs = [], options = {}) {
   if (DRY_RUN || NO_GIT) {
     log(`${DRY_RUN ? 'DRY_RUN' : 'NO_GIT'}: Skipping git commit and push`);
-    return;
+    return false;
   }
-  
+
+  const run = options.run || ((command) => execSync(command, { cwd: ROOT, stdio: 'pipe' }));
+  const runGit = options.runGit || ((args) => execFileSync('git', args, { cwd: ROOT, stdio: 'pipe' }));
+  const reportPath = options.reportPath || join(ROOT, 'data', 'ontology-review-report.json');
+
   try {
-    execSync('git add -A', { cwd: ROOT, stdio: 'pipe' });
+    run('npm run audit:ontology');
+  } catch (err) {
+    writeFileSync(reportPath, JSON.stringify({
+      status: 'ontology_review_required',
+      timestamp: new Date().toISOString(),
+      newPostSlugs,
+      auditError: err.message,
+    }, null, 2), 'utf8');
+    warn(`Ontology audit failed; commit and push blocked. Review report: ${reportPath}`);
+    const blocked = new Error(`ontology review required: ${err.message}`);
+    blocked.code = 'ONTOLOGY_REVIEW_REQUIRED';
+    blocked.reportPath = reportPath;
+    throw blocked;
+  }
+
+  try {
+    runGit(['add', '-A']);
     
     const date = new Date().toLocaleDateString('ko-KR', { timeZone: 'Asia/Seoul' });
     let message = `auto-sync: ${date}`;
@@ -665,13 +685,15 @@ function gitCommitAndPush(newPostSlugs, updatedReactions, editedSlugs = []) {
       message += ` | reactions ${updatedReactions}개 업데이트`;
     }
     
-    execSync(`git commit -m "${message}"`, { cwd: ROOT, stdio: 'pipe' });
-    execSync('git push origin main', { cwd: ROOT, stdio: 'pipe' });
+    runGit(['commit', '-m', message]);
+    runGit(['push', 'origin', 'main']);
     log(`✅ Git pushed: ${message}`);
+    return true;
   } catch (err) {
     // Check if nothing to commit
     if (err.message.includes('nothing to commit')) {
       log('Nothing to commit (no changes).');
+      return false;
     } else {
       throw err;
     }
@@ -949,7 +971,9 @@ async function main() {
   }
 }
 
-main().catch(err => {
-  console.error('💥 Fatal error:', err);
-  process.exit(1);
-});
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch(err => {
+    console.error('💥 Fatal error:', err);
+    process.exit(1);
+  });
+}

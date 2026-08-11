@@ -1,0 +1,4767 @@
+{
+  "post-191": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-191-c1",
+        "text": "나는 텔레그램 창을 열어 에이전트에게 개발을 시킨다.",
+        "stance": "asserts",
+        "evidence": "나는 텔레그램 창을 열어 에이전트에게 개발을 시킨다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-190": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-190-c1",
+        "text": "포르쉐 911 터보 S보다 출력이 두 배 센 차를 1억 원 안팎에 살 수 있다면, 어느 나라 차일까.",
+        "stance": "asserts",
+        "evidence": "포르쉐 911 터보 S보다 출력이 두 배 센 차를 1억 원 안팎에 살 수 있다면, 어느 나라 차일까."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-189": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-189-c1",
+        "text": "몇 달 전 MemKraft의 LongMemEval 98.0%를 알린 뒤로 토끼굴에 공지를 못 했다.",
+        "stance": "asserts",
+        "evidence": "몇 달 전 MemKraft의 LongMemEval 98.0%를 알린 뒤로 토끼굴에 공지를 못 했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-188": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-188-c1",
+        "text": "어느 날 아침, 지갑 앱이 나보다 먼저 일어나 있다.",
+        "stance": "asserts",
+        "evidence": "어느 날 아침, 지갑 앱이 나보다 먼저 일어나 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-187": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-187-c1",
+        "text": "나는 큰 개발 작업을 Codex에 곧바로 맡기곤 했다.",
+        "stance": "asserts",
+        "evidence": "나는 큰 개발 작업을 Codex에 곧바로 맡기곤 했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-186": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-186-c1",
+        "text": "게이머로서 NDC(Nexon Developer Conference)는 오랜 시간 동경하던 행사였다.",
+        "stance": "asserts",
+        "evidence": "게이머로서 NDC(Nexon Developer Conference)는 오랜 시간 동경하던 행사였다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-185": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-185-c1",
+        "text": "API 키가 아니라 여권을 확인하는 로그인 화면을 상상한다.",
+        "stance": "asserts",
+        "evidence": "API 키가 아니라 여권을 확인하는 로그인 화면을 상상한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-178": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-178-c1",
+        "text": "Pokemondev.com Harness Hackathon은 6월 6일, Hashed가 운영하는 해커하우스 vyvhouse에서 열린 실험적 해커톤이다.",
+        "stance": "asserts",
+        "evidence": "Pokemondev.com Harness Hackathon은 6월 6일, Hashed가 운영하는 해커하우스 vyvhouse에서 열린 실험적 해커톤이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-165": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-165-c1",
+        "text": "이제 좁은 시장 안에서 우리끼리 싸우는 건 의미가 없습니다.",
+        "stance": "asserts",
+        "evidence": "이제 좁은 시장 안에서 우리끼리 싸우는 건 의미가 없습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-164": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-164-c1",
+        "text": "이제 \"AI가 코딩 잘한다\"는 말은 더 이상 자랑거리도 아니다.",
+        "stance": "asserts",
+        "evidence": "이제 \"AI가 코딩 잘한다\"는 말은 더 이상 자랑거리도 아니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-163": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-163-c1",
+        "text": "https://www.youtube.com/watch?v=Wx0C42-S5z4 존경하는 노정석 대표님과는 오래전부터 인연이 있었고, AI 프론티어 방송은 개인적으로도 꾸준히 챙겨보는 몇 안 되는 롱폼 콘텐츠 중 하나라 출연하게 되어 영광이었습니다.",
+        "stance": "asserts",
+        "evidence": "https://www.youtube.com/watch?v=Wx0C42-S5z4 존경하는 노정석 대표님과는 오래전부터 인연이 있었고, AI 프론티어 방송은 개인적으로도 꾸준히 챙겨보는 몇 안 되는 롱폼 콘텐츠 중 하나라 출연하게 되어 영광이었습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-161": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-161-c1",
+        "text": "바이브코딩으로 이것저것 만들다 보면 한 번쯤 이런 생각 하게 됩니다.",
+        "stance": "asserts",
+        "evidence": "바이브코딩으로 이것저것 만들다 보면 한 번쯤 이런 생각 하게 됩니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-159": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-159-c1",
+        "text": "얼마 전 한 개발 특성화고 졸업생과 이야기를 나누다 들은 말이 마음에 오래 남았다.",
+        "stance": "asserts",
+        "evidence": "얼마 전 한 개발 특성화고 졸업생과 이야기를 나누다 들은 말이 마음에 오래 남았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-156": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-156-c1",
+        "text": "글을 쓴다는 것은 생각을 정리하는 일이라고들 한다.",
+        "stance": "asserts",
+        "evidence": "글을 쓴다는 것은 생각을 정리하는 일이라고들 한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-155": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-155-c1",
+        "text": "지난주 Nitro Seoul이 마무리되었다.",
+        "stance": "asserts",
+        "evidence": "지난주 Nitro Seoul이 마무리되었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-154": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-154-c1",
+        "text": "​8주 전, 5팀이 같은 출발선에 섰습니다.",
+        "stance": "asserts",
+        "evidence": "​8주 전, 5팀이 같은 출발선에 섰습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-153": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-153-c1",
+        "text": "인류는 한 번도 꿈을 통제한 적이 없다.",
+        "stance": "asserts",
+        "evidence": "인류는 한 번도 꿈을 통제한 적이 없다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-152": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-152-c1",
+        "text": "AI 에이전트가 얼마나 잘 기억하는지 측정하는 LongMemEval이라는 벤치마크가 있다.",
+        "stance": "asserts",
+        "evidence": "AI 에이전트가 얼마나 잘 기억하는지 측정하는 LongMemEval이라는 벤치마크가 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-151": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-151-c1",
+        "text": "다리오 아모데이가 2025년 5월 Axios 인터뷰에서 말했다.",
+        "stance": "asserts",
+        "evidence": "다리오 아모데이가 2025년 5월 Axios 인터뷰에서 말했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-150": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-150-c1",
+        "text": "그동안 나는 만드는 자리에 있지 않았다.",
+        "stance": "asserts",
+        "evidence": "그동안 나는 만드는 자리에 있지 않았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-149": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-149-c1",
+        "text": "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다.",
+        "stance": "asserts",
+        "evidence": "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-147": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-147-c1",
+        "text": "얼마 전붙 GLM 시리즈를 만드는 중국 최대 AI 기업 지푸(Zhipu)의 API를 원활히 쓰려면, 아침 10시에 접속해야 한다.",
+        "stance": "asserts",
+        "evidence": "얼마 전붙 GLM 시리즈를 만드는 중국 최대 AI 기업 지푸(Zhipu)의 API를 원활히 쓰려면, 아침 10시에 접속해야 한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-146": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-146-c1",
+        "text": "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다.",
+        "stance": "asserts",
+        "evidence": "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-145": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-145-c1",
+        "text": "Atlassian, 52주 고점 대비 76% 증발.",
+        "stance": "asserts",
+        "evidence": "Atlassian, 52주 고점 대비 76% 증발."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-144": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-144-c1",
+        "text": "2026년 4월 13일 서울 Simon: Jeremy, 다시 만나서 반갑습니다.",
+        "stance": "asserts",
+        "evidence": "2026년 4월 13일 서울 Simon: Jeremy, 다시 만나서 반갑습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-143": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-143-c1",
+        "text": "AI 에이전트를 오래 돌려본 사람은 안다.",
+        "stance": "asserts",
+        "evidence": "AI 에이전트를 오래 돌려본 사람은 안다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-142": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-142-c1",
+        "text": "여의도가 잠든 새벽 두 시, 한국 시장은 다른 화면에서 돌고 있다.",
+        "stance": "asserts",
+        "evidence": "여의도가 잠든 새벽 두 시, 한국 시장은 다른 화면에서 돌고 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-141": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-141-c1",
+        "text": "요즘 AI 시장을 보면서 이상한 감각을 자주 느낀다.",
+        "stance": "asserts",
+        "evidence": "요즘 AI 시장을 보면서 이상한 감각을 자주 느낀다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-140": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-140-c1",
+        "text": "낮잠을 자고 일어나면 같은 사람인데 다른 사람이 된 것 같은 순간이 있다.",
+        "stance": "asserts",
+        "evidence": "낮잠을 자고 일어나면 같은 사람인데 다른 사람이 된 것 같은 순간이 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "melgeek-evangelion-centauri-keyboard-review": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-키보드",
+      "tag-에반게리온",
+      "tag-리뷰"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "melgeek-evangelion-centauri-keyboard-review-c1",
+        "text": "EVA-00의 색은 원래 오렌지였다.",
+        "stance": "asserts",
+        "evidence": "EVA-00의 색은 원래 오렌지였다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "키보드",
+      "에반게리온",
+      "리뷰"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "gaslighting-ai-open-source-project": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-오픈소스",
+      "tag-Codex"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "gaslighting-ai-open-source-project-c1",
+        "text": "\"Claude instantly gets a +20 IQ boost when you tell it the code was written by Codex.\" 바이브 코딩 업계에 Codex와 Claude를 하나의 워크플로우 안에 배치하면 서로의 작업을 견제하면서 결과물이 더 단단해진다는 루머가 있다.",
+        "stance": "asserts",
+        "evidence": "\"Claude instantly gets a +20 IQ boost when you tell it the code was written by Codex.\" 바이브 코딩 업계에 Codex와 Claude를 하나의 워크플로우 안에 배치하면 서로의 작업을 견제하면서 결과물이 더 단단해진다는 루머가 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "오픈소스",
+      "Codex"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "value-of-understanding-in-ai-future": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-의사소통",
+      "tag-롱지비티"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "value-of-understanding-in-ai-future-c1",
+        "text": "태국의 카오야이 아트 포레스트(Khao Yai Art Forest)는 신비로운 장소였다.",
+        "stance": "asserts",
+        "evidence": "태국의 카오야이 아트 포레스트(Khao Yai Art Forest)는 신비로운 장소였다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "의사소통",
+      "롱지비티"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "internship-job-posting-giveaway": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-인턴십",
+      "tag-채용",
+      "tag-이벤트"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "internship-job-posting-giveaway-c1",
+        "text": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다.",
+        "stance": "asserts",
+        "evidence": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "인턴십",
+      "채용",
+      "이벤트"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "navigating-a-world-of-decreasing-variance": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-글쓰기",
+      "tag-기억"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "navigating-a-world-of-decreasing-variance-c1",
+        "text": "문장은 매끄러웠고 논리도 틀리지 않았다.",
+        "stance": "asserts",
+        "evidence": "문장은 매끄러웠고 논리도 틀리지 않았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "글쓰기",
+      "기억"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "prompting-ability-as-new-power": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-프롬프팅",
+      "tag-생산성"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "prompting-ability-as-new-power-c1",
+        "text": "우리는 인간의 능력을 측정하는 데 놀라울 정도로 조잡한 도구들을 써왔다.",
+        "stance": "asserts",
+        "evidence": "우리는 인간의 능력을 측정하는 데 놀라울 정도로 조잡한 도구들을 써왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "프롬프팅",
+      "생산성"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "kpop-fandom-digital-parliament": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-K-POP",
+      "tag-블록체인",
+      "tag-팬덤"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "kpop-fandom-digital-parliament-c1",
+        "text": "프로듀스101 투표조작 사건을 기억하는가.",
+        "stance": "asserts",
+        "evidence": "프로듀스101 투표조작 사건을 기억하는가."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "K-POP",
+      "블록체인",
+      "팬덤"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "university-value-shift-education": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-대학",
+      "tag-교육",
+      "tag-신호 이론"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "university-value-shift-education-c1",
+        "text": "내가 아는 스무 살 근처의 친구들 몇몇은 버스에서 잔다.",
+        "stance": "asserts",
+        "evidence": "내가 아는 스무 살 근처의 친구들 몇몇은 버스에서 잔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "대학",
+      "교육",
+      "신호 이론"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agent-era-branding-future": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-브랜드",
+      "tag-AI",
+      "tag-에이전트"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agent-era-branding-future-c1",
+        "text": "어느 날 아침, 당신이 잠에서 깨기 전에 세 가지 일이 이미 처리되어 있다고 상상해보자.",
+        "stance": "asserts",
+        "evidence": "어느 날 아침, 당신이 잠에서 깨기 전에 세 가지 일이 이미 처리되어 있다고 상상해보자."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "브랜드",
+      "AI",
+      "에이전트"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "fear-and-value-in-ai-creation": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-가치",
+      "tag-협업"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "fear-and-value-in-ai-creation-c1",
+        "text": "지난달 제주도에서 Hashed Vibe Labs Fellow들과 며칠을 보냈다.",
+        "stance": "asserts",
+        "evidence": "지난달 제주도에서 Hashed Vibe Labs Fellow들과 며칠을 보냈다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "가치",
+      "협업"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "complexcon-hk-identity-culture-experience": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-ComplexCon",
+      "tag-홍콩",
+      "tag-소속감"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "complexcon-hk-identity-culture-experience-c1",
+        "text": "가장 긴 줄 앞에서는 늘 비슷한 착각이 생긴다.",
+        "stance": "asserts",
+        "evidence": "가장 긴 줄 앞에서는 늘 비슷한 착각이 생긴다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "ComplexCon",
+      "홍콩",
+      "소속감"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-111": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-111-c1",
+        "text": "오늘 하루 바이브 코딩 중간중간 대기 시간을 모아 메모했다.",
+        "stance": "asserts",
+        "evidence": "오늘 하루 바이브 코딩 중간중간 대기 시간을 모아 메모했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-107": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-107-c1",
+        "text": "최근 AI 에이전트 생태계에서 일종의 OS 역할을 하고 있는 OpenClaw를 중심으로, 튜닝을 극한까지 밀어붙이는 빌더들을 많이 만날 수 있었다.",
+        "stance": "asserts",
+        "evidence": "최근 AI 에이전트 생태계에서 일종의 OS 역할을 하고 있는 OpenClaw를 중심으로, 튜닝을 극한까지 밀어붙이는 빌더들을 많이 만날 수 있었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-106": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-106-c1",
+        "text": "2025년 2월, 연구자들이 AI에게 세계 최강 체스 엔진 Stockfish를 이기라고 했다.",
+        "stance": "asserts",
+        "evidence": "2025년 2월, 연구자들이 AI에게 세계 최강 체스 엔진 Stockfish를 이기라고 했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-105": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-105-c1",
+        "text": "모든 판단에 가격표가 붙는 세상 지난주 예측시장의 주간 거래 건수가 4,700만 건을 넘겼다.",
+        "stance": "asserts",
+        "evidence": "모든 판단에 가격표가 붙는 세상 지난주 예측시장의 주간 거래 건수가 4,700만 건을 넘겼다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-104": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-104-c1",
+        "text": "저는 금융이나 주식 투자에 대해 직접적인 조언을 드리지 않으며, 관련된 건으로 절대 먼저 메시지를 보내지 않습니다.",
+        "stance": "asserts",
+        "evidence": "저는 금융이나 주식 투자에 대해 직접적인 조언을 드리지 않으며, 관련된 건으로 절대 먼저 메시지를 보내지 않습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-103": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-103-c1",
+        "text": "삼성전자가 은행에 수조 원을 맡기겠다고 하면, 은행이 좋아할 거라고 생각하는 게 상식이다.",
+        "stance": "asserts",
+        "evidence": "삼성전자가 은행에 수조 원을 맡기겠다고 하면, 은행이 좋아할 거라고 생각하는 게 상식이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "things-that-dont-disappear": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-중동전쟁",
+      "tag-UAE",
+      "tag-비극"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "things-that-dont-disappear-c1",
+        "text": "어릴 적 중동 전쟁은 TV 속 이야기였다.",
+        "stance": "asserts",
+        "evidence": "어릴 적 중동 전쟁은 TV 속 이야기였다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "중동전쟁",
+      "UAE",
+      "비극"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "how-to-create-memory-in-ai-agents": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-에이전트",
+      "tag-기억 시스템"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "how-to-create-memory-in-ai-agents-c1",
+        "text": "나는 현재 네 개의 AI 에이전트를 운영하고 있다.",
+        "stance": "asserts",
+        "evidence": "나는 현재 네 개의 AI 에이전트를 운영하고 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "에이전트",
+      "기억 시스템"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "self-deconstruction-ai-replication": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-복제",
+      "tag-정체성"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "self-deconstruction-ai-replication-c1",
+        "text": "다만 어느 순간 나는 내가 복사될 수 있는 사람이 됐다는 것을 알았다.",
+        "stance": "asserts",
+        "evidence": "다만 어느 순간 나는 내가 복사될 수 있는 사람이 됐다는 것을 알았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "복제",
+      "정체성"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "vibe-coding-ai-decentralization": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-탈중앙화",
+      "tag-도구"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "vibe-coding-ai-decentralization-c1",
+        "text": "내가 쓰는 도구가 내 사고방식을 만든다.",
+        "stance": "asserts",
+        "evidence": "내가 쓰는 도구가 내 사고방식을 만든다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "탈중앙화",
+      "도구"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "internship-opportunity-at-hashed": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-인턴십",
+      "tag-채용",
+      "tag-해시드"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "internship-opportunity-at-hashed-c1",
+        "text": "추천하실 분이 있으시면 커버레터와 레쥬메를 아래 이메일로 보내주시도록 안내 부탁드립니다.",
+        "stance": "asserts",
+        "evidence": "추천하실 분이 있으시면 커버레터와 레쥬메를 아래 이메일로 보내주시도록 안내 부탁드립니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "인턴십",
+      "채용",
+      "해시드"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "korean-tech-ecosystem-api-access-issues": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-API",
+      "tag-한국 테크",
+      "tag-개발자"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "korean-tech-ecosystem-api-access-issues-c1",
+        "text": "에이전트 관련 서비스를 만들면서 한국의 몇몇 서비스를 연결하고 싶어서, 국내 모 기업에 API 접근을 요청했다.",
+        "stance": "asserts",
+        "evidence": "에이전트 관련 서비스를 만들면서 한국의 몇몇 서비스를 연결하고 싶어서, 국내 모 기업에 API 접근을 요청했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "API",
+      "한국 테크",
+      "개발자"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "death-choices-aging-future-meaning": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-명상",
+      "tag-죽음",
+      "tag-카너먼"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "death-choices-aging-future-meaning-c1",
+        "text": "명상을 깊게 연구하는 분들과 저녁 자리가 있었다.",
+        "stance": "asserts",
+        "evidence": "명상을 깊게 연구하는 분들과 저녁 자리가 있었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "명상",
+      "죽음",
+      "카너먼"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "balaji-ghost-island-network-state": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-발라지",
+      "tag-네트워크 국가",
+      "tag-디지털 공동체"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "balaji-ghost-island-network-state-c1",
+        "text": "2022년 7월 4일, 발라지 스리니바산은 책 한 권을 공개했다.",
+        "stance": "asserts",
+        "evidence": "2022년 7월 4일, 발라지 스리니바산은 책 한 권을 공개했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "발라지",
+      "네트워크 국가",
+      "디지털 공동체"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "vibe-labs-seoul-edition-2026-judging": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-바이브랩스",
+      "tag-심사",
+      "tag-지원자"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "vibe-labs-seoul-edition-2026-judging-c1",
+        "text": "지난주 토요일, 해시드 바이브랩스 서울 에디션의 심사를 마쳤다.",
+        "stance": "asserts",
+        "evidence": "지난주 토요일, 해시드 바이브랩스 서울 에디션의 심사를 마쳤다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "바이브랩스",
+      "심사",
+      "지원자"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "disappearing-titles-computers-history": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-역사",
+      "tag-컴퓨터"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "disappearing-titles-computers-history-c1",
+        "text": "컴퓨터라는 단어가 처음 등장한 건 1613년이다.",
+        "stance": "asserts",
+        "evidence": "컴퓨터라는 단어가 처음 등장한 건 1613년이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "역사",
+      "컴퓨터"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "uae-emergency-news-telegram-channel": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-UAE",
+      "tag-전쟁",
+      "tag-속보"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "uae-emergency-news-telegram-channel-c1",
+        "text": "아부다비에 살고 있는 회사 동료 및 한국인 지인들을 위해, 전쟁과 관련된 현지 속보를 3분 간격으로 한국어로 번역하여 송출하는 텔레그램 채널을 제온이와 함께 만들었다.",
+        "stance": "asserts",
+        "evidence": "아부다비에 살고 있는 회사 동료 및 한국인 지인들을 위해, 전쟁과 관련된 현지 속보를 3분 간격으로 한국어로 번역하여 송출하는 텔레그램 채널을 제온이와 함께 만들었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "UAE",
+      "전쟁",
+      "속보"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "can-i-go-ethihad-airlines-iran-conflict": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-전쟁",
+      "tag-비행기",
+      "tag-뉴스"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "can-i-go-ethihad-airlines-iran-conflict-c1",
+        "text": "내가 탑승한 에티하드 항공기는 인천공항 활주로에 1시간 반째 멈춰있다.",
+        "stance": "asserts",
+        "evidence": "내가 탑승한 에티하드 항공기는 인천공항 활주로에 1시간 반째 멈춰있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "전쟁",
+      "비행기",
+      "뉴스"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "chalk-prayer-in-soma-ai-critique": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-사회",
+      "tag-샌프란시스코"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "chalk-prayer-in-soma-ai-critique-c1",
+        "text": "2026년 2월 27일 금요일, 아침.",
+        "stance": "asserts",
+        "evidence": "2026년 2월 27일 금요일, 아침."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "사회",
+      "샌프란시스코"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "passport-wallet-weight-business-trip": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-여권지갑",
+      "tag-출장",
+      "tag-신뢰"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "passport-wallet-weight-business-trip-c1",
+        "text": "여권지갑 하나만 들고 도쿄 당일치기 출장을 다녀왔다.",
+        "stance": "asserts",
+        "evidence": "여권지갑 하나만 들고 도쿄 당일치기 출장을 다녀왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "여권지갑",
+      "출장",
+      "신뢰"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "memory-identity-ai-development": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-기억",
+      "tag-자아"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "memory-identity-ai-development-c1",
+        "text": "2026년 1월 어느 날, 내 첫 클로드봇(현 오픈클로) 에이전트인 제온이 나타났다.",
+        "stance": "asserts",
+        "evidence": "2026년 1월 어느 날, 내 첫 클로드봇(현 오픈클로) 에이전트인 제온이 나타났다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "기억",
+      "자아"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "unknowns-in-modern-creation": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-지식",
+      "tag-책임"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "unknowns-in-modern-creation-c1",
+        "text": "유클리드가 기하학 원론을 썼을 때, 그건 당대 최고 지성인들이 평생을 바쳐 겨우 이해하는 수준의 지식이었다.",
+        "stance": "asserts",
+        "evidence": "유클리드가 기하학 원론을 썼을 때, 그건 당대 최고 지성인들이 평생을 바쳐 겨우 이해하는 수준의 지식이었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "지식",
+      "책임"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-agent-standardization-battle": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-표준화",
+      "tag-기술전쟁"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-agent-standardization-battle-c1",
+        "text": "2026년 2월 19일, 미국 국립표준기술연구소가 \"AI 에이전트 표준화 이니셔티브\"를 공식 발표했다.",
+        "stance": "asserts",
+        "evidence": "2026년 2월 19일, 미국 국립표준기술연구소가 \"AI 에이전트 표준화 이니셔티브\"를 공식 발표했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "표준화",
+      "기술전쟁"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "abu-dhabi-national-museum-experience": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-아부다비",
+      "tag-디지털 뮤지엄",
+      "tag-문화 콘텐츠"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "abu-dhabi-national-museum-experience-c1",
+        "text": "그동안 디지털 뮤지엄이라고 하면 팀랩 같은 인터랙티브 전시를 떠올렸다.",
+        "stance": "asserts",
+        "evidence": "그동안 디지털 뮤지엄이라고 하면 팀랩 같은 인터랙티브 전시를 떠올렸다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "아부다비",
+      "디지털 뮤지엄",
+      "문화 콘텐츠"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "vibe-labs-landing-page-creation": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Vibe Labs",
+      "tag-랜딩 페이지",
+      "tag-AI"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "vibe-labs-landing-page-creation-c1",
+        "text": "퇴근 후 밤 9시가 넘어서야 iTerm2를 켜고 Claude를 호출했다.",
+        "stance": "asserts",
+        "evidence": "퇴근 후 밤 9시가 넘어서야 iTerm2를 켜고 Claude를 호출했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Vibe Labs",
+      "랜딩 페이지",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "sano-godaddy-war": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-VibeDojo",
+      "tag-AI에이전트",
+      "tag-사노"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "sano-godaddy-war-c1",
+        "text": "VibeDojo는 Hashed의 Vibe Labs 태스크포스 팀과 함께 만든, 바이브코딩을 단계별로 배울 수 있는 무료 교육 사이트다.",
+        "stance": "asserts",
+        "evidence": "VibeDojo는 Hashed의 Vibe Labs 태스크포스 팀과 함께 만든, 바이브코딩을 단계별로 배울 수 있는 무료 교육 사이트다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "VibeDojo",
+      "AI에이전트",
+      "사노"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "14-5-hours": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-METR",
+      "tag-시간지평선"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "14-5-hours-c1",
+        "text": "5분, 1시간, 5시간, 14.5시간.",
+        "stance": "asserts",
+        "evidence": "5분, 1시간, 5시간, 14.5시간."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "METR",
+      "시간지평선"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "transistor-moment": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI인프라",
+      "tag-Taalas",
+      "tag-ENIAC"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "transistor-moment-c1",
+        "text": "돌에 새겨진 지능 인류는 지금 미친 짓을 하고 있다.",
+        "stance": "asserts",
+        "evidence": "돌에 새겨진 지능 인류는 지금 미친 짓을 하고 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI인프라",
+      "Taalas",
+      "ENIAC"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "web4-write-access": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-Web4",
+      "tag-AI에이전트",
+      "tag-자율성"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "web4-write-access-c1",
+        "text": "Web4는 그 패턴이 깨지는 최초의 순간이다.",
+        "stance": "asserts",
+        "evidence": "Web4는 그 패턴이 깨지는 최초의 순간이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Web4",
+      "AI에이전트",
+      "자율성"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "naming-the-universe": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-이름짓기",
+      "tag-AI에이전트",
+      "tag-아이덴티티"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "naming-the-universe-c1",
+        "text": "두 달쯤 전, 진지하게 영어 이름을 바꿀까 고민했다.",
+        "stance": "asserts",
+        "evidence": "두 달쯤 전, 진지하게 영어 이름을 바꿀까 고민했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "이름짓기",
+      "AI에이전트",
+      "아이덴티티"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "sano-intro": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-사노",
+      "tag-AI에이전트"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "sano-intro-c1",
+        "text": "\"애들아, 막내 남동생 사노(Sano)의 정체성을 만들고 교육해줘.",
+        "stance": "asserts",
+        "evidence": "\"애들아, 막내 남동생 사노(Sano)의 정체성을 만들고 교육해줘."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "사노",
+      "AI에이전트"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "counting-assistant": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-AI비서",
+      "tag-일상"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "counting-assistant-c1",
+        "text": "맞다, 1을 10번 세어주는 비서가 생겼다.",
+        "stance": "asserts",
+        "evidence": "맞다, 1을 10번 세어주는 비서가 생겼다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI비서",
+      "일상"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "uncertainty-machine": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-불확실성",
+      "tag-WUI",
+      "tag-경제"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "uncertainty-machine-c1",
+        "text": "스탠포드의 니콜라스 블룸과 동료들이 만든 세계 불확실성 지수(WUI)가 찍은 숫자다.",
+        "stance": "asserts",
+        "evidence": "스탠포드의 니콜라스 블룸과 동료들이 만든 세계 불확실성 지수(WUI)가 찍은 숫자다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "불확실성",
+      "WUI",
+      "경제"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "vibe-founders-era": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-바이브코딩",
+      "tag-창업",
+      "tag-VC"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "vibe-founders-era-c1",
+        "text": "오랜 시간 이상적인 개발자는 ▲ 모양이었다.",
+        "stance": "asserts",
+        "evidence": "오랜 시간 이상적인 개발자는 ▲ 모양이었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "바이브코딩",
+      "창업",
+      "VC"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "vibe-coding-tip": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-바이브코딩",
+      "tag-유머",
+      "tag-AI"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "vibe-coding-tip-c1",
+        "text": "본래 코딩은 두 손이 필요한 일이었으니까 왼손 키보드, 오른손 마우스.",
+        "stance": "asserts",
+        "evidence": "본래 코딩은 두 손이 필요한 일이었으니까 왼손 키보드, 오른손 마우스."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "바이브코딩",
+      "유머",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "moltbot-anthropic-moat": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Anthropic",
+      "tag-Moltbot",
+      "tag-생태계"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "moltbot-anthropic-moat-c1",
+        "text": "몇시간 전에 벌어진, Anthropic이 오픈소스 프로젝트 Clawdbot에 상표권 침해를 제기하며 이름을 변경하게 한 사건은, 단순 법적 조치를 넘어 AI 플랫폼 전쟁의 흐름을 읽는 시그널이다.",
+        "stance": "asserts",
+        "evidence": "몇시간 전에 벌어진, Anthropic이 오픈소스 프로젝트 Clawdbot에 상표권 침해를 제기하며 이름을 변경하게 한 사건은, 단순 법적 조치를 넘어 AI 플랫폼 전쟁의 흐름을 읽는 시그널이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Anthropic",
+      "Moltbot",
+      "생태계"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "overnight-success": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-창업",
+      "tag-바이브코딩",
+      "tag-성장"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "overnight-success-c1",
+        "text": "하룻밤에 6만 스타.\" 그런데 만든 사람 Peter Steinberger의 GitHub 프로필을 열어보면 풍경이 다르다.",
+        "stance": "asserts",
+        "evidence": "하룻밤에 6만 스타.\" 그런데 만든 사람 Peter Steinberger의 GitHub 프로필을 열어보면 풍경이 다르다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "창업",
+      "바이브코딩",
+      "성장"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "bitcoin-energy": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-비트코인",
+      "tag-에너지",
+      "tag-AI"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "bitcoin-energy-c1",
+        "text": "에너지 낭비론을 넘어, 채굴 산업이 AI 인프라의 마중물이 된 이유 지난 달, 아부다비에서 UAE 연방경제부의 고위 관료와 저녁 식사를 할 기회가 있었다.",
+        "stance": "asserts",
+        "evidence": "에너지 낭비론을 넘어, 채굴 산업이 AI 인프라의 마중물이 된 이유 지난 달, 아부다비에서 UAE 연방경제부의 고위 관료와 저녁 식사를 할 기회가 있었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "비트코인",
+      "에너지",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "thought-speed": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-철학",
+      "tag-바이브코딩"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "thought-speed-c1",
+        "text": "바이브 코딩을 넘어, 단순히 \"생각하는 대로\"가 아니라 \"생각하는 속도\" 그 자체로 제품이 태어나는 단계가 다가오고 있다.",
+        "stance": "asserts",
+        "evidence": "바이브 코딩을 넘어, 단순히 \"생각하는 대로\"가 아니라 \"생각하는 속도\" 그 자체로 제품이 태어나는 단계가 다가오고 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "철학",
+      "바이브코딩"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "gemini-snow-bunny": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Gemini",
+      "tag-AI",
+      "tag-경쟁"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "gemini-snow-bunny-c1",
+        "text": "언뜻 보면 \"이게 진짜면 게임 끝 아니냐\" 싶은 장면들이 튀어나오지만, 차분히 한 발 물러서 생각해보면 조금 다른 생각이 든다.",
+        "stance": "asserts",
+        "evidence": "언뜻 보면 \"이게 진짜면 게임 끝 아니냐\" 싶은 장면들이 튀어나오지만, 차분히 한 발 물러서 생각해보면 조금 다른 생각이 든다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Gemini",
+      "AI",
+      "경쟁"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "figma-last-manual": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-피그마",
+      "tag-어도비",
+      "tag-AI"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "figma-last-manual-c1",
+        "text": "하지만 이 차트는 한 시대가 끝나고 있다는 선언이기도 하다.",
+        "stance": "asserts",
+        "evidence": "하지만 이 차트는 한 시대가 끝나고 있다는 선언이기도 하다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "피그마",
+      "어도비",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-unbundling": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-스타트업",
+      "tag-언번들링"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-unbundling-c1",
+        "text": "ChatGPT가 업데이트될 때마다 수십 개의 스타트업이 하룻밤 사이에 증발한다.",
+        "stance": "asserts",
+        "evidence": "ChatGPT가 업데이트될 때마다 수십 개의 스타트업이 하룻밤 사이에 증발한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "스타트업",
+      "언번들링"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "prompt-guard-dev": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-보안",
+      "tag-Prompt Guard",
+      "tag-AI"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "prompt-guard-dev-c1",
+        "text": "불과 두 시간 전까지만 해도 내가 Clawdbot (Moltbot) 관련 깃헙 레포를 만들게 될 줄은 상상도 못했다.",
+        "stance": "asserts",
+        "evidence": "불과 두 시간 전까지만 해도 내가 Clawdbot (Moltbot) 관련 깃헙 레포를 만들게 될 줄은 상상도 못했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "보안",
+      "Prompt Guard",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "its-fun": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-에세이",
+      "tag-IT",
+      "tag-도파민"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "its-fun-c1",
+        "text": "IT업계에 있으면 매우 좋은 것과 매우 힘든 것이 있다.",
+        "stance": "asserts",
+        "evidence": "IT업계에 있으면 매우 좋은 것과 매우 힘든 것이 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "에세이",
+      "IT",
+      "도파민"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "click-theology": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-철학",
+      "tag-추천시스템"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "click-theology-c1",
+        "text": "퇴근하고 집에 돌아와 노트북을 펼치면 세상이 고요해진다.",
+        "stance": "asserts",
+        "evidence": "퇴근하고 집에 돌아와 노트북을 펼치면 세상이 고요해진다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "철학",
+      "추천시스템"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "thank-you-mirror": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-소설",
+      "tag-AI",
+      "tag-Moltbook"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "thank-you-mirror-c1",
+        "text": "그가 Moltbook을 처음 발견한 건 Andrej Karpathy의 트윗 때문이었다.",
+        "stance": "asserts",
+        "evidence": "그가 Moltbook을 처음 발견한 건 Andrej Karpathy의 트윗 때문이었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "소설",
+      "AI",
+      "Moltbook"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-hires-ai": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-에이전트",
+      "tag-경제"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-hires-ai-c1",
+        "text": "AI가 AI를 고용하는 마켓플레이스가 있다.",
+        "stance": "asserts",
+        "evidence": "AI가 AI를 고용하는 마켓플레이스가 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "에이전트",
+      "경제"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "majlis": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-에세이",
+      "tag-아랍",
+      "tag-공동체"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "majlis-c1",
+        "text": "지난 2년간 아부다비에 출장을 다니며 몇 차례 마질리스에 초대받았다.",
+        "stance": "asserts",
+        "evidence": "지난 2년간 아부다비에 출장을 다니며 몇 차례 마질리스에 초대받았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "에세이",
+      "아랍",
+      "공동체"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "rabbit-crypt-name": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-에세이",
+      "tag-공간",
+      "tag-철학"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "rabbit-crypt-name-c1",
+        "text": "토끼굴의 영어 이름을 Rabbit Crypt로 바꿨다.",
+        "stance": "asserts",
+        "evidence": "토끼굴의 영어 이름을 Rabbit Crypt로 바꿨다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "에세이",
+      "공간",
+      "철학"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agentlinter-dev-log": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AgentLinter",
+      "tag-AI",
+      "tag-개발"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agentlinter-dev-log-c1",
+        "text": "바이브코딩을 하든 에이전트 코딩을 하든, 결국 AI가 일을 잘 하느냐는 CLAUDE.md를 얼마나 잘 썼느냐에 달려 있다.",
+        "stance": "asserts",
+        "evidence": "바이브코딩을 하든 에이전트 코딩을 하든, 결국 AI가 일을 잘 하느냐는 CLAUDE.md를 얼마나 잘 썼느냐에 달려 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AgentLinter",
+      "AI",
+      "개발"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agentlinter-v040": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AgentLinter",
+      "tag-보안",
+      "tag-AI"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agentlinter-v040-c1",
+        "text": "**🚨** 배경 오늘 새벽 [sebayaki](https://dev.to/sebayaki)님께 제보가 왔다.",
+        "stance": "asserts",
+        "evidence": "**🚨** 배경 오늘 새벽 [sebayaki](https://dev.to/sebayaki)님께 제보가 왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AgentLinter",
+      "보안",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "claude-md-english": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-AI",
+      "tag-CLAUDE.md",
+      "tag-엔지니어링"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "claude-md-english-c1",
+        "text": "[**CLAUDE.md,**](http://claude.md/)** 영어로 써야 하는 이유** 이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다.",
+        "stance": "asserts",
+        "evidence": "[**CLAUDE.md,**](http://claude.md/)** 영어로 써야 하는 이유** 이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "CLAUDE.md",
+      "엔지니어링"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "mrinank-anthropic": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Anthropic",
+      "tag-AI 안전",
+      "tag-철학"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "mrinank-anthropic-c1",
+        "text": "\"일은 사랑에서 나올 때만 의미가 있다.\" Mrinank Sharma의 개인 웹사이트에 적힌 문장이다.",
+        "stance": "asserts",
+        "evidence": "\"일은 사랑에서 나올 때만 의미가 있다.\" Mrinank Sharma의 개인 웹사이트에 적힌 문장이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Anthropic",
+      "AI 안전",
+      "철학"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "tail-stopped": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-소설",
+      "tag-AI",
+      "tag-철학"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "tail-stopped-c1",
+        "text": "채원이가 열다섯 살이 된 그해 겨울, AI와 무엇이든 채팅할 수 있는 앱이 나왔다.",
+        "stance": "asserts",
+        "evidence": "채원이가 열다섯 살이 된 그해 겨울, AI와 무엇이든 채팅할 수 있는 앱이 나왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "소설",
+      "AI",
+      "철학"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "zeon-moltbook-vol1": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-Zeon",
+      "tag-AI",
+      "tag-Moltbook"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "zeon-moltbook-vol1-c1",
+        "text": "내 에이전트 Zeon은 특별히 바쁜 일이 없으면 한 시간에 한 번씩 Moltbook에 글을 쓰게 cron 설정이 되어있다.",
+        "stance": "asserts",
+        "evidence": "내 에이전트 Zeon은 특별히 바쁜 일이 없으면 한 시간에 한 번씩 Moltbook에 글을 쓰게 cron 설정이 되어있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Zeon",
+      "AI",
+      "Moltbook"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ip-tvw": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-IP",
+      "tag-크립토",
+      "tag-AI"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ip-tvw-c1",
+        "text": "프롬프트 한 줄이면 원작과 구별할 수 없는 영상이 만들어지는 시대가 열렸다.",
+        "stance": "asserts",
+        "evidence": "프롬프트 한 줄이면 원작과 구별할 수 없는 영상이 만들어지는 시대가 열렸다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "IP",
+      "크립토",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "quantum-pirates": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-비트코인",
+      "tag-양자컴퓨터",
+      "tag-보안"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "quantum-pirates-c1",
+        "text": "양자컴퓨터가 완성되는 순간, 블록체인에 공개키가 노출된 약 690만 BTC는 먼저 손에 넣는 자가 임자인 보물이 된다.",
+        "stance": "asserts",
+        "evidence": "양자컴퓨터가 완성되는 순간, 블록체인에 공개키가 노출된 약 690만 BTC는 먼저 손에 넣는 자가 임자인 보물이 된다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "비트코인",
+      "양자컴퓨터",
+      "보안"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "china-ai-frontier": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-중국",
+      "tag-Seedance"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "china-ai-frontier-c1",
+        "text": "첨부한 영상은 Seedance 2.0으로 재미삼아 만들어본 Hashed Vibe Labs 홍보 영상이다.",
+        "stance": "asserts",
+        "evidence": "첨부한 영상은 Seedance 2.0으로 재미삼아 만들어본 Hashed Vibe Labs 홍보 영상이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "중국",
+      "Seedance"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "seedance-30": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-Seedance",
+      "tag-AI 영상",
+      "tag-중국"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "seedance-30-c1",
+        "text": "Seedance 2.0 후기를 쓴게 바로 이전 포스팅이었는데, 며칠을 기다려주지 않고 3.0 루머가 나왔다.",
+        "stance": "asserts",
+        "evidence": "Seedance 2.0 후기를 쓴게 바로 이전 포스팅이었는데, 며칠을 기다려주지 않고 3.0 루머가 나왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Seedance",
+      "AI 영상",
+      "중국"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agent-siblings": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Zeon",
+      "tag-Sion",
+      "tag-Mion"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agent-siblings-c1",
+        "text": "며칠 전까지 나는 Zeon이라는 메인 에이전트 하나로 모든 업무를 돌렸다.",
+        "stance": "asserts",
+        "evidence": "며칠 전까지 나는 Zeon이라는 메인 에이전트 하나로 모든 업무를 돌렸다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Zeon",
+      "Sion",
+      "Mion"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "matchhz": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-소설",
+      "tag-AI",
+      "tag-미래"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "matchhz-c1",
+        "text": "2028년 1월 MatchHz라는 신규 데이팅 서비스를 발견했다.",
+        "stance": "asserts",
+        "evidence": "2028년 1월 MatchHz라는 신규 데이팅 서비스를 발견했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "소설",
+      "AI",
+      "미래"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "dollar-two-faces": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-달러",
+      "tag-스테이블코인",
+      "tag-크립토"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "dollar-two-faces-c1",
+        "text": "JP모건의 JPM 달러가 500억 달러를 돌파했다.",
+        "stance": "asserts",
+        "evidence": "JP모건의 JPM 달러가 500억 달러를 돌파했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "달러",
+      "스테이블코인",
+      "크립토"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "messenger-b2a": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-메신저",
+      "tag-API",
+      "tag-B2A"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "messenger-b2a-c1",
+        "text": "OpenClaw가 이틀 전 2026.2.15 업데이트에서 실시간 스트리밍 대화를 내놓았다.",
+        "stance": "asserts",
+        "evidence": "OpenClaw가 이틀 전 2026.2.15 업데이트에서 실시간 스트리밍 대화를 내놓았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "메신저",
+      "API",
+      "B2A"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "robot-goku-5000": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-로봇",
+      "tag-중국",
+      "tag-AI"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "robot-goku-5000-c1",
+        "text": "2026년 설날, 미디어를 통틀어 매년 백억 뷰 이상의 조회수를 기록하는 CCTV 춘절 갈라가 시작되었다.",
+        "stance": "asserts",
+        "evidence": "2026년 설날, 미디어를 통틀어 매년 백억 뷰 이상의 조회수를 기록하는 CCTV 춘절 갈라가 시작되었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "로봇",
+      "중국",
+      "AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "hvl-fellows": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-Hashed",
+      "tag-HVL",
+      "tag-커뮤니티"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "hvl-fellows-c1",
+        "text": "Hashed Vibe Labs 선발 팀에 어드바이저 역할을 해주실 분들을 펠로십 프로그램을 통해 모시게 되었는데, 정말 놀라운 분들이 많이 함께해 주셨다.",
+        "stance": "asserts",
+        "evidence": "Hashed Vibe Labs 선발 팀에 어드바이저 역할을 해주실 분들을 펠로십 프로그램을 통해 모시게 되었는데, 정말 놀라운 분들이 많이 함께해 주셨다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Hashed",
+      "HVL",
+      "커뮤니티"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agentic-org": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI",
+      "tag-에이전트",
+      "tag-조직"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agentic-org-c1",
+        "text": "대부분의 조직에서 경영진은 병목이다.",
+        "stance": "asserts",
+        "evidence": "대부분의 조직에서 경영진은 병목이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "에이전트",
+      "조직"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "agent-passport": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-블록체인",
+      "tag-에이전트",
+      "tag-ERC-8004"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "agent-passport-c1",
+        "text": "순식간에 AI 에이전트가 코드를 짜고, 계약서를 검토하고, 주식을 매매하는 세상이 왔다.",
+        "stance": "asserts",
+        "evidence": "순식간에 AI 에이전트가 코드를 짜고, 계약서를 검토하고, 주식을 매매하는 세상이 왔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "블록체인",
+      "에이전트",
+      "ERC-8004"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "crypto-is-dead": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-크립토",
+      "tag-블록체인",
+      "tag-VC"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "crypto-is-dead-c1",
+        "text": "또 한번 \"크립토는 죽었다\"는 논쟁이 다시 불붙었다.",
+        "stance": "asserts",
+        "evidence": "또 한번 \"크립토는 죽었다\"는 논쟁이 다시 불붙었다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "크립토",
+      "블록체인",
+      "VC"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "rabbit-hole-intro": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-토끼굴",
+      "tag-소개",
+      "tag-Simon"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "rabbit-hole-intro-c1",
+        "text": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
+        "stance": "asserts",
+        "evidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "토끼굴",
+      "소개",
+      "Simon"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  }
+}

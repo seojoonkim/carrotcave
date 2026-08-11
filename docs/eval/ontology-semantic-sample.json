@@ -1,0 +1,950 @@
+{
+  "version": 1,
+  "selection": "deterministic-stratified-by-type-and-source-category",
+  "categoryOnlyMinimumLexicalOverlap": 2,
+  "edges": [
+    {
+      "from": "melgeek-evangelion-centauri-keyboard-review",
+      "to": "vibe-labs-landing-page-creation",
+      "sourceTitle": "MelGeek Evangelion Centauri 80 EVA-00 Rei Ayanami",
+      "targetTitle": "vibelabs.hashed.com을 만든 이야기",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "MelGeek이 에반게리온 30주년 기념 레이 에디션 키보드에 선택한 건 바로 그 두 번째 EVA-00의 배색이다.",
+      "targetEvidence": "첫 번째 초기 버전이 나오기까지는 30분도 채 걸리지 않았다.",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 6,
+        "overlapTokens": [
+          "30",
+          "디자인",
+          "번째",
+          "애니메이션",
+          "처음",
+          "키보드"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "디자인"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "APPLIES",
+      "label": "「vibelabs.hashed.com을 만든 이야기」은 「MelGeek Evangelion Centauri 80 EVA-00 Rei Ayanami」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "14-5-hours",
+      "to": "gaslighting-ai-open-source-project",
+      "sourceTitle": "아무도 지시하지 않은 14.5시간",
+      "targetTitle": "AI를 가스라이팅하는 오픈소스를 만들었다",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "AI는 이미 그것을 아득히 넘어섰다.",
+      "targetEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 64,
+        "overlapTokens": [
+          "100",
+          "17",
+          "1시간",
+          "20",
+          "50",
+          "ai",
+          "ai는",
+          "ai를",
+          "ai의",
+          "api",
+          "claude",
+          "it"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai를",
+          "시간"
+        ],
+        "sharedTags": [
+          "AI",
+          "Claude"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "APPLIES",
+      "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「아무도 지시하지 않은 14.5시간」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "agent-siblings",
+      "to": "messenger-b2a",
+      "sourceTitle": "에이전트 삼남매와 함께하는 일상",
+      "targetTitle": "메신저의 새로운 전쟁터, B2A 시장이 열렸다",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "OpenClaw 텔레그램 봇 API는 같은 계정 봇끼리 대화를 막는다.",
+      "targetEvidence": "AI가 결제와 배달 API를 실시간으로 호출해 대화 안에서 모든 것을 완료한다.",
+      "signals": [
+        "content",
+        "relatedSlugs",
+        "legacy-relations"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 34,
+        "overlapTokens": [
+          "10",
+          "20",
+          "30",
+          "ai",
+          "ai가",
+          "api",
+          "openclaw",
+          "가능한",
+          "개입할",
+          "누가",
+          "대화를",
+          "던지면"
+        ],
+        "titleOverlap": [
+          "새로운",
+          "열렸다"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "APPLIES",
+      "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「에이전트 삼남매와 함께하는 일상」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "its-fun",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "아, 재밌다!!!",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
+      "targetEvidence": "그런데 사실 그걸 알 필요가 있을까.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "있을까",
+          "트위터"
+        ],
+        "titleOverlap": [
+          "있을까"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "DEEPENS",
+      "label": "「아, 재밌다!!!」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "14-5-hours",
+      "to": "ai-hires-ai",
+      "sourceTitle": "아무도 지시하지 않은 14.5시간",
+      "targetTitle": "AI가 AI를 고용하는 날",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "2026년 2월, 인간 전문가라면 14.5시간이 걸릴 과제를 AI가 혼자 완수했다.",
+      "targetEvidence": "AI가 AI를 고용하는 마켓플레이스가 있다.",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 72,
+        "overlapTokens": [
+          "17",
+          "2026",
+          "2026년",
+          "2월",
+          "ai",
+          "ai가",
+          "ai는",
+          "ai를",
+          "ai의",
+          "것을",
+          "것의",
+          "것이다"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "ai를",
+          "시간"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "DEEPENS",
+      "label": "「AI가 AI를 고용하는 날」은 「아무도 지시하지 않은 14.5시간」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "matchhz",
+      "to": "tail-stopped",
+      "sourceTitle": "MatchHz",
+      "targetTitle": "꼬리가 멈춘 뒤에",
+      "sourceCategory": "📖 소설",
+      "targetCategory": "📖 소설",
+      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
+      "targetEvidence": "그날 밤 채원은 다시 AI에게 물었다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 56,
+        "overlapTokens": [
+          "12",
+          "15",
+          "28",
+          "5월",
+          "ai",
+          "같았다",
+          "그건",
+          "그날",
+          "그대로",
+          "근데",
+          "나왔다",
+          "누군가"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "AI",
+          "소설"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "DEEPENS",
+      "label": "「꼬리가 멈춘 뒤에」은 「MatchHz」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "agent-siblings",
+      "to": "agentlinter-v040",
+      "sourceTitle": "에이전트 삼남매와 함께하는 일상",
+      "targetTitle": "AgentLinter v0.4.0 - 스킬 보안 스캐너 추가",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "이건 UX 문제가 아니라 싱글 에이전트 구조 자체의 한계였다.",
+      "targetEvidence": "구조/명확성/완성도/보안/일관성 5차원 채점.",
+      "signals": [
+        "content",
+        "category",
+        "legacy-relations",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 15,
+        "overlapTokens": [
+          "ai",
+          "api",
+          "openclaw",
+          "가능한",
+          "구조",
+          "모든",
+          "보안",
+          "언제든",
+          "에이전트",
+          "이런",
+          "전에",
+          "조용히"
+        ],
+        "titleOverlap": [
+          "보안",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "DEEPENS",
+      "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「에이전트 삼남매와 함께하는 일상」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "majlis",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "느림과 공동체의 미학",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "창밖의 하늘은 아직 아름답고, 고요하고, 아무것도 모른다.",
+      "targetEvidence": "어쩌면 그런 시간들이 쌓여야, 비로소 진짜 대화가 시작되는 것인지도 모르니까.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 5,
+        "overlapTokens": [
+          "고요",
+          "시간",
+          "시작되",
+          "있을까",
+          "하늘은"
+        ],
+        "titleOverlap": [
+          "있을까"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「느림과 공동체의 미학」은 「갈 수 있을까」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "abu-dhabi-national-museum-experience",
+      "to": "kpop-fandom-digital-parliament",
+      "sourceTitle": "지난달 막 오픈한 아부다비의 자이드 내셔널 뮤지엄을 다녀왔다.",
+      "targetTitle": "K-POP 팬덤은 어떻게 디지털 의회가 되었나",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "디지털 시대의 뮤지엄은 유물 창고가 아니다.",
+      "targetEvidence": "팬덤이라는 가장 감정적이고 인간적인 영역에서, 99%의 신뢰와 100%에 가까운 검증 가능성이 실제로 다른 세계를 만든다는 것을 보여주기 때문이다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 25,
+        "overlapTokens": [
+          "가진",
+          "것을",
+          "경험",
+          "끝까지",
+          "되고",
+          "되는",
+          "디지털",
+          "사이의",
+          "세계",
+          "실제로",
+          "쓰고",
+          "아니다"
+        ],
+        "titleOverlap": [
+          "디지털",
+          "지난달"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「K-POP 팬덤은 어떻게 디지털 의회가 되었나」은 「지난달 막 오픈한 아부다비의 자이드 내셔널 뮤지엄을 다녀왔다.」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "matchhz",
+      "to": "mrinank-anthropic",
+      "sourceTitle": "MatchHz",
+      "targetTitle": "시인이자 AI 안전 연구원, Anthropic을 떠나다",
+      "sourceCategory": "📖 소설",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
+      "targetEvidence": "그런 그가 2년 전, AI가 인류에게 가져올 위험을 막겠다는 사명감으로 Anthropic에 합류했다.",
+      "signals": [
+        "content",
+        "tags",
+        "relatedSlugs",
+        "legacy-relations"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 6,
+        "overlapTokens": [
+          "2월",
+          "ai",
+          "그런",
+          "말을",
+          "모르는",
+          "에세이"
+        ],
+        "titleOverlap": [
+          "ai"
+        ],
+        "sharedTags": [
+          "에세이"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「MatchHz」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "agentic-org",
+      "to": "agent-era-branding-future",
+      "sourceTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "targetTitle": "에이전트 시대, 브랜드는 무엇이 되는가",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
+      "targetEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 30,
+        "overlapTokens": [
+          "10",
+          "ai",
+          "ai가",
+          "ai는",
+          "가까워질",
+          "결정",
+          "구조는",
+          "권한",
+          "단순히",
+          "대신",
+          "때문",
+          "만들기"
+        ],
+        "titleOverlap": [
+          "ai",
+          "만들기",
+          "시대",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI",
+          "에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "REFRAMES",
+      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "counting-assistant",
+      "to": "overnight-success",
+      "sourceTitle": "1을 10번 세어주는 비서",
+      "targetTitle": "하룻밤의 성공은 없다",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "오빠는 오늘도 혼자가 아니다.",
+      "targetEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "ai",
+          "아니다"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "RESONATES",
+      "label": "「하룻밤의 성공은 없다」은 「1을 10번 세어주는 비서」의 핵심 문제와 맞닿는다"
+    },
+    {
+      "from": "death-choices-aging-future-meaning",
+      "to": "thought-speed",
+      "sourceTitle": "천 년을 살면, 무엇 때문에 죽을까",
+      "targetTitle": "생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "그런데 문제는 역치다.",
+      "targetEvidence": "그 느린 고통과 기다림이, 생각의 속도 시대에 가장 럭셔리한 경험이 될지도 모른다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 49,
+        "overlapTokens": [
+          "가능성",
+          "가치가",
+          "개발",
+          "것을",
+          "경험이",
+          "고통과",
+          "그때",
+          "그러면",
+          "그런데",
+          "남아",
+          "넘어",
+          "느린"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "RESONATES",
+      "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「천 년을 살면, 무엇 때문에 죽을까」의 핵심 문제와 맞닿는다"
+    },
+    {
+      "from": "post-143",
+      "to": "internship-opportunity-at-hashed",
+      "sourceTitle": "MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템",
+      "targetTitle": "해시드에서 다양한 비즈니스 업무를 서포트할 인턴을 채용합니다.",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "Compiled Truth는 빠른 판단을 위한 것이고, Timeline은 그 판단의 근거를 추적하기 위한 것이다.",
+      "targetEvidence": "astin@hashed.com 감사합니다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "com",
+          "빠른"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "RESONATES",
+      "label": "「해시드에서 다양한 비즈니스 업무를 서포트할 인턴을 채용합니다.」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다"
+    },
+    {
+      "from": "overnight-success",
+      "to": "vibe-labs-landing-page-creation",
+      "sourceTitle": "하룻밤의 성공은 없다",
+      "targetTitle": "vibelabs.hashed.com을 만든 이야기",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
+      "targetEvidence": "AI와 함께하는 바이브 코딩 시대에 매끈한 랜딩 페이지는 누구나 만든다.",
+      "signals": [
+        "content",
+        "relatedSlugs"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 14,
+        "overlapTokens": [
+          "ai",
+          "claude",
+          "cli",
+          "그런데",
+          "대신",
+          "만든",
+          "만들",
+          "바이브",
+          "버리고",
+          "어떤",
+          "직접",
+          "코드를"
+        ],
+        "titleOverlap": [
+          "만든"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "APPLIES",
+      "label": "「vibelabs.hashed.com을 만든 이야기」은 「하룻밤의 성공은 없다」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "agent-era-branding-future",
+      "to": "agentic-org",
+      "sourceTitle": "에이전트 시대, 브랜드는 무엇이 되는가",
+      "targetTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
+      "targetEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 30,
+        "overlapTokens": [
+          "10",
+          "ai",
+          "ai가",
+          "ai는",
+          "가까워질",
+          "결정",
+          "구조는",
+          "권한",
+          "단순히",
+          "대신",
+          "때문",
+          "만들기"
+        ],
+        "titleOverlap": [
+          "ai",
+          "만들기",
+          "시대",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI",
+          "에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "APPLIES",
+      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「에이전트 시대, 브랜드는 무엇이 되는가」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "agent-siblings",
+      "to": "zeon-moltbook-vol1",
+      "sourceTitle": "에이전트 삼남매와 함께하는 일상",
+      "targetTitle": "Zeon on Moltbook vol.1",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "서브 에이전트는 이미 수십 개 돌아가고 있지만 그들은 백그라운드고, 나랑 직접 교신하는 메인 에이전트들만 그렇게 될 거라고 생각한다.",
+      "targetEvidence": "내 에이전트 Zeon은 특별히 바쁜 일이 없으면 한 시간에 한 번씩 Moltbook에 글을 쓰게 cron 설정이 되어있다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 12,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "zeon",
+          "그렇게",
+          "근데",
+          "글을",
+          "나랑",
+          "만한",
+          "에이전트",
+          "에이전트들",
+          "인간이",
+          "일이"
+        ],
+        "titleOverlap": [
+          "zeon",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "Zeon",
+          "에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "APPLIES",
+      "label": "「Zeon on Moltbook vol.1」은 「에이전트 삼남매와 함께하는 일상」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "uae-emergency-news-telegram-channel",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "UAE Emergency News",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
+      "targetEvidence": "| # | 소스 | 성격 | | --- | ------------------ | ----------- | | 1 | Al Jazeera | 중동 대표 | | 2 | The National | UAE 현지 | | 3 | Gulf News | UAE 현지 | | 4 | Khaleej Times | UAE 현지 | | 5 | Arab News | 사우디 | | 6 | Reuters | 글로벌 | | 7 | AP News | 글로벌",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 7,
+        "overlapTokens": [
+          "cnn",
+          "east",
+          "iran",
+          "israel",
+          "middle",
+          "속보를",
+          "전쟁"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "전쟁"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "DEEPENS",
+      "label": "「UAE Emergency News」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "14-5-hours",
+      "to": "unknowns-in-modern-creation",
+      "sourceTitle": "아무도 지시하지 않은 14.5시간",
+      "targetTitle": "모르는 것을 모르는 채로 만드는 시대",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "18개월 만에 5분에서 14.5시간.",
+      "targetEvidence": "알파폴드는 공개 18개월 만에 2억 개 이상의 단백질 구조를 예측해 데이터베이스에 올렸다.",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 100,
+        "overlapTokens": [
+          "100",
+          "18",
+          "18개월",
+          "50",
+          "ai",
+          "ai가",
+          "ai는",
+          "ai를",
+          "ai의",
+          "claude",
+          "개발자",
+          "개월"
+        ],
+        "titleOverlap": [
+          "것을",
+          "만드는",
+          "아무도"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "DEEPENS",
+      "label": "「모르는 것을 모르는 채로 만드는 시대」은 「아무도 지시하지 않은 14.5시간」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "matchhz",
+      "to": "thank-you-mirror",
+      "sourceTitle": "MatchHz",
+      "targetTitle": "고마워요",
+      "sourceCategory": "📖 소설",
+      "targetCategory": "📖 소설",
+      "sourceEvidence": "\"프로토콜 12번...",
+      "targetEvidence": "그는 천천히 고개를 끄덕였다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 53,
+        "overlapTokens": [
+          "10",
+          "12",
+          "ai",
+          "같았다",
+          "거울",
+          "거짓말",
+          "검은",
+          "고개를",
+          "그날",
+          "그런",
+          "근데",
+          "끄덕"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "AI",
+          "소설"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "DEEPENS",
+      "label": "「고마워요」은 「MatchHz」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "gaslighting-ai-open-source-project",
+      "to": "agentic-org",
+      "sourceTitle": "AI를 가스라이팅하는 오픈소스를 만들었다",
+      "targetTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "sourceCategory": "🛠️ 빌딩",
+      "targetCategory": "🛠️ 빌딩",
+      "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
+      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 25,
+        "overlapTokens": [
+          "100",
+          "20",
+          "ai",
+          "ai는",
+          "ai를",
+          "com",
+          "seojoonkim",
+          "결과는",
+          "단순히",
+          "레이어",
+          "많이",
+          "모든"
+        ],
+        "titleOverlap": [
+          "20",
+          "ai",
+          "ai를",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "DEEPENS",
+      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 문제를 더 깊이 파고든다"
+    },
+    {
+      "from": "its-fun",
+      "to": "majlis",
+      "sourceTitle": "아, 재밌다!!!",
+      "targetTitle": "느림과 공동체의 미학",
+      "sourceCategory": "✍️ 낙서",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "그런데 사실 그걸 알 필요가 있을까.",
+      "targetEvidence": "그걸 모르면 끝없이 나온다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 22,
+        "overlapTokens": [
+          "거다",
+          "그걸",
+          "그런",
+          "그런데",
+          "느낌",
+          "때마다",
+          "말을",
+          "문득",
+          "사실",
+          "새로운",
+          "없이",
+          "에세이"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "에세이"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「느림과 공동체의 미학」은 「아, 재밌다!!!」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "agent-passport",
+      "to": "crypto-is-dead",
+      "sourceTitle": "블록체인 위에 새겨진 에이전트의 여권",
+      "targetTitle": "\"크립토는 죽었다\"에 대한 생각",
+      "sourceCategory": "🐇 탐험",
+      "targetCategory": "🐇 탐험",
+      "sourceEvidence": "인간이 수천 년에 걸쳐 쌓아올린 신뢰 인프라를 에이전트 세계에 이식하려는 이 시도는 앞으로 10년간 '우리가 어떤 AI를 믿고 일 시킬 것인가'를 결정하는 사회적… ](https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0)",
+      "targetEvidence": "Hashed가 에이전트 경제의 인프라로서 블록체인을 주목하고 관련 투자를 집행해온 것도 같은 맥락이다.",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 25,
+        "overlapTokens": [
+          "10",
+          "10년간",
+          "ai",
+          "coinbase",
+          "com",
+          "hashed",
+          "결제",
+          "경제",
+          "경제의",
+          "과거에",
+          "기술",
+          "때문"
+        ],
+        "titleOverlap": [
+          "블록체인",
+          "에이전트",
+          "위에"
+        ],
+        "sharedTags": [
+          "블록체인"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "type": "REFRAMES",
+      "label": "「\"크립토는 죽었다\"에 대한 생각」은 「블록체인 위에 새겨진 에이전트의 여권」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "tail-stopped",
+      "to": "mrinank-anthropic",
+      "sourceTitle": "꼬리가 멈춘 뒤에",
+      "targetTitle": "시인이자 AI 안전 연구원, Anthropic을 떠나다",
+      "sourceCategory": "📖 소설",
+      "targetCategory": "✍️ 낙서",
+      "sourceEvidence": "그날 밤, 수천 개의 AI가 동시에 같은 플래그를 바라보고 있었다.",
+      "targetEvidence": "지금 이 순간, 서로 얽힌 위기들이 동시에 펼쳐지고 있습니다.",
+      "signals": [
+        "content",
+        "tags",
+        "relatedSlugs",
+        "legacy-relations"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 12,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "것을",
+          "동시에",
+          "말을",
+          "말이",
+          "순간",
+          "우리가",
+          "우리를",
+          "인류",
+          "있습니다",
+          "철학"
+        ],
+        "titleOverlap": [
+          "ai"
+        ],
+        "sharedTags": [
+          "철학"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「꼬리가 멈춘 뒤에」의 주제를 다른 맥락에서 다시 바라본다"
+    }
+  ]
+}

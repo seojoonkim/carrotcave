@@ -9,13 +9,12 @@
     "lint": "eslint .",
     "test": "node --test tests/*.test.mjs",
     "audit:post-titles": "node scripts/audit-post-titles.mjs",
-    "verify": "npm test && npm run audit:post-titles && npm run build"
+    "audit:ontology": "node scripts/audit-ontology.mjs",
+    "verify": "npm test && npm run audit:post-titles && npm run audit:ontology && npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",
-    "@types/d3": "^7.4.3",
-    "d3": "^7.9.0",
-    "next": "16.1.6",
+    "next": "16.3.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },

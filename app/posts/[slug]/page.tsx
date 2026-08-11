@@ -1,14 +1,15 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { posts, getPostBySlug, getRelatedPosts, Post } from '@/data/posts';
+import { posts, getPostBySlug } from '@/data/posts';
 import DepthBadge from '@/components/DepthBadge';
-import TimelineView from '@/components/TimelineView';
-import KnowledgeGraphWrapper from '@/components/KnowledgeGraphWrapper';
+import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
 import SiteHeader from '@/components/SiteHeader';
 import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
-import relationsData from '@/data/relations.json';
+import ontologyIndex from '@/data/ontology/index.json';
+import { buildSubgraph } from '@/lib/ontology/build-subgraph';
+import type { OntologyIndex } from '@/lib/ontology/types';
 
 export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -50,7 +51,7 @@ function stripLeadingDuplicateTitle(content: string, title: string) {
   return lines.join('\n');
 }
 
-function renderContent(content: string, relatedPosts: Post[]) {
+function renderContent(content: string) {
   const lines = content.split('\n');
 
   return lines.map((line, i) => {
@@ -155,42 +156,14 @@ interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-function getScoreColor(score: number): string {
-  if (score >= 90) return '#D4922A';
-  if (score >= 70) return '#8A7A5E';
-  return '#5A4A3E';
-}
-
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) notFound();
 
-  // AI 연관도 데이터 로드 (relations.json)
-  const relationsMap = relationsData as Record<string, Array<{ slug: string; score: number }>>;
-  const aiRelations = relationsMap[slug] || [];
-
-  // AI 연관도 기반 related 포스트 (없으면 기존 태그 기반 fallback)
-  const aiRelatedPosts = aiRelations
-    .map((r) => {
-      const p = posts.find((po) => po.slug === r.slug);
-      return p ? { ...p, score: r.score } : null;
-    })
-    .filter(Boolean) as (Post & { score: number })[];
-
-  const related = aiRelatedPosts.length > 0 ? aiRelatedPosts : getRelatedPosts(post).map((p) => ({ ...p, score: 0 }));
-
-  // 그래프용 포스트 메타 목록
-  const postsMeta = posts.map((p) => ({ slug: p.slug, title: p.title }));
-
-  const sameTagPosts = posts.filter(
-    (p) =>
-      p.slug !== post.slug &&
-      p.tags.some((t) => post.tags.includes(t))
-  ).slice(0, 4);
-
-  const topTag = post.tags[0] || '';
+  const constellation = buildSubgraph(slug, ontologyIndex as OntologyIndex, { viewport: 'mobile' });
+  const desktopConstellation = buildSubgraph(slug, ontologyIndex as OntologyIndex, { viewport: 'desktop' });
 
   return (
     <div className="post-reader-page min-h-screen">
@@ -276,7 +249,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Content */}
         <div className="post-content">
-          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), related)}
+          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title))}
         </div>
 
         {/* videos rendered at top — see above */}
@@ -326,184 +299,12 @@ export default async function PostPage({ params }: PostPageProps) {
           </a>
         </nav>
 
-        {/* Timeline */}
-        {sameTagPosts.length > 1 && (
-          <div
-            style={{
-              marginTop: '2.5rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(212,146,42,0.12)',
-            }}
-          >
-            <TimelineView
-              posts={[post, ...sameTagPosts]}
-              tag={topTag}
-            />
-          </div>
-        )}
-
-        {/* Related posts — AI 연관도 */}
-        {related.length > 0 && (
-          <div
-            style={{
-              marginTop: '2.5rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(212,146,42,0.12)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '1rem', gap: '0.5rem' }}>
-              <h2
-                className="text-sm flex items-center"
-                style={{
-                  gap: '0.5rem',
-                  color: 'rgba(240,228,204,0.45)',
-                  fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                  fontWeight: 300,
-                }}
-              >
-                <span style={{ color: 'rgba(212,146,42,0.5)' }}>∿</span>
-                연관 글
-              </h2>
-              {aiRelations.length > 0 && (
-                <span
-                  style={{
-                    fontSize: '10px',
-                    color: 'rgba(212,146,42,0.4)',
-                    fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                    fontWeight: 300,
-                  }}
-                >
-                  AI가 분석한 연관도
-                </span>
-              )}
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              {related.map((r) => (
-                <Link
-                  key={r.slug}
-                  href={`/posts/${r.slug}`}
-                  className="block rounded-xl card-hover-border"
-                  style={{
-                    background: '#0D1826',
-                    border: '1px solid rgba(212,146,42,0.1)',
-                    padding: '1rem',
-                    position: 'relative',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div
-                        className="text-sm font-medium"
-                        style={{
-                          color: 'rgba(240,228,204,0.8)',
-                          marginBottom: '0.25rem',
-                          fontFamily: "var(--font-serif), 'Noto Serif KR', serif",
-                        }}
-                      >
-                        {r.title}
-                      </div>
-                      <div
-                        className="text-xs line-clamp-2"
-                        style={{ color: 'rgba(240,228,204,0.38)', marginBottom: '0.5rem' }}
-                      >
-                        {r.summary}
-                      </div>
-                      <div className="flex items-center" style={{ gap: '0.5rem' }}>
-                        <DepthBadge depth={r.depth} />
-                        <span
-                          className="text-xs"
-                          style={{
-                            color: 'rgba(240,228,204,0.28)',
-                            fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                            fontWeight: 300,
-                          }}
-                        >
-                          {r.category}
-                        </span>
-                      </div>
-                    </div>
-                    {r.score > 0 && (
-                      <div
-                        style={{
-                          flexShrink: 0,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          borderRadius: '6px',
-                          padding: '4px 8px',
-                          border: `1px solid ${getScoreColor(r.score)}40`,
-                          background: `${getScoreColor(r.score)}12`,
-                          minWidth: '44px',
-                        }}
-                      >
-                        <span
-                          style={{
-                            fontSize: '13px',
-                            fontWeight: 600,
-                            color: getScoreColor(r.score),
-                            lineHeight: 1.2,
-                            fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                          }}
-                        >
-                          {r.score}%
-                        </span>
-                        <span
-                          style={{
-                            fontSize: '9px',
-                            color: `${getScoreColor(r.score)}99`,
-                            fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                            letterSpacing: '0.02em',
-                          }}
-                        >
-                          연관도
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* 지식 그래프 */}
-        {aiRelations.length > 0 && (
-          <div
-            style={{
-              marginTop: '2.5rem',
-              paddingTop: '2rem',
-              borderTop: '1px solid rgba(212,146,42,0.12)',
-            }}
-          >
-            <h2
-              className="text-sm flex items-center"
-              style={{
-                marginBottom: '1rem',
-                gap: '0.5rem',
-                color: 'rgba(240,228,204,0.45)',
-                fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-                fontWeight: 300,
-              }}
-            >
-              <span style={{ color: 'rgba(212,146,42,0.5)' }}>⬡</span>
-              지식 그래프
-            </h2>
-            <div
-              className="rounded-xl"
-              style={{
-                background: '#0D1826',
-                border: '1px solid rgba(212,146,42,0.1)',
-                padding: '0.5rem',
-                overflow: 'hidden',
-              }}
-            >
-              <KnowledgeGraphWrapper
-                currentSlug={post.slug}
-                relations={aiRelations}
-                posts={postsMeta}
-              />
-            </div>
+        {constellation && (
+          <div className="cave-constellation-shell">
+            <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
+            <h2 className="cave-constellation-heading">이 글이 닿아 있는 동굴</h2>
+            <p className="cave-constellation-intro">광물을 눌러 두 생각 사이의 광맥과 원문 근거를 읽어보세요.</p>
+            <CaveConstellation subgraph={constellation} desktopSubgraph={desktopConstellation ?? undefined} />
           </div>
         )}
 

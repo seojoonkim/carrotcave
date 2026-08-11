@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 
 const syncSource = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
 const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), 'utf8');
@@ -576,4 +576,38 @@ test('home uses one repeating editorial system for the complete post archive', (
   assert.doesNotMatch(homeSource, /className="archive-list"/);
   assert.doesNotMatch(homeSource, /className="featured-note"/);
   assert.doesNotMatch(homeSource, /className="axis-grid"/);
+});
+
+test('post details publish exactly one CaveConstellation and no legacy relation surfaces', () => {
+  assert.match(postSource, /import CaveConstellation from ['"]@\/components\/CaveConstellation['"]/);
+  assert.equal((postSource.match(/<CaveConstellation\b/g) || []).length, 1, 'post page must render exactly one CaveConstellation');
+
+  for (const legacySurface of [
+    'TimelineView',
+    'KnowledgeGraphWrapper',
+    'getScoreColor',
+    'getRelatedPosts',
+    'relationsData',
+    'aiRelations',
+    'r.score',
+    'AI가 분석한 연관도',
+    '연관도',
+  ]) {
+    assert.ok(!postSource.includes(legacySurface), `post page must not retain legacy relation surface: ${legacySurface}`);
+  }
+});
+
+test('legacy relation component source files are removed', () => {
+  for (const component of [
+    'TimelineView.tsx',
+    'RelatedPopover.tsx',
+    'KnowledgeGraphWrapper.tsx',
+    'KnowledgeGraph.tsx',
+  ]) {
+    assert.equal(
+      existsSync(new URL(`../components/${component}`, import.meta.url)),
+      false,
+      `legacy component must be absent: components/${component}`,
+    );
+  }
 });
