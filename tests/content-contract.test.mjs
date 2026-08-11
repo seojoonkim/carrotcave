@@ -289,12 +289,23 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
 });
 
-test('ordinary post bodies suppress only a duplicated leading title and sync keeps it removed', () => {
+test('ordinary post bodies suppress a duplicated title line or title-prefixed opening sentence', async () => {
+  const { posts } = await import('../data/posts.ts');
   assert.match(postSource, /function stripLeadingDuplicateTitle\(content: string, title: string\)/);
   assert.match(postSource, /stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(post\.content\), post\.title\)/);
   assert.match(syncSource, /content: stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(content \|\| fullText\), title\)/);
   assert.match(syncSource, /stripLeadingDuplicateTitle\(\s*stripTrailingReactionSignature\(msg\.content/);
   assert.match(syncSource, /updateContent\(src, slug, msg\.fullText, msg\.title\)/);
+
+  const normalize = (value) => value.normalize('NFKC').trim().replace(/^#{1,6}\s+/, '').replace(/\s+/g, ' ').replace(/[.!?。！？]+$/, '').trim().toLocaleLowerCase('ko-KR');
+  const remainingTitlePrefixes = posts.filter((post) => {
+    const firstLine = post.content.split('\n').find((line) => line.trim())?.trim() || '';
+    if (!firstLine) return false;
+    const normalizedTitle = normalize(post.title);
+    const normalizedLine = normalize(firstLine);
+    return normalizedLine === normalizedTitle || normalizedLine.startsWith(`${normalizedTitle} `);
+  });
+  assert.deepEqual(remainingTitlePrefixes.map((post) => post.slug), []);
 });
 
 test('post details share a clean action pair without Telegram reaction labels or counts', () => {

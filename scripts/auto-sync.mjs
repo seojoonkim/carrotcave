@@ -84,9 +84,20 @@ function normalizeTitleLine(value) {
 function stripLeadingDuplicateTitle(content, title) {
   const lines = content.split('\n');
   const firstContentLine = lines.findIndex(line => line.trim());
-  if (firstContentLine < 0 || normalizeTitleLine(lines[firstContentLine]) !== normalizeTitleLine(title)) return content;
+  if (firstContentLine < 0) return content;
 
-  lines.splice(firstContentLine, 1);
+  const firstLine = lines[firstContentLine].normalize('NFKC').trim().replace(/^#{1,6}\s+/, '');
+  const titlePrefix = title.normalize('NFKC').trim().replace(/^#{1,6}\s+/, '');
+  if (normalizeTitleLine(firstLine) === normalizeTitleLine(titlePrefix)) {
+    lines.splice(firstContentLine, 1);
+  } else if (firstLine.toLocaleLowerCase('ko-KR').startsWith(titlePrefix.toLocaleLowerCase('ko-KR'))) {
+    const remainder = firstLine.slice(titlePrefix.length);
+    if (!/^(?:\s+|[.!?。！？:：]\s+)/.test(remainder)) return content;
+    lines[firstContentLine] = remainder.replace(/^[.!?。！？:：]?\s+/, '');
+  } else {
+    return content;
+  }
+
   while (lines.length > 0 && !lines[0].trim()) lines.shift();
   return lines.join('\n');
 }

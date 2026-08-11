@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "node --test tests/*.test.mjs",
-    "verify": "npm test && npm run build"
+    "audit:post-titles": "node scripts/audit-post-titles.mjs",
+    "verify": "npm test && npm run audit:post-titles && npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",
