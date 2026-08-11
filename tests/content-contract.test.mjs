@@ -447,8 +447,13 @@ test('development logs are categorized as building rather than exploration', () 
     assert.match(postsSource, new RegExp(`title: '${escaped}',[\\s\\S]{0,160}?category: '빌딩'`));
   }
   assert.match(postsSource, /slug: 'uae-emergency-news-telegram-channel',[\s\S]{0,160}?category: '빌딩'/);
+  for (const slug of ['post-165', 'post-164']) {
+    assert.match(postsSource, new RegExp(`slug: '${slug}',[\\s\\S]{0,240}?category: '빌딩'`));
+    assert.equal(ontologyIndex.nodes[slug].category, '빌딩');
+  }
   assert.equal(ontologyIndex.nodes['uae-emergency-news-telegram-channel'].category, '빌딩');
   assert.match(syncSource, /만들었다·구축했다·출시했다·배포했다·운영했다[\s\S]*빌딩을 우선/);
+  assert.match(syncSource, /해커톤·위켄드톤·빌더 이벤트를 직접 기획·주최·운영했거나 공동 제작·제작 지원으로 참여한 기록도 빌딩을 우선/);
   assert.match(syncSource, /const ALLOWED_CATEGORIES = new Set\(\['탐험', '빌딩', '낙서', '소설'\]\)/);
   assert.match(syncSource, /replace\(\/\^\[\^\\p\{L\}\]\+\/u, ''\)[\s\S]*ALLOWED_CATEGORIES\.has\(normalizedCategory\)[\s\S]*throw new Error\(`Invalid category:/);
   assert.match(postSource, /href=\{`\/\?section=\$\{encodeURIComponent\(axisOf\(post\)\)/);

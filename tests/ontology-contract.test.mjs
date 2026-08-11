@@ -51,6 +51,13 @@ test('every current ordinary post has an approved ontology annotation', () => {
     const body = normalizeReadableText(post.content, post.title);
     assert.ok(item.claims.every((claim) => body.includes(normalizeReadableText(claim.evidence))));
   }
+  const categoryTopic = { 탐험: 'exploration', 빌딩: 'building', 낙서: 'notes', 소설: 'fiction' };
+  for (const post of posts) {
+    assert.ok(
+      annotations[post.slug].primaryTopics.includes(categoryTopic[post.category]),
+      `${post.slug}: ${post.category} must include ${categoryTopic[post.category]}`,
+    );
+  }
   assert.ok(vocabulary.topics.length >= 1);
 });
 

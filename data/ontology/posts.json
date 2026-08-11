@@ -313,13 +313,13 @@
   },
   "post-165": {
     "primaryTopics": [
-      "exploration"
+      "building"
     ],
     "secondaryTopics": [
       "depth-entry"
     ],
     "questions": [
-      "exploration-reading-question"
+      "building-reading-question"
     ],
     "claims": [
       {
@@ -336,7 +336,7 @@
     "motifs": [],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "exploration"
+      "building"
     ],
     "reviewStatus": "approved",
     "provenance": {
@@ -352,13 +352,13 @@
   },
   "post-164": {
     "primaryTopics": [
-      "exploration"
+      "building"
     ],
     "secondaryTopics": [
       "depth-mid"
     ],
     "questions": [
-      "exploration-reading-question"
+      "building-reading-question"
     ],
     "claims": [
       {
@@ -375,7 +375,7 @@
     "motifs": [],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "exploration"
+      "building"
     ],
     "reviewStatus": "approved",
     "provenance": {
@@ -2332,7 +2332,7 @@
   },
   "uae-emergency-news-telegram-channel": {
     "primaryTopics": [
-      "notes"
+      "building"
     ],
     "secondaryTopics": [
       "depth-entry",
@@ -2341,7 +2341,7 @@
       "tag-속보"
     ],
     "questions": [
-      "notes-reading-question"
+      "building-reading-question"
     ],
     "claims": [
       {
@@ -2362,7 +2362,7 @@
     ],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "notes"
+      "building"
     ],
     "reviewStatus": "approved",
     "provenance": {
