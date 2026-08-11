@@ -9,13 +9,13 @@ interface DepthBadgeProps {
 
 const depthStyle: Record<DepthLevel, { color: string }> = {
   entry: {
-    color: '#D4922A',
+    color: '#FFD166',
   },
   mid: {
-    color: '#C86428',
+    color: '#FFB15C',
   },
   deep: {
-    color: '#B85020',
+    color: '#FF8A65',
   },
 };
 
@@ -27,7 +27,7 @@ export default function DepthBadge({ depth, className = '' }: DepthBadgeProps) {
       style={{
         color: s.color,
         fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-        fontWeight: 300,
+        fontWeight: 650,
         letterSpacing: '0.02em',
       }}
     >

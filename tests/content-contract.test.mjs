@@ -10,6 +10,7 @@ const interviewSource = readFileSync(new URL('../data/interviews.ts', import.met
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const editorialCardSource = readFileSync(new URL('../components/EditorialCard.tsx', import.meta.url), 'utf8');
+const depthBadgeSource = readFileSync(new URL('../components/DepthBadge.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
 const layoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
 const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.meta.url), 'utf8');
@@ -41,6 +42,16 @@ test('iOS webviews extend the graphite header through the top safe area', () => 
   assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
+});
+
+test('post reader accent metadata stays bright and titles use the available line width', () => {
+  assert.match(depthBadgeSource, /entry:\s*\{\s*color: '#FFD166'/);
+  assert.match(depthBadgeSource, /mid:\s*\{\s*color: '#FFB15C'/);
+  assert.match(depthBadgeSource, /deep:\s*\{\s*color: '#FF8A65'/);
+  assert.match(depthBadgeSource, /fontWeight: 650/);
+  assert.match(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:wrap;overflow-wrap:anywhere/);
+  assert.doesNotMatch(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:balance/);
+  assert.match(postSource, /color: '#E8D8B8'/);
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {

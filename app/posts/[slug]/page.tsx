@@ -268,9 +268,9 @@ export default async function PostPage({ params }: PostPageProps) {
               key={tag}
               className="rounded-full text-xs"
               style={{
-                background: 'rgba(212,146,42,0.05)',
-                border: '1px solid rgba(212,146,42,0.15)',
-                color: 'rgba(240,228,204,0.45)',
+                background: 'rgba(255,209,102,0.08)',
+                border: '1px solid rgba(255,209,102,0.28)',
+                color: '#E8D8B8',
                 padding: '0.25rem 0.625rem',
               }}
             >
