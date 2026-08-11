@@ -22,7 +22,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .skip-link:focus { transform: none; }
 .progress { position: fixed; top: 0; inset-inline: 0; height: 2px; z-index: 110; background: var(--panel-2); }
 .progress span { display: block; width: 0; height: 100%; background: var(--ansi-green); box-shadow: 0 0 8px color-mix(in srgb,var(--ansi-green) 22%,transparent); transition: width .18s linear; }
-.site-header { position: fixed; top: 0; inset-inline: 0; z-index: 100; height: var(--header); display: grid; grid-template-columns: 32px 1px minmax(0,1fr) auto; align-items: center; gap: 16px; padding: 0 max(18px, env(safe-area-inset-left)); background: rgba(47,50,57,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+.site-header { position: fixed; top: 0; inset-inline: 0; z-index: 100; height: var(--header); display: grid; grid-template-columns: 32px 1px minmax(0,1fr) auto; align-items: center; gap: 16px; padding: 0 max(18px, env(safe-area-inset-left)); background: rgba(41,44,51,.94); border-bottom: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(18px); }
 .chapter-progress { position:absolute; inset:auto 0 0; height:3px; overflow:hidden; background:color-mix(in srgb,var(--line) 72%,transparent); }
 .chapter-progress-fill { display:block; width:100%; height:100%; transform:scaleX(0); transform-origin:left center; background:linear-gradient(90deg,var(--cyan),var(--ansi-bright-cyan) 68%,var(--amber)); transition:transform 90ms linear; will-change:transform; }
 .chapter-progress-fill.is-chapter-change { transition:none; }

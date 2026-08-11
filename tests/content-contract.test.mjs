@@ -20,8 +20,18 @@ const liangReaderStyles = readFileSync(new URL('../public/voices/liang-wenfeng/s
 const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
 const liangKeySentences = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/key-sentences.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
+const yangReaderStyles = readFileSync(new URL('../public/voices/yang-zhilin/styles.css', import.meta.url), 'utf8');
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
+
+test('all voice reader headers match the shared menu header surface', () => {
+  assert.match(stylesSource, /\.cc-header\{[^}]*background:rgba\(41,44,51,\.94\);backdrop-filter:blur\(18px\)/);
+
+  for (const readerStyles of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
+    assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/);
+    assert.doesNotMatch(readerStyles, /\.site-header \{[^}]*background: rgba\(47,50,57,\.94\)/);
+  }
+});
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
   assert.match(syncSource, /const CHANNEL = 'carrotcave';/);
