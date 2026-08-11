@@ -271,10 +271,15 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
 });
 
-test('post details hide granular Telegram reaction emoji counts without removing the channel link', () => {
-  assert.doesNotMatch(postSource, /\{post\.reactions\}/);
-  assert.match(postSource, />텔레그램 반응<\/span>/);
-  assert.match(postSource, /채널에서 보기 →/);
+test('post details share a clean action pair without Telegram reaction labels or counts', () => {
+  assert.doesNotMatch(postSource, /\{post\.reactions\}|>텔레그램 반응<\/span>/);
+  assert.match(postSource, /<nav className="post-reader-actions" aria-label="글 이동">/);
+  assert.match(postSource, /className="post-reader-action"/);
+  assert.match(postSource, /className="post-reader-action post-reader-action--telegram"/);
+  assert.match(postSource, /텔레그램 채널에서 보기/);
+  assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
+  assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:46px/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
   assert.match(syncSource, /content: stripTrailingReactionSignature\(content \|\| fullText\)/);

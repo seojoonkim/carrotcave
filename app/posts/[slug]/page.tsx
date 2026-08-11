@@ -275,22 +275,24 @@ export default async function PostPage({ params }: PostPageProps) {
           ))}
         </div>
 
-        {/* Telegram reactions */}
-        <div
-          className="flex items-center text-sm"
-          style={{ marginTop: '1.5rem', gap: '0.75rem', color: 'rgba(240,228,204,0.3)' }}
-        >
-          <span>텔레그램 반응</span>
+        <nav className="post-reader-actions" aria-label="글 이동">
+          <Link
+            href={`/?section=${encodeURIComponent(axisOf(post))}`}
+            className="post-reader-action"
+          >
+            <span aria-hidden="true">←</span>
+            {axisDestinationLabel(post)}
+          </Link>
           <a
             href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto text-xs hover-amber"
-            style={{ color: 'rgba(212,146,42,0.55)' }}
+            className="post-reader-action post-reader-action--telegram"
           >
-            채널에서 보기 →
+            텔레그램 채널에서 보기
+            <span aria-hidden="true">↗</span>
           </a>
-        </div>
+        </nav>
 
         {/* Timeline */}
         {sameTagPosts.length > 1 && (
@@ -473,16 +475,6 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
         )}
 
-        {/* Back */}
-        <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-          <Link
-            href={`/?section=${encodeURIComponent(axisOf(post))}`}
-            className="inline-flex items-center text-sm hover-amber"
-            style={{ color: 'rgba(212,146,42,0.55)', gap: '0.5rem' }}
-          >
-            {axisDestinationLabel(post)}
-          </Link>
-        </div>
       </article>
     </div>
   );
