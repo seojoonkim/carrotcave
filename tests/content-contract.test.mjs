@@ -60,6 +60,9 @@ test('post corrections and newest-first ordering stay explicit', async () => {
   assert.equal(melgeek?.category, '✍️ 낙서');
   assert.deepEqual(promptGuard?.mediaUrls, undefined);
   assert.equal(posts.filter((post) => post.title === 'Hashed Vibe Labs Fellows 소개').length, 1);
+  const vibeLabs = posts.filter((post) => post.title === 'vibelabs.hashed.com을 만든 이야기');
+  assert.deepEqual(vibeLabs.map((post) => [post.slug, post.telegramMsgId]), [['vibe-labs-landing-page-creation', 8]]);
+  assert.doesNotMatch(postsSource, /slug:\s*'vibelabs-landing'/);
   assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
 });
 

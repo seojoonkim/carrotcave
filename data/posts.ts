@@ -3058,7 +3058,7 @@ SANO — 막내 건강·일정·생활 관리자. Sane에서 왔다. 가장 조�
     date: '2026-01-06',
     reactions: 59,
     tags: ['바이브코딩', '창업', 'VC', '인재', 'AI'],
-    relatedSlugs: ['vibe-coding-tip', 'vibelabs-landing', 'overnight-success'],
+    relatedSlugs: ['vibe-coding-tip', 'vibe-labs-landing-page-creation', 'overnight-success'],
     mediaUrls: ['/media/msg-5-0.jpg'],
   },
   {
@@ -3076,30 +3076,8 @@ AI가 인류한테 준 가장 위대한 선물 중 하나는 밥먹으면서 개
     date: '2026-01-07',
     reactions: 57,
     tags: ['바이브코딩', '유머', 'AI'],
-    relatedSlugs: ['vibe-founders-era', 'vibelabs-landing'],
+    relatedSlugs: ['vibe-founders-era', 'vibe-labs-landing-page-creation'],
     mediaUrls: ['/media/posts/vibe-coding-tip-0.jpg'],
-  },
-  {
-    id: '20',
-    slug: 'vibelabs-landing',
-    title: 'vibelabs.hashed.com을 만든 이야기',
-    category: '🛠️ 빌딩',
-    depth: 'mid',
-    summary: '바이브 코딩 시대의 본질은 생산이 아니라 판단이다. 누구나 만들 수 있는 것을 거부하는 사람을 찾는다.',
-    content: `10일 쯤 전의 일이다. 퇴근 후 밤 9시가 넘어서야 iTerm2를 켜고 Claude를 호출했다. 목표는 단순했다. Vibe Labs 런칭을 위한 랜딩 페이지를 만들기(초기의 아이디어는 Hashed Vibe Camp였는데, 이 역시 새벽중에 이름을 바꿨다). 첫 번째 초기 버전이 나오기까지는 30분도 채 걸리지 않았다. 흰 배경, 세련된 타이포그래피, 그라데이션 버튼, 적절한 애니메이션 효과, 모바일에 적응되는 완벽한 반응형 디자인. 크게 손색없는 '요즘 스타일'의 웹사이트의 뼈대였다. 그런데 마음이 동하지 않았다. 디자인 문제인가 싶어 색감을 바꾸고 레이아웃을 비틀어 두 번째 버전을 만들었다. 역시 30분 컷. 나쁘지 않았지만 여전히 공허했다. 그저 "잘 만든 웹사이트"일 뿐, 그 이상도 이하도 아니었다.
-
-그렇게 두어 시간을 더 허비하고 새벽 1시쯤이 되어서야 깨달았다. 문제는 일반적인 퀄리티가 아니었다. AI와 함께하는 바이브 코딩 시대에 매끈한 랜딩 페이지는 누구나 만든다. 우리가 런칭하려는 건 "새로운 시대의 빌더를 위한 프로그램"인데, 누구나 만들 수 있는 양산형 사이트로 그들을 맞이하는 게 옳은가? 방향을 완전히 틀었다. 보편적인 GUI를 버리고 투박한 터미널로 돌아가기로 했다. 검은 화면에 깜빡이는 커서, "MEM: 48MB", "CPU: 2%" 같은 시스템 리소스 텍스트. 명령어를 입력해야만 비로소 정보를 뱉어내는 CLI 인터페이스. 어떤 인터페이스로 숨겨진 재미를 줄지, 인터랙션의 템포는 어떻게 조절할지. 매끈함 대신 디테일과 씨름했다.
-
-이 불편함이 오히려 필터가 될 것이라 확신했다. 누군가는 "이게 뭐야?" 하며 떠나겠지만, 우리가 찾는 사람들은 "오, 이거 재밌네?" 하며 키보드를 두드릴 테니. 이 랜딩 페이지는 그 자체로 증명이 되어야 했다. Hashed는 자본만 제공하는 VC가 아니라, 직접 밤새워 코드를 짜고 프로덕트를 만드는 사람들이라는 사실을. 아침 6시 50분, 마지막 커밋을 푸시하고 배포를 마쳤다. 새벽의 정적 속에서 느낀 건 안도감이 아닌 확신이었다.
-
-바이브 코딩 시대의 본질은 '생산'이 아니라 '판단'이다. 만드는 행위 자체는 너무나 쉬워졌다. 누구나 그럴듯한 결과물을 낼 수 있기에, 역설적으로 '무엇을, 왜 만들어야 하는가'가 더욱 중요해졌다. 처음 만든 세련된 페이지는 정답에 가까웠지만 우리의 이야기는 아니었다. 터미널 UI로 바꾸고 나서야 비로소 사이트가 말을 걸기 시작했다.
-
-Hashed가 찾는 사람들도 결국 그런 이들이다. 누구나 만들 수 있는 것을 거부하는 사람. 변태 같은 완성도와 디테일에 집착하는 사람. AI로 무엇이든 만들 수 있는 시대에, 남들과 다른 '무엇'을 기어코 만들어내는 집요함을 가진 사람.`,
-    date: '2026-01-10',
-    reactions: 44,
-    tags: ['바이브코딩', 'HVL', '개발', '디자인', 'Hashed'],
-    relatedSlugs: ['vibe-founders-era', 'overnight-success', 'agentlinter-dev-log'],
-    mediaUrls: ['/media/posts/vibelabs-landing-0.jpg'],
   },
   {
     id: '21',
@@ -3162,7 +3140,7 @@ Same mission: AI…
     date: '2026-01-14',
     reactions: 40,
     tags: ['창업', '바이브코딩', '성장', '교훈'],
-    relatedSlugs: ['vibelabs-landing', 'vibe-founders-era', 'agentlinter-dev-log'],
+    relatedSlugs: ['vibe-labs-landing-page-creation', 'vibe-founders-era', 'agentlinter-dev-log'],
     mediaUrls: ['/media/msg-11-0.jpg'],
   },
   {
