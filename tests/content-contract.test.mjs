@@ -17,6 +17,7 @@ const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
 const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
+const liangKeySentences = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/key-sentences.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 
@@ -82,7 +83,9 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.match(liangReaderSource, /음성인식.*오류/);
   assert.doesNotMatch(liangReaderSource, /직접 인용.*없음/);
   assert.match(liangReaderSource, /공개 정리본을 최소한으로 손질한 한국어 번역이며, 음성 대조로 검증한 축자 기록이 아니다/);
-  assert.match(liangReaderSource, /태그는 편집상 추정/);
+  assert.match(liangReaderSource, /화자나 발화 기능을 화면에 표시하지 않으며/);
+  assert.match(liangReaderSource, /독립적인 의미, 핵심 교훈, 앞뒤 맥락 없이 이해 가능한지/);
+  assert.match(liangReaderSource, /기능 분류는 편집상 추정이며 확인된 화자 귀속이 아니다/);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
   assert.equal(liangLongReader.length, 19);
   const dialogueParagraphs = liangLongReader.flatMap((section) => section.paragraphs);
@@ -114,18 +117,8 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   for (const section of liangLongReader) {
     assert.match(liangReaderSource, new RegExp(`id="time-${section.timestamp.replaceAll(':', '-')}"`));
     assert.ok(liangReaderSource.includes(`<h3>${escapeHtml(section.title_ko)}</h3>`));
-    for (const paragraph of section.paragraphs) {
-      const evidenceAttribute = paragraph.tag === '미상'
-        ? ''
-        : ` data-evidence="${escapeHtml(paragraph.evidence)}"`;
-      const visibleTag = paragraph.tag === '미상'
-        ? ''
-        : `<span class="utterance-tag">[${paragraph.tag}]</span>`;
-      const utteranceHtml = `<p class="utterance" data-tag="${paragraph.tag}"${evidenceAttribute}>${visibleTag}<span class="utterance-text">${escapeHtml(paragraph.text)}</span></p>`;
-      assert.ok(liangReaderSource.includes(utteranceHtml));
-    }
     assert.equal((liangReaderSource.match(/class="utterance"/g) || []).length, 447);
-    assert.doesNotMatch(liangReaderSource, /\[미상\]/);
+    assert.doesNotMatch(liangReaderSource, /class="utterance-tag"|\[(?:질문|답변|미상|진행|불명)\]/);
     for (const caveat of section.caveats) {
       assert.ok(liangReaderSource.includes(`<li>${escapeHtml(caveat)}</li>`));
     }
@@ -154,6 +147,34 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.doesNotMatch(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?segments: 122/);
   assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?duration: '19개 구간'/);
   assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,700}?segments: 447/);
+
+  assert.equal(liangKeySentences.length, 21);
+  const highlightedParagraphs = new Set();
+  for (const item of liangKeySentences) {
+    assert.deepEqual(Object.keys(item).sort(), ['exact_quote', 'paragraph_index', 'section_index']);
+    assert.ok(Number.isInteger(item.section_index) && item.section_index >= 0 && item.section_index < liangLongReader.length);
+    const section = liangLongReader[item.section_index];
+    assert.ok(Number.isInteger(item.paragraph_index) && item.paragraph_index >= 0 && item.paragraph_index < section.paragraphs.length);
+    const paragraph = section.paragraphs[item.paragraph_index];
+    assert.equal(paragraph.text.split(item.exact_quote).length - 1, 1);
+    const key = `${item.section_index}:${item.paragraph_index}`;
+    assert.ok(!highlightedParagraphs.has(key));
+    highlightedParagraphs.add(key);
+    assert.ok(liangReaderSource.includes(`<mark class="key-sentence">${escapeHtml(item.exact_quote)}</mark>`));
+  }
+  assert.equal((liangReaderSource.match(/<mark class="key-sentence">/g) || []).length, liangKeySentences.length);
+
+  const renderedParagraphs = [...liangReaderSource.matchAll(/<p class="utterance" data-tag="([^"]+)"(?: data-evidence="([^"]*)")?><span class="utterance-text">([\s\S]*?)<\/span><\/p>/g)]
+    .map(([, tag, evidence = '', content]) => ({
+      tag,
+      evidence,
+      text: content.replaceAll(/<mark class="key-sentence">([\s\S]*?)<\/mark>/g, '$1'),
+    }));
+  assert.deepEqual(renderedParagraphs, dialogueParagraphs.map((paragraph) => ({
+    tag: paragraph.tag,
+    evidence: escapeHtml(paragraph.evidence),
+    text: escapeHtml(paragraph.text),
+  })));
 });
 
 test('Yang Zhilin transcript uses sentence-aware paragraphs instead of fixed segment batches', () => {
