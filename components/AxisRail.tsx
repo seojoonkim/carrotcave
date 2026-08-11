@@ -13,7 +13,7 @@ export const axisNotes: Record<typeof editorialAxes[number], string> = {
 };
 
 export function axisOf(post: Post) {
-  return post.category.replace(/^[^\p{L}]+/u, '');
+  return post.category;
 }
 
 export function axisDestinationLabel(post: Post) {

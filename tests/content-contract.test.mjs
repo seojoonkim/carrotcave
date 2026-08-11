@@ -7,6 +7,7 @@ const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), '
 const homeSource = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 const interviewSource = readFileSync(new URL('../data/interviews.ts', import.meta.url), 'utf8');
+const ontologyIndex = JSON.parse(readFileSync(new URL('../data/ontology/index.json', import.meta.url), 'utf8'));
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const editorialCardSource = readFileSync(new URL('../components/EditorialCard.tsx', import.meta.url), 'utf8');
@@ -15,6 +16,8 @@ const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.m
 const layoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
 const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.meta.url), 'utf8');
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
+const readingProgressSource = readFileSync(new URL('../components/ReadingProgress.tsx', import.meta.url), 'utf8');
+const voiceProgressSource = readFileSync(new URL('../public/voices/reading-progress.js', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
@@ -33,6 +36,31 @@ test('all voice reader headers match the shared menu header surface', () => {
     assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/);
     assert.doesNotMatch(readerStyles, /\.site-header \{[^}]*background: rgba\(47,50,57,\.94\)/);
   }
+});
+
+test('all reading surfaces use the header bottom for whole-document progress and voices subordinate chapter progress', () => {
+  assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
+  assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
+  assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);
+  assert.match(readingProgressSource, /style\.transform = `scaleX\(\$\{percent \/ 100\}\)`/);
+  assert.match(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:3px/);
+
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource]) {
+    assert.match(source, /<header class="site-header">[\s\S]*?id="chapterTrack"[\s\S]*?id="readingProgress"[\s\S]*?<\/header>/);
+    assert.match(source, /\.\.\/reading-progress\.js/);
+    assert.doesNotMatch(source, /<div class="progress"/);
+    assert.doesNotMatch(source, /chapterProgressFill/);
+  }
+  for (const source of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
+    assert.match(source, /\.progress \{[^}]*bottom:-1px;[^}]*height:3px/);
+    assert.match(source, /\.chapter-track \{[^}]*height:2px/);
+    assert.match(source, /\.chapter-track-segment\.is-current \.chapter-track-fill/);
+    assert.doesNotMatch(source, /\.chapter-progress-fill/);
+  }
+  assert.match(voiceProgressSource, /document\.querySelectorAll\('\.transcript-chapter'\)/);
+  assert.match(voiceProgressSource, /chapterTrack\.append\(segment\)/);
+  assert.match(voiceProgressSource, /progress\.setAttribute\('aria-valuenow'/);
+  assert.match(voiceProgressSource, /챕터 읽기 진행 \$\{chapterLabel\}/);
 });
 
 test('iOS webviews extend the graphite header through the top safe area', () => {
@@ -94,15 +122,15 @@ test('post corrections and newest-first ordering stay explicit', async () => {
   const melgeek = posts.find((post) => post.slug === 'melgeek-evangelion-centauri-keyboard-review');
   const promptGuard = posts.find((post) => post.slug === 'prompt-guard-dev');
 
-  assert.equal(melgeek?.category, '✍️ 낙서');
+  assert.equal(melgeek?.category, '낙서');
   assert.deepEqual(promptGuard?.mediaUrls, undefined);
   assert.equal(posts.filter((post) => post.title === 'Hashed Vibe Labs Fellows 소개').length, 1);
   const vibeLabs = posts.filter((post) => post.title === 'vibelabs.hashed.com을 만든 이야기');
   assert.deepEqual(vibeLabs.map((post) => [post.slug, post.telegramMsgId]), [['vibe-labs-landing-page-creation', 8]]);
   assert.doesNotMatch(postsSource, /slug:\s*'vibelabs-landing'/);
   const directlyBuiltSlugs = ['post-191', 'post-187', 'post-161', 'post-150', 'korean-tech-ecosystem-api-access-issues', 'sano-godaddy-war', 'click-theology'];
-  for (const slug of directlyBuiltSlugs) assert.equal(posts.find((post) => post.slug === slug)?.category, '🛠️ 빌딩');
-  assert.equal(posts.find((post) => post.slug === 'post-111')?.category, '🐇 탐험');
+  for (const slug of directlyBuiltSlugs) assert.equal(posts.find((post) => post.slug === slug)?.category, '빌딩');
+  assert.equal(posts.find((post) => post.slug === 'post-111')?.category, '탐험');
   assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
 });
 
@@ -239,8 +267,8 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.match(liangReaderSource, /https:\/\/github\.com\/iamsophie\/deepseek-liang-wenfeng-investor-meeting/);
   assert.doesNotMatch(liangReaderSource, /<script src="script\.js"/);
   assert.doesNotMatch(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?segments: 122/);
-  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,500}?duration: '19개 구간'/);
-  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,700}?segments: 447/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,700}?duration: '19개 구간'/);
+  assert.match(interviewSource, /slug: 'liang-wenfeng'[\s\S]{0,900}?segments: 447/);
 
   assert.equal(liangKeySentences.length, 21);
   const highlightedParagraphs = new Set();
@@ -379,11 +407,38 @@ test('development logs are categorized as building rather than exploration', () 
     'MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템',
   ]) {
     const escaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    assert.match(postsSource, new RegExp(`title: '${escaped}',[\\s\\S]{0,160}?category: '🛠️ 빌딩'`));
+    assert.match(postsSource, new RegExp(`title: '${escaped}',[\\s\\S]{0,160}?category: '빌딩'`));
   }
+  assert.match(postsSource, /slug: 'uae-emergency-news-telegram-channel',[\s\S]{0,160}?category: '빌딩'/);
+  assert.equal(ontologyIndex.nodes['uae-emergency-news-telegram-channel'].category, '빌딩');
+  assert.match(syncSource, /만들었다·구축했다·출시했다·배포했다·운영했다[\s\S]*빌딩을 우선/);
+  assert.match(syncSource, /const ALLOWED_CATEGORIES = new Set\(\['탐험', '빌딩', '낙서', '소설'\]\)/);
+  assert.match(syncSource, /replace\(\/\^\[\^\\p\{L\}\]\+\/u, ''\)[\s\S]*ALLOWED_CATEGORIES\.has\(normalizedCategory\)[\s\S]*throw new Error\(`Invalid category:/);
   assert.match(postSource, /href=\{`\/\?section=\$\{encodeURIComponent\(axisOf\(post\)\)/);
   assert.match(postSource, /\{axisDestinationLabel\(post\)\}/);
-  assert.doesNotMatch(postSource, /🐇 탐험로 돌아가기/);
+  assert.doesNotMatch(postSource, /탐험로 돌아가기/);
+});
+
+test('category names are stored without decorative icons across production data and generators', () => {
+  const forbiddenLabels = [
+    ['🐇', '탐험'],
+    ['🛠️', '빌딩'],
+    ['✍️', '낙서'],
+    ['📖', '소설'],
+  ].map((parts) => parts.join(' '));
+  for (const source of [postsSource, syncSource, axisRailSource, JSON.stringify(ontologyIndex)]) {
+    for (const label of forbiddenLabels) assert.ok(!source.includes(label));
+  }
+  assert.match(axisRailSource, /return post\.category;/);
+  assert.doesNotMatch(axisRailSource, /post\.category\.replace/);
+});
+
+test('voice thumbnails use content abstracts instead of transcript-format descriptions', () => {
+  assert.match(interviewSource, /summary: string;/);
+  assert.equal((interviewSource.match(/\n\s+summary: '/g) ?? []).length, 3);
+  assert.match(voiceListSource, /summary=\{item\.summary\}/);
+  assert.doesNotMatch(voiceListSource, /summary=\{item\.description\}/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
 test('post thumbnails replace sequence numbers with a prominent publication-date stamp', () => {
@@ -438,7 +493,7 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
   assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
@@ -469,7 +524,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
   assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
   assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
   assert.match(editorialCardSource, /<span className="wall-card__axis">\{axis\}<\/span>/);
   assert.match(editorialCardSource, /<h2>\{title\}<\/h2>/);
@@ -484,7 +539,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
   assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto\}/);
   assert.match(stylesSource, /\.wall-card--voice h2\{font-size:17px/);
-  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
 test('home and voice list omit the intro strip and move directly into archive navigation', () => {

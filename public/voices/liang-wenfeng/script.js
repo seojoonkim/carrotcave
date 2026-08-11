@@ -137,7 +137,7 @@
   const update = () => {
     const max = document.documentElement.scrollHeight - innerHeight;
     const percent = max > 0 ? Math.min(100, Math.max(0, scrollY / max * 100)) : 0;
-    progressBar.style.width = `${percent}%`;
+    progressBar.style.transform = `scaleX(${percent / 100})`;
     railPercent.textContent = `${Math.round(percent)}%`;
     backToTop.classList.toggle('visible', scrollY > innerHeight * .7);
     const probe = document.querySelector('.site-header').getBoundingClientRect().bottom + 26;

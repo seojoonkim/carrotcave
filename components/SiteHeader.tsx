@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ReadingProgress from '@/components/ReadingProgress';
 
 interface SiteHeaderProps {
   readingTitle?: string;
@@ -24,6 +25,7 @@ export default function SiteHeader({ readingTitle, readingMeta }: SiteHeaderProp
       ) : (
         <a className="cc-channel" href="https://t.me/carrotcave" target="_blank" rel="noreferrer">TELEGRAM ↗</a>
       )}
+      {readingTitle && <ReadingProgress />}
     </header>
   );
 }

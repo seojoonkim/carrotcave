@@ -25,7 +25,7 @@ export default function VoicesPage() {
               date={item.sourcePublishedAt}
               axis="목소리"
               title={`${item.name} · ${item.title}`}
-              summary={item.description}
+              summary={item.summary}
               imageUrl={item.thumbnailUrl}
               className="wall-card--voice"
               priority={index === 0}

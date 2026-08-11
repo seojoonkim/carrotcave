@@ -42,6 +42,7 @@ const MIN_TEXT_LENGTH = 150; // 이보다 짧으면 이미지/공지로 간주
 const TEXT_MISMATCH_THRESHOLD = 0.1; // 10% 이상 차이나면 재시도
 const MEDIA_MIN_SIZE = 5 * 1024; // 5KB 미만이면 다운로드 실패로 간주
 const MAX_RETRIES = 3;
+const ALLOWED_CATEGORIES = new Set(['탐험', '빌딩', '낙서', '소설']);
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_ALL = process.argv.includes('--force-all');
@@ -457,17 +458,19 @@ ${msg.fullText.substring(0, 2000)}
 {
   "slug": "영어-소문자-하이픈-only (최대 50자, 내용을 잘 반영하는 영어 키워드)",
   "title": "한국어 제목 (원문 첫줄 그대로, 최대 40자)",
-  "category": "🐇 탐험|🛠️ 빌딩|✍️ 낙서|📖 소설 중 하나",
+  "category": "탐험|빌딩|낙서|소설 중 하나",
   "depth": "entry|mid|deep 중 하나",
   "summary": "글의 실제 내용과 핵심 주장 또는 관찰을 독립적으로 소개하는 한국어 초록 한 문장 (45-110자)",
   "tags": ["태그1", "태그2", "태그3"]
 }
 
 카테고리 기준:
-- 🐇 탐험: AI/기술/사회 분석, 인사이트, 관찰
-- 🛠️ 빌딩: 개발, 제품 만들기, 빌딩 과정
-- ✍️ 낙서: 짧은 생각, 일상, 감상
-- 📖 소설: 픽션, 실험적 글쓰기
+- 탐험: AI/기술/사회 분석, 인사이트, 관찰
+- 빌딩: 개발, 제품 만들기, 빌딩 과정
+- 낙서: 짧은 생각, 일상, 감상
+- 소설: 픽션, 실험적 글쓰기
+- 도구, 제품, 채널, 봇, 자동화, 웹사이트를 실제로 만들었다·구축했다·출시했다·배포했다·운영했다는 결과가 있으면 글 길이와 관계없이 빌딩을 우선한다.
+- 무엇을 만들었다는 짧은 공개·운영 기록을 낙서나 탐험으로 분류하지 않는다.
 
 depth 기준:
 - entry: 가벼운 글 (500자 미만)
@@ -516,6 +519,14 @@ summary 작성 원칙:
       if (!jsonMatch) throw new Error('No JSON found in response');
       
       const metadata = JSON.parse(jsonMatch[0]);
+
+      const normalizedCategory = String(metadata.category ?? '')
+        .replace(/^[^\p{L}]+/u, '')
+        .trim();
+      if (!ALLOWED_CATEGORIES.has(normalizedCategory)) {
+        throw new Error(`Invalid category: ${metadata.category}`);
+      }
+      metadata.category = normalizedCategory;
       
       // Validate and sanitize slug (must be ASCII only)
       if (metadata.slug) {
@@ -548,7 +559,7 @@ function generateFallbackMetadata(msg) {
   return {
     slug,
     title: msg.title.substring(0, 40),
-    category: '🐇 탐험',
+    category: '탐험',
     depth,
     summary: '',
     tags: [],

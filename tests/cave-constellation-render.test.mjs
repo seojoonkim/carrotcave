@@ -35,14 +35,14 @@ function loadComponent() {
 }
 
 const CaveConstellation = loadComponent();
-const center = { slug: 'now', title: '현재 글', category: '🐇 탐험', hop: 0 };
+const center = { slug: 'now', title: '현재 글', category: '탐험', hop: 0 };
 const nodes = [
   center,
-  { slug: 'first', title: '첫 번째 글', category: '🛠️ 빌딩', summary: '첫 번째 글의 핵심 내용입니다.', hop: 1 },
-  { slug: 'second', title: '두 번째 글', category: '✍️ 낙서', summary: '두 번째 글의 핵심 내용입니다.', hop: 1 },
-  { slug: 'third', title: '세 번째 글', category: '📖 소설', summary: '세 번째 글의 핵심 내용입니다.', hop: 1 },
-  { slug: 'fourth', title: '보이면 안 되는 글', category: '🐇 탐험', hop: 1 },
-  { slug: 'deep', title: '2홉 글', category: '🛠️ 빌딩', hop: 2 },
+  { slug: 'first', title: '첫 번째 글', category: '빌딩', summary: '첫 번째 글의 핵심 내용입니다.', hop: 1 },
+  { slug: 'second', title: '두 번째 글', category: '낙서', summary: '두 번째 글의 핵심 내용입니다.', hop: 1 },
+  { slug: 'third', title: '세 번째 글', category: '소설', summary: '세 번째 글의 핵심 내용입니다.', hop: 1 },
+  { slug: 'fourth', title: '보이면 안 되는 글', category: '탐험', hop: 1 },
+  { slug: 'deep', title: '2홉 글', category: '빌딩', hop: 2 },
 ];
 const edge = (to, type, strength, label) => ({
   from: 'now', to, type, strength, label,

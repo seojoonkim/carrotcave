@@ -4,7 +4,7 @@
       "id": "exploration",
       "label": "탐험",
       "aliases": [
-        "🐇 탐험"
+        "탐험"
       ],
       "status": "approved"
     },
@@ -12,7 +12,7 @@
       "id": "building",
       "label": "빌딩",
       "aliases": [
-        "🛠️ 빌딩"
+        "빌딩"
       ],
       "status": "approved"
     },
@@ -20,7 +20,7 @@
       "id": "notes",
       "label": "낙서",
       "aliases": [
-        "✍️ 낙서"
+        "낙서"
       ],
       "status": "approved"
     },
@@ -28,7 +28,7 @@
       "id": "fiction",
       "label": "소설",
       "aliases": [
-        "📖 소설"
+        "소설"
       ],
       "status": "approved"
     }
