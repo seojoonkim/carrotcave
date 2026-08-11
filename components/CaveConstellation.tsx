@@ -4,12 +4,12 @@ import type { OntologyEdge, OntologySubgraph, SubgraphNode } from '@/lib/ontolog
 export type CaveConstellationNode = SubgraphNode;
 export type CaveConstellationRelationship = OntologyEdge;
 
-const RELATIONSHIP_LABELS: Record<OntologyEdge['type'], string> = {
-  DEEPENS: '더 깊어짐',
-  CHALLENGES: '균열을 냄',
-  APPLIES: '현실이 됨',
-  REFRAMES: '다른 세계로 옮김',
-  RESONATES: '멀리 공명함',
+const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string; reason: string }> = {
+  DEEPENS: { label: '같은 주제를 더 깊게', reason: '지금 읽은 글과 같은 질문을 한 단계 더 깊이 다룹니다.' },
+  CHALLENGES: { label: '다른 관점에서', reason: '지금 읽은 글의 주장에 다른 관점을 더합니다.' },
+  APPLIES: { label: '생각을 실제로', reason: '지금 읽은 글의 생각이 현실에서 어떻게 작동하는지 보여줍니다.' },
+  REFRAMES: { label: '새로운 시선으로', reason: '같은 문제를 전혀 다른 시선에서 다시 바라봅니다.' },
+  RESONATES: { label: '핵심 생각이 비슷한', reason: '주제는 달라도 두 글을 관통하는 핵심 생각이 이어집니다.' },
 };
 
 
@@ -37,6 +37,7 @@ export default function CaveConstellation({
       <ol className="cave-constellation__recommendations">
         {recommendations.map((relationship, index) => {
           const target = byId.get(relationship.to)!;
+          const copy = RELATIONSHIP_COPY[relationship.type];
           return (
             <li
               key={`${relationship.from}:${relationship.to}:${relationship.type}`}
@@ -46,31 +47,34 @@ export default function CaveConstellation({
               <article>
                 <header className="cave-constellation__recommendation-header">
                   <span className="cave-constellation__rank">
-                    <span>추천</span> {String(index + 1).padStart(2, '0')}
+                    <span>{index + 1}순위</span>
                   </span>
-                  <p className="cave-constellation__relationship-type">
-                    <span>관계</span>
-                    <strong>{RELATIONSHIP_LABELS[relationship.type]}</strong>
-                  </p>
+                  <strong className="cave-constellation__relationship-type">{copy.label}</strong>
                 </header>
 
                 <h3>{target.title}</h3>
-                <p className="cave-constellation__relationship-label">{relationship.label}</p>
-
-                <div className="cave-constellation__evidence-pair" role="group" aria-label="추천 근거">
-                  <blockquote>
-                    <span>이 글에서</span>
-                    <p>{relationship.sourceEvidence}</p>
-                  </blockquote>
-                  <span className="cave-constellation__evidence-arrow" aria-hidden="true">→</span>
-                  <blockquote>
-                    <span>추천 글에서</span>
-                    <p>{relationship.targetEvidence}</p>
-                  </blockquote>
+                <div className="cave-constellation__why">
+                  <strong>왜 추천하나요?</strong>
+                  <p>{copy.reason}</p>
                 </div>
 
+                <details className="cave-constellation__evidence">
+                  <summary>추천 근거 보기</summary>
+                  <div className="cave-constellation__evidence-pair" role="group" aria-label="추천 근거 원문">
+                    <blockquote>
+                      <span>지금 읽은 글</span>
+                      <p>{relationship.sourceEvidence}</p>
+                    </blockquote>
+                    <span className="cave-constellation__evidence-arrow" aria-hidden="true">→</span>
+                    <blockquote>
+                      <span>추천하는 글</span>
+                      <p>{relationship.targetEvidence}</p>
+                    </blockquote>
+                  </div>
+                </details>
+
                 <Link className="cave-constellation__navigate" href={hrefForSlug(target.slug)}>
-                  이어서 읽기 <span aria-hidden="true">↗</span>
+                  이 글 읽기 <span aria-hidden="true">→</span>
                 </Link>
               </article>
             </li>
