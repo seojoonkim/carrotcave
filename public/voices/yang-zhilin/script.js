@@ -92,7 +92,7 @@
   };
 
   const renderSegments = data => {
-    if (!Array.isArray(data.segments) || data.segments.length !== 2531) throw new Error('Unexpected segment transcript');
+    if (!Array.isArray(data.segments) || data.segments.length !== 2528) throw new Error('Unexpected segment transcript');
     const groups = chapters.map(() => []);
     data.segments.forEach(segment => {
       const chapterIndex = chapters.findIndex(chapter => Number(segment.start) >= Number(chapter.dataset.start) && Number(segment.start) < Number(chapter.dataset.end));

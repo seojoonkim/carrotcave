@@ -20,6 +20,7 @@ const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-
 const liangKeySentences = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/key-sentences.json', import.meta.url), 'utf8'));
 const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/index.html', import.meta.url), 'utf8');
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
+const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
   assert.match(syncSource, /const CHANNEL = 'carrotcave';/);
@@ -128,6 +129,34 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.match(liangReaderSource, /https:\/\/www\.zaobao\.com\.sg\/news\/china\/story20260727-9427115/);
   assert.match(liangReaderSource, /https:\/\/www\.chinatalk\.media\/p\/deepseek-ceo-interview-with-chinas/);
   assert.equal((liangReaderSource.match(/class="content-section chapter transcript-chapter"/g) || []).length, 5);
+  const expectedChapterTitles = [
+    '비전에서 지속학습까지',
+    'AGI를 향한 집중과 연산',
+    '상업화와 연구 조직의 선택',
+    '지속학습 생태계와 확장의 조건',
+    '탐색 연구에서 범용 에이전트까지',
+  ];
+  const expectedChapterTimes = [
+    '00:00:01 ~ 00:51:02',
+    '00:51:02 ~ 01:39:46',
+    '01:39:46 ~ 02:34:59',
+    '02:34:59 ~ 03:17:47',
+    '03:17:47 ~ 03:41:02',
+  ];
+  expectedChapterTitles.forEach((title, index) => {
+    const chapterNumber = index + 1;
+    const chapterPattern = new RegExp(
+      `id="chapter-${chapterNumber}"[\\s\\S]*?<h2>${title}</h2>[\\s\\S]*?<p class="chapter-time">${expectedChapterTimes[index]}</p>`,
+    );
+    assert.match(liangReaderSource, chapterPattern);
+    assert.match(
+      liangReaderSource,
+      new RegExp(`class="toc-chapter-link" href="#chapter-${chapterNumber}"[\\s\\S]*?<span class="toc-chapter-title">${title}</span>[\\s\\S]*?<span class="toc-chapter-time">${expectedChapterTimes[index]}</span>`),
+    );
+  });
+  assert.equal((liangReaderSource.match(/class="chapter-time"/g) || []).length, 5);
+  assert.equal((liangReaderSource.match(/class="toc-chapter-title"/g) || []).length, 5);
+  assert.equal((liangReaderSource.match(/class="toc-chapter-time"/g) || []).length, 5);
   const chapterRanges = [...liangReaderSource.matchAll(/data-start="(\d{2}:\d{2}:\d{2})" data-last-start="(\d{2}:\d{2}:\d{2})"/g)]
     .map(([, start, lastStart]) => [start, lastStart]);
   assert.deepEqual(chapterRanges, [
@@ -182,6 +211,23 @@ test('Yang Zhilin transcript uses sentence-aware paragraphs instead of fixed seg
   assert.doesNotMatch(yangReaderScript, /offset \+= 6|slice\(offset, offset \+ 6\)/);
   assert.match(yangReaderScript, /typeof formatter\.groupSegments === 'function'/);
   assert.match(yangReaderScript, /if \(part\.silence\) paragraph\.classList\.add\('transcript-silence'\)/);
+});
+
+test('Yang Zhilin transcript removes the duplicated program greeting but preserves the real introduction', () => {
+  const removedIds = new Set([17, 18, 19]);
+  assert.ok(yangTranscript.segments.every((segment) => !removedIds.has(segment.id)));
+  assert.ok(!yangTranscript.segments.some((segment) => segment.start >= 53 && segment.end <= 57 && [
+    '안녕하세요, 여러분',
+    '장샤오쥔(张小珺)의 《전통》을 들어주셔서 감사합니다',
+    '장샤오쥔(张小珺)의 비즈니스 인터뷰를 들어주셔서 감사합니다',
+  ].includes(segment.text)));
+  const text = yangTranscript.segments.map((segment) => segment.text).join('\n');
+  assert.match(text, /저는 샤오쥔입니다/);
+  assert.match(text, /이 프로그램은 ‘언어 및 세계 스튜디오’가 제작한 심층 인터뷰 프로그램입니다/);
+  assert.match(text, /오늘의 게스트는 Moonshot AI\(문샷 AI\)의 창립자 겸 CEO 양즈린\(杨植麟\)입니다/);
+  assert.ok(yangTranscript.segments.some((segment) => segment.start > 70 && segment.text === '안녕하세요, 여러분'));
+  assert.equal(yangTranscript.segments.length, 2528);
+  assert.equal(new Set(yangTranscript.segments.map((segment) => segment.id)).size, 2528);
 });
 
 test('post media stays inside the article viewport on mobile', () => {
@@ -387,7 +433,7 @@ test('all voice readers use one flat mobile chapter menu without quoted summary 
     assert.ok(drawer, 'reader must include the mobile table of contents');
     assert.doesNotMatch(drawer, /<details|<summary|<ul|<li/);
     assert.match(drawer, /class="summary-link"[^>]*><span>00<\/span><span>전체 요약<\/span>/);
-    assert.match(drawer, /class="toc-chapter-link"[^>]*data-nav-chapter="1"[^>]*><span>01<\/span><span>/);
+    assert.match(drawer, /class="toc-chapter-link"[^>]*data-nav-chapter="1"[^>]*><span>01<\/span><span(?:\s+class="[^"]+")?>/);
     for (const [, target] of drawer.matchAll(/href="#([^"]+)"/g)) {
       assert.match(source, new RegExp(`id="${target}"`), `drawer target #${target} must exist`);
     }
