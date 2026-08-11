@@ -47,7 +47,7 @@ test('EditorialCard renders the complete shared visual and semantic contract', (
   assert.match(html, /<time class="wall-card__date" dateTime="2025-08-27">/);
   assert.match(html, /<span class="wall-card__axis">목소리<\/span>/);
   assert.match(html, /<h2>양즈린 · 무한의 시작에 서서<\/h2>/);
-  assert.match(html, /<p>Moonshot AI와 Kimi 창업자의 대화 앞부분입니다.<\/p>/);
+  assert.match(html, /<p class="wall-card__abstract">Moonshot AI와 Kimi 창업자의 대화 앞부분입니다.<\/p>/);
   assert.match(html, /<img class="wall-card__image"[^>]*src="\/portrait.jpg"/);
   assert.doesNotMatch(html, /wall-card__eyebrow|wall-card__door|ENTER|OPEN FIELD NOTE/);
 });

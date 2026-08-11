@@ -52,7 +52,7 @@ export default function EditorialCard({
           <span className="wall-card__axis">{axis}</span>
         </div>
         <h2>{title}</h2>
-        {summary && <p>{summary}</p>}
+        {summary && <p className="wall-card__abstract">{summary}</p>}
       </div>
     </Link>
   );

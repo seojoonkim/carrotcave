@@ -73,6 +73,22 @@ test('post slugs, Telegram message IDs, and full article bodies are unique', asy
   assert.equal(new Set(posts.map((post) => post.content.trim())).size, posts.length);
 });
 
+test('every post carries one publishable abstract shared by thumbnails and recommendations', async () => {
+  const { posts } = await import('../data/posts.ts');
+
+  assert.ok(posts.length > 0);
+  assert.match(homeSource, /summary=\{post\.summary\}/);
+  assert.match(editorialCardSource, /className="wall-card__abstract"/);
+  assert.match(syncSource, /assertPublishableAbstract\(summary, msg\.content \|\| msg\.fullText, title\)/);
+  assert.doesNotMatch(syncSource, /summary:\s*msg\.content\.substring/);
+
+  for (const post of posts) {
+    assert.ok(post.summary.length >= 45 && post.summary.length <= 110, `${post.slug}: abstract length`);
+    assert.match(post.summary, /[.!?。！？]$/, `${post.slug}: terminal punctuation`);
+    assert.doesNotMatch(post.summary, /\n|\.\.\.|…|https?:\/\/|\|/i, `${post.slug}: forbidden fragment`);
+  }
+});
+
 test('post corrections and newest-first ordering stay explicit', async () => {
   const { posts } = await import('../data/posts.ts');
   const melgeek = posts.find((post) => post.slug === 'melgeek-evangelion-centauri-keyboard-review');
@@ -418,10 +434,11 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.match(homeSource, /summary=\{post\.summary\}/);
   assert.doesNotMatch(homeSource, /showSummary|wall-card--actual-/);
   assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
-  assert.match(stylesSource, /\.wall-card p\{[^}]*var\(--serif\)/);
+  assert.match(stylesSource, /\.wall-card__abstract\{[^}]*var\(--serif\)/);
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
   assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
-  assert.match(stylesSource, /\.wall-card--uniform p,\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
+  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
@@ -451,11 +468,12 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(homeSource, /className=\{`wall-card--uniform\$\{hasImage \? '' : ' wall-card--generated'\}`\}/);
   assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
   assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
-  assert.match(stylesSource, /\.wall-card--uniform p,\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);
+  assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
+  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
   assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
   assert.match(editorialCardSource, /<span className="wall-card__axis">\{axis\}<\/span>/);
   assert.match(editorialCardSource, /<h2>\{title\}<\/h2>/);
-  assert.match(editorialCardSource, /<p>\{summary\}<\/p>/);
+  assert.match(editorialCardSource, /<p className="wall-card__abstract">\{summary\}<\/p>/);
   assert.doesNotMatch(editorialCardSource, /eyebrow|doorLabel|wall-card__eyebrow|wall-card__door/);
   assert.doesNotMatch(voiceListSource, /eyebrow=|doorLabel=/);
   assert.doesNotMatch(voiceListSource, /<h2>|<p>\{item\.description\}|wall-card__meta/);
@@ -466,7 +484,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
   assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto\}/);
   assert.match(stylesSource, /\.wall-card--voice h2\{font-size:17px/);
-  assert.match(stylesSource, /\.wall-card--voice p\{[^}]*-webkit-line-clamp:2/);
+  assert.match(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp:2/);
 });
 
 test('home and voice list omit the intro strip and move directly into archive navigation', () => {

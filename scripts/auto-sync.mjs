@@ -459,7 +459,7 @@ ${msg.fullText.substring(0, 2000)}
   "title": "한국어 제목 (원문 첫줄 그대로, 최대 40자)",
   "category": "🐇 탐험|🛠️ 빌딩|✍️ 낙서|📖 소설 중 하나",
   "depth": "entry|mid|deep 중 하나",
-  "summary": "한국어 1-2문장 요약 (최대 80자)",
+  "summary": "글의 실제 내용과 핵심 주장 또는 관찰을 독립적으로 소개하는 한국어 초록 한 문장 (45-110자)",
   "tags": ["태그1", "태그2", "태그3"]
 }
 
@@ -477,7 +477,13 @@ depth 기준:
 slug 작성 원칙:
 - 반드시 영어 소문자 + 하이픈만 사용
 - 한국어/특수문자 절대 금지
-- 내용을 잘 요약하는 3-6개 영어 단어로`;
+- 내용을 잘 요약하는 3-6개 영어 단어로
+
+summary 작성 원칙:
+- 정확히 한 문장이고 종결부호로 끝낼 것
+- 제목이나 본문 첫 문장을 그대로 반복하지 말 것
+- 말줄임표, URL, 표 조각, 줄바꿈, 반응 이모지를 넣지 말 것
+- 독자가 본문을 열기 전에 무엇을 다루고 어떤 핵심을 말하는 글인지 알 수 있게 쓸 것`;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -521,6 +527,7 @@ slug 작성 원칙:
           .substring(0, 60);
       }
       
+      assertPublishableAbstract(metadata.summary, msg.content || msg.fullText, metadata.title);
       log(`  ✅ Metadata generated: slug="${metadata.slug}", category="${metadata.category}"`);
       return metadata;
     } catch (err) {
@@ -535,17 +542,31 @@ slug 작성 원칙:
 function generateFallbackMetadata(msg) {
   const charCount = msg.fullText.length;
   const depth = charCount < 500 ? 'entry' : charCount < 2000 ? 'mid' : 'deep';
-  // Use post ID as slug to ensure ASCII-only
+  // Fail closed: a truncated opening is not an article abstract.
   const slug = `post-${msg.id}`;
-  
+
   return {
     slug,
     title: msg.title.substring(0, 40),
     category: '🐇 탐험',
     depth,
-    summary: msg.content.substring(0, 80).trim() + '...',
+    summary: '',
     tags: [],
   };
+}
+
+function assertPublishableAbstract(summary, content, title) {
+  const value = String(summary ?? '').trim();
+  const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
+  const normalized = (text) => text.replace(/[.!?。！？]+$/, '').trim();
+  const errors = [];
+  if (value.length < 45 || value.length > 110) errors.push(`length=${value.length}`);
+  if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(value)) errors.push('forbidden fragment');
+  if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');
+  if (normalized(value) === normalized(title ?? '')) errors.push('duplicates title');
+  if (normalized(value) === normalized(firstSentence)) errors.push('copies opening sentence');
+  if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
+  return value;
 }
 
 // ─────────────────────────────────────────────
@@ -564,6 +585,7 @@ function loadExistingPosts() {
 // ─────────────────────────────────────────────
 function buildPostObject(msg, metadata, localImageUrls, localVideoUrls) {
   const { slug, title, category, depth, summary, tags } = metadata;
+  assertPublishableAbstract(summary, msg.content || msg.fullText, title);
   const date = msg.date || new Date().toISOString().split('T')[0];
   const content = escapeBacktick(stripLeadingDuplicateTitle(
     stripTrailingReactionSignature(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim()),
