@@ -118,9 +118,14 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
       const evidenceAttribute = paragraph.tag === '미상'
         ? ''
         : ` data-evidence="${escapeHtml(paragraph.evidence)}"`;
-      const utteranceHtml = `<p class="utterance" data-tag="${paragraph.tag}"${evidenceAttribute}><span class="utterance-tag">[${paragraph.tag}]</span><span class="utterance-text">${escapeHtml(paragraph.text)}</span></p>`;
+      const visibleTag = paragraph.tag === '미상'
+        ? ''
+        : `<span class="utterance-tag">[${paragraph.tag}]</span>`;
+      const utteranceHtml = `<p class="utterance" data-tag="${paragraph.tag}"${evidenceAttribute}>${visibleTag}<span class="utterance-text">${escapeHtml(paragraph.text)}</span></p>`;
       assert.ok(liangReaderSource.includes(utteranceHtml));
     }
+    assert.equal((liangReaderSource.match(/class="utterance"/g) || []).length, 447);
+    assert.doesNotMatch(liangReaderSource, /\[미상\]/);
     for (const caveat of section.caveats) {
       assert.ok(liangReaderSource.includes(`<li>${escapeHtml(caveat)}</li>`));
     }

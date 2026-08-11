@@ -74,6 +74,7 @@ h1 em { color:var(--cyan); font-style:normal; } h1 span { color:var(--foreground
 .long-record { scroll-margin-top:calc(var(--header) + 18px); }
 .long-record-body { margin-top:24px; }
 .long-record-body .utterance { display:grid; grid-template-columns:max-content minmax(0,1fr); align-items:start; column-gap:10px; margin:0 0 24px; line-height:1.92; }
+.long-record-body .utterance[data-tag="미상"] { grid-template-columns:minmax(0,1fr); }
 .utterance-tag { padding-top:4px; color:var(--muted); font:700 10px/1.4 var(--font-mono); letter-spacing:.02em; white-space:nowrap; }
 .utterance[data-tag="질문"] .utterance-tag { color:var(--cyan); }
 .utterance[data-tag="답변"] .utterance-tag { color:var(--amber); }
