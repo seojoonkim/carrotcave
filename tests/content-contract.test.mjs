@@ -289,6 +289,14 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
 });
 
+test('ordinary post bodies suppress only a duplicated leading title and sync keeps it removed', () => {
+  assert.match(postSource, /function stripLeadingDuplicateTitle\(content: string, title: string\)/);
+  assert.match(postSource, /stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(post\.content\), post\.title\)/);
+  assert.match(syncSource, /content: stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(content \|\| fullText\), title\)/);
+  assert.match(syncSource, /stripLeadingDuplicateTitle\(\s*stripTrailingReactionSignature\(msg\.content/);
+  assert.match(syncSource, /updateContent\(src, slug, msg\.fullText, msg\.title\)/);
+});
+
 test('post details share a clean action pair without Telegram reaction labels or counts', () => {
   assert.doesNotMatch(postSource, /\{post\.reactions\}|>텔레그램 반응<\/span>/);
   assert.match(postSource, /<nav className="post-reader-actions" aria-label="글 이동">/);
@@ -302,9 +310,9 @@ test('post details share a clean action pair without Telegram reaction labels or
   assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\);gap:8px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
-  assert.match(syncSource, /content: stripTrailingReactionSignature\(content \|\| fullText\)/);
-  assert.match(syncSource, /escapeBacktick\(stripTrailingReactionSignature\(msg\.content/);
-  assert.match(syncSource, /escapeBacktick\(stripTrailingReactionSignature\(newText\)\)/);
+  assert.match(syncSource, /content: stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(content \|\| fullText\), title\)/);
+  assert.match(syncSource, /stripTrailingReactionSignature\(msg\.content/);
+  assert.match(syncSource, /stripTrailingReactionSignature\(newText\), title\)/);
 });
 
 test('post media stays inside the article viewport on mobile', () => {

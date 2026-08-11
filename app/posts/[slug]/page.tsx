@@ -18,6 +18,27 @@ function stripTrailingReactionSignature(content: string) {
   return content.replace(/(?:^|\n)\s*(?:\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*\s*\d+\s*)+\s*$/u, '').trimEnd();
 }
 
+function normalizeTitleLine(value: string) {
+  return value
+    .normalize('NFKC')
+    .trim()
+    .replace(/^#{1,6}\s+/, '')
+    .replace(/\s+/g, ' ')
+    .replace(/[.!?。！？]+$/, '')
+    .trim()
+    .toLocaleLowerCase('ko-KR');
+}
+
+function stripLeadingDuplicateTitle(content: string, title: string) {
+  const lines = content.split('\n');
+  const firstContentLine = lines.findIndex((line) => line.trim());
+  if (firstContentLine < 0 || normalizeTitleLine(lines[firstContentLine]) !== normalizeTitleLine(title)) return content;
+
+  lines.splice(firstContentLine, 1);
+  while (lines.length > 0 && !lines[0].trim()) lines.shift();
+  return lines.join('\n');
+}
+
 function renderContent(content: string, relatedPosts: Post[]) {
   const lines = content.split('\n');
 
@@ -244,7 +265,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Content */}
         <div className="post-content">
-          {renderContent(stripTrailingReactionSignature(post.content), related)}
+          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), related)}
         </div>
 
         {/* videos rendered at top — see above */}

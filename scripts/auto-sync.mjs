@@ -70,6 +70,27 @@ function stripTrailingReactionSignature(content) {
   return content.replace(/(?:^|\n)\s*(?:\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*\s*\d+\s*)+\s*$/u, '').trimEnd();
 }
 
+function normalizeTitleLine(value) {
+  return value
+    .normalize('NFKC')
+    .trim()
+    .replace(/^#{1,6}\s+/, '')
+    .replace(/\s+/g, ' ')
+    .replace(/[.!?。！？]+$/, '')
+    .trim()
+    .toLocaleLowerCase('ko-KR');
+}
+
+function stripLeadingDuplicateTitle(content, title) {
+  const lines = content.split('\n');
+  const firstContentLine = lines.findIndex(line => line.trim());
+  if (firstContentLine < 0 || normalizeTitleLine(lines[firstContentLine]) !== normalizeTitleLine(title)) return content;
+
+  lines.splice(firstContentLine, 1);
+  while (lines.length > 0 && !lines[0].trim()) lines.shift();
+  return lines.join('\n');
+}
+
 function slugify(text) {
   return text
     .toLowerCase()
@@ -227,7 +248,7 @@ function parseMessages(html) {
       id: msgNum,
       postId,
       title,
-      content: stripTrailingReactionSignature(content || fullText),
+      content: stripLeadingDuplicateTitle(stripTrailingReactionSignature(content || fullText), title),
       fullText,
       date,
       reactions: totalReactions,
@@ -533,7 +554,10 @@ function loadExistingPosts() {
 function buildPostObject(msg, metadata, localImageUrls, localVideoUrls) {
   const { slug, title, category, depth, summary, tags } = metadata;
   const date = msg.date || new Date().toISOString().split('T')[0];
-  const content = escapeBacktick(stripTrailingReactionSignature(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim()));
+  const content = escapeBacktick(stripLeadingDuplicateTitle(
+    stripTrailingReactionSignature(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim()),
+    title
+  ));
   const reactions = msg.reactions || 0;
   
   const mediaLine = localImageUrls.length > 0
@@ -584,14 +608,14 @@ function updateReactions(src, msgId, newReactions, slugToMsgId) {
   return src.replace(postRegex, `$1${newReactions}`);
 }
 
-function updateContent(src, slug, newText) {
+function updateContent(src, slug, newText, title) {
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   // Match the content backtick block for this slug
   const contentRegex = new RegExp(
     `(id:\\s*'${escapedSlug}'[\\s\\S]*?content:\\s*\`)[\\s\\S]*?(\`\\s*,)`,
     'm'
   );
-  const escaped = escapeBacktick(stripTrailingReactionSignature(newText));
+  const escaped = escapeBacktick(stripLeadingDuplicateTitle(stripTrailingReactionSignature(newText), title));
   return src.replace(contentRegex, `$1${escaped}$2`);
 }
 
@@ -848,7 +872,7 @@ async function main() {
       if (slug && src.includes(`id: '${slug}'`)) {
         log(`   ✏️  Detected edit: msg #${msg.id} (${slug})`);
         const before = src;
-        src = updateContent(src, slug, msg.fullText);
+        src = updateContent(src, slug, msg.fullText, msg.title);
         if (src !== before) {
           contentUpdated++;
           editedSlugs.push(slug);
