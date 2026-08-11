@@ -70,18 +70,17 @@ test('renders exactly three direct recommendations in descending strength order'
   assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('separates recommendation value, article summary and connection into three labeled bullets', () => {
+test('shows only article summary and connection as two labeled bullets', () => {
   const html = render();
   for (const value of [
-    '첫 번째 글', '같은 주제를 더 깊게', '추천하는 이유',
-    '추천 이유', '지금 읽은 주제를 더 구체적으로 이해하는 데 도움이 됩니다.',
+    '첫 번째 글', '같은 주제를 더 깊게',
     '이 글의 내용', '첫 번째 글의 핵심 내용입니다.',
     '이어지는 지점', '두 글은 ‘기억’, ‘에이전트’라는 주제를 함께 다룹니다.', '이 글 읽기',
   ]) assert.match(html, new RegExp(value));
   assert.match(html, /href="\/posts\/first"/);
   assert.match(html, /<span>1순위<\/span>/);
-  assert.equal((html.match(/<li>/g) ?? []).length, 9);
-  assert.doesNotMatch(html, /<details|추천 근거 보기|blockquote|추천 글 근거 first/);
+  assert.equal((html.match(/<li>/g) ?? []).length, 6);
+  assert.doesNotMatch(html, /추천하는 이유|추천 이유|지금 읽은 주제를 더 구체적으로 이해하는 데 도움이 됩니다.|<details|추천 근거 보기|blockquote|추천 글 근거 first/);
 });
 
 test('merges graph and list into one static recommendation view', () => {
