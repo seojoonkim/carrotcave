@@ -22,50 +22,23 @@ function renderContent(content: string, relatedPosts: Post[]) {
 
     if (line.startsWith('### ')) {
       return (
-        <h3
-          key={i}
-          className="text-lg font-bold"
-          style={{
-            marginTop: '1.5rem',
-            marginBottom: '0.75rem',
-            fontFamily: "var(--font-title), Inter, 'Noto Sans KR', -apple-system, sans-serif",
-            color: '#F0E4CC',
-          }}
-        >
+        <h3 key={i}>
           {line.slice(4)}
         </h3>
       );
     }
     if (line.startsWith('## ')) {
       return (
-        <h2
-          key={i}
-          className="text-xl font-bold"
-          style={{
-            marginTop: '2rem',
-            marginBottom: '1rem',
-            fontFamily: "var(--font-title), Inter, 'Noto Sans KR', -apple-system, sans-serif",
-            color: '#F0E4CC',
-          }}
-        >
+        <h2 key={i}>
           {line.slice(3)}
         </h2>
       );
     }
     if (line.startsWith('# ')) {
       return (
-        <h1
-          key={i}
-          className="text-2xl font-bold"
-          style={{
-            marginTop: '2rem',
-            marginBottom: '1rem',
-            fontFamily: "var(--font-title), Inter, 'Noto Sans KR', -apple-system, sans-serif",
-            color: '#F0E4CC',
-          }}
-        >
+        <h2 key={i}>
           {line.slice(2)}
-        </h1>
+        </h2>
       );
     }
 
@@ -76,7 +49,7 @@ function renderContent(content: string, relatedPosts: Post[]) {
     }
 
     if (line.trim() === '---') {
-      return <hr key={i} style={{ borderColor: 'rgba(212,146,42,0.15)', margin: '1.5rem 0' }} />;
+      return <hr key={i} />;
     }
 
     if (line.startsWith('```')) {
@@ -86,17 +59,14 @@ function renderContent(content: string, relatedPosts: Post[]) {
     if (line.startsWith('- ') || line.startsWith('* ')) {
       const text = line.slice(2);
       return (
-        <li key={i} style={{ marginLeft: '1rem', marginBottom: '0.5rem' }}>
+        <li key={i}>
           {renderInline(text)}
         </li>
       );
     }
 
     return (
-      <p
-        key={i}
-        style={{ marginBottom: '1.25rem', lineHeight: '1.75', fontSize: '0.9375rem', color: 'rgba(240,228,204,0.85)' }}
-      >
+      <p key={i}>
         {renderInline(line)}
       </p>
     );
@@ -108,30 +78,21 @@ function renderInline(text: string) {
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return (
-        <strong key={i} style={{ color: '#E8A830', fontWeight: 600 }}>
+        <strong key={i}>
           {part.slice(2, -2)}
         </strong>
       );
     }
     if (part.startsWith('*') && part.endsWith('*') && !part.startsWith('**') && part.length > 2) {
       return (
-        <em key={i} style={{ color: 'rgba(240,228,204,0.55)', fontStyle: 'italic' }}>
+        <em key={i}>
           {part.slice(1, -1)}
         </em>
       );
     }
     if (part.startsWith('`') && part.endsWith('`')) {
       return (
-        <code
-          key={i}
-          className="rounded text-sm font-mono"
-          style={{
-            background: 'rgba(212,146,42,0.08)',
-            border: '1px solid rgba(212,146,42,0.2)',
-            color: '#E8A830',
-            padding: '0.125rem 0.375rem',
-          }}
-        >
+        <code key={i}>
           {part.slice(1, -1)}
         </code>
       );
@@ -145,7 +106,6 @@ function renderInline(text: string) {
           href={linkMatch[2]}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: '#4A9EED', textDecoration: 'underline', textUnderlineOffset: '3px' }}
         >
           {linkMatch[1]}
         </a>
@@ -194,67 +154,28 @@ export default async function PostPage({ params }: PostPageProps) {
       p.tags.some((t) => post.tags.includes(t))
   ).slice(0, 4);
 
-  const categoryColors: Record<string, string> = {
-    '🐇 탐험': '#D4922A',
-    '🛠️ 빌딩': '#9BA8C0',
-    
-    '✍️ 낙서': '#C08888',
-  };
-
   const topTag = post.tags[0] || '';
 
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(180deg, #060A14 0%, #080E1A 15%, #0A1220 50%, #080E1A 100%)', color: '#F0E4CC' }}>
+    <div className="post-reader-page min-h-screen">
       <SiteHeader readingTitle={post.title} readingMeta={post.category.replace(/^[^\p{L}]+/u, '')} />
 
-      <article style={{ maxWidth: '720px', margin: '0 auto', padding: '3.5rem 1.5rem 5rem' }}>
+      <article className="post-reader-article">
+        <header className="post-reader-header">
         {/* Category */}
-        <div
-          className="text-sm font-medium"
-          style={{
-            color: categoryColors[post.category] || '#D4922A',
-            marginBottom: '0.75rem',
-            fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-            fontWeight: 300,
-          }}
-        >
+        <div className="post-reader-category">
           {post.category.replace(/^[^\p{L}]+/u, '')}
         </div>
 
         {/* Title */}
-        <h1
-          className="font-bold"
-          style={{
-            fontFamily: "var(--font-title), Inter, 'Noto Sans KR', -apple-system, sans-serif",
-            color: '#F0E4CC',
-            marginBottom: '1.25rem',
-            lineHeight: '1.15',
-            letterSpacing: '-0.03em',
-            fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
-          }}
-        >
+        <h1>
           {post.title}
         </h1>
 
         {/* Meta row */}
-        <div
-          className="flex flex-wrap items-center"
-          style={{
-            gap: '0.75rem',
-            marginBottom: '2.5rem',
-            paddingBottom: '1.75rem',
-            borderBottom: '1px solid rgba(212,146,42,0.08)',
-          }}
-        >
+        <div className="post-reader-meta flex flex-wrap items-center">
           <DepthBadge depth={post.depth} />
-          <span
-            className="text-sm"
-            style={{
-              color: 'rgba(240,228,204,0.3)',
-              fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
-              fontWeight: 300,
-            }}
-          >
+          <span className="text-sm">
             {new Date(post.date).toLocaleDateString('ko-KR', {
               year: 'numeric',
               month: 'long',
@@ -263,11 +184,12 @@ export default async function PostPage({ params }: PostPageProps) {
           </span>
           <span
             className="text-sm ml-auto flex items-center"
-            style={{ color: 'rgba(240,228,204,0.3)', gap: '0.25rem' }}
+            style={{ gap: '0.25rem' }}
           >
             ❤️ {post.reactions}
           </span>
         </div>
+        </header>
 
         {/* Media section — images (top, skip if video exists) */}
         {post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0) && (
@@ -323,10 +245,7 @@ export default async function PostPage({ params }: PostPageProps) {
         {/* Summary removed — content speaks for itself */}
 
         {/* Content */}
-        <div
-          className="post-content"
-          style={{ lineHeight: '1.75', fontSize: '0.9375rem', fontFamily: "'Noto Serif KR', Georgia, serif", letterSpacing: '0.01em' }}
-        >
+        <div className="post-content">
           {renderContent(post.content, related)}
         </div>
 

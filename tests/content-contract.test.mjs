@@ -255,6 +255,22 @@ test('Liang Wenfeng header exposes the same live chapter contract as the other v
   assert.doesNotMatch(liangReaderStyles, /#readingStatus\s*\{[^}]*display\s*:\s*none/);
 });
 
+test('ordinary posts use the same graphite reading surface and typography as voice readers', () => {
+  assert.match(postSource, /className="post-reader-page min-h-screen"/);
+  assert.match(postSource, /<article className="post-reader-article">/);
+  assert.match(postSource, /className="post-reader-header"/);
+  assert.match(postSource, /className="post-content"/);
+  assert.doesNotMatch(postSource, /linear-gradient\(180deg, #060A14/);
+  assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
+  assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
+  assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
+  assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:680px/);
+  assert.match(stylesSource, /\.post-content\{[^}]*font:400 17px\/1\.92 var\(--post-reader-sans\)/);
+  assert.match(stylesSource, /\.post-content p\{[^}]*color:#e7e7e8/);
+  assert.match(stylesSource, /\.post-content :is\(h2,h3\)\{[^}]*color:#fff/);
+  assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
+});
+
 test('post media stays inside the article viewport on mobile', () => {
   assert.match(postSource, /className="post-media-grid"/);
   assert.match(stylesSource, /\.post-media-grid\{[^}]*width:100%[^}]*min-width:0[^}]*grid-template-columns:/);
