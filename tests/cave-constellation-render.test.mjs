@@ -70,17 +70,17 @@ test('renders exactly three direct recommendations in descending strength order'
   assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('shows a plain-language reason and keeps source quotes behind an optional disclosure', () => {
+test('combines relationship and source evidence into three recommendation reasons', () => {
   const html = render();
   for (const value of [
-    '첫 번째 글', '같은 주제를 더 깊게', '왜 추천하나요?',
+    '첫 번째 글', '같은 주제를 더 깊게', '추천하는 이유',
     '지금 읽은 글과 같은 질문을 한 단계 더 깊이 다룹니다.',
     '현재 글 근거 first', '추천 글 근거 first', '이 글 읽기',
   ]) assert.match(html, new RegExp(value));
   assert.match(html, /href="\/posts\/first"/);
   assert.match(html, /<span>1순위<\/span>/);
-  assert.match(html, /<details class="cave-constellation__evidence"><summary>추천 근거 보기<\/summary>/);
-  assert.match(html, /role="group" aria-label="추천 근거 원문"/);
+  assert.equal((html.match(/<li>/g) ?? []).length, 9);
+  assert.doesNotMatch(html, /<details|추천 근거 보기|blockquote/);
 });
 
 test('merges graph and list into one static recommendation view', () => {
@@ -100,8 +100,7 @@ test('responsive CSS preserves readable evidence and accessible links', () => {
   assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(1040px,calc\(100vw - 40px\)\)/s);
   assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
   assert.match(css, /\.cave-constellation__navigate\{[^}]*min-height:48px/s);
-  assert.match(css, /\.cave-constellation__evidence summary\{[^}]*min-height:44px/s);
-  assert.match(css, /@media\(max-width:760px\)[^{]*\{[\s\S]*\.cave-constellation__evidence-pair\{grid-template-columns:1fr/s);
+  assert.match(css, /\.cave-constellation__why ol\{[^}]*display:grid/s);
   assert.match(css, /overflow-wrap:anywhere/);
   assert.match(css, /prefers-reduced-motion:reduce/);
   assert.match(css, /\.cave-constellation :focus-visible/);
