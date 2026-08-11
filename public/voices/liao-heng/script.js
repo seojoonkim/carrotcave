@@ -17,6 +17,14 @@
   const mobileHeaderTitle = document.querySelector('.header-mobile-title');
   const readingStatus = document.getElementById('readingStatus');
   const railTopics = document.getElementById('railTopics');
+  const searchApi = globalThis.TranscriptSearch;
+  const searchForm = document.getElementById('transcriptSearch');
+  const searchInput = document.getElementById('transcriptSearchInput');
+  const searchStatus = document.getElementById('transcriptSearchStatus');
+  const clearSearchButton = document.getElementById('clearTranscriptSearch');
+  const previousResultButton = document.getElementById('previousSearchResult');
+  const nextResultButton = document.getElementById('nextSearchResult');
+  const readerActionStatus = document.getElementById('readerActionStatus');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const modalSiblings = [...body.children].filter(element => element !== drawer && element !== backdrop);
   let lastFocus = null;
@@ -28,6 +36,13 @@
   let activeChapter = null;
   let activeTopic = null;
   let initialHashPending = Boolean(location.hash);
+  let paragraphRecords = new Map();
+  let searchIndex = [];
+  let searchResults = [];
+  let currentSearchResult = -1;
+  let searchTimer = 0;
+  let composingSearch = false;
+  const copyTimers = new WeakMap();
   const drawerDetails = [...drawer.querySelectorAll('details')];
   const topicNumber = (chapter, index) => `${chapter}-${index + 1}`;
   drawerDetails.forEach((details, chapterIndex) => {
@@ -176,6 +191,8 @@
     const top = Math.max(0, window.scrollY + target.getBoundingClientRect().top - headerOffset());
     window.scrollTo({ top, behavior: smooth && !reduceMotion ? 'smooth' : 'auto' });
     if (updateHistory && location.hash !== hash) history.pushState(null, '', hash);
+    document.querySelector('.transcript-paragraph.hash-target')?.classList.remove('hash-target');
+    if (target.matches('.transcript-paragraph')) target.classList.add('hash-target');
     const focusTarget = target.matches('.segment-anchor') ? target.closest('.transcript-paragraph') : target;
     if (focusTarget?.matches('.highlight-marker, .transcript-chapter, .content-section, .transcript-paragraph')) {
       focusTarget.setAttribute('tabindex', '-1');
@@ -195,15 +212,30 @@
   });
   window.addEventListener('popstate', () => moveToHash(location.hash, { smooth: false }));
 
-  const makeTimestamp = paragraph => {
-    const link = document.createElement('a');
-    link.className = 'segment-timestamp paragraph-timestamp';
-    link.href = `${VIDEO_URL}?t=${Math.floor(paragraph.start)}`;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = formatTime(paragraph.start);
-    link.setAttribute('aria-label', `${formatTime(paragraph.start)} 원본 영상에서 보기`);
-    return link;
+  const makeParagraphActions = paragraph => {
+    const actions = document.createElement('span');
+    actions.className = 'paragraph-actions';
+    const permalink = document.createElement('a');
+    permalink.className = 'paragraph-permalink';
+    permalink.href = `#p-${paragraph.id}`;
+    permalink.textContent = formatTime(paragraph.start);
+    permalink.setAttribute('aria-label', `${formatTime(paragraph.start)} 문단으로 이동`);
+    const source = document.createElement('a');
+    source.className = 'paragraph-source';
+    source.href = `${VIDEO_URL}?t=${Math.floor(paragraph.start)}`;
+    source.target = '_blank';
+    source.rel = 'noopener noreferrer';
+    source.textContent = '원본 ↗';
+    source.setAttribute('aria-label', `${formatTime(paragraph.start)} 원본 영상에서 보기, 새 창`);
+    const copy = document.createElement('button');
+    copy.className = 'paragraph-copy-link';
+    copy.type = 'button';
+    copy.dataset.copyParagraph = `p-${paragraph.id}`;
+    copy.dataset.timestamp = formatTime(paragraph.start);
+    copy.textContent = '링크 복사';
+    copy.setAttribute('aria-label', `${formatTime(paragraph.start)} 문단 링크 복사`);
+    actions.append(permalink, source, copy);
+    return actions;
   };
 
   const makeSegmentAnchor = segment => {
@@ -244,18 +276,33 @@
     return marker;
   };
 
-  const appendParagraphText = (container, paragraphData, keySentences) => {
-    const matches = keySentences.get(Number(paragraphData.segmentStartId)) || [];
+  const renderParagraphText = (container, paragraphData, keyMatches, searchRanges = [], isCurrent = false) => {
+    container.replaceChildren();
+    const appendSearchText = (parent, text, absoluteStart, ranges) => {
+      let cursor = 0;
+      ranges.forEach(range => {
+        const start = Math.max(0, range.start - absoluteStart);
+        const end = Math.min(text.length, range.end - absoluteStart);
+        if (end <= cursor || start >= text.length) return;
+        parent.append(document.createTextNode(text.slice(cursor, start)));
+        const mark = document.createElement('mark');
+        mark.className = isCurrent ? 'search-hit search-hit-current' : 'search-hit';
+        mark.textContent = text.slice(start, end);
+        parent.append(mark);
+        cursor = end;
+      });
+      parent.append(document.createTextNode(text.slice(cursor)));
+    };
     let cursor = 0;
-    matches.forEach(({ exact_quote: quote, start }) => {
-      container.append(document.createTextNode(paragraphData.text.slice(cursor, start)));
+    keyMatches.forEach(({ exact_quote: quote, start, end }) => {
+      appendSearchText(container, paragraphData.text.slice(cursor, start), cursor, searchRanges.filter(range => range.start < start && range.end > cursor));
       const mark = document.createElement('mark');
       mark.className = 'key-sentence';
-      mark.textContent = quote;
+      appendSearchText(mark, quote, start, searchRanges.filter(range => range.start < end && range.end > start));
       container.append(mark);
-      cursor = start + quote.length;
+      cursor = end;
     });
-    container.append(document.createTextNode(paragraphData.text.slice(cursor)));
+    appendSearchText(container, paragraphData.text.slice(cursor), cursor, searchRanges.filter(range => range.end > cursor));
   };
 
   const renderGroup = (paragraphs, segmentsById, container, highlights, keySentences) => {
@@ -278,6 +325,8 @@
       }
       const paragraph = document.createElement('p');
       paragraph.className = 'transcript-paragraph';
+      paragraph.id = `p-${paragraphData.id}`;
+      paragraph.dataset.paragraphId = String(paragraphData.id);
       paragraph.dataset.start = String(paragraphData.start);
       paragraph.dataset.end = String(paragraphData.end);
       if (!activeHighlight || Number(paragraphData.start) >= Number(activeHighlight.end)) {
@@ -287,7 +336,7 @@
         paragraph.classList.add('highlighted');
         paragraph.dataset.highlight = String(activeHighlight.id);
       }
-      paragraph.append(makeTimestamp(paragraphData));
+      paragraph.append(makeParagraphActions(paragraphData));
       for (let id = paragraphData.segmentStartId; id <= paragraphData.segmentEndId; id += 1) {
         const segment = segmentsById.get(Number(id));
         if (!segment) throw new Error(`Missing segment ${id}`);
@@ -295,8 +344,10 @@
       }
       const text = document.createElement('span');
       text.className = 'paragraph-text';
-      appendParagraphText(text, paragraphData, keySentences);
+      const paragraphKeyMatches = keySentences.get(Number(paragraphData.segmentStartId)) || [];
+      renderParagraphText(text, paragraphData, paragraphKeyMatches);
       paragraph.append(text);
+      paragraphRecords.set(Number(paragraphData.id), { element: paragraph, textElement: text, data: paragraphData, keyMatches: paragraphKeyMatches });
       fragment.append(paragraph);
     });
     container.append(fragment);
@@ -359,6 +410,9 @@
     }
 
     rendered = true;
+    searchIndex = searchApi.buildIndex([...paragraphRecords.values()].map(record => record.data));
+    searchInput.disabled = false;
+    searchStatus.textContent = '검색어를 입력하세요.';
     chapterElements = [...document.querySelectorAll('.transcript-chapter')];
     markerElements = [...document.querySelectorAll('.highlight-marker')];
     loading.hidden = true;
@@ -379,6 +433,113 @@
       window.setTimeout(() => { initialHashPending = false; }, 1250);
     }
   };
+
+  const searchResultLabel = result => {
+    const record = paragraphRecords.get(result.paragraphId);
+    const chapter = record?.element.closest('.transcript-chapter')?.dataset.chapter;
+    return `${chapter ? `${chapter}장 · ` : ''}${formatTime(record?.data.start)}`;
+  };
+
+  const renderSearchState = (previousResults = []) => {
+    const currentById = new Map(searchResults.map((result, index) => [result.paragraphId, { result, index }]));
+    const changedIds = new Set([...previousResults, ...searchResults].map(result => result.paragraphId));
+    changedIds.forEach(id => {
+      const record = paragraphRecords.get(id);
+      if (!record) return;
+      const match = currentById.get(id);
+      record.element.classList.remove('search-match', 'search-current');
+      if (!match) {
+        renderParagraphText(record.textElement, record.data, record.keyMatches);
+        return;
+      }
+      const current = match.index === currentSearchResult;
+      record.element.classList.add(current ? 'search-current' : 'search-match');
+      renderParagraphText(record.textElement, record.data, record.keyMatches, match.result.ranges, current);
+    });
+  };
+
+  const announceSearch = () => {
+    const query = searchInput.value.trim();
+    if (!query) searchStatus.textContent = '검색어를 입력하세요.';
+    else if (!searchResults.length) searchStatus.textContent = `“${query}”와 일치하는 문단이 없습니다.`;
+    else if (currentSearchResult < 0) searchStatus.textContent = `“${query}” 검색 결과 ${searchResults.length}개 문단 · Enter로 첫 결과 이동`;
+    else searchStatus.textContent = `“${query}” 검색 결과 ${searchResults.length}개 문단 중 ${currentSearchResult + 1}번째 · ${searchResultLabel(searchResults[currentSearchResult])}`;
+  };
+
+  const moveSearchResult = delta => {
+    if (!searchResults.length) return;
+    cancelInitialHashSettlement();
+    currentSearchResult = currentSearchResult < 0
+      ? (delta < 0 ? searchResults.length - 1 : 0)
+      : (currentSearchResult + delta + searchResults.length) % searchResults.length;
+    renderSearchState(searchResults);
+    const record = paragraphRecords.get(searchResults[currentSearchResult].paragraphId);
+    if (!record) return;
+    const top = Math.max(0, window.scrollY + record.element.getBoundingClientRect().top - headerOffset());
+    window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+    announceSearch();
+  };
+
+  const runSearch = () => {
+    window.clearTimeout(searchTimer);
+    const previousResults = searchResults;
+    searchResults = searchApi.findMatches(searchIndex, searchInput.value);
+    currentSearchResult = -1;
+    clearSearchButton.disabled = !searchInput.value;
+    previousResultButton.disabled = searchResults.length < 2;
+    nextResultButton.disabled = searchResults.length < 2;
+    renderSearchState(previousResults);
+    announceSearch();
+  };
+
+  searchForm.addEventListener('submit', event => { event.preventDefault(); moveSearchResult(1); });
+  searchInput.addEventListener('compositionstart', () => { composingSearch = true; });
+  searchInput.addEventListener('compositionend', () => { composingSearch = false; runSearch(); });
+  searchInput.addEventListener('input', () => {
+    if (composingSearch) return;
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(runSearch, 150);
+  });
+  searchInput.addEventListener('keydown', event => {
+    if (event.isComposing || composingSearch || event.keyCode === 229) return;
+    if (event.key === 'Enter') { event.preventDefault(); moveSearchResult(event.shiftKey ? -1 : 1); }
+    if (event.key === 'Escape') { event.preventDefault(); searchInput.value = ''; runSearch(); }
+  });
+  clearSearchButton.addEventListener('click', () => { searchInput.value = ''; runSearch(); searchInput.focus(); });
+  previousResultButton.addEventListener('click', () => moveSearchResult(-1));
+  nextResultButton.addEventListener('click', () => moveSearchResult(1));
+
+  const copyText = async value => {
+    if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(value);
+    const fallback = document.createElement('textarea');
+    fallback.value = value;
+    fallback.setAttribute('readonly', '');
+    fallback.style.position = 'fixed';
+    fallback.style.opacity = '0';
+    body.append(fallback);
+    fallback.select();
+    const copied = document.execCommand('copy');
+    fallback.remove();
+    if (!copied) throw new Error('Clipboard fallback failed');
+  };
+
+  transcript.addEventListener('click', async event => {
+    const button = event.target.closest('[data-copy-paragraph]');
+    if (!button) return;
+    const canonical = document.querySelector('link[rel="canonical"]')?.href || location.href;
+    const url = new URL(canonical);
+    url.hash = button.dataset.copyParagraph;
+    try {
+      await copyText(url.href);
+      readerActionStatus.textContent = `${button.dataset.timestamp} 문단 링크를 복사했습니다.`;
+      window.clearTimeout(copyTimers.get(button));
+      button.textContent = '복사됨';
+      copyTimers.set(button, window.setTimeout(() => { button.textContent = '링크 복사'; }, 1500));
+    } catch (reason) {
+      console.error(reason);
+      readerActionStatus.textContent = '링크를 복사하지 못했습니다. 주소 표시줄의 문단 링크를 복사해 주세요.';
+    }
+  });
 
   const setActiveLinks = (selector, dataName, value) => {
     document.querySelectorAll(selector).forEach(link => {
@@ -461,6 +622,7 @@
       console.error(reason);
       loading.hidden = true;
       error.hidden = false;
+      searchStatus.textContent = '전사를 불러오지 못해 검색을 사용할 수 없습니다.';
       transcript.setAttribute('aria-busy', 'false');
       transcript.classList.add('load-failed');
     });

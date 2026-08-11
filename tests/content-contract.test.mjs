@@ -20,6 +20,7 @@ const readingProgressSource = readFileSync(new URL('../components/ReadingProgres
 const voiceProgressSource = readFileSync(new URL('../public/voices/reading-progress.js', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
+const liaoReaderScript = readFileSync(new URL('../public/voices/liao-heng/script.js', import.meta.url), 'utf8');
 const liangReaderSource = readFileSync(new URL('../public/voices/liang-wenfeng/index.html', import.meta.url), 'utf8');
 const liangReaderStyles = readFileSync(new URL('../public/voices/liang-wenfeng/styles.css', import.meta.url), 'utf8');
 const liangLongReader = JSON.parse(readFileSync(new URL('../public/voices/liang-wenfeng/long-reader-ko.json', import.meta.url), 'utf8'));
@@ -167,6 +168,29 @@ test('all three voice archives preserve their complete reader contracts', () => 
     [2987, 3918], [3918, 4982], [4982, 6059],
   ]);
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
+});
+
+test('Liao Heng reader exposes literal transcript search and stable paragraph sharing', () => {
+  assert.match(liaoReaderSource, /transcript-search\.js/);
+  assert.match(liaoReaderSource, /<form class="transcript-search" id="transcriptSearch" role="search">/);
+  assert.match(liaoReaderSource, /<label for="transcriptSearchInput">전체 전사 검색<\/label>/);
+  assert.match(liaoReaderSource, /id="transcriptSearchStatus" role="status" aria-live="polite" aria-atomic="true"/);
+  assert.match(liaoReaderScript, /searchApi\.buildIndex\(\[\.\.\.paragraphRecords\.values\(\)\]\.map\(record => record\.data\)\)/);
+  assert.match(liaoReaderScript, /searchApi\.findMatches\(searchIndex, searchInput\.value\)/);
+  assert.match(liaoReaderScript, /compositionstart/);
+  assert.match(liaoReaderScript, /compositionend/);
+  assert.match(liaoReaderScript, /event\.isComposing/);
+  assert.match(liaoReaderScript, /paragraph\.id = `p-\$\{paragraphData\.id\}`/);
+  assert.match(liaoReaderScript, /navigator\.clipboard\?\.writeText/);
+  assert.match(liaoReaderScript, /document\.execCommand\('copy'\)/);
+  assert.match(liaoReaderScript, /document\.querySelector\('link\[rel="canonical"\]'\)/);
+  assert.match(liaoReaderScript, /source\.href = `\$\{VIDEO_URL\}\?t=\$\{Math\.floor\(paragraph\.start\)\}`/);
+  assert.match(liaoReaderStyles, /\.transcript-highlights a \{ min-height: 44px/);
+  assert.match(liaoReaderStyles, /\.paragraph-actions a,\.paragraph-actions button \{ min-height:44px/);
+  assert.match(liaoReaderStyles, /\.highlight-time \{ display: inline-flex; min-height: 44px/);
+  assert.match(liaoReaderStyles, /\.search-input-row input \{ min-width:0; width:100%; min-height:48px/);
+  assert.match(liaoReaderStyles, /\.hero-actions \{ display:grid; grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(liaoReaderStyles, /@media \(max-width:599px\)[\s\S]*?\.hero-actions \{ grid-template-columns:minmax\(0,1fr\); \}/);
 });
 
 test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-critical long record', () => {
