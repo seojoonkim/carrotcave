@@ -38,29 +38,30 @@ test('all voice reader headers match the shared menu header surface', () => {
   }
 });
 
-test('all reading surfaces use the header bottom for whole-document progress and voices subordinate chapter progress', () => {
+test('all reading surfaces use one refined whole-document progress line at the header bottom', () => {
   assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
   assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
   assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);
   assert.match(readingProgressSource, /style\.transform = `scaleX\(\$\{percent \/ 100\}\)`/);
-  assert.match(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:3px/);
+  assert.match(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:1px;[^}]*background:rgba\(255,255,255,\.09\)/);
+  assert.match(stylesSource, /\.cc-reading-progress__fill\{[^}]*background:#61adab;/);
+  assert.doesNotMatch(stylesSource, /\.cc-reading-progress__fill\{[^}]*box-shadow/);
 
   for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource]) {
-    assert.match(source, /<header class="site-header">[\s\S]*?id="chapterTrack"[\s\S]*?id="readingProgress"[\s\S]*?<\/header>/);
+    assert.equal((source.match(/id="readingProgress"/g) ?? []).length, 1);
+    assert.equal((source.match(/id="progressBar"/g) ?? []).length, 1);
+    assert.match(source, /<header class="site-header">[\s\S]*?id="readingProgress"[\s\S]*?<\/header>/);
     assert.match(source, /\.\.\/reading-progress\.js/);
-    assert.doesNotMatch(source, /<div class="progress"/);
-    assert.doesNotMatch(source, /chapterProgressFill/);
+    assert.doesNotMatch(source, /chapterTrack|chapter-track|chapterProgressFill/);
   }
   for (const source of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
-    assert.match(source, /\.progress \{[^}]*bottom:-1px;[^}]*height:3px/);
-    assert.match(source, /\.chapter-track \{[^}]*height:2px/);
-    assert.match(source, /\.chapter-track-segment\.is-current \.chapter-track-fill/);
-    assert.doesNotMatch(source, /\.chapter-progress-fill/);
+    assert.match(source, /\.progress \{[^}]*bottom:-1px;[^}]*height:1px;[^}]*background:rgba\(255,255,255,\.09\)/);
+    assert.match(source, /\.progress span \{[^}]*background:var\(--ansi-cyan\);/);
+    assert.doesNotMatch(source, /\.progress span \{[^}]*box-shadow/);
+    assert.doesNotMatch(source, /chapter-track|chapter-progress-fill/);
   }
-  assert.match(voiceProgressSource, /document\.querySelectorAll\('\.transcript-chapter'\)/);
-  assert.match(voiceProgressSource, /chapterTrack\.append\(segment\)/);
   assert.match(voiceProgressSource, /progress\.setAttribute\('aria-valuenow'/);
-  assert.match(voiceProgressSource, /챕터 읽기 진행 \$\{chapterLabel\}/);
+  assert.doesNotMatch(voiceProgressSource, /chapterTrack|chapter-track|transcript-chapter/);
 });
 
 test('iOS webviews extend the graphite header through the top safe area', () => {
