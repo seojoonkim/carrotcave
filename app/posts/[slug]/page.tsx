@@ -162,7 +162,14 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (!post) notFound();
 
-  const constellation = buildTopRecommendations(slug, ontologyIndex as OntologyIndex);
+  const rawConstellation = buildTopRecommendations(slug, ontologyIndex as OntologyIndex);
+  const summaries = new Map(posts.map((item) => [item.slug, item.summary]));
+  const constellation = rawConstellation
+    ? {
+        ...rawConstellation,
+        nodes: rawConstellation.nodes.map((node) => ({ ...node, summary: summaries.get(node.slug) })),
+      }
+    : null;
 
   return (
     <div className="post-reader-page min-h-screen">
