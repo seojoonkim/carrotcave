@@ -12,26 +12,26 @@ const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string }> = {
   RESONATES: { label: '핵심 생각이 비슷한' },
 };
 
-function connectionReason(relationship: OntologyEdge, sourceTitle: string, targetTitle: string): string {
-  const type = relationship.type;
-  switch (type) {
-    case 'DEEPENS':
-      return `“${sourceTitle}”에서 던진 질문을 “${targetTitle}”에서 더 깊이 파고듭니다.`;
-    case 'CHALLENGES':
-      return `“${sourceTitle}”의 관점에 “${targetTitle}”에서 다른 시선을 보탭니다.`;
-    case 'APPLIES':
-      return `“${sourceTitle}”의 생각이 “${targetTitle}”에서 구체적인 장면으로 이어집니다.`;
-    case 'REFRAMES':
-      return `“${sourceTitle}”에서 던진 질문을 “${targetTitle}”의 다른 장면으로 옮겨 다시 봅니다.`;
-    case 'RESONATES':
-      return `“${sourceTitle}”, “${targetTitle}” 두 글은 서로 다른 장면에서 같은 질문을 던집니다.`;
-    default: {
-      const exhaustive: never = type;
-      return exhaustive;
-    }
-  }
+const UNSAFE_EVIDENCE = /https?:\/\/|www\.|\[[^\]]+\]\(|\*\*|__|<\/?[a-z][^>]*>|(?:Website|GitHub):/iu;
+
+function cleanEvidence(value?: string): string | null {
+  const cleaned = (value ?? '')
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([\da-f]+);/gi, (_, code: string) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&quot;/g, '”')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!cleaned || cleaned.length > 240 || UNSAFE_EVIDENCE.test(cleaned)) return null;
+  return cleaned;
 }
 
+function connectionPoints(relationship: OntologyEdge, source: SubgraphNode, target: SubgraphNode) {
+  return {
+    source: cleanEvidence(relationship.sourceEvidence) ?? source.summary ?? source.title,
+    target: cleanEvidence(relationship.targetEvidence) ?? target.title,
+  };
+}
 
 export interface CaveConstellationProps {
   subgraph: OntologySubgraph;
@@ -58,6 +58,7 @@ export default function CaveConstellation({
         {recommendations.map((relationship, index) => {
           const target = byId.get(relationship.to)!;
           const copy = RELATIONSHIP_COPY[relationship.type];
+          const points = connectionPoints(relationship, subgraph.center, target);
           return (
             <li
               key={`${relationship.from}:${relationship.to}:${relationship.type}`}
@@ -76,7 +77,13 @@ export default function CaveConstellation({
                 <div className="cave-constellation__why">
                   <ul>
                     <li><strong>이 글의 내용</strong><span>{target.summary ?? relationship.targetEvidence}</span></li>
-                    <li><strong>이어지는 지점</strong><span>{connectionReason(relationship, subgraph.center.title, target.title)}</span></li>
+                    <li>
+                      <strong>이어지는 지점</strong>
+                      <span className="cave-constellation__connection-points">
+                        <span><b>지금 글</b>{points.source}</span>
+                        <span><b>추천 글</b>{points.target}</span>
+                      </span>
+                    </li>
                   </ul>
                 </div>
 
