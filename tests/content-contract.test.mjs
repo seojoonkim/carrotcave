@@ -384,11 +384,12 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
   assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
-  assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:680px/);
-  assert.match(stylesSource, /\.post-content\{[^}]*font:400 17px\/1\.92 var\(--post-reader-sans\)/);
+  assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.92/);
+  assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
+  assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);
   assert.match(stylesSource, /\.post-content p\{[^}]*color:#e7e7e8/);
   assert.match(stylesSource, /\.post-content :is\(h2,h3\)\{[^}]*color:#fff/);
-  assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--cyan\)[^}]*text-decoration:underline/);
+  assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--reader-accent\)[^}]*text-decoration:underline/);
 });
 
 test('ordinary post bodies suppress a duplicated title line or title-prefixed opening sentence', async () => {
