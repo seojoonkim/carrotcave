@@ -4,12 +4,12 @@ import type { OntologyEdge, OntologySubgraph, SubgraphNode } from '@/lib/ontolog
 export type CaveConstellationNode = SubgraphNode;
 export type CaveConstellationRelationship = OntologyEdge;
 
-const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string }> = {
-  DEEPENS: { label: '같은 주제를 더 깊게' },
-  CHALLENGES: { label: '다른 관점에서' },
-  APPLIES: { label: '생각을 실제로' },
-  REFRAMES: { label: '새로운 시선으로' },
-  RESONATES: { label: '핵심 생각이 비슷한' },
+const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string; bridge: string }> = {
+  DEEPENS: { label: '같은 주제를 더 깊게', bridge: '이 문제를 더 깊이 따라가면,' },
+  CHALLENGES: { label: '다른 관점에서', bridge: '반대편에서 보면,' },
+  APPLIES: { label: '생각을 실제로', bridge: '이 생각을 실제 장면으로 옮기면,' },
+  REFRAMES: { label: '새로운 시선으로', bridge: '시선을 다른 곳으로 돌리면,' },
+  RESONATES: { label: '핵심 생각이 비슷한', bridge: '서로 다른 장면이지만,' },
 };
 
 const UNSAFE_EVIDENCE = /https?:\/\/|www\.|\[[^\]]+\]\(|\*\*|__|<\/?[a-z][^>]*>|(?:Website|GitHub):/iu;
@@ -31,6 +31,11 @@ function connectionPoints(relationship: OntologyEdge, source: SubgraphNode, targ
     source: cleanEvidence(relationship.sourceEvidence) ?? source.summary ?? source.title,
     target: cleanEvidence(relationship.targetEvidence) ?? target.title,
   };
+}
+
+function connectionSentence(points: { source: string; target: string }, bridge: string) {
+  const source = points.source.replace(/[.!?。！？]+$/u, '');
+  return `${source}. ${bridge} ${points.target}`;
 }
 
 export interface CaveConstellationProps {
@@ -79,10 +84,7 @@ export default function CaveConstellation({
                     <li><strong>이 글의 내용</strong><span>{target.summary ?? relationship.targetEvidence}</span></li>
                     <li>
                       <strong>이어지는 지점</strong>
-                      <span className="cave-constellation__connection-points">
-                        <span><b>지금 글</b>{points.source}</span>
-                        <span><b>추천 글</b>{points.target}</span>
-                      </span>
+                      <span>{connectionSentence(points, copy.bridge)}</span>
                     </li>
                   </ul>
                 </div>

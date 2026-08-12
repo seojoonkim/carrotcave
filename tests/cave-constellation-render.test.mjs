@@ -70,18 +70,18 @@ test('renders exactly three direct recommendations in descending strength order'
   assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('shows each article summary and its two distinct connection points', () => {
+test('shows distinct connection points as one natural sentence', () => {
   const html = render();
   for (const value of [
     '첫 번째 글', '같은 주제를 더 깊게',
     '이 글의 내용', '첫 번째 글의 핵심 내용입니다.',
-    '이어지는 지점', '지금 글', '현재 글 근거 first', '추천 글', '추천 글 근거 first',
+    '이어지는 지점', '현재 글 근거 first. 이 문제를 더 깊이 따라가면, 추천 글 근거 first',
     '이 글 읽기',
   ]) assert.match(html, new RegExp(value));
   assert.match(html, /href="\/posts\/first"/);
   assert.match(html, /<span>1순위<\/span>/);
   assert.equal((html.match(/<li>/g) ?? []).length, 6);
-  assert.doesNotMatch(html, /에서 던진 질문을|더 깊이 파고듭니다|titleOverlap|두 글은 ‘기억’, ‘에이전트’라는 주제를|추천 글이 이 주제를|추천하는 이유|추천 이유|<details|추천 근거 보기|blockquote/);
+  assert.doesNotMatch(html, /<b>|connection-points|에서 던진 질문을|더 깊이 파고듭니다|titleOverlap|두 글은 ‘기억’, ‘에이전트’라는 주제를|추천 글이 이 주제를|추천하는 이유|추천 이유|<details|추천 근거 보기|blockquote/);
 });
 
 test('replaces unsafe evidence with each article summary', () => {
@@ -94,10 +94,9 @@ test('replaces unsafe evidence with each article summary', () => {
   const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
     subgraph: { center, nodes, edges: [malformed] },
   }));
-  assert.match(html, /현재 글의 검수된 요약입니다/);
-  assert.match(html, /<b>추천 글<\/b>첫 번째 글/);
+  assert.match(html, /현재 글의 검수된 요약입니다\. 이 문제를 더 깊이 따라가면, 첫 번째 글/);
   assert.doesNotMatch(html, /example\.com|example\.org|오염된|‘것이다’|‘되는’|‘순간’|‘않을’|라는 주제를 함께 다룹니다/);
-  assert.match(html, /cave-constellation__connection-points/);
+  assert.doesNotMatch(html, /cave-constellation__connection-points|<b>/);
   assert.doesNotMatch(source, /titleOverlap/);
 });
 
@@ -106,7 +105,7 @@ test('falls back safely for empty, missing, and overlong evidence', () => {
     const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
       subgraph: { center, nodes, edges: [{ ...edge('first', 'DEEPENS', .9, '연결 이유'), sourceEvidence }] },
     }));
-    assert.match(html, /<b>지금 글<\/b>현재 글의 검수된 요약입니다/);
+    assert.match(html, /현재 글의 검수된 요약입니다\. 이 문제를 더 깊이 따라가면, 추천 글 근거 first/);
     assert.doesNotMatch(html, /가{241}/);
   }
 });
@@ -118,13 +117,21 @@ test('merges graph and list into one static recommendation view', () => {
   assert.match(html, /<ol class="cave-constellation__recommendations"/);
 });
 
-test('keeps distinct evidence points for every relationship type', () => {
-  for (const type of ['DEEPENS', 'CHALLENGES', 'APPLIES', 'REFRAMES', 'RESONATES']) {
+test('uses a natural bridge for every relationship type', () => {
+  const expectations = {
+    DEEPENS: '이 문제를 더 깊이 따라가면,',
+    CHALLENGES: '반대편에서 보면,',
+    APPLIES: '이 생각을 실제 장면으로 옮기면,',
+    REFRAMES: '시선을 다른 곳으로 돌리면,',
+    RESONATES: '서로 다른 장면이지만,',
+  };
+  for (const [type, bridge] of Object.entries(expectations)) {
     const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
       subgraph: { center, nodes, edges: [edge('first', type, .9, '연결 이유')] },
     }));
     assert.match(html, /현재 글 근거 first/);
     assert.match(html, /추천 글 근거 first/);
+    assert.match(html, new RegExp(bridge));
   }
   for (const label of ['같은 주제를 더 깊게', '다른 관점에서', '생각을 실제로', '새로운 시선으로', '핵심 생각이 비슷한']) {
     assert.match(source, new RegExp(label));
@@ -138,7 +145,7 @@ test('responsive CSS preserves readable evidence and accessible links', () => {
   assert.match(css, /\.cave-constellation__why ul\{[^}]*display:grid/s);
   assert.match(css, /\.cave-constellation__why li\{[^}]*grid-template-columns:92px minmax\(0,1fr\)/s);
   assert.match(css, /overflow-wrap:anywhere/);
-  assert.match(css, /\.cave-constellation__connection-points>span\{grid-template-columns:1fr;gap:2px\}/);
+  assert.doesNotMatch(css, /cave-constellation__connection-points/);
   assert.match(css, /prefers-reduced-motion:reduce/);
   assert.match(css, /\.cave-constellation :focus-visible/);
 });
