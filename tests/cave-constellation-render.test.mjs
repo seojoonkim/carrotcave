@@ -118,7 +118,9 @@ test('keeps every relationship label without rendering relationship evidence', (
 test('responsive CSS preserves a readable thumbnail overlay and accessible links', () => {
   assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(1040px,calc\(100vw - 40px\)\)/s);
   assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
-  assert.match(css, /\.cave-constellation__navigate\{[^}]*min-height:48px/s);
+  assert.match(css, /\.cave-constellation__recommendation-header\{grid-row:1;/);
+  assert.match(css, /\.cave-constellation__navigate\{grid-column:3;grid-row:1;[^}]*min-height:48px/s);
+  assert.doesNotMatch(css, /grid-row:1\/3/);
   assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:260px/s);
   assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\) 0 155px/s);
   assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
