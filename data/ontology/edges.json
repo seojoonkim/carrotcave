@@ -1,136 +1,5 @@
 [
   {
-    "from": "post-191",
-    "to": "post-187",
-    "type": "DEEPENS",
-    "strength": 0.4198,
-    "sourceClaimId": "post-191-c1",
-    "sourceEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
-    "targetEvidence": "사람은 목적과 위험을 보고 다음에 검증할 가설을 고른다.",
-    "label": "「제일 똑똑한 모델 하나로는 부족했다」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 94,
-      "overlapTokens": [
-        "claude",
-        "codex",
-        "가깝다",
-        "가능성",
-        "개발",
-        "검증",
-        "검증할",
-        "것이다",
-        "결과를",
-        "계획을",
-        "고른다",
-        "고친"
-      ],
-      "titleOverlap": [
-        "것이다",
-        "똑똑한",
-        "모델"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=94;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-191",
-    "to": "post-189",
-    "type": "DEEPENS",
-    "strength": 0.3854,
-    "sourceClaimId": "post-191-c1",
-    "sourceEvidence": "경쟁력은 기능의 개수보다 수백만 갈래로 갈라진 계보의 상속과 병합, 검증과 롤백을 안전하게 관리하는 능력에서 나올 것이다.",
-    "targetEvidence": "결과는 gate FAIL이었다.",
-    "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 72,
-      "overlapTokens": [
-        "memkraft",
-        "개수",
-        "개인",
-        "검증",
-        "것도",
-        "것이다",
-        "결과",
-        "결과는",
-        "고쳤다",
-        "공개되어",
-        "관계",
-        "권한"
-      ],
-      "titleOverlap": [
-        "memkraft",
-        "것이다",
-        "기억은",
-        "언제",
-        "업데이트",
-        "행동이"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=6;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-191",
-    "to": "click-theology",
-    "type": "REFRAMES",
-    "strength": 0.35,
-    "sourceClaimId": "post-191-c1",
-    "sourceEvidence": "왜 그렇게 판단했는지, 결과는 어땠는지, 그 정보를 언제까지 믿어도 되는지를 함께 남긴다.",
-    "targetEvidence": "검색 결과는 열 개의 링크를 나열하고 내가 고른다.",
-    "label": "「딸깍의 신학」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 61,
-      "overlapTokens": [
-        "claude",
-        "code",
-        "saas",
-        "가깝다",
-        "것이다",
-        "것인가",
-        "결과",
-        "결과는",
-        "경계",
-        "고른다",
-        "구매",
-        "그렇게"
-      ],
-      "titleOverlap": [
-        "것이다",
-        "않을"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=61;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
     "from": "post-190",
     "to": "post-159",
     "type": "DEEPENS",
@@ -512,50 +381,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=11;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-187",
-    "to": "post-191",
-    "type": "DEEPENS",
-    "strength": 0.4198,
-    "sourceClaimId": "post-187-c1",
-    "sourceEvidence": "사람은 목적과 위험을 보고 다음에 검증할 가설을 고른다.",
-    "targetEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
-    "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「제일 똑똑한 모델 하나로는 부족했다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 94,
-      "overlapTokens": [
-        "claude",
-        "codex",
-        "가깝다",
-        "가능성",
-        "개발",
-        "검증",
-        "검증할",
-        "것이다",
-        "결과를",
-        "계획을",
-        "고른다",
-        "고친"
-      ],
-      "titleOverlap": [
-        "것이다",
-        "똑똑한",
-        "모델"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=94;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -13776,6 +13601,215 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-191",
+    "to": "agent-era-branding-future",
+    "type": "DEEPENS",
+    "strength": 0.3892,
+    "sourceClaimId": "post-191-c1",
+    "sourceEvidence": "그 기억이 규칙을 바꾸고, 검증할 테스트와 새 도구를 만들고, 복구 로직과 코드베이스 자체를 갈아엎는다.",
+    "targetEvidence": "결국 미래의 브랜드는 이렇게 바뀔 것이다.",
+    "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 70,
+      "overlapTokens": [
+        "agent",
+        "가능성",
+        "검증",
+        "검증할",
+        "것도",
+        "것이다",
+        "것인가",
+        "것인지",
+        "결국",
+        "결제",
+        "계정이",
+        "구매"
+      ],
+      "titleOverlap": [
+        "것이다",
+        "무엇이",
+        "에이전트"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=70;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-191",
+    "to": "post-141",
+    "type": "DEEPENS",
+    "strength": 0.3822,
+    "sourceClaimId": "post-191-c1",
+    "sourceEvidence": "이 구조적 장점 덕분에 OpenClaw를 누르고 에이전트 사용량 1위에 올랐을 것이다.",
+    "targetEvidence": "결국 가장 비싼 일만 떠안는 구조로 밀려나는 셈이다.",
+    "label": "「왕관이 콘센트가 되는 순간」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 73,
+      "overlapTokens": [
+        "claude",
+        "openclaw",
+        "가깝다",
+        "가능성",
+        "거의",
+        "것이다",
+        "결국",
+        "구조",
+        "기반",
+        "기준",
+        "남는다",
+        "넘어가"
+      ],
+      "titleOverlap": [
+        "것이다",
+        "되는",
+        "순간",
+        "않을"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=73;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-191",
+    "to": "robot-goku-5000",
+    "type": "REFRAMES",
+    "strength": 0.35,
+    "sourceClaimId": "post-191-c1",
+    "sourceEvidence": "나와 함께 변한 규칙과 코드, 실패를 통과하며 만들어진 계보는 누구의 것인가.",
+    "targetEvidence": "그렇다면 근두운 위에서 검을 휘두른 그 손오공의 몸짓은 과연 누구의 것인가.",
+    "label": "「5천 달러짜리 손오공」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 35,
+      "overlapTokens": [
+        "것이다",
+        "것인가",
+        "그대로",
+        "누구의",
+        "다르다",
+        "다음",
+        "대신",
+        "도구를",
+        "되는",
+        "때문",
+        "만드는",
+        "미래를"
+      ],
+      "titleOverlap": [
+        "것이다",
+        "미래를"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=35;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-107",
+    "to": "post-191",
+    "type": "REFRAMES",
+    "strength": 0.35,
+    "sourceClaimId": "post-107-c1",
+    "sourceEvidence": "M3 Ultra 512GB 듀얼 머신으로 SNS 무제한 크롤링 파이프라인을 돌리는 사람, Codex와 Claude Code를 뜯어고쳐 직접 에이전트에 붙여버린 사람, 전화 공포증 있는 MZ 직장인의 업무 자동화를 OpenClaw로 풀어낸 사람.",
+    "targetEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
+    "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「OpenClaw Builder Meetup in Seoul」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 23,
+      "overlapTokens": [
+        "claude",
+        "code",
+        "codex",
+        "openclaw",
+        "것이다",
+        "기반이",
+        "나올",
+        "되는",
+        "서비스",
+        "아니",
+        "않고",
+        "않는다"
+      ],
+      "titleOverlap": [
+        "openclaw",
+        "것이다"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=23;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-187",
+    "to": "vibe-labs-seoul-edition-2026-judging",
+    "type": "RESONATES",
+    "strength": 0.35,
+    "sourceClaimId": "post-187-c1",
+    "sourceEvidence": "루프 엔지니어링은 AI를 더 오래 돌리는 기술이 아니다.",
+    "targetEvidence": "이후 모든 지원자에게 결과를 안내하는 메일을 보냈다.",
+    "label": "「바이브랩스 서울 에디션 2026 심사를 마치고」은 「제일 똑똑한 모델 하나로는 부족했다」의 핵심 문제와 맞닿는다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 33,
+      "overlapTokens": [
+        "ai",
+        "ai를",
+        "가능성",
+        "가지",
+        "결과를",
+        "계속",
+        "과정",
+        "그렇게",
+        "때문",
+        "마친",
+        "만들고",
+        "모든"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=33;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   }
 ]

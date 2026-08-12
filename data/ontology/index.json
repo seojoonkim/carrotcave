@@ -7574,6 +7574,49 @@
       "status": "approved"
     },
     {
+      "from": "post-107",
+      "to": "post-191",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "post-107-c1",
+      "sourceEvidence": "M3 Ultra 512GB 듀얼 머신으로 SNS 무제한 크롤링 파이프라인을 돌리는 사람, Codex와 Claude Code를 뜯어고쳐 직접 에이전트에 붙여버린 사람, 전화 공포증 있는 MZ 직장인의 업무 자동화를 OpenClaw로 풀어낸 사람.",
+      "targetEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
+      "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「OpenClaw Builder Meetup in Seoul」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 23,
+        "overlapTokens": [
+          "claude",
+          "code",
+          "codex",
+          "openclaw",
+          "것이다",
+          "기반이",
+          "나올",
+          "되는",
+          "서비스",
+          "아니",
+          "않고",
+          "않는다"
+        ],
+        "titleOverlap": [
+          "openclaw",
+          "것이다"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=23;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "post-111",
       "to": "prompting-ability-as-new-power",
       "type": "DEEPENS",
@@ -10705,50 +10748,6 @@
     },
     {
       "from": "post-187",
-      "to": "post-191",
-      "type": "DEEPENS",
-      "strength": 0.4198,
-      "sourceClaimId": "post-187-c1",
-      "sourceEvidence": "사람은 목적과 위험을 보고 다음에 검증할 가설을 고른다.",
-      "targetEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
-      "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「제일 똑똑한 모델 하나로는 부족했다」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 94,
-        "overlapTokens": [
-          "claude",
-          "codex",
-          "가깝다",
-          "가능성",
-          "개발",
-          "검증",
-          "검증할",
-          "것이다",
-          "결과를",
-          "계획을",
-          "고른다",
-          "고친"
-        ],
-        "titleOverlap": [
-          "것이다",
-          "똑똑한",
-          "모델"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=94;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-187",
       "to": "gaslighting-ai-open-source-project",
       "type": "DEEPENS",
       "strength": 0.3973,
@@ -10826,6 +10825,43 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=29;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-187",
+      "to": "vibe-labs-seoul-edition-2026-judging",
+      "type": "RESONATES",
+      "strength": 0.35,
+      "sourceClaimId": "post-187-c1",
+      "sourceEvidence": "루프 엔지니어링은 AI를 더 오래 돌리는 기술이 아니다.",
+      "targetEvidence": "이후 모든 지원자에게 결과를 안내하는 메일을 보냈다.",
+      "label": "「바이브랩스 서울 에디션 2026 심사를 마치고」은 「제일 똑똑한 모델 하나로는 부족했다」의 핵심 문제와 맞닿는다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 33,
+        "overlapTokens": [
+          "ai",
+          "ai를",
+          "가능성",
+          "가지",
+          "결과를",
+          "계속",
+          "과정",
+          "그렇게",
+          "때문",
+          "마친",
+          "만들고",
+          "모든"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=33;titleOverlap=0;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11214,13 +11250,13 @@
     },
     {
       "from": "post-191",
-      "to": "post-187",
+      "to": "agent-era-branding-future",
       "type": "DEEPENS",
-      "strength": 0.4198,
+      "strength": 0.3892,
       "sourceClaimId": "post-191-c1",
-      "sourceEvidence": "작년 말까지 Claude Code나 Codex를 터미널에 바로 띄워 개발하던 때와 지금의 에이전틱 개발이 가장 크게 달라진 지점은 모델의 지능이 아니다.",
-      "targetEvidence": "사람은 목적과 위험을 보고 다음에 검증할 가설을 고른다.",
-      "label": "「제일 똑똑한 모델 하나로는 부족했다」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "그 기억이 규칙을 바꾸고, 검증할 테스트와 새 도구를 만들고, 복구 로직과 코드베이스 자체를 갈아엎는다.",
+      "targetEvidence": "결국 미래의 브랜드는 이렇게 바뀔 것이다.",
+      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -11228,43 +11264,43 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 94,
+        "lexicalOverlap": 70,
         "overlapTokens": [
-          "claude",
-          "codex",
-          "가깝다",
+          "agent",
           "가능성",
-          "개발",
           "검증",
           "검증할",
+          "것도",
           "것이다",
-          "결과를",
-          "계획을",
-          "고른다",
-          "고친"
+          "것인가",
+          "것인지",
+          "결국",
+          "결제",
+          "계정이",
+          "구매"
         ],
         "titleOverlap": [
           "것이다",
-          "똑똑한",
-          "모델"
+          "무엇이",
+          "에이전트"
         ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=94;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=70;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "post-191",
-      "to": "post-189",
+      "to": "post-141",
       "type": "DEEPENS",
-      "strength": 0.3854,
+      "strength": 0.3822,
       "sourceClaimId": "post-191-c1",
-      "sourceEvidence": "경쟁력은 기능의 개수보다 수백만 갈래로 갈라진 계보의 상속과 병합, 검증과 롤백을 안전하게 관리하는 능력에서 나올 것이다.",
-      "targetEvidence": "결과는 gate FAIL이었다.",
-      "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "이 구조적 장점 덕분에 OpenClaw를 누르고 에이전트 사용량 1위에 올랐을 것이다.",
+      "targetEvidence": "결국 가장 비싼 일만 떠안는 구조로 밀려나는 셈이다.",
+      "label": "「왕관이 콘센트가 되는 순간」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -11272,75 +11308,73 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 72,
+        "lexicalOverlap": 73,
         "overlapTokens": [
-          "memkraft",
-          "개수",
-          "개인",
-          "검증",
-          "것도",
+          "claude",
+          "openclaw",
+          "가깝다",
+          "가능성",
+          "거의",
           "것이다",
-          "결과",
-          "결과는",
-          "고쳤다",
-          "공개되어",
-          "관계",
-          "권한"
+          "결국",
+          "구조",
+          "기반",
+          "기준",
+          "남는다",
+          "넘어가"
         ],
         "titleOverlap": [
-          "memkraft",
           "것이다",
-          "기억은",
-          "언제",
-          "업데이트",
-          "행동이"
+          "되는",
+          "순간",
+          "않을"
         ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=6;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=73;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "post-191",
-      "to": "click-theology",
+      "to": "robot-goku-5000",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-191-c1",
-      "sourceEvidence": "왜 그렇게 판단했는지, 결과는 어땠는지, 그 정보를 언제까지 믿어도 되는지를 함께 남긴다.",
-      "targetEvidence": "검색 결과는 열 개의 링크를 나열하고 내가 고른다.",
-      "label": "「딸깍의 신학」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "나와 함께 변한 규칙과 코드, 실패를 통과하며 만들어진 계보는 누구의 것인가.",
+      "targetEvidence": "그렇다면 근두운 위에서 검을 휘두른 그 손오공의 몸짓은 과연 누구의 것인가.",
+      "label": "「5천 달러짜리 손오공」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 61,
+        "lexicalOverlap": 35,
         "overlapTokens": [
-          "claude",
-          "code",
-          "saas",
-          "가깝다",
           "것이다",
           "것인가",
-          "결과",
-          "결과는",
-          "경계",
-          "고른다",
-          "구매",
-          "그렇게"
+          "그대로",
+          "누구의",
+          "다르다",
+          "다음",
+          "대신",
+          "도구를",
+          "되는",
+          "때문",
+          "만드는",
+          "미래를"
         ],
         "titleOverlap": [
           "것이다",
-          "않을"
+          "미래를"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=61;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=35;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -14767,149 +14801,149 @@
   ],
   "outgoing": {
     "post-191": [
-      243,
       244,
-      245
+      245,
+      246
     ],
     "post-190": [
-      240,
       241,
-      242
+      242,
+      243
     ],
     "post-189": [
-      237,
       238,
-      239
+      239,
+      240
     ],
     "post-188": [
-      234,
       235,
-      236
+      236,
+      237
     ],
     "post-187": [
-      231,
       232,
-      233
+      233,
+      234
     ],
     "post-186": [
-      228,
       229,
-      230
+      230,
+      231
     ],
     "post-185": [
-      225,
       226,
-      227
+      227,
+      228
     ],
     "post-178": [
-      222,
       223,
-      224
+      224,
+      225
     ],
     "post-165": [
-      219,
       220,
-      221
+      221,
+      222
     ],
     "post-164": [
-      216,
       217,
-      218
+      218,
+      219
     ],
     "post-163": [
-      213,
       214,
-      215
+      215,
+      216
     ],
     "post-161": [
-      210,
       211,
-      212
+      212,
+      213
     ],
     "post-159": [
-      207,
       208,
-      209
+      209,
+      210
     ],
     "post-156": [
-      204,
       205,
-      206
+      206,
+      207
     ],
     "post-155": [
-      201,
       202,
-      203
+      203,
+      204
     ],
     "post-154": [
-      198,
       199,
-      200
+      200,
+      201
     ],
     "post-153": [
-      195,
       196,
-      197
+      197,
+      198
     ],
     "post-152": [
-      192,
       193,
-      194
+      194,
+      195
     ],
     "post-151": [
-      189,
       190,
-      191
+      191,
+      192
     ],
     "post-150": [
-      186,
       187,
-      188
+      188,
+      189
     ],
     "post-149": [
-      183,
       184,
-      185
+      185,
+      186
     ],
     "post-147": [
-      180,
       181,
-      182
+      182,
+      183
     ],
     "post-146": [
-      177,
       178,
-      179
+      179,
+      180
     ],
     "post-145": [
-      174,
       175,
-      176
+      176,
+      177
     ],
     "post-144": [
-      171,
       172,
-      173
+      173,
+      174
     ],
     "post-143": [
-      168,
       169,
-      170
+      170,
+      171
     ],
     "post-142": [
-      165,
       166,
-      167
+      167,
+      168
     ],
     "post-141": [
-      162,
       163,
-      164
+      164,
+      165
     ],
     "post-140": [
-      159,
       160,
-      161
+      161,
+      162
     ],
     "melgeek-evangelion-centauri-keyboard-review": [
       114,
@@ -14922,9 +14956,9 @@
       80
     ],
     "value-of-understanding-in-ai-future": [
-      303,
       304,
-      305
+      305,
+      306
     ],
     "internship-job-posting-giveaway": [
       90,
@@ -14937,9 +14971,9 @@
       134
     ],
     "prompting-ability-as-new-power": [
-      249,
       250,
-      251
+      251,
+      252
     ],
     "kpop-fandom-digital-parliament": [
       105,
@@ -14947,9 +14981,9 @@
       107
     ],
     "university-value-shift-education": [
-      297,
       298,
-      299
+      299,
+      300
     ],
     "agent-era-branding-future": [
       6,
@@ -14967,14 +15001,15 @@
       56
     ],
     "post-111": [
-      156,
       157,
-      158
+      158,
+      159
     ],
     "post-107": [
       153,
       154,
-      155
+      155,
+      156
     ],
     "post-106": [
       150,
@@ -14997,9 +15032,9 @@
       143
     ],
     "things-that-dont-disappear": [
-      282,
       283,
-      284
+      284,
+      285
     ],
     "how-to-create-memory-in-ai-agents": [
       84,
@@ -15007,14 +15042,14 @@
       86
     ],
     "self-deconstruction-ai-replication": [
-      273,
       274,
-      275
+      275,
+      276
     ],
     "vibe-coding-ai-decentralization": [
-      306,
       307,
-      308
+      308,
+      309
     ],
     "internship-opportunity-at-hashed": [
       93,
@@ -15037,9 +15072,9 @@
       35
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      318,
       319,
-      320
+      320,
+      321
     ],
     "disappearing-titles-computers-history": [
       66,
@@ -15047,9 +15082,9 @@
       68
     ],
     "uae-emergency-news-telegram-channel": [
-      291,
       292,
-      293
+      293,
+      294
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       39,
@@ -15072,9 +15107,9 @@
       119
     ],
     "unknowns-in-modern-creation": [
-      300,
       301,
-      302
+      302,
+      303
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -15087,14 +15122,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      315,
       316,
-      317
+      317,
+      318
     ],
     "sano-godaddy-war": [
-      264,
       265,
-      266
+      266,
+      267
     ],
     "14-5-hours": [
       0,
@@ -15102,14 +15137,14 @@
       2
     ],
     "transistor-moment": [
-      288,
       289,
-      290
+      290,
+      291
     ],
     "web4-write-access": [
-      321,
       322,
-      323
+      323,
+      324
     ],
     "naming-the-universe": [
       129,
@@ -15117,9 +15152,9 @@
       131
     ],
     "sano-intro": [
-      267,
       268,
-      269
+      269,
+      270
     ],
     "counting-assistant": [
       57,
@@ -15127,19 +15162,19 @@
       59
     ],
     "uncertainty-machine": [
-      294,
       295,
-      296
+      296,
+      297
     ],
     "vibe-founders-era": [
-      312,
       313,
-      314
+      314,
+      315
     ],
     "vibe-coding-tip": [
-      309,
       310,
-      311
+      311,
+      312
     ],
     "moltbot-anthropic-moat": [
       123,
@@ -15157,9 +15192,9 @@
       38
     ],
     "thought-speed": [
-      285,
       286,
-      287
+      287,
+      288
     ],
     "gemini-snow-bunny": [
       81,
@@ -15177,9 +15212,9 @@
       32
     ],
     "prompt-guard-dev": [
-      246,
       247,
-      248
+      248,
+      249
     ],
     "its-fun": [
       99,
@@ -15192,9 +15227,9 @@
       53
     ],
     "thank-you-mirror": [
-      279,
       280,
-      281
+      281,
+      282
     ],
     "ai-hires-ai": [
       27,
@@ -15207,9 +15242,9 @@
       110
     ],
     "rabbit-crypt-name": [
-      255,
       256,
-      257
+      257,
+      258
     ],
     "agentlinter-dev-log": [
       18,
@@ -15232,14 +15267,14 @@
       128
     ],
     "tail-stopped": [
-      276,
       277,
-      278
+      278,
+      279
     ],
     "zeon-moltbook-vol1": [
-      324,
       325,
-      326
+      326,
+      327
     ],
     "ip-tvw": [
       96,
@@ -15247,9 +15282,9 @@
       98
     ],
     "quantum-pirates": [
-      252,
       253,
-      254
+      254,
+      255
     ],
     "china-ai-frontier": [
       45,
@@ -15257,9 +15292,9 @@
       47
     ],
     "seedance-30": [
-      270,
       271,
-      272
+      272,
+      273
     ],
     "agent-siblings": [
       12,
@@ -15282,9 +15317,9 @@
       122
     ],
     "robot-goku-5000": [
-      261,
       262,
-      263
+      263,
+      264
     ],
     "hvl-fellows": [
       87,
@@ -15307,9 +15342,9 @@
       62
     ],
     "rabbit-hole-intro": [
-      258,
       259,
-      260
+      260,
+      261
     ]
   },
   "overrides": {
