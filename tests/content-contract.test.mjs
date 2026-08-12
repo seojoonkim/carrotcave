@@ -380,6 +380,11 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(postSource, /<article className="post-reader-article">/);
   assert.match(postSource, /className="post-reader-header"/);
   assert.match(postSource, /className="post-content"/);
+  assert.match(postSource, /readingBackHref=\{`\/\?section=\$\{encodeURIComponent\(post\.category\)\}`\}/);
+  assert.match(postSource, /readingBackLabel=\{`\$\{post\.category\} 목록으로 돌아가기`\}/);
+  assert.match(headerSource, /className="cc-reading-back-chevron" aria-hidden="true">‹<\/span>/);
+  assert.match(stylesSource, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px;gap:0\}/);
+  assert.doesNotMatch(stylesSource, /\.cc-header--reading \.cc-brand\{width:34px\}/);
   assert.doesNotMatch(postSource, /linear-gradient\(180deg, #060A14/);
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
   assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
@@ -623,7 +628,7 @@ test('home keeps the CARROT CAVE wordmark while reading headers use logo divider
   assert.match(headerSource, /cc-reading-title/);
   assert.match(headerSource, /readingTitle \? 'cc-header cc-header--reading' : 'cc-header'/);
   assert.match(headerSource, /\{!readingTitle && [\s\S]*CARROT CAVE/);
-  assert.match(postSource, /<SiteHeader readingTitle=\{post\.title\} readingMeta=/);
+  assert.match(postSource, /<SiteHeader[\s\S]*?readingTitle=\{post\.title\}[\s\S]*?readingMeta=/);
   assert.doesNotMatch(postSource, /<SiteHeader\s*\/>/);
   assert.match(liaoReaderSource, /class="reader-divider"/);
   assert.doesNotMatch(liaoReaderSource, /<span>CARROT CAVE<\/span>/);

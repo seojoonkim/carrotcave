@@ -176,7 +176,12 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="post-reader-page min-h-screen">
-      <SiteHeader readingTitle={post.title} readingMeta={post.category.replace(/^[^\p{L}]+/u, '')} />
+      <SiteHeader
+        readingTitle={post.title}
+        readingMeta={post.category.replace(/^[^\p{L}]+/u, '')}
+        readingBackHref={`/?section=${encodeURIComponent(post.category)}`}
+        readingBackLabel={`${post.category} 목록으로 돌아가기`}
+      />
 
       <article className="post-reader-article">
         <header className="post-reader-header">
