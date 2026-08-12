@@ -385,7 +385,7 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.86/);
-  assert.match(stylesSource, /\.post-content p\{margin:0 0 20px;color:#e7e7e8/);
+  assert.match(stylesSource, /\.post-content p\{margin:0 0 22px;color:#e7e7e8/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
   assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);
