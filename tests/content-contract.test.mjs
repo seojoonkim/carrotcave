@@ -385,6 +385,7 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(headerSource, /className="cc-reading-back-chevron" aria-hidden="true">‹<\/span>/);
   assert.match(stylesSource, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px;gap:0\}/);
   assert.doesNotMatch(stylesSource, /\.cc-header--reading \.cc-brand\{width:34px\}/);
+  assert.match(stylesSource, /\.cc-reading-back-chevron\{[^}]*font:400 28px\/1 var\(--sans\)/);
   assert.doesNotMatch(postSource, /linear-gradient\(180deg, #060A14/);
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
   assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
@@ -641,12 +642,14 @@ test('brand logo asset and rendered marks are square', () => {
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
 
-test('voice reader uses one uncluttered header without source or return links', () => {
+test('all voice readers expose one uncluttered return control to the voice list', () => {
   assert.doesNotMatch(voiceReaderSource, /<header className="voice-reader-header">/);
   assert.doesNotMatch(voiceReaderSource, /voice-reader-source|>원본/);
-  assert.match(liaoReaderSource, /class="brand" href="\/"/);
-  assert.doesNotMatch(liaoReaderSource, /reader-back|>돌아가기</);
-  assert.match(liaoReaderSource, /<header class="site-header">[\s\S]*class="reader-divider"[\s\S]*class="header-status"[\s\S]*<\/header>/);
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource]) {
+    assert.match(source, /class="brand" href="\/voices" target="_top" aria-label="목소리 목록으로 돌아가기"/);
+    assert.match(source, /class="reader-back-chevron" aria-hidden="true">‹<\/span>/);
+    assert.match(source, /<header class="site-header">[\s\S]*class="reader-divider"[\s\S]*class="header-status"[\s\S]*<\/header>/);
+  }
   assert.match(liaoReaderStyles, /\.site-header\s*\{[^}]*grid-template-columns:/);
 });
 

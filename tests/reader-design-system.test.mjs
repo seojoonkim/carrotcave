@@ -68,8 +68,10 @@ test('shared reader system applies the common scale to matching semantic levels'
     '.section-heading h2, .chapter-heading h2',
     '.highlight-marker h3, .topic-heading h3, .transcript-subheading',
     '.chapter-time { font-size: var(--reader-time-size); }',
-    '.brand { width: 44px; height: 44px; }',
-    '.brand-mark { width: 30px; height: 30px; flex-basis: 30px; }',
+    '.reader-nav, .reader-nav .brand { width: 44px; height: 44px; }',
+    '.reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; }',
+    '.reader-back-chevron { display: grid; width: 10px; height: 34px;',
+    'font: 400 28px/1 var(--font-sans);',
   ]) assert.ok(shared.includes(required), `shared voice CSS missing: ${required}`);
   assert.doesNotMatch(shared, /\.header-site-title\s*\{[^}]*reader-header-title-size/, 'voice meta eyebrow must not consume the title scale');
   assert.doesNotMatch(
