@@ -131,7 +131,7 @@ test('post corrections and newest-first ordering stay explicit', async () => {
   const vibeLabs = posts.filter((post) => post.title === 'vibelabs.hashed.com을 만든 이야기');
   assert.deepEqual(vibeLabs.map((post) => [post.slug, post.telegramMsgId]), [['vibe-labs-landing-page-creation', 8]]);
   assert.doesNotMatch(postsSource, /slug:\s*'vibelabs-landing'/);
-  const directlyBuiltSlugs = ['post-191', 'post-187', 'post-161', 'post-150', 'korean-tech-ecosystem-api-access-issues', 'sano-godaddy-war', 'click-theology'];
+  const directlyBuiltSlugs = ['post-187', 'post-161', 'post-150', 'korean-tech-ecosystem-api-access-issues', 'sano-godaddy-war', 'click-theology'];
   for (const slug of directlyBuiltSlugs) assert.equal(posts.find((post) => post.slug === slug)?.category, '빌딩');
   assert.equal(posts.find((post) => post.slug === 'post-111')?.category, '탐험');
   assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
@@ -435,7 +435,7 @@ test('post media stays inside the article viewport on mobile', () => {
   assert.doesNotMatch(postSource, /marginLeft: '-2rem'|marginRight: '-2rem'/);
 });
 
-test('development logs are categorized as building rather than exploration', () => {
+test('editorial categories follow the reader reward rather than development keywords', () => {
   for (const title of [
     '기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트',
     'MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위',
@@ -454,6 +454,10 @@ test('development logs are categorized as building rather than exploration', () 
   assert.equal(ontologyIndex.nodes['uae-emergency-news-telegram-channel'].category, '빌딩');
   assert.match(syncSource, /만들었다·구축했다·출시했다·배포했다·운영했다[\s\S]*빌딩을 우선/);
   assert.match(syncSource, /해커톤·위켄드톤·빌더 이벤트를 직접 기획·주최·운영했거나 공동 제작·제작 지원으로 참여한 기록도 빌딩을 우선/);
+  assert.match(postsSource, /slug: 'post-191',[\s\S]{0,240}?category: '탐험'/);
+  assert.equal(ontologyIndex.nodes['post-191'].category, '탐험');
+  assert.match(syncSource, /개발 경험과 제작 사례가 등장하더라도[\s\S]*일반화된 명제·해석·전망을 논증하는 것이 주된 독자 보상이면 탐험/);
+  assert.match(syncSource, /구현 과정·시행착오·출시·운영 결과 자체가 주된 독자 보상이면 빌딩/);
   assert.match(syncSource, /const ALLOWED_CATEGORIES = new Set\(\['탐험', '빌딩', '낙서', '소설'\]\)/);
   assert.match(syncSource, /replace\(\/\^\[\^\\p\{L\}\]\+\/u, ''\)[\s\S]*ALLOWED_CATEGORIES\.has\(normalizedCategory\)[\s\S]*throw new Error\(`Invalid category:/);
   assert.match(postSource, /href=\{`\/\?section=\$\{encodeURIComponent\(axisOf\(post\)\)/);

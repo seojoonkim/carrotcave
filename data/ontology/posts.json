@@ -1,13 +1,13 @@
 {
   "post-191": {
     "primaryTopics": [
-      "building"
+      "exploration"
     ],
     "secondaryTopics": [
       "depth-deep"
     ],
     "questions": [
-      "building-reading-question"
+      "exploration-reading-question"
     ],
     "claims": [
       {
@@ -24,7 +24,7 @@
     "motifs": [],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "building"
+      "exploration"
     ],
     "reviewStatus": "approved",
     "provenance": {
