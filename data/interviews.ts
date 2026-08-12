@@ -18,6 +18,22 @@ export interface InterviewArchive {
 
 export const interviews: InterviewArchive[] = [
   {
+    slug: 'sam-altman-startup-school-2026',
+    name: '샘 올트먼',
+    eyebrow: 'STARTUP SCHOOL / AI / FOUNDERS',
+    title: '지금보다 창업하기 좋은 때는 없다',
+    summary: 'AI 에이전트 시대의 창업, 통념과 다른 확신, AI 안전과 권력 분산, 자유로운 미래의 조건을 샘 올트먼과 개리 탄이 논한다.',
+    description: 'Startup School 2026에서 샘 올트먼과 개리 탄이 나눈 공식 Y Combinator 대담의 전체 한국어 번역 리더.',
+    sourcePublishedAt: '2026-07-28',
+    thumbnailUrl: '/voices/sam-altman-startup-school-2026/assets/sam-altman-startup-school.jpg',
+    sourceUrl: 'https://www.youtube.com/watch?v=ZIaOBAjvc38',
+    duration: '38:59',
+    chapters: 7,
+    segments: 99,
+    embedPath: '/voices/sam-altman-startup-school-2026/index.html',
+    status: 'published',
+  },
+  {
     slug: 'liao-heng',
     name: '랴오헝',
     eyebrow: 'SEMICONDUCTOR / AI SYSTEMS',

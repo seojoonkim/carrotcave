@@ -10,6 +10,7 @@ const voicePaths = [
   'public/voices/liao-heng/index.html',
   'public/voices/liang-wenfeng/index.html',
   'public/voices/yang-zhilin/index.html',
+  'public/voices/sam-altman-startup-school-2026/index.html',
 ];
 
 const sharedVoiceLink = '<link rel="stylesheet" href="../reader-system.css">';
@@ -196,6 +197,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     ['public/voices/liao-heng/index.html', '목소리 · 랴오헝 인터뷰 · 반도체 연구자의 필드 노트'],
     ['public/voices/liang-wenfeng/index.html', '목소리 · 량원펑 비공개 투자자 회의 · AGI를 향한 절제'],
     ['public/voices/yang-zhilin/index.html', '목소리 · 양즈린 인터뷰 · 무한의 시작에 서서'],
+    ['public/voices/sam-altman-startup-school-2026/index.html', '목소리 · 샘 올트먼 인터뷰 · 지금보다 창업하기 좋은 때는 없다'],
   ]);
   for (const [path, meta] of expectedMeta) {
     const html = await read(path);
@@ -222,6 +224,12 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     "CarrotReader.createStatusController({ readerTitle: '양즈린 인터뷰' })",
     'readerStatus.setChapter(number, chapterTitle);',
   ]) assert.ok(yangScript.includes(required), `Yang header script missing: ${required}`);
+
+  const samScript = await read('public/voices/sam-altman-startup-school-2026/script.js');
+  for (const required of [
+    "CarrotReader.createStatusController({ readerTitle: '샘 올트먼 인터뷰' })",
+    'readerStatus.setChapter(number,title);',
+  ]) assert.ok(samScript.includes(required), `Sam header script missing: ${required}`);
 });
 
 test('voice readers share one status runtime instead of duplicating header mutation', async () => {
@@ -237,15 +245,17 @@ test('voice readers share one status runtime instead of duplicating header mutat
     assert.match(html, /<script src="\.\.\/reader-runtime\.js"><\/script>/, `${path} must load the shared reader runtime before inline or deferred consumers`);
   }
 
-  const [liaoScript, liangHtml, yangScript] = await Promise.all([
+  const [liaoScript, liangHtml, yangScript, samScript] = await Promise.all([
     read('public/voices/liao-heng/script.js'),
     read('public/voices/liang-wenfeng/index.html'),
     read('public/voices/yang-zhilin/script.js'),
+    read('public/voices/sam-altman-startup-school-2026/script.js'),
   ]);
   for (const [path, source] of [
     ['public/voices/liao-heng/script.js', liaoScript],
     ['public/voices/liang-wenfeng/index.html', liangHtml],
     ['public/voices/yang-zhilin/script.js', yangScript],
+    ['public/voices/sam-altman-startup-school-2026/script.js', samScript],
   ]) {
     assert.match(source, /CarrotReader\.createStatusController\(/, `${path} must consume the shared status controller`);
     assert.doesNotMatch(source, /\.setAttribute\(['"]aria-label['"]/, `${path} must not duplicate accessible status mutation`);
