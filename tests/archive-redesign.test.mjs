@@ -23,7 +23,11 @@ test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and
   assert.match(css, /\.wall-card:nth-child\(4n\+3\)\{grid-column:span 4;grid-row:span 5\}/);
   assert.match(css, /\.wall-card:nth-child\(4n\)\{grid-column:span 8;grid-row:span 5\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall\{grid-template-columns:repeat\(6,minmax\(0,1fr\)\);grid-auto-rows:74px;gap:14px\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall\{display:flex;flex-direction:column;gap:18px\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall\{display:flex;flex-direction:column;gap:14px\}/);
+  assert.match(css, /\.wall-card:nth-child\(n\)\{width:100%;min-height:270px\}/);
+  assert.match(css, /\.wall-card:nth-child\(3n\+2\)\{min-height:300px\}/);
+  assert.match(css, /\.wall-card:nth-child\(3n\)\{min-height:250px\}/);
+  assert.match(css, /\.wall-card--voice:nth-child\(n\)\{min-height:300px\}/);
   const finalArchiveBlock = css.slice(css.indexOf('/* Asymmetric archive:'));
   assert.doesNotMatch(finalArchiveBlock, /grid-auto-flow:row dense/);
   assert.doesNotMatch(css, /nth-last-child\(2\).*?grid-column:span/);
