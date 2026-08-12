@@ -33,7 +33,7 @@ const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/scri
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
 
 test('archive and voice headers preserve their stable graphite surfaces', () => {
-  assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--graphite\)\}/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*background:#282b32\}/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const readerStyles of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
@@ -390,7 +390,7 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /\.cc-reading-back-chevron\{[^}]*font:400 28px\/1 var\(--sans\)/);
   assert.doesNotMatch(postSource, /linear-gradient\(180deg, #060A14/);
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
-  assert.match(stylesSource, /--post-reader-sans:"Pretendard Variable",Pretendard/);
+  assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.86/);
   assert.match(stylesSource, /\.post-content p\{margin:0 0 22px;color:#e7e7e8/);

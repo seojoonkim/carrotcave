@@ -16,27 +16,26 @@ test('the complete archive combines ordinary posts and voices without changing c
 });
 
 test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and mobile', async () => {
-  const css = await read('app/globals.css');
+  const [css, card] = await Promise.all([read('app/globals.css'), read('components/EditorialCard.tsx')]);
   assert.match(css, /\.editorial-wall\{grid-auto-flow:row;grid-auto-rows:82px;gap:18px;background:transparent\}/);
-  assert.match(css, /\.wall-card:nth-child\(4n\+1\)\{grid-column:span 7;grid-row:span 6\}/);
-  assert.match(css, /\.wall-card:nth-child\(4n\+2\)\{grid-column:span 5;grid-row:span 6\}/);
-  assert.match(css, /\.wall-card:nth-child\(4n\+3\)\{grid-column:span 4;grid-row:span 5\}/);
-  assert.match(css, /\.wall-card:nth-child\(4n\)\{grid-column:span 8;grid-row:span 5\}/);
+  assert.match(card, /data-rhythm=\{rhythm\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='0'\]\{grid-column:span 7;grid-row:span 6\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='1'\]\{grid-column:span 5;grid-row:span 6\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='2'\]\{grid-column:span 4;grid-row:span 5\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='3'\]\{grid-column:span 8;grid-row:span 5\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall\{grid-template-columns:repeat\(6,minmax\(0,1fr\)\);grid-auto-rows:74px;gap:14px\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall\{display:flex;flex-direction:column;gap:14px\}/);
-  assert.match(css, /\.wall-card:nth-child\(n\)\{width:100%;min-height:260px\}/);
-  assert.match(css, /\.wall-card:nth-child\(3n\+2\)\{min-height:290px\}/);
-  assert.match(css, /\.wall-card:nth-child\(3n\)\{min-height:240px\}/);
-  assert.match(css, /\.wall-card--voice:nth-child\(n\)\{min-height:290px\}/);
+  assert.match(css, /\.wall-card\[data-rhythm\]\{width:100%;min-height:260px\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='1'\]\{min-height:290px\}/);
+  assert.match(css, /\.wall-card\[data-rhythm='2'\]\{min-height:240px\}/);
+  assert.match(css, /\.wall-card--voice\[data-rhythm\]\{min-height:290px\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
-  assert.match(css, /\.wall-card h2\{[^}]*font:550 clamp\(20px,2\.2vw,36px\)\/1\.13 var\(--sans\)/);
+  assert.match(css, /\.wall-card h2\{font-weight:600;line-height:1\.26;letter-spacing:-\.015em\}/);
   assert.match(css, /\.wall-card__abstract\{[^}]*font:400 15px\/1\.65 var\(--serif\)/);
   assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:20px[^\n]*\.wall-card__abstract\{font-size:14px\}/);
   const finalArchiveBlock = css.slice(css.indexOf('/* Asymmetric archive:'));
   assert.doesNotMatch(finalArchiveBlock, /grid-auto-flow:row dense/);
-  assert.doesNotMatch(css, /nth-last-child\(2\).*?grid-column:span/);
-  assert.doesNotMatch(css, /last-child:nth-child\(3n/);
 });
 
 test('header uses the exact CarrotCave.com wordmark and a restrained motion loop', async () => {
@@ -96,7 +95,7 @@ test('shared footer publishes Simon contact and Telegram links on both archive p
 
 test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
   const css = await read('app/globals.css');
-  assert.match(css, /\.cc-header\{[^}]*background:var\(--graphite\)\}/);
+  assert.match(css, /\.cc-header\{[^}]*background:#282b32\}/);
   assert.match(css, /\.axis-rail\{[^}]*background:var\(--graphite\);border-bottom/);
   assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
   assert.match(css, /\.wall-card:hover\{[^}]*background:#30343c\}/);
@@ -107,6 +106,44 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
   assert.doesNotMatch(css, /\.wall-card:hover\{[^}]*transform/);
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*filter:/);
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*transition:/);
+});
+
+test('rabbit journey illustrations live only in structural seams and end at the footer', async () => {
+  const [home, scene, footer, rail, card, css] = await Promise.all([
+    read('app/page.tsx'),
+    read('components/CaveJourneyScene.tsx'),
+    read('components/SiteFooter.tsx'),
+    read('components/AxisRail.tsx'),
+    read('components/EditorialCard.tsx'),
+    read('app/globals.css'),
+  ]);
+  assert.match(home, /const journeyStep = active \? Math\.max\(8, Math\.ceil\(visibleEntries\.length \/ 3\)\) : 19/);
+  assert.match(home, /className="cave-depth-divider" data-depth=\{depth\}/);
+  assert.match(home, /depth <= 5/);
+  assert.match(footer, /<CaveJourneyScene depth=\{6\} \/>/);
+  assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
+  assert.doesNotMatch(card, /CaveJourneyScene|cave-depth-divider|axis-rail__carrot/);
+  assert.match(scene, /aria-hidden="true"/);
+  assert.match(scene, /focusable="false"/);
+  assert.match(css, /\.cave-depth-divider\{grid-column:1\/-1;grid-row:span 2/);
+  assert.match(css, /@media\(max-width:520px\)[^\n]*\.cave-depth-divider\{display:grid;grid-template-columns:auto 1fr;min-height:84px/);
+  assert.doesNotMatch(css, /\.cave-journey-scene[^}]*animation:/);
+});
+
+test('editorial surface uses local IBM Plex, a subtle static gradient, and complete social metadata', async () => {
+  const [layout, css] = await Promise.all([read('app/layout.tsx'), read('app/globals.css')]);
+  const og = await readFile(new URL('public/opengraph-image.png', root));
+  assert.match(layout, /IBM_Plex_Sans_KR/);
+  assert.match(layout, /weight: \['400', '500', '600'\]/);
+  assert.doesNotMatch(layout, /Playfair_Display|Cormorant_Garamond|Noto_Sans_KR|\bInter\b/);
+  assert.doesNotMatch(css, /cdn\.jsdelivr\.net|Pretendard Variable/);
+  assert.match(css, /:root\{--graphite:#24262c/);
+  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#282b32 0,#24262c 640px\) no-repeat var\(--graphite\)/);
+  assert.match(layout, /description: '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
+  assert.match(layout, /images: \[\{ url: '\/opengraph-image\.png', width: 1200, height: 630/);
+  assert.match(layout, /card: 'summary_large_image'/);
+  assert.equal(og.readUInt32BE(16), 1200);
+  assert.equal(og.readUInt32BE(20), 630);
 });
 
 test('Sam Altman dialogue remains flat without repeated left rules', async () => {

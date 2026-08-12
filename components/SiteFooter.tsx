@@ -1,6 +1,11 @@
+import CaveJourneyScene from './CaveJourneyScene';
+
 export default function SiteFooter() {
   return (
     <footer className="cc-footer">
+      <div className="cc-footer__journey" aria-label="당근을 찾은 토끼">
+        <CaveJourneyScene depth={6} />
+      </div>
       <b>CARROT CAVE</b>
       <span className="cc-footer__contact">
         <span>Simon Kim</span>

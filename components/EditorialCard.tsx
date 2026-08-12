@@ -10,6 +10,7 @@ interface EditorialCardProps {
   imageUrl?: string;
   className?: string;
   priority?: boolean;
+  rhythm?: number;
 }
 
 export default function EditorialCard({
@@ -21,11 +22,13 @@ export default function EditorialCard({
   imageUrl,
   className = '',
   priority = false,
+  rhythm,
 }: EditorialCardProps) {
   return (
     <Link
       className={`wall-card${imageUrl ? ' wall-card--with-image' : ''} ${className}`.trimEnd()}
       data-axis={axis}
+      data-rhythm={rhythm}
       href={href}
     >
       {imageUrl && (
