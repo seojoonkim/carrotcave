@@ -179,14 +179,60 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     '.header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }',
   ]) assert.ok(shared.includes(required), `shared voice header CSS missing: ${required}`);
 
+  for (const required of [
+    '#readingStatus.is-subchapter {',
+    'flex-direction: column;',
+    'align-items: flex-start;',
+    '#readingStatus.is-subchapter .reading-status-separator { display: none; }',
+    '.reading-status-title {',
+    'text-align: left;',
+  ]) assert.ok(shared.includes(required), `shared voice subchapter header CSS missing: ${required}`);
+
   const expectedMeta = new Map([
-    ['public/voices/liao-heng/index.html', '목소리 · 랴오헝 인터뷰'],
-    ['public/voices/liang-wenfeng/index.html', '목소리 · 량원펑 인터뷰'],
-    ['public/voices/yang-zhilin/index.html', '목소리 · 양즈린 인터뷰'],
+    ['public/voices/liao-heng/index.html', '목소리 · 랴오헝 인터뷰 · 반도체 연구자의 필드 노트'],
+    ['public/voices/liang-wenfeng/index.html', '목소리 · 량원펑 비공개 투자자 회의 · AGI를 향한 절제'],
+    ['public/voices/yang-zhilin/index.html', '목소리 · 양즈린 인터뷰 · 무한의 시작에 서서'],
   ]);
   for (const [path, meta] of expectedMeta) {
     const html = await read(path);
-    assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the expected voice meta`);
-    assert.match(html, /<span id="readingStatus">OVERVIEW<\/span>/, `${path} must preserve its dynamic second-row reading title`);
+    assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the full interview title`);
+    assert.match(html, /<span id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true"> · <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose an accessible structured overview number and title`);
+  }
+
+  const liaoScript = await read('public/voices/liao-heng/script.js');
+  for (const required of [
+    "readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());",
+    "setReadingStatus('00', 'OVERVIEW');",
+    "setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);",
+    "setReadingStatus(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);",
+  ]) assert.ok(liaoScript.includes(required), `Liao header script missing: ${required}`);
+
+  const liangHtml = await read('public/voices/liang-wenfeng/index.html');
+  for (const required of [
+    "status.setAttribute('aria-label',`${n} ${t}`.trim())",
+    "readerTitle='량원펑 회의 기록'",
+    "setReadingStatus('00','OVERVIEW')",
+    "setReadingStatus(`CHAPTER ${String(n).padStart(2,'0')}`,chapterTitle)",
+    "setReadingStatus(topic.querySelector('.topic-number')?.textContent||'',topic.querySelector('h3')?.textContent||'',true)",
+  ]) assert.ok(liangHtml.includes(required), `Liang inline header script missing: ${required}`);
+
+  const yangScript = await read('public/voices/yang-zhilin/script.js');
+  for (const required of [
+    "readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());",
+    "const readerTitle = '양즈린 인터뷰';",
+    "setReadingStatus('00', 'OVERVIEW');",
+    "setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);",
+  ]) assert.ok(yangScript.includes(required), `Yang header script missing: ${required}`);
+});
+
+test('Liang transcript removes only the unsupported leading conjunction', async () => {
+  const [source, rendered] = await Promise.all([
+    read('public/voices/liang-wenfeng/long-reader-ko.json'),
+    read('public/voices/liang-wenfeng/index.html'),
+  ]);
+  for (const [name, text] of [['source', source], ['rendered', rendered]]) {
+    assert.doesNotMatch(text, /그리고 우리 회사의 다른 동료들도/, `${name} must remove the opening conjunction`);
+    assert.match(text, /우리 회사의 다른 동료들도, 우리가 처음 이 회사를 시작했을 때/, `${name} must preserve the rest of the first sentence`);
+    assert.equal((text.match(/그리고/g) || []).length, 30, `${name} must preserve every other occurrence of 그리고`);
   }
 });

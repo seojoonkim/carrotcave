@@ -16,6 +16,15 @@
   const chapterNumber = document.getElementById('currentChapterNumber');
   const mobileTitle = document.querySelector('.header-mobile-title');
   const readingStatus = document.getElementById('readingStatus');
+  const readingStatusNumber = readingStatus.querySelector('.reading-status-number');
+  const readingStatusTitle = readingStatus.querySelector('.reading-status-title');
+  const readerTitle = '양즈린 인터뷰';
+  const setReadingStatus = (number, title) => {
+    readingStatusNumber.textContent = number;
+    readingStatusTitle.textContent = title;
+    readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());
+    readingStatus.classList.remove('is-subchapter');
+  };
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const chapters = [...document.querySelectorAll('.transcript-chapter')];
   let lastFocus = null;
@@ -142,9 +151,10 @@
     chapters.forEach(chapter => { if (chapter.getBoundingClientRect().top <= probe) current = chapter; });
     const number = current?.dataset.chapter || null;
     chapterNumber.textContent = number ? `CH ${String(number).padStart(2, '0')}` : '00';
-    const name = document.querySelector('.header-site-title').textContent;
-    mobileTitle.textContent = number ? `${name}: Chapter ${String(number).padStart(2, '0')}` : `${name}: Overview`;
-    readingStatus.textContent = current?.querySelector('.chapter-heading h2')?.textContent || 'OVERVIEW';
+    mobileTitle.textContent = number ? `${readerTitle}: Chapter ${String(number).padStart(2, '0')}` : `${readerTitle}: Overview`;
+    const chapterTitle = current?.querySelector('.chapter-heading h2')?.textContent || '';
+    if (number) setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);
+    else setReadingStatus('00', 'OVERVIEW');
     document.querySelectorAll('[data-nav-chapter]').forEach(link => {
       const active = link.dataset.navChapter === number;
       link.classList.toggle('active', active);

@@ -362,14 +362,18 @@ test('Yang Zhilin transcript starts at the real introduction after removing the 
   assert.equal(new Set(yangTranscript.segments.map((segment) => segment.id)).size, 2511);
 });
 
-test('Liang Wenfeng header exposes the same live chapter contract as the other voice readers', () => {
+test('Liang Wenfeng header exposes the same structured live chapter contract as the other voice readers', () => {
   assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
   assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: Overview<\/span>/);
-  assert.match(liangReaderSource, /id="readingStatus">OVERVIEW<\/span>/);
+  assert.match(liangReaderSource, /id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true"> · <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
   assert.match(liangReaderSource, /mobileTitle=document\.querySelector\('\.header-mobile-title'\)/);
-  assert.match(liangReaderSource, /current\?\.querySelector\('h2'\)\?\.textContent\|\|'OVERVIEW'/);
+  assert.match(liangReaderSource, /readerTitle='량원펑 회의 기록'/);
+  assert.match(liangReaderSource, /status\.setAttribute\('aria-label',`\$\{n\} \$\{t\}`\.trim\(\)\)/);
+  assert.match(liangReaderSource, /setReadingStatus\('00','OVERVIEW'\)/);
+  assert.match(liangReaderSource, /setReadingStatus\(`CHAPTER \$\{String\(n\)\.padStart\(2,'0'\)\}`,chapterTitle\)/);
+  assert.match(liangReaderSource, /setReadingStatus\(topic\.querySelector\('\.topic-number'\)\?\.textContent\|\|'',topic\.querySelector\('h3'\)\?\.textContent\|\|'',true\)/);
   assert.match(liangReaderSource, /number\.textContent=n\?`CH \$\{String\(n\)\.padStart\(2,'0'\)\}`:'00'/);
-  assert.match(liangReaderSource, /mobileTitle\.textContent=n\?`\$\{name\}: Chapter \$\{String\(n\)\.padStart\(2,'0'\)\}`:`\$\{name\}: Overview`/);
+  assert.match(liangReaderSource, /mobileTitle\.textContent=n\?`\$\{readerTitle\}: Chapter \$\{String\(n\)\.padStart\(2,'0'\)\}`:`\$\{readerTitle\}: Overview`/);
   assert.match(liangReaderStyles, /\.header-status #readingStatus \{[^}]*text-overflow:ellipsis/);
   assert.match(liangReaderStyles, /@media \(max-width:999px\) \{[\s\S]*?#currentChapterNumber, \.header-site-title \{ display:none; \}[\s\S]*?\.header-mobile-title \{ display:block;/);
   assert.doesNotMatch(liangReaderStyles, /#readingStatus\s*\{[^}]*display\s*:\s*none/);

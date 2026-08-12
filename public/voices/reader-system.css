@@ -40,11 +40,32 @@ img { border: 0; outline: 0; box-shadow: none; }
   white-space: nowrap;
 }
 .header-status #readingStatus {
+  display: inline-flex;
+  min-width: 0;
   overflow: hidden;
+  align-items: baseline;
   color: var(--bright-white);
   font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);
   letter-spacing: -.02em;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.reading-status-number { flex: 0 0 auto; }
+.reading-status-title {
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+}
+#readingStatus.is-subchapter {
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.05;
+  white-space: normal;
+}
+#readingStatus.is-subchapter .reading-status-separator { display: none; }
+#readingStatus.is-subchapter .reading-status-title {
+  width: 100%;
   white-space: nowrap;
 }
 .hero {
