@@ -124,3 +124,20 @@ test('voice covers use the ordinary-post title hierarchy without archive credits
 
   ]) assert.ok(shared.includes(required), `shared voice cover CSS missing: ${required}`);
 });
+
+test('voice covers match ordinary-post top spacing and solid background', async () => {
+  const shared = await read('public/voices/reader-system.css');
+  for (const required of [
+    '.hero {',
+    'padding-top: 56px;',
+    'background-image: none;',
+    '@media (max-width: 480px)',
+    '.hero { padding-top: 44px; }',
+  ]) assert.ok(shared.includes(required), `shared voice surface CSS missing: ${required}`);
+
+  for (const path of voicePaths) {
+    const html = await read(path);
+    assert.match(html, /class="hero"[\s\S]*?class="kicker">목소리<\/p>/, `${path} must preserve the cover and its first eyebrow`);
+    assert.match(html, /class="hero-portrait"/, `${path} must preserve its portrait while the grid is removed`);
+  }
+});

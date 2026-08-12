@@ -17,6 +17,10 @@
 
 .content-column { max-width: var(--reader-measure); }
 .header-site-title, .header-mobile-title { font-size: var(--reader-header-title-size); }
+.hero {
+  padding-top: 56px;
+  background-image: none;
+}
 .hero .kicker {
   margin: 0 0 12px;
   color: var(--reader-accent);
@@ -62,6 +66,10 @@
 
 @media (min-width: 901px) {
   :root { --header: 78px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 44px; }
 }
 
 @media (max-width: 599px) {
