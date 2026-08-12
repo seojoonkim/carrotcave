@@ -550,7 +550,7 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
   assert.match(stylesSource, /\.wall-card__abstract\{[^}]*var\(--serif\)/);
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:19px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
@@ -581,7 +581,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(homeSource, /summary=\{post\.summary\}/);
   assert.match(homeSource, /className=\{`wall-card--uniform\$\{hasImage \? '' : ' wall-card--generated'\}`\}/);
   assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:17px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:19px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
   assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
@@ -597,7 +597,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(interviewSource, /Publication date of sourceUrl, not the date the interview occurred/);
   assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
   assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto\}/);
-  assert.match(stylesSource, /\.wall-card--voice h2\{font-size:17px/);
+  assert.match(stylesSource, /\.wall-card--voice h2\{font-size:19px/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
