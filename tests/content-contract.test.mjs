@@ -32,8 +32,9 @@ const yangReaderStyles = readFileSync(new URL('../public/voices/yang-zhilin/styl
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
 
-test('all voice reader headers match the shared menu header surface', () => {
-  assert.match(stylesSource, /\.cc-header\{[^}]*background:rgba\(41,44,51,\.94\);backdrop-filter:blur\(18px\)/);
+test('archive and voice headers preserve their stable graphite surfaces', () => {
+  assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--graphite\)\}/);
+  assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const readerStyles of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
     assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/);

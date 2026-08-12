@@ -61,6 +61,21 @@ test('shared footer publishes Simon contact and Telegram links on both archive p
   assert.match(voices, /<SiteFooter \/>/);
 });
 
+test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
+  const css = await read('app/globals.css');
+  assert.match(css, /\.cc-header\{[^}]*background:var\(--graphite\)\}/);
+  assert.match(css, /\.axis-rail\{[^}]*background:var\(--graphite\);border-bottom/);
+  assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
+  assert.match(css, /\.wall-card:hover\{[^}]*background:#30343c\}/);
+  assert.match(css, /\.wall-card__image\{[^}]*opacity:\.56;z-index:0\}/);
+  assert.match(css, /\.wall-card\{box-shadow:none\}\.wall-card--generated:after\{display:none\}/);
+  assert.doesNotMatch(css, /\.cc-header\{[^}]*backdrop-filter/);
+  assert.doesNotMatch(css, /\.axis-rail\{[^}]*backdrop-filter/);
+  assert.doesNotMatch(css, /\.wall-card:hover\{[^}]*transform/);
+  assert.doesNotMatch(css, /\.wall-card__image\{[^}]*filter:/);
+  assert.doesNotMatch(css, /\.wall-card__image\{[^}]*transition:/);
+});
+
 test('Sam Altman dialogue remains flat without repeated left rules', async () => {
   const css = await read('public/voices/sam-altman-startup-school-2026/styles.css');
   assert.match(css, /\.transcript-dialogue \{ padding-left: 0; border-left: 0; \}/);
