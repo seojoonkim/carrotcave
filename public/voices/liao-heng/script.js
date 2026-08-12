@@ -13,17 +13,7 @@
   const progressBar = document.getElementById('progressBar');
   const railPercent = document.getElementById('railPercent');
   const backToTop = document.getElementById('backToTop');
-  const chapterNumber = document.getElementById('currentChapterNumber');
-  const mobileHeaderTitle = document.querySelector('.header-mobile-title');
-  const readingStatus = document.getElementById('readingStatus');
-  const readingStatusNumber = readingStatus.querySelector('.reading-status-number');
-  const readingStatusTitle = readingStatus.querySelector('.reading-status-title');
-  const setReadingStatus = (number, title, isSubchapter = false) => {
-    readingStatusNumber.textContent = number;
-    readingStatusTitle.textContent = title;
-    readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());
-    readingStatus.classList.toggle('is-subchapter', isSubchapter);
-  };
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: '랴오헝 인터뷰' });
   const railTopics = document.getElementById('railTopics');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const modalSiblings = [...body.children].filter(element => element !== drawer && element !== backdrop);
@@ -402,9 +392,7 @@
       else break;
     }
     if (!currentChapter || transcript.getBoundingClientRect().top > probe) {
-      chapterNumber.textContent = '00';
-      mobileHeaderTitle.textContent = '랴오헝 인터뷰: Overview';
-      setReadingStatus('00', 'OVERVIEW');
+      readerStatus.setChapter(null, '');
       activeChapter = null;
       activeTopic = null;
       setActiveLinks('[data-nav-chapter]', 'navChapter', null);
@@ -415,10 +403,8 @@
 
     const number = currentChapter.dataset.chapter;
     activeChapter = number;
-    chapterNumber.textContent = `CH ${String(number).padStart(2, '0')}`;
-    mobileHeaderTitle.textContent = `랴오헝 인터뷰: Chapter ${String(number).padStart(2, '0')}`;
     const chapterTitle = currentChapter.querySelector('.chapter-heading h2')?.textContent || '';
-    setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);
+    readerStatus.setChapter(number, chapterTitle);
     setActiveLinks('[data-nav-chapter]', 'navChapter', number);
     renderRailTopics(number);
 
@@ -430,7 +416,7 @@
     const markerInChapter = currentMarker?.dataset.chapter === number ? currentMarker.dataset.topic : null;
     activeTopic = markerInChapter;
     if (markerInChapter) {
-      setReadingStatus(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);
+      readerStatus.set(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);
     }
     setActiveLinks('[data-nav-topic]', 'navTopic', markerInChapter);
     setActiveLinks('[data-rail-topic]', 'railTopic', markerInChapter);

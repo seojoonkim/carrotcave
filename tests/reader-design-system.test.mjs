@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
+import vm from 'node:vm';
 
 const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
@@ -201,28 +202,90 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 
   const liaoScript = await read('public/voices/liao-heng/script.js');
   for (const required of [
-    "readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());",
-    "setReadingStatus('00', 'OVERVIEW');",
-    "setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);",
-    "setReadingStatus(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);",
+    "CarrotReader.createStatusController({ readerTitle: '랴오헝 인터뷰' })",
+    'readerStatus.setChapter(number, chapterTitle);',
+    "readerStatus.set(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);",
   ]) assert.ok(liaoScript.includes(required), `Liao header script missing: ${required}`);
 
   const liangHtml = await read('public/voices/liang-wenfeng/index.html');
   for (const required of [
-    "status.setAttribute('aria-label',`${n} ${t}`.trim())",
-    "readerTitle='량원펑 회의 기록'",
-    "setReadingStatus('00','OVERVIEW')",
-    "setReadingStatus(`CHAPTER ${String(n).padStart(2,'0')}`,chapterTitle)",
-    "setReadingStatus(topic.querySelector('.topic-number')?.textContent||'',topic.querySelector('h3')?.textContent||'',true)",
+    "CarrotReader.createStatusController({readerTitle:'량원펑 회의 기록'})",
+    'readerStatus.setChapter(n,chapterTitle)',
+    "readerStatus.set(topic.querySelector('.topic-number')?.textContent||'',topic.querySelector('h3')?.textContent||'',true)",
   ]) assert.ok(liangHtml.includes(required), `Liang inline header script missing: ${required}`);
 
   const yangScript = await read('public/voices/yang-zhilin/script.js');
   for (const required of [
-    "readingStatus.setAttribute('aria-label', `${number} ${title}`.trim());",
-    "const readerTitle = '양즈린 인터뷰';",
-    "setReadingStatus('00', 'OVERVIEW');",
-    "setReadingStatus(`CHAPTER ${String(number).padStart(2, '0')}`, chapterTitle);",
+    "CarrotReader.createStatusController({ readerTitle: '양즈린 인터뷰' })",
+    'readerStatus.setChapter(number, chapterTitle);',
   ]) assert.ok(yangScript.includes(required), `Yang header script missing: ${required}`);
+});
+
+test('voice readers share one status runtime instead of duplicating header mutation', async () => {
+  const runtime = await read('public/voices/reader-runtime.js');
+  for (const required of [
+    'window.CarrotReader = Object.freeze({ createStatusController });',
+    "status.setAttribute('aria-label', `${number} ${title}`.trim());",
+    'return Object.freeze({ set, setChapter });',
+  ]) assert.ok(runtime.includes(required), `shared reader runtime missing: ${required}`);
+
+  for (const path of voicePaths) {
+    const html = await read(path);
+    assert.match(html, /<script src="\.\.\/reader-runtime\.js"><\/script>/, `${path} must load the shared reader runtime before inline or deferred consumers`);
+  }
+
+  const [liaoScript, liangHtml, yangScript] = await Promise.all([
+    read('public/voices/liao-heng/script.js'),
+    read('public/voices/liang-wenfeng/index.html'),
+    read('public/voices/yang-zhilin/script.js'),
+  ]);
+  for (const [path, source] of [
+    ['public/voices/liao-heng/script.js', liaoScript],
+    ['public/voices/liang-wenfeng/index.html', liangHtml],
+    ['public/voices/yang-zhilin/script.js', yangScript],
+  ]) {
+    assert.match(source, /CarrotReader\.createStatusController\(/, `${path} must consume the shared status controller`);
+    assert.doesNotMatch(source, /\.setAttribute\(['"]aria-label['"]/, `${path} must not duplicate accessible status mutation`);
+  }
+});
+
+test('shared status runtime executes overview, chapter, subchapter, aria, and graceful fallback behavior', async () => {
+  const source = await read('public/voices/reader-runtime.js');
+  const classNames = new Set();
+  const status = {
+    attrs: {},
+    classList: { toggle: (name, enabled) => enabled ? classNames.add(name) : classNames.delete(name) },
+    setAttribute(name, value) { this.attrs[name] = value; },
+  };
+  const numberNode = { textContent: '00' };
+  const titleNode = { textContent: 'OVERVIEW' };
+  status.querySelector = selector => selector === '.reading-status-number' ? numberNode : titleNode;
+  const chapterNumber = { textContent: '00' };
+  const mobileTitle = { textContent: 'Reader' };
+  const nodes = {
+    readingStatus: status,
+    currentChapterNumber: chapterNumber,
+  };
+  const context = {
+    window: {},
+    document: {
+      getElementById: id => nodes[id] ?? null,
+      querySelector: selector => selector === '.header-mobile-title' ? mobileTitle : null,
+    },
+  };
+  vm.runInNewContext(source, context);
+  const controller = context.window.CarrotReader.createStatusController({ readerTitle: '테스트 리더' });
+
+  controller.setChapter(null, '');
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['00', '테스트 리더: Overview', '00', 'OVERVIEW', '00 OVERVIEW']);
+  controller.setChapter(2, '두 번째 장');
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['CH 02', '테스트 리더: Chapter 02', 'CHAPTER 02', '두 번째 장', 'CHAPTER 02 두 번째 장']);
+  controller.set('2-3', '세부 항목', true);
+  assert.deepEqual([numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-subchapter')], ['2-3', '세부 항목', '2-3 세부 항목', true]);
+
+  nodes.readingStatus = null;
+  const fallback = context.window.CarrotReader.createStatusController({ readerTitle: '누락 리더' });
+  assert.doesNotThrow(() => { fallback.set('x', 'y'); fallback.setChapter(1, 'z'); });
 });
 
 test('Liang transcript removes only the unsupported leading conjunction', async () => {
