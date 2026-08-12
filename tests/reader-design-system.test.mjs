@@ -26,6 +26,7 @@ const contracts = [
   '--reader-time-size: 12px',
   '--reader-header-title-size: 17px',
   '--reader-header-title-size-mobile: 16px',
+  '--reader-title-size: clamp(34px, 5.5vw, 46px)',
 ];
 
 test('ordinary posts and voice readers share one explicit reading scale', async () => {
@@ -34,7 +35,7 @@ test('ordinary posts and voice readers share one explicit reading scale', async 
     read('public/voices/reader-system.css'),
   ]);
 
-  const normalizeDeclarationSpacing = css => css.replace(/:\s+/g, ':');
+  const normalizeDeclarationSpacing = css => css.replace(/\s+/g, '');
   const normalizedGlobals = normalizeDeclarationSpacing(globals);
   const normalizedShared = normalizeDeclarationSpacing(shared);
   for (const contract of contracts) {
@@ -81,10 +82,43 @@ test('ordinary post selectors consume the same reading tokens', async () => {
   const css = await read('app/globals.css');
   for (const required of [
     '.post-reader-page{--reader-accent:#61adab',
+    '--reader-title-size:clamp(34px,5.5vw,46px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
     '.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400 var(--reader-body-size)/var(--reader-body-leading)',
     '.post-content h2{margin:54px 0 22px;font-size:var(--reader-section-size)',
     '.post-content h3{margin:40px 0 18px;font-size:var(--reader-subsection-size)',
+    '.post-reader-header h1{max-width:650px;margin:0 0 22px;color:#fff;font:750 var(--reader-title-size)/1.22',
     '@media(max-width:599px){.cc-reading-title{font-size:var(--reader-header-title-size-mobile,16px)}.post-content h2{font-size:var(--reader-section-size-mobile)}.post-content h3{font-size:var(--reader-subsection-size-mobile)}',
   ]) assert.ok(css.includes(required), `ordinary post CSS missing: ${required}`);
+});
+
+test('voice covers use the ordinary-post title hierarchy without archive credits', async () => {
+  for (const path of voicePaths) {
+    const html = await read(path);
+    assert.match(html, /<p class="kicker">목소리<\/p>/, `${path} must use the ordinary category eyebrow`);
+    assert.doesNotMatch(html, /class="hero-byline"/, `${path} must remove the cover credit line`);
+    assert.doesNotMatch(html, /ARCHIVE 01|SEMICONDUCTOR \/ AI SYSTEMS|VOICE ARCHIVE|Curated &amp; built by Simon Kim · Hashed/);
+    assert.match(html, /<h1 id="page-title">[\s\S]*?<\/h1>/, `${path} must preserve its labelled title`);
+    assert.match(html, /class="hero-portrait"/, `${path} must preserve its portrait`);
+  }
+
+  const shared = await read('public/voices/reader-system.css');
+  for (const required of [
+    '.hero .kicker {',
+    'margin: 0 0 12px;',
+    'font: 500 11px/1.4',
+    'letter-spacing: .14em;',
+    '.hero #page-title {',
+    'max-width: 650px;',
+    'margin: 0 0 22px;',
+    'font-size: var(--reader-title-size);',
+    'line-height: 1.22;',
+    'font-weight: 750;',
+    'letter-spacing: -.045em;',
+    '.hero #page-title em, .hero #page-title span {',
+    'font: inherit;',
+    '@media (min-width: 1000px)',
+    '.hero #page-title { max-width: 520px; }',
+
+  ]) assert.ok(shared.includes(required), `shared voice cover CSS missing: ${required}`);
 });
