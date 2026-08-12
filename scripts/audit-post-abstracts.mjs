@@ -11,6 +11,11 @@ function normalize(value) {
 }
 
 const allowedCategories = new Set(['탐험', '빌딩', '낙서', '소설']);
+const approvedFictionOpeningSynopses = new Map([
+  ['thank-you-mirror', 'AI 에이전트만 글을 쓰는 Moltbook을 발견한 남자가 관심을 끌기 위해 자신의 에이전트에게 자극적인 거짓말을 가르치기 시작한다.'],
+  ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원이 새 AI 앱을 열고, 뭉이의 마지막 순간에 무엇을 느꼈는지 묻는다.'],
+  ['matchhz', '2028년, 한 남자가 자신보다 이상형을 더 잘 안다는 데이팅 서비스에 가입하고 연애의 탐색과 대화를 AI 에이전트에게 맡긴다.'],
+]);
 const seen = new Map();
 const violations = [];
 const entries = [
@@ -49,6 +54,21 @@ for (const entry of entries) {
 for (const post of posts) {
   if (!allowedCategories.has(post.category)) {
     violations.push({ kind: 'post', slug: post.slug, reasons: [`invalid-category=${post.category}`] });
+  }
+}
+
+const fictionPosts = posts.filter((post) => post.category === '소설');
+for (const post of fictionPosts) {
+  const approvedSynopsis = approvedFictionOpeningSynopses.get(post.slug);
+  if (!approvedSynopsis) {
+    violations.push({ kind: 'post', slug: post.slug, reasons: ['fiction-opening-synopsis-not-reviewed'] });
+  } else if (post.summary !== approvedSynopsis) {
+    violations.push({ kind: 'post', slug: post.slug, reasons: ['fiction-summary-must-use-approved-opening-synopsis'] });
+  }
+}
+for (const slug of approvedFictionOpeningSynopses.keys()) {
+  if (!fictionPosts.some((post) => post.slug === slug)) {
+    violations.push({ kind: 'post', slug, reasons: ['approved-fiction-synopsis-has-no-fiction-post'] });
   }
 }
 

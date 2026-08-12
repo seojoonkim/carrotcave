@@ -73,7 +73,7 @@ test('renders exactly three direct recommendations in descending strength order'
   assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('shows only each target summary over its thumbnail', () => {
+test('shows category, title, and summary together inside each thumbnail', () => {
   const html = render();
   for (const value of [
     '첫 번째 글', '같은 주제를 더 깊게',
@@ -83,6 +83,8 @@ test('shows only each target summary over its thumbnail', () => {
   assert.match(html, /href="\/posts\/first"/);
   assert.match(html, /<span>1순위<\/span>/);
   assert.equal((html.match(/첫 번째 글의 핵심 내용입니다\./g) ?? []).length, 1);
+  assert.match(html, /class="cave-constellation__thumbnail-copy"><span class="cave-constellation__thumbnail-category">빌딩<\/span><h3>첫 번째 글<\/h3><p>첫 번째 글의 핵심 내용입니다\.<\/p><\/div>/);
+  assert.equal((html.match(/<h3>첫 번째 글<\/h3>/g) ?? []).length, 1);
   assert.equal((html.match(/<li class="cave-constellation__recommendation"/g) ?? []).length, 3);
   assert.match(html, /class="cave-constellation__thumbnail" data-has-image="true"/);
   assert.match(html, /src="\/media\/first\.jpg" alt=""/);
@@ -95,7 +97,7 @@ test('falls back to the title when a target summary is unavailable', () => {
   const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
     subgraph: { center, nodes: [center, targetWithoutSummary], edges: [edge('first', 'DEEPENS', .96, '연결 이유')] },
   }));
-  assert.match(html, /<p>첫 번째 글<\/p>/);
+  assert.match(html, /<h3>첫 번째 글<\/h3><p>첫 번째 글<\/p>/);
   assert.doesNotMatch(html, /현재 글 근거|추천 글 근거/);
 });
 
@@ -117,11 +119,13 @@ test('responsive CSS preserves a readable thumbnail overlay and accessible links
   assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(1040px,calc\(100vw - 40px\)\)/s);
   assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
   assert.match(css, /\.cave-constellation__navigate\{[^}]*min-height:48px/s);
-  assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:210px/s);
-  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.96\) 0 100px/s);
+  assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:260px/s);
+  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\) 0 155px/s);
   assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
+  assert.match(css, /\.cave-constellation__thumbnail-copy\{[^}]*position:absolute/s);
+  assert.match(css, /\.cave-constellation__thumbnail h3\{[^}]*-webkit-line-clamp:2/s);
   assert.match(css, /\.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:3/s);
-  assert.match(css, /\.cave-constellation__thumbnail\{min-height:0;aspect-ratio:16\/10\}/);
+  assert.match(css, /\.cave-constellation__thumbnail\{min-height:0;aspect-ratio:4\/3\}/);
   assert.match(css, /overflow-wrap:anywhere/);
   assert.doesNotMatch(css, /cave-constellation__why|cave-constellation__connection-points/);
   assert.match(css, /prefers-reduced-motion:reduce/);

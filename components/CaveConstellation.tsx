@@ -52,7 +52,6 @@ export default function CaveConstellation({
                   <strong className="cave-constellation__relationship-type">{copy.label}</strong>
                 </header>
 
-                <h3>{target.title}</h3>
                 <div
                   className="cave-constellation__thumbnail"
                   data-has-image={target.imageUrl ? 'true' : 'false'}
@@ -66,7 +65,11 @@ export default function CaveConstellation({
                       sizes="(max-width: 760px) calc(100vw - 76px), 660px"
                     />
                   )}
-                  <p>{target.summary ?? target.title}</p>
+                  <div className="cave-constellation__thumbnail-copy">
+                    <span className="cave-constellation__thumbnail-category">{target.category}</span>
+                    <h3>{target.title}</h3>
+                    <p>{target.summary ?? target.title}</p>
+                  </div>
                 </div>
 
                 <Link className="cave-constellation__navigate" href={hrefForSlug(target.slug)}>
