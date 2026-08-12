@@ -89,3 +89,9 @@ test('Sam Altman renderer keeps speaker boundaries while exposing official times
   assert.equal((html.match(/class="chapter-time" href="https:\/\/www\.youtube\.com\/watch\?v=ZIaOBAjvc38&t=\d+s"/g) ?? []).length, 7);
   assert.doesNotMatch(html, /class="transcript-time"/);
 });
+
+test('Sam Altman dialogue paragraphs use the same flat format as other voice readers', async () => {
+  const styles = await read(`${readerRoot}styles.css`);
+  assert.match(styles, /\.transcript-dialogue \{ padding-left: 0; border-left: 0; \}/);
+  assert.doesNotMatch(styles, /\.transcript-dialogue\s*\{[^}]*border-left:\s*[1-9]/);
+});

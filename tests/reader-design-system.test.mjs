@@ -70,7 +70,7 @@ test('shared reader system applies the common scale to matching semantic levels'
     '.highlight-marker h3, .topic-heading h3, .transcript-subheading',
     '.chapter-time { font-size: var(--reader-time-size); }',
     '.reader-nav, .reader-nav .brand { width: 44px; height: 44px; }',
-    '.reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; }',
+    '.reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; transform: scale(1.07); }',
     '.reader-back-chevron { display: grid; width: 10px; height: 34px;',
     'font: 400 28px/1 var(--font-sans);',
   ]) assert.ok(shared.includes(required), `shared voice CSS missing: ${required}`);

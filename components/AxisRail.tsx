@@ -28,7 +28,7 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
   return (
     <nav className="axis-rail" aria-label="편집 축">
       <Link className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
-        <b>전체</b><span>{posts.length}</span>
+        <b>전체</b><span>{posts.length + interviews.length}</span>
       </Link>
       {editorialAxes.map((axis) => (
         <Link

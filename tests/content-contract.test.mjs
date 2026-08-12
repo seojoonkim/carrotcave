@@ -11,6 +11,7 @@ const ontologyIndex = JSON.parse(readFileSync(new URL('../data/ontology/index.js
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const editorialCardSource = readFileSync(new URL('../components/EditorialCard.tsx', import.meta.url), 'utf8');
+const footerSource = readFileSync(new URL('../components/SiteFooter.tsx', import.meta.url), 'utf8');
 const depthBadgeSource = readFileSync(new URL('../components/DepthBadge.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
 const layoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
@@ -533,10 +534,12 @@ test('the archive wall preserves complete titles and gives image-free cards an a
 test('the archive wall has no reserved holes and every card keeps consistent metadata and typography', () => {
   assert.doesNotMatch(stylesSource, /grid-column:6\/span 7/);
   assert.doesNotMatch(stylesSource, /grid-column:auto/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(n\)\{grid-column:span 4;grid-row:span 4\}/);
-  assert.match(stylesSource, /@media\(min-width:901px\)\{\.wall-card:last-child:nth-child\(3n\+1\)\{grid-column:span 12\}/);
-  assert.match(stylesSource, /\.wall-card:nth-last-child\(2\):nth-child\(3n\+1\),\.wall-card:last-child:nth-child\(3n\+2\)\{grid-column:span 6\}/);
-  assert.match(stylesSource, /\.wall-card:last-child:nth-child\(odd\)\{grid-column:span 2\}/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+1\)\{grid-column:span 7;grid-row:span 6\}/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+2\)\{grid-column:span 5;grid-row:span 6\}/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+3\)\{grid-column:span 4;grid-row:span 5\}/);
+  assert.match(stylesSource, /\.wall-card:nth-child\(4n\)\{grid-column:span 8;grid-row:span 5\}/);
+  assert.match(stylesSource, /\.wall-card:last-child:nth-child\(4n\+1\),\.wall-card:last-child:nth-child\(4n\+3\)\{grid-column:1\/-1\}/);
+  assert.doesNotMatch(stylesSource, /nth-last-child\(2\).*?grid-column:span/);
   assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+4\) h2/);
   assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+(?:5|10)\):not\(\.wall-card--with-image\)/);
   assert.doesNotMatch(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card\{[^}]*animation:/);
@@ -704,14 +707,15 @@ test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
 
-test('home uses one repeating editorial system for the complete post archive', () => {
+test('home uses one ordered editorial system for the complete post and voice archive', () => {
   assert.match(homeSource, /<h1 id="wall-heading">/);
   assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
   assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
   assert.match(homeSource, /className="editorial-wall"/);
-  assert.match(homeSource, /visiblePosts\.map\(\(post, index\)/);
+  assert.match(homeSource, /visibleEntries\.map\(\(entry, index\)/);
   assert.match(homeSource, /summary=\{post\.summary\}/);
+  assert.match(homeSource, /summary=\{interview\.summary\}/);
   assert.doesNotMatch(homeSource, /wallPatterns|showSummary|wall-card--actual-/);
 
   assert.doesNotMatch(homeSource, /visiblePosts\.slice\(0, 8\)/);

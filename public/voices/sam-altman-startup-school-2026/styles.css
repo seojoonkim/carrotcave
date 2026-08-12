@@ -96,7 +96,7 @@ body.drawer-open{overflow:hidden}
 .transcript-segments { min-width: 0; max-width: 650px; }
 .transcript-paragraph { position: relative; display:grid; grid-template-columns:minmax(0,1fr); margin: 0 0 7px; padding: 0 0 25px; border: 0; color: var(--foreground); font: 400 17px/1.92 var(--font-sans); letter-spacing: 0; word-break: normal !important; overflow-wrap: break-word !important; }
 .transcript-paragraph.highlighted { color:var(--bright-white); }
-.transcript-dialogue { padding-left: 14px; border-left: 1px solid color-mix(in srgb,var(--cyan) 45%,transparent); }
+.transcript-dialogue { padding-left: 0; border-left: 0; }
 .transcript-speaker { display:block; margin-bottom:7px; color:var(--ansi-yellow); font:700 13px/1.4 var(--font-sans); }
 .transcript-subheading { margin-top:34px; color:var(--bright-white); font-size:22px; font-weight:750; line-height:1.45; }
 .transcript-silence { color:var(--muted); font-style:italic; }

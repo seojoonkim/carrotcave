@@ -1,6 +1,7 @@
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail from '@/components/AxisRail';
 import EditorialCard from '@/components/EditorialCard';
+import SiteFooter from '@/components/SiteFooter';
 import { interviews } from '@/data/interviews';
 
 export default function VoicesPage() {
@@ -34,7 +35,7 @@ export default function VoicesPage() {
         </div>
       </section>
 
-      <footer className="cc-footer"><b>CARROT CAVE</b><p>글은 Telegram 토끼굴과 동기화됩니다.</p><a href="https://t.me/carrotcave">@carrotcave ↗</a></footer>
+      <SiteFooter />
     </main>
   );
 }
