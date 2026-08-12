@@ -60,7 +60,8 @@ test('shared reader system applies the common scale to matching semantic levels'
     '@media (max-width: 599px)',
     '.reader-shell { padding-inline: var(--reader-mobile-gutter); }',
     '.content-column { max-width: var(--reader-measure); }',
-    '.header-site-title, .header-mobile-title { font-size: var(--reader-header-title-size); }',
+    '.header-status #readingStatus {',
+    'font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);',
     '.transcript-paragraph, .long-record-body .utterance',
     'font-size: var(--reader-body-size)',
     '.section-heading h2, .chapter-heading h2',
@@ -68,9 +69,8 @@ test('shared reader system applies the common scale to matching semantic levels'
     '.chapter-time { font-size: var(--reader-time-size); }',
     '.brand { width: 44px; height: 44px; }',
     '.brand-mark { width: 30px; height: 30px; flex-basis: 30px; }',
-    '.header-site-title, .header-mobile-title { font-size: var(--reader-header-title-size-mobile); }',
   ]) assert.ok(shared.includes(required), `shared voice CSS missing: ${required}`);
-  assert.doesNotMatch(shared, /#readingStatus\s*\{[^}]*reader-header-title-size/, 'status eyebrow must not consume the title scale');
+  assert.doesNotMatch(shared, /\.header-site-title\s*\{[^}]*reader-header-title-size/, 'voice meta eyebrow must not consume the title scale');
   assert.doesNotMatch(
     shared.replace(/@media[^{}]*\{(?:[^{}]|\{[^{}]*\})*\}/g, ''),
     /\.reader-shell\s*\{[^}]*padding-inline/,
@@ -139,5 +139,54 @@ test('voice covers match ordinary-post top spacing and solid background', async 
     const html = await read(path);
     assert.match(html, /class="hero"[\s\S]*?class="kicker">목소리<\/p>/, `${path} must preserve the cover and its first eyebrow`);
     assert.match(html, /class="hero-portrait"/, `${path} must preserve its portrait while the grid is removed`);
+  }
+});
+
+test('all rendered images are borderless and voice portraits have no internal labels', async () => {
+  const [globals, shared, localMono] = await Promise.all([
+    read('app/globals.css'),
+    read('public/voices/reader-system.css'),
+    read('public/fonts/jetbrains-mono-500.ttf'),
+  ]);
+  assert.ok(localMono.length > 100_000, 'self-hosted mono font asset must exist');
+  assert.doesNotMatch(shared, /https?:\/\//, 'voice CSS must not add third-party font requests');
+  assert.ok(shared.includes('src: url("/fonts/jetbrains-mono-500.ttf") format("truetype");'), 'voice meta must use the self-hosted mono font');
+  assert.match(globals, /img\{border:0;outline:0;box-shadow:none\}/, 'app images must be explicitly borderless');
+  assert.match(globals, /\.wall-card--with-image\{[^}]*border:0/, 'image cards must not retain a wrapper border');
+  assert.match(globals, /\.wall-card--with-image:hover\{[^}]*border-color:transparent/, 'image cards must stay borderless on hover');
+  assert.ok(shared.includes('img { border: 0; outline: 0; box-shadow: none; }'), 'embedded voice images must be explicitly borderless');
+  assert.ok(shared.includes('.hero-portrait::before { content: none; }'), 'voice portrait decoration border must be disabled');
+
+  for (const path of voicePaths) {
+    const html = await read(path);
+    assert.doesNotMatch(html, /class="hero-nameplate"/, `${path} must remove its internal portrait nameplate`);
+    assert.doesNotMatch(html, /<figcaption\b/, `${path} must remove its portrait description`);
+    assert.match(html, /<figure class="hero-portrait">(?:(?!<figure\b)[\s\S])*?<img\b[^>]*\balt="[^"]+"[^>]*(?:(?!<figure\b)[\s\S])*?<\/figure>/, `${path} must preserve its portrait image and alt text inside the portrait figure`);
+  }
+});
+
+test('voice headers expose the same two-row meta and title hierarchy as ordinary posts', async () => {
+  const shared = await read('public/voices/reader-system.css');
+  for (const required of [
+    '.header-status > i, #currentChapterNumber, .header-mobile-title { display: none; }',
+    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }',
+    '.header-site-title {',
+    'font: 500 9px/1 var(--font-mono);',
+    'letter-spacing: .1em;',
+    '.header-status #readingStatus {',
+    'font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);',
+    '@media (max-width: 599px)',
+    '.header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }',
+  ]) assert.ok(shared.includes(required), `shared voice header CSS missing: ${required}`);
+
+  const expectedMeta = new Map([
+    ['public/voices/liao-heng/index.html', '목소리 · 랴오헝 인터뷰'],
+    ['public/voices/liang-wenfeng/index.html', '목소리 · 량원펑 인터뷰'],
+    ['public/voices/yang-zhilin/index.html', '목소리 · 양즈린 인터뷰'],
+  ]);
+  for (const [path, meta] of expectedMeta) {
+    const html = await read(path);
+    assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the expected voice meta`);
+    assert.match(html, /<span id="readingStatus">OVERVIEW<\/span>/, `${path} must preserve its dynamic second-row reading title`);
   }
 });
