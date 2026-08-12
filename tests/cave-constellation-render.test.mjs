@@ -8,6 +8,7 @@ import { transformSync } from 'next/dist/build/swc/index.js';
 
 const source = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+const pageSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
 
 function loadComponent() {
   const { code } = transformSync(source, {
@@ -22,12 +23,14 @@ function loadComponent() {
   });
   const module = { exports: {} };
   const Link = ({ href, children, ...props }) => React.createElement('a', { href, ...props }, children);
+  const Image = ({ src, alt, fill, priority, ...props }) => React.createElement('img', { src, alt, ...props });
   vm.runInNewContext(code, {
     module,
     exports: module.exports,
     React,
     require(id) {
       if (id === 'next/link') return { __esModule: true, default: Link };
+      if (id === 'next/image') return { __esModule: true, default: Image };
       return {};
     },
   });
@@ -38,7 +41,7 @@ const CaveConstellation = loadComponent();
 const center = { slug: 'now', title: '현재 글', category: '탐험', summary: '현재 글의 검수된 요약입니다.', hop: 0 };
 const nodes = [
   center,
-  { slug: 'first', title: '첫 번째 글', category: '빌딩', summary: '첫 번째 글의 핵심 내용입니다.', hop: 1 },
+  { slug: 'first', title: '첫 번째 글', category: '빌딩', summary: '첫 번째 글의 핵심 내용입니다.', imageUrl: '/media/first.jpg', hop: 1 },
   { slug: 'second', title: '두 번째 글', category: '낙서', summary: '두 번째 글의 핵심 내용입니다.', hop: 1 },
   { slug: 'third', title: '세 번째 글', category: '소설', summary: '세 번째 글의 핵심 내용입니다.', hop: 1 },
   { slug: 'fourth', title: '보이면 안 되는 글', category: '탐험', hop: 1 },
@@ -70,44 +73,30 @@ test('renders exactly three direct recommendations in descending strength order'
   assert.match(source, /\.slice\(0, 3\)/);
 });
 
-test('shows distinct connection points as one natural sentence', () => {
+test('shows only each target summary over its thumbnail', () => {
   const html = render();
   for (const value of [
     '첫 번째 글', '같은 주제를 더 깊게',
-    '이 글의 내용', '첫 번째 글의 핵심 내용입니다.',
-    '이어지는 지점', '현재 글 근거 first. 이 문제를 더 깊이 따라가면, 추천 글 근거 first',
+    '첫 번째 글의 핵심 내용입니다.',
     '이 글 읽기',
   ]) assert.match(html, new RegExp(value));
   assert.match(html, /href="\/posts\/first"/);
   assert.match(html, /<span>1순위<\/span>/);
-  assert.equal((html.match(/<li>/g) ?? []).length, 6);
-  assert.doesNotMatch(html, /<b>|connection-points|에서 던진 질문을|더 깊이 파고듭니다|titleOverlap|두 글은 ‘기억’, ‘에이전트’라는 주제를|추천 글이 이 주제를|추천하는 이유|추천 이유|<details|추천 근거 보기|blockquote/);
+  assert.equal((html.match(/첫 번째 글의 핵심 내용입니다\./g) ?? []).length, 1);
+  assert.equal((html.match(/<li class="cave-constellation__recommendation"/g) ?? []).length, 3);
+  assert.match(html, /class="cave-constellation__thumbnail" data-has-image="true"/);
+  assert.match(html, /src="\/media\/first\.jpg" alt=""/);
+  assert.match(html, /class="cave-constellation__thumbnail" data-has-image="false"/);
+  assert.doesNotMatch(html, /이 글의 내용|이어지는 지점|현재 글 근거|추천 글 근거|<b>|connection-points/);
 });
 
-test('replaces unsafe evidence with each article summary', () => {
-  const malformed = {
-    ...edge('first', 'DEEPENS', .96, '첫 번째 연결 이유'),
-    sourceEvidence: 'Website: https&#58;//example.com 오염된 원문 근거',
-    targetEvidence: '**링크** https://example.org 오염된 추천 근거',
-    signalDetails: { titleOverlap: ['것이다', '되는', '순간', '않을'] },
-  };
+test('falls back to the title when a target summary is unavailable', () => {
+  const targetWithoutSummary = { ...nodes[1], summary: undefined };
   const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
-    subgraph: { center, nodes, edges: [malformed] },
+    subgraph: { center, nodes: [center, targetWithoutSummary], edges: [edge('first', 'DEEPENS', .96, '연결 이유')] },
   }));
-  assert.match(html, /현재 글의 검수된 요약입니다\. 이 문제를 더 깊이 따라가면, 첫 번째 글/);
-  assert.doesNotMatch(html, /example\.com|example\.org|오염된|‘것이다’|‘되는’|‘순간’|‘않을’|라는 주제를 함께 다룹니다/);
-  assert.doesNotMatch(html, /cave-constellation__connection-points|<b>/);
-  assert.doesNotMatch(source, /titleOverlap/);
-});
-
-test('falls back safely for empty, missing, and overlong evidence', () => {
-  for (const sourceEvidence of ['', '가'.repeat(241), undefined]) {
-    const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
-      subgraph: { center, nodes, edges: [{ ...edge('first', 'DEEPENS', .9, '연결 이유'), sourceEvidence }] },
-    }));
-    assert.match(html, /현재 글의 검수된 요약입니다\. 이 문제를 더 깊이 따라가면, 추천 글 근거 first/);
-    assert.doesNotMatch(html, /가{241}/);
-  }
+  assert.match(html, /<p>첫 번째 글<\/p>/);
+  assert.doesNotMatch(html, /현재 글 근거|추천 글 근거/);
 });
 
 test('merges graph and list into one static recommendation view', () => {
@@ -117,35 +106,24 @@ test('merges graph and list into one static recommendation view', () => {
   assert.match(html, /<ol class="cave-constellation__recommendations"/);
 });
 
-test('uses a natural bridge for every relationship type', () => {
-  const expectations = {
-    DEEPENS: '이 문제를 더 깊이 따라가면,',
-    CHALLENGES: '반대편에서 보면,',
-    APPLIES: '이 생각을 실제 장면으로 옮기면,',
-    REFRAMES: '시선을 다른 곳으로 돌리면,',
-    RESONATES: '서로 다른 장면이지만,',
-  };
-  for (const [type, bridge] of Object.entries(expectations)) {
-    const html = renderToStaticMarkup(React.createElement(CaveConstellation, {
-      subgraph: { center, nodes, edges: [edge('first', type, .9, '연결 이유')] },
-    }));
-    assert.match(html, /현재 글 근거 first/);
-    assert.match(html, /추천 글 근거 first/);
-    assert.match(html, new RegExp(bridge));
-  }
+test('keeps every relationship label without rendering relationship evidence', () => {
   for (const label of ['같은 주제를 더 깊게', '다른 관점에서', '생각을 실제로', '새로운 시선으로', '핵심 생각이 비슷한']) {
     assert.match(source, new RegExp(label));
   }
+  assert.doesNotMatch(source, /이어지는 지점|sourceEvidence|targetEvidence|cleanEvidence|connectionPoints|connectionSentence|bridge:/);
 });
 
-test('responsive CSS preserves readable evidence and accessible links', () => {
+test('responsive CSS preserves a readable thumbnail overlay and accessible links', () => {
   assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(1040px,calc\(100vw - 40px\)\)/s);
   assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
   assert.match(css, /\.cave-constellation__navigate\{[^}]*min-height:48px/s);
-  assert.match(css, /\.cave-constellation__why ul\{[^}]*display:grid/s);
-  assert.match(css, /\.cave-constellation__why li\{[^}]*grid-template-columns:92px minmax\(0,1fr\)/s);
+  assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:210px/s);
+  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.96\) 0 100px/s);
+  assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
+  assert.match(css, /\.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:3/s);
+  assert.match(css, /\.cave-constellation__thumbnail\{min-height:0;aspect-ratio:16\/10\}/);
   assert.match(css, /overflow-wrap:anywhere/);
-  assert.doesNotMatch(css, /cave-constellation__connection-points/);
+  assert.doesNotMatch(css, /cave-constellation__why|cave-constellation__connection-points/);
   assert.match(css, /prefers-reduced-motion:reduce/);
   assert.match(css, /\.cave-constellation :focus-visible/);
 });

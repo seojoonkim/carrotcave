@@ -163,11 +163,14 @@ export default async function PostPage({ params }: PostPageProps) {
   if (!post) notFound();
 
   const rawConstellation = buildTopRecommendations(slug, ontologyIndex as OntologyIndex);
-  const summaries = new Map(posts.map((item) => [item.slug, item.summary]));
+  const postDetails = new Map(posts.map((item) => [item.slug, {
+    summary: item.summary,
+    imageUrl: item.mediaUrls?.find((url) => /^\/media\/[^?#]+\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i.test(url)),
+  }]));
   const constellation = rawConstellation
     ? {
         ...rawConstellation,
-        nodes: rawConstellation.nodes.map((node) => ({ ...node, summary: summaries.get(node.slug) })),
+        nodes: rawConstellation.nodes.map((node) => ({ ...node, ...postDetails.get(node.slug) })),
       }
     : null;
 
