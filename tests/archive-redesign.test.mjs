@@ -88,6 +88,7 @@ test('shared footer publishes Simon contact and Telegram links on both archive p
   ]);
   assert.match(footer, /Simon Kim/);
   assert.match(footer, /href="mailto:simon@hashed\.com">simon@hashed\.com<\/a>/);
+  assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft" target="_blank" rel="noreferrer">X ↗<\/a>/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(home, /<SiteFooter \/>/);
   assert.match(voices, /<SiteFooter \/>/);
