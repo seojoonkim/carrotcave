@@ -55,7 +55,7 @@ function renderContent(content: string) {
   const lines = content.split('\n');
 
   return lines.map((line, i) => {
-    if (!line.trim()) return <br key={i} />;
+    if (!line.trim()) return null;
 
     if (line.startsWith('### ')) {
       return (

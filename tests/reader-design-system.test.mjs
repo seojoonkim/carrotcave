@@ -19,7 +19,7 @@ const contracts = [
   '--reader-measure: 680px',
   '--reader-mobile-gutter: 20px',
   '--reader-body-size: 17px',
-  '--reader-body-leading: 1.92',
+  '--reader-body-leading: 1.86',
   '--reader-section-size: 42px',
   '--reader-section-size-mobile: 34px',
   '--reader-subsection-size: 27px',
@@ -83,6 +83,7 @@ test('ordinary post selectors consume the same reading tokens', async () => {
   const css = await read('app/globals.css');
   for (const required of [
     '.post-reader-page{--reader-accent:#61adab',
+    '--reader-body-leading:1.86',
     '--reader-title-size:clamp(34px,5.5vw,46px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
     '.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400 var(--reader-body-size)/var(--reader-body-leading)',
