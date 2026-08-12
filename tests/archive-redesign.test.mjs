@@ -32,20 +32,52 @@ test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
   assert.match(css, /\.wall-card h2\{[^}]*font:550 clamp\(20px,2\.2vw,36px\)\/1\.13 var\(--sans\)/);
   assert.match(css, /\.wall-card__abstract\{[^}]*font:400 15px\/1\.65 var\(--serif\)/);
-  assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:19px[^\n]*\.wall-card__abstract\{font-size:14px\}/);
+  assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:20px[^\n]*\.wall-card__abstract\{font-size:14px\}/);
   const finalArchiveBlock = css.slice(css.indexOf('/* Asymmetric archive:'));
   assert.doesNotMatch(finalArchiveBlock, /grid-auto-flow:row dense/);
   assert.doesNotMatch(css, /nth-last-child\(2\).*?grid-column:span/);
   assert.doesNotMatch(css, /last-child:nth-child\(3n/);
 });
 
-test('header sizing changes are visual-only and preserve fixed interaction boxes', async () => {
-  const [css, readerCss] = await Promise.all([read('app/globals.css'), read('public/voices/reader-system.css')]);
-  assert.match(css, /\.cc-brand\{[^}]*font:700 14px\/1\.1 var\(--mono\)/);
+test('header uses the exact CarrotCave.com wordmark and a restrained motion loop', async () => {
+  const [css, readerCss, header, layout] = await Promise.all([
+    read('app/globals.css'),
+    read('public/voices/reader-system.css'),
+    read('components/SiteHeader.tsx'),
+    read('app/layout.tsx'),
+  ]);
+  assert.match(header, />CarrotCave<span className="cc-brand-domain">\.com<\/span>/);
+  assert.match(header, /aria-label=\{readingTitle \? readingBackLabel : 'CarrotCave\.com 홈'\}/);
+  assert.match(layout, /title: 'CarrotCave\.com · 토끼를 따라왔는데, 생각이 길을 잃었습니다\.'/);
+  assert.match(css, /\.cc-brand-name\{[^}]*font-size:15px/);
+  assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
   assert.match(css, /\.cc-brand-symbol\{[^}]*transform:scale\(1\.07\)/);
+  assert.match(css, /animation:cc-logo-hop 8s/);
+  assert.match(css, /@keyframes cc-logo-hop/);
   assert.match(css, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px/);
   assert.match(readerCss, /\.reader-nav \.brand-mark \{[^}]*transform: scale\(1\.07\);/);
   assert.match(readerCss, /\.reader-nav, \.reader-nav \.brand \{ width: 44px; height: 44px; \}/);
+});
+
+test('video-only posts use checked-in still frames as archive thumbnails', async () => {
+  const [home, posts] = await Promise.all([read('app/page.tsx'), read('data/posts.ts')]);
+  const videoOnlySlugs = ['majlis', 'ip-tvw', 'messenger-b2a', 'robot-goku-5000'];
+  assert.match(home, /function archiveImageUrl\(post: Post\)/);
+  assert.match(home, /post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg`/);
+  assert.match(home, /const imageUrl = archiveImageUrl\(post\)/);
+  assert.match(home, /imageUrl=\{imageUrl\}/);
+  for (const slug of videoOnlySlugs) {
+    assert.match(posts, new RegExp(`slug: '${slug}'[\\s\\S]*?videoUrls:`));
+    await read(`public/media/posters/${slug}.jpg`);
+  }
+});
+
+test('archive thumbnail type and contrast remain legible without restoring image filters', async () => {
+  const css = await read('app/globals.css');
+  assert.match(css, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px/);
+  assert.match(css, /\.wall-card__axis\{[^}]*font-size:11px/);
+  assert.match(css, /\.wall-card--with-image \.wall-card__body\{background:linear-gradient\(180deg,rgba\(8,10,14,\.49\)/);
+  assert.doesNotMatch(css, /\.wall-card__image\{[^}]*filter:/);
 });
 
 test('shared footer publishes Simon contact and Telegram links on both archive pages', async () => {

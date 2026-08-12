@@ -48,7 +48,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://carrotcave.com'),
-  title: 'CARROT CAVE · 토끼를 따라왔는데, 생각이 길을 잃었습니다.',
+  title: 'CarrotCave.com · 토끼를 따라왔는데, 생각이 길을 잃었습니다.',
   description: 'Simon Kim의 기술, 사람, 시장과 미래에 관한 개인 출판 아카이브.',
   icons: {
     icon: [
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'CARROT CAVE',
+    title: 'CarrotCave.com',
     description: 'Followed the rabbit. Lost in thought.',
     type: 'website',
   },

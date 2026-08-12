@@ -5,8 +5,13 @@ import SiteFooter from '@/components/SiteFooter';
 import { posts, Post } from '@/data/posts';
 import { interviews, InterviewArchive } from '@/data/interviews';
 
+function archiveImageUrl(post: Post) {
+  return post.mediaUrls?.[0] ?? (post.videoUrls?.[0] ? `/media/posters/${post.slug}.jpg` : undefined);
+}
+
 function WallCard({ post, index }: { post: Post; index: number }) {
-  const hasImage = Boolean(post.mediaUrls?.[0]);
+  const imageUrl = archiveImageUrl(post);
+  const hasImage = Boolean(imageUrl);
 
   return (
     <EditorialCard
@@ -15,7 +20,7 @@ function WallCard({ post, index }: { post: Post; index: number }) {
       axis={axisOf(post)}
       title={post.title}
       summary={post.summary}
-      imageUrl={post.mediaUrls?.[0]}
+      imageUrl={imageUrl}
       className={`wall-card--uniform${hasImage ? '' : ' wall-card--generated'}`}
       priority={index < 4}
     />

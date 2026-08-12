@@ -551,7 +551,7 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
   assert.match(stylesSource, /\.wall-card__abstract\{[^}]*var\(--serif\)/);
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:19px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
@@ -582,7 +582,7 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   assert.match(homeSource, /summary=\{post\.summary\}/);
   assert.match(homeSource, /className=\{`wall-card--uniform\$\{hasImage \? '' : ' wall-card--generated'\}`\}/);
   assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:19px;line-height:1\.18\}/);
+  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
   assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
@@ -597,8 +597,8 @@ test('post and voice thumbnails share one complete editorial card contract', () 
   }
   assert.match(interviewSource, /Publication date of sourceUrl, not the date the interview occurred/);
   assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
-  assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto\}/);
-  assert.match(stylesSource, /\.wall-card--voice h2\{font-size:19px/);
+  assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto;font-size:11px\}/);
+  assert.match(stylesSource, /\.wall-card--voice h2\{font-size:20px/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
@@ -628,12 +628,12 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
 
-test('home keeps the CARROT CAVE wordmark while reading headers use logo divider and title information', () => {
+test('home keeps the exact CarrotCave.com wordmark while reading headers use logo divider and title information', () => {
   assert.match(headerSource, /readingTitle\?: string/);
   assert.match(headerSource, /cc-reading-divider/);
   assert.match(headerSource, /cc-reading-title/);
   assert.match(headerSource, /readingTitle \? 'cc-header cc-header--reading' : 'cc-header'/);
-  assert.match(headerSource, /\{!readingTitle && [\s\S]*CARROT CAVE/);
+  assert.match(headerSource, /\{!readingTitle && [\s\S]*>CarrotCave<span className="cc-brand-domain">\.com<\/span>/);
   assert.match(postSource, /<SiteHeader[\s\S]*?readingTitle=\{post\.title\}[\s\S]*?readingMeta=/);
   assert.doesNotMatch(postSource, /<SiteHeader\s*\/>/);
   assert.match(liaoReaderSource, /class="reader-divider"/);
@@ -665,8 +665,10 @@ test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot m
   assert.doesNotMatch(liaoReaderStyles, /\.brand-mark[^}]*border-radius:\s*50%/);
 });
 
-test('every post with media renders its first image as the card background', () => {
-  assert.match(homeSource, /imageUrl=\{post\.mediaUrls\?\.\[0\]\}/);
+test('every post prefers its first image and falls back to a checked-in video still', () => {
+  assert.match(homeSource, /post\.mediaUrls\?\.\[0\] \?\? \(post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg` : undefined\)/);
+  assert.match(homeSource, /const imageUrl = archiveImageUrl\(post\)/);
+  assert.match(homeSource, /imageUrl=\{imageUrl\}/);
   assert.match(editorialCardSource, /imageUrl \? ' wall-card--with-image' : ''/);
   assert.match(editorialCardSource, /\{imageUrl && \(\s*<Image/);
   assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
