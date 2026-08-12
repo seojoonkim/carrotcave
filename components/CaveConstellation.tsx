@@ -4,25 +4,32 @@ import type { OntologyEdge, OntologySubgraph, SubgraphNode } from '@/lib/ontolog
 export type CaveConstellationNode = SubgraphNode;
 export type CaveConstellationRelationship = OntologyEdge;
 
-const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string; connection: string }> = {
-  DEEPENS: { label: '같은 주제를 더 깊게', connection: '추천 글이 이 주제를 더 깊게 이어갑니다.' },
-  CHALLENGES: { label: '다른 관점에서', connection: '추천 글이 이 주제를 다른 관점에서 다시 살펴봅니다.' },
-  APPLIES: { label: '생각을 실제로', connection: '추천 글이 이 주제의 실제 적용을 보여줍니다.' },
-  REFRAMES: { label: '새로운 시선으로', connection: '추천 글이 이 주제를 새로운 맥락에서 해석합니다.' },
-  RESONATES: { label: '핵심 생각이 비슷한', connection: '두 글의 핵심 생각이 서로 맞닿아 있습니다.' },
+const RELATIONSHIP_COPY: Record<OntologyEdge['type'], { label: string }> = {
+  DEEPENS: { label: '같은 주제를 더 깊게' },
+  CHALLENGES: { label: '다른 관점에서' },
+  APPLIES: { label: '생각을 실제로' },
+  REFRAMES: { label: '새로운 시선으로' },
+  RESONATES: { label: '핵심 생각이 비슷한' },
 };
 
-const topicLabel = (value: string) => value
-  .replace(/^(?:v?\d+(?:\.\d+)*|까지)$/i, '')
-  .replace(/(?:은|는|이|가)$/u, '')
-  .trim();
-
-function connectionReason(relationship: OntologyEdge, connection: string) {
-  const topics = [...new Set((relationship.signalDetails?.titleOverlap ?? []).map(topicLabel).filter((value) => value.length > 1))].slice(0, 3);
-  if (topics.length > 0) {
-    return `두 글은 ${topics.map((topic) => `‘${topic}’`).join(', ')}라는 주제를 함께 다룹니다. ${connection}`;
+function connectionReason(relationship: OntologyEdge, sourceTitle: string, targetTitle: string): string {
+  const type = relationship.type;
+  switch (type) {
+    case 'DEEPENS':
+      return `“${sourceTitle}”에서 던진 질문을 “${targetTitle}”에서 더 깊이 파고듭니다.`;
+    case 'CHALLENGES':
+      return `“${sourceTitle}”의 관점에 “${targetTitle}”에서 다른 시선을 보탭니다.`;
+    case 'APPLIES':
+      return `“${sourceTitle}”의 생각이 “${targetTitle}”에서 구체적인 장면으로 이어집니다.`;
+    case 'REFRAMES':
+      return `“${sourceTitle}”에서 던진 질문을 “${targetTitle}”의 다른 장면으로 옮겨 다시 봅니다.`;
+    case 'RESONATES':
+      return `“${sourceTitle}”, “${targetTitle}” 두 글은 서로 다른 장면에서 같은 질문을 던집니다.`;
+    default: {
+      const exhaustive: never = type;
+      return exhaustive;
+    }
   }
-  return `지금 글의 “${relationship.sourceEvidence}”라는 생각이 추천 글의 “${relationship.targetEvidence}”라는 내용과 이어집니다.`;
 }
 
 
@@ -69,7 +76,7 @@ export default function CaveConstellation({
                 <div className="cave-constellation__why">
                   <ul>
                     <li><strong>이 글의 내용</strong><span>{target.summary ?? relationship.targetEvidence}</span></li>
-                    <li><strong>이어지는 지점</strong><span>{connectionReason(relationship, copy.connection)}</span></li>
+                    <li><strong>이어지는 지점</strong><span>{connectionReason(relationship, subgraph.center.title, target.title)}</span></li>
                   </ul>
                 </div>
 
