@@ -665,8 +665,8 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
   assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--sans\)[^}]*font-size:clamp\(21px,3vw,36px\)/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 20px\/1\.26 var\(--sans\)/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:500 12px\/1\.5 var\(--sans\)/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-size:19px\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
@@ -686,7 +686,7 @@ test('home keeps the exact CarrotCave.com wordmark while reading headers use log
 
 test('brand logo asset and rendered marks are square', () => {
   assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
-  assert.match(liaoReaderSource, /width="192" height="192"/);
+  assert.match(liaoReaderSource, /<svg class="brand-mark"[^>]*width="192" height="192"/);
   assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px;[^}]*height:36px/);
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
@@ -705,7 +705,8 @@ test('all voice readers expose one uncluttered return control to the voice list'
 test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot marks', () => {
   assert.match(headerSource, /import CarrotCaveMark/);
   assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
-  assert.match(liaoReaderSource, /<img class="brand-mark"[^>]*src="\/carrot-cave-symbol\.png"/);
+  assert.match(liaoReaderSource, /<svg class="brand-mark"[^>]*viewBox="0 0 96 96"/);
+  assert.match(liaoReaderSource, /class="brand-mark__cave"/);
   assert.doesNotMatch(headerSource, /<i aria-hidden="true"\s*\/>/);
   assert.doesNotMatch(liaoReaderStyles, /\.brand-mark[^}]*border-radius:\s*50%/);
 });
@@ -753,7 +754,7 @@ test('voice thumbnails use the same editorial card system as other archive entri
 test('posts and voices share one standard card format at every breakpoint', () => {
   assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 

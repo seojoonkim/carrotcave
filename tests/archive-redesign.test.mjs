@@ -22,9 +22,10 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
-  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 20px\/1\.26 var\(--sans\)/);
-  assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:500 12px\/1\.5 var\(--sans\)/);
+  assert.match(css, /\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
+  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
+  assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
 });
@@ -43,11 +44,12 @@ test('header keeps the exact wordmark while only the rabbit and carrot animate',
   assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
   assert.match(header, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(css, /\.cc-brand-symbol\{animation:none;transform:none\}/);
-  assert.match(css, /\.carrot-cave-mark__cave\{transform:none\}/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.07\)\}/);
   assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:cc-rabbit-peek/);
   assert.match(css, /\.carrot-cave-mark__carrot\{[^}]*animation:cc-carrot-wiggle/);
   assert.match(css, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px/);
-  assert.match(readerCss, /\.reader-nav \.brand-mark \{[^}]*transform: scale\(1\.07\);/);
+  assert.match(readerCss, /\.reader-nav \.brand-mark__cave \{[^}]*transform: scale\(1\.07\);/);
+  assert.doesNotMatch(readerCss, /\.reader-nav \.brand-mark \{[^}]*transform:/);
   assert.match(readerCss, /\.reader-nav, \.reader-nav \.brand \{ width: 44px; height: 44px; \}/);
 });
 
@@ -73,20 +75,27 @@ test('archive thumbnail type and contrast remain legible without restoring image
 });
 
 test('shared footer publishes the requested two-line identity and icon links', async () => {
-  const [footer, home, voices] = await Promise.all([
+  const [footer, home, voices, css, caveScene, postReader] = await Promise.all([
     read('components/SiteFooter.tsx'),
     read('app/page.tsx'),
     read('app/voices/page.tsx'),
+    read('app/globals.css'),
+    read('components/FooterCaveScene.tsx'),
+    read('app/posts/[slug]/page.tsx'),
   ]);
   assert.match(footer, /<strong>CARROT CAVE<\/strong> by Simon Kim/);
   assert.match(footer, /href="mailto:simon@hashed\.com">simon@hashed\.com<\/a>/);
-  assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>X<\/span>/);
+  assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>X @simonkim_nft<\/span>/);
+  assert.match(css, /\.footer-cave-scene\{[^}]*border:0;background:transparent/);
+  assert.doesNotMatch(caveScene, /<rect\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
   assert.match(footer, /<FooterCaveScene \/>/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.07\)\}/);
+  assert.doesNotMatch(css, /carrot-cave-mark__(?:rabbit|carrot)[^{]*\{[^}]*scale\(/);
   assert.match(home, /<SiteFooter \/>/);
   assert.match(voices, /<SiteFooter \/>/);
-  const [css, postReader] = await Promise.all([read('app/globals.css'), read('app/posts/[slug]/page.tsx')]);
+
   assert.match(css, /\.cc-footer__copy \.cc-footer__links\{display:flex;width:max-content;max-width:100%;align-items:center;flex-wrap:nowrap;gap:24px;white-space:nowrap\}/);
   assert.match(css, /\.cc-footer__links a\{[^}]*min-height:24px[^}]*font:500 11px\/1\.4 var\(--mono\)/);
   assert.match(postReader, /import SiteFooter from '@\/components\/SiteFooter'/);
