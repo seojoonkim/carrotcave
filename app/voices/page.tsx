@@ -10,7 +10,7 @@ export default function VoicesPage() {
       <SiteHeader />
       <AxisRail active="목소리" />
 
-      <section className="wall-shell" aria-labelledby="wall-heading">
+      <section className="wall-shell voices-wall" aria-labelledby="wall-heading">
         <header className="wall-heading">
           <div>
             <p>SECTION / 목소리</p>

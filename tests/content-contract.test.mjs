@@ -641,7 +641,7 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
-  assert.match(voiceListSource, /className="wall-shell"/);
+  assert.match(voiceListSource, /className="wall-shell voices-wall"/);
   assert.match(voiceListSource, /className="editorial-wall editorial-wall--voices"/);
   assert.match(voiceListSource, /className="wall-card--voice"/);
   assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card--actual-\$\{pattern\}/);
@@ -652,6 +652,10 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
   assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
+  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--serif\)[^}]*font-size:clamp\(21px,3vw,36px\)/);
+  assert.match(stylesSource, /\.voices-wall \.wall-card--voice h2\{[^}]*font-family:var\(--serif\)[^}]*font-weight:700/);
+  assert.match(stylesSource, /\.voices-wall \.wall-card--voice \.wall-card__abstract\{font:400 12px\/1\.55 var\(--serif\)/);
+  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-size:19px\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
@@ -732,9 +736,20 @@ test('voice thumbnails use the same editorial card system as other archive entri
   assert.doesNotMatch(stylesSource, /wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
 });
 
+test('desktop chrome and archive surfaces share one 1100px content container', () => {
+  assert.match(stylesSource, /--site-container:1100px/);
+  for (const selector of ['cc-header__inner', 'axis-rail__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
+    assert.match(stylesSource, new RegExp(`\\.${selector}\\{[^}]*max-width:var\\(--site-container\\)`));
+  }
+  assert.match(headerSource, /className="cc-header__inner"/);
+  assert.match(axisRailSource, /className="axis-rail__inner"/);
+  assert.match(footerSource, /className="cc-footer__inner"/);
+});
+
 test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
-  assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
+  assert.match(stylesSource, /\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,1fr\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
 
