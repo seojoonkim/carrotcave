@@ -12,7 +12,7 @@ test('the complete archive combines ordinary posts and voices without changing c
   assert.match(home, /\.\.\.interviews\.map\(\(interview\) => \(\{ kind: 'voice' as const, date: interview\.sourcePublishedAt, interview \}\)\)/);
   assert.match(home, /entry\.kind === 'post'[\s\S]*?<VoiceWallCard/);
   assert.match(home, /<span>\{visibleEntries\.length\} ENTRIES<\/span>/);
-  assert.match(rail, /<b>전체<\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
+  assert.match(rail, /<b>전체<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
 });
 
 test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and mobile', async () => {

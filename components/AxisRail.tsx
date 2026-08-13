@@ -28,7 +28,7 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
   return (
     <nav className="axis-rail" aria-label="편집 축">
       <Link className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
-        <b>전체</b><span>{posts.length + interviews.length}</span><i className="axis-rail__carrot" aria-hidden="true" />
+        <b>전체<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.length + interviews.length}</span>
       </Link>
       {editorialAxes.map((axis) => (
         <Link
@@ -38,11 +38,11 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
           aria-current={active === axis ? 'page' : undefined}
           title={axisNotes[axis]}
         >
-          <b>{axis}</b><span>{posts.filter((post) => axisOf(post) === axis).length}</span><i className="axis-rail__carrot" aria-hidden="true" />
+          <b>{axis}<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.filter((post) => axisOf(post) === axis).length}</span>
         </Link>
       ))}
       <Link className={active === '목소리' ? 'active' : ''} href="/voices" aria-current={active === '목소리' ? 'page' : undefined}>
-        <b>목소리</b><span>{interviews.length}</span><i className="axis-rail__carrot" aria-hidden="true" />
+        <b>목소리<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{interviews.length}</span>
       </Link>
     </nav>
   );
