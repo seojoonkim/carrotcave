@@ -67,7 +67,9 @@ test('Sam Altman archive metadata, loader count, navigation, and assets stay ali
   assert.match(html, /99 PARAGRAPHS/);
   assert.match(script, /data\.segments\.length !== 99/);
   assert.match(html, /class="brand" href="\/voices" target="_top" aria-label="목소리 목록으로 돌아가기"/);
-  assert.doesNotMatch(html, /target="_blank"(?![^>]*rel="noopener noreferrer")/);
+  for (const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g) ?? []) {
+    assert.match(tag, /rel="noopener noreferrer"/);
+  }
   assert.match(html, /https:\/\/carrotcave\.com\/voices\/sam-altman-startup-school-2026\//);
   for (const path of [
     `${readerRoot}assets/sam-altman-startup-school.jpg`,
