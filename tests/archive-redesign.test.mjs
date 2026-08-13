@@ -22,6 +22,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(23px,3vw,38px\) var\(--serif\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
@@ -31,15 +32,17 @@ test('archive cards use one standard format for posts and voices at every breakp
 });
 
 test('header keeps the exact wordmark while the grounded rabbit stays fixed and the carrot animates', async () => {
-  const [css, readerCss, header, layout] = await Promise.all([
+  const [css, readerCss, header, layout, socialMetadata] = await Promise.all([
     read('app/globals.css'),
     read('public/voices/reader-system.css'),
     read('components/SiteHeader.tsx'),
     read('app/layout.tsx'),
+    read('lib/social-metadata.ts'),
   ]);
   assert.match(header, />CarrotCave<span className="cc-brand-domain">\.com<\/span>/);
   assert.match(header, /aria-label=\{readingTitle \? readingBackLabel : 'CarrotCave\.com 홈'\}/);
-  assert.match(layout, /title: 'CarrotCave\.com · 토끼를 따라왔는데, 생각이 길을 잃었습니다\.'/);
+  assert.match(socialMetadata, /siteName = 'CarrotCave\.com'/);
+  assert.match(layout, /title: `\$\{siteName\} · 토끼를 따라왔는데, 생각이 길을 잃었습니다\.`/);
   assert.match(css, /\.cc-brand-name\{[^}]*font-size:15px/);
   assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
   assert.match(header, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
@@ -57,10 +60,10 @@ test('header keeps the exact wordmark while the grounded rabbit stays fixed and 
 });
 
 test('video-only posts use checked-in still frames as archive thumbnails', async () => {
-  const [home, posts] = await Promise.all([read('app/page.tsx'), read('data/posts.ts')]);
+  const [home, posts, socialMetadata] = await Promise.all([read('app/page.tsx'), read('data/posts.ts'), read('lib/social-metadata.ts')]);
   const videoOnlySlugs = ['majlis', 'ip-tvw', 'messenger-b2a', 'robot-goku-5000'];
-  assert.match(home, /function archiveImageUrl\(post: Post\)/);
-  assert.match(home, /post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg`/);
+  assert.match(socialMetadata, /function archiveImageUrl\(post: Post\)/);
+  assert.match(socialMetadata, /post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg`/);
   assert.match(home, /const imageUrl = archiveImageUrl\(post\)/);
   assert.match(home, /imageUrl=\{imageUrl\}/);
   for (const slug of videoOnlySlugs) {
@@ -108,7 +111,8 @@ test('shared footer publishes the requested two-line identity and icon links', a
 
 test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
   const css = await read('app/globals.css');
-  assert.match(css, /\.cc-header\{[^}]*background:#282b32\}/);
+  assert.match(css, /:root\{[^}]*--cc-header-background:#282b32/);
+  assert.match(css, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
   assert.match(css, /\.axis-rail\{[^}]*background:var\(--graphite\);border-bottom/);
   assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
   assert.match(css, /\.wall-card:hover\{[^}]*background:#30343c\}/);
@@ -130,7 +134,7 @@ test('rabbit journey illustrations stay in seams and finish in a detailed footer
     read('components/EditorialCard.tsx'),
     read('app/globals.css'),
   ]);
-  assert.match(home, /const journeyStep = active \? Math\.max\(8, Math\.ceil\(visibleEntries\.length \/ 3\)\) : 19/);
+  assert.match(home, /const journeyStep = query \? Number\.POSITIVE_INFINITY : active \? Math\.max\(8, Math\.ceil\(visibleEntries\.length \/ 3\)\) : 19/);
   assert.match(home, /className="cave-depth-divider" data-depth=\{depth\}/);
   assert.match(home, /depth <= 5/);
   assert.match(footer, /<FooterCaveScene \/>/);
@@ -145,16 +149,17 @@ test('rabbit journey illustrations stay in seams and finish in a detailed footer
 });
 
 test('editorial surface uses local Noto KR, a subtle static gradient, and complete social metadata', async () => {
-  const [layout, css] = await Promise.all([read('app/layout.tsx'), read('app/globals.css')]);
-  const og = await readFile(new URL('public/opengraph-image.png', root));
+  const [layout, css, socialMetadata] = await Promise.all([read('app/layout.tsx'), read('app/globals.css'), read('lib/social-metadata.ts')]);
+  const og = await readFile(new URL('public/carrotcave-og-20260814.png', root));
   assert.match(layout, /Noto_Sans_KR/);
   assert.match(layout, /Noto_Serif_KR/);
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net|Pretendard Variable/);
   assert.match(css, /:root\{--graphite:#24262c/);
   assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#282b32 0,#24262c 640px\) no-repeat var\(--graphite\)/);
-  assert.match(layout, /description: '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
-  assert.match(layout, /images: \[\{ url: '\/opengraph-image\.png', width: 1200, height: 630/);
+  assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
+  assert.match(socialMetadata, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
+  assert.match(layout, /images: \[\{ url: siteOgImage, width: 1200, height: 630, type: 'image\/png'/);
   assert.match(layout, /card: 'summary_large_image'/);
   assert.equal(og.readUInt32BE(16), 1200);
   assert.equal(og.readUInt32BE(20), 630);

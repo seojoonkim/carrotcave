@@ -108,6 +108,16 @@ test('relation types are signal-derived rather than an array-position rotation',
   assert.ok(legacyRotations < posts.length * 0.1, `mechanical pattern appears for ${legacyRotations} sources`);
 });
 
+test('explicit same-axis relations remain deepening links across long publication gaps', () => {
+  const latestFiction = edges.filter((edge) => edge.from === 'post-192');
+  for (const target of ['thank-you-mirror', 'tail-stopped']) {
+    const edge = latestFiction.find((item) => item.to === target);
+    assert.ok(edge, `post-192>${target}`);
+    assert.equal(edge.type, 'DEEPENS');
+    assert.ok(edge.signals.includes('relatedSlugs'));
+  }
+});
+
 test('semantic review sample is a stratified, exact 24-edge projection', () => {
   assert.equal(semanticSample.version, 1);
   assert.equal(semanticSample.selection, 'deterministic-stratified-by-type-and-source-category');

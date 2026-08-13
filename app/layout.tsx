@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { JetBrains_Mono, Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google';
 import './globals.css';
+import { siteDescription, siteName, siteOgImage } from '@/lib/social-metadata';
 
 const notoSerif = Noto_Serif_KR({
   subsets: ['latin'],
@@ -25,8 +26,9 @@ const notoSans = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://carrotcave.com'),
-  title: 'CarrotCave.com · 토끼를 따라왔는데, 생각이 길을 잃었습니다.',
-  description: '토끼를 따라 더 깊이. 기술, 사람, 시장과 미래에 관한 기록.',
+  title: `${siteName} · 토끼를 따라왔는데, 생각이 길을 잃었습니다.`,
+  description: siteDescription,
+  alternates: { canonical: '/' },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -35,16 +37,19 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'CarrotCave.com',
-    description: '토끼를 따라 더 깊이. 기술, 사람, 시장과 미래에 관한 기록.',
-    images: [{ url: '/opengraph-image.png', width: 1200, height: 630, alt: 'CarrotCave.com · Field Notes from the Rabbit Hole' }],
+    title: siteName,
+    description: siteDescription,
+    url: '/',
+    siteName,
+    locale: 'ko_KR',
+    images: [{ url: siteOgImage, width: 1200, height: 630, type: 'image/png', alt: 'CarrotCave.com · Field Notes from the Rabbit Hole' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CarrotCave.com',
-    description: '토끼를 따라 더 깊이. 기술, 사람, 시장과 미래에 관한 기록.',
-    images: ['/opengraph-image.png'],
+    title: siteName,
+    description: siteDescription,
+    images: [siteOgImage],
   },
 };
 

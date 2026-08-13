@@ -5,10 +5,9 @@ import SiteFooter from '@/components/SiteFooter';
 import CaveJourneyScene from '@/components/CaveJourneyScene';
 import { posts, Post } from '@/data/posts';
 import { interviews, InterviewArchive } from '@/data/interviews';
-
-function archiveImageUrl(post: Post) {
-  return post.mediaUrls?.[0] ?? (post.videoUrls?.[0] ? `/media/posters/${post.slug}.jpg` : undefined);
-}
+import ArchiveSearch from '@/components/ArchiveSearch';
+import { normalizeQuery, searchArchive } from '@/lib/search/archive-search';
+import { archiveImageUrl } from '@/lib/social-metadata';
 
 function WallCard({ post, index, rhythm }: { post: Post; index: number; rhythm: number }) {
   const imageUrl = archiveImageUrl(post);
@@ -45,18 +44,30 @@ function VoiceWallCard({ interview, index, rhythm }: { interview: InterviewArchi
   );
 }
 
-export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string }> }) {
-  const { section } = await searchParams;
+export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string; q?: string }> }) {
+  const { section, q } = await searchParams;
   const active = editorialAxes.includes(section as typeof editorialAxes[number]) ? section as typeof editorialAxes[number] : undefined;
+  const displayQuery = active || typeof q !== 'string' ? '' : q.trim();
+  const query = normalizeQuery(displayQuery);
   const visiblePosts = (active ? posts.filter((post) => axisOf(post) === active) : [...posts])
     .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? Number(b.id)) || 0) - ((a.telegramMsgId ?? Number(a.id)) || 0));
-  const visibleEntries = active
+  const allEntries = active
     ? visiblePosts.map((post) => ({ kind: 'post' as const, date: post.date, post }))
     : [
         ...visiblePosts.map((post) => ({ kind: 'post' as const, date: post.date, post })),
         ...interviews.map((interview) => ({ kind: 'voice' as const, date: interview.sourcePublishedAt, interview })),
       ].sort((a, b) => b.date.localeCompare(a.date));
-  const journeyStep = active ? Math.max(8, Math.ceil(visibleEntries.length / 3)) : 19;
+  const entryByKey = new Map(allEntries.map(entry => [
+    `${entry.kind}:${entry.kind === 'post' ? entry.post.slug : entry.interview.slug}`,
+    entry,
+  ]));
+  const visibleEntries = query
+    ? searchArchive(query).flatMap(result => {
+        const entry = entryByKey.get(`${result.kind}:${result.slug}`);
+        return entry ? [entry] : [];
+      })
+    : allEntries;
+  const journeyStep = query ? Number.POSITIVE_INFINITY : active ? Math.max(8, Math.ceil(visibleEntries.length / 3)) : 19;
 
   return (
     <main>
@@ -64,6 +75,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       <AxisRail active={active} />
 
       <section className="wall-shell" aria-labelledby="wall-heading">
+        {!active && <ArchiveSearch query={query} displayQuery={displayQuery} statusId="archive-search-status" />}
         <header className="wall-heading">
           <div>
             <p>{active ? `SECTION / ${active}` : 'THE CAVE WALL / NEWEST FIRST'}</p>
@@ -73,6 +85,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
           </div>
           <span>{visibleEntries.length} ENTRIES</span>
         </header>
+        {!active && (
+          <p id="archive-search-status" className="archive-search__status" role="status" aria-live="polite">
+            {query ? `‘${displayQuery}’ 검색 결과 ${visibleEntries.length}건` : ''}
+          </p>
+        )}
         {visibleEntries.length ? (
           <div className="editorial-wall">
             {visibleEntries.map((entry, index) => {
@@ -94,7 +111,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
               ];
             })}
           </div>
-        ) : <p className="archive-empty">이 분류에 공개된 기록이 아직 없습니다.</p>}
+        ) : <p className="archive-empty">{query ? '검색 결과가 없습니다.' : '이 분류에 공개된 기록이 아직 없습니다.'}</p>}
       </section>
 
       <SiteFooter />

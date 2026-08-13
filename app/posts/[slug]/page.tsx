@@ -1,5 +1,7 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { archiveImageUrl, siteName, siteOgImage } from '@/lib/social-metadata';
 import { posts, getPostBySlug } from '@/data/posts';
 import DepthBadge from '@/components/DepthBadge';
 import CaveConstellation from '@/components/CaveConstellation';
@@ -14,6 +16,36 @@ import type { OntologyIndex } from '@/lib/ontology/types';
 
 export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  if (!post) return {};
+  const title = `${post.title} · ${siteName}`;
+  const canonical = `/posts/${post.slug}`;
+  const image = archiveImageUrl(post) ?? siteOgImage;
+  return {
+    title,
+    description: post.summary,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description: post.summary,
+      url: canonical,
+      siteName,
+      locale: 'ko_KR',
+      type: 'article',
+      publishedTime: post.date,
+      images: [{ url: image, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: post.summary,
+      images: [image],
+    },
+  };
 }
 
 function stripTrailingReactionSignature(content: string) {

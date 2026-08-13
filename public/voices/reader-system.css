@@ -254,6 +254,16 @@ img { border: 0; outline: 0; box-shadow: none; }
 .voice-shared-footer__links a:first-child { color: #f2f1ec; }
 .voice-shared-footer__links a:hover { color: #f5d14b; }
 .voice-shared-footer__social-icon { width: 14px; height: 14px; flex: 0 0 14px; }
+.overview-insights {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: decimal;
+}
+.overview-insights li::marker {
+  color: var(--reader-accent, #61adab);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
 @keyframes voice-footer-rabbit-peek {
   0%, 12%, 100% { transform: translateY(0) rotate(0); }
   3% { transform: translateY(-3px) rotate(-1deg); }

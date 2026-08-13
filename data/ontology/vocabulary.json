@@ -2,7 +2,7 @@
   "topics": [
     {
       "id": "exploration",
-      "label": "탐험",
+      "label": "",
       "aliases": [
         "탐험"
       ],
@@ -10,7 +10,7 @@
     },
     {
       "id": "building",
-      "label": "빌딩",
+      "label": "",
       "aliases": [
         "빌딩"
       ],
@@ -18,7 +18,7 @@
     },
     {
       "id": "notes",
-      "label": "낙서",
+      "label": "",
       "aliases": [
         "낙서"
       ],
@@ -26,7 +26,7 @@
     },
     {
       "id": "fiction",
-      "label": "소설",
+      "label": "",
       "aliases": [
         "소설"
       ],

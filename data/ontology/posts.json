@@ -1,4 +1,43 @@
 {
+  "post-192": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-192-c1",
+        "text": "2031년 서울시장 선거 이틀 전 밤 11시 17분, 커피 기계가 평소와 같은 소리를 내며 빈 종이컵을 내놓았다.",
+        "stance": "asserts",
+        "evidence": "2031년 서울시장 선거 이틀 전 밤 11시 17분, 커피 기계가 평소와 같은 소리를 내며 빈 종이컵을 내놓았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "post-191": {
     "primaryTopics": [
       "exploration"

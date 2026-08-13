@@ -106,6 +106,7 @@ function classify(from, candidateItem) {
   const dateGapDays = Math.round((new Date(to.date).getTime() - new Date(from.date).getTime()) / 86400000);
 
   if ((signals.includes('relatedSlugs') && from.category === '빌딩') || (from.category !== to.category && to.category === '빌딩')) type = 'APPLIES';
+  else if (signals.includes('relatedSlugs') && from.category === to.category) type = 'DEEPENS';
   else if (from.category !== to.category || Math.abs(dateGapDays) >= 180) type = 'REFRAMES';
   else if (depthRank[to.depth] > depthRank[from.depth]) type = candidateItem.signalDetails.lexicalOverlap >= 40 ? 'DEEPENS' : 'REFRAMES';
   else if (candidateItem.signalDetails.titleOverlap.length > 0 || signals.includes('relatedSlugs') || signals.includes('legacy-relations') || candidateItem.signalDetails.sharedTags.length > 0 || candidateItem.signalDetails.sharedConcepts.length > 0) type = 'DEEPENS';

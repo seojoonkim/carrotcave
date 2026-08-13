@@ -5,6 +5,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 const syncSource = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
 const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), 'utf8');
 const homeSource = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+const socialMetadataSource = readFileSync(new URL('../lib/social-metadata.ts', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 const interviewSource = readFileSync(new URL('../data/interviews.ts', import.meta.url), 'utf8');
 const ontologyIndex = JSON.parse(readFileSync(new URL('../data/ontology/index.json', import.meta.url), 'utf8'));
@@ -52,7 +53,8 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
   });
 
 test('archive and voice headers preserve their stable graphite surfaces', () => {
-  assert.match(stylesSource, /\.cc-header\{[^}]*background:#282b32\}/);
+  assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
@@ -297,7 +299,7 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.doesNotMatch(liangReaderSource, /축자 기록|귀속|오청/);
   assert.match(liangReaderSource, /<h2>CARROT CAVE INSIGHTS<\/h2>/);
   const liangInsights = liangReaderSource.match(/<section(?=[^>]*\bid="insights")(?=[^>]*\bclass="[^"]*\bcarrot-cave-insights\b[^"]*")[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
-  assert.equal((liangInsights.match(/<li>/g) || []).length, 10);
+  assert.equal((liangInsights.match(/<li>/g) || []).length, 5);
   assert.match(liangReaderSource, /기능 분류는 편집 과정의 추정이며 누가 한 말인지 확인한 정보가 아니다/);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
   assert.equal(liangLongReader.length, 19);
@@ -787,7 +789,7 @@ test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot m
 });
 
 test('every post prefers its first image and falls back to a checked-in video still', () => {
-  assert.match(homeSource, /post\.mediaUrls\?\.\[0\] \?\? \(post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg` : undefined\)/);
+  assert.match(socialMetadataSource, /post\.mediaUrls\?\.\[0\] \?\? \(post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg` : undefined\)/);
   assert.match(homeSource, /const imageUrl = archiveImageUrl\(post\)/);
   assert.match(homeSource, /imageUrl=\{imageUrl\}/);
   assert.match(editorialCardSource, /imageUrl \? ' wall-card--with-image' : ''/);
