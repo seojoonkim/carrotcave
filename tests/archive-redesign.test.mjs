@@ -24,7 +24,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
   assert.match(css, /\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
-  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
+  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
@@ -140,12 +140,12 @@ test('rabbit journey illustrations stay in seams and finish in a detailed footer
   assert.doesNotMatch(css, /\.cave-journey-scene[^}]*animation:/);
 });
 
-test('editorial surface uses local IBM Plex, a subtle static gradient, and complete social metadata', async () => {
+test('editorial surface uses local Noto KR, a subtle static gradient, and complete social metadata', async () => {
   const [layout, css] = await Promise.all([read('app/layout.tsx'), read('app/globals.css')]);
   const og = await readFile(new URL('public/opengraph-image.png', root));
-  assert.match(layout, /IBM_Plex_Sans_KR/);
-  assert.match(layout, /weight: \['400', '500', '600'\]/);
-  assert.doesNotMatch(layout, /Playfair_Display|Cormorant_Garamond|Noto_Sans_KR|\bInter\b/);
+  assert.match(layout, /Noto_Sans_KR/);
+  assert.match(layout, /Noto_Serif_KR/);
+  assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net|Pretendard Variable/);
   assert.match(css, /:root\{--graphite:#24262c/);
   assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#282b32 0,#24262c 640px\) no-repeat var\(--graphite\)/);

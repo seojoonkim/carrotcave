@@ -663,9 +663,9 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
   assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
-  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--sans\)[^}]*font-size:clamp\(21px,3vw,36px\)/);
+  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-family:var\(--serif\);font-size:clamp\(21px,3vw,36px\);/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-size:19px\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);

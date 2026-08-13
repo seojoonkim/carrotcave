@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+/.font-preview/
+/public/fonts/noto-kr/
 
 # debug
 npm-debug.log*

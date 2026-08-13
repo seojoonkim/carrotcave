@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { IBM_Plex_Sans_KR, JetBrains_Mono, Noto_Serif_KR } from 'next/font/google';
+import { JetBrains_Mono, Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google';
 import './globals.css';
 
 const notoSerif = Noto_Serif_KR({
   subsets: ['latin'],
-  weight: ['400', '700'],
   variable: '--font-serif',
   display: 'swap',
+  preload: false,
 });
 
 const jetbrains = JetBrains_Mono({
@@ -16,9 +16,8 @@ const jetbrains = JetBrains_Mono({
   display: 'swap',
 });
 
-const ibmPlexSans = IBM_Plex_Sans_KR({
+const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
   variable: '--font-sans',
   display: 'swap',
   preload: false,
@@ -60,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${notoSerif.variable} ${jetbrains.variable} ${ibmPlexSans.variable}`}>
+    <html lang="ko" className={`${notoSerif.variable} ${jetbrains.variable} ${notoSans.variable}`}>
       <body
         className="antialiased min-h-screen"
         style={{ backgroundColor: '#24262c', color: '#f2f1ec' }}

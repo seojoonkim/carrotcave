@@ -8,6 +8,8 @@
 
 :root {
   --reader-accent: #61adab;
+  --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --font-serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
   --font-mono: "JetBrains Mono", monospace;
   --reader-measure: 680px;
   --reader-mobile-gutter: 20px;
@@ -82,7 +84,7 @@ img { border: 0; outline: 0; box-shadow: none; }
 .hero .kicker {
   margin: 0 0 12px;
   color: var(--reader-accent);
-  font: 500 11px/1.4 "IBM Plex Mono", monospace;
+  font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .14em;
 }
 .hero #page-title {
@@ -91,6 +93,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   color: var(--bright-white);
   font-size: var(--reader-title-size);
   line-height: 1.22;
+  font-family: var(--font-serif);
   font-weight: 750;
   letter-spacing: -.045em;
   overflow-wrap: anywhere;
@@ -100,6 +103,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   font: inherit;
 }
 .section-heading h2, .chapter-heading h2 {
+  font-family: var(--font-serif);
   font-size: var(--reader-section-size);
   line-height: 1.22;
   font-weight: 750;
@@ -111,6 +115,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   letter-spacing: 0;
 }
 .highlight-marker h3, .topic-heading h3, .transcript-subheading {
+  font-family: var(--font-serif);
   font-size: var(--reader-subsection-size);
   line-height: 1.35;
   font-weight: 750;
