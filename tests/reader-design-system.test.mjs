@@ -26,6 +26,9 @@ const contracts = [
   '--reader-subsection-size: 27px',
   '--reader-subsection-size-mobile: 24px',
   '--reader-time-size: 12px',
+];
+
+const voiceTitleContracts = [
   '--reader-header-title-size: 17px',
   '--reader-header-title-size-mobile: 16px',
   '--reader-title-size: clamp(34px, 5.5vw, 46px)',
@@ -44,6 +47,9 @@ test('ordinary posts and voice readers share one explicit reading scale', async 
     const normalizedContract = normalizeDeclarationSpacing(contract);
     assert.ok(normalizedGlobals.includes(normalizedContract), `globals.css missing ${contract}`);
     assert.ok(normalizedShared.includes(normalizedContract), `voice reader system missing ${contract}`);
+  }
+  for (const contract of voiceTitleContracts) {
+    assert.ok(normalizedShared.includes(normalizeDeclarationSpacing(contract)), `voice reader system missing ${contract}`);
   }
 });
 
@@ -90,13 +96,14 @@ test('ordinary post selectors consume the same reading tokens', async () => {
   for (const required of [
     '.post-reader-page{--reader-accent:#61adab',
     '--reader-body-leading:1.86',
-    '--reader-title-size:clamp(34px,5.5vw,46px)',
+    '--reader-header-title-size:16px;--reader-header-title-size-mobile:15px;--reader-title-size:clamp(32px,calc(5.5vw - 2px),44px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
     '.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400 var(--reader-body-size)/var(--reader-body-leading)',
     '.post-content h2{margin:54px 0 22px;font-size:var(--reader-section-size)',
     '.post-content h3{margin:40px 0 18px;font-size:var(--reader-subsection-size)',
     '.post-reader-header h1{max-width:650px;margin:0 0 22px;color:#fff;font:750 var(--reader-title-size)/1.22',
-    '@media(max-width:599px){.cc-reading-title{font-size:var(--reader-header-title-size-mobile,16px)}.post-content h2{font-size:var(--reader-section-size-mobile)}.post-content h3{font-size:var(--reader-subsection-size-mobile)}',
+    '@media(max-width:599px){.cc-reading-title{font-size:var(--reader-header-title-size-mobile,15px)}.post-content h2{font-size:var(--reader-section-size-mobile)}.post-content h3{font-size:var(--reader-subsection-size-mobile)}',
+    '.post-reader-header h1{font-size:32px}',
   ]) assert.ok(css.includes(required), `ordinary post CSS missing: ${required}`);
 });
 
