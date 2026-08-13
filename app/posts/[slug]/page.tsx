@@ -6,6 +6,7 @@ import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
 import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import ontologyIndex from '@/data/ontology/index.json';
 import { buildTopRecommendations } from '@/lib/ontology/build-subgraph';
@@ -323,6 +324,7 @@ export default async function PostPage({ params }: PostPageProps) {
         )}
 
       </article>
+      <SiteFooter />
     </div>
   );
 }

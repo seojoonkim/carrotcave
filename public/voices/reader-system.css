@@ -131,40 +131,66 @@ img { border: 0; outline: 0; box-shadow: none; }
 
 .voice-shared-footer {
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 160px auto 1fr auto;
-  align-items: center;
-  gap: 24px;
-  min-height: 150px;
-  padding: 30px max(20px, calc((100vw - 1180px) / 2));
+  padding: 38px max(20px, calc((100vw - 1100px) / 2));
   border-top: 1px solid rgba(174, 177, 183, .2);
   background: #24262c;
-  color: #f2f1ec;
-  font: 500 12px/1.5 var(--font-sans);
-  letter-spacing: 0;
-}
-.voice-shared-footer .voice-shared-footer__scene {
-  display: block;
-  width: 160px;
-  height: auto;
-}
-.voice-shared-footer .voice-shared-footer__brand {
-  font: 700 15px/1 var(--font-sans);
+  color: #a9adb4;
+  font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .04em;
 }
-.voice-shared-footer .voice-shared-footer__contact,
-.voice-shared-footer .voice-shared-footer__socials { display: flex; align-items: center; gap: 14px; }
-.voice-shared-footer .voice-shared-footer__contact { color: #aeb1b7; }
-.voice-shared-footer .voice-shared-footer__socials { justify-content: flex-end; }
-.voice-shared-footer a {
+.voice-shared-footer__inner { width: 100%; max-width: 1100px; margin: 0 auto; }
+.voice-footer-cave-scene {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  border: 1px solid rgba(232, 139, 69, .2);
+  background: #1d2027;
+}
+.voice-footer-cave-scene__cave { transform: none; }
+.voice-footer-rabbit,
+.voice-footer-carrot { transform-box: fill-box; transform-origin: center bottom; }
+.voice-footer-rabbit { animation: voice-footer-rabbit-peek 6s ease-in-out infinite; }
+.voice-footer-carrot { animation: voice-footer-carrot-wiggle 4.8s ease-in-out infinite; }
+.voice-shared-footer__copy { display: grid; gap: 8px; padding-top: 20px; }
+.voice-shared-footer__copy p { display: block; margin: 0; }
+.voice-shared-footer__identity strong { color: #f2f1ec; font-weight: 700; }
+.voice-shared-footer__copy .voice-shared-footer__links {
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 24px;
+  white-space: nowrap;
+}
+.voice-shared-footer__links a {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  gap: 6px;
+  min-height: 24px;
   margin: 0;
-  color: #f2f1ec;
+  color: var(--reader-accent);
+  font: 500 11px/1.4 var(--font-mono);
+  letter-spacing: .04em;
   text-decoration: none;
+  white-space: nowrap;
 }
-.voice-shared-footer a:hover { color: var(--reader-accent); }
+.voice-shared-footer__links a:first-child { color: #f2f1ec; }
+.voice-shared-footer__links a:hover { color: #f5d14b; }
+.voice-shared-footer__social-icon { width: 14px; height: 14px; flex: 0 0 14px; }
+@keyframes voice-footer-rabbit-peek {
+  0%, 12%, 100% { transform: translateY(0) rotate(0); }
+  3% { transform: translateY(-3px) rotate(-1deg); }
+  6% { transform: translateY(0) rotate(1deg); }
+  9% { transform: translateY(-1px); }
+}
+@keyframes voice-footer-carrot-wiggle {
+  0%, 16%, 100% { transform: rotate(0) translateY(0); }
+  4% { transform: rotate(-5deg) translateY(-1px); }
+  8% { transform: rotate(4deg) translateY(-2px); }
+  12% { transform: rotate(-2deg) translateY(0); }
+}
 
 @media (max-width: 599px) {
   .reader-shell { padding-inline: var(--reader-mobile-gutter); }
@@ -173,11 +199,13 @@ img { border: 0; outline: 0; box-shadow: none; }
   .site-header { grid-template-columns: 44px 1px minmax(0, 1fr) auto; }
   .header-site-title { font-size: 9px; }
   .header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }
-
   .section-heading h2, .chapter-heading h2 { font-size: var(--reader-section-size-mobile); }
   .highlight-marker h3, .topic-heading h3, .transcript-subheading { font-size: var(--reader-subsection-size-mobile); }
-  .voice-shared-footer { grid-template-columns: 1fr; gap: 8px; padding: 24px 20px 30px; }
-  .voice-shared-footer .voice-shared-footer__scene { width: 150px; }
-  .voice-shared-footer .voice-shared-footer__contact,
-  .voice-shared-footer .voice-shared-footer__socials { flex-wrap: wrap; gap: 6px 14px; justify-content: flex-start; }
+  .voice-shared-footer { padding: 28px 20px; }
+  .voice-footer-cave-scene { height: 180px; }
+  .voice-shared-footer__copy { gap: 5px; padding-top: 16px; }
+  .voice-shared-footer__links { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .voice-footer-rabbit, .voice-footer-carrot { animation: none !important; }
 }

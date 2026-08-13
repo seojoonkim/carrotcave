@@ -223,7 +223,7 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.doesNotMatch(liangReaderSource, /직접 인용.*없음/);
   assert.doesNotMatch(liangReaderSource, /축자 기록|귀속|오청/);
   assert.match(liangReaderSource, /<h2>CARROT CAVE INSIGHTS<\/h2>/);
-  const liangInsights = liangReaderSource.match(/<section class="content-section carrot-cave-insights" id="insights">[\s\S]*?<\/section>/)?.[0] || '';
+  const liangInsights = liangReaderSource.match(/<section(?=[^>]*\bid="insights")(?=[^>]*\bclass="[^"]*\bcarrot-cave-insights\b[^"]*")[^>]*>[\s\S]*?<\/section>/)?.[0] || '';
   assert.equal((liangInsights.match(/<li>/g) || []).length, 10);
   assert.match(liangReaderSource, /기능 분류는 편집 과정의 추정이며 누가 한 말인지 확인한 정보가 아니다/);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
@@ -384,17 +384,27 @@ test('Liang Wenfeng header exposes the same structured live chapter contract as 
 test('voice readers share the ordinary site footer information structure', () => {
   for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
     assert.equal((source.match(/<footer class="voice-shared-footer">/g) ?? []).length, 1);
-    assert.equal((source.match(/class="voice-shared-footer__scene"/g) ?? []).length, 1);
-    assert.match(source, /src="\/cave-journey-final\.svg"/);
-    assert.match(source, />CARROT CAVE<\/strong>/);
-    assert.match(source, />Simon Kim<\/span>/);
+    assert.equal((source.match(/class="voice-footer-cave-scene"/g) ?? []).length, 1);
+    assert.equal((source.match(/class="voice-shared-footer__copy"/g) ?? []).length, 1);
+    assert.equal((source.match(/class="voice-shared-footer__social-icon"/g) ?? []).length, 2);
+    const insightsOpenTag = source.match(/<section(?=[^>]*\bid="insights")[^>]*>/)?.[0] || '';
+    assert.match(insightsOpenTag, /\bclass="[^"]*\bcarrot-cave-insights\b[^"]*\bappendix\b[^"]*"/);
+    assert.match(source, /<strong>CARROT CAVE<\/strong> by Simon Kim/);
     assert.match(source, /href="mailto:simon@hashed\.com"/);
     assert.match(source, /href="https:\/\/x\.com\/simonkim_nft"/);
     assert.match(source, /href="https:\/\/t\.me\/carrotcave"/);
-    assert.doesNotMatch(source, /READER EDITION|MINIMALLY EDITED TRANSCRIPT|A project by Simon Kim at Hashed|처음으로 ↑/);
+    assert.doesNotMatch(source, /cave-journey-final\.svg|voice-shared-footer__contact|voice-shared-footer__socials|READER EDITION|MINIMALLY EDITED TRANSCRIPT|A project by Simon Kim at Hashed|처음으로 ↑/);
   }
-  assert.match(voiceReaderSystemStyles, /\.voice-shared-footer \{[\s\S]*?grid-template-columns: 160px auto 1fr auto;/);
-  assert.match(voiceReaderSystemStyles, /@media \(max-width: 599px\) \{[\s\S]*?\.voice-shared-footer \{ grid-template-columns: 1fr;/);
+  assert.match(voiceReaderSystemStyles, /\.voice-shared-footer__inner \{ width: 100%; max-width: 1100px;/);
+  assert.match(voiceReaderSystemStyles, /\.voice-shared-footer__copy \.voice-shared-footer__links \{[\s\S]*?display: flex;[\s\S]*?flex-wrap: nowrap;[\s\S]*?white-space: nowrap;/);
+});
+
+test('CARROT CAVE INSIGHTS structurally shares the interview method and source bullet rhythm', () => {
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
+    const insightsOpenTag = source.match(/<section(?=[^>]*\bid="insights")[^>]*>/)?.[0] || '';
+    assert.match(insightsOpenTag, /\bclass="[^"]*\bcarrot-cave-insights\b[^"]*\bappendix\b[^"]*"/);
+  }
+  assert.doesNotMatch(voiceReaderSystemStyles, /#insights\s*>\s*ul/);
 });
 
 test('archive and recommendation cards share description typography and restrained image treatment', () => {

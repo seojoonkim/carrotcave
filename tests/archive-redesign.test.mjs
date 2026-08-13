@@ -86,6 +86,11 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /<FooterCaveScene \/>/);
   assert.match(home, /<SiteFooter \/>/);
   assert.match(voices, /<SiteFooter \/>/);
+  const [css, postReader] = await Promise.all([read('app/globals.css'), read('app/posts/[slug]/page.tsx')]);
+  assert.match(css, /\.cc-footer__copy \.cc-footer__links\{display:flex;width:max-content;max-width:100%;align-items:center;flex-wrap:nowrap;gap:24px;white-space:nowrap\}/);
+  assert.match(css, /\.cc-footer__links a\{[^}]*min-height:24px[^}]*font:500 11px\/1\.4 var\(--mono\)/);
+  assert.match(postReader, /import SiteFooter from '@\/components\/SiteFooter'/);
+  assert.match(postReader, /<\/article>\s*<SiteFooter \/>/);
 });
 
 test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
