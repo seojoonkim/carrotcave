@@ -24,7 +24,8 @@ export default function CarrotCaveMark({ className = '' }: CarrotCaveMarkProps) 
         <circle cx="43" cy="43" r="9" fill="#f1eee7" />
         <ellipse cx="38" cy="30" rx="3.5" ry="11" fill="#f1eee7" transform="rotate(-9 38 30)" />
         <ellipse cx="47" cy="29" rx="3.5" ry="12" fill="#f1eee7" transform="rotate(7 47 29)" />
-        <circle cx="47" cy="42" r="1.4" fill="#252832" />
+        <circle cx="39" cy="42" r="1.8" fill="#252832" />
+        <circle cx="47" cy="42" r="1.8" fill="#252832" />
         <ellipse cx="34" cy="66" rx="6" ry="3" fill="#f1eee7" />
         <ellipse cx="50" cy="67" rx="6" ry="3" fill="#f1eee7" />
         </g>

@@ -31,7 +31,9 @@
 .reader-nav, .reader-nav .brand { width: 44px; height: 44px; }
 .reader-nav .brand { display: flex; align-items: center; gap: 0; text-decoration: none; }
 .reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; }
-.reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.07); }
+.reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.13); }
+.reader-nav .brand-mark__rabbit-position { transform: translateY(17px); }
+.reader-nav .brand-mark__rabbit { animation: none; }
 .reader-back-chevron { display: grid; width: 10px; height: 34px; place-items: center; color: #aeb1b7; font: 400 28px/1 var(--font-sans); transition: color .16s ease, transform .16s ease; }
 .reader-nav .brand:hover .reader-back-chevron { color: var(--bright-white); transform: translateX(-1px); }
 img { border: 0; outline: 0; box-shadow: none; }
@@ -202,7 +204,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   .reader-shell { padding-inline: var(--reader-mobile-gutter); }
   .reader-nav .brand { width: 44px; height: 44px; }
   .reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; }
-.reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.07); }
+.reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.13); }
   .site-header { grid-template-columns: 44px 1px minmax(0, 1fr) auto; }
   .header-site-title { font-size: 9px; }
   .header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }

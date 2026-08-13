@@ -30,7 +30,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
 });
 
-test('header keeps the exact wordmark while only the rabbit and carrot animate', async () => {
+test('header keeps the exact wordmark while the grounded rabbit stays fixed and the carrot animates', async () => {
   const [css, readerCss, header, layout] = await Promise.all([
     read('app/globals.css'),
     read('public/voices/reader-system.css'),
@@ -44,11 +44,14 @@ test('header keeps the exact wordmark while only the rabbit and carrot animate',
   assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
   assert.match(header, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(css, /\.cc-brand-symbol\{animation:none;transform:none\}/);
-  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.07\)\}/);
-  assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:cc-rabbit-peek/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.13\)\}/);
+  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
+  assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:none/);
   assert.match(css, /\.carrot-cave-mark__carrot\{[^}]*animation:cc-carrot-wiggle/);
   assert.match(css, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px/);
-  assert.match(readerCss, /\.reader-nav \.brand-mark__cave \{[^}]*transform: scale\(1\.07\);/);
+  assert.match(readerCss, /\.reader-nav \.brand-mark__cave \{[^}]*transform: scale\(1\.13\);/);
+  assert.match(readerCss, /\.reader-nav \.brand-mark__rabbit-position \{ transform: translateY\(17px\); \}/);
+  assert.match(readerCss, /\.reader-nav \.brand-mark__rabbit \{ animation: none; \}/);
   assert.doesNotMatch(readerCss, /\.reader-nav \.brand-mark \{[^}]*transform:/);
   assert.match(readerCss, /\.reader-nav, \.reader-nav \.brand \{ width: 44px; height: 44px; \}/);
 });
@@ -91,7 +94,8 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
   assert.match(footer, /<FooterCaveScene \/>/);
-  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.07\)\}/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.13\)\}/);
+  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
   assert.doesNotMatch(css, /carrot-cave-mark__(?:rabbit|carrot)[^{]*\{[^}]*scale\(/);
   assert.match(home, /<SiteFooter \/>/);
   assert.match(voices, /<SiteFooter \/>/);
