@@ -21,8 +21,6 @@ const contracts = [
   '--reader-mobile-gutter: 20px',
   '--reader-body-size: 17px',
   '--reader-body-leading: 1.86',
-  '--reader-section-size: 42px',
-  '--reader-section-size-mobile: 34px',
   '--reader-subsection-size: 27px',
   '--reader-subsection-size-mobile: 24px',
   '--reader-time-size: 12px',
@@ -32,6 +30,11 @@ const voiceTitleContracts = [
   '--reader-header-title-size: 17px',
   '--reader-header-title-size-mobile: 16px',
   '--reader-title-size: clamp(34px, 5.5vw, 46px)',
+];
+
+const voiceSectionContracts = [
+  '--reader-section-size: 36px',
+  '--reader-section-size-mobile: 30px',
 ];
 
 test('ordinary posts and voice readers share one explicit reading scale', async () => {
@@ -51,6 +54,11 @@ test('ordinary posts and voice readers share one explicit reading scale', async 
   for (const contract of voiceTitleContracts) {
     assert.ok(normalizedShared.includes(normalizeDeclarationSpacing(contract)), `voice reader system missing ${contract}`);
   }
+  for (const contract of voiceSectionContracts) {
+    assert.ok(normalizedShared.includes(normalizeDeclarationSpacing(contract)), `voice reader system missing ${contract}`);
+  }
+  assert.ok(normalizedGlobals.includes('--reader-section-size:42px'), 'ordinary post section titles must stay 42px');
+  assert.ok(normalizedGlobals.includes('--reader-section-size-mobile:34px'), 'ordinary post mobile section titles must stay 34px');
 });
 
 test('every voice reader consumes the shared reader system without local scale drift', async () => {
