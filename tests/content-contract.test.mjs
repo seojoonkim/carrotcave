@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 const syncSource = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
 const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), 'utf8');
@@ -35,13 +35,20 @@ const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startu
 const samReaderStyles = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/styles.css', import.meta.url), 'utf8');
 const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
 const caveConstellationSource = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
+const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta.url), { withFileTypes: true })
+  .filter((entry) => entry.isDirectory() && existsSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url)))
+  .map((entry) => ({
+    slug: entry.name,
+    html: readFileSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url), 'utf8'),
+    styles: readFileSync(new URL(`../public/voices/${entry.name}/styles.css`, import.meta.url), 'utf8'),
+  }));
 
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /\.cc-header\{[^}]*background:#282b32\}/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
-  for (const readerStyles of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
-    assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/);
+  for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
+    assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/, `${slug} must preserve the shared graphite header surface`);
     assert.doesNotMatch(readerStyles, /\.site-header \{[^}]*background: rgba\(47,50,57,\.94\)/);
   }
 });
@@ -55,18 +62,20 @@ test('all reading surfaces use one refined whole-document progress line at the h
   assert.match(stylesSource, /\.cc-reading-progress__fill\{[^}]*background:#61adab;/);
   assert.doesNotMatch(stylesSource, /\.cc-reading-progress__fill\{[^}]*box-shadow/);
 
-  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
+  assert.ok(voiceReaderFixtures.length > 0, 'at least one voice reader directory must be discovered');
+  for (const { slug, html: source } of voiceReaderFixtures) {
     assert.equal((source.match(/id="readingProgress"/g) ?? []).length, 1);
     assert.equal((source.match(/id="progressBar"/g) ?? []).length, 1);
     assert.match(source, /<header class="site-header">[\s\S]*?id="readingProgress"[\s\S]*?<\/header>/);
     assert.match(source, /\.\.\/reading-progress\.js/);
     assert.match(source, /\.\.\/reader-system\.css/);
+    assert.match(source, /\.\.\/reader-runtime\.js/, `${slug} must load the shared reader runtime`);
     assert.doesNotMatch(source, /chapterTrack|chapter-track|chapterProgressFill/);
   }
-  for (const source of [liaoReaderStyles, liangReaderStyles, yangReaderStyles, samReaderStyles]) {
+  for (const { slug, styles: source } of voiceReaderFixtures) {
     assert.match(source, /\.progress \{[^}]*bottom:-1px;[^}]*height:1px;[^}]*background:rgba\(255,255,255,\.09\)/);
     assert.match(source, /\.progress span \{[^}]*background:var\(--ansi-cyan\);/);
-    assert.doesNotMatch(source, /\.progress span \{[^}]*box-shadow/);
+    assert.doesNotMatch(source, /\.progress span \{[^}]*box-shadow/, `${slug} progress line must stay flat`);
     assert.doesNotMatch(source, /chapter-track|chapter-progress-fill/);
   }
   assert.match(voiceProgressSource, /progress\.setAttribute\('aria-valuenow'/);
