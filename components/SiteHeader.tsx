@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import CarrotCaveMark from '@/components/CarrotCaveMark';
 import ReadingProgress from '@/components/ReadingProgress';
 
 interface SiteHeaderProps {
@@ -15,7 +15,7 @@ export default function SiteHeader({ readingTitle, readingMeta, readingBackHref 
       <div className="cc-header__inner">
         <Link className="cc-brand" href={readingTitle ? readingBackHref : '/'} aria-label={readingTitle ? readingBackLabel : 'CarrotCave.com 홈'}>
           {readingTitle && <span className="cc-reading-back-chevron" aria-hidden="true">‹</span>}
-          <Image className="cc-brand-symbol" src="/carrot-cave-symbol.png" alt="" width={192} height={192} aria-hidden="true" priority />
+          <CarrotCaveMark className="cc-brand-symbol" />
           {!readingTitle && <span><span className="cc-brand-name">CarrotCave<span className="cc-brand-domain">.com</span></span><small>FIELD NOTES FROM THE RABBIT HOLE</small></span>}
         </Link>
         {readingTitle ? (

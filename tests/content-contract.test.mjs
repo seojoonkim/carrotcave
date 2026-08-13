@@ -222,8 +222,9 @@ test('Liang Wenfeng reader preserves all 19 leaked-meeting sections as a source-
   assert.match(liangReaderSource, /실제 발언을 처음부터 끝까지 그대로 옮긴 기록으로 보기는 어렵다/);
   assert.doesNotMatch(liangReaderSource, /직접 인용.*없음/);
   assert.doesNotMatch(liangReaderSource, /축자 기록|귀속|오청/);
-  assert.match(liangReaderSource, /화자나 발화 기능을 화면에 표시하지 않으며/);
-  assert.match(liangReaderSource, /독립적인 의미, 핵심 교훈, 앞뒤 맥락 없이 이해 가능한지/);
+  assert.match(liangReaderSource, /<h2>CARROT CAVE INSIGHTS<\/h2>/);
+  const liangInsights = liangReaderSource.match(/<section class="content-section carrot-cave-insights" id="insights">[\s\S]*?<\/section>/)?.[0] || '';
+  assert.equal((liangInsights.match(/<li>/g) || []).length, 10);
   assert.match(liangReaderSource, /기능 분류는 편집 과정의 추정이며 누가 한 말인지 확인한 정보가 아니다/);
   assert.doesNotMatch(liangReaderSource, /유출 ASR 정리본상 발언|“|”/);
   assert.equal(liangLongReader.length, 19);
@@ -674,7 +675,7 @@ test('home keeps the exact CarrotCave.com wordmark while reading headers use log
 });
 
 test('brand logo asset and rendered marks are square', () => {
-  assert.match(headerSource, /width=\{192\} height=\{192\}/);
+  assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(liaoReaderSource, /width="192" height="192"/);
   assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px;[^}]*height:36px/);
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
@@ -692,7 +693,8 @@ test('all voice readers expose one uncluttered return control to the voice list'
 });
 
 test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot marks', () => {
-  assert.match(headerSource, /src="\/carrot-cave-symbol\.png"/);
+  assert.match(headerSource, /import CarrotCaveMark/);
+  assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(liaoReaderSource, /<img class="brand-mark"[^>]*src="\/carrot-cave-symbol\.png"/);
   assert.doesNotMatch(headerSource, /<i aria-hidden="true"\s*\/>/);
   assert.doesNotMatch(liaoReaderStyles, /\.brand-mark[^}]*border-radius:\s*50%/);
@@ -719,7 +721,8 @@ test('all voice readers use one flat mobile chapter menu without quoted summary 
     const drawer = source.match(/<aside class="toc-drawer"[\s\S]*?<\/aside>/)?.[0] || '';
     assert.ok(drawer, 'reader must include the mobile table of contents');
     assert.doesNotMatch(drawer, /<details|<summary|<ul|<li/);
-    assert.match(drawer, /class="summary-link"[^>]*><span>00<\/span><span>전체 요약<\/span>/);
+    assert.match(drawer, /class="insights-link"[^>]*href="#insights"[^>]*><span>00<\/span> CARROT CAVE INSIGHTS/);
+    assert.doesNotMatch(source, /summary-block|id="summary"|href="#summary"|class="summary-link"/);
     assert.match(drawer, /class="toc-chapter-link"[^>]*data-nav-chapter="1"[^>]*><span>01<\/span><span(?:\s+class="[^"]+")?>/);
     for (const [, target] of drawer.matchAll(/href="#([^"]+)"/g)) {
       assert.match(source, new RegExp(`id="${target}"`), `drawer target #${target} must exist`);
@@ -740,8 +743,8 @@ test('voice thumbnails use the same editorial card system as other archive entri
 test('posts and voices share one standard card format at every breakpoint', () => {
   assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:234px\}/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:234px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
 test('wide desktop archive rows contain at most three cards', () => {

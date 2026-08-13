@@ -22,14 +22,14 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:234px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:234px\}\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 20px\/1\.26 var\(--sans\)/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:500 12px\/1\.5 var\(--sans\)/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
 });
 
-test('header uses the exact CarrotCave.com wordmark and a restrained motion loop', async () => {
+test('header keeps the exact wordmark while only the rabbit and carrot animate', async () => {
   const [css, readerCss, header, layout] = await Promise.all([
     read('app/globals.css'),
     read('public/voices/reader-system.css'),
@@ -41,9 +41,11 @@ test('header uses the exact CarrotCave.com wordmark and a restrained motion loop
   assert.match(layout, /title: 'CarrotCave\.com · 토끼를 따라왔는데, 생각이 길을 잃었습니다\.'/);
   assert.match(css, /\.cc-brand-name\{[^}]*font-size:15px/);
   assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
-  assert.match(css, /\.cc-brand-symbol\{[^}]*transform:scale\(1\.07\)/);
-  assert.match(css, /animation:cc-logo-hop 8s/);
-  assert.match(css, /@keyframes cc-logo-hop/);
+  assert.match(header, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
+  assert.match(css, /\.cc-brand-symbol\{animation:none;transform:none\}/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform:none\}/);
+  assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:cc-rabbit-peek/);
+  assert.match(css, /\.carrot-cave-mark__carrot\{[^}]*animation:cc-carrot-wiggle/);
   assert.match(css, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px/);
   assert.match(readerCss, /\.reader-nav \.brand-mark \{[^}]*transform: scale\(1\.07\);/);
   assert.match(readerCss, /\.reader-nav, \.reader-nav \.brand \{ width: 44px; height: 44px; \}/);
@@ -70,16 +72,18 @@ test('archive thumbnail type and contrast remain legible without restoring image
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*filter:/);
 });
 
-test('shared footer publishes Simon contact and Telegram links on both archive pages', async () => {
+test('shared footer publishes the requested two-line identity and icon links', async () => {
   const [footer, home, voices] = await Promise.all([
     read('components/SiteFooter.tsx'),
     read('app/page.tsx'),
     read('app/voices/page.tsx'),
   ]);
-  assert.match(footer, /Simon Kim/);
+  assert.match(footer, /<strong>CARROT CAVE<\/strong> by Simon Kim/);
   assert.match(footer, /href="mailto:simon@hashed\.com">simon@hashed\.com<\/a>/);
-  assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft" target="_blank" rel="noreferrer">X ↗<\/a>/);
+  assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>X<\/span>/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
+  assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
+  assert.match(footer, /<FooterCaveScene \/>/);
   assert.match(home, /<SiteFooter \/>/);
   assert.match(voices, /<SiteFooter \/>/);
 });
@@ -99,7 +103,7 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*transition:/);
 });
 
-test('rabbit journey illustrations live only in structural seams and end at the footer', async () => {
+test('rabbit journey illustrations stay in seams and finish in a detailed footer scene', async () => {
   const [home, scene, footer, rail, card, css] = await Promise.all([
     read('app/page.tsx'),
     read('components/CaveJourneyScene.tsx'),
@@ -111,7 +115,8 @@ test('rabbit journey illustrations live only in structural seams and end at the 
   assert.match(home, /const journeyStep = active \? Math\.max\(8, Math\.ceil\(visibleEntries\.length \/ 3\)\) : 19/);
   assert.match(home, /className="cave-depth-divider" data-depth=\{depth\}/);
   assert.match(home, /depth <= 5/);
-  assert.match(footer, /<CaveJourneyScene depth=\{6\} \/>/);
+  assert.match(footer, /<FooterCaveScene \/>/);
+  assert.doesNotMatch(footer, /<CaveJourneyScene/);
   assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
   assert.doesNotMatch(card, /CaveJourneyScene|cave-depth-divider|axis-rail__carrot/);
   assert.match(scene, /aria-hidden="true"/);
