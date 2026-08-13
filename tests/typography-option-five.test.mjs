@@ -29,7 +29,7 @@ test('Next app self-hosts option five through next/font variables', () => {
 test('home wall heading uses body sans while content titles retain serif', () => {
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*font:[^;}]*var\(--serif\)/);
   assert.match(home, /className=\{active \? undefined : 'wall-heading__home-title'\}/);
-  assert.match(css, /#wall-heading\.wall-heading__home-title\{font-family:var\(--sans\)\}/);
+  assert.match(css, /#wall-heading\.wall-heading__home-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
   assert.match(css, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--serif\)/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\)/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\)/);

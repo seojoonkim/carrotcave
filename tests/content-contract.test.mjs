@@ -781,7 +781,7 @@ test('home keeps all six axes visible on mobile', () => {
 });
 
 test('home uses one ordered editorial system for the complete post and voice archive', () => {
-  assert.match(homeSource, /<h1 id="wall-heading">/);
+  assert.match(homeSource, /<h1 id="wall-heading" className=\{active \? undefined : 'wall-heading__home-title'\}>/);
   assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
   assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
