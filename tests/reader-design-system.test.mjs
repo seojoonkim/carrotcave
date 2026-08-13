@@ -192,7 +192,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
   const shared = await read('public/voices/reader-system.css');
   for (const required of [
     '.header-status > i, #currentChapterNumber, .header-mobile-title { display: none; }',
-    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }',
+    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }',
     '.header-site-title {',
     'font: 500 9px/1 var(--font-mono);',
     'letter-spacing: .1em;',

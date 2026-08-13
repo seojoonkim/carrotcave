@@ -80,7 +80,7 @@ img { border: 0; outline: 0; box-shadow: none; }
 
 .header-status > i, #currentChapterNumber, .header-mobile-title { display: none; }
 .header-status { align-items: center; }
-.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }
+.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }
 .header-site-title {
   display: block;
   overflow: hidden;
@@ -179,8 +179,9 @@ img { border: 0; outline: 0; box-shadow: none; }
   top: -14px;
   margin: -14px -20px 8px;
   padding: 12px 20px 10px;
+  border-bottom: 0;
 }
-.toc-drawer h2 { font: 700 17px/1.25 var(--font-sans); }
+.toc-drawer h2 { font: 400 14px/1.25 var(--font-sans); }
 .toc-drawer nav > a {
   min-height: 42px;
   grid-template-columns: 28px minmax(0, 1fr);

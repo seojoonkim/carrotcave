@@ -119,7 +119,9 @@ test('every voice reader uses one compact header toggle for its reading index', 
   for (const required of [
     '.menu-button[aria-expanded="true"] i { transform: rotate(45deg); }',
     '.menu-button[aria-expanded="true"] i::before { transform: rotate(90deg); }',
-    '.toc-drawer h2 { font: 700 17px/1.25 var(--font-sans); }',
+    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }',
+    'border-bottom: 0;',
+    '.toc-drawer h2 { font: 400 14px/1.25 var(--font-sans); }',
     'min-height: 42px;',
     'font: 600 12px/1.35 var(--font-sans);',
   ]) assert.ok(voiceReaderSystemStyles.includes(required), `compact shared TOC CSS missing: ${required}`);
