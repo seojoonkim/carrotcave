@@ -652,9 +652,10 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
   assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
-  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--serif\)[^}]*font-size:clamp\(21px,3vw,36px\)/);
-  assert.match(stylesSource, /\.voices-wall \.wall-card--voice h2\{[^}]*font-family:var\(--serif\)[^}]*font-weight:700/);
-  assert.match(stylesSource, /\.voices-wall \.wall-card--voice \.wall-card__abstract\{font:400 12px\/1\.55 var\(--serif\)/);
+  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--sans\)[^}]*font-size:clamp\(21px,3vw,36px\)/);
+  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 20px\/1\.26 var\(--sans\)/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:500 12px\/1\.5 var\(--sans\)/);
   assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-size:19px\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
@@ -734,6 +735,13 @@ test('voice thumbnails use the same editorial card system as other archive entri
   assert.doesNotMatch(stylesSource, /editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
   assert.doesNotMatch(stylesSource, /wall-card\.wall-card--voice\{grid-column:1\/-1/);
   assert.doesNotMatch(stylesSource, /wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
+});
+
+test('posts and voices share one standard card format at every breakpoint', () => {
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
+  assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:234px\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:234px\}/);
 });
 
 test('wide desktop archive rows contain at most three cards', () => {

@@ -15,27 +15,18 @@ test('the complete archive combines ordinary posts and voices without changing c
   assert.match(rail, /<b>전체<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
 });
 
-test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and mobile', async () => {
+test('archive cards use one standard format for posts and voices at every breakpoint', async () => {
   const [css, card] = await Promise.all([read('app/globals.css'), read('components/EditorialCard.tsx')]);
-  assert.match(css, /\.editorial-wall\{grid-auto-flow:row;grid-auto-rows:82px;gap:18px;background:transparent\}/);
+  assert.match(css, /\.editorial-wall\{grid-auto-flow:row;grid-auto-rows:73\.8px;gap:16\.2px;background:transparent\}/);
   assert.match(card, /data-rhythm=\{rhythm\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='0'\]\{grid-column:span 7;grid-row:span 6\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='1'\]\{grid-column:span 5;grid-row:span 6\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='2'\]\{grid-column:span 4;grid-row:span 5\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='3'\]\{grid-column:span 8;grid-row:span 5\}/);
-  assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall\{grid-template-columns:repeat\(6,minmax\(0,1fr\)\);grid-auto-rows:74px;gap:14px\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall\{display:flex;flex-direction:column;gap:14px\}/);
-  assert.match(css, /\.wall-card\[data-rhythm\]\{width:100%;min-height:260px\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='1'\]\{min-height:290px\}/);
-  assert.match(css, /\.wall-card\[data-rhythm='2'\]\{min-height:240px\}/);
-  assert.match(css, /\.wall-card--voice\[data-rhythm\]\{min-height:290px\}/);
+  assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
+  assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
+  assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card\{width:100%;min-height:234px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:234px\}\}/);
+  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 20px\/1\.26 var\(--sans\)/);
+  assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:500 12px\/1\.5 var\(--sans\)/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
-  assert.match(css, /\.wall-card h2\{font-weight:600;line-height:1\.26;letter-spacing:-\.015em\}/);
-  assert.match(css, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
-  assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:20px[^\n]*\.wall-card__abstract\{font-size:13px\}/);
-  const finalArchiveBlock = css.slice(css.indexOf('/* Asymmetric archive:'));
-  assert.doesNotMatch(finalArchiveBlock, /grid-auto-flow:row dense/);
 });
 
 test('header uses the exact CarrotCave.com wordmark and a restrained motion loop', async () => {
