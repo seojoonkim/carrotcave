@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="title description">
+  <title id="title">당근을 발견하고 통통 뛰는 토끼</title>
+  <desc id="description">토끼가 당근 쪽으로 두 번 뛰어가면 당근이 놀라 살짝 튀는 짧은 애니메이션</desc>
+  <style>
+    .rabbit-position { transform-origin: 480px 145px; animation: rabbit-hop 6s cubic-bezier(.35,.05,.22,1) infinite; }
+    .rabbit-body { transform-box: fill-box; transform-origin: center bottom; animation: rabbit-squash 6s ease-in-out infinite; }
+    .rabbit-ear-left { transform-box: fill-box; transform-origin: center bottom; animation: ear-left 6s ease-in-out infinite; }
+    .rabbit-ear-right { transform-box: fill-box; transform-origin: center bottom; animation: ear-right 6s ease-in-out infinite; }
+    .carrot { transform-box: fill-box; transform-origin: center bottom; animation: carrot-surprise 6s ease-in-out infinite; }
+    .carrot-leaves { transform-box: fill-box; transform-origin: center bottom; animation: leaves-flutter 6s ease-in-out infinite; }
+    .surprise { opacity: 0; animation: surprise-pop 6s ease-out infinite; }
+    @keyframes rabbit-hop {
+      0%,10%,100% { transform: translate(0,0); }
+      2% { transform: translate(0,4px); }
+      4.8% { transform: translate(42px,-34px) rotate(-3deg); }
+      7% { transform: translate(76px,0) rotate(1deg); }
+      8% { transform: translate(76px,3px) scale(1.04,.96); }
+      14% { transform: translate(76px,0); }
+      16% { transform: translate(76px,4px); }
+      18.8% { transform: translate(116px,-26px) rotate(3deg); }
+      21% { transform: translate(146px,0) rotate(-1deg); }
+      22% { transform: translate(146px,3px) scale(1.04,.96); }
+      28%,96% { transform: translate(146px,0); }
+    }
+    @keyframes rabbit-squash {
+      0%,1.5%,8.5%,15.5%,22.5%,100% { transform: scale(1); }
+      2%,8%,16%,22% { transform: scale(1.06,.94); }
+      5%,19% { transform: scale(.98,1.03); }
+    }
+    @keyframes ear-left {
+      0%,2%,12%,16%,26%,100% { transform: rotate(0); }
+      5%,19% { transform: rotate(-14deg); }
+      8%,22% { transform: rotate(8deg); }
+    }
+    @keyframes ear-right {
+      0%,2%,12%,16%,26%,100% { transform: rotate(0); }
+      5%,19% { transform: rotate(12deg); }
+      8%,22% { transform: rotate(-7deg); }
+    }
+    @keyframes carrot-surprise {
+      0%,20%,32%,100% { transform: translateY(0) rotate(0); }
+      22% { transform: translateY(-13px) rotate(8deg); }
+      24% { transform: translateY(0) rotate(-6deg); }
+      27% { transform: translateY(-5px) rotate(3deg); }
+    }
+    @keyframes leaves-flutter {
+      0%,20%,33%,100% { transform: rotate(0); }
+      22% { transform: rotate(-12deg); }
+      25% { transform: rotate(9deg); }
+      28% { transform: rotate(-4deg); }
+    }
+    @keyframes surprise-pop {
+      0%,20%,30%,100% { opacity: 0; transform: scale(.7); }
+      22%,25% { opacity: .8; transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .rabbit-position,.rabbit-body,.rabbit-ear-left,.rabbit-ear-right,.carrot,.carrot-leaves,.surprise { animation: none !important; }
+    }
+  </style>
+  <g class="rabbit-position">
+    <g class="rabbit-body">
+      <ellipse cx="480" cy="145" rx="44" ry="31" fill="#dedbd4"/>
+      <ellipse cx="468" cy="135" rx="30" ry="24" fill="#eeeae3"/>
+      <circle cx="511" cy="120" r="28" fill="#f4f0e9"/>
+      <g class="rabbit-ear-left">
+        <ellipse cx="497" cy="82" rx="10" ry="35" fill="#f4f0e9" transform="rotate(-9 497 82)"/>
+        <ellipse cx="497" cy="82" rx="4" ry="27" fill="#d9a09d" opacity=".62" transform="rotate(-9 497 82)"/>
+      </g>
+      <g class="rabbit-ear-right">
+        <ellipse cx="520" cy="80" rx="10" ry="37" fill="#f4f0e9" transform="rotate(8 520 80)"/>
+        <ellipse cx="520" cy="80" rx="4" ry="29" fill="#d9a09d" opacity=".62" transform="rotate(8 520 80)"/>
+      </g>
+      <circle cx="521" cy="115" r="4" fill="#20242d"/>
+      <circle cx="522" cy="114" r="1.2" fill="#fff" opacity=".9"/>
+      <ellipse cx="537" cy="124" rx="3.5" ry="2.7" fill="#b87c78"/>
+      <path d="M538 127c4 2 5 5 1 7M539 128c-3 3-3 6 0 8" fill="none" stroke="#9c7772" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="526" cy="128" r="6" fill="#e9a29b" opacity=".2"/>
+      <path d="m539 125 19-3m-19 7 20 3m-22 1 17 8" fill="none" stroke="#d9d4cc" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="437" cy="137" r="16" fill="#f4f0e9"/>
+      <ellipse cx="458" cy="166" rx="24" ry="9" fill="#e5e1da"/>
+      <ellipse cx="509" cy="167" rx="25" ry="9" fill="#e5e1da"/>
+    </g>
+  </g>
+  <g class="carrot" transform="translate(726 94) rotate(-10)">
+    <path d="M0 0c31 3 46 25 25 82C6 61-8 27 0 0Z" fill="#ed7d31"/>
+    <path d="M3 6c17 5 27 20 26 39-1 13-5 25-10 34" fill="none" stroke="#ffc06a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
+    <path d="m4 18 25 6M7 37l18 4M11 55l10 2" stroke="#7f361e" stroke-width="2.6" stroke-linecap="round" opacity=".48"/>
+    <g class="carrot-leaves">
+      <path d="M10 2C-1-22 2-45 13-60M16 2c15-25 31-41 49-50M14 1c25-14 44-17 61-13" fill="none" stroke="#75b77a" stroke-width="11" stroke-linecap="round"/>
+      <path d="M12 0C7-23 9-41 15-55M18 0c14-22 28-36 45-45" fill="none" stroke="#a1d09a" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+    </g>
+  </g>
+  <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="3" stroke-linecap="round">
+    <path d="m776 52 9-11M791 61l13-5M765 38l2-13"/>
+  </g>
+</svg>

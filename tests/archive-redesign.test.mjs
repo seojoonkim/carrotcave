@@ -92,8 +92,9 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /<strong>CARROT CAVE<\/strong> by Simon Kim/);
   assert.match(footer, /href="mailto:simon@hashed\.com">simon@hashed\.com<\/a>/);
   assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>X @simonkim_nft<\/span>/);
-  assert.match(css, /\.footer-cave-scene\{[^}]*border:0;background:transparent/);
-  assert.doesNotMatch(caveScene, /<rect\b/);
+  assert.match(css, /\.footer-rabbit-carrot\{[^}]*max-height:190px[^}]*border:0;background:transparent/);
+  assert.match(caveScene, /src="\/footer-rabbit-carrot\.svg"/);
+  assert.doesNotMatch(caveScene, /<rect\b|<path\b|<polygon\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
   assert.match(footer, /<FooterCaveScene \/>/);
@@ -125,7 +126,7 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*transition:/);
 });
 
-test('rabbit journey illustrations stay in seams and finish in a detailed footer scene', async () => {
+test('rabbit journey illustrations stay in seams and finish with only the rabbit and carrot', async () => {
   const [home, scene, footer, rail, card, css] = await Promise.all([
     read('app/page.tsx'),
     read('components/CaveJourneyScene.tsx'),

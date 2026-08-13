@@ -104,7 +104,7 @@ test('all voice readers use unpadded chapter labels and a period title separator
     assert.match(html, /class="reading-status-separator" aria-hidden="true">\. <\/span>/, `${slug} must use a period after the live chapter label`);
   }
   assert.match(voiceRuntimeSource, /const normalized = chapter \? String\(Number\(chapter\)\) : '';/);
-  assert.match(voiceRuntimeSource, /if \(normalized\) set\(`Ch \$\{normalized\}`, title\);/);
+  assert.match(voiceRuntimeSource, /if \(normalized\) set\(`Ch\$\{normalized\}`, title\);/);
   assert.match(voiceRuntimeSource, /else set\('', 'OVERVIEW'\);/);
   assert.doesNotMatch(voiceRuntimeSource, /padStart\(2, '0'\)/);
 });
@@ -459,7 +459,8 @@ test('Liang Wenfeng header exposes the same structured live chapter contract as 
 test('voice readers share the ordinary site footer information structure', () => {
   for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
     assert.equal((source.match(/<footer class="voice-shared-footer">/g) ?? []).length, 1);
-    assert.equal((source.match(/class="voice-footer-cave-scene"/g) ?? []).length, 1);
+    assert.equal((source.match(/class="voice-footer-rabbit-carrot"/g) ?? []).length, 1);
+    assert.equal((source.match(/voice-footer-cave-scene/g) ?? []).length, 0);
     assert.equal((source.match(/class="voice-shared-footer__copy"/g) ?? []).length, 1);
     assert.equal((source.match(/class="voice-shared-footer__social-icon"/g) ?? []).length, 2);
     const insightsOpenTag = source.match(/<section(?=[^>]*\bid="insights")[^>]*>/)?.[0] || '';

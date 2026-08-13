@@ -16,7 +16,7 @@
 
     const set = (number, title, isSubchapter = false) => {
       numberNode.textContent = number;
-      separatorNode.textContent = number ? '. ' : '';
+      separatorNode.textContent = number ? '.\u00a0' : '';
       titleNode.textContent = title;
       status.setAttribute('aria-label', `${number} ${title}`.trim());
       status.classList.toggle('is-overview', !number);
@@ -29,7 +29,7 @@
       if (mobileTitle) mobileTitle.textContent = normalized
         ? `${readerTitle}: Chapter ${normalized}`
         : `${readerTitle}: Overview`;
-      if (normalized) set(`Ch ${normalized}`, title);
+      if (normalized) set(`Ch${normalized}`, title);
       else set('', 'OVERVIEW');
     };
 

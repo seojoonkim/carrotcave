@@ -306,7 +306,7 @@ test('shared status runtime executes overview, chapter, subchapter, aria, and gr
   controller.setChapter(null, '');
   assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['00', '테스트 리더: Overview', '', 'OVERVIEW', 'OVERVIEW', true]);
   controller.setChapter(2, '두 번째 장');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['CH 2', '테스트 리더: Chapter 2', 'Ch 2', '두 번째 장', 'Ch 2 두 번째 장', false]);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['CH 2', '테스트 리더: Chapter 2', 'Ch2', '두 번째 장', 'Ch2 두 번째 장', false]);
   controller.set('2-3', '세부 항목', true);
   assert.deepEqual([numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-subchapter')], ['2-3', '세부 항목', '2-3 세부 항목', true]);
 
