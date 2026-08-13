@@ -71,6 +71,13 @@ test('all reading surfaces use one refined whole-document progress line at the h
   assert.doesNotMatch(voiceProgressSource, /chapterTrack|chapter-track|transcript-chapter/);
 });
 
+test('ordinary reading progress carries a contained carrot at its live endpoint', () => {
+  assert.match(readingProgressSource, /className="cc-reading-progress__carrot" aria-hidden="true"/);
+  assert.match(readingProgressSource, /style\.setProperty\('--cc-reading-percent'/);
+  assert.match(stylesSource, /\.cc-reading-progress__carrot\{[^}]*left:clamp\(9px,var\(--cc-reading-percent\),calc\(100% - 9px\)\)[^}]*opacity:0/);
+  assert.match(stylesSource, /\.cc-reading-progress\[data-active="true"\] \.cc-reading-progress__carrot\{opacity:1\}/);
+});
+
 test('iOS webviews extend the graphite header through the top safe area', () => {
   assert.match(layoutSource, /viewportFit: 'cover'/);
   assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
@@ -87,7 +94,17 @@ test('post reader accent metadata stays bright and titles use the available line
   assert.match(depthBadgeSource, /fontWeight: 650/);
   assert.match(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:wrap;overflow-wrap:anywhere/);
   assert.doesNotMatch(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:balance/);
-  assert.match(postSource, /color: '#E8D8B8'/);
+});
+
+test('ordinary post endings omit tag chips and separate content, actions, and recommendations', () => {
+  assert.doesNotMatch(postSource, /post\.tags\.map|#\{tag\}/);
+  assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
+  assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
+  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:64px\}/);
+  assert.match(stylesSource, /\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
+  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:88px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:56px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:88px\}/);
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
@@ -413,6 +430,8 @@ test('archive and recommendation cards share description typography and restrain
   assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(10,12,14,\.72\) 0,rgba\(10,12,14,\.38\) 42%,transparent 78%\)/);
   assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
+  assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*#9ebc75[^}]*rotate\(22deg\)/);
+  assert.match(stylesSource, /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*#f09a3e/);
   assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
 });
 
@@ -462,7 +481,7 @@ test('ordinary post bodies suppress a duplicated title line or title-prefixed op
 
 test('post details share a clean action pair without Telegram reaction labels or counts', () => {
   assert.doesNotMatch(postSource, /\{post\.reactions\}|>텔레그램 반응<\/span>/);
-  assert.match(postSource, /<nav className="post-reader-actions" aria-label="글 이동">/);
+  assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">/);
   assert.match(postSource, /className="post-reader-action"/);
   assert.match(postSource, /className="post-reader-action post-reader-action--telegram"/);
   assert.match(postSource, /텔레그램 채널에서 보기/);

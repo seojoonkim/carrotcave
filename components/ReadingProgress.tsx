@@ -13,6 +13,8 @@ export default function ReadingProgress() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const percent = max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0;
       if (fillRef.current) fillRef.current.style.transform = `scaleX(${percent / 100})`;
+      trackRef.current?.style.setProperty('--cc-reading-percent', `${percent}%`);
+      if (trackRef.current) trackRef.current.dataset.active = percent > 0 ? 'true' : 'false';
       trackRef.current?.setAttribute('aria-valuenow', String(Math.round(percent)));
     };
     const requestUpdate = () => {
@@ -39,6 +41,7 @@ export default function ReadingProgress() {
       aria-valuenow={0}
     >
       <span ref={fillRef} className="cc-reading-progress__fill" aria-hidden="true" />
+      <span className="cc-reading-progress__carrot" aria-hidden="true" />
     </span>
   );
 }

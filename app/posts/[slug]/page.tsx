@@ -267,35 +267,7 @@ export default async function PostPage({ params }: PostPageProps) {
           {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title))}
         </div>
 
-        {/* videos rendered at top — see above */}
-
-        {/* Tags */}
-        <div
-          className="flex flex-wrap"
-          style={{
-            gap: '0.5rem',
-            marginTop: '2rem',
-            paddingTop: '2rem',
-            borderTop: '1px solid rgba(212,146,42,0.12)',
-          }}
-        >
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full text-xs"
-              style={{
-                background: 'rgba(255,209,102,0.08)',
-                border: '1px solid rgba(255,209,102,0.28)',
-                color: '#E8D8B8',
-                padding: '0.25rem 0.625rem',
-              }}
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-
-        <nav className="post-reader-actions" aria-label="글 이동">
+        <nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">
           <Link
             href={`/?section=${encodeURIComponent(axisOf(post))}`}
             className="post-reader-action"
@@ -315,7 +287,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </nav>
 
         {constellation && (
-          <div className="cave-constellation-shell">
+          <div className="cave-constellation-shell cave-constellation-shell--after-actions">
             <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
             <h2 className="cave-constellation-heading">다음으로 읽기 좋은 글 3개</h2>
             <p className="cave-constellation-intro">지금 읽은 글과 생각이 이어지는 순서대로 골랐습니다.</p>
