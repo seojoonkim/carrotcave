@@ -736,6 +736,11 @@ test('voice thumbnails use the same editorial card system as other archive entri
   assert.doesNotMatch(stylesSource, /wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
 });
 
+test('wide desktop archive rows contain at most three cards', () => {
+  assert.match(stylesSource, /@media\(min-width:960px\)\{\.wall-card\[data-rhythm\],\.editorial-wall--voices \.wall-card--voice\{grid-column:span 4\}/);
+  assert.match(stylesSource, /@media\(min-width:960px\).*?\.cave-depth-divider\{grid-column:1\/-1\}/s);
+});
+
 test('desktop chrome and archive surfaces share one 1100px content container', () => {
   assert.match(stylesSource, /--site-container:1100px/);
   for (const selector of ['cc-header__inner', 'axis-rail__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
