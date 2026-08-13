@@ -73,7 +73,7 @@ export default function CaveConstellation({
                 </div>
 
                 <Link className="cave-constellation__navigate" href={hrefForSlug(target.slug)}>
-                  이 글 읽기 <span aria-hidden="true">→</span>
+                  이 글 읽기 <span className="cave-constellation__carrot" aria-hidden="true" />
                 </Link>
               </article>
             </li>

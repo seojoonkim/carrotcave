@@ -31,6 +31,9 @@ const yangReaderSource = readFileSync(new URL('../public/voices/yang-zhilin/inde
 const yangReaderStyles = readFileSync(new URL('../public/voices/yang-zhilin/styles.css', import.meta.url), 'utf8');
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
+const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/index.html', import.meta.url), 'utf8');
+const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
+const caveConstellationSource = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /\.cc-header\{[^}]*background:#282b32\}/);
@@ -377,6 +380,31 @@ test('Liang Wenfeng header exposes the same structured live chapter contract as 
   assert.doesNotMatch(liangReaderStyles, /#readingStatus\s*\{[^}]*display\s*:\s*none/);
 });
 
+test('voice readers share the ordinary site footer information structure', () => {
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
+    assert.equal((source.match(/<footer class="voice-shared-footer">/g) ?? []).length, 1);
+    assert.equal((source.match(/class="voice-shared-footer__scene"/g) ?? []).length, 1);
+    assert.match(source, /src="\/cave-journey-final\.svg"/);
+    assert.match(source, />CARROT CAVE<\/strong>/);
+    assert.match(source, />Simon Kim<\/span>/);
+    assert.match(source, /href="mailto:simon@hashed\.com"/);
+    assert.match(source, /href="https:\/\/x\.com\/simonkim_nft"/);
+    assert.match(source, /href="https:\/\/t\.me\/carrotcave"/);
+    assert.doesNotMatch(source, /READER EDITION|MINIMALLY EDITED TRANSCRIPT|A project by Simon Kim at Hashed|처음으로 ↑/);
+  }
+  assert.match(voiceReaderSystemStyles, /\.voice-shared-footer \{[\s\S]*?grid-template-columns: 160px auto 1fr auto;/);
+  assert.match(voiceReaderSystemStyles, /@media \(max-width: 599px\) \{[\s\S]*?\.voice-shared-footer \{ grid-template-columns: 1fr;/);
+});
+
+test('archive and recommendation cards share description typography and restrained image treatment', () => {
+  assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
+  assert.match(stylesSource, /\.cave-constellation__thumbnail p\{[^}]*font:500 13px\/1\.5 var\(--sans\)!important;letter-spacing:-\.015em!important/);
+  assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(10,12,14,\.72\) 0,rgba\(10,12,14,\.38\) 42%,transparent 78%\)/);
+  assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\)/);
+  assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
+  assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
+});
+
 test('ordinary posts use the same graphite reading surface and typography as voice readers', () => {
   assert.match(postSource, /className="post-reader-page min-h-screen"/);
   assert.match(postSource, /<article className="post-reader-article">/);
@@ -549,7 +577,7 @@ test('the archive wall has no reserved holes and every card keeps consistent met
   assert.match(homeSource, /summary=\{post\.summary\}/);
   assert.doesNotMatch(homeSource, /showSummary|wall-card--actual-/);
   assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
-  assert.match(stylesSource, /\.wall-card__abstract\{[^}]*var\(--serif\)/);
+  assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\)/);
   assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
   assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px;line-height:1\.18\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);

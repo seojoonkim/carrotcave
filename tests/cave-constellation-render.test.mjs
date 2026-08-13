@@ -122,7 +122,7 @@ test('responsive CSS preserves a readable thumbnail overlay and accessible links
   assert.match(css, /\.cave-constellation__navigate\{grid-column:3;grid-row:1;[^}]*min-height:48px/s);
   assert.doesNotMatch(css, /grid-row:1\/3/);
   assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:260px/s);
-  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\) 0 155px/s);
+  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.72\) 0[^}]*rgba\(10,12,14,\.38\) 42%[^}]*transparent 78%/s);
   assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
   assert.match(css, /\.cave-constellation__thumbnail-copy\{[^}]*position:absolute/s);
   assert.match(css, /\.cave-constellation__thumbnail h3\{[^}]*-webkit-line-clamp:2/s);

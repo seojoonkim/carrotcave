@@ -32,8 +32,8 @@ test('archive cards follow one ordered asymmetric rhythm at desktop, tablet, and
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
   assert.match(css, /\.wall-card h2\{font-weight:600;line-height:1\.26;letter-spacing:-\.015em\}/);
-  assert.match(css, /\.wall-card__abstract\{[^}]*font:400 15px\/1\.65 var\(--serif\)/);
-  assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:20px[^\n]*\.wall-card__abstract\{font-size:14px\}/);
+  assert.match(css, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
+  assert.match(css, /@media\(max-width:520px\)[^\n]*\.wall-card__date\{font-size:11px\}[^\n]*\.wall-card h2,\.wall-card--actual-index h2\{font-size:20px[^\n]*\.wall-card__abstract\{font-size:13px\}/);
   const finalArchiveBlock = css.slice(css.indexOf('/* Asymmetric archive:'));
   assert.doesNotMatch(finalArchiveBlock, /grid-auto-flow:row dense/);
 });
