@@ -60,11 +60,11 @@ test('search navigation preserves raw text and rejects stale server resets', asy
   assert.equal(isPendingQuerySettled('abcd', 'abcd'), true);
 });
 
-test('root archive owns a shareable GET search and filtered sections do not', async () => {
+test('archive search UI stays hidden while direct GET search URLs remain functional', async () => {
   const [home, component] = await Promise.all([read('app/page.tsx'), read('components/ArchiveSearch.tsx')]);
   assert.match(home, /searchParams: Promise<\{ section\?: string; q\?: string \}>/);
   assert.match(home, /const displayQuery = active \|\| typeof q !== 'string' \? '' : q\.trim\(\)/);
-  assert.match(home, /!active && <ArchiveSearch/);
+  assert.doesNotMatch(home, /import ArchiveSearch|<ArchiveSearch/);
   assert.match(home, /Number\.POSITIVE_INFINITY/);
   assert.match(home, /id="archive-search-status"[^>]*role="status"/);
   assert.match(home, /검색 결과/);

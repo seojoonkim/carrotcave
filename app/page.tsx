@@ -5,7 +5,6 @@ import SiteFooter from '@/components/SiteFooter';
 import CaveJourneyScene from '@/components/CaveJourneyScene';
 import { posts, Post } from '@/data/posts';
 import { interviews, InterviewArchive } from '@/data/interviews';
-import ArchiveSearch from '@/components/ArchiveSearch';
 import { normalizeQuery, searchArchive } from '@/lib/search/archive-search';
 import { archiveImageUrl } from '@/lib/social-metadata';
 
@@ -75,7 +74,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       <AxisRail active={active} />
 
       <section className="wall-shell" aria-labelledby="wall-heading">
-        {!active && <ArchiveSearch query={query} displayQuery={displayQuery} statusId="archive-search-status" />}
         <header className="wall-heading">
           <div>
             <p>{active ? `SECTION / ${active}` : 'THE CAVE WALL / NEWEST FIRST'}</p>

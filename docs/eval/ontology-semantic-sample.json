@@ -898,7 +898,7 @@
       "targetTitle": "우리는 같은 미래를 업데이트받지 않을 것이다",
       "sourceCategory": "소설",
       "targetCategory": "탐험",
-      "sourceEvidence": "그다음 북문 대피는 내가 맡을게.",
+      "sourceEvidence": "사람이 제목만 고친 기사도 흔했다.",
       "targetEvidence": "지금의 SaaS도 사라지기보다는 화면 뒤로 물러나, 에이전트가 기대는 공식 기록과 책임의 기반이 될 가능성이 크다.",
       "signals": [
         "content",
@@ -906,20 +906,20 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 40,
+        "lexicalOverlap": 39,
         "overlapTokens": [
           "가능성",
           "검증",
-          "결과는",
+          "결과",
           "계획을",
+          "고친",
           "공식",
           "그가",
           "기록과",
           "기록이",
           "끝까지",
-          "나를",
-          "남겼다",
-          "다음"
+          "나눠",
+          "남겼다"
         ],
         "titleOverlap": [],
         "sharedTags": [],

@@ -3,10 +3,10 @@
     "from": "post-192",
     "to": "tail-stopped",
     "type": "DEEPENS",
-    "strength": 0.6108,
+    "strength": 0.6028,
     "sourceClaimId": "post-192-c1",
-    "sourceEvidence": "커서는 오래전부터 나를 기다린 것처럼 그 옆에서 깜박였다.",
-    "targetEvidence": "마치 무언가를 기다리는 것처럼.",
+    "sourceEvidence": "발표 끝날 때까지 기다려.",
+    "targetEvidence": "마치 오래전부터 기다려 온 얼굴 같았다.",
     "label": "「꼬리가 멈춘 뒤에」은 「맥락 세탁소」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
@@ -15,20 +15,20 @@
       "relatedSlugs"
     ],
     "signalDetails": {
-      "lexicalOverlap": 50,
+      "lexicalOverlap": 45,
       "overlapTokens": [
         "12",
         "가는",
         "같았다",
         "개의",
-        "거기",
-        "것처럼",
         "기다려",
         "기다리",
         "끝까지",
-        "나를",
         "나왔다",
-        "다만"
+        "다만",
+        "답은",
+        "답이",
+        "대신"
       ],
       "titleOverlap": [
         "뒤에"
@@ -36,14 +36,14 @@
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category+relatedSlugs;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=50;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category+relatedSlugs;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=45;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "post-192",
     "to": "thank-you-mirror",
     "type": "DEEPENS",
-    "strength": 0.515,
+    "strength": 0.5103,
     "sourceClaimId": "post-192-c1",
     "sourceEvidence": "정보공개 청구는 개인정보를 이유로 기각됐다.",
     "targetEvidence": "수천 개의 입이 달린 거대한 검은 위장.",
@@ -56,7 +56,7 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 41,
+      "lexicalOverlap": 38,
       "overlapTokens": [
         "12",
         "20",
@@ -68,8 +68,8 @@
         "공개",
         "그가",
         "끝났다",
-        "나를",
-        "냈다"
+        "냈다",
+        "뉴스"
       ],
       "titleOverlap": [],
       "sharedTags": [],
@@ -77,16 +77,16 @@
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=41;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=38;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "post-192",
     "to": "post-191",
     "type": "REFRAMES",
-    "strength": 0.481,
+    "strength": 0.4796,
     "sourceClaimId": "post-192-c1",
-    "sourceEvidence": "그다음 북문 대피는 내가 맡을게.",
+    "sourceEvidence": "사람이 제목만 고친 기사도 흔했다.",
     "targetEvidence": "지금의 SaaS도 사라지기보다는 화면 뒤로 물러나, 에이전트가 기대는 공식 기록과 책임의 기반이 될 가능성이 크다.",
     "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「맥락 세탁소」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
@@ -96,20 +96,20 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 40,
+      "lexicalOverlap": 39,
       "overlapTokens": [
         "가능성",
         "검증",
-        "결과는",
+        "결과",
         "계획을",
+        "고친",
         "공식",
         "그가",
         "기록과",
         "기록이",
         "끝까지",
-        "나를",
-        "남겼다",
-        "다음"
+        "나눠",
+        "남겼다"
       ],
       "titleOverlap": [],
       "sharedTags": [],
@@ -117,17 +117,17 @@
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=40;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=39;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "post-191",
     "to": "post-192",
     "type": "REFRAMES",
-    "strength": 0.481,
+    "strength": 0.4796,
     "sourceClaimId": "post-191-c1",
     "sourceEvidence": "지금의 SaaS도 사라지기보다는 화면 뒤로 물러나, 에이전트가 기대는 공식 기록과 책임의 기반이 될 가능성이 크다.",
-    "targetEvidence": "그다음 북문 대피는 내가 맡을게.",
+    "targetEvidence": "사람이 제목만 고친 기사도 흔했다.",
     "label": "「맥락 세탁소」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
@@ -136,20 +136,20 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 40,
+      "lexicalOverlap": 39,
       "overlapTokens": [
         "가능성",
         "검증",
-        "결과는",
+        "결과",
         "계획을",
+        "고친",
         "공식",
         "그가",
         "기록과",
         "기록이",
         "끝까지",
-        "나를",
-        "남겼다",
-        "다음"
+        "나눠",
+        "남겼다"
       ],
       "titleOverlap": [],
       "sharedTags": [],
@@ -157,7 +157,7 @@
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=40;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
