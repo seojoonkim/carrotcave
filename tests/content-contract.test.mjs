@@ -38,11 +38,18 @@ const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-sy
 const caveConstellationSource = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta.url), { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && existsSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url)))
-  .map((entry) => ({
-    slug: entry.name,
-    html: readFileSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url), 'utf8'),
-    styles: readFileSync(new URL(`../public/voices/${entry.name}/styles.css`, import.meta.url), 'utf8'),
-  }));
+  .map((entry) => {
+    const html = readFileSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url), 'utf8');
+    const scriptUrl = new URL(`../public/voices/${entry.name}/script.js`, import.meta.url);
+    return {
+      slug: entry.name,
+      html,
+      styles: readFileSync(new URL(`../public/voices/${entry.name}/styles.css`, import.meta.url), 'utf8'),
+      runtime: html.includes('src="script.js"') && existsSync(scriptUrl)
+        ? readFileSync(scriptUrl, 'utf8')
+        : html,
+    };
+  });
 
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /\.cc-header\{[^}]*background:#282b32\}/);
@@ -95,7 +102,27 @@ test('all voice readers use unpadded chapter labels and a period title separator
     assert.match(html, /class="reading-status-separator" aria-hidden="true">\. <\/span>/, `${slug} must use a period after the live chapter label`);
   }
   assert.match(voiceRuntimeSource, /const normalized = chapter \? String\(Number\(chapter\)\) : '';/);
+  assert.match(voiceRuntimeSource, /if \(normalized\) set\(`Ch \$\{normalized\}`, title\);/);
+  assert.match(voiceRuntimeSource, /else set\('', 'OVERVIEW'\);/);
   assert.doesNotMatch(voiceRuntimeSource, /padStart\(2, '0'\)/);
+});
+
+test('every voice reader uses one compact header toggle for its reading index', () => {
+  for (const { slug, html, runtime } of voiceReaderFixtures) {
+    assert.match(html, /id="menuButton" type="button" aria-label="목차 열기" aria-expanded="false" aria-controls="tocDrawer"/, `${slug} must expose one persistent disclosure control`);
+    assert.match(html, /id="tocDrawer" role="region" aria-hidden="true" aria-labelledby="tocTitle"/, `${slug} TOC must be a controlled navigation region`);
+    assert.doesNotMatch(html, /id="closeDrawer"|aria-modal="true"|role="dialog"/, `${slug} must not render a second close control or modal contract`);
+    assert.match(runtime, /(?:drawer\.)?classList\.contains\(['"]open['"]\)\s*\?\s*closeDrawer\(\)\s*:\s*openDrawer\(\)/, `${slug} menu button must toggle the TOC both ways`);
+    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*['"]목차 닫기['"]\)/, `${slug} must announce the close state`);
+    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*['"]목차 열기['"]\)/, `${slug} must restore the open label`);
+  }
+  for (const required of [
+    '.menu-button[aria-expanded="true"] i { transform: rotate(45deg); }',
+    '.menu-button[aria-expanded="true"] i::before { transform: rotate(90deg); }',
+    '.toc-drawer h2 { font: 700 17px/1.25 var(--font-sans); }',
+    'min-height: 42px;',
+    'font: 600 12px/1.35 var(--font-sans);',
+  ]) assert.ok(voiceReaderSystemStyles.includes(required), `compact shared TOC CSS missing: ${required}`);
 });
 
 test('ordinary reading progress carries a contained carrot at its live endpoint', () => {
@@ -415,7 +442,7 @@ test('Yang Zhilin transcript starts at the real introduction after removing the 
 test('Liang Wenfeng header exposes the same structured live chapter contract as the other voice readers', () => {
   assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
   assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: Overview<\/span>/);
-  assert.match(liangReaderSource, /id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
+  assert.match(liangReaderSource, /id="readingStatus" class="is-overview" aria-label="OVERVIEW"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
   assert.match(liangReaderSource, /<script src="\.\.\/reader-runtime\.js"><\/script>/);
   assert.match(liangReaderSource, /readerStatus=CarrotReader\.createStatusController\(\{readerTitle:'량원펑 회의 기록'\}\)/);
   assert.match(liangReaderSource, /readerStatus\.setChapter\(n,chapterTitle\)/);

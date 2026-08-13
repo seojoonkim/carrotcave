@@ -9,13 +9,10 @@
   const drawer = document.getElementById('tocDrawer');
   const backdrop = document.getElementById('drawerBackdrop');
   const menuButton = document.getElementById('menuButton');
-  const closeButton = document.getElementById('closeDrawer');
   const progressBar = document.getElementById('progressBar');
   const railPercent = document.getElementById('railPercent');
   const backToTop = document.getElementById('backToTop');
-  const chapterNumber = document.getElementById('currentChapterNumber');
-  const mobileTitle = document.querySelector('.header-mobile-title');
-  const readingStatus = document.getElementById('readingStatus');
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: '량원펑 인터뷰' });
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const chapters = [...document.querySelectorAll('.transcript-chapter')];
   let lastFocus = null;
@@ -105,6 +102,7 @@
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', '목차 열기');
     backdrop.hidden = true;
     body.classList.remove('drawer-open');
     if (restoreFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
@@ -114,12 +112,11 @@
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', '목차 닫기');
     backdrop.hidden = false;
     body.classList.add('drawer-open');
-    closeButton.focus({ preventScroll: true });
   };
-  menuButton.addEventListener('click', openDrawer);
-  closeButton.addEventListener('click', () => closeDrawer());
+  menuButton.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
   backdrop.addEventListener('click', () => closeDrawer());
   addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
   drawer.addEventListener('click', event => { if (event.target.closest('a')) closeDrawer({ restoreFocus: false }); });
@@ -134,10 +131,8 @@
     let current = null;
     chapters.forEach(chapter => { if (chapter.getBoundingClientRect().top <= probe) current = chapter; });
     const number = current?.dataset.chapter || null;
-    chapterNumber.textContent = number ? `CH ${String(number).padStart(2, '0')}` : '00';
-    const name = document.querySelector('.header-site-title').textContent;
-    mobileTitle.textContent = number ? `${name}: Chapter ${String(number).padStart(2, '0')}` : `${name}: Overview`;
-    readingStatus.textContent = current?.querySelector('.chapter-heading h2')?.textContent || 'OVERVIEW';
+    const chapterTitle = current?.querySelector('.chapter-heading h2')?.textContent || '';
+    readerStatus.setChapter(number, chapterTitle);
     document.querySelectorAll('[data-nav-chapter]').forEach(link => {
       const active = link.dataset.navChapter === number;
       link.classList.toggle('active', active);

@@ -202,6 +202,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     '.header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }',
   ]) assert.ok(shared.includes(required), `shared voice header CSS missing: ${required}`);
 
+  assert.match(shared, /#readingStatus\.is-overview \.reading-status-number,\s*#readingStatus\.is-overview \.reading-status-separator \{ display: none; \}/);
   assert.match(shared, /#readingStatus\.is-subchapter \{\s*flex-direction: row;\s*align-items: baseline;\s*line-height: 1\.2;\s*white-space: nowrap;\s*\}/);
   assert.match(shared, /#readingStatus\.is-subchapter \.reading-status-separator \{ display: inline; \}/);
   assert.match(shared, /#readingStatus\.is-subchapter \.reading-status-title \{\s*flex: 1 1 0;\s*width: auto;\s*min-width: 0;\s*white-space: nowrap;\s*\}/);
@@ -215,7 +216,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
   for (const [path, meta] of expectedMeta) {
     const html = await read(path);
     assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the full interview title`);
-    assert.match(html, /<span id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose an accessible structured overview number and title`);
+    assert.match(html, /<span id="readingStatus" class="is-overview" aria-label="OVERVIEW"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose Overview without a numeric prefix`);
   }
 
   const liaoScript = await read('public/voices/liao-heng/script.js');
@@ -271,7 +272,7 @@ test('voice readers share one status runtime instead of duplicating header mutat
     ['public/voices/sam-altman-startup-school-2026/script.js', samScript],
   ]) {
     assert.match(source, /CarrotReader\.createStatusController\(/, `${path} must consume the shared status controller`);
-    assert.doesNotMatch(source, /\.setAttribute\(['"]aria-label['"]/, `${path} must not duplicate accessible status mutation`);
+    assert.doesNotMatch(source, /(?:readingStatus|status)\.setAttribute\(['"]aria-label['"]/, `${path} must not duplicate accessible reading-status mutation`);
   }
 });
 
@@ -303,9 +304,9 @@ test('shared status runtime executes overview, chapter, subchapter, aria, and gr
   const controller = context.window.CarrotReader.createStatusController({ readerTitle: '테스트 리더' });
 
   controller.setChapter(null, '');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['00', '테스트 리더: Overview', '00', 'OVERVIEW', '00 OVERVIEW']);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['00', '테스트 리더: Overview', '', 'OVERVIEW', 'OVERVIEW', true]);
   controller.setChapter(2, '두 번째 장');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['CH 2', '테스트 리더: Chapter 2', 'CHAPTER 2', '두 번째 장', 'CHAPTER 2 두 번째 장']);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['CH 2', '테스트 리더: Chapter 2', 'Ch 2', '두 번째 장', 'Ch 2 두 번째 장', false]);
   controller.set('2-3', '세부 항목', true);
   assert.deepEqual([numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-subchapter')], ['2-3', '세부 항목', '2-3 세부 항목', true]);
 

@@ -9,14 +9,12 @@
   const drawer = document.getElementById('tocDrawer');
   const backdrop = document.getElementById('drawerBackdrop');
   const menuButton = document.getElementById('menuButton');
-  const closeButton = document.getElementById('closeDrawer');
   const progressBar = document.getElementById('progressBar');
   const railPercent = document.getElementById('railPercent');
   const backToTop = document.getElementById('backToTop');
   const readerStatus = CarrotReader.createStatusController({ readerTitle: '랴오헝 인터뷰' });
   const railTopics = document.getElementById('railTopics');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const modalSiblings = [...body.children].filter(element => element !== drawer && element !== backdrop);
   let lastFocus = null;
   let rendered = false;
   let scrollTicking = false;
@@ -87,6 +85,7 @@
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     menuButton.setAttribute('aria-expanded', 'true');
+    menuButton.setAttribute('aria-label', '목차 닫기');
     const revealActiveTopic = () => {
       const activeLink = drawer.querySelector(`[data-nav-topic="${CSS.escape(String(drawerTopic))}"]`);
       if (!activeLink || !drawer.classList.contains('open')) return;
@@ -98,22 +97,15 @@
     window.setTimeout(revealActiveTopic, reduceMotion ? 0 : 280);
     backdrop.hidden = false;
     body.classList.add('drawer-open');
-    modalSiblings.forEach(element => element.setAttribute('inert', ''));
-    const focusCloseButton = () => {
-      if (drawer.classList.contains('open')) closeButton.focus({ preventScroll: true });
-    };
-    focusCloseButton();
-    requestAnimationFrame(focusCloseButton);
-    window.setTimeout(focusCloseButton, 320);
   };
 
   const closeDrawer = ({ restoreFocus = true } = {}) => {
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', '목차 열기');
     backdrop.hidden = true;
     body.classList.remove('drawer-open');
-    modalSiblings.forEach(element => element.removeAttribute('inert'));
     if (restoreFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
   };
 
@@ -123,8 +115,7 @@
     if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) cancelInitialHashSettlement();
   });
 
-  menuButton.addEventListener('click', openDrawer);
-  closeButton.addEventListener('click', () => closeDrawer());
+  menuButton.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
   backdrop.addEventListener('click', () => closeDrawer());
 
   window.addEventListener('resize', () => {
@@ -134,24 +125,6 @@
   });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
-    if (event.key !== 'Tab' || !drawer.classList.contains('open')) return;
-    const focusable = [...drawer.querySelectorAll('a, button, summary')].filter(element => {
-      const style = window.getComputedStyle(element);
-      const closedDetails = element.closest('details:not([open])');
-      return !element.hidden
-        && !element.hasAttribute('disabled')
-        && (!closedDetails || element === closedDetails.querySelector('summary'))
-        && style.display !== 'none'
-        && style.visibility !== 'hidden'
-        && element.getClientRects().length > 0;
-    });
-    if (!focusable.length) return;
-    const currentIndex = focusable.indexOf(document.activeElement);
-    const nextIndex = event.shiftKey
-      ? (currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1)
-      : (currentIndex < 0 || currentIndex === focusable.length - 1 ? 0 : currentIndex + 1);
-    event.preventDefault();
-    focusable[nextIndex].focus({ preventScroll: true });
   });
 
   const headerOffset = () => {

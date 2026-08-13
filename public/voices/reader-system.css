@@ -102,6 +102,8 @@ img { border: 0; outline: 0; box-shadow: none; }
   white-space: nowrap;
 }
 .reading-status-number { flex: 0 0 auto; }
+#readingStatus.is-overview .reading-status-number,
+#readingStatus.is-overview .reading-status-separator { display: none; }
 .reading-status-title {
   min-width: 0;
   overflow: hidden;
@@ -166,6 +168,28 @@ img { border: 0; outline: 0; box-shadow: none; }
   letter-spacing: -.03em;
 }
 .chapter-time { font-size: var(--reader-time-size); }
+
+/* One persistent header control opens and closes the compact reading index. */
+.menu-button i,
+.menu-button i::before { transition: transform .18s ease; transform-origin: center; }
+.menu-button[aria-expanded="true"] i { transform: rotate(45deg); }
+.menu-button[aria-expanded="true"] i::before { transform: rotate(90deg); }
+.toc-drawer { padding: 14px 20px calc(18px + env(safe-area-inset-bottom)); }
+.toc-drawer header {
+  top: -14px;
+  margin: -14px -20px 8px;
+  padding: 12px 20px 10px;
+}
+.toc-drawer h2 { font: 700 17px/1.25 var(--font-sans); }
+.toc-drawer nav > a {
+  min-height: 42px;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px;
+  padding: 5px 4px;
+  font: 600 12px/1.35 var(--font-sans);
+}
+.toc-drawer nav > a > span:first-child,
+.toc-drawer nav > a span:first-child { font-size: 10px; }
 
 @media (min-width: 1000px) {
   .hero #page-title { max-width: 520px; }
