@@ -22,8 +22,8 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
-  assert.match(css, /\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
+  assert.match(css, /\.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);

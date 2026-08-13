@@ -14,7 +14,7 @@ export default function VoicesPage() {
         <header className="wall-heading">
           <div>
             <p>SECTION / 목소리</p>
-            <h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.</h1>
+            <h1 id="wall-heading" className="wall-heading__menu-title">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.</h1>
           </div>
           <span>{interviews.length} ENTRIES</span>
         </header>

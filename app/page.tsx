@@ -67,7 +67,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
         <header className="wall-heading">
           <div>
             <p>{active ? `SECTION / ${active}` : 'THE CAVE WALL / NEWEST FIRST'}</p>
-            <h1 id="wall-heading" className={active ? undefined : 'wall-heading__home-title'}>
+            <h1 id="wall-heading" className="wall-heading__menu-title">
               {active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}
             </h1>
           </div>

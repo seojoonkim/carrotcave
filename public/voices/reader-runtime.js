@@ -21,7 +21,7 @@
     };
 
     const setChapter = (chapter, title) => {
-      const normalized = chapter ? String(chapter).padStart(2, '0') : '';
+      const normalized = chapter ? String(Number(chapter)) : '';
       if (chapterNumber) chapterNumber.textContent = normalized ? `CH ${normalized}` : '00';
       if (mobileTitle) mobileTitle.textContent = normalized
         ? `${readerTitle}: Chapter ${normalized}`

@@ -16,7 +16,7 @@
   --reader-body-size: 17px;
   --reader-body-leading: 1.86;
   --reader-section-size: 36px;
-  --reader-section-size-mobile: 30px;
+  --reader-section-size-mobile: 28px;
   --reader-subsection-size: 27px;
   --reader-subsection-size-mobile: 24px;
   --reader-time-size: 12px;
@@ -96,7 +96,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   overflow: hidden;
   align-items: baseline;
   color: var(--bright-white);
-  font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);
+  font: 400 var(--reader-header-title-size)/1.2 var(--font-sans);
   letter-spacing: -.02em;
   text-overflow: ellipsis;
   white-space: nowrap;

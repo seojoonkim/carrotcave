@@ -11,6 +11,7 @@ const layout = read('app/layout.tsx');
 const css = read('app/globals.css');
 const readerCss = read('public/voices/reader-system.css');
 const home = read('app/page.tsx');
+const voices = read('app/voices/page.tsx');
 const packageJson = JSON.parse(read('package.json'));
 const voiceSlugs = [
   'liao-heng',
@@ -26,11 +27,13 @@ test('Next app self-hosts option five through next/font variables', () => {
   assert.match(layout, /Noto_Serif_KR\(\{[\s\S]*?variable: '--font-serif'/);
 });
 
-test('home wall heading uses body sans while content titles retain serif', () => {
+test('all archive menu headings use one body sans layout while content titles retain serif', () => {
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*font:[^;}]*var\(--serif\)/);
-  assert.match(home, /className=\{active \? undefined : 'wall-heading__home-title'\}/);
-  assert.match(css, /#wall-heading\.wall-heading__home-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
-  assert.match(css, /\.voices-wall \.wall-heading h1\{[^}]*font-family:var\(--serif\)/);
+  assert.match(home, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
+  assert.match(voices, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
+  assert.match(css, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
+  assert.match(css, /\.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
+  assert.doesNotMatch(css, /\.voices-wall \.wall-heading h1\{/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\)/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\)/);
   assert.match(css, /\.post-reader-page\{[^}]*--post-reader-serif:var\(--serif\)/);

@@ -34,7 +34,7 @@ const voiceTitleContracts = [
 
 const voiceSectionContracts = [
   '--reader-section-size: 36px',
-  '--reader-section-size-mobile: 30px',
+  '--reader-section-size-mobile: 28px',
 ];
 
 test('ordinary posts and voice readers share one explicit reading scale', async () => {
@@ -77,7 +77,7 @@ test('shared reader system applies the common scale to matching semantic levels'
     '.reader-shell { padding-inline: var(--reader-mobile-gutter); }',
     '.content-column { max-width: var(--reader-measure); }',
     '.header-status #readingStatus {',
-    'font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);',
+    'font: 400 var(--reader-header-title-size)/1.2 var(--font-sans);',
     '.transcript-paragraph, .long-record-body .utterance',
     'font-size: var(--reader-body-size)',
     '.section-heading h2, .chapter-heading h2',
@@ -197,7 +197,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     'font: 500 9px/1 var(--font-mono);',
     'letter-spacing: .1em;',
     '.header-status #readingStatus {',
-    'font: 600 var(--reader-header-title-size)/1.2 var(--font-sans);',
+    'font: 400 var(--reader-header-title-size)/1.2 var(--font-sans);',
     '@media (max-width: 599px)',
     '.header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }',
   ]) assert.ok(shared.includes(required), `shared voice header CSS missing: ${required}`);
@@ -215,7 +215,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
   for (const [path, meta] of expectedMeta) {
     const html = await read(path);
     assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the full interview title`);
-    assert.match(html, /<span id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true"> · <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose an accessible structured overview number and title`);
+    assert.match(html, /<span id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose an accessible structured overview number and title`);
   }
 
   const liaoScript = await read('public/voices/liao-heng/script.js');
@@ -305,7 +305,7 @@ test('shared status runtime executes overview, chapter, subchapter, aria, and gr
   controller.setChapter(null, '');
   assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['00', '테스트 리더: Overview', '00', 'OVERVIEW', '00 OVERVIEW']);
   controller.setChapter(2, '두 번째 장');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['CH 02', '테스트 리더: Chapter 02', 'CHAPTER 02', '두 번째 장', 'CHAPTER 02 두 번째 장']);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label']], ['CH 2', '테스트 리더: Chapter 2', 'CHAPTER 2', '두 번째 장', 'CHAPTER 2 두 번째 장']);
   controller.set('2-3', '세부 항목', true);
   assert.deepEqual([numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-subchapter')], ['2-3', '세부 항목', '2-3 세부 항목', true]);
 

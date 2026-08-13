@@ -19,6 +19,7 @@ const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.me
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
 const readingProgressSource = readFileSync(new URL('../components/ReadingProgress.tsx', import.meta.url), 'utf8');
 const voiceProgressSource = readFileSync(new URL('../public/voices/reading-progress.js', import.meta.url), 'utf8');
+const voiceRuntimeSource = readFileSync(new URL('../public/voices/reader-runtime.js', import.meta.url), 'utf8');
 const liaoReaderSource = readFileSync(new URL('../public/voices/liao-heng/index.html', import.meta.url), 'utf8');
 const liaoReaderStyles = readFileSync(new URL('../public/voices/liao-heng/styles.css', import.meta.url), 'utf8');
 const liaoReaderScript = readFileSync(new URL('../public/voices/liao-heng/script.js', import.meta.url), 'utf8');
@@ -85,6 +86,16 @@ test('all reading surfaces use one refined whole-document progress line at the h
   assert.match(voiceReaderSystemStyles, /\.progress > \.progress-carrot\s*\{[^}]*left: clamp\(9px, var\(--reading-progress-percent\), calc\(100% - 9px\)\);[^}]*opacity: 0;/);
   assert.match(voiceReaderSystemStyles, /\.progress\[data-active="true"\] \.progress-carrot \{ opacity: 1; \}/);
   assert.doesNotMatch(voiceProgressSource, /chapterTrack|chapter-track|transcript-chapter/);
+});
+
+test('all voice readers use unpadded chapter labels and a period title separator', () => {
+  for (const { slug, html } of voiceReaderFixtures) {
+    assert.doesNotMatch(html, /class="chapter-index">CHAPTER 0[1-9]</, `${slug} chapter labels must not be zero-padded`);
+    assert.match(html, /class="chapter-index">CHAPTER 1</, `${slug} must expose an unpadded first chapter`);
+    assert.match(html, /class="reading-status-separator" aria-hidden="true">\. <\/span>/, `${slug} must use a period after the live chapter label`);
+  }
+  assert.match(voiceRuntimeSource, /const normalized = chapter \? String\(Number\(chapter\)\) : '';/);
+  assert.doesNotMatch(voiceRuntimeSource, /padStart\(2, '0'\)/);
 });
 
 test('ordinary reading progress carries a contained carrot at its live endpoint', () => {
@@ -404,7 +415,7 @@ test('Yang Zhilin transcript starts at the real introduction after removing the 
 test('Liang Wenfeng header exposes the same structured live chapter contract as the other voice readers', () => {
   assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
   assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: Overview<\/span>/);
-  assert.match(liangReaderSource, /id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true"> · <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
+  assert.match(liangReaderSource, /id="readingStatus" aria-label="00 OVERVIEW"><span class="reading-status-number">00<\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
   assert.match(liangReaderSource, /<script src="\.\.\/reader-runtime\.js"><\/script>/);
   assert.match(liangReaderSource, /readerStatus=CarrotReader\.createStatusController\(\{readerTitle:'량원펑 회의 기록'\}\)/);
   assert.match(liangReaderSource, /readerStatus\.setChapter\(n,chapterTitle\)/);
@@ -696,13 +707,13 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1/);
   assert.doesNotMatch(voiceListSource, /voices-route|voices-hero|voices-list|voice-card/);
   assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
-  assert.match(voiceListSource, /<h1 id="wall-heading">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
+  assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
   assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
-  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-family:var\(--serif\);font-size:clamp\(21px,3vw,36px\);/);
+  assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
+  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
-  assert.match(stylesSource, /\.voices-wall \.wall-heading h1\{font-size:19px\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
@@ -789,7 +800,7 @@ test('voice thumbnails use the same editorial card system as other archive entri
 test('posts and voices share one standard card format at every breakpoint', () => {
   assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-shell:not\(\.voices-wall\) \.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
@@ -816,7 +827,10 @@ test('home keeps all six axes visible on mobile', () => {
 });
 
 test('home uses one ordered editorial system for the complete post and voice archive', () => {
-  assert.match(homeSource, /<h1 id="wall-heading" className=\{active \? undefined : 'wall-heading__home-title'\}>/);
+  assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
+  assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
+  assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
+  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
   assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
