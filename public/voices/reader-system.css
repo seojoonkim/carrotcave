@@ -38,6 +38,46 @@
 .reader-nav .brand:hover .reader-back-chevron { color: var(--bright-white); transform: translateX(-1px); }
 img { border: 0; outline: 0; box-shadow: none; }
 .hero-portrait::before { content: none; }
+.progress {
+  --reading-progress-percent: 0%;
+  overflow: visible;
+}
+.progress > #progressBar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--ansi-cyan);
+  will-change: transform;
+}
+.progress > .progress-carrot {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  left: clamp(9px, var(--reading-progress-percent), calc(100% - 9px));
+  top: 50%;
+  width: 12px;
+  height: 18px;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(38deg, transparent 0 42%, #9ebc75 43% 64%, transparent 65%) 0 0/8px 7px no-repeat, linear-gradient(-38deg, transparent 0 42%, #9ebc75 43% 64%, transparent 65%) 4px 0/8px 7px no-repeat;
+  transform: translate(-50%, -50%) rotate(20deg);
+  transform-origin: center;
+  transition: opacity .12s ease;
+}
+.progress > .progress-carrot::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 8px;
+  height: 14px;
+  clip-path: polygon(12% 0, 100% 8%, 62% 100%, 39% 86%, 0 8%);
+  background: linear-gradient(105deg, #f09a3e 0 52%, #d86f27 53% 100%);
+}
+.progress[data-active="true"] .progress-carrot { opacity: 1; }
+
 .header-status > i, #currentChapterNumber, .header-mobile-title { display: none; }
 .header-status { align-items: center; }
 .header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }
@@ -69,14 +109,16 @@ img { border: 0; outline: 0; box-shadow: none; }
   text-overflow: ellipsis;
 }
 #readingStatus.is-subchapter {
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1.05;
-  white-space: normal;
+  flex-direction: row;
+  align-items: baseline;
+  line-height: 1.2;
+  white-space: nowrap;
 }
-#readingStatus.is-subchapter .reading-status-separator { display: none; }
+#readingStatus.is-subchapter .reading-status-separator { display: inline; }
 #readingStatus.is-subchapter .reading-status-title {
-  width: 100%;
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
   white-space: nowrap;
 }
 .hero {

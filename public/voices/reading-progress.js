@@ -5,6 +5,11 @@
   const progressFill = document.getElementById('progressBar');
   if (!progress || !progressFill) return;
 
+  const carrot = document.createElement('span');
+  carrot.className = 'progress-carrot';
+  carrot.setAttribute('aria-hidden', 'true');
+  progress.append(carrot);
+
   let frame = 0;
   const update = () => {
     frame = 0;
@@ -12,6 +17,8 @@
     const percent = max > 0 ? Math.min(100, Math.max(0, scrollY / max * 100)) : 0;
     progressFill.style.width = '100%';
     progressFill.style.transform = `scaleX(${percent / 100})`;
+    progress.style.setProperty('--reading-progress-percent', `${percent}%`);
+    progress.dataset.active = percent > 0 ? 'true' : 'false';
     progress.setAttribute('aria-valuenow', String(Math.round(percent)));
   };
 

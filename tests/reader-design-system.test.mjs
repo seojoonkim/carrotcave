@@ -194,14 +194,9 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
     '.header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }',
   ]) assert.ok(shared.includes(required), `shared voice header CSS missing: ${required}`);
 
-  for (const required of [
-    '#readingStatus.is-subchapter {',
-    'flex-direction: column;',
-    'align-items: flex-start;',
-    '#readingStatus.is-subchapter .reading-status-separator { display: none; }',
-    '.reading-status-title {',
-    'text-align: left;',
-  ]) assert.ok(shared.includes(required), `shared voice subchapter header CSS missing: ${required}`);
+  assert.match(shared, /#readingStatus\.is-subchapter \{\s*flex-direction: row;\s*align-items: baseline;\s*line-height: 1\.2;\s*white-space: nowrap;\s*\}/);
+  assert.match(shared, /#readingStatus\.is-subchapter \.reading-status-separator \{ display: inline; \}/);
+  assert.match(shared, /#readingStatus\.is-subchapter \.reading-status-title \{\s*flex: 1 1 0;\s*width: auto;\s*min-width: 0;\s*white-space: nowrap;\s*\}/);
 
   const expectedMeta = new Map([
     ['public/voices/liao-heng/index.html', '목소리 · 랴오헝 인터뷰 · 반도체 연구자의 필드 노트'],

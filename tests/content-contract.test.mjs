@@ -32,6 +32,7 @@ const yangReaderStyles = readFileSync(new URL('../public/voices/yang-zhilin/styl
 const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/script.js', import.meta.url), 'utf8');
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
 const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/index.html', import.meta.url), 'utf8');
+const samReaderStyles = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/styles.css', import.meta.url), 'utf8');
 const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
 const caveConstellationSource = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 
@@ -54,20 +55,26 @@ test('all reading surfaces use one refined whole-document progress line at the h
   assert.match(stylesSource, /\.cc-reading-progress__fill\{[^}]*background:#61adab;/);
   assert.doesNotMatch(stylesSource, /\.cc-reading-progress__fill\{[^}]*box-shadow/);
 
-  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource]) {
+  for (const source of [liaoReaderSource, liangReaderSource, yangReaderSource, samReaderSource]) {
     assert.equal((source.match(/id="readingProgress"/g) ?? []).length, 1);
     assert.equal((source.match(/id="progressBar"/g) ?? []).length, 1);
     assert.match(source, /<header class="site-header">[\s\S]*?id="readingProgress"[\s\S]*?<\/header>/);
     assert.match(source, /\.\.\/reading-progress\.js/);
+    assert.match(source, /\.\.\/reader-system\.css/);
     assert.doesNotMatch(source, /chapterTrack|chapter-track|chapterProgressFill/);
   }
-  for (const source of [liaoReaderStyles, liangReaderStyles, yangReaderStyles]) {
+  for (const source of [liaoReaderStyles, liangReaderStyles, yangReaderStyles, samReaderStyles]) {
     assert.match(source, /\.progress \{[^}]*bottom:-1px;[^}]*height:1px;[^}]*background:rgba\(255,255,255,\.09\)/);
     assert.match(source, /\.progress span \{[^}]*background:var\(--ansi-cyan\);/);
     assert.doesNotMatch(source, /\.progress span \{[^}]*box-shadow/);
     assert.doesNotMatch(source, /chapter-track|chapter-progress-fill/);
   }
   assert.match(voiceProgressSource, /progress\.setAttribute\('aria-valuenow'/);
+  assert.match(voiceProgressSource, /className = 'progress-carrot'/);
+  assert.match(voiceProgressSource, /style\.setProperty\('--reading-progress-percent'/);
+  assert.match(voiceProgressSource, /dataset\.active = percent > 0 \? 'true' : 'false'/);
+  assert.match(voiceReaderSystemStyles, /\.progress > \.progress-carrot\s*\{[^}]*left: clamp\(9px, var\(--reading-progress-percent\), calc\(100% - 9px\)\);[^}]*opacity: 0;/);
+  assert.match(voiceReaderSystemStyles, /\.progress\[data-active="true"\] \.progress-carrot \{ opacity: 1; \}/);
   assert.doesNotMatch(voiceProgressSource, /chapterTrack|chapter-track|transcript-chapter/);
 });
 
