@@ -747,7 +747,7 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.012em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
