@@ -188,7 +188,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
             {/* Main summary */}
             <p
               style={{
-                fontFamily: "'Noto Serif KR', Georgia, serif",
+                fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
                 fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                 lineHeight: '1.7',
                 color: '#F0E4CC',
@@ -210,7 +210,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
               style={{
                 color: '#8A7A5E',
                 marginBottom: '1rem',
-                fontFamily: "var(--font-serif), 'Noto Serif KR', serif",
+                fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
               }}
             >
               {post.title}

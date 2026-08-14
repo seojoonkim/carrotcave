@@ -9,10 +9,6 @@ const families = [
     packageName: '@fontsource-variable/noto-sans-kr',
     directory: 'noto-sans-kr',
   },
-  {
-    packageName: '@fontsource-variable/noto-serif-kr',
-    directory: 'noto-serif-kr',
-  },
 ];
 
 await rm(output, { recursive: true, force: true });
@@ -29,8 +25,7 @@ for (const family of families) {
   styles.push(
     css
       .replaceAll('./files/', `./${family.directory}/files/`)
-      .replaceAll('Noto Sans KR Variable', 'Noto Sans KR')
-      .replaceAll('Noto Serif KR Variable', 'Noto Serif KR'),
+      .replaceAll('Noto Sans KR Variable', 'Noto Sans KR'),
   );
 }
 

@@ -1,14 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import { JetBrains_Mono, Noto_Sans_KR, Noto_Serif_KR } from 'next/font/google';
+import { JetBrains_Mono, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import { siteDescription, siteName, siteOgImage } from '@/lib/social-metadata';
-
-const notoSerif = Noto_Serif_KR({
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-  preload: false,
-});
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
@@ -64,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${notoSerif.variable} ${jetbrains.variable} ${notoSans.variable}`}>
+    <html lang="ko" className={`${jetbrains.variable} ${notoSans.variable}`}>
       <body
         className="antialiased min-h-screen"
         style={{ backgroundColor: '#24262c', color: '#f2f1ec' }}

@@ -8,8 +8,9 @@
 
 :root {
   --reader-accent: #61adab;
+  --carrot-orange: #f28c28;
+  --carrot-leaf: #79a85b;
   --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
-  --font-serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
   --font-mono: "JetBrains Mono", monospace;
   --reader-measure: 680px;
   --reader-mobile-gutter: 20px;
@@ -61,7 +62,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   height: 18px;
   opacity: 0;
   pointer-events: none;
-  background: linear-gradient(38deg, transparent 0 42%, #9ebc75 43% 64%, transparent 65%) 0 0/8px 7px no-repeat, linear-gradient(-38deg, transparent 0 42%, #9ebc75 43% 64%, transparent 65%) 4px 0/8px 7px no-repeat;
+  background: linear-gradient(38deg, transparent 0 42%, var(--carrot-leaf) 43% 64%, transparent 65%) 0 0/8px 7px no-repeat, linear-gradient(-38deg, transparent 0 42%, var(--carrot-leaf) 43% 64%, transparent 65%) 4px 0/8px 7px no-repeat;
   transform: translate(-50%, -50%) rotate(20deg);
   transform-origin: center;
   transition: opacity .12s ease;
@@ -74,7 +75,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   width: 8px;
   height: 14px;
   clip-path: polygon(12% 0, 100% 8%, 62% 100%, 39% 86%, 0 8%);
-  background: linear-gradient(105deg, #f09a3e 0 52%, #d86f27 53% 100%);
+  background: linear-gradient(105deg, #ffad4d 0 38%, var(--carrot-orange) 39% 72%, #d9651f 73% 100%);
 }
 .progress[data-active="true"] .progress-carrot { opacity: 1; }
 
@@ -139,7 +140,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   color: var(--bright-white);
   font-size: var(--reader-title-size);
   line-height: 1.22;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 750;
   letter-spacing: -.045em;
   overflow-wrap: anywhere;
@@ -149,7 +150,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   font: inherit;
 }
 .section-heading h2, .chapter-heading h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--reader-section-size);
   line-height: 1.22;
   font-weight: 750;
@@ -161,7 +162,7 @@ img { border: 0; outline: 0; box-shadow: none; }
   letter-spacing: 0;
 }
 .highlight-marker h3, .topic-heading h3, .transcript-subheading {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: var(--reader-subsection-size);
   line-height: 1.35;
   font-weight: 750;

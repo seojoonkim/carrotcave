@@ -22,10 +22,10 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
   assert.match(css, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\}/);
-  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(23px,3vw,38px\) var\(--serif\)/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(23px,3vw,38px\) var\(--sans\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
-  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
+  assert.match(css, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
@@ -146,7 +146,7 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   const [layout, css, socialMetadata] = await Promise.all([read('app/layout.tsx'), read('app/globals.css'), read('lib/social-metadata.ts')]);
   const og = await readFile(new URL('public/carrotcave-og-20260814.png', root));
   assert.match(layout, /Noto_Sans_KR/);
-  assert.match(layout, /Noto_Serif_KR/);
+  assert.doesNotMatch(layout, /Noto_Serif_KR|--font-serif/);
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net|Pretendard Variable/);
   assert.match(css, /:root\{--graphite:#24262c/);

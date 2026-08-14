@@ -489,8 +489,9 @@ test('archive and recommendation cards share description typography and restrain
   assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(10,12,14,\.72\) 0,rgba\(10,12,14,\.38\) 42%,transparent 78%\)/);
   assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
-  assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*#9ebc75[^}]*rotate\(22deg\)/);
-  assert.match(stylesSource, /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*#f09a3e/);
+  assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f28c28;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
+  assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--carrot-leaf\)[^}]*rotate\(22deg\)/);
+  assert.match(stylesSource, /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*var\(--carrot-orange\)/);
   assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
 });
 
@@ -746,7 +747,7 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--serif\);letter-spacing:-\.02em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:600 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.02em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);

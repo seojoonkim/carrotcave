@@ -32,9 +32,9 @@ export default function CarrotCaveMark({ className = '' }: CarrotCaveMarkProps) 
       </g>
       <g className="carrot-cave-mark__carrot-position" transform="translate(61 54) rotate(-14)">
         <g className="carrot-cave-mark__carrot">
-        <path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#ed7d31" />
-        <path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#71b77a" strokeWidth="3" strokeLinecap="round" />
-        <path d="m2 7 6 2m-5 5 4 1" stroke="#f6b45f" strokeWidth="1.2" strokeLinecap="round" />
+        <path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f28c28" />
+        <path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" strokeWidth="3.5" strokeLinecap="round" />
+        <path d="m2 7 6 2m-5 5 4 1" stroke="#ffad4d" strokeWidth="1.2" strokeLinecap="round" />
         </g>
       </g>
     </svg>

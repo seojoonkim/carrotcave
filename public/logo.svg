@@ -52,7 +52,7 @@
 
   <!-- "Rabbit Crypt" main text -->
   <text x="45" y="21"
-    font-family="Georgia, 'Times New Roman', 'Noto Serif KR', serif"
+    font-family="'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif"
     font-size="13.5"
     font-weight="700"
     fill="#F0E4CC"
@@ -60,7 +60,7 @@
 
   <!-- "토끼굴" subtext -->
   <text x="45" y="32"
-    font-family="'Noto Serif KR', Georgia, serif"
+    font-family="'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif"
     font-size="8.5"
     font-weight="400"
     fill="#8B949E"
