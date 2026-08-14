@@ -538,18 +538,20 @@ test('ordinary post bodies suppress a duplicated title line or title-prefixed op
   assert.deepEqual(remainingTitlePrefixes.map((post) => post.slug), []);
 });
 
-test('post details share a clean action pair without Telegram reaction labels or counts', () => {
+test('post details share three clean actions without Telegram reaction labels or counts', () => {
   assert.doesNotMatch(postSource, /\{post\.reactions\}|>텔레그램 반응<\/span>/);
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">/);
   assert.match(postSource, /className="post-reader-action"/);
+  assert.match(postSource, /<PostShareButton title=\{post\.title\} path=\{`\/posts\/\$\{post\.slug\}`\} \/>/);
   assert.match(postSource, /className="post-reader-action post-reader-action--telegram"/);
   assert.match(postSource, /텔레그램 채널에서 보기/);
   assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
-  assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
   assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#167f78/);
   assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#167f78;color:#fff/);
+  assert.match(stylesSource, /\.post-reader-action--share\{background:#285b59;color:#e5f4f2\}/);
   assert.match(stylesSource, /\.post-reader-action--telegram\{background:#3a3d45;color:#c8cbd0\}/);
-  assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(2,minmax\(0,1fr\)\);gap:8px\}/);
+  assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:7px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
   assert.match(syncSource, /content: stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(content \|\| fullText\), title\)/);

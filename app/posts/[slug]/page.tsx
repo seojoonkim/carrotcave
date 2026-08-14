@@ -9,6 +9,7 @@ import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import PostShareButton from '@/components/PostShareButton';
 import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import ontologyIndex from '@/data/ontology/index.json';
 import { buildTopRecommendations } from '@/lib/ontology/build-subgraph';
@@ -307,6 +308,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <span aria-hidden="true">←</span>
             {axisDestinationLabel(post)}
           </Link>
+          <PostShareButton title={post.title} path={`/posts/${post.slug}`} />
           <a
             href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
             target="_blank"
