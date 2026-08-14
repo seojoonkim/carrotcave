@@ -158,11 +158,11 @@ test('ordinary post endings omit tag chips and separate content, actions, and re
   assert.doesNotMatch(postSource, /post\.tags\.map|#\{tag\}/);
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
   assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
-  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:88px\}/);
-  assert.match(stylesSource, /\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
-  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:76px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
+  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:100px\}/);
+  assert.match(stylesSource, /\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
+  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:88px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
@@ -510,8 +510,8 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
   assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
-  assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.86/);
-  assert.match(stylesSource, /\.post-content p\{margin:0 0 22px;color:#e7e7e8/);
+  assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.9/);
+  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#e7e7e8/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
   assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);

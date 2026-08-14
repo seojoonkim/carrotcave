@@ -20,7 +20,7 @@ const contracts = [
   '--reader-measure: 680px',
   '--reader-mobile-gutter: 20px',
   '--reader-body-size: 17px',
-  '--reader-body-leading: 1.86',
+  '--reader-body-leading: 1.9',
   '--reader-subsection-size: 27px',
   '--reader-subsection-size-mobile: 24px',
   '--reader-time-size: 12px',
@@ -84,6 +84,10 @@ test('shared reader system applies the common scale to matching semantic levels'
     'font: 400 var(--reader-header-title-size)/1.2 var(--font-sans);',
     '.transcript-paragraph, .long-record-body .utterance',
     'font-size: var(--reader-body-size)',
+    '.transcript-paragraph { padding-bottom: 28px; }',
+    '.long-record-body .utterance { margin-bottom: 28px; }',
+    '.transcript-paragraph { padding-bottom: 24px; }',
+    '.long-record-body .utterance { margin-bottom: 24px; }',
     '.section-heading h2, .chapter-heading h2',
     '.highlight-marker h3, .topic-heading h3, .transcript-subheading',
     '.chapter-time { font-size: var(--reader-time-size); }',
@@ -94,7 +98,16 @@ test('shared reader system applies the common scale to matching semantic levels'
     '.reader-nav .brand-mark__rabbit { animation: none; }',
     '.reader-back-chevron { display: grid; width: 10px; height: 34px;',
     'font: 400 28px/1 var(--font-sans);',
+    'margin: -14px -20px 3px;',
+    'padding: 22px 20px 5px;',
+    '.toc-drawer nav > a {',
+    'border-bottom: 0;',
   ]) assert.ok(shared.includes(required), `shared voice CSS missing: ${required}`);
+  assert.match(
+    shared,
+    /\.toc-drawer nav > a \{[^}]*border-bottom: 0;/,
+    'mobile reading index entries must not render divider lines',
+  );
   assert.doesNotMatch(shared, /\.header-site-title\s*\{[^}]*reader-header-title-size/, 'voice meta eyebrow must not consume the title scale');
   assert.doesNotMatch(
     shared.replace(/@media[^{}]*\{(?:[^{}]|\{[^{}]*\})*\}/g, ''),
@@ -107,7 +120,8 @@ test('ordinary post selectors consume the same reading tokens', async () => {
   const css = await read('app/globals.css');
   for (const required of [
     '.post-reader-page{--reader-accent:#61adab',
-    '--reader-body-leading:1.86',
+    '--reader-body-leading:1.9',
+    '.post-content p{margin:0 0 24px',
     '--reader-header-title-size:16px;--reader-header-title-size-mobile:15px;--reader-title-size:clamp(32px,calc(5.5vw - 2px),44px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
     '.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400 var(--reader-body-size)/var(--reader-body-leading)',
