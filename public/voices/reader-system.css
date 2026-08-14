@@ -195,6 +195,10 @@ img { border: 0; outline: 0; box-shadow: none; }
 
 @media (min-width: 1000px) {
   .hero #page-title { max-width: 520px; }
+  /* Voice reading content follows ordinary posts: 680px, centered in the viewport. */
+  /* Desktop rail is fixed and does not belong to the reading measure; center the 680px column in the full viewport like ordinary posts. */
+  .reader-shell { padding-inline: 0; }
+  .content-column { margin-inline: auto; }
 }
 
 @media (min-width: 901px) {
