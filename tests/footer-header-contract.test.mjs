@@ -19,8 +19,13 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.match(asset, /@keyframes scene-loop/);
   assert.match(asset, /class="carrot-position" transform="translate\(780 94\) rotate\(-8\)"[\s\S]*?<g class="carrot">/);
   assert.doesNotMatch(asset, /class="carrot" transform=/);
-  assert.match(asset, /47%,84% \{ transform: translate\(120px,0\); \}/);
-  assert.match(asset, /84%,92% \{ opacity: 0; \}/);
+  assert.match(asset, /animation: scene-loop 20s ease-in-out infinite/);
+  assert.match(asset, /46%,95% \{ transform: translate\(120px,0\); \}/);
+  assert.match(asset, /95%,98% \{ opacity: 0; \}/);
+  assert.match(asset, /@keyframes rabbit-blink/);
+  assert.match(asset, /@keyframes nose-sniff/);
+  assert.match(asset, /@keyframes tail-wiggle/);
+  assert.match(asset, /62% \{ transform: translateY\(-5px\) rotate\(2deg\); \}/);
   assert.doesNotMatch(asset, /translate\([^,]+,-34px\)/);
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
@@ -28,6 +33,9 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.doesNotMatch(staticAsset, /cave|동굴/i);
   assert.match(component, /src="\/footer-rabbit-carrot\.svg"/);
   assert.match(globalCss, /footer-rabbit-carrot\{content:url\('\/footer-rabbit-carrot-static\.svg'\)\}/);
+  assert.match(globalCss, /\.cc-footer\{[^}]*border-top:0;[^}]*linear-gradient\(180deg,var\(--graphite\) 0%,#202228 55%,#181a1f 100%\)/);
+  assert.match(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 0;[\s\S]*?linear-gradient\(180deg, #24262c 0%, #202228 55%, #181a1f 100%\)/);
+  assert.doesNotMatch(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 1px/);
   assert.match(voiceCss, /\.voice-footer-rabbit-carrot/);
   assert.match(voiceCss, /voice-footer-rabbit-carrot \{ content: url\('\/footer-rabbit-carrot-static\.svg'\); \}/);
   assert.doesNotMatch(voiceCss, /voice-footer-cave-scene/);

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="title description">
-  <title id="title">앞에 놓인 당근을 향해 부드럽게 뛰는 토끼</title>
-  <desc id="description">토끼가 앞쪽 당근을 향해 두 번 가볍게 뛰고 멈추면 당근 잎이 살짝 반응하는 부드러운 애니메이션</desc>
+  <title id="title">당근과 장난치는 토끼의 20초 이야기</title>
+  <desc id="description">토끼가 귀를 쫑긋하고 눈을 깜빡인 뒤 두 번 가볍게 뛰어 당근에 다가가 킁킁대면 당근이 통통 튀는 20초 애니메이션</desc>
   <g class="scene">
     <g class="rabbit-position">
       <g class="rabbit-body">
@@ -15,13 +15,15 @@
           <ellipse cx="520" cy="80" rx="10" ry="37" fill="#f4f0e9" transform="rotate(8 520 80)"/>
           <ellipse cx="520" cy="80" rx="4" ry="29" fill="#d9a09d" opacity=".62" transform="rotate(8 520 80)"/>
         </g>
-        <circle cx="521" cy="115" r="4" fill="#20242d"/>
-        <circle cx="522" cy="114" r="1.2" fill="#fff" opacity=".9"/>
-        <ellipse cx="537" cy="124" rx="3.5" ry="2.7" fill="#b87c78"/>
+        <g class="rabbit-eye">
+          <circle cx="521" cy="115" r="4" fill="#20242d"/>
+          <circle cx="522" cy="114" r="1.2" fill="#fff" opacity=".9"/>
+        </g>
+        <ellipse class="rabbit-nose" cx="537" cy="124" rx="3.5" ry="2.7" fill="#b87c78"/>
         <path d="M538 127c4 2 5 5 1 7M539 128c-3 3-3 6 0 8" fill="none" stroke="#9c7772" stroke-width="1.6" stroke-linecap="round"/>
         <circle cx="526" cy="128" r="6" fill="#e9a29b" opacity=".2"/>
         <path d="m539 125 19-3m-19 7 20 3m-22 1 17 8" fill="none" stroke="#d9d4cc" stroke-width="1.2" stroke-linecap="round"/>
-        <circle cx="437" cy="137" r="16" fill="#f4f0e9"/>
+        <circle class="rabbit-tail" cx="437" cy="137" r="16" fill="#f4f0e9"/>
         <ellipse cx="458" cy="166" rx="24" ry="9" fill="#e5e1da"/>
         <ellipse cx="509" cy="167" rx="25" ry="9" fill="#e5e1da"/>
       </g>

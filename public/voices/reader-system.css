@@ -207,8 +207,8 @@ img { border: 0; outline: 0; box-shadow: none; }
 .voice-shared-footer {
   box-sizing: border-box;
   padding: 38px max(20px, calc((100vw - 1100px) / 2));
-  border-top: 1px solid rgba(174, 177, 183, .2);
-  background: #24262c;
+  border-top: 0;
+  background: linear-gradient(180deg, #24262c 0%, #202228 55%, #181a1f 100%);
   color: #a9adb4;
   font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .04em;

@@ -158,11 +158,11 @@ test('ordinary post endings omit tag chips and separate content, actions, and re
   assert.doesNotMatch(postSource, /post\.tags\.map|#\{tag\}/);
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
   assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
-  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:64px\}/);
+  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:88px\}/);
   assert.match(stylesSource, /\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
-  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:88px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:56px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:88px\}/);
+  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:76px\}/);
+  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:112px\}/);
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
