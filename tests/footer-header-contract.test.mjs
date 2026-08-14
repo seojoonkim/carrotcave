@@ -16,6 +16,11 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
       .map((slug) => read(`public/voices/${slug}/index.html`)),
   ]);
   assert.match(asset, /@keyframes rabbit-hop/);
+  assert.match(asset, /@keyframes scene-loop/);
+  assert.match(asset, /transform="translate\(780 94\) rotate\(-8\)"/);
+  assert.match(asset, /47%,84% \{ transform: translate\(120px,0\); \}/);
+  assert.match(asset, /84%,92% \{ opacity: 0; \}/);
+  assert.doesNotMatch(asset, /translate\([^,]+,-34px\)/);
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
   assert.doesNotMatch(staticAsset, /animation:/);
