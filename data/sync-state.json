@@ -1,6 +1,6 @@
 {
   "lastSyncedAt": "2026-08-13T17:00:55.452Z",
-  "lastMsgId": 192,
+  "lastMsgId": 194,
   "processedMsgIds": [
     1,
     3,
@@ -129,7 +129,9 @@
     189,
     190,
     191,
-    192
+    192,
+    193,
+    194
   ],
   "skippedMsgIds": [
     64,
@@ -137,7 +139,8 @@
     89,
     90,
     148,
-    176
+    176,
+    194
   ],
   "slugToMsgId": {
     "vibe-founders-era": 5,
@@ -250,7 +253,8 @@
     "post-189": 189,
     "post-190": 190,
     "post-191": 191,
-    "post-192": 192
+    "post-192": 192,
+    "post-193": 193
   },
   "contentHashes": {
     "4": "159:251392095",

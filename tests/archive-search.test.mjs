@@ -31,7 +31,8 @@ test('archive search matches Korean substrings and requires every query term', a
 
 test('archive search indexes every post and all four voice bodies', async () => {
   const { getArchiveSearchDocuments, searchArchive } = await loadSearch();
-  assert.equal(getArchiveSearchDocuments().length, 114);
+  assert.equal(getArchiveSearchDocuments().length, 115);
+  assert.ok(searchArchive('가방은 경력이 된다').some(entry => entry.slug === 'post-193'));
   assert.ok(searchArchive('녹음만 비어 있었다').some(entry => entry.slug === 'post-192'));
   assert.ok(searchArchive('마이크 버튼을 누른다').some(entry => entry.slug === 'post-191'));
   assert.ok(searchArchive('어센드 개발사').some(entry => entry.slug === 'liao-heng'));

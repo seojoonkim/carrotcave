@@ -1,5 +1,105 @@
 [
   {
+    "from": "post-193",
+    "to": "post-191",
+    "type": "DEEPENS",
+    "strength": 0.91,
+    "sourceClaimId": "post-193-c1",
+    "sourceEvidence": "승인 규칙과 검증법, 복구 절차를 모델 밖에 두면 모델은 작업장이 되고 가방은 경력이 된다.",
+    "targetEvidence": "모델 위에 내 업무 기억과 개발 습관, 도구와 그 사용법, 완료 기준, 실패했을 때의 복구법이 미리 연결돼 있다는 점이다.",
+    "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「에이전트 노마드 시대의 짐가방」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "relatedSlugs",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 9,
+      "overlapTokens": [
+        "에이전트",
+        "기억",
+        "모델",
+        "플랫폼",
+        "실패",
+        "규칙"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=9;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-193",
+    "to": "post-187",
+    "type": "APPLIES",
+    "strength": 0.84,
+    "sourceClaimId": "post-193-c1",
+    "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
+    "targetEvidence": "그래서 Claude로 먼저 계획을 만들고, Codex에 구현을 맡기기 시작했다.",
+    "label": "「제일 똑똑한 모델 하나로는 부족했다」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "relatedSlugs",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 7,
+      "overlapTokens": [
+        "Claude",
+        "Codex",
+        "모델",
+        "작업",
+        "실패"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=7;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-193",
+    "to": "post-189",
+    "type": "APPLIES",
+    "strength": 0.78,
+    "sourceClaimId": "post-193-c1",
+    "sourceEvidence": "내가 선호하는 방식, 대화 맥락, 기억, 승인 규칙, 실패 뒤에 고친 절차가 함께 있다.",
+    "targetEvidence": "많이 기억하고 잘 찾으면 된다고 생각했는데, 기억이 늘어날수록 더 어려운 질문들이 나타났다.",
+    "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "relatedSlugs",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 5,
+      "overlapTokens": [
+        "기억",
+        "에이전트",
+        "실패",
+        "규칙"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=5;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "post-192",
     "to": "tail-stopped",
     "type": "DEEPENS",

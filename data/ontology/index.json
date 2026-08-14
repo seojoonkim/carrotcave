@@ -749,6 +749,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "post-193": {
+      "slug": "post-193",
+      "title": "에이전트 노마드 시대의 짐가방",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "prompt-guard-dev": {
       "slug": "prompt-guard-dev",
       "title": "Prompt Guard 개발기",
@@ -11477,6 +11486,106 @@
       "status": "approved"
     },
     {
+      "from": "post-193",
+      "to": "post-191",
+      "type": "DEEPENS",
+      "strength": 0.91,
+      "sourceClaimId": "post-193-c1",
+      "sourceEvidence": "승인 규칙과 검증법, 복구 절차를 모델 밖에 두면 모델은 작업장이 되고 가방은 경력이 된다.",
+      "targetEvidence": "모델 위에 내 업무 기억과 개발 습관, 도구와 그 사용법, 완료 기준, 실패했을 때의 복구법이 미리 연결돼 있다는 점이다.",
+      "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「에이전트 노마드 시대의 짐가방」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 9,
+        "overlapTokens": [
+          "에이전트",
+          "기억",
+          "모델",
+          "플랫폼",
+          "실패",
+          "규칙"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=9;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-193",
+      "to": "post-187",
+      "type": "APPLIES",
+      "strength": 0.84,
+      "sourceClaimId": "post-193-c1",
+      "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
+      "targetEvidence": "그래서 Claude로 먼저 계획을 만들고, Codex에 구현을 맡기기 시작했다.",
+      "label": "「제일 똑똑한 모델 하나로는 부족했다」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 7,
+        "overlapTokens": [
+          "Claude",
+          "Codex",
+          "모델",
+          "작업",
+          "실패"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=7;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-193",
+      "to": "post-189",
+      "type": "APPLIES",
+      "strength": 0.78,
+      "sourceClaimId": "post-193-c1",
+      "sourceEvidence": "내가 선호하는 방식, 대화 맥락, 기억, 승인 규칙, 실패 뒤에 고친 절차가 함께 있다.",
+      "targetEvidence": "많이 기억하고 잘 찾으면 된다고 생각했는데, 기억이 늘어날수록 더 어려운 질문들이 나타났다.",
+      "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 5,
+        "overlapTokens": [
+          "기억",
+          "에이전트",
+          "실패",
+          "규칙"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=5;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "prompt-guard-dev",
       "to": "agentlinter-dev-log",
       "type": "APPLIES",
@@ -14897,6 +15006,11 @@
     }
   ],
   "outgoing": {
+    "post-193": [
+      249,
+      250,
+      251
+    ],
     "post-192": [
       246,
       247,
@@ -15058,9 +15172,9 @@
       80
     ],
     "value-of-understanding-in-ai-future": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "internship-job-posting-giveaway": [
       90,
@@ -15073,9 +15187,9 @@
       134
     ],
     "prompting-ability-as-new-power": [
-      252,
-      253,
-      254
+      255,
+      256,
+      257
     ],
     "kpop-fandom-digital-parliament": [
       105,
@@ -15083,9 +15197,9 @@
       107
     ],
     "university-value-shift-education": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "agent-era-branding-future": [
       6,
@@ -15133,9 +15247,9 @@
       143
     ],
     "things-that-dont-disappear": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "how-to-create-memory-in-ai-agents": [
       84,
@@ -15143,14 +15257,14 @@
       86
     ],
     "self-deconstruction-ai-replication": [
-      276,
-      277,
-      278
+      279,
+      280,
+      281
     ],
     "vibe-coding-ai-decentralization": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "internship-opportunity-at-hashed": [
       93,
@@ -15173,9 +15287,9 @@
       35
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "disappearing-titles-computers-history": [
       66,
@@ -15183,9 +15297,9 @@
       68
     ],
     "uae-emergency-news-telegram-channel": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       39,
@@ -15208,9 +15322,9 @@
       119
     ],
     "unknowns-in-modern-creation": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -15223,14 +15337,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "sano-godaddy-war": [
-      267,
-      268,
-      269
+      270,
+      271,
+      272
     ],
     "14-5-hours": [
       0,
@@ -15238,14 +15352,14 @@
       2
     ],
     "transistor-moment": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ],
     "web4-write-access": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "naming-the-universe": [
       129,
@@ -15253,9 +15367,9 @@
       131
     ],
     "sano-intro": [
-      270,
-      271,
-      272
+      273,
+      274,
+      275
     ],
     "counting-assistant": [
       57,
@@ -15263,19 +15377,19 @@
       59
     ],
     "uncertainty-machine": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "vibe-founders-era": [
+      318,
+      319,
+      320
+    ],
+    "vibe-coding-tip": [
       315,
       316,
       317
-    ],
-    "vibe-coding-tip": [
-      312,
-      313,
-      314
     ],
     "moltbot-anthropic-moat": [
       123,
@@ -15293,9 +15407,9 @@
       38
     ],
     "thought-speed": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "gemini-snow-bunny": [
       81,
@@ -15313,9 +15427,9 @@
       32
     ],
     "prompt-guard-dev": [
-      249,
-      250,
-      251
+      252,
+      253,
+      254
     ],
     "its-fun": [
       99,
@@ -15328,9 +15442,9 @@
       53
     ],
     "thank-you-mirror": [
-      282,
-      283,
-      284
+      285,
+      286,
+      287
     ],
     "ai-hires-ai": [
       27,
@@ -15343,9 +15457,9 @@
       110
     ],
     "rabbit-crypt-name": [
-      258,
-      259,
-      260
+      261,
+      262,
+      263
     ],
     "agentlinter-dev-log": [
       18,
@@ -15368,14 +15482,14 @@
       128
     ],
     "tail-stopped": [
-      279,
-      280,
-      281
+      282,
+      283,
+      284
     ],
     "zeon-moltbook-vol1": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "ip-tvw": [
       96,
@@ -15383,9 +15497,9 @@
       98
     ],
     "quantum-pirates": [
-      255,
-      256,
-      257
+      258,
+      259,
+      260
     ],
     "china-ai-frontier": [
       45,
@@ -15393,9 +15507,9 @@
       47
     ],
     "seedance-30": [
-      273,
-      274,
-      275
+      276,
+      277,
+      278
     ],
     "agent-siblings": [
       12,
@@ -15418,9 +15532,9 @@
       122
     ],
     "robot-goku-5000": [
-      264,
-      265,
-      266
+      267,
+      268,
+      269
     ],
     "hvl-fellows": [
       87,
@@ -15443,9 +15557,9 @@
       62
     ],
     "rabbit-hole-intro": [
-      261,
-      262,
-      263
+      264,
+      265,
+      266
     ]
   },
   "overrides": {
