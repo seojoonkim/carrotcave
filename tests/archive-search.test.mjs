@@ -65,7 +65,7 @@ test('archive search UI stays hidden while direct GET search URLs remain functio
   assert.match(home, /searchParams: Promise<\{ section\?: string; q\?: string \}>/);
   assert.match(home, /const displayQuery = active \|\| typeof q !== 'string' \? '' : q\.trim\(\)/);
   assert.doesNotMatch(home, /import ArchiveSearch|<ArchiveSearch/);
-  assert.match(home, /Number\.POSITIVE_INFINITY/);
+  assert.doesNotMatch(home, /journeyStep|cave-depth-divider|Number\.POSITIVE_INFINITY/);
   assert.match(home, /id="archive-search-status"[^>]*role="status"/);
   assert.match(home, /검색 결과/);
   assert.match(home, /검색 결과가 없습니다/);

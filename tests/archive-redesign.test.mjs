@@ -121,32 +121,25 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
   assert.match(css, /\.wall-card\{box-shadow:none\}\.wall-card--generated:after\{display:none\}/);
   assert.doesNotMatch(css, /\.cc-header\{[^}]*backdrop-filter/);
   assert.doesNotMatch(css, /\.axis-rail\{[^}]*backdrop-filter/);
-  assert.doesNotMatch(css, /\.wall-card:hover\{[^}]*transform/);
+  assert.match(css, /@media\(hover:hover\) and \(pointer:fine\)\{[^\n]*\.editorial-wall \.wall-card:hover\{[^}]*transform:translateY\(-4px\)/);
   assert.doesNotMatch(css, /\.wall-card__image\{[^}]*filter:/);
-  assert.doesNotMatch(css, /\.wall-card__image\{[^}]*transition:/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{[^\n]*\.editorial-wall \.wall-card[^\n]*transform:none!important/);
 });
 
-test('rabbit journey illustrations stay in seams and finish with only the rabbit and carrot', async () => {
-  const [home, scene, footer, rail, card, css] = await Promise.all([
+test('archive stays uninterrupted while the footer keeps only the rabbit and carrot scene', async () => {
+  const [home, footer, rail, card, css] = await Promise.all([
     read('app/page.tsx'),
-    read('components/CaveJourneyScene.tsx'),
     read('components/SiteFooter.tsx'),
     read('components/AxisRail.tsx'),
     read('components/EditorialCard.tsx'),
     read('app/globals.css'),
   ]);
-  assert.match(home, /const journeyStep = query \? Number\.POSITIVE_INFINITY : active \? Math\.max\(8, Math\.ceil\(visibleEntries\.length \/ 3\)\) : 19/);
-  assert.match(home, /className="cave-depth-divider" data-depth=\{depth\}/);
-  assert.match(home, /depth <= 5/);
+  assert.doesNotMatch(home, /journeyStep|cave-depth-divider|CaveJourneyScene|DEPTH 0/);
+  assert.match(home, /visibleEntries\.map\(\(entry, index\) => entry\.kind === 'post'/);
   assert.match(footer, /<FooterCaveScene \/>/);
-  assert.doesNotMatch(footer, /<CaveJourneyScene/);
   assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
   assert.doesNotMatch(card, /CaveJourneyScene|cave-depth-divider|axis-rail__carrot/);
-  assert.match(scene, /aria-hidden="true"/);
-  assert.match(scene, /focusable="false"/);
-  assert.match(css, /\.cave-depth-divider\{grid-column:1\/-1;grid-row:span 2/);
-  assert.match(css, /@media\(max-width:520px\)[^\n]*\.cave-depth-divider\{display:grid;grid-template-columns:auto 1fr;min-height:84px/);
-  assert.doesNotMatch(css, /\.cave-journey-scene[^}]*animation:/);
+  assert.doesNotMatch(css, /cave-depth-divider|cave-journey-scene/);
 });
 
 test('editorial surface uses local Noto KR, a subtle static gradient, and complete social metadata', async () => {

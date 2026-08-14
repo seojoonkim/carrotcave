@@ -836,9 +836,9 @@ test('posts and voices share one standard card format at every breakpoint', () =
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
-test('wide desktop archive rows contain at most three cards', () => {
+test('wide desktop archive rows contain at most three uninterrupted cards', () => {
   assert.match(stylesSource, /@media\(min-width:960px\)\{\.wall-card\[data-rhythm\],\.editorial-wall--voices \.wall-card--voice\{grid-column:span 4\}/);
-  assert.match(stylesSource, /@media\(min-width:960px\).*?\.cave-depth-divider\{grid-column:1\/-1\}/s);
+  assert.doesNotMatch(stylesSource, /cave-depth-divider|cave-journey-scene/);
 });
 
 test('desktop chrome and archive surfaces share one 1100px content container', () => {
