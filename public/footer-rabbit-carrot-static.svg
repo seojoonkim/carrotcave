@@ -26,13 +26,15 @@
         <ellipse cx="509" cy="167" rx="25" ry="9" fill="#e5e1da"/>
       </g>
     </g>
-    <g class="carrot" transform="translate(780 94) rotate(-8)">
-      <path d="M0 0c31 3 46 25 25 82C6 61-8 27 0 0Z" fill="#ed7d31"/>
-      <path d="M3 6c17 5 27 20 26 39-1 13-5 25-10 34" fill="none" stroke="#ffc06a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
-      <path d="m4 18 25 6M7 37l18 4M11 55l10 2" stroke="#7f361e" stroke-width="2.6" stroke-linecap="round" opacity=".48"/>
-      <g class="carrot-leaves">
-        <path d="M10 2C-1-22 2-45 13-60M16 2c15-25 31-41 49-50M14 1c25-14 44-17 61-13" fill="none" stroke="#75b77a" stroke-width="11" stroke-linecap="round"/>
-        <path d="M12 0C7-23 9-41 15-55M18 0c14-22 28-36 45-45" fill="none" stroke="#a1d09a" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+    <g class="carrot-position" transform="translate(780 94) rotate(-8)">
+      <g class="carrot">
+        <path d="M0 0c31 3 46 25 25 82C6 61-8 27 0 0Z" fill="#ed7d31"/>
+        <path d="M3 6c17 5 27 20 26 39-1 13-5 25-10 34" fill="none" stroke="#ffc06a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
+        <path d="m4 18 25 6M7 37l18 4M11 55l10 2" stroke="#7f361e" stroke-width="2.6" stroke-linecap="round" opacity=".48"/>
+        <g class="carrot-leaves">
+          <path d="M10 2C-1-22 2-45 13-60M16 2c15-25 31-41 49-50M14 1c25-14 44-17 61-13" fill="none" stroke="#75b77a" stroke-width="11" stroke-linecap="round"/>
+          <path d="M12 0C7-23 9-41 15-55M18 0c14-22 28-36 45-45" fill="none" stroke="#a1d09a" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+        </g>
       </g>
     </g>
     <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="3" stroke-linecap="round">

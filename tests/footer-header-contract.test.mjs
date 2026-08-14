@@ -17,7 +17,8 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   ]);
   assert.match(asset, /@keyframes rabbit-hop/);
   assert.match(asset, /@keyframes scene-loop/);
-  assert.match(asset, /transform="translate\(780 94\) rotate\(-8\)"/);
+  assert.match(asset, /class="carrot-position" transform="translate\(780 94\) rotate\(-8\)"[\s\S]*?<g class="carrot">/);
+  assert.doesNotMatch(asset, /class="carrot" transform=/);
   assert.match(asset, /47%,84% \{ transform: translate\(120px,0\); \}/);
   assert.match(asset, /84%,92% \{ opacity: 0; \}/);
   assert.doesNotMatch(asset, /translate\([^,]+,-34px\)/);
