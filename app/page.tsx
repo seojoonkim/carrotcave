@@ -1,6 +1,7 @@
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail, { axisNotes, axisOf, editorialAxes } from '@/components/AxisRail';
 import EditorialCard from '@/components/EditorialCard';
+import ArchiveSearch from '@/components/ArchiveSearch';
 import SiteFooter from '@/components/SiteFooter';
 import { posts, Post } from '@/data/posts';
 import { interviews, InterviewArchive } from '@/data/interviews';
@@ -45,7 +46,7 @@ function VoiceWallCard({ interview, index, rhythm }: { interview: InterviewArchi
 export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string; q?: string }> }) {
   const { section, q } = await searchParams;
   const active = editorialAxes.includes(section as typeof editorialAxes[number]) ? section as typeof editorialAxes[number] : undefined;
-  const displayQuery = active || typeof q !== 'string' ? '' : q.trim();
+  const displayQuery = typeof q !== 'string' ? '' : q.trim();
   const query = normalizeQuery(displayQuery);
   const visiblePosts = (active ? posts.filter((post) => axisOf(post) === active) : [...posts])
     .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? Number(b.id)) || 0) - ((a.telegramMsgId ?? Number(a.id)) || 0));
@@ -81,11 +82,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
           </div>
           <span>{visibleEntries.length} ENTRIES</span>
         </header>
-        {!active && (
-          <p id="archive-search-status" className="archive-search__status" role="status" aria-live="polite">
-            {query ? `‘${displayQuery}’ 검색 결과 ${visibleEntries.length}건` : ''}
-          </p>
-        )}
+        <ArchiveSearch query={query} displayQuery={displayQuery} statusId="archive-search-status" section={active} />
+        <p id="archive-search-status" className="archive-search__status" role="status" aria-live="polite">
+          {query ? `‘${displayQuery}’ 검색 결과 ${visibleEntries.length}건` : ''}
+        </p>
         {visibleEntries.length ? (
           <div className="editorial-wall">
             {visibleEntries.map((entry, index) => entry.kind === 'post'

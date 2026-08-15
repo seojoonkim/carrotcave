@@ -48,10 +48,12 @@ test('search ranks relevance first and newest publication first on ties', async 
   assert.deepEqual(voiceOrder, ['sam-altman-startup-school-2026', 'liang-wenfeng', 'liao-heng', 'yang-zhilin']);
 });
 
-test('search navigation preserves raw text and rejects stale server resets', async () => {
+test('search navigation preserves raw text, the active axis, and rejects stale server resets', async () => {
   const { archiveSearchHref, isPendingQuerySettled, shouldAdoptServerQuery, shouldNavigateSearch } = await loadNavigation();
   assert.equal(archiveSearchHref(' OpenAI  에이전트 '), '/?q=OpenAI+%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8');
+  assert.equal(archiveSearchHref(' OpenAI  에이전트 ', '빌딩'), '/?section=%EB%B9%8C%EB%94%A9&q=OpenAI+%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8');
   assert.equal(archiveSearchHref('   '), '/');
+  assert.equal(archiveSearchHref('   ', '탐험'), '/?section=%ED%83%90%ED%97%98');
   assert.equal(shouldNavigateSearch('OpenAI', 'openai', false), false);
   assert.equal(shouldNavigateSearch('안녕', '안', true), false);
   assert.equal(shouldNavigateSearch('안녕', '안', false), true);
@@ -61,22 +63,29 @@ test('search navigation preserves raw text and rejects stale server resets', asy
   assert.equal(isPendingQuerySettled('abcd', 'abcd'), true);
 });
 
-test('archive search UI stays hidden while direct GET search URLs remain functional', async () => {
+test('archive search UI is visible and direct GET search URLs remain functional', async () => {
   const [home, component] = await Promise.all([read('app/page.tsx'), read('components/ArchiveSearch.tsx')]);
   assert.match(home, /searchParams: Promise<\{ section\?: string; q\?: string \}>/);
-  assert.match(home, /const displayQuery = active \|\| typeof q !== 'string' \? '' : q\.trim\(\)/);
-  assert.doesNotMatch(home, /import ArchiveSearch|<ArchiveSearch/);
+  assert.match(home, /const displayQuery = typeof q !== 'string' \? '' : q\.trim\(\)/);
+  assert.match(home, /import ArchiveSearch/);
+  assert.match(home, /<ArchiveSearch query=\{query\} displayQuery=\{displayQuery\} statusId="archive-search-status" section=\{active\} \/>/);
   assert.doesNotMatch(home, /journeyStep|cave-depth-divider|Number\.POSITIVE_INFINITY/);
   assert.match(home, /id="archive-search-status"[^>]*role="status"/);
   assert.match(home, /검색 결과/);
   assert.match(home, /검색 결과가 없습니다/);
   assert.match(component, /<form[^>]*action="\/"[^>]*method="get"[^>]*role="search"/);
+  assert.match(component, /section\?: string/);
+  assert.match(component, /section && <input type="hidden" name="section" value=\{section\} \/>/);
   assert.match(component, /name="q"/);
   assert.match(component, /value=\{value\}/);
   assert.match(component, /if \(isPendingQuerySettled\(query, pendingQuery\.current\)\) pendingQuery\.current = null/);
   assert.match(component, /window\.setTimeout\(\(\) => navigate\(value\), 180\)/);
   assert.match(component, /onCompositionStart=\{\(\) => setComposing\(true\)\}/);
-  assert.match(component, /router\.replace\(archiveSearchHref\(rawValue\)/);
+  assert.match(component, /router\.replace\(archiveSearchHref\(rawValue, section\)/);
+  assert.match(component, /previousSection\.current !== section/);
+  assert.match(component, /pendingQuery\.current = null;\s*setValue\(displayQuery\)/);
+  assert.match(component, /\[composing, query, section, value\]/);
+  assert.match(component, /href=\{archiveSearchHref\('', section\)\}/);
   assert.doesNotMatch(component, /params\.size|archiveSearchDocuments|voiceBody/);
 });
 
@@ -90,6 +99,7 @@ test('search presentation stays accessible and mobile-safe', async () => {
   assert.match(css, /\.archive-search input\{[^}]*font:[^;}]*16px/);
   assert.match(css, /\.archive-search__status:empty\{margin:0;height:0;overflow:hidden\}/);
   assert.match(css, /@media\(max-width:520px\)[^\n]*\.archive-search/);
+  assert.match(css, /\.archive-search\{[^}]*margin:0 auto 18px/);
 });
 
 test('main and ordinary post reading headers share one background declaration', async () => {

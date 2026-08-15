@@ -1,8 +1,9 @@
 import { normalizeQuery } from './normalize.ts';
 
-export function archiveSearchHref(rawValue: string) {
+export function archiveSearchHref(rawValue: string, section?: string) {
   const params = new URLSearchParams();
   const displayValue = rawValue.normalize('NFC').trim().replace(/\s+/g, ' ');
+  if (section) params.set('section', section);
   if (displayValue) params.set('q', displayValue);
   const queryString = params.toString();
   return queryString ? `/?${queryString}` : '/';
