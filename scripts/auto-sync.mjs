@@ -18,7 +18,7 @@
  * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--no-git]
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream, renameSync, unlinkSync } from 'fs';
 import { join, dirname, extname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync, execSync } from 'child_process';
@@ -397,18 +397,37 @@ async function downloadAndVerifyMedia(url, msgId, index, isVideo) {
   const publicPath = `/media/${filename}`;
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    const tempPath = `${destPath}.download-${process.pid}-${attempt}`;
     log(`    📥 Downloading ${isVideo ? 'video' : 'image'} (attempt ${attempt}): ${filename}`);
     try {
-      await downloadFile(url, destPath);
-      const size = statSync(destPath).size;
+      await downloadFile(url, tempPath);
+      const size = statSync(tempPath).size;
       if (size < MEDIA_MIN_SIZE) {
+        unlinkSync(tempPath);
         warn(`    File too small (${size} bytes), retrying...`);
         await sleep(2000);
         continue;
       }
+
+      if (existsSync(destPath)) {
+        const existing = readFileSync(destPath);
+        const downloaded = readFileSync(tempPath);
+        unlinkSync(tempPath);
+        if (!existing.equals(downloaded)) {
+          const conflict = new Error(`Historical media overwrite blocked: ${filename}`);
+          conflict.code = 'HISTORICAL_MEDIA_CONFLICT';
+          throw conflict;
+        }
+        log(`    ✅ Historical media unchanged: ${filename} (${(size/1024).toFixed(1)}KB)`);
+        return { url: publicPath, filename, size };
+      }
+
+      renameSync(tempPath, destPath);
       log(`    ✅ Downloaded: ${filename} (${(size/1024).toFixed(1)}KB)`);
       return { url: publicPath, filename, size };
     } catch (err) {
+      if (existsSync(tempPath)) unlinkSync(tempPath);
+      if (err.code === 'HISTORICAL_MEDIA_CONFLICT') throw err;
       warn(`    Download failed: ${err.message}`);
       if (attempt < MAX_RETRIES) await sleep(3000);
     }
