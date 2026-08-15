@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  const title = `${post.title} · ${siteName}`;
+  const title = post.title;
   const canonical = `/posts/${post.slug}`;
   const image = archiveImageUrl(post) ?? siteOgImage;
   return {

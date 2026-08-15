@@ -13,6 +13,8 @@ test('ordinary posts publish their own title, abstract, canonical URL, and card 
   assert.match(page, /alternates: \{ canonical \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
+  assert.match(page, /const title = post\.title;/);
+  assert.doesNotMatch(page, /`\$\{post\.title\} · \$\{siteName\}`/);
   assert.match(helper, /post\.mediaUrls\?\.\[0\]/);
   assert.match(helper, /post\.videoUrls\?\.\[0\]/);
   assert.match(helper, /\/media\/posters\/\$\{post\.slug\}\.jpg/);
@@ -26,6 +28,8 @@ test('voice pages publish interview-specific title, summary, canonical URL, and 
   assert.match(page, /alternates: \{ canonical \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
+  assert.match(page, /const title = `\$\{interview\.name\} · \$\{interview\.title\}`;/);
+  assert.doesNotMatch(page, /`\$\{interview\.name\} · \$\{interview\.title\} · \$\{siteName\}`/);
 });
 
 test('site fallback retains the 1200 by 630 root social card and description', async () => {

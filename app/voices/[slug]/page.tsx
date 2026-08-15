@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const interview = getInterview(slug);
   if (!interview) return {};
-  const title = `${interview.name} · ${interview.title} · ${siteName}`;
+  const title = `${interview.name} · ${interview.title}`;
   const canonical = `/voices/${interview.slug}`;
   const image = interview.thumbnailUrl ?? siteOgImage;
   return {
