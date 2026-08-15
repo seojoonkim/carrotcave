@@ -758,6 +758,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "post-195": {
+      "slug": "post-195",
+      "title": "재귀적 자기 개선, 무엇을 지킬 것인가",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "prompt-guard-dev": {
       "slug": "prompt-guard-dev",
       "title": "Prompt Guard 개발기",
@@ -7391,6 +7400,51 @@
     },
     {
       "from": "post-106",
+      "to": "post-195",
+      "type": "DEEPENS",
+      "strength": 0.3975,
+      "sourceClaimId": "post-106-c1",
+      "sourceEvidence": "한쪽이 \"성장\"을 말하고 다른 쪽이 \"지속가능성\"을 말할 때, AI는 두 단어 뒤에 숨은 실제 욕망을 펼쳐 보인다.",
+      "targetEvidence": "AI는 수많은 미래를 계산할 수 있다.",
+      "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「거울 앞의 괴물」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 81,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai의",
+          "가능성",
+          "가지",
+          "개의",
+          "것이다",
+          "것인가",
+          "결과가",
+          "계산",
+          "계속"
+        ],
+        "titleOverlap": [
+          "것인가",
+          "무엇을",
+          "앞의",
+          "자기"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=81;titleOverlap=4;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-106",
       "to": "post-103",
       "type": "RESONATES",
       "strength": 0.35,
@@ -7424,49 +7478,6 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=0;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-106",
-      "to": "vibe-coding-ai-decentralization",
-      "type": "DEEPENS",
-      "strength": 0.35,
-      "sourceClaimId": "post-106-c1",
-      "sourceEvidence": "2025년 2월, 연구자들이 AI에게 세계 최강 체스 엔진 Stockfish를 이기라고 했다.",
-      "targetEvidence": "2025년 초 DeepSeek-R1이 등장했을 때, 그 격차는 1.5점으로 줄었고 수학과 코딩 벤치마크에서는 오픈소스가 오히려 앞섰다.",
-      "label": "「내가 세우지 않은 벽 위에 서서」은 「거울 앞의 괴물」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 83,
-        "overlapTokens": [
-          "2025",
-          "2025년",
-          "2월",
-          "ai",
-          "ai가",
-          "ai는",
-          "ai로",
-          "ai의",
-          "deepseek",
-          "gpu",
-          "r1",
-          "가치"
-        ],
-        "titleOverlap": [
-          "않은",
-          "위에"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=83;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10684,13 +10695,13 @@
     },
     {
       "from": "post-186",
-      "to": "post-111",
+      "to": "post-195",
       "type": "REFRAMES",
-      "strength": 0.3531,
+      "strength": 0.3573,
       "sourceClaimId": "post-186-c1",
-      "sourceEvidence": "개인 에이전트를 만들어 자동화 루프를 경험하지 않으면 AI 잠재력의 1%도 쓰지 못하는 것이다.",
-      "targetEvidence": "AI가 절약하는 에너지와 소비하는 에너지의 교차점이 곧 온다.",
-      "label": "「다가오는 30개의 균열」은 「게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "이 표준들이 AI 경제의 기반이 될 것이다.",
+      "targetEvidence": "개선안을 만드는 AI 옆에는 결과를 평가하는 AI가 있다.",
+      "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -10700,22 +10711,24 @@
       "signalDetails": {
         "lexicalOverlap": 39,
         "overlapTokens": [
-          "10",
-          "1인",
           "ai",
           "ai가",
-          "gpt",
           "가능성",
-          "개인",
-          "것과",
+          "개선",
           "것이다",
-          "고치는",
-          "관리",
-          "달라질"
+          "게임을",
+          "권한을",
+          "규칙을",
+          "기회가",
+          "나눌",
+          "누구의",
+          "다르다"
         ],
         "titleOverlap": [
-          "10",
           "ai",
+          "개선",
+          "다음",
+          "무엇을",
           "에이전트"
         ],
         "sharedTags": [],
@@ -10723,7 +10736,50 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=39;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=5;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-187",
+      "to": "post-193",
+      "type": "APPLIES",
+      "strength": 0.7197,
+      "sourceClaimId": "post-187-c1",
+      "sourceEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
+      "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「제일 똑똑한 모델 하나로는 부족했다」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 84,
+        "overlapTokens": [
+          "ai",
+          "claude",
+          "codex",
+          "가깝다",
+          "가능성",
+          "검사",
+          "검증을",
+          "것이다",
+          "계속",
+          "고친",
+          "고친다",
+          "구현은"
+        ],
+        "titleOverlap": [
+          "모델",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=84;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10813,43 +10869,6 @@
         ]
       },
       "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=48;titleOverlap=4;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-187",
-      "to": "vibe-labs-seoul-edition-2026-judging",
-      "type": "RESONATES",
-      "strength": 0.35,
-      "sourceClaimId": "post-187-c1",
-      "sourceEvidence": "루프 엔지니어링은 AI를 더 오래 돌리는 기술이 아니다.",
-      "targetEvidence": "이후 모든 지원자에게 결과를 안내하는 메일을 보냈다.",
-      "label": "「바이브랩스 서울 에디션 2026 심사를 마치고」은 「제일 똑똑한 모델 하나로는 부족했다」의 핵심 문제와 맞닿는다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 33,
-        "overlapTokens": [
-          "ai",
-          "ai를",
-          "가능성",
-          "가지",
-          "결과를",
-          "계속",
-          "과정",
-          "그렇게",
-          "때문",
-          "마친",
-          "만들고",
-          "모든"
-        ],
-        "titleOverlap": [],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=33;titleOverlap=0;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10978,6 +10997,48 @@
     },
     {
       "from": "post-189",
+      "to": "post-193",
+      "type": "APPLIES",
+      "strength": 0.597,
+      "sourceClaimId": "post-189-c1",
+      "sourceEvidence": "기존 Markdown, schema v1, 공개 API도 그대로 호환된다.",
+      "targetEvidence": "가방을 검사하는 산업도 생길 것이다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 58,
+        "overlapTokens": [
+          "10",
+          "github",
+          "md",
+          "schema",
+          "개인",
+          "검사",
+          "검토",
+          "것이다",
+          "경로를",
+          "공개",
+          "권한",
+          "기록"
+        ],
+        "titleOverlap": [
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=58;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-189",
       "to": "post-146",
       "type": "DEEPENS",
       "strength": 0.4331,
@@ -11065,43 +11126,6 @@
         ]
       },
       "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=87;titleOverlap=6;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-189",
-      "to": "click-theology",
-      "type": "RESONATES",
-      "strength": 0.35,
-      "sourceClaimId": "post-189-c1",
-      "sourceEvidence": "LongMemEval의 데이터 준비, 검색, 답변, 채점을 다시 돌릴 수 있는 평가 도구를 패키지에 넣었다.",
-      "targetEvidence": "검색 결과는 열 개의 링크를 나열하고 내가 고른다.",
-      "label": "「딸깍의 신학」은 「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」의 핵심 문제와 맞닿는다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 49,
-        "overlapTokens": [
-          "개의",
-          "검색",
-          "것과",
-          "것이다",
-          "결과",
-          "결과는",
-          "결과의",
-          "다음",
-          "대화",
-          "데이터",
-          "돌릴",
-          "되어"
-        ],
-        "titleOverlap": [],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=49;titleOverlap=0;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11237,6 +11261,50 @@
     },
     {
       "from": "post-191",
+      "to": "post-193",
+      "type": "DEEPENS",
+      "strength": 0.7642,
+      "sourceClaimId": "post-191-c1",
+      "sourceEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
+      "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 97,
+        "overlapTokens": [
+          "0을",
+          "agent",
+          "claude",
+          "codex",
+          "openclaw",
+          "가깝다",
+          "가능성",
+          "개인",
+          "거치며",
+          "것이다",
+          "고친",
+          "구현은"
+        ],
+        "titleOverlap": [
+          "것이다",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=97;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-191",
       "to": "post-192",
       "type": "REFRAMES",
       "strength": 0.4796,
@@ -11277,13 +11345,13 @@
     },
     {
       "from": "post-191",
-      "to": "agent-era-branding-future",
+      "to": "post-195",
       "type": "DEEPENS",
-      "strength": 0.3892,
+      "strength": 0.4221,
       "sourceClaimId": "post-191-c1",
-      "sourceEvidence": "그 기억이 규칙을 바꾸고, 검증할 테스트와 새 도구를 만들고, 복구 로직과 코드베이스 자체를 갈아엎는다.",
-      "targetEvidence": "결국 미래의 브랜드는 이렇게 바뀔 것이다.",
-      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "개발에서 먼저 겪은 이 구조는 일상 생활로 번질 것이다.",
+      "targetEvidence": "어느 AI도 규칙을 어기지 않았고 어느 AI도 결과를 숨기지 않았다.",
+      "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -11291,69 +11359,26 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 70,
+        "lexicalOverlap": 99,
         "overlapTokens": [
-          "agent",
           "가능성",
-          "검증",
-          "검증할",
+          "검증과",
           "것도",
           "것이다",
           "것인가",
-          "것인지",
-          "결국",
-          "결제",
-          "계정이",
-          "구매"
-        ],
-        "titleOverlap": [
-          "것이다",
-          "무엇이",
-          "에이전트"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=70;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-191",
-      "to": "post-141",
-      "type": "DEEPENS",
-      "strength": 0.3822,
-      "sourceClaimId": "post-191-c1",
-      "sourceEvidence": "이 구조적 장점 덕분에 OpenClaw를 누르고 에이전트 사용량 1위에 올랐을 것이다.",
-      "targetEvidence": "결국 가장 비싼 일만 떠안는 구조로 밀려나는 셈이다.",
-      "label": "「왕관이 콘센트가 되는 순간」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 73,
-        "overlapTokens": [
-          "claude",
-          "openclaw",
-          "가깝다",
-          "가능성",
-          "거의",
-          "것이다",
-          "결국",
+          "결과",
+          "결과는",
+          "결과를",
+          "경계",
+          "고른다",
           "구조",
-          "기반",
-          "기준",
-          "남는다",
-          "넘어가"
+          "규칙을"
         ],
         "titleOverlap": [
           "것이다",
-          "되는",
-          "순간",
+          "것인가",
+          "무엇을",
+          "미래를",
           "않을"
         ],
         "sharedTags": [],
@@ -11361,7 +11386,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=73;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=99;titleOverlap=5;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11489,10 +11514,10 @@
       "from": "post-193",
       "to": "post-191",
       "type": "DEEPENS",
-      "strength": 0.91,
+      "strength": 0.7642,
       "sourceClaimId": "post-193-c1",
-      "sourceEvidence": "승인 규칙과 검증법, 복구 절차를 모델 밖에 두면 모델은 작업장이 되고 가방은 경력이 된다.",
-      "targetEvidence": "모델 위에 내 업무 기억과 개발 습관, 도구와 그 사용법, 완료 기준, 실패했을 때의 복구법이 미리 연결돼 있다는 점이다.",
+      "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
+      "targetEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
       "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「에이전트 노마드 시대의 짐가방」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -11502,32 +11527,41 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 9,
+        "lexicalOverlap": 97,
         "overlapTokens": [
-          "에이전트",
-          "기억",
-          "모델",
-          "플랫폼",
-          "실패",
-          "규칙"
+          "0을",
+          "agent",
+          "claude",
+          "codex",
+          "openclaw",
+          "가깝다",
+          "가능성",
+          "개인",
+          "거치며",
+          "것이다",
+          "고친",
+          "구현은"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "것이다",
+          "에이전트"
+        ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=9;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=97;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "post-193",
       "to": "post-187",
       "type": "APPLIES",
-      "strength": 0.84,
+      "strength": 0.7197,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
-      "targetEvidence": "그래서 Claude로 먼저 계획을 만들고, Codex에 구현을 맡기기 시작했다.",
+      "targetEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
       "label": "「제일 똑똑한 모델 하나로는 부족했다」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -11536,31 +11570,41 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 7,
+        "lexicalOverlap": 84,
         "overlapTokens": [
-          "Claude",
-          "Codex",
-          "모델",
-          "작업",
-          "실패"
+          "ai",
+          "claude",
+          "codex",
+          "가깝다",
+          "가능성",
+          "검사",
+          "검증을",
+          "것이다",
+          "계속",
+          "고친",
+          "고친다",
+          "구현은"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "모델",
+          "에이전트"
+        ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=7;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=84;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "post-193",
       "to": "post-189",
       "type": "APPLIES",
-      "strength": 0.78,
+      "strength": 0.597,
       "sourceClaimId": "post-193-c1",
-      "sourceEvidence": "내가 선호하는 방식, 대화 맥락, 기억, 승인 규칙, 실패 뒤에 고친 절차가 함께 있다.",
-      "targetEvidence": "많이 기억하고 잘 찾으면 된다고 생각했는데, 기억이 늘어날수록 더 어려운 질문들이 나타났다.",
+      "sourceEvidence": "가방을 검사하는 산업도 생길 것이다.",
+      "targetEvidence": "기존 Markdown, schema v1, 공개 API도 그대로 호환된다.",
       "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「에이전트 노마드 시대의 짐가방」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -11569,20 +11613,163 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 5,
+        "lexicalOverlap": 58,
         "overlapTokens": [
-          "기억",
-          "에이전트",
-          "실패",
-          "규칙"
+          "10",
+          "github",
+          "md",
+          "schema",
+          "개인",
+          "검사",
+          "검토",
+          "것이다",
+          "경로를",
+          "공개",
+          "권한",
+          "기록"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "에이전트"
+        ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=5;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=58;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-195",
+      "to": "unknowns-in-modern-creation",
+      "type": "DEEPENS",
+      "strength": 0.5252,
+      "sourceClaimId": "post-195-c1",
+      "sourceEvidence": "AI가 개선안을 만들고 구현하고 실험한 뒤, 통과한 변경을 다음 AI의 출발점에 넣는 구조였다.",
+      "targetEvidence": "OpenAI가 멈추면 Google이, Claude와 DeepMind가, Grok이, 그 외 수십 개의 이름들이 그 자리를 채운다.",
+      "label": "「모르는 것을 모르는 채로 만드는 시대」은 「재귀적 자기 개선, 무엇을 지킬 것인가」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 73,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai의",
+          "deepmind",
+          "개의",
+          "것이다",
+          "결과가",
+          "결과를",
+          "경고",
+          "구조",
+          "나를"
+        ],
+        "titleOverlap": [
+          "만드는",
+          "자기"
+        ],
+        "sharedTags": [
+          "책임"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=73;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-195",
+      "to": "post-191",
+      "type": "DEEPENS",
+      "strength": 0.4221,
+      "sourceClaimId": "post-195-c1",
+      "sourceEvidence": "어느 AI도 규칙을 어기지 않았고 어느 AI도 결과를 숨기지 않았다.",
+      "targetEvidence": "개발에서 먼저 겪은 이 구조는 일상 생활로 번질 것이다.",
+      "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「재귀적 자기 개선, 무엇을 지킬 것인가」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 99,
+        "overlapTokens": [
+          "가능성",
+          "검증과",
+          "것도",
+          "것이다",
+          "것인가",
+          "결과",
+          "결과는",
+          "결과를",
+          "경계",
+          "고른다",
+          "구조",
+          "규칙을"
+        ],
+        "titleOverlap": [
+          "것이다",
+          "것인가",
+          "무엇을",
+          "미래를",
+          "않을"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=99;titleOverlap=5;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-195",
+      "to": "ai-hires-ai",
+      "type": "REFRAMES",
+      "strength": 0.3863,
+      "sourceClaimId": "post-195-c1",
+      "sourceEvidence": "AI가 개선안을 만들고 구현하고 실험한 뒤, 통과한 변경을 다음 AI의 출발점에 넣는 구조였다.",
+      "targetEvidence": "AI 경제가 창출한 부는 누구의 것인가?",
+      "label": "「AI가 AI를 고용하는 날」은 「재귀적 자기 개선, 무엇을 지킬 것인가」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 61,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai의",
+          "개의",
+          "것이다",
+          "것인가",
+          "계약을",
+          "기준이",
+          "남는다",
+          "누가",
+          "누구의"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "것인가"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=61;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -13798,43 +13985,43 @@
     },
     {
       "from": "university-value-shift-education",
-      "to": "prompting-ability-as-new-power",
+      "to": "post-195",
       "type": "DEEPENS",
-      "strength": 0.3812,
+      "strength": 0.3814,
       "sourceClaimId": "university-value-shift-education-c1",
       "sourceEvidence": "자기들은 어느 정도 이전 시대의 문법을 거치고 왔지만, 그 아이들은 더 비워진 상태로, 온전히 AI의 시대 안으로 들어오게 될 것 같다는 것이다.",
-      "targetEvidence": "같은 AI를 쓰더라도 질문의 순서, 결과 검증 방식, 반복 개선의 깊이에 따라 결과물이 극단적으로 갈린다.",
-      "label": "「프롬프팅 역량이 인류의 새로운 전투력이 되는 날」은 「정류장에 세우기 전에」의 문제를 더 깊이 파고든다",
+      "targetEvidence": "더 나아진 AI는 더 나은 개선안을 만든다.",
+      "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「정류장에 세우기 전에」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 72,
+        "lexicalOverlap": 71,
         "overlapTokens": [
-          "4년",
           "ai",
           "ai의",
-          "github",
+          "것도",
           "것이다",
           "결과",
-          "결과물",
-          "교육",
-          "그것을",
-          "그것이",
+          "경로를",
           "그런데",
-          "나은"
+          "기록이",
+          "나머지",
+          "나은",
+          "높은",
+          "능력"
         ],
         "titleOverlap": [
-          "되는",
-          "새로운",
+          "무엇을",
+          "자기",
           "전에"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=72;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=71;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -15006,6 +15193,11 @@
     }
   ],
   "outgoing": {
+    "post-195": [
+      252,
+      253,
+      254
+    ],
     "post-193": [
       249,
       250,
@@ -15172,9 +15364,9 @@
       80
     ],
     "value-of-understanding-in-ai-future": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "internship-job-posting-giveaway": [
       90,
@@ -15187,9 +15379,9 @@
       134
     ],
     "prompting-ability-as-new-power": [
-      255,
-      256,
-      257
+      258,
+      259,
+      260
     ],
     "kpop-fandom-digital-parliament": [
       105,
@@ -15197,9 +15389,9 @@
       107
     ],
     "university-value-shift-education": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "agent-era-branding-future": [
       6,
@@ -15247,9 +15439,9 @@
       143
     ],
     "things-that-dont-disappear": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "how-to-create-memory-in-ai-agents": [
       84,
@@ -15257,14 +15449,14 @@
       86
     ],
     "self-deconstruction-ai-replication": [
-      279,
-      280,
-      281
+      282,
+      283,
+      284
     ],
     "vibe-coding-ai-decentralization": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "internship-opportunity-at-hashed": [
       93,
@@ -15287,9 +15479,9 @@
       35
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "disappearing-titles-computers-history": [
       66,
@@ -15297,9 +15489,9 @@
       68
     ],
     "uae-emergency-news-telegram-channel": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       39,
@@ -15322,9 +15514,9 @@
       119
     ],
     "unknowns-in-modern-creation": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -15337,14 +15529,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "sano-godaddy-war": [
-      270,
-      271,
-      272
+      273,
+      274,
+      275
     ],
     "14-5-hours": [
       0,
@@ -15352,14 +15544,14 @@
       2
     ],
     "transistor-moment": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ],
     "web4-write-access": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "naming-the-universe": [
       129,
@@ -15367,9 +15559,9 @@
       131
     ],
     "sano-intro": [
-      273,
-      274,
-      275
+      276,
+      277,
+      278
     ],
     "counting-assistant": [
       57,
@@ -15377,19 +15569,19 @@
       59
     ],
     "uncertainty-machine": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "vibe-founders-era": [
+      321,
+      322,
+      323
+    ],
+    "vibe-coding-tip": [
       318,
       319,
       320
-    ],
-    "vibe-coding-tip": [
-      315,
-      316,
-      317
     ],
     "moltbot-anthropic-moat": [
       123,
@@ -15407,9 +15599,9 @@
       38
     ],
     "thought-speed": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ],
     "gemini-snow-bunny": [
       81,
@@ -15427,9 +15619,9 @@
       32
     ],
     "prompt-guard-dev": [
-      252,
-      253,
-      254
+      255,
+      256,
+      257
     ],
     "its-fun": [
       99,
@@ -15442,9 +15634,9 @@
       53
     ],
     "thank-you-mirror": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "ai-hires-ai": [
       27,
@@ -15457,9 +15649,9 @@
       110
     ],
     "rabbit-crypt-name": [
-      261,
-      262,
-      263
+      264,
+      265,
+      266
     ],
     "agentlinter-dev-log": [
       18,
@@ -15482,14 +15674,14 @@
       128
     ],
     "tail-stopped": [
-      282,
-      283,
-      284
+      285,
+      286,
+      287
     ],
     "zeon-moltbook-vol1": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "ip-tvw": [
       96,
@@ -15497,9 +15689,9 @@
       98
     ],
     "quantum-pirates": [
-      258,
-      259,
-      260
+      261,
+      262,
+      263
     ],
     "china-ai-frontier": [
       45,
@@ -15507,9 +15699,9 @@
       47
     ],
     "seedance-30": [
-      276,
-      277,
-      278
+      279,
+      280,
+      281
     ],
     "agent-siblings": [
       12,
@@ -15532,9 +15724,9 @@
       122
     ],
     "robot-goku-5000": [
-      267,
-      268,
-      269
+      270,
+      271,
+      272
     ],
     "hvl-fellows": [
       87,
@@ -15557,9 +15749,9 @@
       62
     ],
     "rabbit-hole-intro": [
-      264,
-      265,
-      266
+      267,
+      268,
+      269
     ]
   },
   "overrides": {

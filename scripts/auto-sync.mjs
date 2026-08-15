@@ -36,6 +36,7 @@ const BASE_URL = `https://t.me/s/${CHANNEL}`;
 const POSTS_PATH = join(ROOT, 'data', 'posts.ts');
 const SCRAPED_PATH = join(ROOT, 'data', 'scraped-posts.json');
 const SYNC_STATE_PATH = join(ROOT, 'data', 'sync-state.json');
+const METADATA_OVERRIDES_PATH = join(ROOT, 'data', 'sync-metadata-overrides.json');
 const MEDIA_DIR = join(ROOT, 'public', 'media');
 const DELAY_MS = 1200;
 const MIN_TEXT_LENGTH = 150; // 이보다 짧으면 이미지/공지로 간주
@@ -43,6 +44,7 @@ const TEXT_MISMATCH_THRESHOLD = 0.1; // 10% 이상 차이나면 재시도
 const MEDIA_MIN_SIZE = 5 * 1024; // 5KB 미만이면 다운로드 실패로 간주
 const MAX_RETRIES = 3;
 const ALLOWED_CATEGORIES = new Set(['탐험', '빌딩', '낙서', '소설']);
+const ALLOWED_DEPTHS = new Set(['entry', 'mid', 'deep']);
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_ALL = process.argv.includes('--force-all');
@@ -441,6 +443,26 @@ async function downloadAllMedia(msg) {
 // GPT-4o: generate metadata
 // ─────────────────────────────────────────────
 async function generateMetadata(msg) {
+  if (existsSync(METADATA_OVERRIDES_PATH)) {
+    const overrides = JSON.parse(readFileSync(METADATA_OVERRIDES_PATH, 'utf8'));
+    const override = overrides[String(msg.id)];
+    if (override) {
+      const currentContentHash = hashContent(msg.fullText);
+      if (override.contentHash !== currentContentHash) {
+        throw new Error(`Stale metadata override for msg #${msg.id}: expected ${override.contentHash}, got ${currentContentHash}`);
+      }
+      if (!ALLOWED_CATEGORIES.has(override.category)) throw new Error(`Invalid override category: ${override.category}`);
+      if (!ALLOWED_DEPTHS.has(override.depth)) throw new Error(`Invalid override depth: ${override.depth}`);
+      if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(override.slug ?? '')) throw new Error(`Invalid override slug: ${override.slug}`);
+      if (typeof override.title !== 'string' || !override.title.trim()) throw new Error('Invalid override title');
+      if (!Array.isArray(override.tags) || !override.tags.every((tag) => typeof tag === 'string' && tag.trim())) {
+        throw new Error('Invalid override tags');
+      }
+      assertPublishableAbstract(override.summary, msg.content || msg.fullText, override.title);
+      log(`  ✅ Using reviewed metadata override for msg #${msg.id}`);
+      return override;
+    }
+  }
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     warn('OPENAI_API_KEY not set. Using fallback metadata.');

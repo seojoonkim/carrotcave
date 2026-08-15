@@ -1,4 +1,50 @@
 {
+  "post-195": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-재귀적 자기 개선",
+      "tag-AI 평가",
+      "tag-인간 승인"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-195-c1",
+        "text": "며칠간 모은 자료를 정리해달라고 맡긴 내 에이전트 사노가 새벽에 초록불을 켰다.",
+        "stance": "asserts",
+        "evidence": "며칠간 모은 자료를 정리해달라고 맡긴 내 에이전트 사노가 새벽에 초록불을 켰다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "재귀적 자기 개선",
+      "AI 평가",
+      "인간 승인"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "post-193": {
     "primaryTopics": [
       "exploration"
@@ -15,9 +61,9 @@
     "claims": [
       {
         "id": "post-193-c1",
-        "text": "승인 규칙과 검증법, 복구 절차를 모델 밖에 두면 모델은 작업장이 되고 가방은 경력이 된다.",
+        "text": "작년부터 에이전트를 사용하며 쌓아온 자료가 한 폴더에 있다.",
         "stance": "asserts",
-        "evidence": "승인 규칙과 검증법, 복구 절차를 모델 밖에 두면 모델은 작업장이 되고 가방은 경력이 된다."
+        "evidence": "작년부터 에이전트를 사용하며 쌓아온 자료가 한 폴더에 있다."
       }
     ],
     "entities": [],
@@ -40,7 +86,8 @@
         "content",
         "tags",
         "category",
-        "relatedSlugs"
+        "relatedSlugs",
+        "legacy-relations"
       ]
     }
   },
