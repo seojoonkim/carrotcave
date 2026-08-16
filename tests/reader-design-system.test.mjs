@@ -27,9 +27,9 @@ const contracts = [
 ];
 
 const voiceTitleContracts = [
-  '--reader-header-title-size: 17px',
-  '--reader-header-title-size-mobile: 16px',
-  '--reader-title-size: clamp(34px, 5.5vw, 46px)',
+  '--reader-header-title-size: 16px',
+  '--reader-header-title-size-mobile: 15px',
+  '--reader-title-size: clamp(32px, calc(5.5vw - 2px), 44px)',
 ];
 
 const voiceSectionContracts = [
@@ -152,14 +152,12 @@ test('voice covers use the ordinary-post title hierarchy without archive credits
     '.hero #page-title {',
     'max-width: 650px;',
     'margin: 0 0 22px;',
-    'font-size: var(--reader-title-size);',
-    'line-height: 1.22;',
-    'font-weight: 750;',
-    'letter-spacing: -.045em;',
+    'font: 500 var(--reader-title-size)/1.22 var(--font-sans);',
+    'letter-spacing: -.035em;',
     '.hero #page-title em, .hero #page-title span {',
     'font: inherit;',
     '@media (min-width: 1000px)',
-    '.hero #page-title { max-width: 520px; }',
+
     '@media (min-width: 901px)',
     ':root { --header: 78px; }',
 
@@ -210,7 +208,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
   const shared = await read('public/voices/reader-system.css');
   for (const required of [
     '.header-status > i, #currentChapterNumber, .header-mobile-title { display: none; }',
-    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }',
+    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }',
     '.header-site-title {',
     'font: 500 9px/1 var(--font-mono);',
     'letter-spacing: .1em;',

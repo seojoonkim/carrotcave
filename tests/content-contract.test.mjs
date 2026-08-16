@@ -121,7 +121,7 @@ test('every voice reader uses one compact header toggle for its reading index', 
   for (const required of [
     '.menu-button[aria-expanded="true"] i { transform: rotate(45deg); }',
     '.menu-button[aria-expanded="true"] i::before { transform: rotate(90deg); }',
-    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }',
+    '.header-titles { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 3px; }',
     'border-bottom: 0;',
     '.toc-drawer h2 { font: 400 14px/1.25 var(--font-sans); }',
     'min-height: 42px;',
