@@ -1,4 +1,50 @@
 {
+  "post-197": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-우주 컴퓨팅",
+      "tag-AI 데이터센터",
+      "tag-궤도 인프라"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-197-c1",
+        "text": "일론 머스크는 앞으로 몇 년 안에 AI 연산 비용이 우주에서 더 싸질 수 있다고 말한다.",
+        "stance": "asserts",
+        "evidence": "일론 머스크는 앞으로 몇 년 안에 AI 연산 비용이 우주에서 더 싸질 수 있다고 말한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "우주 컴퓨팅",
+      "AI 데이터센터",
+      "궤도 인프라"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "post-195": {
     "primaryTopics": [
       "exploration"

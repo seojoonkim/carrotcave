@@ -767,6 +767,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "post-197": {
+      "slug": "post-197",
+      "title": "컴퓨팅이 우주로 올라가면 달라질 것들",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "prompt-guard-dev": {
       "slug": "prompt-guard-dev",
       "title": "Prompt Guard 개발기",
@@ -11773,6 +11782,128 @@
       "status": "approved"
     },
     {
+      "from": "post-197",
+      "to": "post-159",
+      "type": "DEEPENS",
+      "strength": 0.3848,
+      "sourceClaimId": "post-197-c1",
+      "sourceEvidence": "10억 와트의 폐열을 약 300K에서 방사율 1인 단면으로 복사한다고 가정해도 방열 면적이 약 2.2㎢ 나온다.",
+      "targetEvidence": "진짜 생산자가 쓰는 도구는 Claude Max나 ChatGPT Pro 같은 월 100~200달러대의 상위 요금제다.",
+      "label": "「기본소득 이전에, 기본AI: 나누기 전에 만들 수 있어야 한다」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 74,
+        "overlapTokens": [
+          "10",
+          "1인",
+          "200",
+          "200달러",
+          "30",
+          "ai",
+          "가격이",
+          "검토",
+          "것이다",
+          "곳이",
+          "기다릴",
+          "나눠주"
+        ],
+        "titleOverlap": [
+          "ai",
+          "있어야",
+          "전에"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=74;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-197",
+      "to": "complexcon-hk-identity-culture-experience",
+      "type": "DEEPENS",
+      "strength": 0.3553,
+      "sourceClaimId": "post-197-c1",
+      "sourceEvidence": "이때 가장 비싼 기술이 반드시 가장 빠른 칩은 아닐 것이다.",
+      "targetEvidence": "흥미로운 건, AI가 여기에 들어오면 문화의 역할 자체가 또 달라질 수 있다는 점이다.",
+      "label": "「ComplexCon HK에서 본 세계의 입장권」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 51,
+        "overlapTokens": [
+          "ai",
+          "가격과",
+          "가깝다",
+          "것이다",
+          "구조",
+          "기술이",
+          "누가",
+          "달라진다",
+          "달라질",
+          "도시가",
+          "될까",
+          "들고"
+        ],
+        "titleOverlap": [
+          "달라질",
+          "세계의",
+          "에서"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=51;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-197",
+      "to": "ai-hires-ai",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "post-197-c1",
+      "sourceEvidence": "이때 가장 비싼 기술이 반드시 가장 빠른 칩은 아닐 것이다.",
+      "targetEvidence": "AI 경제가 창출한 부는 누구의 것인가?",
+      "label": "「AI가 AI를 고용하는 날」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 46,
+        "overlapTokens": [
+          "ai",
+          "가치를",
+          "것들",
+          "것이다",
+          "그때",
+          "기술이",
+          "남는다",
+          "누가",
+          "누구의",
+          "달러",
+          "데이터",
+          "만드는"
+        ],
+        "titleOverlap": [
+          "ai",
+          "것들"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=46;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "prompt-guard-dev",
       "to": "agentlinter-dev-log",
       "type": "APPLIES",
@@ -15193,6 +15324,11 @@
     }
   ],
   "outgoing": {
+    "post-197": [
+      255,
+      256,
+      257
+    ],
     "post-195": [
       252,
       253,
@@ -15364,9 +15500,9 @@
       80
     ],
     "value-of-understanding-in-ai-future": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "internship-job-posting-giveaway": [
       90,
@@ -15379,9 +15515,9 @@
       134
     ],
     "prompting-ability-as-new-power": [
-      258,
-      259,
-      260
+      261,
+      262,
+      263
     ],
     "kpop-fandom-digital-parliament": [
       105,
@@ -15389,9 +15525,9 @@
       107
     ],
     "university-value-shift-education": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "agent-era-branding-future": [
       6,
@@ -15439,9 +15575,9 @@
       143
     ],
     "things-that-dont-disappear": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ],
     "how-to-create-memory-in-ai-agents": [
       84,
@@ -15449,14 +15585,14 @@
       86
     ],
     "self-deconstruction-ai-replication": [
-      282,
-      283,
-      284
+      285,
+      286,
+      287
     ],
     "vibe-coding-ai-decentralization": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "internship-opportunity-at-hashed": [
       93,
@@ -15479,9 +15615,9 @@
       35
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "disappearing-titles-computers-history": [
       66,
@@ -15489,9 +15625,9 @@
       68
     ],
     "uae-emergency-news-telegram-channel": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       39,
@@ -15514,9 +15650,9 @@
       119
     ],
     "unknowns-in-modern-creation": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -15529,14 +15665,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "sano-godaddy-war": [
-      273,
-      274,
-      275
+      276,
+      277,
+      278
     ],
     "14-5-hours": [
       0,
@@ -15544,14 +15680,14 @@
       2
     ],
     "transistor-moment": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "web4-write-access": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "naming-the-universe": [
       129,
@@ -15559,9 +15695,9 @@
       131
     ],
     "sano-intro": [
-      276,
-      277,
-      278
+      279,
+      280,
+      281
     ],
     "counting-assistant": [
       57,
@@ -15569,19 +15705,19 @@
       59
     ],
     "uncertainty-machine": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "vibe-founders-era": [
+      324,
+      325,
+      326
+    ],
+    "vibe-coding-tip": [
       321,
       322,
       323
-    ],
-    "vibe-coding-tip": [
-      318,
-      319,
-      320
     ],
     "moltbot-anthropic-moat": [
       123,
@@ -15599,9 +15735,9 @@
       38
     ],
     "thought-speed": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ],
     "gemini-snow-bunny": [
       81,
@@ -15619,9 +15755,9 @@
       32
     ],
     "prompt-guard-dev": [
-      255,
-      256,
-      257
+      258,
+      259,
+      260
     ],
     "its-fun": [
       99,
@@ -15634,9 +15770,9 @@
       53
     ],
     "thank-you-mirror": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "ai-hires-ai": [
       27,
@@ -15649,9 +15785,9 @@
       110
     ],
     "rabbit-crypt-name": [
-      264,
-      265,
-      266
+      267,
+      268,
+      269
     ],
     "agentlinter-dev-log": [
       18,
@@ -15674,14 +15810,14 @@
       128
     ],
     "tail-stopped": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "zeon-moltbook-vol1": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "ip-tvw": [
       96,
@@ -15689,9 +15825,9 @@
       98
     ],
     "quantum-pirates": [
-      261,
-      262,
-      263
+      264,
+      265,
+      266
     ],
     "china-ai-frontier": [
       45,
@@ -15699,9 +15835,9 @@
       47
     ],
     "seedance-30": [
-      279,
-      280,
-      281
+      282,
+      283,
+      284
     ],
     "agent-siblings": [
       12,
@@ -15724,9 +15860,9 @@
       122
     ],
     "robot-goku-5000": [
-      270,
-      271,
-      272
+      273,
+      274,
+      275
     ],
     "hvl-fellows": [
       87,
@@ -15749,9 +15885,9 @@
       62
     ],
     "rabbit-hole-intro": [
-      267,
-      268,
-      269
+      270,
+      271,
+      272
     ]
   },
   "overrides": {

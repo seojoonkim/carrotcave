@@ -15,7 +15,7 @@
  *   8. Git commit + push → Vercel 자동 배포
  *   9. Telegram DM 결과 보고
  * 
- * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--no-git]
+ * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--audit-only] [--no-git]
  */
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream, renameSync, unlinkSync } from 'fs';
@@ -49,6 +49,20 @@ const ALLOWED_DEPTHS = new Set(['entry', 'mid', 'deep']);
 const DRY_RUN = process.argv.includes('--dry-run');
 const FORCE_ALL = process.argv.includes('--force-all');
 const NO_GIT = process.argv.includes('--no-git');
+const AUDIT_ONLY = process.argv.includes('--audit-only');
+
+export function selectNewMessages(allMessages, state, { auditOnly = false, forceAll = false } = {}) {
+  const processed = new Set(state.processedMsgIds ?? []);
+  const skipped = new Set(state.skippedMsgIds ?? []);
+  return {
+    auditMessages: allMessages,
+    newMessages: auditOnly ? [] : allMessages.filter((msg) => {
+      if (processed.has(msg.id) || skipped.has(msg.id)) return false;
+      if (forceAll) return true;
+      return true;
+    }),
+  };
+}
 
 // ─────────────────────────────────────────────
 // Helpers
@@ -848,6 +862,7 @@ function verifySync(src, newSlugs) {
 async function main() {
   log('🚀 Starting Rabbit Crypt auto-sync...');
   if (DRY_RUN) log('🔍 DRY_RUN mode — no files will be written');
+  if (AUDIT_ONLY) log('🔎 AUDIT_ONLY mode — new Telegram IDs will not be published, downloaded, or marked processed');
 
   const state = loadState();
   const processedSet = new Set(state.processedMsgIds);
@@ -861,12 +876,10 @@ async function main() {
     writeFileSync(SCRAPED_PATH, JSON.stringify(allMessages, null, 2), 'utf8');
   }
 
-  // 2. Find new messages
-  let newMessages = allMessages.filter(msg => {
-    if (processedSet.has(msg.id)) return false;
-    if (skippedSet.has(msg.id)) return false;
-    if (FORCE_ALL) return true;
-    return true;
+  // 2. Find new messages. Audit-only deliberately leaves newly discovered IDs untouched.
+  const { newMessages, auditMessages } = selectNewMessages(allMessages, state, {
+    auditOnly: AUDIT_ONLY,
+    forceAll: FORCE_ALL,
   });
 
   log(`\n📋 New messages to process: ${newMessages.length}`);
@@ -947,7 +960,7 @@ async function main() {
 
   // 5. Update reactions for ALL scraped posts
   log('\n💫 Updating reactions...');
-  for (const msg of allMessages) {
+  for (const msg of auditMessages) {
     if (msg.reactions === 0) continue; // skip zero (might not have loaded)
     const slug = Object.entries(state.slugToMsgId).find(([, id]) => id === msg.id)?.[0];
     if (!slug) continue;
@@ -963,7 +976,7 @@ async function main() {
   log('\n✏️  Checking for content edits...');
   let contentUpdated = 0;
   const editedSlugs = [];
-  for (const msg of allMessages) {
+  for (const msg of auditMessages) {
     if (!processedSet.has(msg.id)) continue; // only check already-processed posts
     if (msg.charCount < MIN_TEXT_LENGTH) continue; // skip short/image-only
 

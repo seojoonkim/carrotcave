@@ -1,5 +1,127 @@
 [
   {
+    "from": "post-197",
+    "to": "post-159",
+    "type": "DEEPENS",
+    "strength": 0.3848,
+    "sourceClaimId": "post-197-c1",
+    "sourceEvidence": "10억 와트의 폐열을 약 300K에서 방사율 1인 단면으로 복사한다고 가정해도 방열 면적이 약 2.2㎢ 나온다.",
+    "targetEvidence": "진짜 생산자가 쓰는 도구는 Claude Max나 ChatGPT Pro 같은 월 100~200달러대의 상위 요금제다.",
+    "label": "「기본소득 이전에, 기본AI: 나누기 전에 만들 수 있어야 한다」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 74,
+      "overlapTokens": [
+        "10",
+        "1인",
+        "200",
+        "200달러",
+        "30",
+        "ai",
+        "가격이",
+        "검토",
+        "것이다",
+        "곳이",
+        "기다릴",
+        "나눠주"
+      ],
+      "titleOverlap": [
+        "ai",
+        "있어야",
+        "전에"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=74;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-197",
+    "to": "complexcon-hk-identity-culture-experience",
+    "type": "DEEPENS",
+    "strength": 0.3553,
+    "sourceClaimId": "post-197-c1",
+    "sourceEvidence": "이때 가장 비싼 기술이 반드시 가장 빠른 칩은 아닐 것이다.",
+    "targetEvidence": "흥미로운 건, AI가 여기에 들어오면 문화의 역할 자체가 또 달라질 수 있다는 점이다.",
+    "label": "「ComplexCon HK에서 본 세계의 입장권」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 51,
+      "overlapTokens": [
+        "ai",
+        "가격과",
+        "가깝다",
+        "것이다",
+        "구조",
+        "기술이",
+        "누가",
+        "달라진다",
+        "달라질",
+        "도시가",
+        "될까",
+        "들고"
+      ],
+      "titleOverlap": [
+        "달라질",
+        "세계의",
+        "에서"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=51;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-197",
+    "to": "ai-hires-ai",
+    "type": "REFRAMES",
+    "strength": 0.35,
+    "sourceClaimId": "post-197-c1",
+    "sourceEvidence": "이때 가장 비싼 기술이 반드시 가장 빠른 칩은 아닐 것이다.",
+    "targetEvidence": "AI 경제가 창출한 부는 누구의 것인가?",
+    "label": "「AI가 AI를 고용하는 날」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 46,
+      "overlapTokens": [
+        "ai",
+        "가치를",
+        "것들",
+        "것이다",
+        "그때",
+        "기술이",
+        "남는다",
+        "누가",
+        "누구의",
+        "달러",
+        "데이터",
+        "만드는"
+      ],
+      "titleOverlap": [
+        "ai",
+        "것들"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=46;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "post-195",
     "to": "unknowns-in-modern-creation",
     "type": "DEEPENS",
