@@ -292,6 +292,25 @@ img { border: 0; outline: 0; box-shadow: none; }
   .voice-shared-footer__copy .voice-shared-footer__links { gap: 8px; }
   .voice-shared-footer__links a { font-size: 10px; }
 }
+/* One borderless control language across every embedded voice reader. */
+.menu-button,
+.source-button,
+.hero-action,
+.back-to-top {
+  border: 0;
+}
+.source-button,
+.hero-action {
+  border-radius: 0;
+}
+.hero-action-primary {
+  background: color-mix(in srgb, var(--cyan) 16%, var(--panel));
+}
+.back-to-top {
+  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .voice-footer-rabbit-carrot { content: url('/footer-rabbit-carrot-static.svg'); }
 }
