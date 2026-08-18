@@ -59,7 +59,7 @@ test('EditorialCard groups title and summary for the shared mobile bottom row', 
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end/);
   assert.match(css, /\.editorial-wall \.wall-card__copy>\*\{min-width:0\}/);
-  assert.match(css, /\.editorial-wall \.wall-card__copy \.wall-card__abstract\{margin:0 0 0 8px/);
+  assert.match(css, /\.editorial-wall \.wall-card__copy \.wall-card__abstract\{margin:0 0 0 10px/);
 });
 
 test('EditorialCard omits only optional content and keeps the base contract', () => {
