@@ -54,8 +54,10 @@ export default function EditorialCard({
           </time>
           <span className="wall-card__axis">{axis}</span>
         </div>
-        <h2>{title}</h2>
-        {summary && <p className="wall-card__abstract">{summary}</p>}
+        <div className="wall-card__copy">
+          <h2>{title}</h2>
+          {summary && <p className="wall-card__abstract">{summary}</p>}
+        </div>
       </div>
     </Link>
   );

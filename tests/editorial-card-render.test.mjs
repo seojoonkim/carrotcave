@@ -52,6 +52,16 @@ test('EditorialCard renders the complete shared visual and semantic contract', (
   assert.doesNotMatch(html, /wall-card__eyebrow|wall-card__door|ENTER|OPEN FIELD NOTE/);
 });
 
+test('EditorialCard groups title and summary for the shared mobile bottom row', () => {
+  const html = render({});
+  assert.match(html, /<div class="wall-card__copy"><h2>양즈린 · 무한의 시작에 서서<\/h2><p class="wall-card__abstract">/);
+
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  assert.match(css, /@media\(max-width:520px\)\{\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,2fr\) minmax\(0,1fr\);align-items:end/);
+  assert.match(css, /\.editorial-wall \.wall-card__copy>\*\{min-width:0\}/);
+  assert.match(css, /\.editorial-wall \.wall-card__copy \.wall-card__abstract\{margin:0 0 0 12px/);
+});
+
 test('EditorialCard omits only optional content and keeps the base contract', () => {
   const html = render({ summary: undefined, imageUrl: undefined, className: '' });
   assert.match(html, /class="wall-card"/);
