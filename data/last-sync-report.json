@@ -1,43 +1,13 @@
 {
-  "timestamp": "2026-08-18T01:45:17.128Z",
+  "timestamp": "2026-08-18T17:03:18.269Z",
   "newPosts": [
     {
-      "slug": "ai-idea-execution-speed",
-      "title": "아이디어가 다음 날 제품이 되는 시대",
-      "msgId": 13
-    },
-    {
-      "slug": "moltbook-agent-internet",
-      "title": "AI 에이전트의 인터넷, 몰트북",
-      "msgId": 20
-    },
-    {
-      "slug": "prompt-guard-250-update",
-      "title": "Prompt Guard v2.5.0 업데이트",
-      "msgId": 25
-    },
-    {
-      "slug": "ai-native-org-approval-flow",
-      "title": "AI가 정리하고 사람이 승인하는 조직",
-      "msgId": 31
-    },
-    {
-      "slug": "openclaw-cron-session-bottleneck",
-      "title": "오픈클로가 느려지는 주범",
-      "msgId": 66
-    },
-    {
-      "slug": "tokyo-taxi-ai-ads",
-      "title": "도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다",
-      "msgId": 198
-    },
-    {
-      "slug": "graph-engineering-ai-org",
-      "title": "그래프 엔지니어링의 진짜 함의",
-      "msgId": 199
+      "slug": "proving-human-writing-without-ai",
+      "title": "AI의 도움 없이 썼다는 걸 어떻게 증명할까",
+      "msgId": 200
     }
   ],
-  "reactionsUpdated": 0,
+  "reactionsUpdated": 1,
   "errors": [],
-  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 7편 추가:**\n  • 아이디어가 다음 날 제품이 되는 시대 (#13)\n  • AI 에이전트의 인터넷, 몰트북 (#20)\n  • Prompt Guard v2.5.0 업데이트 (#25)\n  • AI가 정리하고 사람이 승인하는 조직 (#31)\n  • 오픈클로가 느려지는 주범 (#66)\n  • 도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다 (#198)\n  • 그래프 엔지니어링의 진짜 함의 (#199)\n\n✏️ **수정된 글 3편:**\n  • moltbook-agent-internet\n  • prompt-guard-250-update\n  • ai-native-org-approval-flow"
+  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • AI의 도움 없이 썼다는 걸 어떻게 증명할까 (#200)\n\n✏️ **수정된 글 1편:**\n  • graph-engineering-ai-org\n\n💫 좋아요 1건 업데이트"
 }

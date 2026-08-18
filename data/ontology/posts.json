@@ -1,4 +1,49 @@
 {
+  "proving-human-writing-without-ai": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI 워터마크",
+      "tag-인간 저작",
+      "tag-창작 인증"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "proving-human-writing-without-ai-c1",
+        "text": "며칠 전 X에서 긴 논쟁이 벌어진 쓰레드를 보았다.",
+        "stance": "asserts",
+        "evidence": "며칠 전 X에서 긴 논쟁이 벌어진 쓰레드를 보았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 워터마크",
+      "인간 저작",
+      "창작 인증"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "reviewed-incremental-publication",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "human-review"
+      ]
+    }
+  },
   "graph-engineering-ai-org": {
     "primaryTopics": [
       "exploration"

@@ -857,6 +857,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "proving-human-writing-without-ai": {
+      "slug": "proving-human-writing-without-ai",
+      "title": "AI의 도움 없이 썼다는 걸 어떻게 증명할까",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "quantum-pirates": {
       "slug": "quantum-pirates",
       "title": "690만 BTC를 노리는 양자 해적들: 비트코인판 \"대해적시대\"가 열린다",
@@ -13111,6 +13120,93 @@
       "status": "approved"
     },
     {
+      "from": "proving-human-writing-without-ai",
+      "to": "navigating-a-world-of-decreasing-variance",
+      "type": "DEEPENS",
+      "strength": 0.72,
+      "sourceClaimId": "proving-human-writing-without-ai-c1",
+      "sourceEvidence": "결국 ‘인간이 썼다’는 자연의 경계가 아니라 사회가 정한 생산 규약이 된다.",
+      "targetEvidence": "단순한 수정이 아니라 인간 개입 편집 강화(human-in-the-loop editorial reinforcement)에 가깝다.",
+      "label": "「편차가 희소해지는 세계를 건너는 법」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "human-review"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 3,
+        "overlapTokens": [
+          "AI",
+          "인간",
+          "글쓰기"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "proving-human-writing-without-ai",
+      "to": "self-deconstruction-ai-replication",
+      "type": "REFRAMES",
+      "strength": 0.68,
+      "sourceClaimId": "proving-human-writing-without-ai-c1",
+      "sourceEvidence": "인간의 글을 보호하려 만든 제도가 인간에게만 자기 생각의 알리바이를 요구하는 셈이다.",
+      "targetEvidence": "내가 팀 블로그나 슬랙에 쓴 글들을 AI에게 읽히고, 내 사고방식을 아홉 가지 원칙으로 압축했다.",
+      "label": "「나를 해체한 사람들」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 주제를 정체성과 복제의 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "human-review"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 3,
+        "overlapTokens": [
+          "AI",
+          "인간",
+          "저작"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "proving-human-writing-without-ai",
+      "to": "unknowns-in-modern-creation",
+      "type": "RESONATES",
+      "strength": 0.66,
+      "sourceClaimId": "proving-human-writing-without-ai-c1",
+      "sourceEvidence": "누가 마지막 문장을 남겼고, 틀렸을 때 누구의 이름으로 책임지는가.",
+      "targetEvidence": "AI에게 이런 기능을 하는 프로그램을 만들어줘라고 말하면 AI가 코드를 작성하고, 개발자는 그 코드를 읽지 않고 실행한다.",
+      "label": "「모르는 것을 모르는 채로 만드는 시대」는 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 책임 문제와 맞닿는다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "human-review"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 3,
+        "overlapTokens": [
+          "AI",
+          "인간",
+          "책임"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "quantum-pirates",
       "to": "dollar-two-faces",
       "type": "DEEPENS",
@@ -16395,15 +16491,20 @@
     }
   ],
   "outgoing": {
+    "proving-human-writing-without-ai": [
+      285,
+      286,
+      287
+    ],
     "graph-engineering-ai-org": [
       93,
       94,
       95
     ],
     "tokyo-taxi-ai-ads": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "openclaw-cron-session-bottleneck": [
       150,
@@ -16611,9 +16712,9 @@
       89
     ],
     "value-of-understanding-in-ai-future": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "internship-job-posting-giveaway": [
       102,
@@ -16636,9 +16737,9 @@
       119
     ],
     "university-value-shift-education": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "agent-era-branding-future": [
       6,
@@ -16686,9 +16787,9 @@
       161
     ],
     "things-that-dont-disappear": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "how-to-create-memory-in-ai-agents": [
       96,
@@ -16696,14 +16797,14 @@
       98
     ],
     "self-deconstruction-ai-replication": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "vibe-coding-ai-decentralization": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "internship-opportunity-at-hashed": [
       105,
@@ -16726,9 +16827,9 @@
       44
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "disappearing-titles-computers-history": [
       75,
@@ -16736,9 +16837,9 @@
       77
     ],
     "uae-emergency-news-telegram-channel": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       48,
@@ -16761,9 +16862,9 @@
       131
     ],
     "unknowns-in-modern-creation": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -16776,14 +16877,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "sano-godaddy-war": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "14-5-hours": [
       0,
@@ -16791,14 +16892,14 @@
       2
     ],
     "transistor-moment": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "web4-write-access": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "naming-the-universe": [
       144,
@@ -16806,9 +16907,9 @@
       146
     ],
     "sano-intro": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "counting-assistant": [
       66,
@@ -16816,19 +16917,19 @@
       68
     ],
     "uncertainty-machine": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "vibe-founders-era": [
+      351,
+      352,
+      353
+    ],
+    "vibe-coding-tip": [
       348,
       349,
       350
-    ],
-    "vibe-coding-tip": [
-      345,
-      346,
-      347
     ],
     "moltbot-anthropic-moat": [
       138,
@@ -16846,9 +16947,9 @@
       47
     ],
     "thought-speed": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "gemini-snow-bunny": [
       90,
@@ -16881,9 +16982,9 @@
       62
     ],
     "thank-you-mirror": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "ai-hires-ai": [
       27,
@@ -16896,9 +16997,9 @@
       122
     ],
     "rabbit-crypt-name": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "agentlinter-dev-log": [
       18,
@@ -16921,14 +17022,14 @@
       143
     ],
     "tail-stopped": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "zeon-moltbook-vol1": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "ip-tvw": [
       108,
@@ -16936,9 +17037,9 @@
       110
     ],
     "quantum-pirates": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "china-ai-frontier": [
       54,
@@ -16946,9 +17047,9 @@
       56
     ],
     "seedance-30": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "agent-siblings": [
       12,
@@ -16971,9 +17072,9 @@
       134
     ],
     "robot-goku-5000": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ],
     "hvl-fellows": [
       99,
@@ -16996,9 +17097,9 @@
       71
     ],
     "rabbit-hole-intro": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ]
   },
   "overrides": {

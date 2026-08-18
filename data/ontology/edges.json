@@ -1,5 +1,92 @@
 [
   {
+    "from": "proving-human-writing-without-ai",
+    "to": "navigating-a-world-of-decreasing-variance",
+    "type": "DEEPENS",
+    "strength": 0.72,
+    "sourceClaimId": "proving-human-writing-without-ai-c1",
+    "sourceEvidence": "결국 ‘인간이 썼다’는 자연의 경계가 아니라 사회가 정한 생산 규약이 된다.",
+    "targetEvidence": "단순한 수정이 아니라 인간 개입 편집 강화(human-in-the-loop editorial reinforcement)에 가깝다.",
+    "label": "「편차가 희소해지는 세계를 건너는 법」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 3,
+      "overlapTokens": [
+        "AI",
+        "인간",
+        "글쓰기"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "proving-human-writing-without-ai",
+    "to": "self-deconstruction-ai-replication",
+    "type": "REFRAMES",
+    "strength": 0.68,
+    "sourceClaimId": "proving-human-writing-without-ai-c1",
+    "sourceEvidence": "인간의 글을 보호하려 만든 제도가 인간에게만 자기 생각의 알리바이를 요구하는 셈이다.",
+    "targetEvidence": "내가 팀 블로그나 슬랙에 쓴 글들을 AI에게 읽히고, 내 사고방식을 아홉 가지 원칙으로 압축했다.",
+    "label": "「나를 해체한 사람들」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 주제를 정체성과 복제의 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 3,
+      "overlapTokens": [
+        "AI",
+        "인간",
+        "저작"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "proving-human-writing-without-ai",
+    "to": "unknowns-in-modern-creation",
+    "type": "RESONATES",
+    "strength": 0.66,
+    "sourceClaimId": "proving-human-writing-without-ai-c1",
+    "sourceEvidence": "누가 마지막 문장을 남겼고, 틀렸을 때 누구의 이름으로 책임지는가.",
+    "targetEvidence": "AI에게 이런 기능을 하는 프로그램을 만들어줘라고 말하면 AI가 코드를 작성하고, 개발자는 그 코드를 읽지 않고 실행한다.",
+    "label": "「모르는 것을 모르는 채로 만드는 시대」는 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 책임 문제와 맞닿는다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 3,
+      "overlapTokens": [
+        "AI",
+        "인간",
+        "책임"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "graph-engineering-ai-org",
     "to": "post-195",
     "type": "DEEPENS",
