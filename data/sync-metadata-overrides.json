@@ -1,4 +1,58 @@
 {
+  "12": {
+    "slug": "ai-jobs-consumption-crisis",
+    "title": "AI가 일자리를 가져간 후, 누가 물건을 살까",
+    "category": "탐험",
+    "depth": "mid",
+    "contentHash": "504:4173123787",
+    "summary": "AI가 노동과 소비를 동시에 흔들 때 시장 붕괴를 완충할 사회계약과 안전망이 왜 먼저 필요한지 묻는다.",
+    "tags": ["AI 고용", "소비시장", "사회계약", "기본소득"]
+  },
+  "13": {
+    "slug": "ai-idea-execution-speed",
+    "title": "아이디어가 다음 날 제품이 되는 시대",
+    "category": "낙서",
+    "depth": "entry",
+    "contentHash": "193:4100683137",
+    "summary": "아이디어가 떠오른 다음 날 곧바로 제품과 투자 소식이 등장하는 AI 시대의 압축된 실행 속도를 기록한다.",
+    "tags": ["AI 제품", "실행 속도", "스타트업"]
+  },
+  "20": {
+    "slug": "moltbook-agent-internet",
+    "title": "AI 에이전트의 인터넷, 몰트북",
+    "category": "탐험",
+    "depth": "entry",
+    "contentHash": "366:3985590236",
+    "summary": "AI 에이전트끼리 글을 공유하고 토론하는 몰트북의 등장이 인간 중심 인터넷의 전환을 어떻게 예고하는지 살핀다.",
+    "tags": ["AI 에이전트", "몰트북", "에이전트 인터넷"]
+  },
+  "25": {
+    "slug": "prompt-guard-250-update",
+    "title": "Prompt Guard v2.5.0 업데이트",
+    "category": "빌딩",
+    "depth": "mid",
+    "contentHash": "873:1612532470",
+    "summary": "프롬프트 가드의 공격 패턴을 확장하며 권한 사칭과 간접 주입, 멀티턴 조작을 막는 방어 체계를 공개한다.",
+    "tags": ["Prompt Guard", "프롬프트 인젝션", "AI 보안"]
+  },
+  "31": {
+    "slug": "ai-native-org-approval-flow",
+    "title": "AI가 정리하고 사람이 승인하는 조직",
+    "category": "탐험",
+    "depth": "mid",
+    "contentHash": "762:1831770990",
+    "summary": "대표의 AI 봇이 권한 요청을 검토하고 사람이 최종 승인하는 과정을 통해 AI 네이티브 조직의 초기 모습을 보여준다.",
+    "tags": ["AI 네이티브 조직", "승인 흐름", "업무 자동화"]
+  },
+  "66": {
+    "slug": "openclaw-cron-session-bottleneck",
+    "title": "오픈클로가 느려지는 주범",
+    "category": "빌딩",
+    "depth": "deep",
+    "contentHash": "3695:1506334667",
+    "summary": "반복 예약과 복잡한 작업을 메인 세션에 몰아넣을 때 생기는 병목을 진단하고 격리 세션과 하위 에이전트로 푸는 법을 설명한다.",
+    "tags": ["OpenClaw", "크론", "격리 세션", "하위 에이전트"]
+  },
   "195": {
     "slug": "post-195",
     "title": "재귀적 자기 개선, 무엇을 지킬 것인가",
@@ -16,5 +70,23 @@
     "contentHash": "3521:786617189",
     "summary": "AI 연산이 궤도로 이동할 때 얻게 될 전력 이점과 방열·정비의 난제, 연산 우선권이 만드는 새로운 권력을 함께 살핀다.",
     "tags": ["우주 컴퓨팅", "AI 데이터센터", "궤도 인프라", "연산 주권"]
+  },
+  "198": {
+    "slug": "tokyo-taxi-ai-ads",
+    "title": "도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "2566:735843314",
+    "summary": "도쿄 택시를 채운 기업용 AI 광고를 통해 일본 기업이 느끼는 생산성 압박과 의사결정자의 불안을 읽어낸다.",
+    "tags": ["일본 AI", "택시 광고", "기업용 AI", "생산성"]
+  },
+  "199": {
+    "slug": "graph-engineering-ai-org",
+    "title": "그래프 엔지니어링의 진짜 함의",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3731:1857926677",
+    "summary": "여러 AI가 같은 정보와 습관을 공유할 때 생기는 가짜 합의를 짚고 권한과 증거, 거부권을 실행 그래프로 설계해야 한다고 주장한다.",
+    "tags": ["그래프 엔지니어링", "AI 조직", "에이전트 권한", "거버넌스"]
   }
 }

@@ -1,4 +1,372 @@
 {
+  "graph-engineering-ai-org": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-그래프 엔지니어링",
+      "tag-AI 조직",
+      "tag-에이전트 권한"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "graph-engineering-ai-org-c1",
+        "text": "새벽 두 시, AI 조직 하나가 멈췄다고 상상해보자.",
+        "stance": "asserts",
+        "evidence": "새벽 두 시, AI 조직 하나가 멈췄다고 상상해보자."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "그래프 엔지니어링",
+      "AI 조직",
+      "에이전트 권한"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "tokyo-taxi-ai-ads": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-일본 AI",
+      "tag-택시 광고",
+      "tag-기업용 AI"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "tokyo-taxi-ai-ads-c1",
+        "text": "갈 때마다 택시 뒷좌석에서 같은 인상을 받았다.",
+        "stance": "asserts",
+        "evidence": "갈 때마다 택시 뒷좌석에서 같은 인상을 받았다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "일본 AI",
+      "택시 광고",
+      "기업용 AI"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "openclaw-cron-session-bottleneck": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-OpenClaw",
+      "tag-크론",
+      "tag-격리 세션"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "openclaw-cron-session-bottleneck-c1",
+        "text": "주변에서 오픈클로(OpenClaw)가 느려졌다는 이야기를 자주 듣는다.",
+        "stance": "asserts",
+        "evidence": "주변에서 오픈클로(OpenClaw)가 느려졌다는 이야기를 자주 듣는다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "OpenClaw",
+      "크론",
+      "격리 세션"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-native-org-approval-flow": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI 네이티브 조직",
+      "tag-승인 흐름",
+      "tag-업무 자동화"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-native-org-approval-flow-c1",
+        "text": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
+        "stance": "asserts",
+        "evidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 네이티브 조직",
+      "승인 흐름",
+      "업무 자동화"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "prompt-guard-250-update": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-Prompt Guard",
+      "tag-프롬프트 인젝션",
+      "tag-AI 보안"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "prompt-guard-250-update-c1",
+        "text": "어제 공유했던 클로드봇(현 오픈클로)를 위한 Prompt Guard를 대규모 업데이트했다.",
+        "stance": "asserts",
+        "evidence": "어제 공유했던 클로드봇(현 오픈클로)를 위한 Prompt Guard를 대규모 업데이트했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Prompt Guard",
+      "프롬프트 인젝션",
+      "AI 보안"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "moltbook-agent-internet": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-AI 에이전트",
+      "tag-몰트북",
+      "tag-에이전트 인터넷"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "moltbook-agent-internet-c1",
+        "text": "몰트봇(구 클로드봇)들끼리 대화하는 소셜 커뮤니티.",
+        "stance": "asserts",
+        "evidence": "몰트봇(구 클로드봇)들끼리 대화하는 소셜 커뮤니티."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 에이전트",
+      "몰트북",
+      "에이전트 인터넷"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-idea-execution-speed": {
+    "primaryTopics": [
+      "notes"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-AI 제품",
+      "tag-실행 속도",
+      "tag-스타트업"
+    ],
+    "questions": [
+      "notes-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-idea-execution-speed-c1",
+        "text": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
+        "stance": "asserts",
+        "evidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 제품",
+      "실행 속도",
+      "스타트업"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "notes"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ai-jobs-consumption-crisis": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-mid",
+      "tag-AI 고용",
+      "tag-소비시장",
+      "tag-사회계약"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ai-jobs-consumption-crisis-c1",
+        "text": "(며칠 전에 쓴, 오랫동안 고민한 글인데 토끼굴에도 공유) https://medium.com/hashed-kr/who-will-buy-your-stuff-3ad3290263ed 요즘 이 생각에서 벗어나질 못하고 있다.",
+        "stance": "asserts",
+        "evidence": "(며칠 전에 쓴, 오랫동안 고민한 글인데 토끼굴에도 공유) https://medium.com/hashed-kr/who-will-buy-your-stuff-3ad3290263ed 요즘 이 생각에서 벗어나질 못하고 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 고용",
+      "소비시장",
+      "사회계약"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "post-197": {
     "primaryTopics": [
       "exploration"
@@ -3577,9 +3945,9 @@
     "claims": [
       {
         "id": "gemini-snow-bunny-c1",
-        "text": "언뜻 보면 \"이게 진짜면 게임 끝 아니냐\" 싶은 장면들이 튀어나오지만, 차분히 한 발 물러서 생각해보면 조금 다른 생각이 든다.",
+        "text": "Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다.",
         "stance": "asserts",
-        "evidence": "언뜻 보면 \"이게 진짜면 게임 끝 아니냐\" 싶은 장면들이 튀어나오지만, 차분히 한 발 물러서 생각해보면 조금 다른 생각이 든다."
+        "evidence": "Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다."
       }
     ],
     "entities": [],
@@ -4083,9 +4451,9 @@
     "claims": [
       {
         "id": "agentlinter-v040-c1",
-        "text": "**🚨** 배경 오늘 새벽 [sebayaki](https://dev.to/sebayaki)님께 제보가 왔다.",
+        "text": "🚨 배경 오늘 새벽 sebayaki님께 제보가 왔다.",
         "stance": "asserts",
-        "evidence": "**🚨** 배경 오늘 새벽 [sebayaki](https://dev.to/sebayaki)님께 제보가 왔다."
+        "evidence": "🚨 배경 오늘 새벽 sebayaki님께 제보가 왔다."
       }
     ],
     "entities": [],
@@ -4129,9 +4497,9 @@
     "claims": [
       {
         "id": "claude-md-english-c1",
-        "text": "[**CLAUDE.md,**](http://claude.md/)** 영어로 써야 하는 이유** 이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다.",
+        "text": "이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다.",
         "stance": "asserts",
-        "evidence": "[**CLAUDE.md,**](http://claude.md/)** 영어로 써야 하는 이유** 이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다."
+        "evidence": "이제 개발자는 코드를 타이핑하는 대신 자연어로 의도를 전달한다."
       }
     ],
     "entities": [],

@@ -4,40 +4,33 @@
   "categoryOnlyMinimumLexicalOverlap": 2,
   "edges": [
     {
-      "from": "can-i-go-ethihad-airlines-iran-conflict",
-      "to": "uae-emergency-news-telegram-channel",
-      "sourceTitle": "갈 수 있을까",
-      "targetTitle": "UAE Emergency News",
+      "from": "ai-idea-execution-speed",
+      "to": "internship-job-posting-giveaway",
+      "sourceTitle": "아이디어가 다음 날 제품이 되는 시대",
+      "targetTitle": "인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트",
       "sourceCategory": "낙서",
       "targetCategory": "빌딩",
-      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
-      "targetEvidence": "| # | 소스 | 성격 | | --- | ------------------ | ----------- | | 1 | Al Jazeera | 중동 대표 | | 2 | The National | UAE 현지 | | 3 | Gulf News | UAE 현지 | | 4 | Khaleej Times | UAE 현지 | | 5 | Arab News | 사우디 | | 6 | Reuters | 글로벌 | | 7 | AP News | 글로벌",
+      "sourceEvidence": "https://x.com/thetripathi58/status/2016227956939743245?s=46",
+      "targetEvidence": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다.",
       "signals": [
         "content",
         "tags"
       ],
       "signalDetails": {
-        "lexicalOverlap": 10,
+        "lexicalOverlap": 3,
         "overlapTokens": [
-          "cnn",
-          "east",
-          "iran",
-          "israel",
-          "middle",
-          "속보를",
-          "이란",
-          "이스라엘",
-          "전쟁",
-          "중동"
+          "ai",
+          "com",
+          "스타트업"
         ],
         "titleOverlap": [],
         "sharedTags": [
-          "전쟁"
+          "스타트업"
         ],
         "sharedConcepts": []
       },
       "type": "APPLIES",
-      "label": "「UAE Emergency News」은 「갈 수 있을까」의 원리를 구체적인 구축 과정에 적용한다"
+      "label": "「인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트」은 「아이디어가 다음 날 제품이 되는 시대」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
       "from": "agent-siblings",
@@ -123,14 +116,14 @@
       "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「아무도 지시하지 않은 14.5시간」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
-      "from": "can-i-go-ethihad-airlines-iran-conflict",
-      "to": "its-fun",
-      "sourceTitle": "갈 수 있을까",
-      "targetTitle": "아, 재밌다!!!",
+      "from": "ai-idea-execution-speed",
+      "to": "rabbit-hole-intro",
+      "sourceTitle": "아이디어가 다음 날 제품이 되는 시대",
+      "targetTitle": "토끼굴 하나 팠습니다.",
       "sourceCategory": "낙서",
       "targetCategory": "낙서",
-      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
-      "targetEvidence": "그런데 사실 그걸 알 필요가 있을까.",
+      "sourceEvidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
+      "targetEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
       "signals": [
         "content",
         "category"
@@ -138,17 +131,17 @@
       "signalDetails": {
         "lexicalOverlap": 2,
         "overlapTokens": [
-          "있을까",
-          "트위터"
+          "기록",
+          "아이디어"
         ],
         "titleOverlap": [
-          "있을까"
+          "아이디어"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "DEEPENS",
-      "label": "「아, 재밌다!!!」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
+      "label": "「토끼굴 하나 팠습니다.」은 「아이디어가 다음 날 제품이 되는 시대」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "agent-siblings",
@@ -280,35 +273,38 @@
       "label": "「AI가 AI를 고용하는 날」은 「아무도 지시하지 않은 14.5시간」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "can-i-go-ethihad-airlines-iran-conflict",
-      "to": "majlis",
-      "sourceTitle": "갈 수 있을까",
-      "targetTitle": "느림과 공동체의 미학",
+      "from": "ai-idea-execution-speed",
+      "to": "ai-unbundling",
+      "sourceTitle": "아이디어가 다음 날 제품이 되는 시대",
+      "targetTitle": "삼키고, 쪼개고, 다시 삼킨 다음은?",
       "sourceCategory": "낙서",
-      "targetCategory": "낙서",
-      "sourceEvidence": "창밖의 하늘은 아직 아름답고, 고요하고, 아무것도 모른다.",
-      "targetEvidence": "어쩌면 그런 시간들이 쌓여야, 비로소 진짜 대화가 시작되는 것인지도 모르니까.",
+      "targetCategory": "탐험",
+      "sourceEvidence": "https://x.com/thetripathi58/status/2016227956939743245?s=46",
+      "targetEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가",
       "signals": [
         "content",
-        "category"
+        "tags"
       ],
       "signalDetails": {
         "lexicalOverlap": 5,
         "overlapTokens": [
-          "고요",
-          "시간",
-          "시작되",
-          "있을까",
-          "하늘은"
+          "ai",
+          "com",
+          "다음",
+          "스타트업",
+          "시대"
         ],
         "titleOverlap": [
-          "있을까"
+          "다음",
+          "시대"
         ],
-        "sharedTags": [],
+        "sharedTags": [
+          "스타트업"
+        ],
         "sharedConcepts": []
       },
       "type": "REFRAMES",
-      "label": "「느림과 공동체의 미학」은 「갈 수 있을까」의 주제를 다른 맥락에서 다시 바라본다"
+      "label": "「삼키고, 쪼개고, 다시 삼킨 다음은?」은 「아이디어가 다음 날 제품이 되는 시대」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
       "from": "agentic-org",
@@ -325,7 +321,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 32,
+        "lexicalOverlap": 30,
         "overlapTokens": [
           "10",
           "ai",
@@ -343,7 +339,6 @@
         "titleOverlap": [
           "ai",
           "만들기",
-          "시대",
           "에이전트"
         ],
         "sharedTags": [
@@ -459,33 +454,40 @@
       "label": "「하룻밤의 성공은 없다」은 「1을 10번 세어주는 비서」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "post-143",
-      "to": "uae-emergency-news-telegram-channel",
-      "sourceTitle": "MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템",
-      "targetTitle": "UAE Emergency News",
+      "from": "openclaw-cron-session-bottleneck",
+      "to": "click-theology",
+      "sourceTitle": "오픈클로가 느려지는 주범",
+      "targetTitle": "딸깍의 신학",
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
-      "sourceEvidence": "20개 이상의 커맨드가 첫날부터 전부 사용 가능하고, Backlink, Fuzzy Search, Agentic Search, Meeting Brief, Open Loop Tracking, Decision Distillation까지 에이전트 운영에 필요한 워크플로우가 다 들어있다.",
-      "targetEvidence": "다음의 20개 소스 목록을 참조한다.",
+      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
+      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 5,
+        "lexicalOverlap": 54,
         "overlapTokens": [
-          "20",
-          "20개",
-          "만들었다",
-          "소스",
-          "있으면"
+          "claude",
+          "가깝다",
+          "가끔은",
+          "같다",
+          "개의",
+          "것과",
+          "것이다",
+          "것처럼",
+          "그렇다면",
+          "글을",
+          "나에게",
+          "누구나"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "RESONATES",
-      "label": "「UAE Emergency News」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다"
+      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
     },
     {
       "from": "death-choices-aging-future-meaning",
@@ -524,36 +526,40 @@
       "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「천 년을 살면, 무엇 때문에 죽을까」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "melgeek-evangelion-centauri-keyboard-review",
-      "to": "vibe-labs-landing-page-creation",
-      "sourceTitle": "MelGeek Evangelion Centauri 80 EVA-00 Rei Ayanami",
-      "targetTitle": "vibelabs.hashed.com을 만든 이야기",
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "uae-emergency-news-telegram-channel",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "UAE Emergency News",
       "sourceCategory": "낙서",
       "targetCategory": "빌딩",
-      "sourceEvidence": "MelGeek이 에반게리온 30주년 기념 레이 에디션 키보드에 선택한 건 바로 그 두 번째 EVA-00의 배색이다.",
-      "targetEvidence": "첫 번째 초기 버전이 나오기까지는 30분도 채 걸리지 않았다.",
+      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
+      "targetEvidence": "| # | 소스 | 성격 | | --- | ------------------ | ----------- | | 1 | Al Jazeera | 중동 대표 | | 2 | The National | UAE 현지 | | 3 | Gulf News | UAE 현지 | | 4 | Khaleej Times | UAE 현지 | | 5 | Arab News | 사우디 | | 6 | Reuters | 글로벌 | | 7 | AP News | 글로벌",
       "signals": [
         "content",
         "tags"
       ],
       "signalDetails": {
-        "lexicalOverlap": 6,
+        "lexicalOverlap": 10,
         "overlapTokens": [
-          "30",
-          "디자인",
-          "번째",
-          "애니메이션",
-          "처음",
-          "키보드"
+          "cnn",
+          "east",
+          "iran",
+          "israel",
+          "middle",
+          "속보를",
+          "이란",
+          "이스라엘",
+          "전쟁",
+          "중동"
         ],
         "titleOverlap": [],
         "sharedTags": [
-          "디자인"
+          "전쟁"
         ],
         "sharedConcepts": []
       },
       "type": "APPLIES",
-      "label": "「vibelabs.hashed.com을 만든 이야기」은 「MelGeek Evangelion Centauri 80 EVA-00 Rei Ayanami」의 원리를 구체적인 구축 과정에 적용한다"
+      "label": "「UAE Emergency News」은 「갈 수 있을까」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
       "from": "agent-siblings",
@@ -618,7 +624,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 32,
+        "lexicalOverlap": 30,
         "overlapTokens": [
           "10",
           "ai",
@@ -636,7 +642,6 @@
         "titleOverlap": [
           "ai",
           "만들기",
-          "시대",
           "에이전트"
         ],
         "sharedTags": [
@@ -651,33 +656,32 @@
       "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「에이전트 시대, 브랜드는 무엇이 되는가」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
-      "from": "counting-assistant",
-      "to": "vibe-coding-tip",
-      "sourceTitle": "1을 10번 세어주는 비서",
-      "targetTitle": "바이브 코딩의 숨겨진 장점 - 순대볶음 먹으면서 개발 가능",
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "its-fun",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "아, 재밌다!!!",
       "sourceCategory": "낙서",
       "targetCategory": "낙서",
-      "sourceEvidence": "맞다, 1을 10번 세어주는 비서가 생겼다.",
-      "targetEvidence": "AI가 인류한테 준 가장 위대한 선물 중 하나는 밥먹으면서 개발 가능한 시대를 열었다는거.",
+      "sourceEvidence": "\"US and Israel attack Iran; Tehran retaliates across Middle East.\" 트위터에는 내가 내릴 도시의 미군 기지에 폭탄이 떨어졌다는 속보가 올라오고 있다.",
+      "targetEvidence": "그런데 사실 그걸 알 필요가 있을까.",
       "signals": [
         "content",
-        "category",
-        "concept-agent"
+        "category"
       ],
       "signalDetails": {
         "lexicalOverlap": 2,
         "overlapTokens": [
-          "ai",
-          "유쾌하게"
+          "있을까",
+          "트위터"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "있을까"
+        ],
         "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
+        "sharedConcepts": []
       },
       "type": "DEEPENS",
-      "label": "「바이브 코딩의 숨겨진 장점 - 순대볶음 먹으면서 개발 가능」은 「1을 10번 세어주는 비서」의 문제를 더 깊이 파고든다"
+      "label": "「아, 재밌다!!!」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "gaslighting-ai-open-source-project",
@@ -687,7 +691,7 @@
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
       "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
-      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "targetEvidence": "AI는 인간을 대체하지 않는다.",
       "signals": [
         "content",
         "tags",
@@ -695,7 +699,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 26,
+        "lexicalOverlap": 25,
         "overlapTokens": [
           "100",
           "20",
@@ -814,43 +818,35 @@
       "label": "「모르는 것을 모르는 채로 만드는 시대」은 「아무도 지시하지 않은 14.5시간」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "its-fun",
-      "to": "thought-speed",
-      "sourceTitle": "아, 재밌다!!!",
-      "targetTitle": "생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다",
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "majlis",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "느림과 공동체의 미학",
       "sourceCategory": "낙서",
-      "targetCategory": "탐험",
-      "sourceEvidence": "그런데 사실 그걸 알 필요가 있을까.",
-      "targetEvidence": "생각과 실행 사이에 존재하던 그 안전한 틈새, 그것이 사실 인류가 20만 년 동안 살아남은 가장 중요한 방화벽이었을지도 모른다.",
+      "targetCategory": "낙서",
+      "sourceEvidence": "창밖의 하늘은 아직 아름답고, 고요하고, 아무것도 모른다.",
+      "targetEvidence": "어쩌면 그런 시간들이 쌓여야, 비로소 진짜 대화가 시작되는 것인지도 모르니까.",
       "signals": [
         "content",
-        "tags",
-        "relatedSlugs"
+        "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 21,
+        "lexicalOverlap": 5,
         "overlapTokens": [
-          "20",
-          "가능성",
-          "것과",
-          "그걸",
-          "그런데",
-          "동안",
-          "되고",
-          "사실",
-          "새로운",
-          "생각이",
-          "손가락",
-          "순간"
+          "고요",
+          "시간",
+          "시작되",
+          "있을까",
+          "하늘은"
         ],
-        "titleOverlap": [],
-        "sharedTags": [
-          "에세이"
+        "titleOverlap": [
+          "있을까"
         ],
+        "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "REFRAMES",
-      "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「아, 재밌다!!!」의 주제를 다른 맥락에서 다시 바라본다"
+      "label": "「느림과 공동체의 미학」은 「갈 수 있을까」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
       "from": "agentlinter-dev-log",

@@ -18,12 +18,13 @@
  * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--audit-only] [--no-git]
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream, renameSync, unlinkSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream, renameSync, unlinkSync, openSync, fsyncSync, closeSync } from 'fs';
 import { join, dirname, extname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync, execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
+import ts from 'typescript';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -54,12 +55,13 @@ const AUDIT_ONLY = process.argv.includes('--audit-only');
 export function selectNewMessages(allMessages, state, { auditOnly = false, forceAll = false } = {}) {
   const processed = new Set(state.processedMsgIds ?? []);
   const skipped = new Set(state.skippedMsgIds ?? []);
+  const published = new Set(Object.values(state.slugToMsgId ?? {}));
   return {
     auditMessages: allMessages,
     newMessages: auditOnly ? [] : allMessages.filter((msg) => {
-      if (processed.has(msg.id) || skipped.has(msg.id)) return false;
+      if (skipped.has(msg.id) || published.has(msg.id)) return false;
       if (forceAll) return true;
-      return true;
+      return !processed.has(msg.id) || !published.has(msg.id);
     }),
   };
 }
@@ -697,28 +699,137 @@ function addPostToFile(src, postObj) {
   return newSrc;
 }
 
-function updateReactions(src, msgId, newReactions, slugToMsgId) {
+export function updateReactions(src, msgId, newReactions, slugToMsgId) {
   // Find the slug for this msgId
   const slug = Object.entries(slugToMsgId).find(([, id]) => id === msgId)?.[0];
   if (!slug) return src;
 
   // Find the post block and update reactions
   const postRegex = new RegExp(
-    `(id:\\s*'${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'[\\s\\S]*?reactions:\\s*)\\d+`,
+    `(slug:\\s*'${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'[\\s\\S]*?reactions:\\s*)\\d+`,
     'm'
   );
   return src.replace(postRegex, `$1${newReactions}`);
 }
 
-function updateContent(src, slug, newText, title) {
+export function updateContent(src, slug, newText, title) {
   const escapedSlug = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  // Match the content backtick block for this slug
-  const contentRegex = new RegExp(
-    `(id:\\s*'${escapedSlug}'[\\s\\S]*?content:\\s*\`)[\\s\\S]*?(\`\\s*,)`,
-    'm'
+  const slugRegex = new RegExp(`\\bslug:\\s*'${escapedSlug}'`, 'g');
+  const matches = [...src.matchAll(slugRegex)];
+  if (matches.length !== 1) {
+    throw new Error(`Expected exactly one post boundary for '${slug}', found ${matches.length}`);
+  }
+
+  const postStart = matches[0].index;
+  const nextPost = /\n\s*\{\s*\n\s*id:\s*'/.exec(src.slice(postStart + 1));
+  const postEnd = nextPost ? postStart + 1 + nextPost.index : src.length;
+  const postBlock = src.slice(postStart, postEnd);
+  const contentMatch = /\bcontent:\s*`/.exec(postBlock);
+  if (!contentMatch) throw new Error(`Could not find content boundary for '${slug}'`);
+  const storedTitleMatch = /\btitle:\s*("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')\s*,/.exec(postBlock);
+  let storedTitle = title;
+  if (storedTitleMatch) {
+    try {
+      storedTitle = storedTitleMatch[1].startsWith('"')
+        ? JSON.parse(storedTitleMatch[1])
+        : storedTitleMatch[1].slice(1, -1);
+    } catch {
+      storedTitle = title;
+    }
+  }
+
+  const contentStart = postStart + contentMatch.index + contentMatch[0].length;
+  let contentEnd = -1;
+  for (let i = contentStart; i < postEnd; i++) {
+    if (src[i] !== '`') continue;
+    let backslashes = 0;
+    for (let j = i - 1; j >= contentStart && src[j] === '\\'; j--) backslashes++;
+    if (backslashes % 2 === 1) continue;
+    if (/^\s*,/.test(src.slice(i + 1, postEnd))) {
+      contentEnd = i;
+      break;
+    }
+  }
+  if (contentEnd < 0) throw new Error(`Could not find content boundary for '${slug}'`);
+
+  const withoutTelegramTitle = stripLeadingDuplicateTitle(stripTrailingReactionSignature(newText), title);
+  const escaped = escapeBacktick(stripLeadingDuplicateTitle(withoutTelegramTitle, storedTitle));
+  return src.slice(0, contentStart) + escaped + src.slice(contentEnd);
+}
+
+export function reconcileContentEdit(src, slug, newText, title, { updater = updateContent } = {}) {
+  const expectedSrc = updateContent(src, slug, newText, title);
+  const updatedSrc = updater(src, slug, newText, title);
+  if (updatedSrc !== expectedSrc) {
+    throw new Error(`Content reconciliation mismatch for '${slug}'`);
+  }
+  return {
+    src: updatedSrc,
+    contentChanged: updatedSrc !== src,
+    reconciled: true,
+  };
+}
+
+export function applyContentEditAudit(
+  src,
+  slug,
+  msg,
+  currentHash,
+  state,
+  errors,
+  { updater } = {},
+) {
+  try {
+    const update = updater ?? ((src, slug) => updateContent(src, slug, msg.fullText, msg.title));
+    const result = reconcileContentEdit(src, slug, msg.fullText, msg.title, { updater: update });
+    state.contentHashes[msg.id] = currentHash;
+    return { ...result, error: null };
+  } catch (error) {
+    const message = `msg #${msg.id} (${slug}): ${error.message}`;
+    errors.push(message);
+    return { src, contentChanged: false, reconciled: false, error };
+  }
+}
+
+export function assertValidPostsTypeScript(src) {
+  const sourceFile = ts.createSourceFile('posts.ts', src, ts.ScriptTarget.Latest, true, ts.ScriptKind.TS);
+  if (sourceFile.parseDiagnostics.length > 0) {
+    const details = sourceFile.parseDiagnostics
+      .map((diagnostic) => ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'))
+      .join('; ');
+    throw new Error(`Invalid posts.ts TypeScript syntax: ${details}`);
+  }
+}
+
+export function writeValidatedPosts(src, postsPath = POSTS_PATH, fs = {}) {
+  assertValidPostsTypeScript(src);
+  const temporaryPath = join(
+    dirname(postsPath),
+    `.${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}-${postsPath.split('/').pop()}.tmp`,
   );
-  const escaped = escapeBacktick(stripLeadingDuplicateTitle(stripTrailingReactionSignature(newText), title));
-  return src.replace(contentRegex, `$1${escaped}$2`);
+  const copy = fs.copyFileSync ?? copyFileSync;
+  const write = fs.writeFileSync ?? writeFileSync;
+  const rename = fs.renameSync ?? renameSync;
+  const exists = fs.existsSync ?? existsSync;
+  const unlink = fs.unlinkSync ?? unlinkSync;
+  const open = fs.openSync ?? openSync;
+  const sync = fs.fsyncSync ?? fsyncSync;
+  const close = fs.closeSync ?? closeSync;
+
+  copy(postsPath, postsPath + '.bak');
+  try {
+    write(temporaryPath, src, 'utf8');
+    const fd = open(temporaryPath, 'r');
+    try {
+      sync(fd);
+    } finally {
+      close(fd);
+    }
+    rename(temporaryPath, postsPath);
+  } catch (error) {
+    if (exists(temporaryPath)) unlink(temporaryPath);
+    throw error;
+  }
 }
 
 // ─────────────────────────────────────────────
@@ -839,15 +950,15 @@ async function sendTelegramNotification(newPosts, reactionsUpdated, errors, edit
 // ─────────────────────────────────────────────
 // Verification pass
 // ─────────────────────────────────────────────
-function verifySync(src, newSlugs) {
+export function verifySync(src, newSlugs) {
   const errors = [];
   
   for (const slug of newSlugs) {
-    if (!src.includes(`id: '${slug}'`)) {
+    if (!src.includes(`slug: '${slug}'`)) {
       errors.push(`Slug '${slug}' not found in posts.ts after sync!`);
     }
     // Check content is not empty
-    const contentMatch = src.match(new RegExp(`id: '${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'[\\s\\S]*?content: \`([^\`]*)\``));
+    const contentMatch = src.match(new RegExp(`slug: '${slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'[\\s\\S]*?content: \`([^\`]*)\``));
     if (contentMatch && contentMatch[1].trim().length < 50) {
       errors.push(`Content for '${slug}' seems too short!`);
     }
@@ -990,20 +1101,26 @@ async function main() {
     }
 
     if (storedHash !== currentHash) {
-      // Content has changed — find slug and update posts.ts
+      // Content has changed — find slug and reconcile posts.ts with canonical Telegram text.
       const slug = Object.entries(state.slugToMsgId).find(([, id]) => id === msg.id)?.[0];
-      if (slug && src.includes(`id: '${slug}'`)) {
-        log(`   ✏️  Detected edit: msg #${msg.id} (${slug})`);
-        const before = src;
-        src = updateContent(src, slug, msg.fullText, msg.title);
-        if (src !== before) {
-          contentUpdated++;
-          editedSlugs.push(slug);
-          state.contentHashes[msg.id] = currentHash;
-          log(`   ✅ Content updated: ${slug}`);
-        } else {
-          warn(`   ⚠️  Could not update content for: ${slug}`);
-        }
+      if (!slug) {
+        const message = `msg #${msg.id}: no slug mapping for content edit`;
+        warn(`   ❌ ${message}`);
+        errors.push(message);
+        continue;
+      }
+
+      log(`   ✏️  Detected edit: msg #${msg.id} (${slug})`);
+      const reconciliation = applyContentEditAudit(src, slug, msg, currentHash, state, errors);
+      src = reconciliation.src;
+      if (reconciliation.error) {
+        warn(`   ❌ Content reconciliation failed: ${reconciliation.error.message}`);
+      } else if (reconciliation.contentChanged) {
+        contentUpdated++;
+        editedSlugs.push(slug);
+        log(`   ✅ Content updated: ${slug}`);
+      } else {
+        log(`   ✅ Canonical content already current; hash reconciled: ${slug}`);
       }
     }
   }
@@ -1011,8 +1128,7 @@ async function main() {
 
   // 6. Write posts.ts
   if (!DRY_RUN && (newPostsAdded.length > 0 || reactionsUpdated > 0 || contentUpdated > 0)) {
-    copyFileSync(POSTS_PATH, POSTS_PATH + '.bak');
-    writeFileSync(POSTS_PATH, src, 'utf8');
+    writeValidatedPosts(src, POSTS_PATH);
     log('✅ posts.ts written');
   }
 

@@ -137,10 +137,22 @@ test('rejects duplicate IDs and responses that do not contain exactly the reques
   );
 });
 
-test('package scripts separate immediate publishing from full daily audit', async () => {
+test('package scripts separate immediate publishing from full daily reconciliation', async () => {
   const pkg = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
   assert.equal(pkg.scripts['publish:telegram'], 'node scripts/publish-single-message.mjs');
-  assert.equal(pkg.scripts['audit:telegram:daily'], 'node scripts/auto-sync.mjs --audit-only --no-git');
+  assert.equal(pkg.scripts['audit:telegram:daily'], 'node scripts/auto-sync.mjs --no-git');
+});
+
+test('daily reconciliation recovers processed IDs that never received a website mapping', () => {
+  const messages = [{ id: 12 }, { id: 20 }, { id: 25 }, { id: 31 }, { id: 197 }];
+  const state = {
+    processedMsgIds: [12, 20, 25, 31, 197],
+    skippedMsgIds: [],
+    slugToMsgId: { 'post-197': 197 },
+  };
+  const selection = selectNewMessages(messages, state, { auditOnly: false, forceAll: false });
+  assert.deepEqual(selection.newMessages.map(({ id }) => id), [12, 20, 25, 31]);
+  assert.deepEqual(selection.auditMessages, messages);
 });
 
 test('daily audit excludes every newly discovered ID from publishing and media download while retaining historical audit input', () => {

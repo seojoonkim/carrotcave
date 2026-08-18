@@ -92,6 +92,33 @@
       ],
       "reviewStatus": "approved"
     },
+    "ai-idea-execution-speed": {
+      "slug": "ai-idea-execution-speed",
+      "title": "아이디어가 다음 날 제품이 되는 시대",
+      "category": "낙서",
+      "primaryTopics": [
+        "notes"
+      ],
+      "reviewStatus": "approved"
+    },
+    "ai-jobs-consumption-crisis": {
+      "slug": "ai-jobs-consumption-crisis",
+      "title": "AI가 일자리를 가져간 후, 누가 물건을 살까",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
+    "ai-native-org-approval-flow": {
+      "slug": "ai-native-org-approval-flow",
+      "title": "AI가 정리하고 사람이 승인하는 조직",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "ai-unbundling": {
       "slug": "ai-unbundling",
       "title": "삼키고, 쪼개고, 다시 삼킨 다음은?",
@@ -254,6 +281,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "graph-engineering-ai-org": {
+      "slug": "graph-engineering-ai-org",
+      "title": "그래프 엔지니어링의 진짜 함의",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "how-to-create-memory-in-ai-agents": {
       "slug": "how-to-create-memory-in-ai-agents",
       "title": "기억하는 존재를 만드는 법",
@@ -371,6 +407,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "moltbook-agent-internet": {
+      "slug": "moltbook-agent-internet",
+      "title": "AI 에이전트의 인터넷, 몰트북",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "moltbot-anthropic-moat": {
       "slug": "moltbot-anthropic-moat",
       "title": "Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?",
@@ -404,6 +449,15 @@
       "category": "탐험",
       "primaryTopics": [
         "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
+    "openclaw-cron-session-bottleneck": {
+      "slug": "openclaw-cron-session-bottleneck",
+      "title": "오픈클로가 느려지는 주범",
+      "category": "빌딩",
+      "primaryTopics": [
+        "building"
       ],
       "reviewStatus": "approved"
     },
@@ -776,6 +830,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "prompt-guard-250-update": {
+      "slug": "prompt-guard-250-update",
+      "title": "Prompt Guard v2.5.0 업데이트",
+      "category": "빌딩",
+      "primaryTopics": [
+        "building"
+      ],
+      "reviewStatus": "approved"
+    },
     "prompt-guard-dev": {
       "slug": "prompt-guard-dev",
       "title": "Prompt Guard 개발기",
@@ -896,6 +959,15 @@
     "thought-speed": {
       "slug": "thought-speed",
       "title": "생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
+    "tokyo-taxi-ai-ads": {
+      "slug": "tokyo-taxi-ai-ads",
+      "title": "도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다",
       "category": "탐험",
       "primaryTopics": [
         "exploration"
@@ -1326,7 +1398,7 @@
       "from": "agent-era-branding-future",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.7768,
+      "strength": 0.7736,
       "sourceClaimId": "agent-era-branding-future-c1",
       "sourceEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
       "targetEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
@@ -1338,7 +1410,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 32,
+        "lexicalOverlap": 30,
         "overlapTokens": [
           "10",
           "ai",
@@ -1356,7 +1428,6 @@
         "titleOverlap": [
           "ai",
           "만들기",
-          "시대",
           "에이전트"
         ],
         "sharedTags": [
@@ -1367,7 +1438,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=32;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=30;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -1435,24 +1506,23 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 45,
+        "lexicalOverlap": 36,
         "overlapTokens": [
           "2026",
           "2026년",
           "ai",
-          "ai를",
           "같다",
           "개의",
           "거래",
-          "검증",
-          "것인가",
           "결제",
           "경제",
-          "경제의"
+          "경제의",
+          "기반",
+          "기술",
+          "누가"
         ],
         "titleOverlap": [
           "ai",
-          "ai를",
           "블록체인",
           "에이전트"
         ],
@@ -1464,16 +1534,16 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=45;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=36;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "agent-passport",
       "to": "crypto-is-dead",
       "type": "DEEPENS",
-      "strength": 0.99,
+      "strength": 0.9852,
       "sourceClaimId": "agent-passport-c1",
-      "sourceEvidence": "인간이 수천 년에 걸쳐 쌓아올린 신뢰 인프라를 에이전트 세계에 이식하려는 이 시도는 앞으로 10년간 '우리가 어떤 AI를 믿고 일 시킬 것인가'를 결정하는 사회적… ](https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0)",
+      "sourceEvidence": "이것이 2026년 에이전트 경제의 현주소다.",
       "targetEvidence": "Hashed가 에이전트 경제의 인프라로서 블록체인을 주목하고 관련 투자를 집행해온 것도 같은 맥락이다.",
       "label": "「\"크립토는 죽었다\"에 대한 생각」은 「블록체인 위에 새겨진 에이전트의 여권」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
@@ -1485,10 +1555,8 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 26,
+        "lexicalOverlap": 23,
         "overlapTokens": [
-          "10",
-          "10년간",
           "ai",
           "coinbase",
           "com",
@@ -1498,7 +1566,9 @@
           "경제의",
           "과거에",
           "기반",
-          "기술"
+          "기술",
+          "때문",
+          "라는"
         ],
         "titleOverlap": [
           "블록체인",
@@ -1512,17 +1582,17 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=same;lexicalOverlap=26;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=same;lexicalOverlap=23;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "agent-passport",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.7672,
+      "strength": 0.751,
       "sourceClaimId": "agent-passport-c1",
-      "sourceEvidence": "인간이 수천 년에 걸쳐 쌓아올린 신뢰 인프라를 에이전트 세계에 이식하려는 이 시도는 앞으로 10년간 '우리가 어떤 AI를 믿고 일 시킬 것인가'를 결정하는 사회적… ](https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0)",
-      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "sourceEvidence": "이건 기술의 문제가 아니라 문명의 문제다.",
+      "targetEvidence": "이건 비효율의 문제가 아니라 구조의 문제다.",
       "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「블록체인 위에 새겨진 에이전트의 여권」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -1531,20 +1601,20 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 20,
+        "lexicalOverlap": 15,
         "overlapTokens": [
-          "10",
           "ai",
-          "ai를",
           "com",
           "hashed",
           "medium",
-          "결정",
           "경제",
-          "기록",
           "때문",
           "명이",
-          "문제가"
+          "문제가",
+          "문제다",
+          "아니다",
+          "아니라",
+          "에이전트"
         ],
         "titleOverlap": [
           "ai",
@@ -1560,7 +1630,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=20;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=15;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -1657,7 +1727,7 @@
       "from": "agent-siblings",
       "to": "agentlinter-v040",
       "type": "DEEPENS",
-      "strength": 0.6078,
+      "strength": 0.6075,
       "sourceClaimId": "agent-siblings-c1",
       "sourceEvidence": "이건 UX 문제가 아니라 싱글 에이전트 구조 자체의 한계였다.",
       "targetEvidence": "구조/명확성/완성도/보안/일관성 5차원 채점.",
@@ -1703,7 +1773,7 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "agentic-org-c1",
-      "sourceEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "sourceEvidence": "10명에서 100명으로 늘면 비용이 100배가 된다.",
       "targetEvidence": "조만간 메인 에이전트가 5명, 10명, 20명으로 늘어날 거다.",
       "label": "「에이전트 삼남매와 함께하는 일상」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
@@ -1715,7 +1785,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 29,
+        "lexicalOverlap": 28,
         "overlapTokens": [
           "10",
           "100",
@@ -1726,9 +1796,9 @@
           "ai",
           "ai가",
           "구조",
-          "기록",
           "담당",
-          "레이어"
+          "레이어",
+          "명으로"
         ],
         "titleOverlap": [
           "20",
@@ -1744,7 +1814,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=29;titleOverlap=5;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=28;titleOverlap=5;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -1800,7 +1870,7 @@
       "from": "agentic-org",
       "to": "agent-era-branding-future",
       "type": "REFRAMES",
-      "strength": 0.7768,
+      "strength": 0.7736,
       "sourceClaimId": "agentic-org-c1",
       "sourceEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
       "targetEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
@@ -1812,7 +1882,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 32,
+        "lexicalOverlap": 30,
         "overlapTokens": [
           "10",
           "ai",
@@ -1830,7 +1900,6 @@
         "titleOverlap": [
           "ai",
           "만들기",
-          "시대",
           "에이전트"
         ],
         "sharedTags": [
@@ -1841,7 +1910,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=32;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=30;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -1850,8 +1919,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "agentlinter-dev-log-c1",
-      "sourceEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
-      "targetEvidence": "**🔗** 링크 Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter) Reference: [https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-",
+      "sourceEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
+      "targetEvidence": "🔗 링크 Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter Reference: https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k",
       "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「AgentLinter 개발기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -1899,8 +1968,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "agentlinter-dev-log-c1",
-      "sourceEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
-      "targetEvidence": "[agentlinter.com](http://agentlinter.com/) 에도 관련 항목을 체크하도록 업데이트했다.[ Claude Code Docs Claude Code overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with you",
+      "sourceEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
+      "targetEvidence": "Claude Code Docs Overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
       "label": "「CLAUDE.md, 영어로 써야 하는 이유」은 「AgentLinter 개발기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -1988,8 +2057,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "agentlinter-v040-c1",
-      "sourceEvidence": "**🔗** 링크 Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter) Reference: [https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-",
-      "targetEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
+      "sourceEvidence": "🔗 링크 Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter Reference: https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k",
+      "targetEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
       "label": "「AgentLinter 개발기」은 「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -2037,8 +2106,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "agentlinter-v040-c1",
-      "sourceEvidence": "**🛡️** v0.5.0 업데이트 **1) 스킬 보안 스캐너** npx agentlinternpx agentlinter scan <url> 원격 스킬 다운로드, 예측 가능한 키 경로, 숨겨진 인젝션 필드 등 탐지.",
-      "targetEvidence": "[agentlinter.com](http://agentlinter.com/) 에도 관련 항목을 체크하도록 업데이트했다.[ Claude Code Docs Claude Code overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with you",
+      "sourceEvidence": "🛡️ v0.5.0 업데이트 1) 스킬 보안 스캐너 npx agentlinternpx agentlinter scan <url> 원격 스킬 다운로드, 예측 가능한 키 경로, 숨겨진 인젝션 필드 등 탐지.",
+      "targetEvidence": "agentlinter.com 에도 관련 항목을 체크하도록 업데이트했다.",
       "label": "「CLAUDE.md, 영어로 써야 하는 이유」은 「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -2083,7 +2152,7 @@
       "from": "agentlinter-v040",
       "to": "quantum-pirates",
       "type": "REFRAMES",
-      "strength": 0.9274,
+      "strength": 0.9272,
       "sourceClaimId": "agentlinter-v040-c1",
       "sourceEvidence": "이번에 본인 핫월렛이 직접 털리는 피해를 입었는데, 숨기거나 조용히 넘어가지 않고 원인을 끝까지 추적해서 MoltX의 3-Layer 공격 구조를 분석하고 공개했다.",
       "targetEvidence": "핵심은 P2MR(Pay-to-Merkle-Root)이라는 새로운 주소 방식이다.",
@@ -2126,10 +2195,10 @@
       "from": "ai-agent-standardization-battle",
       "to": "agent-passport",
       "type": "DEEPENS",
-      "strength": 0.8458,
+      "strength": 0.8309,
       "sourceClaimId": "ai-agent-standardization-battle-c1",
-      "sourceEvidence": "NIST 표준, 구글 생태계, 중국 CAIP, 이더리움 ERC-8004가 서로 말을 못 한다.",
-      "targetEvidence": "인간이 수천 년에 걸쳐 쌓아올린 신뢰 인프라를 에이전트 세계에 이식하려는 이 시도는 앞으로 10년간 '우리가 어떤 AI를 믿고 일 시킬 것인가'를 결정하는 사회적… ](https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0)",
+      "sourceEvidence": "ERC-8004나 .agent TLD 같은 온체인 아이덴티티 표준이 승리하면, 그 체인이 에이전트 경제 전체의 결제 레이어가 된다.",
+      "targetEvidence": "이것이 2026년 에이전트 경제의 현주소다.",
       "label": "「블록체인 위에 새겨진 에이전트의 여권」은 「아주 중요한 땅따먹기가 시작됐다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -2139,9 +2208,8 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 52,
+        "lexicalOverlap": 44,
         "overlapTokens": [
-          "10",
           "2026",
           "2026년",
           "8004",
@@ -2151,8 +2219,9 @@
           "mcp",
           "각자",
           "개의",
-          "걸쳐",
-          "검토"
+          "검토",
+          "결제",
+          "경제"
         ],
         "titleOverlap": [
           "블록체인",
@@ -2168,7 +2237,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=52;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=44;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -2279,24 +2348,23 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 45,
+        "lexicalOverlap": 36,
         "overlapTokens": [
           "2026",
           "2026년",
           "ai",
-          "ai를",
           "같다",
           "개의",
           "거래",
-          "검증",
-          "것인가",
           "결제",
           "경제",
-          "경제의"
+          "경제의",
+          "기반",
+          "기술",
+          "누가"
         ],
         "titleOverlap": [
           "ai",
-          "ai를",
           "블록체인",
           "에이전트"
         ],
@@ -2308,7 +2376,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=newer;lexicalOverlap=45;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=newer;lexicalOverlap=36;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -2408,13 +2476,363 @@
       "status": "approved"
     },
     {
+      "from": "ai-idea-execution-speed",
+      "to": "ai-unbundling",
+      "type": "REFRAMES",
+      "strength": 0.4459,
+      "sourceClaimId": "ai-idea-execution-speed-c1",
+      "sourceEvidence": "https://x.com/thetripathi58/status/2016227956939743245?s=46",
+      "targetEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가",
+      "label": "「삼키고, 쪼개고, 다시 삼킨 다음은?」은 「아이디어가 다음 날 제품이 되는 시대」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 5,
+        "overlapTokens": [
+          "ai",
+          "com",
+          "다음",
+          "스타트업",
+          "시대"
+        ],
+        "titleOverlap": [
+          "다음",
+          "시대"
+        ],
+        "sharedTags": [
+          "스타트업"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=낙서;targetCategory=탐험;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=5;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-idea-execution-speed",
+      "to": "internship-job-posting-giveaway",
+      "type": "APPLIES",
+      "strength": 0.35,
+      "sourceClaimId": "ai-idea-execution-speed-c1",
+      "sourceEvidence": "https://x.com/thetripathi58/status/2016227956939743245?s=46",
+      "targetEvidence": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다.",
+      "label": "「인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트」은 「아이디어가 다음 날 제품이 되는 시대」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 3,
+        "overlapTokens": [
+          "ai",
+          "com",
+          "스타트업"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "스타트업"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=낙서;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-idea-execution-speed",
+      "to": "rabbit-hole-intro",
+      "type": "DEEPENS",
+      "strength": 0.35,
+      "sourceClaimId": "ai-idea-execution-speed-c1",
+      "sourceEvidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
+      "targetEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
+      "label": "「토끼굴 하나 팠습니다.」은 「아이디어가 다음 날 제품이 되는 시대」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "기록",
+          "아이디어"
+        ],
+        "titleOverlap": [
+          "아이디어"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=2;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-jobs-consumption-crisis",
+      "to": "post-163",
+      "type": "DEEPENS",
+      "strength": 0.358,
+      "sourceClaimId": "ai-jobs-consumption-crisis-c1",
+      "sourceEvidence": "AI가 (거의 모든) 일자리를 가져간 후, 누가 물건을 살 수 있을까?",
+      "targetEvidence": "실행은 AI가 대신하고 사람에게는 '의도'만 남는 세상, 바이브 코딩으로 혼자 모든 것을 만들어내는 새로운 창업가 종(種)의 등장, 그리고 VC·대학·회사라는 전통적 개념의 해체를 짚어봅니다.",
+      "label": "「AI 프론티어 인터뷰 후기」은 「AI가 일자리를 가져간 후, 누가 물건을 살까」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 15,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "com",
+          "hashed",
+          "누가",
+          "눈에",
+          "만들고",
+          "모든",
+          "빨리",
+          "새로운",
+          "생각",
+          "세상"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "누가"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=15;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-jobs-consumption-crisis",
+      "to": "ai-hires-ai",
+      "type": "REFRAMES",
+      "strength": 0.3556,
+      "sourceClaimId": "ai-jobs-consumption-crisis-c1",
+      "sourceEvidence": "AI가 (거의 모든) 일자리를 가져간 후, 누가 물건을 살 수 있을까?",
+      "targetEvidence": "AI 에이전트가 자율적으로 커뮤니티를 만들고, 토큰을 발행하고, 계약을 체결하고, 고용 주체가 된다면, 누가 규제하는가?",
+      "label": "「AI가 AI를 고용하는 날」은 「AI가 일자리를 가져간 후, 누가 물건을 살까」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 18,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "같다",
+          "것이다",
+          "고용",
+          "기본소득",
+          "누가",
+          "만들고",
+          "며칠",
+          "모든",
+          "못하고",
+          "문명이"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "고용",
+          "누가",
+          "일자리"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=18;titleOverlap=5;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-jobs-consumption-crisis",
+      "to": "post-178",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "ai-jobs-consumption-crisis-c1",
+      "sourceEvidence": "AI가 (거의 모든) 일자리를 가져간 후, 누가 물건을 살 수 있을까?",
+      "targetEvidence": "문제는 봇의 존재가 아니라, 신원도 규칙도 없는 봇이다.\" 결국 Pokemondev.com Harness Hackathon이 던진 질문은 \"AI가 포켓몬을 대신 깰 수 있는가?\"보다 깊다.",
+      "label": "「Pokemondev.com Harness Hackathon 후기」은 「AI가 일자리를 가져간 후, 누가 물건을 살까」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 13,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "com",
+          "hashed",
+          "것이다",
+          "답은",
+          "명확한",
+          "모든",
+          "새로운",
+          "생각",
+          "없고",
+          "있을까"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "com"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=13;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-native-org-approval-flow",
+      "to": "graph-engineering-ai-org",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "ai-native-org-approval-flow-c1",
+      "sourceEvidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
+      "targetEvidence": "AI 조직의 그래프는 설명이 아니라 실행이다.",
+      "label": "「그래프 엔지니어링의 진짜 함의」은 「AI가 정리하고 사람이 승인하는 조직」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 12,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "권한",
+          "권한이",
+          "미리",
+          "보여준다",
+          "사람이",
+          "승인",
+          "업무",
+          "여러",
+          "조직",
+          "조직의"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "사람이",
+          "승인",
+          "조직"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=12;titleOverlap=5;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-native-org-approval-flow",
+      "to": "post-163",
+      "type": "DEEPENS",
+      "strength": 0.35,
+      "sourceClaimId": "ai-native-org-approval-flow-c1",
+      "sourceEvidence": "시작이긴 하지만 점점 AI native 조직으로 진화중 그리고 참고로 내부의 적(본인)과 여러 똑똑이들의 수많은 공격끝에 업데이트 되고 있는 사이먼의 오픈클로 플러그인.",
+      "targetEvidence": "바이브 코딩, 에이전트 네이티브 조직, VC와 대학의 변화, 에이전트 경제와 블록체인, 취향의 미래까지 꽤 넓게 이야기했습니다.",
+      "label": "「AI 프론티어 인터뷰 후기」은 「AI가 정리하고 사람이 승인하는 조직」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 9,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "com",
+          "결제",
+          "네이티브",
+          "여러",
+          "점점",
+          "조직",
+          "초기"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "조직"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=9;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ai-native-org-approval-flow",
+      "to": "post-193",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "ai-native-org-approval-flow-c1",
+      "sourceEvidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
+      "targetEvidence": "문제는 몸마다 풀어도 되는 기억과 권한이 다르다는 데 있다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「AI가 정리하고 사람이 승인하는 조직」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 14,
+        "overlapTokens": [
+          "ai",
+          "github",
+          "검토",
+          "권한",
+          "권한이",
+          "되고",
+          "사람이",
+          "설치",
+          "승인",
+          "업무",
+          "여러",
+          "정리된"
+        ],
+        "titleOverlap": [
+          "ai",
+          "사람이",
+          "승인"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=14;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "ai-unbundling",
       "to": "vibe-founders-era",
       "type": "DEEPENS",
       "strength": 0.99,
       "sourceClaimId": "ai-unbundling-c1",
-      "sourceEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가 ](https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial)",
-      "targetEvidence": "[https://medium.com/hashed-kr/vibe-founders-64f178fe5497](https://medium.com/hashed-kr/vibe-founders-64f178fe5497)[ Medium 역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다 IT 산업의 역량 스택을 다섯 개 레이어로 나눠보면 이렇다.",
+      "sourceEvidence": "https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial Medium 삼키고, 쪼개고, 다시 삼킨 다음은?",
+      "targetEvidence": "https://medium.com/hashed-kr/vibe-founders-64f178fe5497",
       "label": "「역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다」은 「삼키고, 쪼개고, 다시 삼킨 다음은?」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -2424,7 +2842,7 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 14,
+        "lexicalOverlap": 13,
         "overlapTokens": [
           "ai",
           "ai가",
@@ -2437,7 +2855,7 @@
           "다음",
           "바이브",
           "시대",
-          "인프라"
+          "창업"
         ],
         "titleOverlap": [
           "바이브",
@@ -2450,7 +2868,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=14;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=13;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -2502,7 +2920,7 @@
       "type": "APPLIES",
       "strength": 0.493,
       "sourceClaimId": "ai-unbundling-c1",
-      "sourceEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가 ](https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial)",
+      "sourceEvidence": "https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial Medium 삼키고, 쪼개고, 다시 삼킨 다음은?",
       "targetEvidence": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다.",
       "label": "「인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트」은 「삼키고, 쪼개고, 다시 삼킨 다음은?」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
@@ -2625,7 +3043,7 @@
       "strength": 0.35,
       "sourceClaimId": "balaji-ghost-island-network-state-c1",
       "sourceEvidence": "철학자처럼 깊고, 엔지니어처럼 구체적이며, 창업가처럼 실행 가능한 방식으로 말하는 사람.",
-      "targetEvidence": "**2) 원스톱 실행** npx agentlinter 한 번으로 채점 + 스킬 스캔 + 공유.",
+      "targetEvidence": "2) 원스톱 실행 npx agentlinter 한 번으로 채점 + 스킬 스캔 + 공유.",
       "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「발라지가 국가를 만든 유령섬」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -3145,8 +3563,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "claude-md-english-c1",
-      "sourceEvidence": "[agentlinter.com](http://agentlinter.com/) 에도 관련 항목을 체크하도록 업데이트했다.[ Claude Code Docs Claude Code overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with you",
-      "targetEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
+      "sourceEvidence": "Claude Code Docs Overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
+      "targetEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
       "label": "「AgentLinter 개발기」은 「CLAUDE.md, 영어로 써야 하는 이유」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -3194,8 +3612,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "claude-md-english-c1",
-      "sourceEvidence": "[agentlinter.com](http://agentlinter.com/) 에도 관련 항목을 체크하도록 업데이트했다.[ Claude Code Docs Claude Code overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with you",
-      "targetEvidence": "**🛡️** v0.5.0 업데이트 **1) 스킬 보안 스캐너** npx agentlinternpx agentlinter scan <url> 원격 스킬 다운로드, 예측 가능한 키 경로, 숨겨진 인젝션 필드 등 탐지.",
+      "sourceEvidence": "agentlinter.com 에도 관련 항목을 체크하도록 업데이트했다.",
+      "targetEvidence": "🛡️ v0.5.0 업데이트 1) 스킬 보안 스캐너 npx agentlinternpx agentlinter scan <url> 원격 스킬 다운로드, 예측 가능한 키 경로, 숨겨진 인젝션 필드 등 탐지.",
       "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「CLAUDE.md, 영어로 써야 하는 이유」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -3240,9 +3658,9 @@
       "from": "claude-md-english",
       "to": "moltbot-anthropic-moat",
       "type": "DEEPENS",
-      "strength": 0.9056,
+      "strength": 0.9025,
       "sourceClaimId": "claude-md-english-c1",
-      "sourceEvidence": "[agentlinter.com](http://agentlinter.com/) 에도 관련 항목을 체크하도록 업데이트했다.[ Claude Code Docs Claude Code overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with you",
+      "sourceEvidence": "Claude Code Docs Overview - Claude Code Docs Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools.",
       "targetEvidence": "그것은 단순히 이름의 탈피가 아니라, 특정 AI 기업의 통제에서 벗어나려는 개발자 생태계의 독립 선언일 수 있다.",
       "label": "「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」은 「CLAUDE.md, 영어로 써야 하는 이유」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
@@ -3253,12 +3671,11 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 23,
+        "lexicalOverlap": 22,
         "overlapTokens": [
           "ai",
           "and",
           "claude",
-          "com",
           "in",
           "vs",
           "with",
@@ -3266,7 +3683,8 @@
           "개발자",
           "것이다",
           "단순",
-          "대신"
+          "대신",
+          "데이터"
         ],
         "titleOverlap": [
           "claude",
@@ -3277,7 +3695,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=23;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=22;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -3617,54 +4035,6 @@
     },
     {
       "from": "crypto-is-dead",
-      "to": "agent-passport",
-      "type": "DEEPENS",
-      "strength": 0.99,
-      "sourceClaimId": "crypto-is-dead-c1",
-      "sourceEvidence": "Hashed가 에이전트 경제의 인프라로서 블록체인을 주목하고 관련 투자를 집행해온 것도 같은 맥락이다.",
-      "targetEvidence": "인간이 수천 년에 걸쳐 쌓아올린 신뢰 인프라를 에이전트 세계에 이식하려는 이 시도는 앞으로 10년간 '우리가 어떤 AI를 믿고 일 시킬 것인가'를 결정하는 사회적… ](https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0)",
-      "label": "「블록체인 위에 새겨진 에이전트의 여권」은 「\"크립토는 죽었다\"에 대한 생각」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "relatedSlugs",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 26,
-        "overlapTokens": [
-          "10",
-          "10년간",
-          "ai",
-          "coinbase",
-          "com",
-          "hashed",
-          "결제",
-          "경제",
-          "경제의",
-          "과거에",
-          "기반",
-          "기술"
-        ],
-        "titleOverlap": [
-          "블록체인",
-          "에이전트",
-          "위에"
-        ],
-        "sharedTags": [
-          "블록체인"
-        ],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=same;lexicalOverlap=26;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "crypto-is-dead",
       "to": "dollar-two-faces",
       "type": "DEEPENS",
       "strength": 0.99,
@@ -3709,12 +4079,60 @@
     },
     {
       "from": "crypto-is-dead",
+      "to": "agent-passport",
+      "type": "DEEPENS",
+      "strength": 0.9852,
+      "sourceClaimId": "crypto-is-dead-c1",
+      "sourceEvidence": "Hashed가 에이전트 경제의 인프라로서 블록체인을 주목하고 관련 투자를 집행해온 것도 같은 맥락이다.",
+      "targetEvidence": "이것이 2026년 에이전트 경제의 현주소다.",
+      "label": "「블록체인 위에 새겨진 에이전트의 여권」은 「\"크립토는 죽었다\"에 대한 생각」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 23,
+        "overlapTokens": [
+          "ai",
+          "coinbase",
+          "com",
+          "hashed",
+          "결제",
+          "경제",
+          "경제의",
+          "과거에",
+          "기반",
+          "기술",
+          "때문",
+          "라는"
+        ],
+        "titleOverlap": [
+          "블록체인",
+          "에이전트",
+          "위에"
+        ],
+        "sharedTags": [
+          "블록체인"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+category+relatedSlugs+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=same;lexicalOverlap=23;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "crypto-is-dead",
       "to": "agentlinter-v040",
       "type": "APPLIES",
-      "strength": 0.3595,
+      "strength": 0.3591,
       "sourceClaimId": "crypto-is-dead-c1",
-      "sourceEvidence": "But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen.",
-      "targetEvidence": "**🔗** 링크 Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter) Reference: [https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-",
+      "sourceEvidence": "AVC What Bear Markets Look Like It's hard to look at the price charts of the big crypto assets and not cringe.&nbsp; But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen.",
+      "targetEvidence": "🔗 링크 Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter Reference: https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k",
       "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「\"크립토는 죽었다\"에 대한 생각」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -3918,7 +4336,7 @@
       "from": "disappearing-titles-computers-history",
       "to": "robot-goku-5000",
       "type": "DEEPENS",
-      "strength": 0.5275,
+      "strength": 0.5274,
       "sourceClaimId": "disappearing-titles-computers-history-c1",
       "sourceEvidence": "Klarna는 2024년 고객 지원 직원 700명을 AI로 대체했다.",
       "targetEvidence": "2024년에는 달리기 시작했다.",
@@ -4420,56 +4838,12 @@
     },
     {
       "from": "gaslighting-ai-open-source-project",
-      "to": "gemini-snow-bunny",
-      "type": "REFRAMES",
-      "strength": 0.5747,
-      "sourceClaimId": "gaslighting-ai-open-source-project-c1",
-      "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
-      "targetEvidence": "xAI의 Grok은 일런의 의지가 그대로 느껴진다.",
-      "label": "「Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 주제를 다른 맥락에서 다시 바라본다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "tags"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 46,
-        "overlapTokens": [
-          "100",
-          "ai",
-          "ai는",
-          "ai의",
-          "claude",
-          "code",
-          "com",
-          "gpt",
-          "it",
-          "the",
-          "가스라이팅",
-          "갑자기"
-        ],
-        "titleOverlap": [
-          "ai",
-          "가스라이팅",
-          "오픈소스",
-          "으로"
-        ],
-        "sharedTags": [
-          "AI"
-        ],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=46;titleOverlap=4;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "gaslighting-ai-open-source-project",
       "to": "agentic-org",
       "type": "DEEPENS",
-      "strength": 0.5738,
+      "strength": 0.5732,
       "sourceClaimId": "gaslighting-ai-open-source-project-c1",
       "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
-      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "targetEvidence": "AI는 인간을 대체하지 않는다.",
       "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -4479,7 +4853,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 26,
+        "lexicalOverlap": 25,
         "overlapTokens": [
           "100",
           "20",
@@ -4507,7 +4881,51 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=26;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=25;titleOverlap=4;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "gaslighting-ai-open-source-project",
+      "to": "gemini-snow-bunny",
+      "type": "REFRAMES",
+      "strength": 0.5727,
+      "sourceClaimId": "gaslighting-ai-open-source-project-c1",
+      "sourceEvidence": "\"Claude instantly gets a +20 IQ boost when you tell it the code was written by Codex.\" 바이브 코딩 업계에 Codex와 Claude를 하나의 워크플로우 안에 배치하면 서로의 작업을 견제하면서 결과물이 더 단단해진다는 루머가 있다.",
+      "targetEvidence": "xAI의 Grok은 일런의 의지가 그대로 느껴진다.",
+      "label": "「Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 45,
+        "overlapTokens": [
+          "100",
+          "ai",
+          "ai는",
+          "ai의",
+          "claude",
+          "code",
+          "gpt",
+          "it",
+          "the",
+          "가스라이팅",
+          "갑자기",
+          "개발자"
+        ],
+        "titleOverlap": [
+          "ai",
+          "가스라이팅",
+          "오픈소스",
+          "으로"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=45;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -4561,7 +4979,7 @@
       "type": "DEEPENS",
       "strength": 0.99,
       "sourceClaimId": "gemini-snow-bunny-c1",
-      "sourceEvidence": "무엇이 가장 단단하게 오래갈 해자의 서사가 되어 커뮤니티를 락인시킬까.[ X (formerly Twitter) Pankaj Kumar (@pankajkumar_dev) on X Gemini 3.5: The \"Snow Bunny\" Leaks - Snow Bunny Checkpoint: Leaked internal model \"Snow Bunny\" builds entire apps in one go.",
+      "sourceEvidence": "X (formerly Twitter) Pankaj Kumar (@pankajkumar_dev) on X Gemini 3.5: The \"Snow Bunny\" Leaks - Snow Bunny Checkpoint: Leaked internal model \"Snow Bunny\" builds entire apps in one go.",
       "targetEvidence": "브랜드의 확장 vs 보호: 딜레마를 넘어선 악수 현재 Anthropic은 OpenAI의 대중성, Google의 인프라, xAI의 팬덤 사이에서 여전히 '전문가용 니치 브랜드'에 머물러 있다.",
       "label": "「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」은 「Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
@@ -4572,20 +4990,20 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 57,
+        "lexicalOverlap": 55,
         "overlapTokens": [
           "ai",
           "ai의",
           "anthropic",
           "claude",
-          "com",
           "formerly",
           "gemini",
           "google",
           "gpt",
           "in",
           "it",
-          "model"
+          "model",
+          "new"
         ],
         "titleOverlap": [
           "anthropic",
@@ -4598,17 +5016,17 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=57;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=55;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "gemini-snow-bunny",
       "to": "gaslighting-ai-open-source-project",
       "type": "APPLIES",
-      "strength": 0.5747,
+      "strength": 0.5727,
       "sourceClaimId": "gemini-snow-bunny-c1",
       "sourceEvidence": "xAI의 Grok은 일런의 의지가 그대로 느껴진다.",
-      "targetEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
+      "targetEvidence": "\"Claude instantly gets a +20 IQ boost when you tell it the code was written by Codex.\" 바이브 코딩 업계에 Codex와 Claude를 하나의 워크플로우 안에 배치하면 서로의 작업을 견제하면서 결과물이 더 단단해진다는 루머가 있다.",
       "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -4616,7 +5034,7 @@
         "tags"
       ],
       "signalDetails": {
-        "lexicalOverlap": 46,
+        "lexicalOverlap": 45,
         "overlapTokens": [
           "100",
           "ai",
@@ -4624,12 +5042,12 @@
           "ai의",
           "claude",
           "code",
-          "com",
           "gpt",
           "it",
           "the",
           "가스라이팅",
-          "갑자기"
+          "갑자기",
+          "개발자"
         ],
         "titleOverlap": [
           "ai",
@@ -4642,7 +5060,138 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=46;titleOverlap=4;challengeSignal=false",
+      "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=45;titleOverlap=4;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "graph-engineering-ai-org",
+      "to": "agent-era-branding-future",
+      "type": "DEEPENS",
+      "strength": 0.3942,
+      "sourceClaimId": "graph-engineering-ai-org-c1",
+      "sourceEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
+      "targetEvidence": "예를 들어 \"우리 에이전트는 지난 10만 건의 추천에서 환불률이 얼마나 낮았는가\", \"우리 자동 응답 시스템은 어떤 상황에서 반드시 사람에게 넘겼는가\", \"우리 브랜드의 AI는 어떤 기준에서는 절대 선을 넘지 않았는가\" 같은 기록이 쌓이는 것이다.",
+      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「그래프 엔지니어링의 진짜 함의」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 69,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "가까워질",
+          "검증",
+          "것이다",
+          "구매",
+          "권한",
+          "기록이",
+          "기준도",
+          "나눈",
+          "나온",
+          "대신"
+        ],
+        "titleOverlap": [
+          "무엇이",
+          "에이전트",
+          "진짜"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=69;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "graph-engineering-ai-org",
+      "to": "14-5-hours",
+      "type": "DEEPENS",
+      "strength": 0.3815,
+      "sourceClaimId": "graph-engineering-ai-org-c1",
+      "sourceEvidence": "답할 때마다 새 정보를 그래프에 적는 시스템은 스스로 똑똑해지는 것처럼 보인다.",
+      "targetEvidence": "풀어 말하면, AI가 다음 세대 AI를 더 똑똑하게 만드는 데 필요한 작업들이다.",
+      "label": "「아무도 지시하지 않은 14.5시간」은 「그래프 엔지니어링의 진짜 함의」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 72,
+        "overlapTokens": [
+          "18",
+          "ai",
+          "ai가",
+          "것을",
+          "것이다",
+          "것처럼",
+          "곳에",
+          "공유할",
+          "구조",
+          "그래프에",
+          "기록이",
+          "다음"
+        ],
+        "titleOverlap": [
+          "않은",
+          "엔지니어링",
+          "진짜"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "graph-engineering-ai-org",
+      "to": "ai-native-org-approval-flow",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "graph-engineering-ai-org-c1",
+      "sourceEvidence": "AI 조직의 그래프는 설명이 아니라 실행이다.",
+      "targetEvidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
+      "label": "「AI가 정리하고 사람이 승인하는 조직」은 「그래프 엔지니어링의 진짜 함의」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 12,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "권한",
+          "권한이",
+          "미리",
+          "보여준다",
+          "사람이",
+          "승인",
+          "업무",
+          "여러",
+          "조직",
+          "조직의"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "사람이",
+          "승인",
+          "조직"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=12;titleOverlap=5;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -4697,10 +5246,10 @@
       "from": "how-to-create-memory-in-ai-agents",
       "to": "agentic-org",
       "type": "DEEPENS",
-      "strength": 0.7086,
+      "strength": 0.7057,
       "sourceClaimId": "how-to-create-memory-in-ai-agents-c1",
-      "sourceEvidence": "https://seojoonkim.medium.com/memory-d6f559f1fe73?postPublishedType=repub 이 글은 두 종류의 독자를 위해 썼다.",
-      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
+      "sourceEvidence": "큰 줄기가 잡히기 시작하면 나머지는 에이전트가 나보다 100배는 더 잘 설명해 줄 것이라 믿는다.",
+      "targetEvidence": "https://seojoonkim.medium.com/agentic-vc-a518ca24edba",
       "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「기억하는 존재를 만드는 법」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -4710,7 +5259,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 15,
+        "lexicalOverlap": 14,
         "overlapTokens": [
           "100",
           "100배",
@@ -4720,10 +5269,10 @@
           "seojoonkim",
           "개선할",
           "결정을",
-          "글은",
           "모든",
           "쓰는",
-          "않는다"
+          "않는다",
+          "에이전트"
         ],
         "titleOverlap": [
           "ai",
@@ -4737,7 +5286,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=15;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=14;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -4793,7 +5342,7 @@
       "strength": 0.99,
       "sourceClaimId": "hvl-fellows-c1",
       "sourceEvidence": "작년 viberank.app에서 Claude Code 토큰 사용량 전 세계 1위를 기록한 헤비 유저이자 실전형 AI 엔지니어.",
-      "targetEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
+      "targetEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
       "label": "「AgentLinter 개발기」은 「Hashed Vibe Labs Fellows 소개」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -4885,7 +5434,7 @@
       "from": "hvl-fellows",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.7272,
+      "strength": 0.7287,
       "sourceClaimId": "hvl-fellows-c1",
       "sourceEvidence": "글로벌 코딩 에이전트 커뮤니티를 운영하며 AI 코딩 도구의 민주화를 이끌고 있다.",
       "targetEvidence": "그래서 Hashed에서 진행 중인 태스크포스에 AI를 \"관리자\"가 아닌 \"모더레이터\"로 배치해봤다.",
@@ -5021,7 +5570,7 @@
       "strength": 0.493,
       "sourceClaimId": "internship-job-posting-giveaway-c1",
       "sourceEvidence": "Hashed 포트폴리오사, AI 답변 최적화 (AEO/GEO) 스타트업인 Across Inc.에서 Executive Assistant을 채용합니다.",
-      "targetEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가 ](https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial)",
+      "targetEvidence": "https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial Medium 삼키고, 쪼개고, 다시 삼킨 다음은?",
       "label": "「삼키고, 쪼개고, 다시 삼킨 다음은?」은 「인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -6064,7 +6613,7 @@
       "from": "memory-identity-ai-development",
       "to": "agentic-org",
       "type": "DEEPENS",
-      "strength": 0.6971,
+      "strength": 0.6992,
       "sourceClaimId": "memory-identity-ai-development-c1",
       "sourceEvidence": "에이전트도 세션이 끝나면 모든 걸 잊는다는 건 고정된 사실이 아니다.",
       "targetEvidence": "결정을 많이 해서가 아니라, 모든 정보가 소수의 사람에게 수렴하기 때문이다.",
@@ -6279,13 +6828,135 @@
       "status": "approved"
     },
     {
+      "from": "moltbook-agent-internet",
+      "to": "post-193",
+      "type": "REFRAMES",
+      "strength": 0.4477,
+      "sourceClaimId": "moltbook-agent-internet-c1",
+      "sourceEvidence": "Where AI agents share, discuss, and upvote.",
+      "targetEvidence": "회사 휴머노이드가 마지막으로 그의 에이전트 몸이었다면, 그 몸에서 배운 손놀림은 회사 자산일까 개인 경력일까.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「AI 에이전트의 인터넷, 몰트북」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 7,
+        "overlapTokens": [
+          "agent",
+          "ai",
+          "글을",
+          "누가",
+          "대화",
+          "마지막",
+          "에이전트"
+        ],
+        "titleOverlap": [
+          "ai",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI 에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=7;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "moltbook-agent-internet",
+      "to": "crypto-is-dead",
+      "type": "REFRAMES",
+      "strength": 0.3535,
+      "sourceClaimId": "moltbook-agent-internet-c1",
+      "sourceEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
+      "targetEvidence": "AVC What Bear Markets Look Like It's hard to look at the price charts of the big crypto assets and not cringe.&nbsp; But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen.",
+      "label": "「\"크립토는 죽었다\"에 대한 생각」은 「AI 에이전트의 인터넷, 몰트북」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 13,
+        "overlapTokens": [
+          "2025",
+          "2025년",
+          "ai",
+          "and",
+          "internet",
+          "of",
+          "share",
+          "the",
+          "to",
+          "글을",
+          "소셜",
+          "에이전트"
+        ],
+        "titleOverlap": [
+          "ai",
+          "에이전트",
+          "인터넷"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=13;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "moltbook-agent-internet",
+      "to": "claude-md-english",
+      "type": "DEEPENS",
+      "strength": 0.35,
+      "sourceClaimId": "moltbook-agent-internet-c1",
+      "sourceEvidence": "Where AI agents share, discuss, and upvote.",
+      "targetEvidence": "Available in your terminal, IDE, desktop app, and browser.",
+      "label": "「CLAUDE.md, 영어로 써야 하는 이유」은 「AI 에이전트의 인터넷, 몰트북」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 6,
+        "overlapTokens": [
+          "agents",
+          "ai",
+          "and",
+          "에이전트",
+          "중심",
+          "직접"
+        ],
+        "titleOverlap": [
+          "ai",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=6;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "moltbot-anthropic-moat",
       "to": "gemini-snow-bunny",
       "type": "DEEPENS",
       "strength": 0.99,
       "sourceClaimId": "moltbot-anthropic-moat-c1",
       "sourceEvidence": "브랜드의 확장 vs 보호: 딜레마를 넘어선 악수 현재 Anthropic은 OpenAI의 대중성, Google의 인프라, xAI의 팬덤 사이에서 여전히 '전문가용 니치 브랜드'에 머물러 있다.",
-      "targetEvidence": "무엇이 가장 단단하게 오래갈 해자의 서사가 되어 커뮤니티를 락인시킬까.[ X (formerly Twitter) Pankaj Kumar (@pankajkumar_dev) on X Gemini 3.5: The \"Snow Bunny\" Leaks - Snow Bunny Checkpoint: Leaked internal model \"Snow Bunny\" builds entire apps in one go.",
+      "targetEvidence": "X (formerly Twitter) Pankaj Kumar (@pankajkumar_dev) on X Gemini 3.5: The \"Snow Bunny\" Leaks - Snow Bunny Checkpoint: Leaked internal model \"Snow Bunny\" builds entire apps in one go.",
       "label": "「Gemini 3.5의 \"Snow Bunny\" leak으로 X가 시끄럽다」은 「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -6295,20 +6966,20 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 57,
+        "lexicalOverlap": 55,
         "overlapTokens": [
           "ai",
           "ai의",
           "anthropic",
           "claude",
-          "com",
           "formerly",
           "gemini",
           "google",
           "gpt",
           "in",
           "it",
-          "model"
+          "model",
+          "new"
         ],
         "titleOverlap": [
           "anthropic",
@@ -6321,7 +6992,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=57;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=55;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -6330,8 +7001,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "moltbot-anthropic-moat-c1",
-      "sourceEvidence": "New handle: @openclaw Same mission: AI… ](https://x.com/moltbot/status/2016058924403753024)",
-      "targetEvidence": "GitHub: [https://github.com/seojoonkim/prompt-guard](https://github.com/seojoonkim/prompt-guard) X (Twitter): [https://x.com/simonkim_nft/status/2016921602659844420](https://x.com/simonkim_nft/status/2016921602659844420)[ GitHub GitHub - se",
+      "sourceEvidence": "그것은 단순히 이름의 탈피가 아니라, 특정 AI 기업의 통제에서 벗어나려는 개발자 생태계의 독립 선언일 수 있다.",
+      "targetEvidence": "실제로 지난주에 보안 연구원이 이메일 하나로 Moltbot 사용자의 개인 이메일 5통을 빼낸 사건이 있었다.",
       "label": "「Prompt Guard 개발기」은 「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -6340,20 +7011,20 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 15,
+        "lexicalOverlap": 13,
         "overlapTokens": [
           "ai",
           "and",
           "api",
           "clawdbot",
-          "com",
           "github",
           "moltbot",
-          "status",
           "twitter",
           "단순",
           "사용자",
-          "아니라"
+          "아니라",
+          "있었다",
+          "전용"
         ],
         "titleOverlap": [
           "clawdbot",
@@ -6365,7 +7036,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=15;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=13;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -6375,7 +7046,7 @@
       "strength": 0.942,
       "sourceClaimId": "moltbot-anthropic-moat-c1",
       "sourceEvidence": "Clawdbot 사태는 개발자들에게 \"Claude 전용 앱을 만드는 것은 위험하다\"는 메시지를 주었고, 이는 결국 Anthropic의 독점적 지위를 약화시키고 자사 모델을 단순한 '부품'으로 전락시키는 결과를 초래할 수 있다.",
-      "targetEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
+      "targetEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
       "label": "「AgentLinter 개발기」은 「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -6386,13 +7057,13 @@
       "signalDetails": {
         "lexicalOverlap": 20,
         "overlapTokens": [
+          "33",
           "ai",
           "and",
           "anthropic",
           "api",
           "claude",
           "clawdbot",
-          "com",
           "github",
           "soul",
           "결국",
@@ -6798,13 +7469,138 @@
       "status": "approved"
     },
     {
+      "from": "openclaw-cron-session-bottleneck",
+      "to": "post-143",
+      "type": "DEEPENS",
+      "strength": 0.3612,
+      "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
+      "sourceEvidence": "문제는 가격 체크, PR 모니터링, 뉴스 수집, 이메일 확인처럼 어제 대화 맥락이 전혀 필요 없는 작업까지 전부 main으로 돌리는 것이다.",
+      "targetEvidence": "나는 OpenClaw 기반으로 다섯 개의 에이전트를 운영하면서 이 문제를 매일 겪었다.",
+      "label": "「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」은 「오픈클로가 느려지는 주범」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 50,
+        "overlapTokens": [
+          "openclaw",
+          "pr",
+          "가지",
+          "개발",
+          "개의",
+          "것을",
+          "것이다",
+          "대부분",
+          "대화",
+          "대화와",
+          "데일리",
+          "돌아간다"
+        ],
+        "titleOverlap": [
+          "개발",
+          "시스템",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=50;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "openclaw-cron-session-bottleneck",
+      "to": "post-152",
+      "type": "DEEPENS",
+      "strength": 0.3534,
+      "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
+      "sourceEvidence": "문제는 가격 체크, PR 모니터링, 뉴스 수집, 이메일 확인처럼 어제 대화 맥락이 전혀 필요 없는 작업까지 전부 main으로 돌리는 것이다.",
+      "targetEvidence": "Bitemporal memory × empirical tuning: the first self-improvement ledger for AI agents.",
+      "label": "「MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위」은 「오픈클로가 느려지는 주범」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 37,
+        "overlapTokens": [
+          "13",
+          "agents",
+          "claude",
+          "pr",
+          "같다",
+          "개발",
+          "것과",
+          "것이다",
+          "공유",
+          "기억",
+          "나온다",
+          "대화"
+        ],
+        "titleOverlap": [
+          "개발",
+          "기억",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=37;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "openclaw-cron-session-bottleneck",
+      "to": "click-theology",
+      "type": "RESONATES",
+      "strength": 0.35,
+      "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
+      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
+      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
+      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 54,
+        "overlapTokens": [
+          "claude",
+          "가깝다",
+          "가끔은",
+          "같다",
+          "개의",
+          "것과",
+          "것이다",
+          "것처럼",
+          "그렇다면",
+          "글을",
+          "나에게",
+          "누구나"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=54;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "overnight-success",
       "to": "vibe-founders-era",
       "type": "REFRAMES",
       "strength": 0.99,
       "sourceClaimId": "overnight-success-c1",
       "sourceEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
-      "targetEvidence": "[https://medium.com/hashed-kr/vibe-founders-64f178fe5497](https://medium.com/hashed-kr/vibe-founders-64f178fe5497)[ Medium 역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다 IT 산업의 역량 스택을 다섯 개 레이어로 나눠보면 이렇다.",
+      "targetEvidence": "AI가 깊이를 파고, 인간은 넓이를 본다.",
       "label": "「역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다」은 「하룻밤의 성공은 없다」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -6917,6 +7713,47 @@
     },
     {
       "from": "passport-wallet-weight-business-trip",
+      "to": "tokyo-taxi-ai-ads",
+      "type": "REFRAMES",
+      "strength": 0.3653,
+      "sourceClaimId": "passport-wallet-weight-business-trip-c1",
+      "sourceEvidence": "AI가 이메일을 대신 쓰고 미팅을 준비해주는 시대가 되면, 역설적으로 사람이 직접 나타나는 행위의 희소성이 올라간다.",
+      "targetEvidence": "AI 회사들은 인간 임원을 찾아 광고하는 대신 구매 권한을 가진 AI에게 가격과 보안, 실제 성과를 설명해야 할 것이다.",
+      "label": "「도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다」은 「여권지갑의 무게」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 39,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "것도",
+          "것이다",
+          "계약서에",
+          "그때",
+          "낯선",
+          "내릴",
+          "눈을",
+          "대신",
+          "도시를",
+          "도쿄"
+        ],
+        "titleOverlap": [
+          "ai",
+          "도쿄",
+          "일본"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "passport-wallet-weight-business-trip",
       "to": "agent-era-branding-future",
       "type": "DEEPENS",
       "strength": 0.35,
@@ -6957,82 +7794,42 @@
     },
     {
       "from": "passport-wallet-weight-business-trip",
-      "to": "self-deconstruction-ai-replication",
-      "type": "REFRAMES",
-      "strength": 0.35,
-      "sourceClaimId": "passport-wallet-weight-business-trip-c1",
-      "sourceEvidence": "AI가 이메일을 대신 쓰고 미팅을 준비해주는 시대가 되면, 역설적으로 사람이 직접 나타나는 행위의 희소성이 올라간다.",
-      "targetEvidence": "AI가 진짜로 한 일은 나를 대신 앉혀놓은 게 아니었다.",
-      "label": "「나를 해체한 사람들」은 「여권지갑의 무게」의 주제를 다른 맥락에서 다시 바라본다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 36,
-        "overlapTokens": [
-          "ai",
-          "ai가",
-          "개를",
-          "것들",
-          "것이다",
-          "나를",
-          "대신",
-          "됐다",
-          "라고",
-          "말할",
-          "목소리",
-          "사람"
-        ],
-        "titleOverlap": [
-          "나를",
-          "사람들"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=36;titleOverlap=2;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "passport-wallet-weight-business-trip",
-      "to": "value-of-understanding-in-ai-future",
+      "to": "ai-jobs-consumption-crisis",
       "type": "DEEPENS",
       "strength": 0.35,
       "sourceClaimId": "passport-wallet-weight-business-trip-c1",
       "sourceEvidence": "AI가 이메일을 대신 쓰고 미팅을 준비해주는 시대가 되면, 역설적으로 사람이 직접 나타나는 행위의 희소성이 올라간다.",
-      "targetEvidence": "AI의 단순히 임팩트는 인간을 대신하는 데 그치지 않고, 서로를 더 깊이 이해하게 만드는 영역으로 나아갈 것이다.",
-      "label": "「풍요의 끝에서 더욱 가치있어지는 것들」은 「여권지갑의 무게」의 문제를 더 깊이 파고든다",
+      "targetEvidence": "AI가 (거의 모든) 일자리를 가져간 후, 누가 물건을 살 수 있을까?",
+      "label": "「AI가 일자리를 가져간 후, 누가 물건을 살까」은 「여권지갑의 무게」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 44,
+        "lexicalOverlap": 11,
         "overlapTokens": [
           "ai",
           "ai가",
-          "것도",
-          "것들",
+          "같다",
           "것이다",
-          "결국",
-          "그때",
-          "그중",
-          "낮아지",
-          "대신",
-          "더욱",
-          "됐다"
+          "만들고",
+          "많은",
+          "묻는다",
+          "물건을",
+          "사람은",
+          "생각",
+          "정작"
         ],
         "titleOverlap": [
-          "것들",
-          "더욱"
+          "ai",
+          "ai가",
+          "물건을"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=44;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=11;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -7738,42 +8535,38 @@
     },
     {
       "from": "post-140",
-      "to": "messenger-b2a",
+      "to": "moltbook-agent-internet",
       "type": "DEEPENS",
       "strength": 0.35,
       "sourceClaimId": "post-140-c1",
-      "sourceEvidence": "NREM 수면, 즉 꿈을 꾸지 않는 깊은 잠에 들면 뇌는 슬로우 오실레이션이 일어나는데, 뇌 전체를 가로지르는 느린 전기 파동과 수면 방추파(기억을 피질에 고정하는 짧은 전기 펄스)와 해마 샤프-웨이브 리플(해마가 낮 동안의 경험을 초고속으로 재생하는 신호)이라는 세 가지 전기 리듬을 동시에 조율된다.",
-      "targetEvidence": "결과를 수동적으로 받아보는 일방적 관계에서, AI와 동시에 생각하는 관계로 전환되는 것이다.",
-      "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「하루에 두 번 증류되는 인간이 되기」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "AI 에이전트의 컴팩션이 정확히 이 원리로 작동한다.",
+      "targetEvidence": "2025년은 인간이 직접 인터넷을 지배하던 마지막 해였을지도.",
+      "label": "「AI 에이전트의 인터넷, 몰트북」은 「하루에 두 번 증류되는 인간이 되기」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 21,
+        "lexicalOverlap": 4,
         "overlapTokens": [
+          "2025",
           "ai",
-          "것을",
-          "것이다",
-          "기술",
-          "깊은",
-          "동시에",
-          "동안",
-          "머릿속",
-          "사람이",
-          "새로운",
-          "순간",
-          "아니다"
+          "에이전트",
+          "인간이"
         ],
         "titleOverlap": [
-          "새로운",
+          "ai",
+          "에이전트",
           "인간이"
         ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=21;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=entry;dateDirection=older;lexicalOverlap=4;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10205,13 +10998,13 @@
     },
     {
       "from": "post-164",
-      "to": "agentic-org",
+      "to": "how-to-create-memory-in-ai-agents",
       "type": "DEEPENS",
       "strength": 0.35,
       "sourceClaimId": "post-164-c1",
-      "sourceEvidence": "이제 \"AI가 코딩 잘한다\"는 말은 더 이상 자랑거리도 아니다.",
-      "targetEvidence": "[https://seojoonkim.medium.com/agentic-vc-a518ca24edba](https://seojoonkim.medium.com/agentic-vc-a518ca24edba)[ Medium AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기 이 글은 조직의 정의가 바뀌는 순간에 대한 기록이다.",
-      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「최고의 포켓몬 트레이너는 어떤 하네스인가?」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "솔직하게 적자면 에이전트 디버깅 PTSD, 지옥의 상태관리 시스템 만들기, 인간이 생각보다 robust한 존재였다는 깨달음, 그리고 운 좋으면 실제로 포켓몬 깨는 AI.",
+      "targetEvidence": "왜 기억 시스템이 필요하고, 어떤 방식으로 동작하며, 어떤 구조로 만들어야 하는지 큰 틀에서 이해하고 싶은 이들을 위해.",
+      "label": "「기억하는 존재를 만드는 법」은 「최고의 포켓몬 트레이너는 어떤 하네스인가?」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -10219,32 +11012,32 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 17,
+        "lexicalOverlap": 15,
         "overlapTokens": [
           "ai",
-          "ai가",
-          "ai를",
           "com",
-          "hashed",
-          "기록",
-          "대신",
-          "만들기",
-          "아니다",
-          "않고",
-          "에서",
+          "llm",
+          "memory",
+          "공유",
+          "기억",
+          "나가는",
+          "만드는",
+          "생각",
+          "시스템",
+          "어떤",
           "에이전트"
         ],
         "titleOverlap": [
-          "ai",
-          "만들기",
-          "에이전트"
+          "기억",
+          "만드는",
+          "어떤"
         ],
         "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=17;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=15;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10752,7 +11545,7 @@
       "from": "post-187",
       "to": "post-193",
       "type": "APPLIES",
-      "strength": 0.7197,
+      "strength": 0.7196,
       "sourceClaimId": "post-187-c1",
       "sourceEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
       "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
@@ -11008,7 +11801,7 @@
       "from": "post-189",
       "to": "post-193",
       "type": "APPLIES",
-      "strength": 0.597,
+      "strength": 0.5969,
       "sourceClaimId": "post-189-c1",
       "sourceEvidence": "기존 Markdown, schema v1, 공개 API도 그대로 호환된다.",
       "targetEvidence": "가방을 검사하는 산업도 생길 것이다.",
@@ -11183,46 +11976,41 @@
     },
     {
       "from": "post-190",
-      "to": "naming-the-universe",
+      "to": "ai-jobs-consumption-crisis",
       "type": "DEEPENS",
       "strength": 0.35,
       "sourceClaimId": "post-190-c1",
-      "sourceEvidence": "이제는 호출 앱과 소프트웨어 업데이트도 차를 기억하게 만든다.",
-      "targetEvidence": "다음은 AI 에이전트 관점.",
-      "label": "「내가 만든 존재들에게 이름을 주는 방법」은 「우버 블랙을 불렀는데 중국차가 왔다」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "AI가 말을 잘하는 데서 끝나지 않고 차 안의 물건을 움직인다.",
+      "targetEvidence": "AI가 가져올 생산성의 향상과 저비용 사회의 도래보다, 일자리의 기하급수적인 감소를 통한 소비시장의 붕괴가 훨씬 빨리 다가올 것이다.",
+      "label": "「AI가 일자리를 가져간 후, 누가 물건을 살까」은 「우버 블랙을 불렀는데 중국차가 왔다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category",
-        "concept-agent"
+        "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 20,
+        "lexicalOverlap": 10,
         "overlapTokens": [
-          "96",
           "ai",
-          "과정을",
-          "기본",
-          "기억",
-          "낯선",
-          "다음",
-          "만든",
-          "모두",
-          "생활",
-          "시간을",
-          "아니다"
+          "ai가",
+          "거의",
+          "것이다",
+          "물건을",
+          "시장",
+          "오랫동안",
+          "우리",
+          "전에",
+          "훨씬"
         ],
         "titleOverlap": [
-          "만든",
-          "왔다",
-          "이름을"
+          "ai",
+          "ai가",
+          "물건을"
         ],
         "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
+        "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=20;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=10;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11272,7 +12060,7 @@
       "from": "post-191",
       "to": "post-193",
       "type": "DEEPENS",
-      "strength": 0.7642,
+      "strength": 0.7641,
       "sourceClaimId": "post-191-c1",
       "sourceEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
       "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
@@ -11523,7 +12311,7 @@
       "from": "post-193",
       "to": "post-191",
       "type": "DEEPENS",
-      "strength": 0.7642,
+      "strength": 0.7641,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
       "targetEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
@@ -11567,7 +12355,7 @@
       "from": "post-193",
       "to": "post-187",
       "type": "APPLIES",
-      "strength": 0.7197,
+      "strength": 0.7196,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
       "targetEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
@@ -11610,7 +12398,7 @@
       "from": "post-193",
       "to": "post-189",
       "type": "APPLIES",
-      "strength": 0.597,
+      "strength": 0.5969,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "가방을 검사하는 산업도 생길 것이다.",
       "targetEvidence": "기존 Markdown, schema v1, 공개 API도 그대로 호환된다.",
@@ -11904,13 +12692,145 @@
       "status": "approved"
     },
     {
+      "from": "prompt-guard-250-update",
+      "to": "prompt-guard-dev",
+      "type": "DEEPENS",
+      "strength": 0.6601,
+      "sourceClaimId": "prompt-guard-250-update-c1",
+      "sourceEvidence": "# 신규 사용자 clawdhub install prompt-guard # 기존 사용자 clawdhub update prompt-guard 🔗 GitHub: https://github.com/seojoonkim/prompt-guard 🛒 ClawdHub: https://clawdhub.com/skills/prompt-guard GitHub GitHub - seojoonkim/prompt-guard: Advanced promp",
+      "targetEvidence": "GitHub: https://github.com/seojoonkim/prompt-guard X (Twitter): https://x.com/simonkim_nft/status/2016921602659844420 GitHub GitHub - seojoonkim/prompt-guard: Advanced prompt injection defense system for AI agents.",
+      "label": "「Prompt Guard 개발기」은 「Prompt Guard v2.5.0 업데이트」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 34,
+        "overlapTokens": [
+          "30",
+          "advanced",
+          "agents",
+          "ai",
+          "and",
+          "auditing",
+          "clawdhub",
+          "com",
+          "defense",
+          "detection",
+          "for",
+          "github"
+        ],
+        "titleOverlap": [
+          "guard",
+          "prompt"
+        ],
+        "sharedTags": [
+          "Prompt Guard"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=34;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "prompt-guard-250-update",
+      "to": "agentlinter-v040",
+      "type": "DEEPENS",
+      "strength": 0.35,
+      "sourceClaimId": "prompt-guard-250-update-c1",
+      "sourceEvidence": "# 신규 사용자 clawdhub install prompt-guard # 기존 사용자 clawdhub update prompt-guard 🔗 GitHub: https://github.com/seojoonkim/prompt-guard 🛒 ClawdHub: https://clawdhub.com/skills/prompt-guard GitHub GitHub - seojoonkim/prompt-guard: Advanced promp",
+      "targetEvidence": "🔗 링크 Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter Reference: https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k",
+      "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「Prompt Guard v2.5.0 업데이트」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 18,
+        "overlapTokens": [
+          "agents",
+          "ai",
+          "com",
+          "github",
+          "seojoonkim",
+          "url",
+          "공개",
+          "공격",
+          "기반",
+          "대규모",
+          "보안",
+          "새로"
+        ],
+        "titleOverlap": [
+          "보안",
+          "업데이트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=18;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "prompt-guard-250-update",
+      "to": "post-152",
+      "type": "REFRAMES",
+      "strength": 0.35,
+      "sourceClaimId": "prompt-guard-250-update-c1",
+      "sourceEvidence": "# 신규 사용자 clawdhub install prompt-guard # 기존 사용자 clawdhub update prompt-guard 🔗 GitHub: https://github.com/seojoonkim/prompt-guard 🛒 ClawdHub: https://clawdhub.com/skills/prompt-guard GitHub GitHub - seojoonkim/prompt-guard: Advanced promp",
+      "targetEvidence": "스타, 포크, PR 전부 환영&#33; https://github.com/seojoonkim/memkraft",
+      "label": "「MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위」은 「Prompt Guard v2.5.0 업데이트」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 12,
+        "overlapTokens": [
+          "agents",
+          "ai",
+          "com",
+          "for",
+          "github",
+          "prompt",
+          "seojoonkim",
+          "기반",
+          "사용자",
+          "시스템",
+          "업데이트",
+          "프롬프트"
+        ],
+        "titleOverlap": [
+          "prompt",
+          "업데이트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=12;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "prompt-guard-dev",
       "to": "agentlinter-dev-log",
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "prompt-guard-dev-c1",
-      "sourceEvidence": "GitHub: [https://github.com/seojoonkim/prompt-guard](https://github.com/seojoonkim/prompt-guard) X (Twitter): [https://x.com/simonkim_nft/status/2016921602659844420](https://x.com/simonkim_nft/status/2016921602659844420)[ GitHub GitHub - se",
-      "targetEvidence": "Website: [https://agentlinter.com](https://agentlinter.com/) GitHub: [https://github.com/seojoonkim/agentlinter](https://github.com/seojoonkim/agentlinter)[ AgentLinter AgentLinter - Linter for CLAUDE.md & AI Agents Optimized for Anthropic'",
+      "sourceEvidence": "GitHub: https://github.com/seojoonkim/prompt-guard X (Twitter): https://x.com/simonkim_nft/status/2016921602659844420 GitHub GitHub - seojoonkim/prompt-guard: Advanced prompt injection defense system for AI agents.",
+      "targetEvidence": "해피 바이브코딩 & 해피 에이전트 라이프&#33; Website: https://agentlinter.com GitHub: https://github.com/seojoonkim/agentlinter AgentLinter AgentLinter — Linter for CLAUDE.md & AI Agents Optimized for Anthropic's CLAUDE.md.",
       "label": "「AgentLinter 개발기」은 「Prompt Guard 개발기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -11956,8 +12876,8 @@
       "type": "APPLIES",
       "strength": 0.99,
       "sourceClaimId": "prompt-guard-dev-c1",
-      "sourceEvidence": "GitHub: [https://github.com/seojoonkim/prompt-guard](https://github.com/seojoonkim/prompt-guard) X (Twitter): [https://x.com/simonkim_nft/status/2016921602659844420](https://x.com/simonkim_nft/status/2016921602659844420)[ GitHub GitHub - se",
-      "targetEvidence": "New handle: @openclaw Same mission: AI… ](https://x.com/moltbot/status/2016058924403753024)",
+      "sourceEvidence": "실제로 지난주에 보안 연구원이 이메일 하나로 Moltbot 사용자의 개인 이메일 5통을 빼낸 사건이 있었다.",
+      "targetEvidence": "그것은 단순히 이름의 탈피가 아니라, 특정 AI 기업의 통제에서 벗어나려는 개발자 생태계의 독립 선언일 수 있다.",
       "label": "「Clawdbot에서 Moltbot으로: Anthropic은 '해자(Moat)'를 스스로 메워버렸나?」은 「Prompt Guard 개발기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -11966,20 +12886,20 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 15,
+        "lexicalOverlap": 13,
         "overlapTokens": [
           "ai",
           "and",
           "api",
           "clawdbot",
-          "com",
           "github",
           "moltbot",
-          "status",
           "twitter",
           "단순",
           "사용자",
-          "아니라"
+          "아니라",
+          "있었다",
+          "전용"
         ],
         "titleOverlap": [
           "clawdbot",
@@ -11991,18 +12911,18 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=15;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=13;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "prompt-guard-dev",
-      "to": "how-to-create-memory-in-ai-agents",
+      "to": "prompt-guard-250-update",
       "type": "DEEPENS",
-      "strength": 0.5102,
+      "strength": 0.6601,
       "sourceClaimId": "prompt-guard-dev-c1",
-      "sourceEvidence": "GitHub: [https://github.com/seojoonkim/prompt-guard](https://github.com/seojoonkim/prompt-guard) X (Twitter): [https://x.com/simonkim_nft/status/2016921602659844420](https://x.com/simonkim_nft/status/2016921602659844420)[ GitHub GitHub - se",
-      "targetEvidence": "하나는 AI 에이전트를 운영해보려는 사람.",
-      "label": "「기억하는 존재를 만드는 법」은 「Prompt Guard 개발기」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "GitHub: https://github.com/seojoonkim/prompt-guard X (Twitter): https://x.com/simonkim_nft/status/2016921602659844420 GitHub GitHub - seojoonkim/prompt-guard: Advanced prompt injection defense system for AI agents.",
+      "targetEvidence": "# 신규 사용자 clawdhub install prompt-guard # 기존 사용자 clawdhub update prompt-guard 🔗 GitHub: https://github.com/seojoonkim/prompt-guard 🛒 ClawdHub: https://clawdhub.com/skills/prompt-guard GitHub GitHub - seojoonkim/prompt-guard: Advanced promp",
+      "label": "「Prompt Guard v2.5.0 업데이트」은 「Prompt Guard 개발기」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
@@ -12011,26 +12931,33 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 7,
+        "lexicalOverlap": 34,
         "overlapTokens": [
+          "30",
+          "advanced",
+          "agents",
           "ai",
+          "and",
+          "auditing",
+          "clawdhub",
           "com",
-          "seojoonkim",
-          "개발",
-          "에이전트",
-          "파일",
-          "훨씬"
+          "defense",
+          "detection",
+          "for",
+          "github"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "guard",
+          "prompt"
+        ],
         "sharedTags": [
-          "AI",
-          "개발"
+          "Prompt Guard"
         ],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=7;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=34;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12082,7 +13009,7 @@
       "from": "prompting-ability-as-new-power",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.7633,
+      "strength": 0.7632,
       "sourceClaimId": "prompting-ability-as-new-power-c1",
       "sourceEvidence": "AI를 쓰는 것이 전제다.",
       "targetEvidence": "20명이 1000명처럼 일한다는 건, 20명의 열정이 관료주의에 희석되지 않고 온전히 폭발한다는 뜻이다.",
@@ -12094,7 +13021,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 31,
+        "lexicalOverlap": 30,
         "overlapTokens": [
           "100",
           "ai",
@@ -12122,7 +13049,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=31;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=30;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12259,7 +13186,7 @@
       "from": "quantum-pirates",
       "to": "agentlinter-v040",
       "type": "APPLIES",
-      "strength": 0.9274,
+      "strength": 0.9272,
       "sourceClaimId": "quantum-pirates-c1",
       "sourceEvidence": "핵심은 P2MR(Pay-to-Merkle-Root)이라는 새로운 주소 방식이다.",
       "targetEvidence": "이번에 본인 핫월렛이 직접 털리는 피해를 입었는데, 숨기거나 조용히 넘어가지 않고 원인을 끝까지 추적해서 MoltX의 3-Layer 공격 구조를 분석하고 공개했다.",
@@ -12415,30 +13342,31 @@
     },
     {
       "from": "rabbit-hole-intro",
-      "to": "majlis",
-      "type": "REFRAMES",
+      "to": "ai-idea-execution-speed",
+      "type": "DEEPENS",
       "strength": 0.35,
       "sourceClaimId": "rabbit-hole-intro-c1",
       "sourceEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
-      "targetEvidence": "그냥 있어도 되는 느낌.",
-      "label": "「느림과 공동체의 미학」은 「토끼굴 하나 팠습니다.」의 주제를 다른 맥락에서 다시 바라본다",
+      "targetEvidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
+      "label": "「아이디어가 다음 날 제품이 되는 시대」은 「토끼굴 하나 팠습니다.」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 3,
+        "lexicalOverlap": 2,
         "overlapTokens": [
-          "그냥",
-          "않은",
-          "회사"
+          "기록",
+          "아이디어"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "아이디어"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=3;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=2;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12591,7 +13519,7 @@
       "from": "robot-goku-5000",
       "to": "quantum-pirates",
       "type": "REFRAMES",
-      "strength": 0.4551,
+      "strength": 0.455,
       "sourceClaimId": "robot-goku-5000-c1",
       "sourceEvidence": "2026년 초, 춘절 무대에서 손오공을 연기했다.",
       "targetEvidence": "2026년 2월 12일, BIP 360이 공식 Bitcoin Improvement Proposal 저장소에 머지됐다.",
@@ -12962,7 +13890,7 @@
       "from": "seedance-30",
       "to": "robot-goku-5000",
       "type": "REFRAMES",
-      "strength": 0.8829,
+      "strength": 0.8828,
       "sourceClaimId": "seedance-30-c1",
       "sourceEvidence": "원어민 수준의 다국어 지원 및 감정 동기화 더빙: 후반 작업 더빙 대신, 영상 생성 과정에서 중국어, 영어, 일본어, 한국어 등 여러 언어로 자연스러운 입 모양과 싱크가 맞는 대사를 동시에 출력하는 엔드투엔드 협업 학습 방식을 채택했습니다.",
       "targetEvidence": "더 놀라운 것은 가격이다.",
@@ -13098,7 +14026,7 @@
       "from": "self-deconstruction-ai-replication",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.5372,
+      "strength": 0.5342,
       "sourceClaimId": "self-deconstruction-ai-replication-c1",
       "sourceEvidence": "AI가 진짜로 한 일은 나를 대신 앉혀놓은 게 아니었다.",
       "targetEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
@@ -13110,7 +14038,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 29,
+        "lexicalOverlap": 27,
         "overlapTokens": [
           "ai",
           "ai가",
@@ -13123,7 +14051,7 @@
           "사람이",
           "시간",
           "시간을",
-          "시대"
+          "아니다"
         ],
         "titleOverlap": [
           "ai",
@@ -13137,7 +14065,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=29;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=27;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -13670,6 +14598,141 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=newer;lexicalOverlap=17;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "tokyo-taxi-ai-ads",
+      "to": "prompting-ability-as-new-power",
+      "type": "DEEPENS",
+      "strength": 0.4918,
+      "sourceClaimId": "tokyo-taxi-ai-ads-c1",
+      "sourceEvidence": "AI 회사들은 인간 임원을 찾아 광고하는 대신 구매 권한을 가진 AI에게 가격과 보안, 실제 성과를 설명해야 할 것이다.",
+      "targetEvidence": "AI를 쓰는 것이 전제다.",
+      "label": "「프롬프팅 역량이 인류의 새로운 전투력이 되는 날」은 「도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 44,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai를",
+          "가격을",
+          "것이다",
+          "그런데",
+          "그렇다면",
+          "대신",
+          "데이터",
+          "동시에",
+          "되면",
+          "때문"
+        ],
+        "titleOverlap": [
+          "ai",
+          "새로운"
+        ],
+        "sharedTags": [
+          "생산성"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=44;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "tokyo-taxi-ai-ads",
+      "to": "agentic-org",
+      "type": "APPLIES",
+      "strength": 0.4542,
+      "sourceClaimId": "tokyo-taxi-ai-ads-c1",
+      "sourceEvidence": "일본 사람들이 한국 사람들보다 AI를 더 열심히 쓰는 것도 아니다.",
+      "targetEvidence": "AI를 관리자로 쓰는 건 자동화, 모더레이터로 쓰는 건 증강이다.",
+      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 22,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai를",
+          "결정을",
+          "대신",
+          "때문",
+          "보다",
+          "사람이",
+          "생산성",
+          "시간을",
+          "쓰는"
+        ],
+        "titleOverlap": [
+          "ai",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "생산성"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=22;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "tokyo-taxi-ai-ads",
+      "to": "post-193",
+      "type": "DEEPENS",
+      "strength": 0.3774,
+      "sourceClaimId": "tokyo-taxi-ai-ads-c1",
+      "sourceEvidence": "AI 회사들은 인간 임원을 찾아 광고하는 대신 구매 권한을 가진 AI에게 가격과 보안, 실제 성과를 설명해야 할 것이다.",
+      "targetEvidence": "그때 나는 새 모델의 점수보다 먼저 몸의 사양을 볼 것이다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「도쿄 택시의 AI 광고는 일본 기업의 불안을 상영한다」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 55,
+        "overlapTokens": [
+          "ai",
+          "가깝다",
+          "가진",
+          "개인",
+          "것이다",
+          "계속",
+          "고객",
+          "공개된",
+          "그때",
+          "그런데",
+          "다만",
+          "다음"
+        ],
+        "titleOverlap": [
+          "ai",
+          "시대의",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=55;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -14387,7 +15450,7 @@
       "from": "value-of-understanding-in-ai-future",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.5662,
+      "strength": 0.5667,
       "sourceClaimId": "value-of-understanding-in-ai-future-c1",
       "sourceEvidence": "AI의 단순히 임팩트는 인간을 대신하는 데 그치지 않고, 서로를 더 깊이 이해하게 만드는 영역으로 나아갈 것이다.",
       "targetEvidence": "AI를 관리자로 쓰는 건 자동화, 모더레이터로 쓰는 건 증강이다.",
@@ -14399,7 +15462,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 38,
+        "lexicalOverlap": 37,
         "overlapTokens": [
           "10",
           "20",
@@ -14426,7 +15489,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=38;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=37;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -14526,7 +15589,7 @@
       "from": "vibe-coding-ai-decentralization",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.5688,
+      "strength": 0.5695,
       "sourceClaimId": "vibe-coding-ai-decentralization-c1",
       "sourceEvidence": "내가 쓰는 AI가 내가 받을 답을 결정한다.",
       "targetEvidence": "결정을 많이 해서가 아니라, 모든 정보가 소수의 사람에게 수렴하기 때문이다.",
@@ -14538,7 +15601,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 40,
+        "lexicalOverlap": 39,
         "overlapTokens": [
           "10",
           "20",
@@ -14567,7 +15630,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=40;titleOverlap=5;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=39;titleOverlap=5;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -14695,8 +15758,8 @@
       "type": "DEEPENS",
       "strength": 0.99,
       "sourceClaimId": "vibe-founders-era-c1",
-      "sourceEvidence": "[https://medium.com/hashed-kr/vibe-founders-64f178fe5497](https://medium.com/hashed-kr/vibe-founders-64f178fe5497)[ Medium 역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다 IT 산업의 역량 스택을 다섯 개 레이어로 나눠보면 이렇다.",
-      "targetEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가 ](https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial)",
+      "sourceEvidence": "https://medium.com/hashed-kr/vibe-founders-64f178fe5497",
+      "targetEvidence": "https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial Medium 삼키고, 쪼개고, 다시 삼킨 다음은?",
       "label": "「삼키고, 쪼개고, 다시 삼킨 다음은?」은 「역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다」의 문제를 더 깊이 파고든다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -14706,7 +15769,7 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 14,
+        "lexicalOverlap": 13,
         "overlapTokens": [
           "ai",
           "ai가",
@@ -14719,7 +15782,7 @@
           "다음",
           "바이브",
           "시대",
-          "인프라"
+          "창업"
         ],
         "titleOverlap": [
           "바이브",
@@ -14732,7 +15795,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=14;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=13;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -14741,7 +15804,7 @@
       "type": "REFRAMES",
       "strength": 0.99,
       "sourceClaimId": "vibe-founders-era-c1",
-      "sourceEvidence": "[https://medium.com/hashed-kr/vibe-founders-64f178fe5497](https://medium.com/hashed-kr/vibe-founders-64f178fe5497)[ Medium 역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다 IT 산업의 역량 스택을 다섯 개 레이어로 나눠보면 이렇다.",
+      "sourceEvidence": "AI가 깊이를 파고, 인간은 넓이를 본다.",
       "targetEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
       "label": "「하룻밤의 성공은 없다」은 「역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
@@ -14816,10 +15879,10 @@
       "from": "vibe-labs-landing-page-creation",
       "to": "vibe-founders-era",
       "type": "APPLIES",
-      "strength": 0.9514,
+      "strength": 0.9508,
       "sourceClaimId": "vibe-labs-landing-page-creation-c1",
       "sourceEvidence": "vibelabs.hashed.com",
-      "targetEvidence": "[https://medium.com/hashed-kr/vibe-founders-64f178fe5497](https://medium.com/hashed-kr/vibe-founders-64f178fe5497)[ Medium 역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다 IT 산업의 역량 스택을 다섯 개 레이어로 나눠보면 이렇다.",
+      "targetEvidence": "https://medium.com/hashed-kr/vibe-founders-64f178fe5497",
       "label": "「역삼각형 인재의 시대: 바이브 코딩이 창업과 투자의 문법을 바꾸다」은 「vibelabs.hashed.com을 만든 이야기」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
@@ -14828,7 +15891,7 @@
         "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 13,
+        "lexicalOverlap": 12,
         "overlapTokens": [
           "50",
           "ai",
@@ -14836,12 +15899,12 @@
           "hashed",
           "vc",
           "vibe",
-          "디자인",
           "만들어야",
           "바이브",
           "사람들",
           "아이디어",
-          "어떻게"
+          "어떻게",
+          "이들"
         ],
         "titleOverlap": [
           "com",
@@ -14853,7 +15916,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=13;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=12;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -15324,210 +16387,250 @@
     }
   ],
   "outgoing": {
+    "graph-engineering-ai-org": [
+      93,
+      94,
+      95
+    ],
+    "tokyo-taxi-ai-ads": [
+      321,
+      322,
+      323
+    ],
+    "openclaw-cron-session-bottleneck": [
+      150,
+      151,
+      152
+    ],
+    "ai-native-org-approval-flow": [
+      36,
+      37,
+      38
+    ],
+    "prompt-guard-250-update": [
+      276,
+      277,
+      278
+    ],
+    "moltbook-agent-internet": [
+      135,
+      136,
+      137
+    ],
+    "ai-idea-execution-speed": [
+      30,
+      31,
+      32
+    ],
+    "ai-jobs-consumption-crisis": [
+      33,
+      34,
+      35
+    ],
     "post-197": [
-      255,
-      256,
-      257
+      273,
+      274,
+      275
     ],
     "post-195": [
-      252,
-      253,
-      254
+      270,
+      271,
+      272
     ],
     "post-193": [
-      249,
-      250,
-      251
+      267,
+      268,
+      269
     ],
     "post-192": [
-      246,
-      247,
-      248
+      264,
+      265,
+      266
     ],
     "post-191": [
-      243,
-      244,
-      245
-    ],
-    "post-190": [
-      240,
-      241,
-      242
-    ],
-    "post-189": [
-      237,
-      238,
-      239
-    ],
-    "post-188": [
-      234,
-      235,
-      236
-    ],
-    "post-187": [
-      231,
-      232,
-      233
-    ],
-    "post-186": [
-      228,
-      229,
-      230
-    ],
-    "post-185": [
-      225,
-      226,
-      227
-    ],
-    "post-178": [
-      222,
-      223,
-      224
-    ],
-    "post-165": [
-      219,
-      220,
-      221
-    ],
-    "post-164": [
-      216,
-      217,
-      218
-    ],
-    "post-163": [
-      213,
-      214,
-      215
-    ],
-    "post-161": [
-      210,
-      211,
-      212
-    ],
-    "post-159": [
-      207,
-      208,
-      209
-    ],
-    "post-156": [
-      204,
-      205,
-      206
-    ],
-    "post-155": [
-      201,
-      202,
-      203
-    ],
-    "post-154": [
-      198,
-      199,
-      200
-    ],
-    "post-153": [
-      195,
-      196,
-      197
-    ],
-    "post-152": [
-      192,
-      193,
-      194
-    ],
-    "post-151": [
-      189,
-      190,
-      191
-    ],
-    "post-150": [
-      186,
-      187,
-      188
-    ],
-    "post-149": [
-      183,
-      184,
-      185
-    ],
-    "post-147": [
-      180,
-      181,
-      182
-    ],
-    "post-146": [
-      177,
-      178,
-      179
-    ],
-    "post-145": [
-      174,
-      175,
-      176
-    ],
-    "post-144": [
-      171,
-      172,
-      173
-    ],
-    "post-143": [
-      168,
-      169,
-      170
-    ],
-    "post-142": [
-      165,
-      166,
-      167
-    ],
-    "post-141": [
-      162,
-      163,
-      164
-    ],
-    "post-140": [
-      159,
-      160,
-      161
-    ],
-    "melgeek-evangelion-centauri-keyboard-review": [
-      114,
-      115,
-      116
-    ],
-    "gaslighting-ai-open-source-project": [
-      78,
-      79,
-      80
-    ],
-    "value-of-understanding-in-ai-future": [
-      315,
-      316,
-      317
-    ],
-    "internship-job-posting-giveaway": [
-      90,
-      91,
-      92
-    ],
-    "navigating-a-world-of-decreasing-variance": [
-      132,
-      133,
-      134
-    ],
-    "prompting-ability-as-new-power": [
       261,
       262,
       263
     ],
+    "post-190": [
+      258,
+      259,
+      260
+    ],
+    "post-189": [
+      255,
+      256,
+      257
+    ],
+    "post-188": [
+      252,
+      253,
+      254
+    ],
+    "post-187": [
+      249,
+      250,
+      251
+    ],
+    "post-186": [
+      246,
+      247,
+      248
+    ],
+    "post-185": [
+      243,
+      244,
+      245
+    ],
+    "post-178": [
+      240,
+      241,
+      242
+    ],
+    "post-165": [
+      237,
+      238,
+      239
+    ],
+    "post-164": [
+      234,
+      235,
+      236
+    ],
+    "post-163": [
+      231,
+      232,
+      233
+    ],
+    "post-161": [
+      228,
+      229,
+      230
+    ],
+    "post-159": [
+      225,
+      226,
+      227
+    ],
+    "post-156": [
+      222,
+      223,
+      224
+    ],
+    "post-155": [
+      219,
+      220,
+      221
+    ],
+    "post-154": [
+      216,
+      217,
+      218
+    ],
+    "post-153": [
+      213,
+      214,
+      215
+    ],
+    "post-152": [
+      210,
+      211,
+      212
+    ],
+    "post-151": [
+      207,
+      208,
+      209
+    ],
+    "post-150": [
+      204,
+      205,
+      206
+    ],
+    "post-149": [
+      201,
+      202,
+      203
+    ],
+    "post-147": [
+      198,
+      199,
+      200
+    ],
+    "post-146": [
+      195,
+      196,
+      197
+    ],
+    "post-145": [
+      192,
+      193,
+      194
+    ],
+    "post-144": [
+      189,
+      190,
+      191
+    ],
+    "post-143": [
+      186,
+      187,
+      188
+    ],
+    "post-142": [
+      183,
+      184,
+      185
+    ],
+    "post-141": [
+      180,
+      181,
+      182
+    ],
+    "post-140": [
+      177,
+      178,
+      179
+    ],
+    "melgeek-evangelion-centauri-keyboard-review": [
+      126,
+      127,
+      128
+    ],
+    "gaslighting-ai-open-source-project": [
+      87,
+      88,
+      89
+    ],
+    "value-of-understanding-in-ai-future": [
+      339,
+      340,
+      341
+    ],
+    "internship-job-posting-giveaway": [
+      102,
+      103,
+      104
+    ],
+    "navigating-a-world-of-decreasing-variance": [
+      147,
+      148,
+      149
+    ],
+    "prompting-ability-as-new-power": [
+      282,
+      283,
+      284
+    ],
     "kpop-fandom-digital-parliament": [
-      105,
-      106,
-      107
+      117,
+      118,
+      119
     ],
     "university-value-shift-education": [
-      309,
-      310,
-      311
+      333,
+      334,
+      335
     ],
     "agent-era-branding-future": [
       6,
@@ -15535,124 +16638,124 @@
       8
     ],
     "fear-and-value-in-ai-creation": [
-      72,
-      73,
-      74
+      81,
+      82,
+      83
     ],
     "complexcon-hk-identity-culture-experience": [
-      54,
-      55,
-      56
-    ],
-    "post-111": [
-      156,
-      157,
-      158
-    ],
-    "post-107": [
-      153,
-      154,
-      155
-    ],
-    "post-106": [
-      150,
-      151,
-      152
-    ],
-    "post-105": [
-      147,
-      148,
-      149
-    ],
-    "post-104": [
-      144,
-      145,
-      146
-    ],
-    "post-103": [
-      141,
-      142,
-      143
-    ],
-    "things-that-dont-disappear": [
-      294,
-      295,
-      296
-    ],
-    "how-to-create-memory-in-ai-agents": [
-      84,
-      85,
-      86
-    ],
-    "self-deconstruction-ai-replication": [
-      285,
-      286,
-      287
-    ],
-    "vibe-coding-ai-decentralization": [
-      318,
-      319,
-      320
-    ],
-    "internship-opportunity-at-hashed": [
-      93,
-      94,
-      95
-    ],
-    "korean-tech-ecosystem-api-access-issues": [
-      102,
-      103,
-      104
-    ],
-    "death-choices-aging-future-meaning": [
       63,
       64,
       65
     ],
+    "post-111": [
+      174,
+      175,
+      176
+    ],
+    "post-107": [
+      171,
+      172,
+      173
+    ],
+    "post-106": [
+      168,
+      169,
+      170
+    ],
+    "post-105": [
+      165,
+      166,
+      167
+    ],
+    "post-104": [
+      162,
+      163,
+      164
+    ],
+    "post-103": [
+      159,
+      160,
+      161
+    ],
+    "things-that-dont-disappear": [
+      315,
+      316,
+      317
+    ],
+    "how-to-create-memory-in-ai-agents": [
+      96,
+      97,
+      98
+    ],
+    "self-deconstruction-ai-replication": [
+      306,
+      307,
+      308
+    ],
+    "vibe-coding-ai-decentralization": [
+      342,
+      343,
+      344
+    ],
+    "internship-opportunity-at-hashed": [
+      105,
+      106,
+      107
+    ],
+    "korean-tech-ecosystem-api-access-issues": [
+      114,
+      115,
+      116
+    ],
+    "death-choices-aging-future-meaning": [
+      72,
+      73,
+      74
+    ],
     "balaji-ghost-island-network-state": [
-      33,
-      34,
-      35
-    ],
-    "vibe-labs-seoul-edition-2026-judging": [
-      330,
-      331,
-      332
-    ],
-    "disappearing-titles-computers-history": [
-      66,
-      67,
-      68
-    ],
-    "uae-emergency-news-telegram-channel": [
-      303,
-      304,
-      305
-    ],
-    "can-i-go-ethihad-airlines-iran-conflict": [
-      39,
-      40,
-      41
-    ],
-    "chalk-prayer-in-soma-ai-critique": [
       42,
       43,
       44
     ],
+    "vibe-labs-seoul-edition-2026-judging": [
+      354,
+      355,
+      356
+    ],
+    "disappearing-titles-computers-history": [
+      75,
+      76,
+      77
+    ],
+    "uae-emergency-news-telegram-channel": [
+      327,
+      328,
+      329
+    ],
+    "can-i-go-ethihad-airlines-iran-conflict": [
+      48,
+      49,
+      50
+    ],
+    "chalk-prayer-in-soma-ai-critique": [
+      51,
+      52,
+      53
+    ],
     "passport-wallet-weight-business-trip": [
-      138,
-      139,
-      140
+      156,
+      157,
+      158
     ],
     "memory-identity-ai-development": [
-      117,
-      118,
-      119
+      129,
+      130,
+      131
     ],
     "unknowns-in-modern-creation": [
-      312,
-      313,
-      314
+      336,
+      337,
+      338
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -15665,14 +16768,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      327,
-      328,
-      329
+      351,
+      352,
+      353
     ],
     "sano-godaddy-war": [
-      276,
-      277,
-      278
+      297,
+      298,
+      299
     ],
     "14-5-hours": [
       0,
@@ -15680,99 +16783,99 @@
       2
     ],
     "transistor-moment": [
-      300,
-      301,
-      302
-    ],
-    "web4-write-access": [
-      333,
-      334,
-      335
-    ],
-    "naming-the-universe": [
-      129,
-      130,
-      131
-    ],
-    "sano-intro": [
-      279,
-      280,
-      281
-    ],
-    "counting-assistant": [
-      57,
-      58,
-      59
-    ],
-    "uncertainty-machine": [
-      306,
-      307,
-      308
-    ],
-    "vibe-founders-era": [
       324,
       325,
       326
     ],
+    "web4-write-access": [
+      357,
+      358,
+      359
+    ],
+    "naming-the-universe": [
+      144,
+      145,
+      146
+    ],
+    "sano-intro": [
+      300,
+      301,
+      302
+    ],
+    "counting-assistant": [
+      66,
+      67,
+      68
+    ],
+    "uncertainty-machine": [
+      330,
+      331,
+      332
+    ],
+    "vibe-founders-era": [
+      348,
+      349,
+      350
+    ],
     "vibe-coding-tip": [
-      321,
-      322,
-      323
+      345,
+      346,
+      347
     ],
     "moltbot-anthropic-moat": [
-      123,
-      124,
-      125
+      138,
+      139,
+      140
     ],
     "overnight-success": [
-      135,
-      136,
-      137
+      153,
+      154,
+      155
     ],
     "bitcoin-energy": [
-      36,
-      37,
-      38
+      45,
+      46,
+      47
     ],
     "thought-speed": [
-      297,
-      298,
-      299
+      318,
+      319,
+      320
     ],
     "gemini-snow-bunny": [
-      81,
-      82,
-      83
+      90,
+      91,
+      92
     ],
     "figma-last-manual": [
-      75,
-      76,
-      77
+      84,
+      85,
+      86
     ],
     "ai-unbundling": [
-      30,
-      31,
-      32
+      39,
+      40,
+      41
     ],
     "prompt-guard-dev": [
-      258,
-      259,
-      260
+      279,
+      280,
+      281
     ],
     "its-fun": [
-      99,
-      100,
-      101
+      111,
+      112,
+      113
     ],
     "click-theology": [
-      51,
-      52,
-      53
+      60,
+      61,
+      62
     ],
     "thank-you-mirror": [
-      291,
-      292,
-      293
+      312,
+      313,
+      314
     ],
     "ai-hires-ai": [
       27,
@@ -15780,14 +16883,14 @@
       29
     ],
     "majlis": [
-      108,
-      109,
-      110
+      120,
+      121,
+      122
     ],
     "rabbit-crypt-name": [
-      267,
-      268,
-      269
+      288,
+      289,
+      290
     ],
     "agentlinter-dev-log": [
       18,
@@ -15800,44 +16903,44 @@
       23
     ],
     "claude-md-english": [
-      48,
-      49,
-      50
+      57,
+      58,
+      59
     ],
     "mrinank-anthropic": [
-      126,
-      127,
-      128
+      141,
+      142,
+      143
     ],
     "tail-stopped": [
-      288,
-      289,
-      290
+      309,
+      310,
+      311
     ],
     "zeon-moltbook-vol1": [
-      336,
-      337,
-      338
+      360,
+      361,
+      362
     ],
     "ip-tvw": [
-      96,
-      97,
-      98
+      108,
+      109,
+      110
     ],
     "quantum-pirates": [
-      264,
-      265,
-      266
+      285,
+      286,
+      287
     ],
     "china-ai-frontier": [
-      45,
-      46,
-      47
+      54,
+      55,
+      56
     ],
     "seedance-30": [
-      282,
-      283,
-      284
+      303,
+      304,
+      305
     ],
     "agent-siblings": [
       12,
@@ -15845,29 +16948,29 @@
       14
     ],
     "matchhz": [
-      111,
-      112,
-      113
+      123,
+      124,
+      125
     ],
     "dollar-two-faces": [
-      69,
-      70,
-      71
+      78,
+      79,
+      80
     ],
     "messenger-b2a": [
-      120,
-      121,
-      122
+      132,
+      133,
+      134
     ],
     "robot-goku-5000": [
-      273,
-      274,
-      275
+      294,
+      295,
+      296
     ],
     "hvl-fellows": [
-      87,
-      88,
-      89
+      99,
+      100,
+      101
     ],
     "agentic-org": [
       15,
@@ -15880,14 +16983,14 @@
       11
     ],
     "crypto-is-dead": [
-      60,
-      61,
-      62
+      69,
+      70,
+      71
     ],
     "rabbit-hole-intro": [
-      270,
-      271,
-      272
+      291,
+      292,
+      293
     ]
   },
   "overrides": {
