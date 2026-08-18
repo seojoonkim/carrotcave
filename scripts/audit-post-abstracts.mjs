@@ -24,6 +24,7 @@ const entries = [
     kind: 'post',
     slug: post.slug,
     title: post.title,
+    category: post.category,
     abstract: post.summary,
     opening: String(post.content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '',
   })),
@@ -40,11 +41,13 @@ for (const entry of entries) {
   const abstract = String(entry.abstract ?? '').trim();
   const reasons = [];
 
-  if (abstract.length < 45 || abstract.length > 110) reasons.push(`length=${abstract.length}`);
+  const [minimum, maximum] = entry.category === '낙서' ? [20, 44] : [45, 110];
+  if (abstract.length < minimum || abstract.length > maximum) reasons.push(`length=${abstract.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(abstract)) reasons.push('forbidden-fragment');
   if (!/[.!?。！？]$/.test(abstract)) reasons.push('missing-terminal-punctuation');
   if (normalize(abstract) === normalize(entry.title)) reasons.push('duplicates-title');
   if (entry.opening && normalize(abstract) === normalize(entry.opening)) reasons.push('copies-opening-sentence');
+  if (entry.category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(abstract)) reasons.push('critical-doodle-voice');
   const normalizedAbstract = normalize(abstract);
   if (seen.has(normalizedAbstract)) reasons.push(`duplicates-${seen.get(normalizedAbstract)}`);
   seen.set(normalizedAbstract, `${entry.kind}:${entry.slug}`);

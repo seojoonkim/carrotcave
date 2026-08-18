@@ -2339,13 +2339,13 @@
   },
   "post-104": {
     "primaryTopics": [
-      "exploration"
+      "notes"
     ],
     "secondaryTopics": [
       "depth-entry"
     ],
     "questions": [
-      "exploration-reading-question"
+      "notes-reading-question"
     ],
     "claims": [
       {
@@ -2362,7 +2362,7 @@
     "motifs": [],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "exploration"
+      "notes"
     ],
     "reviewStatus": "approved",
     "provenance": {

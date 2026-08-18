@@ -184,19 +184,23 @@ test('post slugs, Telegram message IDs, and full article bodies are unique', asy
   assert.equal(new Set(posts.map((post) => post.content.trim())).size, posts.length);
 });
 
-test('every post carries one publishable abstract shared by thumbnails and recommendations', async () => {
+test('every post carries a category-appropriate abstract shared by thumbnails and recommendations', async () => {
   const { posts } = await import('../data/posts.ts');
 
   assert.ok(posts.length > 0);
   assert.match(homeSource, /summary=\{post\.summary\}/);
   assert.match(editorialCardSource, /className="wall-card__abstract"/);
-  assert.match(syncSource, /assertPublishableAbstract\(summary, msg\.content \|\| msg\.fullText, title\)/);
+  assert.match(syncSource, /assertPublishableAbstract\(summary, msg\.content \|\| msg\.fullText, title, category\)/);
+  assert.match(syncSource, /category === '낙서'.*critical doodle voice/);
   assert.doesNotMatch(syncSource, /summary:\s*msg\.content\.substring/);
 
+  const criticalDoodlePhrases = /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/;
   for (const post of posts) {
-    assert.ok(post.summary.length >= 45 && post.summary.length <= 110, `${post.slug}: abstract length`);
+    const [minimum, maximum] = post.category === '낙서' ? [20, 44] : [45, 110];
+    assert.ok(post.summary.length >= minimum && post.summary.length <= maximum, `${post.slug}: abstract length`);
     assert.match(post.summary, /[.!?。！？]$/, `${post.slug}: terminal punctuation`);
     assert.doesNotMatch(post.summary, /\n|\.\.\.|…|https?:\/\/|\|/i, `${post.slug}: forbidden fragment`);
+    if (post.category === '낙서') assert.doesNotMatch(post.summary, criticalDoodlePhrases, `${post.slug}: critical doodle voice`);
   }
 });
 
@@ -214,6 +218,7 @@ test('post corrections and newest-first ordering stay explicit', async () => {
   const directlyBuiltSlugs = ['post-187', 'post-161', 'post-150', 'korean-tech-ecosystem-api-access-issues', 'sano-godaddy-war', 'click-theology'];
   for (const slug of directlyBuiltSlugs) assert.equal(posts.find((post) => post.slug === slug)?.category, '빌딩');
   assert.equal(posts.find((post) => post.slug === 'post-111')?.category, '탐험');
+  assert.equal(posts.find((post) => post.slug === 'post-104')?.category, '낙서');
   assert.match(homeSource, /\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)/);
 });
 

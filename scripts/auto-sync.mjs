@@ -496,7 +496,7 @@ async function generateMetadata(msg) {
       if (!Array.isArray(override.tags) || !override.tags.every((tag) => typeof tag === 'string' && tag.trim())) {
         throw new Error('Invalid override tags');
       }
-      assertPublishableAbstract(override.summary, msg.content || msg.fullText, override.title);
+      assertPublishableAbstract(override.summary, msg.content || msg.fullText, override.title, override.category);
       log(`  ✅ Using reviewed metadata override for msg #${msg.id}`);
       return override;
     }
@@ -520,7 +520,7 @@ ${msg.fullText.substring(0, 2000)}
   "title": "한국어 제목 (원문 첫 줄을 글자 수 제한 없이 그대로)",
   "category": "탐험|빌딩|낙서|소설 중 하나",
   "depth": "entry|mid|deep 중 하나",
-  "summary": "글의 실제 내용과 핵심 주장 또는 관찰을 독립적으로 소개하는 한국어 초록 한 문장 (45-110자)",
+  "summary": "글의 실제 내용을 독립적으로 소개하는 한국어 한 문장 (낙서 20-44자, 나머지 45-110자)",
   "tags": ["태그1", "태그2", "태그3"]
 }
 
@@ -547,6 +547,8 @@ slug 작성 원칙:
 
 summary 작성 원칙:
 - 정확히 한 문장이고 종결부호로 끝낼 것
+- 낙서는 평가나 의미 부여 없이 무슨 일이 있었는지만 건조하게 쓸 것
+- 낙서에는 '~를 보여준다', '~를 되새긴다', '~를 강조한다', '~를 돌아본다', '~를 읽어낸다', '~를 감상한다' 같은 평론형 서술을 쓰지 말 것
 - 제목이나 본문 첫 문장을 그대로 반복하지 말 것
 - 말줄임표, URL, 표 조각, 줄바꿈, 반응 이모지를 넣지 말 것
 - 독자가 본문을 열기 전에 무엇을 다루고 어떤 핵심을 말하는 글인지 알 수 있게 쓸 것`;
@@ -601,7 +603,7 @@ summary 작성 원칙:
           .substring(0, 60);
       }
       
-      assertPublishableAbstract(metadata.summary, msg.content || msg.fullText, metadata.title);
+      assertPublishableAbstract(metadata.summary, msg.content || msg.fullText, metadata.title, metadata.category);
       log(`  ✅ Metadata generated: slug="${metadata.slug}", category="${metadata.category}"`);
       return metadata;
     } catch (err) {
@@ -629,16 +631,18 @@ function generateFallbackMetadata(msg) {
   };
 }
 
-function assertPublishableAbstract(summary, content, title) {
+function assertPublishableAbstract(summary, content, title, category) {
   const value = String(summary ?? '').trim();
   const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
   const normalized = (text) => text.replace(/[.!?。！？]+$/, '').trim();
   const errors = [];
-  if (value.length < 45 || value.length > 110) errors.push(`length=${value.length}`);
+  const [minimum, maximum] = category === '낙서' ? [20, 44] : [45, 110];
+  if (value.length < minimum || value.length > maximum) errors.push(`length=${value.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(value)) errors.push('forbidden fragment');
   if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');
   if (normalized(value) === normalized(title ?? '')) errors.push('duplicates title');
   if (normalized(value) === normalized(firstSentence)) errors.push('copies opening sentence');
+  if (category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(value)) errors.push('critical doodle voice');
   if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
   return value;
 }
@@ -659,7 +663,7 @@ function loadExistingPosts() {
 // ─────────────────────────────────────────────
 function buildPostObject(msg, metadata, localImageUrls, localVideoUrls) {
   const { slug, title, category, depth, summary, tags } = metadata;
-  assertPublishableAbstract(summary, msg.content || msg.fullText, title);
+  assertPublishableAbstract(summary, msg.content || msg.fullText, title, category);
   const date = msg.date || new Date().toISOString().split('T')[0];
   const content = escapeBacktick(stripLeadingDuplicateTitle(
     stripTrailingReactionSignature(msg.content || msg.fullText.split('\n').slice(1).join('\n').trim()),

@@ -142,6 +142,15 @@ test('archive stays uninterrupted while the footer keeps only the rabbit and car
   assert.doesNotMatch(css, /cave-depth-divider|cave-journey-scene/);
 });
 
+test('axis hover temporarily moves the active carrot and restores it on exit', async () => {
+  const css = await read('app/globals.css');
+  assert.match(css, /@media\(hover:hover\) and \(pointer:fine\)\{\.axis-rail__inner:has\(a:not\(\.active\):is\(:hover,:focus-visible\)\) a\.active/);
+  assert.match(css, /\.axis-rail__inner:has\(a:not\(\.active\):is\(:hover,:focus-visible\)\) a\.active \.axis-rail__carrot\{display:none\}/);
+  assert.match(css, /\.axis-rail a:not\(\.active\):is\(:hover,:focus-visible\) \.axis-rail__carrot\{display:inline-block;[^}]*animation:axis-carrot-wiggle/);
+  assert.match(css, /@keyframes axis-carrot-wiggle/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{[^\n]*\.axis-rail__carrot\{animation:none!important\}/);
+});
+
 test('editorial surface uses local Noto KR, a subtle static gradient, and complete social metadata', async () => {
   const [layout, css, socialMetadata] = await Promise.all([read('app/layout.tsx'), read('app/globals.css'), read('lib/social-metadata.ts')]);
   const og = await readFile(new URL('public/carrotcave-og-20260814.png', root));

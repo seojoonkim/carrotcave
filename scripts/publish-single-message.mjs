@@ -106,16 +106,18 @@ function parseSingleMessage(html, requestedId) {
   return messages[0];
 }
 
-function assertAbstract(summary, content, title) {
+function assertAbstract(summary, content, title, category) {
   const value = String(summary ?? '').trim();
   const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
   const normalize = (text) => String(text).replace(/[.!?。！？]+$/, '').trim();
   const errors = [];
-  if (value.length < 45 || value.length > 110) errors.push(`length=${value.length}`);
+  const [minimum, maximum] = category === '낙서' ? [20, 44] : [45, 110];
+  if (value.length < minimum || value.length > maximum) errors.push(`length=${value.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(value)) errors.push('forbidden fragment');
   if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');
   if (normalize(value) === normalize(title)) errors.push('duplicates title');
   if (normalize(value) === normalize(firstSentence)) errors.push('copies opening sentence');
+  if (category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(value)) errors.push('critical doodle voice');
   if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
 }
 
@@ -136,7 +138,7 @@ function reviewedMetadata(overrides, message) {
   if (!Array.isArray(metadata.tags) || !metadata.tags.every((tag) => typeof tag === 'string' && tag.trim())) {
     throw new Error('Invalid override tags');
   }
-  assertAbstract(metadata.summary, message.content, metadata.title);
+  assertAbstract(metadata.summary, message.content, metadata.title, metadata.category);
   return metadata;
 }
 
