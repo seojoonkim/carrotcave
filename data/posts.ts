@@ -23,7 +23,7 @@ export const posts: Post[] = [
     id: 'graph-engineering-ai-org',
     slug: 'graph-engineering-ai-org',
     telegramMsgId: 199,
-    title: "그래프 엔지니어링의 진짜 함의",
+    title: "그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다",
     category: "탐험",
     depth: "deep",
     summary: "여러 AI가 같은 정보와 습관을 공유할 때 생기는 가짜 합의를 짚고 권한과 증거, 거부권을 실행 그래프로 설계해야 한다고 주장한다.",

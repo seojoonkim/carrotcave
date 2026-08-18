@@ -128,6 +128,9 @@ function reviewedMetadata(overrides, message) {
   }
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.slug ?? '')) throw new Error(`Invalid override slug: ${metadata.slug}`);
   if (typeof metadata.title !== 'string' || !metadata.title.trim()) throw new Error('Invalid override title');
+  if (metadata.title.normalize('NFKC').trim() !== message.title.normalize('NFKC').trim()) {
+    throw new Error(`Override title must match Telegram first line for msg #${message.id}`);
+  }
   if (!ALLOWED_CATEGORIES.has(metadata.category)) throw new Error(`Invalid override category: ${metadata.category}`);
   if (!ALLOWED_DEPTHS.has(metadata.depth)) throw new Error(`Invalid override depth: ${metadata.depth}`);
   if (!Array.isArray(metadata.tags) || !metadata.tags.every((tag) => typeof tag === 'string' && tag.trim())) {

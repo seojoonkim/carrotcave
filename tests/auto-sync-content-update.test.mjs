@@ -265,6 +265,15 @@ test('daily Telegram reconciliation publishes missing posts while retaining the 
   assert.doesNotMatch(command, /--audit-only(?:\s|$)/);
 });
 
+test('daily metadata keeps the full Telegram first line and rejects title-changing overrides', () => {
+  const source = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
+  assert.match(source, /원문 첫 줄을 글자 수 제한 없이 그대로/);
+  assert.match(source, /Override title must match Telegram first line/);
+  assert.match(source, /title:\s*msg\.title,/);
+  assert.doesNotMatch(source, /title:\s*msg\.title\.substring/);
+  assert.doesNotMatch(source, /원문 첫줄 그대로, 최대 40자/);
+});
+
 test('reaction reconciliation locates a post by slug when id differs', () => {
   const updated = updateReactions(fixture, 5, 42, { target: 5 });
 

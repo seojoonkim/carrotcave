@@ -97,6 +97,28 @@ test('publishes exactly one reviewed message through one direct embed request wi
   assert.deepEqual(await readFile(join(root, 'public', 'media', 'msg-198-0.png')), mediaBytes);
 });
 
+test('fails closed when reviewed metadata changes the Telegram title', async () => {
+  const { root, historical } = await fixture();
+  const overridePath = join(root, 'data', 'sync-metadata-overrides.json');
+  const overrides = JSON.parse(await readFile(overridePath, 'utf8'));
+  overrides['198'].title = '검토된 글';
+  await writeFile(overridePath, JSON.stringify(overrides));
+
+  await assert.rejects(
+    publishSingleMessage({
+      id: 198,
+      root,
+      fetchImpl: async () => ({
+        ok: true,
+        status: 200,
+        text: async () => telegramHtml.replace(/\s*<a class="tgme_widget_message_photo_wrap"[^>]*><\/a>/, ''),
+      }),
+    }),
+    /title must match Telegram first line/i,
+  );
+  assert.equal(await readFile(join(root, 'data', 'posts.ts'), 'utf8'), historical);
+});
+
 test('fails closed before writing when reviewed metadata is missing or stale', async () => {
   for (const mode of ['missing', 'stale']) {
     const { root, historical } = await fixture();

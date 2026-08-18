@@ -490,6 +490,9 @@ async function generateMetadata(msg) {
       if (!ALLOWED_DEPTHS.has(override.depth)) throw new Error(`Invalid override depth: ${override.depth}`);
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(override.slug ?? '')) throw new Error(`Invalid override slug: ${override.slug}`);
       if (typeof override.title !== 'string' || !override.title.trim()) throw new Error('Invalid override title');
+      if (override.title.normalize('NFKC').trim() !== msg.title.normalize('NFKC').trim()) {
+        throw new Error(`Override title must match Telegram first line for msg #${msg.id}`);
+      }
       if (!Array.isArray(override.tags) || !override.tags.every((tag) => typeof tag === 'string' && tag.trim())) {
         throw new Error('Invalid override tags');
       }
@@ -514,7 +517,7 @@ ${msg.fullText.substring(0, 2000)}
 다음 JSON 형식으로 응답해. 다른 내용 없이 JSON만:
 {
   "slug": "영어-소문자-하이픈-only (최대 50자, 내용을 잘 반영하는 영어 키워드)",
-  "title": "한국어 제목 (원문 첫줄 그대로, 최대 40자)",
+  "title": "한국어 제목 (원문 첫 줄을 글자 수 제한 없이 그대로)",
   "category": "탐험|빌딩|낙서|소설 중 하나",
   "depth": "entry|mid|deep 중 하나",
   "summary": "글의 실제 내용과 핵심 주장 또는 관찰을 독립적으로 소개하는 한국어 초록 한 문장 (45-110자)",
@@ -618,7 +621,7 @@ function generateFallbackMetadata(msg) {
 
   return {
     slug,
-    title: msg.title.substring(0, 40),
+    title: msg.title,
     category: '탐험',
     depth,
     summary: '',

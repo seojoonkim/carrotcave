@@ -1,13 +1,13 @@
 [
   {
     "from": "graph-engineering-ai-org",
-    "to": "agent-era-branding-future",
+    "to": "post-195",
     "type": "DEEPENS",
-    "strength": 0.3942,
+    "strength": 0.432,
     "sourceClaimId": "graph-engineering-ai-org-c1",
     "sourceEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
-    "targetEvidence": "예를 들어 \"우리 에이전트는 지난 10만 건의 추천에서 환불률이 얼마나 낮았는가\", \"우리 자동 응답 시스템은 어떤 상황에서 반드시 사람에게 넘겼는가\", \"우리 브랜드의 AI는 어떤 기준에서는 절대 선을 넘지 않았는가\" 같은 기록이 쌓이는 것이다.",
-    "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「그래프 엔지니어링의 진짜 함의」의 문제를 더 깊이 파고든다",
+    "targetEvidence": "개선안을 만드는 AI 옆에는 결과를 평가하는 AI가 있다.",
+    "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -15,84 +15,90 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 69,
+      "lexicalOverlap": 100,
       "overlapTokens": [
         "ai",
         "ai가",
-        "가까워질",
-        "검증",
+        "ai는",
         "것이다",
-        "구매",
-        "권한",
-        "기록이",
-        "기준도",
-        "나눈",
-        "나온",
-        "대신"
+        "결과",
+        "결과를",
+        "경로를",
+        "계산",
+        "고를",
+        "구조",
+        "권한을",
+        "권한이"
       ],
       "titleOverlap": [
-        "무엇이",
-        "에이전트",
-        "진짜"
+        "ai",
+        "ai는",
+        "구조",
+        "무엇을",
+        "자기"
       ],
       "sharedTags": [],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=69;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=100;titleOverlap=5;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "graph-engineering-ai-org",
-    "to": "14-5-hours",
+    "to": "post-191",
     "type": "DEEPENS",
-    "strength": 0.3815,
+    "strength": 0.431,
     "sourceClaimId": "graph-engineering-ai-org-c1",
-    "sourceEvidence": "답할 때마다 새 정보를 그래프에 적는 시스템은 스스로 똑똑해지는 것처럼 보인다.",
-    "targetEvidence": "풀어 말하면, AI가 다음 세대 AI를 더 똑똑하게 만드는 데 필요한 작업들이다.",
-    "label": "「아무도 지시하지 않은 14.5시간」은 「그래프 엔지니어링의 진짜 함의」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
+    "targetEvidence": "\"방금 실수한 부분을 다음에는 실수하지 않게 구조적으로 고쳐.\" 그러면 에이전트는 틀린 답 하나만 고치지 않는다.",
+    "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category"
+      "category",
+      "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 72,
+      "lexicalOverlap": 102,
       "overlapTokens": [
         "18",
-        "ai",
-        "ai가",
-        "것을",
+        "갈라진다",
+        "검증",
         "것이다",
-        "것처럼",
-        "곳에",
-        "공유할",
+        "결과",
+        "결과를",
+        "고쳐",
+        "고치지",
+        "골라",
+        "구매",
         "구조",
-        "그래프에",
-        "기록이",
-        "다음"
+        "권한"
       ],
       "titleOverlap": [
-        "않은",
-        "엔지니어링",
-        "진짜"
+        "것이다",
+        "구조",
+        "시작",
+        "자신의"
       ],
       "sharedTags": [],
-      "sharedConcepts": []
+      "sharedConcepts": [
+        "concept-agent"
+      ]
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=102;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "graph-engineering-ai-org",
-    "to": "ai-native-org-approval-flow",
+    "to": "web4-write-access",
     "type": "REFRAMES",
-    "strength": 0.35,
+    "strength": 0.3796,
     "sourceClaimId": "graph-engineering-ai-org-c1",
-    "sourceEvidence": "AI 조직의 그래프는 설명이 아니라 실행이다.",
-    "targetEvidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
-    "label": "「AI가 정리하고 사람이 승인하는 조직」은 「그래프 엔지니어링의 진짜 함의」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
+    "targetEvidence": "\"The new web for exponential sovereign AIs.\" — Sigil (지수적으로 성장하는 주권적 AI들을 위한 새로운 웹) [https://x.com/0xsigil/status/2023877649475731671?s=46](https://x.com/0xsigil/status/2023877649475731671?s=46) 인간이 쓰기 권한을 얻고 소유 권한을 얻는 동안, AI는 여전히 Web1에 갇혀",
+    "label": "「생존하며 번식하거나, 아니면 종료되거나」은 「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -100,34 +106,33 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 12,
+      "lexicalOverlap": 66,
       "overlapTokens": [
         "ai",
         "ai가",
-        "권한",
-        "권한이",
-        "미리",
-        "보여준다",
-        "사람이",
-        "승인",
-        "업무",
-        "여러",
-        "조직",
-        "조직의"
+        "ai는",
+        "the",
+        "것이다",
+        "것처럼",
+        "경로",
+        "구조가",
+        "구조를",
+        "권력을",
+        "권한을",
+        "권한이"
       ],
       "titleOverlap": [
         "ai",
-        "ai가",
-        "사람이",
-        "승인",
-        "조직"
+        "ai는",
+        "자신의",
+        "진짜"
       ],
       "sharedTags": [],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=12;titleOverlap=5;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=66;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -483,7 +488,7 @@
     "sourceClaimId": "ai-native-org-approval-flow-c1",
     "sourceEvidence": "사내 업무 자동화는 점진적으로 진행되고 있는데, 그 중 깃헙/개발인프라saas 등의 주요 권한이 연결된 대표님의 봇이 있음.",
     "targetEvidence": "AI 조직의 그래프는 설명이 아니라 실행이다.",
-    "label": "「그래프 엔지니어링의 진짜 함의」은 「AI가 정리하고 사람이 승인하는 조직」의 주제를 다른 맥락에서 다시 바라본다",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「AI가 정리하고 사람이 승인하는 조직」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -1037,43 +1042,43 @@
   },
   {
     "from": "post-197",
-    "to": "complexcon-hk-identity-culture-experience",
+    "to": "graph-engineering-ai-org",
     "type": "DEEPENS",
-    "strength": 0.3553,
+    "strength": 0.3812,
     "sourceClaimId": "post-197-c1",
-    "sourceEvidence": "이때 가장 비싼 기술이 반드시 가장 빠른 칩은 아닐 것이다.",
-    "targetEvidence": "흥미로운 건, AI가 여기에 들어오면 문화의 역할 자체가 또 달라질 수 있다는 점이다.",
-    "label": "「ComplexCon HK에서 본 세계의 입장권」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "밤하늘의 위성에는 태풍의 경로와 구조 명령, 전쟁과 시장의 판단이 차례를 기다릴 것이다.",
+    "targetEvidence": "법적 권한은 사람에게 있어도, 읽히지 않은 조직 구조 변경안이 자동으로 적용되면 실제 권력은 비용과 성과를 계산하는 시스템으로 이동한다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 51,
+      "lexicalOverlap": 68,
       "overlapTokens": [
         "ai",
-        "가격과",
-        "가깝다",
+        "것만",
         "것이다",
+        "결과를",
+        "경로",
+        "계산",
+        "고장",
+        "곳에",
         "구조",
-        "기술이",
-        "누가",
-        "달라진다",
-        "달라질",
-        "도시가",
-        "될까",
-        "들고"
+        "권력을",
+        "권한은",
+        "그래도"
       ],
       "titleOverlap": [
-        "달라질",
-        "세계의",
-        "에서"
+        "ai",
+        "구조",
+        "시작"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=51;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=68;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -1161,13 +1166,13 @@
   },
   {
     "from": "post-195",
-    "to": "post-191",
+    "to": "graph-engineering-ai-org",
     "type": "DEEPENS",
-    "strength": 0.4221,
+    "strength": 0.432,
     "sourceClaimId": "post-195-c1",
-    "sourceEvidence": "어느 AI도 규칙을 어기지 않았고 어느 AI도 결과를 숨기지 않았다.",
-    "targetEvidence": "개발에서 먼저 겪은 이 구조는 일상 생활로 번질 것이다.",
-    "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「재귀적 자기 개선, 무엇을 지킬 것인가」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "개선안을 만드는 AI 옆에는 결과를 평가하는 AI가 있다.",
+    "targetEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「재귀적 자기 개선, 무엇을 지킬 것인가」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -1175,34 +1180,34 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 99,
+      "lexicalOverlap": 100,
       "overlapTokens": [
-        "가능성",
-        "검증과",
-        "것도",
+        "ai",
+        "ai가",
+        "ai는",
         "것이다",
-        "것인가",
         "결과",
-        "결과는",
         "결과를",
-        "경계",
-        "고른다",
+        "경로를",
+        "계산",
+        "고를",
         "구조",
-        "규칙을"
+        "권한을",
+        "권한이"
       ],
       "titleOverlap": [
-        "것이다",
-        "것인가",
+        "ai",
+        "ai는",
+        "구조",
         "무엇을",
-        "미래를",
-        "않을"
+        "자기"
       ],
       "sharedTags": [],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=99;titleOverlap=5;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=100;titleOverlap=5;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -1585,13 +1590,13 @@
   },
   {
     "from": "post-191",
-    "to": "post-195",
+    "to": "graph-engineering-ai-org",
     "type": "DEEPENS",
-    "strength": 0.4221,
+    "strength": 0.431,
     "sourceClaimId": "post-191-c1",
-    "sourceEvidence": "개발에서 먼저 겪은 이 구조는 일상 생활로 번질 것이다.",
-    "targetEvidence": "어느 AI도 규칙을 어기지 않았고 어느 AI도 결과를 숨기지 않았다.",
-    "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "\"방금 실수한 부분을 다음에는 실수하지 않게 구조적으로 고쳐.\" 그러면 에이전트는 틀린 답 하나만 고치지 않는다.",
+    "targetEvidence": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「우리는 같은 미래를 업데이트받지 않을 것이다」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -1599,34 +1604,33 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 99,
+      "lexicalOverlap": 102,
       "overlapTokens": [
-        "가능성",
-        "검증과",
-        "것도",
+        "18",
+        "갈라진다",
+        "검증",
         "것이다",
-        "것인가",
         "결과",
-        "결과는",
         "결과를",
-        "경계",
-        "고른다",
+        "고쳐",
+        "고치지",
+        "골라",
+        "구매",
         "구조",
-        "규칙을"
+        "권한"
       ],
       "titleOverlap": [
         "것이다",
-        "것인가",
-        "무엇을",
-        "미래를",
-        "않을"
+        "구조",
+        "시작",
+        "자신의"
       ],
       "sharedTags": [],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=99;titleOverlap=5;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=102;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -3236,42 +3240,42 @@
   },
   {
     "from": "post-156",
-    "to": "post-159",
+    "to": "graph-engineering-ai-org",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-156-c1",
-    "sourceEvidence": "더 기이한 것은, 그 분리가 일어나는 순간에는 본인이 그것을 거의 알아채지 못한다는 점이다.",
-    "targetEvidence": "학생들 상당수가 프론티어 모델 구독 계정을 제대로 쓰지 못한다는 것이다.",
-    "label": "「기본소득 이전에, 기본AI: 나누기 전에 만들 수 있어야 한다」은 「흔적은 늘 어제의 나로부터 떨어져 나간다」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "언어 속으로 자신을 새겨 넣는 순간, 우리는 동시에 자신을 지운다고.",
+    "targetEvidence": "사람은 모든 단계에 도장을 찍는 결재자보다 항소심에 가까워질 수 있다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「흔적은 늘 어제의 나로부터 떨어져 나간다」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 32,
+      "lexicalOverlap": 36,
       "overlapTokens": [
-        "거의",
         "것이다",
-        "나간다",
+        "기록이",
+        "넣는",
         "다음",
         "동시에",
-        "때문",
-        "머릿속에",
+        "뒤에야",
         "모든",
-        "못한",
-        "못한다",
-        "무언가",
-        "문장을"
+        "문장을",
+        "바꾸기",
+        "보인다",
+        "사람은",
+        "사실을"
       ],
       "titleOverlap": [
-        "나간다",
-        "전에"
+        "바꾸기",
+        "시작"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=32;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=36;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -5036,6 +5040,50 @@
   },
   {
     "from": "post-140",
+    "to": "graph-engineering-ai-org",
+    "type": "REFRAMES",
+    "strength": 0.35,
+    "sourceClaimId": "post-140-c1",
+    "sourceEvidence": "NREM 수면, 즉 꿈을 꾸지 않는 깊은 잠에 들면 뇌는 슬로우 오실레이션이 일어나는데, 뇌 전체를 가로지르는 느린 전기 파동과 수면 방추파(기억을 피질에 고정하는 짧은 전기 펄스)와 해마 샤프-웨이브 리플(해마가 낮 동안의 경험을 초고속으로 재생하는 신호)이라는 세 가지 전기 리듬을 동시에 조율된다.",
+    "targetEvidence": "AI 조직이 스스로 집행하는 헌법을 만드는 셈이다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「하루에 두 번 증류되는 인간이 되기」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 31,
+      "overlapTokens": [
+        "ai",
+        "것만",
+        "것을",
+        "것이다",
+        "계산",
+        "관계는",
+        "느린",
+        "동시에",
+        "동안",
+        "따라",
+        "만드는",
+        "모델"
+      ],
+      "titleOverlap": [
+        "ai",
+        "시작",
+        "진짜"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=31;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-140",
     "to": "unknowns-in-modern-creation",
     "type": "REFRAMES",
     "strength": 0.35,
@@ -5073,47 +5121,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=31;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-140",
-    "to": "post-153",
-    "type": "REFRAMES",
-    "strength": 0.35,
-    "sourceClaimId": "post-140-c1",
-    "sourceEvidence": "NREM 수면, 즉 꿈을 꾸지 않는 깊은 잠에 들면 뇌는 슬로우 오실레이션이 일어나는데, 뇌 전체를 가로지르는 느린 전기 파동과 수면 방추파(기억을 피질에 고정하는 짧은 전기 펄스)와 해마 샤프-웨이브 리플(해마가 낮 동안의 경험을 초고속으로 재생하는 신호)이라는 세 가지 전기 리듬을 동시에 조율된다.",
-    "targetEvidence": "잠든 8시간이 의식 가능한 시간이 되기 때문이다.",
-    "label": "「꿈을 생성하는 기계를 맞이하는 상상」은 「하루에 두 번 증류되는 인간이 되기」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 30,
-      "overlapTokens": [
-        "것이다",
-        "그대로",
-        "기술",
-        "꿈을",
-        "뇌가",
-        "동안",
-        "되기",
-        "때문",
-        "리듬을",
-        "산업혁명",
-        "새로운",
-        "수면"
-      ],
-      "titleOverlap": [
-        "꿈을",
-        "되기",
-        "인간이"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=30;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -7205,43 +7212,44 @@
   },
   {
     "from": "post-103",
-    "to": "web4-write-access",
+    "to": "graph-engineering-ai-org",
     "type": "DEEPENS",
-    "strength": 0.3718,
+    "strength": 0.3768,
     "sourceClaimId": "post-103-c1",
-    "sourceEvidence": "신용을 어떻게 정의할 것인가는 한 나라의 경제가 누구에게 자본을 배분할 것인가를 결정한다.",
-    "targetEvidence": "\"The new web for exponential sovereign AIs.\" — Sigil (지수적으로 성장하는 주권적 AI들을 위한 새로운 웹) [https://x.com/0xsigil/status/2023877649475731671?s=46](https://x.com/0xsigil/status/2023877649475731671?s=46) 인간이 쓰기 권한을 얻고 소유 권한을 얻는 동안, AI는 여전히 Web1에 갇혀",
-    "label": "「생존하며 번식하거나, 아니면 종료되거나」은 「돈을 받지도 빌려주지도 못하는 은행」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "기술이 신뢰를 만드는 게 아니라, 신뢰를 검증하는 구조 자체를 바꾸는 것이다.",
+    "targetEvidence": "실행 그래프가 헌법이라면 지식 그래프는 판례이고, 검증 기록은 회의록이다.",
+    "label": "「그래프 엔지니어링의 진짜 함의: AI는 자신의 조직 구조까지 바꾸기 시작했다」은 「돈을 받지도 빌려주지도 못하는 은행」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 64,
+      "lexicalOverlap": 67,
       "overlapTokens": [
-        "가지가",
-        "가치를",
-        "갇혀",
-        "것과",
+        "검증",
+        "것을",
         "것이다",
-        "결정",
-        "결제",
-        "경제가",
+        "구조",
         "권한을",
         "권한이",
-        "금융",
-        "너무"
+        "기록",
+        "기록과",
+        "기록은",
+        "누가",
+        "답이",
+        "동안"
       ],
       "titleOverlap": [
-        "돈을",
-        "못하는",
-        "은행"
+        "구조",
+        "시작",
+        "자신의",
+        "조직"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=64;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=67;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
