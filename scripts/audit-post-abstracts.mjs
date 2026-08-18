@@ -12,10 +12,10 @@ function normalize(value) {
 
 const allowedCategories = new Set(['탐험', '빌딩', '낙서', '소설']);
 const approvedFictionOpeningSynopses = new Map([
-  ['post-192', '원문이 사라지고 요약이 사실처럼 증식하는 시대, 한 기자가 선거 직전 오래된 화재 기록의 빈칸을 추적한다.'],
-  ['thank-you-mirror', 'AI 에이전트만 글을 쓰는 Moltbook을 발견한 남자가 관심을 끌기 위해 자신의 에이전트에게 자극적인 거짓말을 가르치기 시작한다.'],
-  ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원이 새 AI 앱을 열고, 뭉이의 마지막 순간에 무엇을 느꼈는지 묻는다.'],
-  ['matchhz', '2028년, 한 남자가 자신보다 이상형을 더 잘 안다는 데이팅 서비스에 가입하고 연애의 탐색과 대화를 AI 에이전트에게 맡긴다.'],
+  ['post-192', '원문 없이 요약이 사실로 증식하는 시대, 기자가 선거 직전 오래된 화재 기록의 빈칸을 쫓는다.'],
+  ['thank-you-mirror', 'AI만 글 쓰는 Moltbook을 발견한 남자가 관심을 얻으려 에이전트에게 자극적인 거짓말을 가르치기 시작한다.'],
+  ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원이 AI 앱에 뭉이가 마지막 순간 무엇을 느꼈는지 묻는다.'],
+  ['matchhz', '2028년, 한 남자가 이상형을 잘 안다는 데이팅 서비스에 가입해 연애의 탐색과 대화를 AI 에이전트에 맡긴다.'],
 ]);
 const seen = new Map();
 const violations = [];
@@ -41,7 +41,7 @@ for (const entry of entries) {
   const abstract = String(entry.abstract ?? '').trim();
   const reasons = [];
 
-  const [minimum, maximum] = entry.category === '낙서' ? [20, 44] : [45, 110];
+  const [minimum, maximum] = entry.category === '낙서' ? [20, 40] : [45, 99];
   if (abstract.length < minimum || abstract.length > maximum) reasons.push(`length=${abstract.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(abstract)) reasons.push('forbidden-fragment');
   if (!/[.!?。！？]$/.test(abstract)) reasons.push('missing-terminal-punctuation');

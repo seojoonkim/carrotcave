@@ -196,7 +196,7 @@ test('every post carries a category-appropriate abstract shared by thumbnails an
 
   const criticalDoodlePhrases = /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/;
   for (const post of posts) {
-    const [minimum, maximum] = post.category === '낙서' ? [20, 44] : [45, 110];
+    const [minimum, maximum] = post.category === '낙서' ? [20, 40] : [45, 99];
     assert.ok(post.summary.length >= minimum && post.summary.length <= maximum, `${post.slug}: abstract length`);
     assert.match(post.summary, /[.!?。！？]$/, `${post.slug}: terminal punctuation`);
     assert.doesNotMatch(post.summary, /\n|\.\.\.|…|https?:\/\/|\|/i, `${post.slug}: forbidden fragment`);

@@ -520,7 +520,7 @@ ${msg.fullText.substring(0, 2000)}
   "title": "한국어 제목 (원문 첫 줄을 글자 수 제한 없이 그대로)",
   "category": "탐험|빌딩|낙서|소설 중 하나",
   "depth": "entry|mid|deep 중 하나",
-  "summary": "글의 실제 내용을 독립적으로 소개하는 한국어 한 문장 (낙서 20-44자, 나머지 45-110자)",
+  "summary": "글의 실제 내용을 독립적으로 소개하는 한국어 한 문장 (낙서 20-40자, 나머지 45-99자)",
   "tags": ["태그1", "태그2", "태그3"]
 }
 
@@ -636,7 +636,7 @@ function assertPublishableAbstract(summary, content, title, category) {
   const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
   const normalized = (text) => text.replace(/[.!?。！？]+$/, '').trim();
   const errors = [];
-  const [minimum, maximum] = category === '낙서' ? [20, 44] : [45, 110];
+  const [minimum, maximum] = category === '낙서' ? [20, 40] : [45, 99];
   if (value.length < minimum || value.length > maximum) errors.push(`length=${value.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(value)) errors.push('forbidden fragment');
   if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');

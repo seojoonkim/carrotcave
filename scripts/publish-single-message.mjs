@@ -111,7 +111,7 @@ function assertAbstract(summary, content, title, category) {
   const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
   const normalize = (text) => String(text).replace(/[.!?。！？]+$/, '').trim();
   const errors = [];
-  const [minimum, maximum] = category === '낙서' ? [20, 44] : [45, 110];
+  const [minimum, maximum] = category === '낙서' ? [20, 40] : [45, 99];
   if (value.length < minimum || value.length > maximum) errors.push(`length=${value.length}`);
   if (/\n|\.\.\.|…|https?:\/\/|\|/i.test(value)) errors.push('forbidden fragment');
   if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');

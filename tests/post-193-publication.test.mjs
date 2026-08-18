@@ -28,7 +28,7 @@ test('Telegram post 195 publishes the reviewed recursive self-improvement essay 
   assert.equal(post.title, '재귀적 자기 개선, 무엇을 지킬 것인가');
   assert.equal(post.category, '탐험');
   assert.equal(post.depth, 'deep');
-  assert.equal(post.summary, '자기 개선 AI가 인간의 반복된 승인과 침묵을 자동 동의로 학습할 때, 가역성·대가·이의제기 가능성을 지키는 기준이 왜 필요한지 묻는다.');
+  assert.equal(post.summary, '자기 개선 AI가 반복된 승인과 침묵을 자동 동의로 학습할 때 가역성·대가·이의제기를 지킬 기준이 필요한 이유를 묻는다.');
   assert.deepEqual(post.mediaUrls, ['/media/msg-195-0.jpg']);
   assert.match(post.content, /개선됐다는 판정은 누가 내리는가\./);
   assert.match(post.content, /시스템은 침묵을 승인으로 배웠다\./);
@@ -45,7 +45,7 @@ test('Telegram post 197 publishes the reviewed orbital-computing essay with its 
   assert.equal(post.title, '컴퓨팅이 우주로 올라가면 달라질 것들');
   assert.equal(post.category, '탐험');
   assert.equal(post.depth, 'deep');
-  assert.equal(post.summary, 'AI 연산이 궤도로 이동할 때 얻게 될 전력 이점과 방열·정비의 난제, 연산 우선권이 만드는 새로운 권력을 함께 살핀다.');
+  assert.equal(post.summary, 'AI 연산의 궤도 이동이 주는 전력 이점과 방열·정비 난제, 연산 우선권에서 생길 새 권력을 함께 다룬다.');
   assert.deepEqual(post.mediaUrls, ['/media/msg-197-0.png']);
   assert.match(post.content, /일론 머스크는 앞으로 몇 년 안에 AI 연산 비용이 우주에서 더 싸질 수 있다고 말한다\./);
   assert.match(post.content, /문제는 열이다\./);
