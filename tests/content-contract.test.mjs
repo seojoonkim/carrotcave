@@ -55,7 +55,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
   assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*border-bottom:0/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*border-bottom:1px solid var\(--line\)/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
@@ -140,12 +140,11 @@ test('ordinary reading progress carries a contained carrot at its live endpoint'
 test('iOS webviews extend the graphite header through the top safe area', () => {
   assert.match(layoutSource, /viewportFit: 'cover'/);
   assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
-  assert.match(stylesSource, /--cc-header-height:calc\(58\.032px \+ var\(--cc-safe-top\)\)/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
-  assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
-  assert.match(stylesSource, /\.axis-rail a\{min-height:41\.5152px\}/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.axis-rail a\{min-height:38\.8368px\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.axis-rail a\{min-height:36\.1584px\}/);
+  assert.match(stylesSource, /--cc-header-height:calc\(72px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:var\(--cc-safe-top\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*--cc-header-height:calc\(58px \+ var\(--cc-safe-top\)\)/);
+  assert.doesNotMatch(stylesSource, /--cc-header-height:calc\((58\.032|47\.616)px/);
+  assert.doesNotMatch(stylesSource, /\.axis-rail a\{min-height:/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
@@ -229,14 +228,17 @@ test('post corrections and newest-first ordering stay explicit', async () => {
 test('home and voice list share one editorial-axis navigation component', () => {
   for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(axisRailSource, new RegExp(axis));
   assert.match(axisRailSource, /<nav className="axis-rail" aria-label="편집 축">/);
-  assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
+  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
   assert.doesNotMatch(axisRailSource, /<small>/);
-  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
-  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
+  assert.match(headerSource, /children\?: ReactNode/);
+  assert.match(headerSource, /\) : children\}/);
+  assert.doesNotMatch(headerSource, /TELEGRAM ↗|https:\/\/t\.me\/carrotcave/);
+  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
+  assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
 });
 
 test('all three voice archives preserve their complete reader contracts', () => {
@@ -738,8 +740,8 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
   assert.doesNotMatch(voiceListSource, /공개된 대화를 선별해 번역하고/);
   assert.doesNotMatch(stylesSource, /\.cc-intro(?:__identity|__note)?/);
-  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
-  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
+  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
+  assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell voices-wall"/);
@@ -855,9 +857,10 @@ test('wide desktop archive rows render two uninterrupted cards', () => {
 
 test('desktop chrome and archive surfaces share one 1100px content container', () => {
   assert.match(stylesSource, /--site-container:1100px/);
-  for (const selector of ['cc-header__inner', 'axis-rail__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
+  for (const selector of ['cc-header__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
     assert.match(stylesSource, new RegExp(`\\.${selector}\\{[^}]*max-width:var\\(--site-container\\)`));
   }
+  assert.doesNotMatch(stylesSource, /\.axis-rail__inner\{[^}]*max-width:var\(--site-container\)/);
   assert.match(headerSource, /className="cc-header__inner"/);
   assert.match(axisRailSource, /className="axis-rail__inner"/);
   assert.match(footerSource, /className="cc-footer__inner"/);
@@ -865,7 +868,7 @@ test('desktop chrome and archive surfaces share one 1100px content container', (
 
 test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
-  assert.match(stylesSource, /\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,1fr\)/);
+  assert.match(stylesSource, /\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/);
   assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
