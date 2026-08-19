@@ -228,6 +228,13 @@ img { border: 0; outline: 0;  }
   max-width: var(--reader-measure);
   margin-inline: auto;
 }
+.hero > .kicker,
+.hero > #page-title {
+  margin-left: max(0px, calc((100% - var(--reader-measure)) / 2));
+  margin-right: auto;
+}
+.hero > .kicker { margin-bottom: 12px; }
+.hero > #page-title { margin-bottom: 22px; }
 .hero > .hero-portrait {
   position: relative;
   inset: auto;
