@@ -116,7 +116,7 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
   const css = await read('app/globals.css');
   assert.match(css, /:root\{[^}]*--cc-header-background:#282b32/);
   assert.match(css, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
-  assert.match(css, /\.cc-header\{[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(css, /\.cc-header\{[^}]*border:0!important/);
   assert.match(css, /\.axis-rail\{[^}]*background:transparent/);
   assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
   assert.match(css, /\.wall-card:hover\{[^}]*background:#30343c\}/);

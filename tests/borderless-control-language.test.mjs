@@ -39,5 +39,5 @@ test('structural dividers remain outside the button-removal scope', async () => 
   const appCss = await read('app/globals.css');
   assert.match(appCss, /\.axis-rail a\{[^}]*border-left:1px solid var\(--line\)/);
   assert.match(appCss, /\.wall-card\{[^}]*border:1px solid var\(--line\)/);
-  assert.match(appCss, /\.post-reader-header\{[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(appCss, /\.post-reader-header\{[^}]*border-bottom:0/);
 });

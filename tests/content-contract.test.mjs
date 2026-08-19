@@ -55,7 +55,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
   assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*border:0!important/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
@@ -64,14 +64,13 @@ test('archive and voice headers preserve their stable graphite surfaces', () => 
   }
 });
 
-test('all reading surfaces use one refined whole-document progress line at the header bottom', () => {
+test('all reading surfaces keep progress semantics without rendering a header line', () => {
   assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
   assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
   assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);
   assert.match(readingProgressSource, /style\.transform = `scaleX\(\$\{percent \/ 100\}\)`/);
-  assert.match(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:1px;[^}]*background:rgba\(255,255,255,\.09\)/);
-  assert.match(stylesSource, /\.cc-reading-progress__fill\{[^}]*background:#61adab;/);
-  assert.doesNotMatch(stylesSource, /\.cc-reading-progress__fill\{[^}]*box-shadow/);
+  assert.match(stylesSource, /\.cc-reading-progress\{display:none!important\}/);
+  assert.doesNotMatch(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:1px;/);
 
   assert.ok(voiceReaderFixtures.length > 0, 'at least one voice reader directory must be discovered');
   for (const { slug, html: source } of voiceReaderFixtures) {
