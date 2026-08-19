@@ -53,6 +53,15 @@
     "summary": "반복 예약과 복잡한 작업이 메인 세션에 만드는 병목을 진단하고 격리 세션과 하위 에이전트로 푼다.",
     "tags": ["OpenClaw", "크론", "격리 세션", "하위 에이전트"]
   },
+  "107": {
+    "slug": "post-107",
+    "title": "OpenClaw Builder Meetup in Seoul",
+    "category": "빌딩",
+    "depth": "mid",
+    "contentHash": "926:2591863191",
+    "summary": "서울 빌더 모임에서 한국 개발자들의 세계적 오픈소스 활약과 열기를 전하며 국내 서비스의 폐쇄형 API 환경을 지적한다.",
+    "tags": []
+  },
   "195": {
     "slug": "post-195",
     "title": "재귀적 자기 개선, 무엇을 지킬 것인가",

@@ -2274,7 +2274,7 @@ AI가 업무 산출물과 협업 패턴을 상시 분석. 연말 평가 투입 �
     slug: 'post-107',
     telegramMsgId: 107,
     title: 'OpenClaw Builder Meetup in Seoul',
-    category: '탐험',
+    category: '빌딩',
     depth: 'mid',
     summary: "서울 빌더 모임에서 한국 개발자들의 세계적 오픈소스 활약과 열기를 전하며 국내 서비스의 폐쇄형 API 환경을 지적한다.",
     content: `기분 좋게 바이브를 충전했다.
