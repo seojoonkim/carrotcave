@@ -38,7 +38,7 @@ export default function EditorialCard({
           alt=""
           width={900}
           height={650}
-          sizes="(max-width: 520px) 100vw, (max-width: 900px) 66vw, 50vw"
+          sizes="(max-width: 520px) 100vw, (max-width: 900px) 66vw, 58vw"
           priority={priority}
         />
       )}

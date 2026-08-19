@@ -37,7 +37,7 @@ test('every voice page loads the shared borderless override after its local styl
 
 test('structural dividers remain outside the button-removal scope', async () => {
   const appCss = await read('app/globals.css');
-  assert.match(appCss, /\.axis-rail a\{[^}]*border-left:1px solid var\(--line\)/);
+  assert.match(appCss, /\.axis-rail a\{[^}]*border-right:1px solid var\(--line\)/);
   assert.match(appCss, /\.wall-card\{[^}]*border:1px solid var\(--line\)/);
   assert.match(appCss, /\.post-reader-header\{[^}]*border-bottom:1px solid var\(--line\)/);
 });
