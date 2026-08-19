@@ -142,9 +142,9 @@ test('iOS webviews extend the graphite header through the top safe area', () => 
   assert.match(stylesSource, /--cc-header-height:calc\(58\.032px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
-  assert.match(stylesSource, /\.axis-rail a\{min-height:46\.128px\}/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.axis-rail a\{min-height:43\.152px\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.axis-rail a\{min-height:40\.176px\}/);
+  assert.match(stylesSource, /\.axis-rail a\{min-height:41\.5152px\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.axis-rail a\{min-height:38\.8368px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.axis-rail a\{min-height:36\.1584px\}/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
@@ -757,6 +757,7 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\);letter-spacing:-\.014em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end;column-gap:0\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });

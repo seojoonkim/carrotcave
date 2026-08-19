@@ -12,6 +12,7 @@ test('desktop archive uses two columns with stronger card titles than before', a
   ]);
 
   assert.match(css, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{margin:0;color:#d7d7d3;font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\);letter-spacing:-\.035em\}/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:clamp\(19px,2\.1vw,28px\)\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\)/);
   assert.match(card, /\(max-width: 900px\) 66vw, 50vw/);
