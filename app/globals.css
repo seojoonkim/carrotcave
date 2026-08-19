@@ -128,7 +128,11 @@
 @media(min-width:901px){
   .cc-header{padding-inline:clamp(20px,3vw,42px)}
   .cc-header__inner{width:100%;grid-template-columns:300px minmax(0,1fr)}
+  .cc-header--reading .cc-header__inner{grid-template-columns:300px 1px minmax(0,1fr);column-gap:0}
   .cc-brand{width:300px;flex:0 0 300px}
+  .cc-header--reading .cc-brand{width:300px;min-width:300px;padding-right:22px}
+  .cc-header--reading .cc-reading-divider{margin-block:3px}
+  .cc-header--reading .cc-reading-info{min-width:0}
   .cc-brand>span{min-width:240px;white-space:nowrap}
   .cc-brand small{white-space:nowrap}
   .cc-header__axis--desktop{width:100%;min-width:0}
