@@ -40,7 +40,10 @@ test('React logo enlarges the cave, grounds the rabbit, and keeps both eyes legi
   assert.match(mark, /<g className="carrot-cave-mark__rabbit-position">\s*<g className="carrot-cave-mark__rabbit">/);
   assert.equal((mark.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#252832" \/>/g) ?? []).length, 2);
   assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:none\}/);
-  assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__rabbit\{animation:none\}/);
+  assert.match(css, /@keyframes cc-rabbit-hop\{/);
+  assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__rabbit\{animation:cc-rabbit-hop/);
+  assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__carrot\{animation:cc-carrot-tap/);
+  assert.doesNotMatch(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__cave\{/);
 });
 
 test('all static reader logos share the grounded cave and legible two-eye geometry', () => {
