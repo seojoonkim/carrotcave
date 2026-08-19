@@ -83,8 +83,8 @@
 @media(max-width:520px){.wall-heading #wall-heading{font-size:17px}.editorial-wall .wall-card{width:100%;min-height:217.62px}.editorial-wall .wall-card:nth-child(n){min-height:217.62px}.editorial-wall .wall-card h2{font-size:24px}}
 
 /* Compact chrome, layered mark, and detailed two-line footer. */
-:root{--cc-header-height:calc(72.54px + var(--cc-safe-top))}
-.axis-rail a{min-height:57.66px}.axis-rail a.active b{color:var(--carrot-orange-ink)}
+:root{--cc-header-height:calc(58.032px + var(--cc-safe-top))}
+.axis-rail a{min-height:46.128px}.axis-rail a.active b{color:var(--carrot-orange-ink)}
 .editorial-wall{grid-auto-rows:59.5px;gap:14.7px}
 .cc-brand-symbol{animation:none;transform:none}.carrot-cave-mark__cave{transform-box:view-box;transform-origin:48px 48px;transform:scale(1.13)}.carrot-cave-mark__rabbit-position{transform:translateY(17px)}.carrot-cave-mark__rabbit{transform-box:fill-box;transform-origin:center bottom;animation:none}.carrot-cave-mark__carrot{transform-box:fill-box;transform-origin:center bottom;animation:cc-carrot-wiggle 6.8s ease-in-out infinite}
 .cc-brand:is(:hover,:focus-visible) .carrot-cave-mark__rabbit{animation:none}.cc-brand:is(:hover,:focus-visible) .carrot-cave-mark__carrot{animation:cc-carrot-tap .65s ease-out 1}
@@ -92,8 +92,8 @@
 @keyframes cc-carrot-wiggle{0%,100%{transform:rotate(0) translateY(0)}18%{transform:rotate(-3deg) translateY(-.8px)}36%{transform:rotate(3deg) translateY(-1.4px)}54%{transform:rotate(-2deg) translateY(-.6px)}72%{transform:rotate(2deg) translateY(-1px)}}
 @keyframes cc-rabbit-tap{0%,100%{transform:none}45%{transform:translateY(-5px) rotate(-2deg)}72%{transform:translateY(0) rotate(1deg)}}
 @keyframes cc-carrot-tap{0%,100%{transform:none}35%{transform:translateY(-3px) rotate(-8deg)}70%{transform:translateY(0) rotate(5deg)}}
-@media(max-width:900px){:root{--cc-header-height:calc(59.52px + var(--cc-safe-top))}.axis-rail a{min-height:53.94px}.editorial-wall{grid-auto-rows:61.938px;gap:11.718px}}
-@media(max-width:520px){.axis-rail a{min-height:50.22px}.cc-footer{padding-block:28px}.cc-footer__inner{display:block}.footer-rabbit-carrot{height:auto}.cc-footer__copy{gap:5px;padding-top:16px}.cc-footer__copy .cc-footer__links{gap:8px}.cc-footer__links a{font-size:10px}}
+@media(max-width:900px){:root{--cc-header-height:calc(47.616px + var(--cc-safe-top))}.axis-rail a{min-height:43.152px}.editorial-wall{grid-auto-rows:61.938px;gap:11.718px}}
+@media(max-width:520px){.axis-rail a{min-height:40.176px}.cc-footer{padding-block:28px}.cc-footer__inner{display:block}.footer-rabbit-carrot{height:auto}.cc-footer__copy{gap:5px;padding-top:16px}.cc-footer__copy .cc-footer__links{gap:8px}.cc-footer__links a{font-size:10px}}
 @media(hover:hover) and (pointer:fine){.editorial-wall .wall-card{transition:transform .22s cubic-bezier(.2,.7,.2,1),background-color .22s ease,border-color .22s ease,box-shadow .22s ease}.editorial-wall .wall-card__image{transition:transform .32s cubic-bezier(.2,.7,.2,1),opacity .22s ease}.editorial-wall .wall-card h2,.editorial-wall .wall-card__axis{transition:color .18s ease}.editorial-wall .wall-card:hover{z-index:3;transform:translateY(-4px);border-color:transparent;box-shadow:0 16px 34px rgba(0,0,0,.34),inset 0 0 0 1px rgba(95,224,242,.82)}.editorial-wall .wall-card:hover .wall-card__image{transform:scale(1.045)}.editorial-wall .wall-card:hover h2{color:#fff}.editorial-wall .wall-card:hover .wall-card__axis{color:#b9f5fb!important}}
 @media(prefers-reduced-motion:reduce){.carrot-cave-mark__rabbit,.carrot-cave-mark__carrot{animation:none!important}.footer-rabbit-carrot{content:url('/footer-rabbit-carrot-static.svg')}.editorial-wall .wall-card,.editorial-wall .wall-card:hover,.editorial-wall .wall-card__image,.editorial-wall .wall-card:hover .wall-card__image{transform:none!important}}
 @media(max-width:520px){.editorial-wall .wall-card__copy{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,5fr);align-items:end;column-gap:0}.editorial-wall .wall-card__copy>*{min-width:0}.editorial-wall .wall-card__copy .wall-card__abstract{margin:0 0 0 10px}.editorial-wall .wall-card__copy h2:only-child{grid-column:1/-1}}

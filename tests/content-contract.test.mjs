@@ -139,9 +139,12 @@ test('ordinary reading progress carries a contained carrot at its live endpoint'
 test('iOS webviews extend the graphite header through the top safe area', () => {
   assert.match(layoutSource, /viewportFit: 'cover'/);
   assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
-  assert.match(stylesSource, /--cc-header-height:calc\(78px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /--cc-header-height:calc\(58\.032px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
+  assert.match(stylesSource, /\.axis-rail a\{min-height:46\.128px\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.axis-rail a\{min-height:43\.152px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.axis-rail a\{min-height:40\.176px\}/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
