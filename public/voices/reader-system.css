@@ -36,6 +36,19 @@
   padding: 12px max(clamp(20px, 4vw, 64px), calc((100vw - 1100px) / 2));
   background: #282b32;
   backdrop-filter: none;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.site-header::before,
+.site-header::after,
+.reader-divider {
+  display: none !important;
+  content: none !important;
+}
+.progress {
+  display: none !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 .reader-nav, .reader-nav .brand { width: 44px; height: 44px; }
 .reader-nav .brand { display: flex; align-items: center; gap: 0; text-decoration: none; }
