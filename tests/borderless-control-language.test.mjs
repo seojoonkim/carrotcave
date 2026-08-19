@@ -24,7 +24,7 @@ test('all live app and voice controls share a borderless surface contract', asyn
   assert.match(appCss, /\.cave-constellation :focus-visible\{[^}]*outline:/);
 
   assert.match(voiceCss, /\.menu-button,\s*\.source-button,\s*\.hero-action,\s*\.back-to-top\s*\{\s*border: 0;/);
-  assert.match(voiceCss, /\.back-to-top\s*\{[^}]*box-shadow:/s);
+  assert.match(voiceCss, /\.back-to-top\s*\{/s); assert.doesNotMatch(voiceCss, /\.back-to-top\s*\{[^}]*box-shadow\s*:\s*(?!none\b)/s);
   assert.match(voiceCss, /\.hero-action-primary\s*\{[^}]*background:/s);
 });
 

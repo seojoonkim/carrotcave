@@ -252,8 +252,8 @@ test('home and voice list share one editorial-axis navigation component', () => 
 });
 
 test('home archive heading uses the same title contract as category archives', () => {
-  assert.match(homeSource, /active \? axisNotes\[active\] : <span className="wall-heading__home-title">모든 기록은 서로 다른 입구입니다\.<\/span>/);
-  assert.match(stylesSource, /\.wall-heading__home-title\{display:block;font-size:inherit\}/);
+  assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">[\s\S]*active \? axisNotes\[active\] : '모든 기록은 서로 다른 입구입니다\.'/);
+  assert.doesNotMatch(stylesSource, /wall-heading__home-title|font-size:70%/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.wall-heading #wall-heading\{font-size:21px\}/);
 });
 

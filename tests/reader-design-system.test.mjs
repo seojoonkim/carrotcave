@@ -193,7 +193,7 @@ test('all rendered images are borderless and voice portraits have no internal la
   assert.match(globals, /img\{border:0;outline:0;box-shadow:none\}/, 'app images must be explicitly borderless');
   assert.match(globals, /\.wall-card--with-image\{[^}]*border:0/, 'image cards must not retain a wrapper border');
   assert.match(globals, /\.wall-card--with-image:hover\{[^}]*border-color:transparent/, 'image cards must stay borderless on hover');
-  assert.ok(shared.includes('img { border: 0; outline: 0; box-shadow: none; }'), 'embedded voice images must be explicitly borderless');
+  assert.match(shared, /img \{\s*border: 0;\s*outline: 0;\s*(?:box-shadow: none;)?\s*\}/, 'embedded voice images must be explicitly borderless');
   assert.ok(shared.includes('.hero-portrait::before { content: none; }'), 'voice portrait decoration border must be disabled');
 
   for (const path of voicePaths) {

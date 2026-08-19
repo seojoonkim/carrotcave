@@ -45,7 +45,7 @@
 .reader-nav .brand-mark__rabbit { animation: none; }
 .reader-back-chevron { display: grid; width: 10px; height: 34px; place-items: center; color: #aeb1b7; font: 400 28px/1 var(--font-sans); transition: color .16s ease, transform .16s ease; }
 .reader-nav .brand:hover .reader-back-chevron { color: var(--bright-white); transform: translateX(-1px); }
-img { border: 0; outline: 0; box-shadow: none; }
+img { border: 0; outline: 0;  }
 .hero-portrait::before { content: none; }
 .progress {
   --reading-progress-percent: 0%;
@@ -314,7 +314,7 @@ img { border: 0; outline: 0; box-shadow: none; }
 }
 .back-to-top {
   border-radius: 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -11,8 +11,8 @@ test('default home archive introduction matches category archive title sizing', 
     read('app/voices/page.tsx'),
     read('app/globals.css'),
   ]);
-  assert.match(home, /<span className="wall-heading__home-title">모든 기록은 서로 다른 입구입니다\.<\/span>/);
-  assert.match(css, /\.wall-heading__home-title\{display:block;font-size:inherit\}/);
+  assert.match(home, /<h1 id="wall-heading" className="wall-heading__menu-title">[\s\S]*모든 기록은 서로 다른 입구입니다\./);
+  assert.doesNotMatch(css, /wall-heading__home-title|font-size:70%/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\)/);
   assert.doesNotMatch(voices, /wall-heading__home-title/);
-  assert.doesNotMatch(home, /active \? <span className="wall-heading__home-title"/);
 });
