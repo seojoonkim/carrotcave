@@ -24,7 +24,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:clamp\(19px,2\.1vw,28px\)\}/);
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{margin:0;color:#d7d7d3;font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\);letter-spacing:-\.035em\}/);
-  assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:17px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\.editorial-wall \.wall-card h2\{font-size:24px\}\}/);
+  assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\.editorial-wall \.wall-card h2\{font-size:24px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\);letter-spacing:-\.014em\}/);
   assert.match(css, /\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end;column-gap:0\}/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);

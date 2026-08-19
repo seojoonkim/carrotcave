@@ -142,9 +142,15 @@ test('iOS webviews extend the graphite header through the top safe area', () => 
   assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
   assert.match(stylesSource, /--cc-header-height:calc\(72px \+ var\(--cc-safe-top\)\)/);
   assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:var\(--cc-safe-top\)/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*--cc-header-height:calc\(58px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /\.cc-header__axis--desktop\{min-width:0\}/);
+  assert.match(stylesSource, /\.cc-header-axis-mobile\{display:none\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\)\{height:calc\(64px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile\{display:block\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\) \.cc-header__axis--desktop\{display:none\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{height:58px;[^}]*background:var\(--graphite\);[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{height:54px/);
   assert.doesNotMatch(stylesSource, /--cc-header-height:calc\((58\.032|47\.616)px/);
-  assert.doesNotMatch(stylesSource, /\.axis-rail a\{min-height:/);
+  assert.doesNotMatch(stylesSource, /\.axis-rail a\{min-height:(41\.5152|38\.8368|36\.1584)px/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
@@ -229,16 +235,23 @@ test('home and voice list share one editorial-axis navigation component', () => 
   for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(axisRailSource, new RegExp(axis));
   assert.match(axisRailSource, /<nav className="axis-rail" aria-label="편집 축">/);
   assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
+  assert.match(homeSource, /<div className="cc-header-axis-mobile"><AxisRail active=\{active\} \/><\/div>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
+  assert.match(voiceListSource, /<div className="cc-header-axis-mobile"><AxisRail active="목소리" \/><\/div>/);
   assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
   assert.doesNotMatch(axisRailSource, /<small>/);
   assert.match(headerSource, /children\?: ReactNode/);
-  assert.match(headerSource, /\) : children\}/);
-  assert.doesNotMatch(headerSource, /TELEGRAM ↗|https:\/\/t\.me\/carrotcave/);
-  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
-  assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
+  assert.match(headerSource, /cc-header__axis--desktop/);
+  assert.match(headerSource, /TELEGRAM ↗/);
+  assert.match(headerSource, /https:\/\/t\.me\/carrotcave/);
+});
+
+test('home archive heading uses the same title contract as category archives', () => {
+  assert.match(homeSource, /active \? axisNotes\[active\] : <span className="wall-heading__home-title">모든 기록은 서로 다른 입구입니다\.<\/span>/);
+  assert.match(stylesSource, /\.wall-heading__home-title\{display:block;font-size:calc\(\.7em - 1\.4px\)\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.wall-heading #wall-heading\{font-size:21px\}/);
 });
 
 test('all three voice archives preserve their complete reader contracts', () => {
@@ -846,7 +859,7 @@ test('voice thumbnails use the same editorial card system as other archive entri
 
 test('posts and voices share one standard card format at every breakpoint', () => {
   assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:17px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 

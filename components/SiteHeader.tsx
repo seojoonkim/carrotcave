@@ -28,7 +28,12 @@ export default function SiteHeader({ children, readingTitle, readingMeta, readin
               <span className="cc-reading-title">{readingTitle}</span>
             </span>
           </>
-        ) : children}
+        ) : (
+          <>
+            {children && <div className="cc-header__axis cc-header__axis--desktop">{children}</div>}
+            <a className="cc-channel" href="https://t.me/carrotcave" target="_blank" rel="noreferrer">TELEGRAM ↗</a>
+          </>
+        )}
       </div>
       {readingTitle && <ReadingProgress />}
     </header>
