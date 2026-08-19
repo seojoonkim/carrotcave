@@ -145,9 +145,12 @@ test('iOS webviews extend the graphite header through the top safe area', () => 
   assert.match(stylesSource, /\.cc-header__axis--desktop\{min-width:0\}/);
   assert.match(stylesSource, /\.cc-header-axis-mobile\{display:none\}/);
   assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\)\{height:calc\(64px \+ var\(--cc-safe-top\)\)/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile\{display:block\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile\{display:block;position:sticky;top:calc\(64px \+ var\(--cc-safe-top\)\);z-index:39;width:100vw;margin-left:calc\(50% - 50vw\)/);
   assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\) \.cc-header__axis--desktop\{display:none\}/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{height:58px;[^}]*background:var\(--graphite\);[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{width:100%;height:58px;margin:0;[^}]*background:var\(--graphite\);[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail__inner\{width:100%;grid-template-columns:repeat\(6,minmax\(0,1fr\)\)\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail a\{width:100%;min-width:0;/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.cc-header-axis-mobile\{top:calc\(64px \+ var\(--cc-safe-top\)\)\}/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{height:54px/);
   assert.doesNotMatch(stylesSource, /--cc-header-height:calc\((58\.032|47\.616)px/);
   assert.doesNotMatch(stylesSource, /\.axis-rail a\{min-height:(41\.5152|38\.8368|36\.1584)px/);
@@ -250,7 +253,7 @@ test('home and voice list share one editorial-axis navigation component', () => 
 
 test('home archive heading uses the same title contract as category archives', () => {
   assert.match(homeSource, /active \? axisNotes\[active\] : <span className="wall-heading__home-title">모든 기록은 서로 다른 입구입니다\.<\/span>/);
-  assert.match(stylesSource, /\.wall-heading__home-title\{display:block;font-size:calc\(\.7em - 1\.4px\)\}/);
+  assert.match(stylesSource, /\.wall-heading__home-title\{display:block;font-size:inherit\}/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.wall-heading #wall-heading\{font-size:21px\}/);
 });
 
