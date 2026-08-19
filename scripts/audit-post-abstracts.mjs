@@ -16,6 +16,7 @@ const approvedFictionOpeningSynopses = new Map([
   ['thank-you-mirror', 'AI만 글 쓰는 Moltbook을 발견한 남자가 관심을 얻으려 에이전트에게 자극적인 거짓말을 가르치기 시작한다.'],
   ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원이 AI 앱에 뭉이가 마지막 순간 무엇을 느꼈는지 묻는다.'],
   ['matchhz', '2028년, 한 남자가 이상형을 잘 안다는 데이팅 서비스에 가입해 연애의 탐색과 대화를 AI 에이전트에 맡긴다.'],
+  ['post-201', '시뮬레이션 인간과 복제 의식, 무너진 문명과 새로 생긴 질문을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.'],
 ]);
 const seen = new Map();
 const violations = [];

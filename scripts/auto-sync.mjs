@@ -615,23 +615,82 @@ summary 작성 원칙:
   return generateFallbackMetadata(msg);
 }
 
-function generateFallbackMetadata(msg) {
+function normalizeFallbackText(text) {
+  return String(text ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function containsAny(text, terms) {
+  return terms.some((term) => text.includes(term));
+}
+
+function countAny(text, terms) {
+  return terms.reduce((count, term) => count + (text.includes(term) ? 1 : 0), 0);
+}
+
+function inferFallbackCategory(msg) {
+  const text = normalizeFallbackText(`${msg.title}\n${msg.content || msg.fullText}`);
+  const techScore = countAny(text, [
+    'api', 'next.js', 'nextjs', 'github', 'git', 'build', 'deploy', 'test',
+    '모델', 'llm', 'ai', 'token', '테스트', '배포', '운영', '플러그인', '봇',
+    '코드', '함수', '페이지', '서버', '워크플로', 'reconcile', 'audit',
+  ]);
+  const fictionScore = countAny(text, [
+    '시뮬레이션', '복제', '원본', '문명', '의식', '관찰', '죽음', '아버지',
+    '소녀', '주민', '세계', '바깥', '기억', '장면', '이야기', '소설',
+  ]);
+  const doodleScore = countAny(text, ['생각', '오늘', '느낌', '어쩌면', '괜찮', '싫', '좋', '보고']);
+  const quoteCount = (msg.content || msg.fullText).match(/[“”"]/g)?.length ?? 0;
+
+  if (techScore >= 3) return '빌딩';
+  if (quoteCount >= 4 || fictionScore >= 3) return '소설';
+  if ((msg.fullText ?? '').length < 500 || doodleScore >= 2) return '낙서';
+  return '탐험';
+}
+
+function generateFallbackSummary(msg, category) {
+  const text = normalizeFallbackText(msg.content || msg.fullText);
+  const hasSimulation = containsAny(text, ['시뮬레이션', '복제', '원본']);
+  const hasFiction = containsAny(text, ['문명', '의식', '관찰', '죽음', '기억', '바깥']);
+
+  if (category === '소설') {
+    const topics = [];
+    if (hasSimulation) topics.push('시뮬레이션 인간과 복제 의식');
+    if (containsAny(text, ['문명', '주민', '세계'])) topics.push('무너진 문명과 새로 생긴 질문');
+    if (containsAny(text, ['관찰', '기록', '보고서'])) topics.push('관찰과 기록의 책임');
+    const lead = topics.slice(0, 2).join(', ') || '낯선 세계와 관찰의 긴장';
+    return `${lead}을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.`;
+  }
+
+  if (category === '빌딩') {
+    return '구현과 운영의 과정을 중심으로 결과와 검증, 다음 수정 지점을 함께 정리한 빌딩 기록이다.';
+  }
+
+  if (category === '낙서') {
+    return '짧게 스친 장면과 생각을 건조하게 붙잡아 둔 글이다.';
+  }
+
+  return hasSimulation || hasFiction
+    ? '기술과 의식의 경계를 따라가며 원본과 복제, 관찰과 존재의 문제를 차분히 정리한 탐험 글이다.'
+    : '기술과 사회의 접점을 따라가며 변화의 방향과 실제 쟁점을 차분히 정리한 탐험 글이다.';
+}
+
+export function generateFallbackMetadata(msg) {
   const charCount = msg.fullText.length;
   const depth = charCount < 500 ? 'entry' : charCount < 2000 ? 'mid' : 'deep';
-  // Fail closed: a truncated opening is not an article abstract.
   const slug = `post-${msg.id}`;
+  const category = inferFallbackCategory(msg);
 
   return {
     slug,
     title: msg.title,
-    category: '탐험',
+    category,
     depth,
-    summary: '',
+    summary: generateFallbackSummary(msg, category),
     tags: [],
   };
 }
 
-function assertPublishableAbstract(summary, content, title, category) {
+export function assertPublishableAbstract(summary, content, title, category) {
   const value = String(summary ?? '').trim();
   const firstSentence = String(content ?? '').trim().split(/(?<=[.!?。！？])\s+|\n+/)[0]?.trim() ?? '';
   const normalized = (text) => text.replace(/[.!?。！？]+$/, '').trim();

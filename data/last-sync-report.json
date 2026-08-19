@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-18T17:03:18.269Z",
+  "timestamp": "2026-08-19T13:19:41.972Z",
   "newPosts": [
     {
-      "slug": "proving-human-writing-without-ai",
-      "title": "AI의 도움 없이 썼다는 걸 어떻게 증명할까",
-      "msgId": 200
+      "slug": "post-201",
+      "title": "문이 열리는 쪽",
+      "msgId": 201
     }
   ],
-  "reactionsUpdated": 1,
+  "reactionsUpdated": 0,
   "errors": [],
-  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • AI의 도움 없이 썼다는 걸 어떻게 증명할까 (#200)\n\n✏️ **수정된 글 1편:**\n  • graph-engineering-ai-org\n\n💫 좋아요 1건 업데이트"
+  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • 문이 열리는 쪽 (#201)"
 }

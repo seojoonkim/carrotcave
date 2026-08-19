@@ -830,6 +830,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "post-201": {
+      "slug": "post-201",
+      "title": "문이 열리는 쪽",
+      "category": "소설",
+      "primaryTopics": [
+        "fiction"
+      ],
+      "reviewStatus": "approved"
+    },
     "prompt-guard-250-update": {
       "slug": "prompt-guard-250-update",
       "title": "Prompt Guard v2.5.0 업데이트",
@@ -12709,6 +12718,87 @@
       "status": "approved"
     },
     {
+      "from": "post-201",
+      "to": "china-ai-frontier",
+      "type": "DEEPENS",
+      "strength": 0.5,
+      "sourceClaimId": "post-201-c1",
+      "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+      "targetEvidence": "첨부한 영상은 Seedance 2.0으로 재미삼아 만들어본 Hashed Vibe Labs 홍보 영상이다. 한 번 만에 나왔다. 캐릭터 일관성, 카메라 워크, 배경음악, 키보드 효과음까지, 프롬프트 몇 줄의 결과로 전부 AI가 알아서 붙였다. Kling 3.0보다 영상이 우수함은 물론, 음악과 효과음의 완성도가 압도적이다. 기존의 많은 AI 영상 도구들은 가챠였다. 쓸 만한 게 나올 때까지 계속 돌려야 했고, 열 번 중 여덟 번",
+      "label": "「문이 열리는 쪽」은 「중국 프론티어 모델들이 세상을 잡아먹기 시작했다」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "세계",
+          "질문"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-201",
+      "to": "post-197",
+      "type": "REFRAMES",
+      "strength": 0.5,
+      "sourceClaimId": "post-201-c1",
+      "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+      "targetEvidence": "일론 머스크는 앞으로 몇 년 안에 AI 연산 비용이 우주에서 더 싸질 수 있다고 말한다. 태양광 발전 위성과 인공지능용 반도체를 함께 쏘아 올려, 햇빛을 받는 자리에서 바로 계산하겠다는 구상이다. 구글의 프로젝트 선캐처를 비롯해 여러 기업과 연구자도 궤도 연산을 검토하고 있다.",
+      "label": "「문이 열리는 쪽」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "세계",
+          "질문"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-201",
+      "to": "proving-human-writing-without-ai",
+      "type": "RESONATES",
+      "strength": 0.5,
+      "sourceClaimId": "post-201-c1",
+      "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+      "targetEvidence": "며칠 전 X에서 긴 논쟁이 벌어진 쓰레드를 보았다. AI가 만든 글에 사람 눈에는 보이지 않는 워터마크를 넣을 수 있다는 이야기였다. 정말 지워지지 않는가, 번역하면 어떻게 되는가, 사람이 조금 고치면 누구의 글인가. 답글이 늘어날수록 논쟁은 “인간이 썼다는 사실을 증명할 수 있는가”라는 질문으로 옮겨갔다.",
+      "label": "「문이 열리는 쪽」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 핵심 문제와 맞닿는다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "세계",
+          "질문"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "prompt-guard-250-update",
       "to": "prompt-guard-dev",
       "type": "DEEPENS",
@@ -16491,10 +16581,15 @@
     }
   ],
   "outgoing": {
+    "post-201": [
+      276,
+      277,
+      278
+    ],
     "proving-human-writing-without-ai": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "graph-engineering-ai-org": [
       93,
@@ -16502,9 +16597,9 @@
       95
     ],
     "tokyo-taxi-ai-ads": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "openclaw-cron-session-bottleneck": [
       150,
@@ -16517,9 +16612,9 @@
       38
     ],
     "prompt-guard-250-update": [
-      276,
-      277,
-      278
+      279,
+      280,
+      281
     ],
     "moltbook-agent-internet": [
       135,
@@ -16712,9 +16807,9 @@
       89
     ],
     "value-of-understanding-in-ai-future": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "internship-job-posting-giveaway": [
       102,
@@ -16727,9 +16822,9 @@
       149
     ],
     "prompting-ability-as-new-power": [
-      282,
-      283,
-      284
+      285,
+      286,
+      287
     ],
     "kpop-fandom-digital-parliament": [
       117,
@@ -16737,9 +16832,9 @@
       119
     ],
     "university-value-shift-education": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "agent-era-branding-future": [
       6,
@@ -16787,9 +16882,9 @@
       161
     ],
     "things-that-dont-disappear": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "how-to-create-memory-in-ai-agents": [
       96,
@@ -16797,14 +16892,14 @@
       98
     ],
     "self-deconstruction-ai-replication": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "vibe-coding-ai-decentralization": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "internship-opportunity-at-hashed": [
       105,
@@ -16827,9 +16922,9 @@
       44
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "disappearing-titles-computers-history": [
       75,
@@ -16837,9 +16932,9 @@
       77
     ],
     "uae-emergency-news-telegram-channel": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       48,
@@ -16862,9 +16957,9 @@
       131
     ],
     "unknowns-in-modern-creation": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "ai-agent-standardization-battle": [
       24,
@@ -16877,14 +16972,14 @@
       5
     ],
     "vibe-labs-landing-page-creation": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "sano-godaddy-war": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "14-5-hours": [
       0,
@@ -16892,14 +16987,14 @@
       2
     ],
     "transistor-moment": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "web4-write-access": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "naming-the-universe": [
       144,
@@ -16907,9 +17002,9 @@
       146
     ],
     "sano-intro": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "counting-assistant": [
       66,
@@ -16917,19 +17012,19 @@
       68
     ],
     "uncertainty-machine": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "vibe-founders-era": [
+      354,
+      355,
+      356
+    ],
+    "vibe-coding-tip": [
       351,
       352,
       353
-    ],
-    "vibe-coding-tip": [
-      348,
-      349,
-      350
     ],
     "moltbot-anthropic-moat": [
       138,
@@ -16947,9 +17042,9 @@
       47
     ],
     "thought-speed": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "gemini-snow-bunny": [
       90,
@@ -16967,9 +17062,9 @@
       41
     ],
     "prompt-guard-dev": [
-      279,
-      280,
-      281
+      282,
+      283,
+      284
     ],
     "its-fun": [
       111,
@@ -16982,9 +17077,9 @@
       62
     ],
     "thank-you-mirror": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "ai-hires-ai": [
       27,
@@ -16997,9 +17092,9 @@
       122
     ],
     "rabbit-crypt-name": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ],
     "agentlinter-dev-log": [
       18,
@@ -17022,14 +17117,14 @@
       143
     ],
     "tail-stopped": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "zeon-moltbook-vol1": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "ip-tvw": [
       108,
@@ -17037,9 +17132,9 @@
       110
     ],
     "quantum-pirates": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "china-ai-frontier": [
       54,
@@ -17047,9 +17142,9 @@
       56
     ],
     "seedance-30": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "agent-siblings": [
       12,
@@ -17072,9 +17167,9 @@
       134
     ],
     "robot-goku-5000": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "hvl-fellows": [
       99,
@@ -17097,9 +17192,9 @@
       71
     ],
     "rabbit-hole-intro": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ]
   },
   "overrides": {

@@ -15385,5 +15385,86 @@
     },
     "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=mid;dateDirection=newer;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
     "status": "approved"
+  },
+  {
+    "from": "post-201",
+    "to": "china-ai-frontier",
+    "type": "DEEPENS",
+    "strength": 0.5,
+    "sourceClaimId": "post-201-c1",
+    "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+    "targetEvidence": "첨부한 영상은 Seedance 2.0으로 재미삼아 만들어본 Hashed Vibe Labs 홍보 영상이다. 한 번 만에 나왔다. 캐릭터 일관성, 카메라 워크, 배경음악, 키보드 효과음까지, 프롬프트 몇 줄의 결과로 전부 AI가 알아서 붙였다. Kling 3.0보다 영상이 우수함은 물론, 음악과 효과음의 완성도가 압도적이다. 기존의 많은 AI 영상 도구들은 가챠였다. 쓸 만한 게 나올 때까지 계속 돌려야 했고, 열 번 중 여덟 번",
+    "label": "「문이 열리는 쪽」은 「중국 프론티어 모델들이 세상을 잡아먹기 시작했다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 2,
+      "overlapTokens": [
+        "세계",
+        "질문"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-201",
+    "to": "post-197",
+    "type": "REFRAMES",
+    "strength": 0.5,
+    "sourceClaimId": "post-201-c1",
+    "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+    "targetEvidence": "일론 머스크는 앞으로 몇 년 안에 AI 연산 비용이 우주에서 더 싸질 수 있다고 말한다. 태양광 발전 위성과 인공지능용 반도체를 함께 쏘아 올려, 햇빛을 받는 자리에서 바로 계산하겠다는 구상이다. 구글의 프로젝트 선캐처를 비롯해 여러 기업과 연구자도 궤도 연산을 검토하고 있다.",
+    "label": "「문이 열리는 쪽」은 「컴퓨팅이 우주로 올라가면 달라질 것들」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 2,
+      "overlapTokens": [
+        "세계",
+        "질문"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-201",
+    "to": "proving-human-writing-without-ai",
+    "type": "RESONATES",
+    "strength": 0.5,
+    "sourceClaimId": "post-201-c1",
+    "sourceEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+    "targetEvidence": "며칠 전 X에서 긴 논쟁이 벌어진 쓰레드를 보았다. AI가 만든 글에 사람 눈에는 보이지 않는 워터마크를 넣을 수 있다는 이야기였다. 정말 지워지지 않는가, 번역하면 어떻게 되는가, 사람이 조금 고치면 누구의 글인가. 답글이 늘어날수록 논쟁은 “인간이 썼다는 사실을 증명할 수 있는가”라는 질문으로 옮겨갔다.",
+    "label": "「문이 열리는 쪽」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 핵심 문제와 맞닿는다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 2,
+      "overlapTokens": [
+        "세계",
+        "질문"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
   }
 ]
