@@ -159,7 +159,7 @@ test('voice covers use the ordinary-post title hierarchy without archive credits
     '@media (min-width: 1000px)',
 
     '@media (min-width: 901px)',
-    ':root { --header: 78px; }',
+    ':root { --header: 72px; }',
 
   ]) assert.ok(shared.includes(required), `shared voice cover CSS missing: ${required}`);
 });

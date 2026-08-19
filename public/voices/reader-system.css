@@ -213,8 +213,31 @@ img { border: 0; outline: 0;  }
   .content-column { margin-inline: auto; }
 }
 
+/* Match ordinary post chrome and reading measure at every desktop width. */
+:root { --header: 72px; }
 @media (min-width: 901px) {
-  :root { --header: 78px; }
+  :root { --header: 72px; }
+}
+
+.hero {
+  min-height: auto;
+  padding: 56px var(--reader-mobile-gutter) 48px;
+}
+.hero > * {
+  width: 100%;
+  max-width: var(--reader-measure);
+  margin-inline: auto;
+}
+.hero > .hero-portrait {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: var(--reader-measure);
+  margin: 0 auto 22px;
+}
+.hero-portrait img {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 480px) {

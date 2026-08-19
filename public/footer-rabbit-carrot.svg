@@ -96,7 +96,7 @@
     }
   </style>
   <g class="scene">
-    <g class="rabbit-position">
+    <g id="footer-rabbit" class="rabbit-position">
       <g class="rabbit-body">
         <ellipse cx="480" cy="145" rx="44" ry="31" fill="#dedbd4"/>
         <ellipse cx="468" cy="135" rx="30" ry="24" fill="#eeeae3"/>
@@ -124,17 +124,18 @@
     </g>
     <g class="carrot-position" transform="translate(780 94) rotate(-8)">
       <g class="carrot">
-        <path d="M0 0c31 3 46 25 25 82C6 61-8 27 0 0Z" fill="#f28c28"/>
-        <path d="M3 6c17 5 27 20 26 39-1 13-5 25-10 34" fill="none" stroke="#ffc06a" stroke-width="4" stroke-linecap="round" opacity=".58"/>
-        <path d="m4 18 25 6M7 37l18 4M11 55l10 2" stroke="#7f361e" stroke-width="2.6" stroke-linecap="round" opacity=".48"/>
-        <g class="carrot-leaves">
-          <path d="M10 2C-1-22 2-45 13-60M16 2c15-25 31-41 49-50M14 1c25-14 44-17 61-13" fill="none" stroke="#79a85b" stroke-width="11" stroke-linecap="round"/>
-          <path d="M12 0C7-23 9-41 15-55M18 0c14-22 28-36 45-45" fill="none" stroke="#a1d09a" stroke-width="3" stroke-linecap="round" opacity=".62"/>
+        <g transform="scale(3.4167)">
+          <path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f28c28"/>
+          <g class="carrot-leaves">
+            <path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" stroke-width="3.5" stroke-linecap="round"/>
+          </g>
+          <path d="m2 7 6 2m-5 5 4 1" fill="none" stroke="#ffad4d" stroke-width="1.2" stroke-linecap="round"/>
         </g>
       </g>
     </g>
     <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="3" stroke-linecap="round">
       <path d="m830 52 9-11M845 61l13-5M819 38l2-13"/>
     </g>
+    <use href="#footer-rabbit"/>
   </g>
 </svg>
