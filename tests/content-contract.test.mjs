@@ -682,8 +682,8 @@ test('the archive wall has no reserved holes and every card keeps consistent met
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
-  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px[^}]*height:36px[^}]*flex:0 0 36px/);
-  assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:34px[^}]*height:34px[^}]*flex-basis:34px/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:38\.52px[^}]*height:38\.52px[^}]*flex:0 0 38\.52px/);
+  assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:36\.38px;[^}]*height:36\.38px;[^}]*flex-basis:36\.38px/);
 });
 
 test('voice cards render a verified portrait thumbnail for every interview archive', () => {
@@ -752,7 +752,7 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.012em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 26px\/1\.25 var\(--sans\);letter-spacing:-\.012em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
@@ -773,7 +773,7 @@ test('home keeps the exact CarrotCave.com wordmark while reading headers use log
 test('brand logo asset and rendered marks are square', () => {
   assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(liaoReaderSource, /<svg class="brand-mark"[^>]*width="192" height="192"/);
-  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px;[^}]*height:36px/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:38\.52px;[^}]*height:38\.52px/);
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
 
@@ -838,14 +838,13 @@ test('voice thumbnails use the same editorial card system as other archive entri
 });
 
 test('posts and voices share one standard card format at every breakpoint', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
-  assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 5;min-height:0\}/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
-test('wide desktop archive rows contain at most three uninterrupted cards', () => {
-  assert.match(stylesSource, /@media\(min-width:960px\)\{\.wall-card\[data-rhythm\],\.editorial-wall--voices \.wall-card--voice\{grid-column:span 4\}/);
+test('wide desktop archive rows render two uninterrupted cards', () => {
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 5;min-height:0\}/);
   assert.doesNotMatch(stylesSource, /cave-depth-divider|cave-journey-scene/);
 });
 
