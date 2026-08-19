@@ -26,6 +26,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(css, /\.wall-heading #wall-heading\{font-size:calc\(clamp\(23px,3vw,38px\) - 2\.6667px\)\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.012em\}/);
+  assert.match(css, /@media\(min-width:901px\)\{\.axis-rail a\{border-right:0\}\.axis-rail span\{font-size:6\.3px\}\.editorial-wall \.wall-card h2\{font-size:19\.2667px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
   assert.match(css, /\.wall-card__meta\{[^}]*font:500 10px var\(--mono\)/);
   assert.match(css, /\.wall-card__date\{[^}]*font:600 calc\(clamp\(9px,1vw,12px\) \+ 2px\)\/1 var\(--mono\)/);
