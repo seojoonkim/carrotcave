@@ -31,8 +31,8 @@
 .content-column { max-width: var(--reader-measure); }
 .content-column { width:100%; max-width:var(--reader-measure); min-width:0; margin-inline:auto; }
 .site-header {
-  grid-template-columns: 44px 1px minmax(0,1fr) auto;
-  gap: 16px;
+  grid-template-columns: 56px 1px minmax(0,1fr) auto;
+  gap: 20px;
   padding: 12px max(clamp(20px, 4vw, 64px), calc((100vw - 1100px) / 2));
   background: #282b32;
   backdrop-filter: none;

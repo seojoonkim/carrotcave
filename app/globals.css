@@ -128,9 +128,7 @@
 @media(min-width:901px){
   .cc-header{padding-inline:clamp(20px,3vw,42px)}
   .cc-header__inner{width:100%;grid-template-columns:300px minmax(0,1fr)}
-  .cc-header--reading .cc-header__inner{grid-template-columns:300px 1px minmax(0,1fr);column-gap:0}
   .cc-brand{width:300px;flex:0 0 300px}
-  .cc-header--reading .cc-brand{width:300px;min-width:300px;padding-right:22px}
   .cc-header--reading .cc-reading-divider{margin-block:3px}
   .cc-header--reading .cc-reading-info{min-width:0}
   .cc-brand>span{min-width:240px;white-space:nowrap}
@@ -146,10 +144,9 @@
   .cc-header:not(.cc-header--reading) .cc-header__inner{width:calc(100% - 40px);height:64px;grid-template-columns:minmax(0,1fr);grid-template-rows:64px;}
   .cc-header:not(.cc-header--reading) .cc-brand{width:100%;padding:0;}
   .cc-header-axis-mobile{display:block;position:sticky;top:calc(64px + var(--cc-safe-top));z-index:39;width:calc(100% - 40px);margin-inline:auto;background:var(--graphite)}
-  .cc-header-axis-mobile .axis-rail{width:100%;height:54px;margin:0;border:1px solid var(--line);background:var(--graphite)}
+  .cc-header-axis-mobile .axis-rail{width:100%;height:54px;margin:0;border:0;background:var(--graphite)}
   .cc-header-axis-mobile .axis-rail__inner{width:100%;height:100%;grid-template-columns:repeat(6,minmax(0,1fr))}
-  .cc-header-axis-mobile .axis-rail a{width:100%;min-width:0;height:100%;min-height:0;padding:4px 1px;border:0;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;white-space:nowrap;text-align:center}
-  .cc-header-axis-mobile .axis-rail a:last-child{border-right:0}
+  .cc-header-axis-mobile .axis-rail a{width:100%;min-width:0;height:100%;min-height:0;padding:4px 1px;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;white-space:nowrap;text-align:center}
   .cc-header-axis-mobile .axis-rail b{font-size:11px;line-height:1.1}
   .cc-header-axis-mobile .axis-rail span{font-size:8px;line-height:1;color:var(--muted)}
 }
@@ -168,14 +165,10 @@
   .wall-heading{margin-inline:0}
   .editorial-wall{width:100%}
 }
-.cc-header-axis-mobile .axis-rail{
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:2px;
-}
+.cc-header-axis-mobile .axis-rail{overflow:hidden}
 .cc-header-axis-mobile .axis-rail a{
   position:relative;
-  border-right:1px solid rgba(255,255,255,.12);
+  border-right:0;
   background:rgba(255,255,255,.018);
   color:var(--muted);
   transition:background .16s ease,color .16s ease;
@@ -218,8 +211,14 @@
 
 
 /* Reading headers keep the back affordance and mark inside their measured cell. */
+.cc-header--reading .cc-header__inner{grid-template-columns:56px 1px minmax(0,1fr);column-gap:20px}
+.cc-header--reading .cc-brand{width:56px;min-width:56px;gap:10px;padding-right:0}
 .cc-header--reading .cc-brand>span{min-width:0}
 .cc-reading-back-chevron{width:10px;min-width:10px;flex:0 0 10px}
+@media(max-width:900px){
+  .cc-header--reading .cc-header__inner{grid-template-columns:56px 1px minmax(0,1fr);column-gap:16px}
+  .cc-header--reading .cc-brand{width:56px;min-width:56px;gap:10px}
+}
 
 /* Narrow web widths use the same card rhythm and type scale as the mobile archive. */
 @media (min-width:521px) and (max-width:900px){
