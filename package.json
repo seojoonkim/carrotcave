@@ -15,7 +15,8 @@
     "audit:post-titles": "node scripts/audit-post-titles.mjs",
     "audit:post-abstracts": "node scripts/audit-post-abstracts.mjs",
     "audit:ontology": "node scripts/audit-ontology.mjs",
-    "verify": "npm test && npm run audit:post-titles && npm run audit:post-abstracts && npm run audit:ontology && npm run build"
+    "verify": "npm test && npm run audit:post-titles && npm run audit:post-abstracts && npm run audit:ontology && npm run build",
+    "content-only-release-check": "node scripts/assert-content-only-release.mjs HEAD"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",
