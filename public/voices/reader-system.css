@@ -218,18 +218,26 @@ img { border: 0; outline: 0;  }
   .toc-drawer {
     display: block !important;
     top: var(--header);
-    left: auto;
-    right: max(20px, calc((100vw - 1100px) / 2));
-    width: min(380px, calc(100vw - 40px));
+    left: 50%;
+    right: auto;
+    width: min(1100px, calc(100vw - 40px));
     max-height: calc(100svh - var(--header) - 20px);
-    padding: 20px 22px 24px;
+    padding: 20px max(22px, calc((100% - var(--reader-measure)) / 2)) 24px;
     border: 0;
-    transform: translateY(-18px);
+    transform: translate(-50%, -18px);
   }
+  .toc-drawer.open { transform: translateX(-50%); }
   .toc-drawer header {
-    margin: -20px -22px 14px;
-    padding: 18px 22px 12px;
+    width: 100%;
+    max-width: var(--reader-measure);
+    margin: -20px auto 14px;
+    padding: 18px 0 12px;
     border: 0;
+  }
+  .toc-drawer nav {
+    width: 100%;
+    max-width: var(--reader-measure);
+    margin-inline: auto;
   }
   .toc-drawer nav > a { border: 0; }
 }
