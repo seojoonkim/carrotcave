@@ -838,13 +838,13 @@ test('voice thumbnails use the same editorial card system as other archive entri
 });
 
 test('posts and voices share one standard card format at every breakpoint', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 5;min-height:0\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:17px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
 test('wide desktop archive rows render two uninterrupted cards', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 5;min-height:0\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.doesNotMatch(stylesSource, /cave-depth-divider|cave-journey-scene/);
 });
 

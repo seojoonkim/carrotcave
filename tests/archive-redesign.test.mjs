@@ -19,7 +19,7 @@ test('archive cards use one standard format for posts and voices at every breakp
   const [css, card] = await Promise.all([read('app/globals.css'), read('components/EditorialCard.tsx')]);
   assert.match(css, /\.editorial-wall\{grid-auto-flow:row;grid-auto-rows:73\.8px;gap:16\.2px;background:transparent\}/);
   assert.match(card, /data-rhythm=\{rhythm\}/);
-  assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 5;min-height:0\}/);
+  assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\.editorial-wall \.wall-card h2\{font-size:26px\}\}/);
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(23px,3vw,38px\) var\(--sans\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:clamp\(19px,2\.1vw,28px\)\}/);
