@@ -31,7 +31,7 @@
 .content-column { max-width: var(--reader-measure); }
 .content-column { width:100%; max-width:var(--reader-measure); min-width:0; margin-inline:auto; }
 .site-header {
-  grid-template-columns: 56px 1px minmax(0,1fr) auto;
+  grid-template-columns: 56px minmax(0,1fr) auto;
   gap: 20px;
   padding: 12px max(clamp(20px, 4vw, 64px), calc((100vw - 1100px) / 2));
   background: #282b32;
@@ -187,7 +187,10 @@ img { border: 0; outline: 0;  }
 .menu-button i::before { transition: transform .18s ease; transform-origin: center; }
 .menu-button[aria-expanded="true"] i { transform: rotate(45deg); }
 .menu-button[aria-expanded="true"] i::before { transform: rotate(90deg); }
-.toc-drawer { padding: 14px 20px calc(18px + env(safe-area-inset-bottom)); }
+.toc-drawer {
+  padding: 14px 20px calc(18px + env(safe-area-inset-bottom));
+  border: 0;
+}
 .toc-drawer header {
   top: -14px;
   margin: -14px -20px 3px;
@@ -207,11 +210,33 @@ img { border: 0; outline: 0;  }
 .toc-drawer nav > a span:first-child { font-size: 10px; }
 
 @media (min-width: 1000px) {
-  /* Voice reading content follows ordinary posts: 680px, centered in the viewport. */
-  /* Desktop rail is fixed and does not belong to the reading measure; center the 680px column in the full viewport like ordinary posts. */
+  /* Desktop uses the same centered reading measure as ordinary posts. The index is an overlay, not a second layout rail. */
   .reader-shell { padding-inline: 0; }
   .content-column { margin-inline: auto; }
+  .desktop-rail { display: none !important; }
+  .menu-button { display: flex !important; }
+  .toc-drawer {
+    display: block !important;
+    top: var(--header);
+    left: auto;
+    right: max(20px, calc((100vw - 1100px) / 2));
+    width: min(380px, calc(100vw - 40px));
+    max-height: calc(100svh - var(--header) - 20px);
+    padding: 20px 22px 24px;
+    border: 0;
+    transform: translateY(-18px);
+  }
+  .toc-drawer header {
+    margin: -20px -22px 14px;
+    padding: 18px 22px 12px;
+    border: 0;
+  }
+  .toc-drawer nav > a { border: 0; }
 }
+
+/* The reading header is a clean control bar: no decorative dividers. */
+.site-header { border-bottom: 0; }
+.reader-divider { display: none; }
 
 /* Match ordinary post chrome and reading measure at every desktop width. */
 :root { --header: 72px; }
@@ -315,7 +340,7 @@ img { border: 0; outline: 0;  }
   .reader-nav .brand { width: 44px; height: 44px; }
   .reader-nav .brand-mark { width: 34px; height: 34px; flex: 0 0 34px; }
 .reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.13); }
-  .site-header { grid-template-columns: 44px 1px minmax(0, 1fr) auto; gap: 12px; padding-inline: 20px; }
+  .site-header { grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; padding-inline: 20px; }
   .header-site-title { font-size: 9px; }
   .header-status #readingStatus { font-size: var(--reader-header-title-size-mobile); }
   .section-heading h2, .chapter-heading h2 { font-size: var(--reader-section-size-mobile); }
