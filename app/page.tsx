@@ -56,8 +56,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
 
   return (
     <main>
-      <SiteHeader />
-      <AxisRail active={active} />
+      <SiteHeader><AxisRail active={active} /></SiteHeader>
+      <div className="cc-header-axis-mobile"><AxisRail active={active} /></div>
 
       <section className="wall-shell" aria-labelledby="wall-heading">
         <header className="wall-heading">

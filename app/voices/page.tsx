@@ -7,8 +7,8 @@ import { interviews } from '@/data/interviews';
 export default function VoicesPage() {
   return (
     <main>
-      <SiteHeader />
-      <AxisRail active="목소리" />
+      <SiteHeader><AxisRail active="목소리" /></SiteHeader>
+      <div className="cc-header-axis-mobile"><AxisRail active="목소리" /></div>
 
       <section className="wall-shell voices-wall" aria-labelledby="wall-heading">
         <header className="wall-heading">

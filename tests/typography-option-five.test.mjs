@@ -35,7 +35,7 @@ test('archive, post reader, recommendations, and swipe cards all use sans', () =
   const css = read('app/globals.css');
   const cardSwipe = read('components/CardSwipe.tsx');
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*var\(--sans\)/);
-  assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 22\.6667px\/1\.3 var\(--sans\)/);
+  assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\)/);
   assert.match(css, /\.post-reader-header h1\{[^}]*var\(--post-reader-sans\)/);
   assert.match(css, /\.post-content :is\(h2,h3\)\{[^}]*font-family:var\(--post-reader-sans\)/);
   assert.match(css, /\.cave-constellation-heading\{[^}]*var\(--sans\)!important/);

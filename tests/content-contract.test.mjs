@@ -55,6 +55,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
   assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*border-bottom:1px solid var\(--line\)/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
@@ -139,9 +140,20 @@ test('ordinary reading progress carries a contained carrot at its live endpoint'
 test('iOS webviews extend the graphite header through the top safe area', () => {
   assert.match(layoutSource, /viewportFit: 'cover'/);
   assert.match(stylesSource, /--cc-safe-top:env\(safe-area-inset-top,0px\)/);
-  assert.match(stylesSource, /--cc-header-height:calc\(78px \+ var\(--cc-safe-top\)\)/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:calc\(12px \+ var\(--cc-safe-top\)\)/);
-  assert.match(stylesSource, /\.axis-rail\{[^}]*top:var\(--cc-header-height\)/);
+  assert.match(stylesSource, /--cc-header-height:calc\(72px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*height:var\(--cc-header-height\);[^}]*padding:var\(--cc-safe-top\)/);
+  assert.match(stylesSource, /\.cc-header__axis--desktop\{min-width:0\}/);
+  assert.match(stylesSource, /\.cc-header-axis-mobile\{display:none\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\)\{height:calc\(64px \+ var\(--cc-safe-top\)\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile\{display:block;position:sticky;top:calc\(64px \+ var\(--cc-safe-top\)\);z-index:39;width:100vw;margin-left:calc\(50% - 50vw\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header:not\(\.cc-header--reading\) \.cc-header__axis--desktop\{display:none\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{width:100%;height:58px;margin:0;[^}]*background:var\(--graphite\);[^}]*border-bottom:1px solid var\(--line\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail__inner\{width:100%;grid-template-columns:repeat\(6,minmax\(0,1fr\)\)\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail a\{width:100%;min-width:0;/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.cc-header-axis-mobile\{top:calc\(64px \+ var\(--cc-safe-top\)\)\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.cc-header-axis-mobile \.axis-rail\{height:54px/);
+  assert.doesNotMatch(stylesSource, /--cc-header-height:calc\((58\.032|47\.616)px/);
+  assert.doesNotMatch(stylesSource, /\.axis-rail a\{min-height:(41\.5152|38\.8368|36\.1584)px/);
   assert.match(stylesSource, /html\{[^}]*background:var\(--graphite\)/);
 });
 
@@ -225,14 +237,24 @@ test('post corrections and newest-first ordering stay explicit', async () => {
 test('home and voice list share one editorial-axis navigation component', () => {
   for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(axisRailSource, new RegExp(axis));
   assert.match(axisRailSource, /<nav className="axis-rail" aria-label="편집 축">/);
-  assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
+  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
+  assert.match(homeSource, /<div className="cc-header-axis-mobile"><AxisRail active=\{active\} \/><\/div>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
+  assert.match(voiceListSource, /<div className="cc-header-axis-mobile"><AxisRail active="목소리" \/><\/div>/);
   assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
   assert.doesNotMatch(axisRailSource, /<small>/);
-  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
-  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
+  assert.match(headerSource, /children\?: ReactNode/);
+  assert.match(headerSource, /cc-header__axis--desktop/);
+  assert.doesNotMatch(headerSource, /TELEGRAM ↗/);
+  assert.doesNotMatch(headerSource, /https:\/\/t\.me\/carrotcave/);
+});
+
+test('home archive heading uses the same title contract as category archives', () => {
+  assert.match(homeSource, /active \? axisNotes\[active\] : <span className="wall-heading__home-title">모든 기록은 서로 다른 입구입니다\.<\/span>/);
+  assert.match(stylesSource, /\.wall-heading__home-title\{display:block;font-size:inherit\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.wall-heading #wall-heading\{font-size:21px\}/);
 });
 
 test('all three voice archives preserve their complete reader contracts', () => {
@@ -682,8 +704,8 @@ test('the archive wall has no reserved holes and every card keeps consistent met
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
-  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px[^}]*height:36px[^}]*flex:0 0 36px/);
-  assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:34px[^}]*height:34px[^}]*flex-basis:34px/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:38\.52px[^}]*height:38\.52px[^}]*flex:0 0 38\.52px/);
+  assert.match(stylesSource, /@media\(max-width:900px\)[\s\S]*\.cc-brand-symbol\{[^}]*width:36\.38px;[^}]*height:36\.38px;[^}]*flex-basis:36\.38px/);
 });
 
 test('voice cards render a verified portrait thumbnail for every interview archive', () => {
@@ -734,8 +756,8 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
   assert.doesNotMatch(voiceListSource, /공개된 대화를 선별해 번역하고/);
   assert.doesNotMatch(stylesSource, /\.cc-intro(?:__identity|__note)?/);
-  assert.match(homeSource, /<SiteHeader \/>\s*<AxisRail active=\{active\} \/>/);
-  assert.match(voiceListSource, /<SiteHeader \/>\s*<AxisRail active="목소리" \/>/);
+  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
+  assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
   assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell voices-wall"/);
@@ -752,8 +774,9 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 22\.6667px\/1\.3 var\(--sans\);letter-spacing:-\.012em\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\);letter-spacing:-\.014em\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end;column-gap:0\}/);
   assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
   assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
@@ -773,7 +796,7 @@ test('home keeps the exact CarrotCave.com wordmark while reading headers use log
 test('brand logo asset and rendered marks are square', () => {
   assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(liaoReaderSource, /<svg class="brand-mark"[^>]*width="192" height="192"/);
-  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:36px;[^}]*height:36px/);
+  assert.match(stylesSource, /\.cc-brand-symbol\{[^}]*width:38\.52px;[^}]*height:38\.52px/);
   assert.match(liaoReaderStyles, /\.brand-mark\s*\{[^}]*width:\s*32px;[^}]*height:\s*32px/);
 });
 
@@ -838,22 +861,22 @@ test('voice thumbnails use the same editorial card system as other archive entri
 });
 
 test('posts and voices share one standard card format at every breakpoint', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 4;grid-row:span 5;min-height:0\}/);
-  assert.match(stylesSource, /@media\(min-width:901px\) and \(max-width:959px\)\{\.editorial-wall \.wall-card\{grid-column:span 6\}\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:18\.3333px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
+  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
   assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
 });
 
-test('wide desktop archive rows contain at most three uninterrupted cards', () => {
-  assert.match(stylesSource, /@media\(min-width:960px\)\{\.wall-card\[data-rhythm\],\.editorial-wall--voices \.wall-card--voice\{grid-column:span 4\}/);
+test('wide desktop archive rows render two uninterrupted cards', () => {
+  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.doesNotMatch(stylesSource, /cave-depth-divider|cave-journey-scene/);
 });
 
 test('desktop chrome and archive surfaces share one 1100px content container', () => {
   assert.match(stylesSource, /--site-container:1100px/);
-  for (const selector of ['cc-header__inner', 'axis-rail__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
+  for (const selector of ['cc-header__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
     assert.match(stylesSource, new RegExp(`\\.${selector}\\{[^}]*max-width:var\\(--site-container\\)`));
   }
+  assert.doesNotMatch(stylesSource, /\.axis-rail__inner\{[^}]*max-width:var\(--site-container\)/);
   assert.match(headerSource, /className="cc-header__inner"/);
   assert.match(axisRailSource, /className="axis-rail__inner"/);
   assert.match(footerSource, /className="cc-footer__inner"/);
@@ -861,7 +884,7 @@ test('desktop chrome and archive surfaces share one 1100px content container', (
 
 test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(homeSource, /토끼를 따라왔는데|생각이 길을 잃었습니다/);
-  assert.match(stylesSource, /\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,1fr\)/);
+  assert.match(stylesSource, /\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/);
   assert.match(stylesSource, /@media\(max-width:900px\).*?\.axis-rail__inner\{[^}]*grid-template-columns:repeat\(6,minmax\(0,1fr\)\)/s);
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });

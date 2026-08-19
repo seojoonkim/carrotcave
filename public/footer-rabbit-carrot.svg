@@ -1,35 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="title description">
-  <title id="title">당근과 장난치는 토끼의 20초 이야기</title>
-  <desc id="description">토끼가 귀를 쫑긋하고 눈을 깜빡인 뒤 두 번 가볍게 뛰어 당근에 다가가 킁킁대면 당근이 통통 튀는 20초 애니메이션</desc>
+  <title id="title">당근과 장난치는 토끼의 12초 이야기</title>
+  <desc id="description">토끼가 귀를 쫑긋하고 눈을 깜빡인 뒤 세 번 가볍게 뛰어 당근에 다가가 킁킁대면 당근이 통통 튀는 12초 애니메이션</desc>
   <style>
-    .scene { transform-origin: center; animation: scene-loop 20s ease-in-out infinite; }
-    .rabbit-position { transform-origin: 480px 145px; animation: rabbit-hop 20s linear infinite; }
-    .rabbit-body { transform-box: fill-box; transform-origin: center bottom; animation: rabbit-squash 20s ease-in-out infinite; }
-    .rabbit-ear-left { transform-box: fill-box; transform-origin: center bottom; animation: ear-left 20s ease-in-out infinite; }
-    .rabbit-ear-right { transform-box: fill-box; transform-origin: center bottom; animation: ear-right 20s ease-in-out infinite; }
-    .rabbit-eye { transform-box: fill-box; transform-origin: center; animation: rabbit-blink 20s linear infinite; }
-    .rabbit-nose { transform-box: fill-box; transform-origin: center; animation: nose-sniff 20s ease-in-out infinite; }
-    .rabbit-tail { transform-box: fill-box; transform-origin: right center; animation: tail-wiggle 20s ease-in-out infinite; }
-    .carrot { transform-box: fill-box; transform-origin: center bottom; animation: carrot-surprise 20s ease-in-out infinite; }
-    .carrot-leaves { transform-box: fill-box; transform-origin: center bottom; animation: leaves-flutter 20s ease-in-out infinite; }
-    .surprise { opacity: 0; animation: surprise-pop 20s ease-out infinite; }
+    .scene { transform-origin: center; animation: scene-loop 12s ease-in-out infinite; }
+    .rabbit-position { transform-origin: 480px 145px; animation: rabbit-hop 12s linear infinite; }
+    .rabbit-body { transform-box: fill-box; transform-origin: center bottom; animation: rabbit-squash 12s ease-in-out infinite; }
+    .rabbit-ear-left { transform-box: fill-box; transform-origin: center bottom; animation: ear-left 12s ease-in-out infinite; }
+    .rabbit-ear-right { transform-box: fill-box; transform-origin: center bottom; animation: ear-right 12s ease-in-out infinite; }
+    .rabbit-eye { transform-box: fill-box; transform-origin: center; animation: rabbit-blink 12s linear infinite; }
+    .rabbit-nose { transform-box: fill-box; transform-origin: center; animation: nose-sniff 12s ease-in-out infinite; }
+    .rabbit-tail { transform-box: fill-box; transform-origin: right center; animation: tail-wiggle 12s ease-in-out infinite; }
+    .carrot { transform-box: fill-box; transform-origin: center bottom; animation: carrot-surprise 12s ease-in-out infinite; }
+    .carrot-leaves { transform-box: fill-box; transform-origin: center bottom; animation: leaves-flutter 12s ease-in-out infinite; }
+    .surprise { opacity: 0; animation: surprise-pop 12s ease-out infinite; }
     @keyframes scene-loop {
       0%,92% { opacity: 1; }
       95%,98% { opacity: 0; }
       100% { opacity: 1; }
     }
     @keyframes rabbit-hop {
-      0%,18% { transform: translate(0,0); }
-      20% { transform: translate(0,2px) scale(1.012,.988); }
-      24% { transform: translate(32px,-20px) rotate(-1deg); }
-      28% { transform: translate(64px,0); }
-      30%,32% { transform: translate(64px,0); }
-      34% { transform: translate(64px,2px) scale(1.012,.988); }
-      38% { transform: translate(92px,-17px) rotate(1deg); }
-      42% { transform: translate(120px,0); }
-      44% { transform: translate(120px,2px) scale(1.012,.988); }
-      46%,95% { transform: translate(120px,0); }
-      95.01%,100% { transform: translate(0,0); }
+      0%,14% { transform: translate(0,0); }
+      16% { transform: translate(0,2px) scale(1.012,.988); }
+      20% { transform: translate(42px,-24px) rotate(-2deg); }
+      24% { transform: translate(84px,0); }
+      26%,28% { transform: translate(84px,0); }
+      30% { transform: translate(84px,2px) scale(1.014,.986); }
+      34% { transform: translate(132px,-22px) rotate(2deg); }
+      38% { transform: translate(180px,0); }
+      40% { transform: translate(180px,2px) scale(1.014,.986); }
+      44% { transform: translate(222px,-18px) rotate(-1deg); }
+      48% { transform: translate(264px,0); }
+      50%,84% { transform: translate(264px,0); }
+      84.01%,100% { transform: translate(0,0); }
     }
     @keyframes rabbit-squash {
       0%,19%,25%,29%,33%,39%,43%,100% { transform: scale(1); }
@@ -70,11 +72,11 @@
     }
     @keyframes carrot-surprise {
       0%,52%,72%,100% { transform: translateY(0) rotate(0); }
-      55% { transform: translateY(-8px) rotate(4deg); }
-      58% { transform: translateY(0) rotate(-3deg); }
-      62% { transform: translateY(-5px) rotate(2deg); }
-      65% { transform: translateY(0) rotate(-1deg); }
-      68% { transform: translateY(-2px) rotate(1deg); }
+      55% { transform: translateY(-14px) rotate(7deg); }
+      58% { transform: translateY(1px) rotate(-5deg); }
+      62% { transform: translateY(-9px) rotate(4deg); }
+      65% { transform: translateY(0) rotate(-3deg); }
+      68% { transform: translateY(-4px) rotate(2deg); }
     }
     @keyframes leaves-flutter {
       0%,52%,74%,100% { transform: rotate(0); }

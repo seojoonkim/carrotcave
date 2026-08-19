@@ -19,13 +19,13 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.match(asset, /@keyframes scene-loop/);
   assert.match(asset, /class="carrot-position" transform="translate\(780 94\) rotate\(-8\)"[\s\S]*?<g class="carrot">/);
   assert.doesNotMatch(asset, /class="carrot" transform=/);
-  assert.match(asset, /animation: scene-loop 20s ease-in-out infinite/);
-  assert.match(asset, /46%,95% \{ transform: translate\(120px,0\); \}/);
+  assert.match(asset, /animation: scene-loop 12s ease-in-out infinite/);
+  assert.match(asset, /48%\s*\{\s*transform:\s*translate\(264px,0\);\s*\}/);
   assert.match(asset, /95%,98% \{ opacity: 0; \}/);
   assert.match(asset, /@keyframes rabbit-blink/);
   assert.match(asset, /@keyframes nose-sniff/);
   assert.match(asset, /@keyframes tail-wiggle/);
-  assert.match(asset, /62% \{ transform: translateY\(-5px\) rotate\(2deg\); \}/);
+  assert.match(asset, /62%\s*\{\s*transform:\s*translateY\(-9px\) rotate\(4deg\);\s*\}/);
   assert.doesNotMatch(asset, /translate\([^,]+,-34px\)/);
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);

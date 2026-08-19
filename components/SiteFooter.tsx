@@ -25,7 +25,7 @@ export default function SiteFooter() {
           <p className="cc-footer__identity"><strong>CARROT CAVE</strong> by Simon Kim</p>
           <p className="cc-footer__links">
             <a href="mailto:simon@hashed.com">simon@hashed.com</a>
-            <a href="https://x.com/simonkim_nft" target="_blank" rel="noreferrer"><XMark /><span>X @simonkim_nft</span></a>
+            <a href="https://x.com/simonkim_nft" target="_blank" rel="noreferrer"><XMark /><span>@simonkim_nft</span></a>
             <a href="https://t.me/carrotcave" target="_blank" rel="noreferrer"><TelegramMark /><span>TELEGRAM</span></a>
           </p>
         </div>
