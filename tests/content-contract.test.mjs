@@ -55,6 +55,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice headers preserve their stable graphite surfaces', () => {
   assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
   assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
+  assert.match(stylesSource, /\.cc-header\{[^}]*border-bottom:0/);
   assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
 
   for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
