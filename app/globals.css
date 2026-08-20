@@ -165,6 +165,14 @@
   .cc-header-axis-mobile .axis-rail span{font-size:7px}
 }
 
+/* The fixed chrome sits one shade below the cave wall and casts a restrained edge shadow. */
+.cc-header{
+  --cc-header-surface:#22252b;
+  background:var(--cc-header-surface)!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.22)!important;
+}
+.cc-header:not(.cc-header--reading){background:var(--cc-header-surface)!important}
+
 /* Menu polish: the navigation follows the exact same measure as the archive. */
 @media(max-width:520px){
   .wall-shell{padding-inline:20px}
