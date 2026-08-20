@@ -193,7 +193,7 @@
   /* The rail lives inside the measured header grid. Do not apply the page gutter twice. */
   .cc-header__axis--desktop .axis-rail{padding-inline:0}
   .cc-header__axis--desktop{display:block;width:100%;min-width:0}
-  .cc-header__axis--desktop .axis-rail{width:100%;height:100%;border-left:1px solid rgba(255,255,255,.12)}
+  .cc-header__axis--desktop .axis-rail{width:100%;height:100%;border-left:0}
   .cc-header__axis--desktop .axis-rail__inner{width:100%;height:100%;grid-template-columns:repeat(6,minmax(0,1fr))}
   .cc-header__axis--desktop .axis-rail a{
     min-width:0;gap:10px;padding:0 6px;flex-direction:column;align-items:center;justify-content:center;
