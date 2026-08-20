@@ -12,6 +12,8 @@
     "test": "node --test tests/*.test.mjs",
     "publish:telegram": "node scripts/publish-single-message.mjs",
     "audit:telegram:daily": "node scripts/auto-sync.mjs --no-git",
+    "sync:telegram:daily": "node scripts/auto-sync.mjs --no-git",
+    "ontology:regen": "node scripts/build-ontology-index.mjs",
     "audit:post-titles": "node scripts/audit-post-titles.mjs",
     "audit:post-abstracts": "node scripts/audit-post-abstracts.mjs",
     "audit:ontology": "node scripts/audit-ontology.mjs",
