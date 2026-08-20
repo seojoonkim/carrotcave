@@ -1,47 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="title description">
-  <title id="title">당근과 장난치는 토끼의 20초 이야기</title>
-  <desc id="description">토끼가 귀를 쫑긋하고 눈을 깜빡인 뒤 두 번 가볍게 뛰어 당근에 다가가 킁킁대면 당근이 통통 튀는 20초 애니메이션</desc>
-  <g class="scene">
-    <g id="footer-rabbit-static" class="rabbit-position">
-      <g class="rabbit-body">
-        <ellipse cx="480" cy="145" rx="44" ry="31" fill="#dedbd4"/>
-        <ellipse cx="468" cy="135" rx="30" ry="24" fill="#eeeae3"/>
-        <circle cx="511" cy="120" r="28" fill="#f4f0e9"/>
-        <g class="rabbit-ear-left">
-          <ellipse cx="497" cy="82" rx="10" ry="35" fill="#f4f0e9" transform="rotate(-9 497 82)"/>
-          <ellipse cx="497" cy="82" rx="4" ry="27" fill="#d9a09d" opacity=".62" transform="rotate(-9 497 82)"/>
-        </g>
-        <g class="rabbit-ear-right">
-          <ellipse cx="520" cy="80" rx="10" ry="37" fill="#f4f0e9" transform="rotate(8 520 80)"/>
-          <ellipse cx="520" cy="80" rx="4" ry="29" fill="#d9a09d" opacity=".62" transform="rotate(8 520 80)"/>
-        </g>
-        <g class="rabbit-eye">
-          <circle cx="521" cy="115" r="4" fill="#20242d"/>
-          <circle cx="522" cy="114" r="1.2" fill="#fff" opacity=".9"/>
-        </g>
-        <ellipse class="rabbit-nose" cx="537" cy="124" rx="3.5" ry="2.7" fill="#b87c78"/>
-        <path d="M538 127c4 2 5 5 1 7M539 128c-3 3-3 6 0 8" fill="none" stroke="#9c7772" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="526" cy="128" r="6" fill="#e9a29b" opacity=".2"/>
-        <path d="m539 125 19-3m-19 7 20 3m-22 1 17 8" fill="none" stroke="#d9d4cc" stroke-width="1.2" stroke-linecap="round"/>
-        <circle class="rabbit-tail" cx="437" cy="137" r="16" fill="#f4f0e9"/>
-        <ellipse cx="458" cy="166" rx="24" ry="9" fill="#e5e1da"/>
-        <ellipse cx="509" cy="167" rx="25" ry="9" fill="#e5e1da"/>
-      </g>
-    </g>
-    <g class="carrot-position" transform="translate(780 94) rotate(-8)">
-      <g class="carrot">
-        <g transform="scale(3.4167)">
-          <path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f28c28"/>
-          <g class="carrot-leaves">
-            <path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" stroke-width="3.5" stroke-linecap="round"/>
-          </g>
-          <path d="m2 7 6 2m-5 5 4 1" fill="none" stroke="#ffad4d" stroke-width="1.2" stroke-linecap="round"/>
-        </g>
-      </g>
-    </g>
-    <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="3" stroke-linecap="round">
-      <path d="m830 52 9-11M845 61l13-5M819 38l2-13"/>
-    </g>
-    <use href="#footer-rabbit-static"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="footer-rabbit-static-title footer-rabbit-static-description">
+  <title id="footer-rabbit-static-title">당근을 발견한 토끼</title>
+  <desc id="footer-rabbit-static-description">넓은 들판 끝에서 토끼가 헤더 메뉴와 같은 모양의 당근을 발견한 정적인 장면</desc>
+  <defs>
+    <linearGradient id="footer-static-carrot-skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffad4d"/><stop offset=".38" stop-color="#ffad4d"/>
+      <stop offset=".39" stop-color="#f28c28"/><stop offset=".72" stop-color="#f28c28"/>
+      <stop offset=".73" stop-color="#d9651f"/><stop offset="1" stop-color="#d9651f"/>
+    </linearGradient>
+    <linearGradient id="footer-static-ear-warmth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d99493" stop-opacity=".72"/><stop offset="1" stop-color="#e7b7b1" stop-opacity=".28"/></linearGradient>
+    <radialGradient id="footer-static-rabbit-coat" cx="62%" cy="30%" r="78%"><stop offset="0" stop-color="#faf7f1"/><stop offset=".68" stop-color="#eeeae3"/><stop offset="1" stop-color="#d8d4cd"/></radialGradient>
+    <path id="footer-static-carrot-root" d="M0 0C2.9-.5 5.2.4 6 2.1 1.8 11.2.2 11.7 0 0Z"/>
+    <polygon id="footer-static-carrot-leaf" points="3.36,7 0,1.82 2.24,1.05 3.84,4.62 4.16,0 6.08,.56 4.88,4.55 7.2,1.75 8,3.36"/>
+  </defs>
+  <path d="M38 169H1062" fill="none" stroke="#555961" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round" opacity=".48"/>
+  <path d="M66 174c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#363941" stroke-width="1.2" opacity=".5"/>
+  <g transform="translate(760)">
+    <ellipse cx="190" cy="169" rx="69" ry="7" fill="#111318" opacity=".34"/>
+    <circle cx="126" cy="137" r="18" fill="#f5f1ea"/><circle cx="121" cy="132" r="8" fill="#fff" opacity=".22"/>
+    <ellipse cx="174" cy="139" rx="52" ry="31" fill="url(#footer-static-rabbit-coat)"/>
+    <ellipse cx="159" cy="132" rx="35" ry="25" fill="#e2ded7" opacity=".58"/>
+    <path d="M142 119c13-8 35-11 52-3M136 132c17-7 35-7 53-1M145 146c14 5 28 7 43 5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".14"/>
+    <path d="M190 103C177 82 178 48 190 31c11 15 15 49 9 72Z" fill="#e5e1da"/>
+    <path d="M190 94c-7-18-7-42 0-54 6 14 8 38 5 54Z" fill="url(#footer-static-ear-warmth)"/>
+    <path d="M211 102c-6-26 1-57 16-69 7 21 1 53-8 72Z" fill="#f7f3ec"/>
+    <path d="M214 94c-1-20 4-41 12-51 3 17-1 38-7 53Z" fill="url(#footer-static-ear-warmth)"/>
+    <path d="M225 39c3 7 4 14 3 20" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
+    <path d="M183 112c9-18 36-28 57-17 17 9 23 31 14 49-9 17-32 23-51 14-19-8-28-29-20-46Z" fill="url(#footer-static-rabbit-coat)"/>
+    <path d="M189 120c7-15 20-22 35-24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".26"/>
+    <ellipse cx="243" cy="137" rx="16" ry="12" fill="#faf6ef" opacity=".8"/>
+    <circle cx="238" cy="119" r="5.2" fill="#20242d"/><circle cx="241" cy="118.6" r="1.55" fill="#fff"/>
+    <path d="M231 110q7-4 13 1" fill="none" stroke="#c9c4bc" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
+    <circle cx="237" cy="134" r="7" fill="#e9a29b" opacity=".16"/>
+    <ellipse cx="260" cy="133" rx="4" ry="3" fill="#b97978"/>
+    <path d="M260 136c0 4-3 5-5 6m5-6c1 4 4 5 7 4m-9-11 26-6m-25 11 28 1m-29 4 25 8" fill="none" stroke="#d8d3cb" stroke-width="1.2" stroke-linecap="round"/>
+    <ellipse cx="151" cy="162" rx="31" ry="9" fill="#ddd9d2"/><ellipse cx="213" cy="163" rx="28" ry="8.5" fill="#eeeae3"/>
   </g>
+  <g transform="translate(1000 103) rotate(24)"><g transform="scale(5.4)"><use href="#footer-static-carrot-root" fill="url(#footer-static-carrot-skin)"/><use href="#footer-static-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/><path d="m1.1 3.5 3.8.4M.8 6.2l3 .3" fill="none" stroke="#ffbd66" stroke-width=".55" stroke-linecap="round"/></g></g>
+  <g opacity=".38" transform="translate(928 150) rotate(68) scale(2.1)"><use href="#footer-static-carrot-root" fill="url(#footer-static-carrot-skin)"/><use href="#footer-static-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
 </svg>

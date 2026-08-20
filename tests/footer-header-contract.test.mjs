@@ -15,18 +15,22 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
     ...['liao-heng', 'liang-wenfeng', 'sam-altman-startup-school-2026', 'yang-zhilin']
       .map((slug) => read(`public/voices/${slug}/index.html`)),
   ]);
-  assert.match(asset, /@keyframes rabbit-hop/);
+  assert.match(asset, /@keyframes rabbit-journey/);
   assert.match(asset, /@keyframes scene-loop/);
-  assert.match(asset, /class="carrot-position" transform="translate\(780 94\) rotate\(-8\)"[\s\S]*?<g class="carrot">/);
+  assert.match(asset, /class="carrot-position" transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g class="carrot">/);
   assert.doesNotMatch(asset, /class="carrot" transform=/);
-  assert.match(asset, /animation: scene-loop 12s ease-in-out infinite/);
-  assert.match(asset, /48%\s*\{\s*transform:\s*translate\(264px,0\);\s*\}/);
-  assert.match(asset, /95%,98% \{ opacity: 0; \}/);
+  assert.match(asset, /animation:scene-loop 16s ease-in-out infinite/);
+  assert.match(asset, /56%,89%\{transform:translate\(760px,0\)\}/);
+  assert.match(asset, /97%,99%\{opacity:0\}/);
   assert.match(asset, /@keyframes rabbit-blink/);
   assert.match(asset, /@keyframes nose-sniff/);
   assert.match(asset, /@keyframes tail-wiggle/);
-  assert.match(asset, /62%\s*\{\s*transform:\s*translateY\(-9px\) rotate\(4deg\);\s*\}/);
-  assert.doesNotMatch(asset, /translate\([^,]+,-34px\)/);
+  assert.match(asset, /@keyframes whisker-quiver/);
+  assert.match(asset, /@keyframes front-paw/);
+  assert.match(asset, /@keyframes shadow-hop/);
+  assert.match(asset, /id="footer-carrot-skin"[\s\S]*?#ffad4d[\s\S]*?#f28c28[\s\S]*?#d9651f/);
+  assert.match(asset, /id="footer-carrot-leaf" points="3\.36,7 0,1\.82 2\.24,1\.05 3\.84,4\.62 4\.16,0 6\.08,\.56 4\.88,4\.55 7\.2,1\.75 8,3\.36"/);
+  assert.doesNotMatch(asset, /<use href="#footer-rabbit"/);
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
   assert.doesNotMatch(staticAsset, /animation:/);

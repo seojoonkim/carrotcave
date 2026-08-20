@@ -1,141 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="title description">
-  <title id="title">당근과 장난치는 토끼의 12초 이야기</title>
-  <desc id="description">토끼가 귀를 쫑긋하고 눈을 깜빡인 뒤 세 번 가볍게 뛰어 당근에 다가가 킁킁대면 당근이 통통 튀는 12초 애니메이션</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="footer-rabbit-title footer-rabbit-description">
+  <title id="footer-rabbit-title">당근을 향해 들판을 가로지르는 토끼</title>
+  <desc id="footer-rabbit-description">섬세하게 귀를 세우고 주변을 살피던 토끼가 네 번 뛰어 넓은 들판 끝의 당근에 다가가 냄새를 맡자, 헤더 메뉴와 같은 모양의 당근이 반갑게 흔들리는 16초 애니메이션</desc>
+  <defs>
+    <linearGradient id="footer-carrot-skin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffad4d"/><stop offset=".38" stop-color="#ffad4d"/>
+      <stop offset=".39" stop-color="#f28c28"/><stop offset=".72" stop-color="#f28c28"/>
+      <stop offset=".73" stop-color="#d9651f"/><stop offset="1" stop-color="#d9651f"/>
+    </linearGradient>
+    <linearGradient id="footer-ear-warmth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d99493" stop-opacity=".72"/><stop offset="1" stop-color="#e7b7b1" stop-opacity=".28"/>
+    </linearGradient>
+    <radialGradient id="footer-rabbit-coat" cx="62%" cy="30%" r="78%">
+      <stop offset="0" stop-color="#faf7f1"/><stop offset=".68" stop-color="#eeeae3"/><stop offset="1" stop-color="#d8d4cd"/>
+    </radialGradient>
+    <path id="footer-carrot-root" d="M0 0C2.9-.5 5.2.4 6 2.1 1.8 11.2.2 11.7 0 0Z"/>
+    <polygon id="footer-carrot-leaf" points="3.36,7 0,1.82 2.24,1.05 3.84,4.62 4.16,0 6.08,.56 4.88,4.55 7.2,1.75 8,3.36"/>
+  </defs>
   <style>
-    .scene { transform-origin: center; animation: scene-loop 12s ease-in-out infinite; }
-    .rabbit-position { transform-origin: 480px 145px; animation: rabbit-hop 12s linear infinite; }
-    .rabbit-body { transform-box: fill-box; transform-origin: center bottom; animation: rabbit-squash 12s ease-in-out infinite; }
-    .rabbit-ear-left { transform-box: fill-box; transform-origin: center bottom; animation: ear-left 12s ease-in-out infinite; }
-    .rabbit-ear-right { transform-box: fill-box; transform-origin: center bottom; animation: ear-right 12s ease-in-out infinite; }
-    .rabbit-eye { transform-box: fill-box; transform-origin: center; animation: rabbit-blink 12s linear infinite; }
-    .rabbit-nose { transform-box: fill-box; transform-origin: center; animation: nose-sniff 12s ease-in-out infinite; }
-    .rabbit-tail { transform-box: fill-box; transform-origin: right center; animation: tail-wiggle 12s ease-in-out infinite; }
-    .carrot { transform-box: fill-box; transform-origin: center bottom; animation: carrot-surprise 12s ease-in-out infinite; }
-    .carrot-leaves { transform-box: fill-box; transform-origin: center bottom; animation: leaves-flutter 12s ease-in-out infinite; }
-    .surprise { opacity: 0; animation: surprise-pop 12s ease-out infinite; }
-    @keyframes scene-loop {
-      0%,92% { opacity: 1; }
-      95%,98% { opacity: 0; }
-      100% { opacity: 1; }
+    .scene{animation:scene-loop 16s ease-in-out infinite}
+    .rabbit-position{transform-origin:190px 164px;animation:rabbit-journey 16s linear infinite}
+    .rabbit-breath{transform-box:fill-box;transform-origin:center bottom;animation:rabbit-breath 16s ease-in-out infinite}
+    .rabbit-head{transform-box:fill-box;transform-origin:45% 76%;animation:head-attention 16s ease-in-out infinite}
+    .rabbit-ear-back,.rabbit-ear-front{transform-box:fill-box;transform-origin:center bottom}
+    .rabbit-ear-back{animation:ear-back 16s ease-in-out infinite}.rabbit-ear-front{animation:ear-front 16s ease-in-out infinite}
+    .rabbit-eyelid{transform-box:fill-box;transform-origin:center;animation:rabbit-blink 16s linear infinite}
+    .rabbit-pupil{animation:eye-track 16s ease-in-out infinite}
+    .rabbit-nose{transform-box:fill-box;transform-origin:center;animation:nose-sniff 16s ease-in-out infinite}
+    .rabbit-whiskers{transform-box:fill-box;transform-origin:left center;animation:whisker-quiver 16s ease-in-out infinite}
+    .rabbit-tail{transform-box:fill-box;transform-origin:right center;animation:tail-wiggle 16s ease-in-out infinite}
+    .rabbit-front-paw,.rabbit-back-paw{transform-box:fill-box;transform-origin:center center}
+    .rabbit-front-paw{animation:front-paw 16s ease-in-out infinite}.rabbit-back-paw{animation:back-paw 16s ease-in-out infinite}
+    .rabbit-shadow{transform-box:fill-box;transform-origin:center;animation:shadow-hop 16s ease-in-out infinite}
+    .carrot{transform-box:fill-box;transform-origin:center bottom;animation:carrot-surprise 16s ease-in-out infinite}
+    .carrot-leaves{transform-box:fill-box;transform-origin:center bottom;animation:leaves-flutter 16s ease-in-out infinite}
+    .surprise{opacity:0;animation:surprise-pop 16s ease-out infinite}
+    @keyframes scene-loop{0%,94%{opacity:1}97%,99%{opacity:0}100%{opacity:1}}
+    @keyframes rabbit-journey{
+      0%,14%{transform:translate(0,0)}15%{transform:translate(0,3px) scale(1.018,.982)}
+      20%{transform:translate(180px,-30px) rotate(-2deg)}25%{transform:translate(360px,0)}26%{transform:translate(360px,3px) scale(1.018,.982)}
+      31%{transform:translate(480px,-25px) rotate(1deg)}36%{transform:translate(600px,0)}37%{transform:translate(600px,3px) scale(1.016,.984)}
+      42%{transform:translate(655px,-18px) rotate(-1deg)}47%{transform:translate(710px,0)}48%{transform:translate(710px,2px) scale(1.012,.988)}
+      52%{transform:translate(735px,-10px)}56%,89%{transform:translate(760px,0)}89.01%,100%{transform:translate(0,0)}
     }
-    @keyframes rabbit-hop {
-      0%,14% { transform: translate(0,0); }
-      16% { transform: translate(0,2px) scale(1.012,.988); }
-      20% { transform: translate(42px,-24px) rotate(-2deg); }
-      24% { transform: translate(84px,0); }
-      26%,28% { transform: translate(84px,0); }
-      30% { transform: translate(84px,2px) scale(1.014,.986); }
-      34% { transform: translate(132px,-22px) rotate(2deg); }
-      38% { transform: translate(180px,0); }
-      40% { transform: translate(180px,2px) scale(1.014,.986); }
-      44% { transform: translate(222px,-18px) rotate(-1deg); }
-      48% { transform: translate(264px,0); }
-      50%,84% { transform: translate(264px,0); }
-      84.01%,100% { transform: translate(0,0); }
-    }
-    @keyframes rabbit-squash {
-      0%,19%,25%,29%,33%,39%,43%,100% { transform: scale(1); }
-      20%,34%,44% { transform: scale(1.02,.98); }
-      24%,38% { transform: scale(.992,1.01); }
-    }
-    @keyframes ear-left {
-      0%,6%,10%,18%,29%,33%,45%,100% { transform: rotate(0); }
-      8% { transform: rotate(-9deg); }
-      12% { transform: rotate(5deg); }
-      24%,38% { transform: rotate(-7deg); }
-      28%,42% { transform: rotate(4deg); }
-      52%,58% { transform: rotate(-4deg); }
-      55%,61% { transform: rotate(3deg); }
-    }
-    @keyframes ear-right {
-      0%,6%,10%,18%,29%,33%,45%,100% { transform: rotate(0); }
-      8% { transform: rotate(7deg); }
-      12% { transform: rotate(-4deg); }
-      24%,38% { transform: rotate(6deg); }
-      28%,42% { transform: rotate(-4deg); }
-      52%,58% { transform: rotate(3deg); }
-      55%,61% { transform: rotate(-3deg); }
-    }
-    @keyframes rabbit-blink {
-      0%,5%,7%,16%,18%,48%,50%,100% { transform: scaleY(1); }
-      6%,17%,49% { transform: scaleY(.12); }
-    }
-    @keyframes nose-sniff {
-      0%,46%,64%,100% { transform: translate(0,0); }
-      49%,55%,61% { transform: translate(1.8px,-.8px) scale(1.08); }
-      52%,58% { transform: translate(-.6px,.4px) scale(.96); }
-    }
-    @keyframes tail-wiggle {
-      0%,45%,65%,100% { transform: rotate(0); }
-      49%,57% { transform: rotate(-9deg) scale(1.04); }
-      53%,61% { transform: rotate(7deg); }
-    }
-    @keyframes carrot-surprise {
-      0%,52%,72%,100% { transform: translateY(0) rotate(0); }
-      55% { transform: translateY(-14px) rotate(7deg); }
-      58% { transform: translateY(1px) rotate(-5deg); }
-      62% { transform: translateY(-9px) rotate(4deg); }
-      65% { transform: translateY(0) rotate(-3deg); }
-      68% { transform: translateY(-4px) rotate(2deg); }
-    }
-    @keyframes leaves-flutter {
-      0%,52%,74%,100% { transform: rotate(0); }
-      55% { transform: rotate(-9deg); }
-      58% { transform: rotate(7deg); }
-      62% { transform: rotate(-6deg); }
-      66% { transform: rotate(4deg); }
-      70% { transform: rotate(-2deg); }
-    }
-    @keyframes surprise-pop {
-      0%,53%,69%,100% { opacity: 0; transform: scale(.75); }
-      55%,58% { opacity: .6; transform: scale(1); }
-      62%,65% { opacity: .38; transform: scale(.9); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .scene,.rabbit-position,.rabbit-body,.rabbit-ear-left,.rabbit-ear-right,.rabbit-eye,.rabbit-nose,.rabbit-tail,.carrot,.carrot-leaves,.surprise { animation: none !important; }
-    }
+    @keyframes rabbit-breath{0%,12%,58%,100%{transform:scale(1)}5%,62%,70%,78%,86%{transform:scale(1.007,.994)}8%,66%,74%,82%{transform:scale(.997,1.006)}20%,31%,42%,52%{transform:scale(.988,1.014)}25%,36%,47%,56%{transform:scale(1.018,.982)}}
+    @keyframes head-attention{0%,3%,11%,14%,58%,89%,100%{transform:rotate(0) translateY(0)}6%{transform:rotate(-2deg) translateY(-2px)}9%{transform:rotate(1deg)}20%,31%,42%{transform:rotate(-1.5deg) translateY(-1px)}25%,36%,47%{transform:rotate(1deg)}61%,69%,77%,85%{transform:rotate(2deg) translate(2px,1px)}65%,73%,81%{transform:rotate(-1deg) translate(0,-1px)}}
+    @keyframes ear-back{0%,3%,12%,14%,58%,89%,100%{transform:rotate(0)}6%{transform:rotate(-14deg)}9%{transform:rotate(5deg)}20%,31%,42%,52%{transform:rotate(-10deg)}25%,36%,47%,56%{transform:rotate(6deg)}62%,70%,78%,86%{transform:rotate(-5deg)}66%,74%,82%{transform:rotate(3deg)}}
+    @keyframes ear-front{0%,4%,12%,14%,58%,89%,100%{transform:rotate(0)}7%{transform:rotate(10deg)}10%{transform:rotate(-4deg)}20%,31%,42%,52%{transform:rotate(7deg)}25%,36%,47%,56%{transform:rotate(-5deg)}62%,70%,78%,86%{transform:rotate(4deg)}66%,74%,82%{transform:rotate(-2deg)}}
+    @keyframes rabbit-blink{0%,4.5%,5.5%,11%,12%,28%,29%,59%,60%,88%,89%,100%{transform:scaleY(0)}5%,11.5%,28.5%,59.5%,88.5%{transform:scaleY(1)}}
+    @keyframes eye-track{0%,13%{transform:translateX(0)}14%,56%{transform:translateX(1.5px)}58%,89%{transform:translate(2px,1px)}90%,100%{transform:translateX(0)}}
+    @keyframes nose-sniff{0%,56%,89%,100%{transform:none}59%,67%,75%,83%{transform:translate(2px,-1px) scale(1.14)}63%,71%,79%,87%{transform:translate(-.5px,.4px) scale(.94)}}
+    @keyframes whisker-quiver{0%,56%,89%,100%{transform:none}59%,67%,75%,83%{transform:rotate(-2deg) scaleX(1.035)}63%,71%,79%,87%{transform:rotate(1.5deg) scaleX(.985)}}
+    @keyframes tail-wiggle{0%,14%,58%,89%,100%{transform:rotate(0) scale(1)}20%,31%,42%,52%{transform:rotate(-12deg) scale(1.06)}25%,36%,47%,56%{transform:rotate(8deg)}62%,70%,78%,86%{transform:rotate(-5deg) scale(1.03)}66%,74%,82%{transform:rotate(4deg)}}
+    @keyframes front-paw{0%,14%,58%,100%{transform:none}20%,31%,42%,52%{transform:translate(-3px,-9px) rotate(-10deg)}25%,36%,47%,56%{transform:translate(2px,1px) rotate(5deg)}62%,70%,78%,86%{transform:translate(2px,-1px)}}
+    @keyframes back-paw{0%,14%,58%,100%{transform:none}20%,31%,42%,52%{transform:translate(5px,-6px) rotate(9deg)}25%,36%,47%,56%{transform:translate(-2px,1px) rotate(-4deg)}}
+    @keyframes shadow-hop{0%,15%,25%,26%,36%,37%,47%,48%,56%,100%{transform:scale(1);opacity:.34}20%{transform:scale(.65);opacity:.16}31%{transform:scale(.72);opacity:.18}42%{transform:scale(.8);opacity:.21}52%{transform:scale(.88);opacity:.25}}
+    @keyframes carrot-surprise{0%,61%,88%,100%{transform:none}64%{transform:translateY(-13px) rotate(9deg)}68%{transform:translateY(1px) rotate(-6deg)}72%{transform:translateY(-8px) rotate(5deg)}76%{transform:rotate(-4deg)}80%{transform:translateY(-3px) rotate(2deg)}84%{transform:none}}
+    @keyframes leaves-flutter{0%,61%,89%,100%{transform:none}64%{transform:rotate(-13deg)}68%{transform:rotate(10deg)}72%{transform:rotate(-8deg)}76%{transform:rotate(6deg)}80%{transform:rotate(-3deg)}}
+    @keyframes surprise-pop{0%,62%,81%,100%{opacity:0;transform:scale(.7)}64%,67%{opacity:.62;transform:scale(1)}71%,75%{opacity:.34;transform:scale(.88)}}
+    @media (prefers-reduced-motion: reduce){.scene,.rabbit-position,.rabbit-breath,.rabbit-head,.rabbit-ear-back,.rabbit-ear-front,.rabbit-eyelid,.rabbit-pupil,.rabbit-nose,.rabbit-whiskers,.rabbit-tail,.rabbit-front-paw,.rabbit-back-paw,.rabbit-shadow,.carrot,.carrot-leaves,.surprise{animation:none!important}}
   </style>
   <g class="scene">
-    <g id="footer-rabbit" class="rabbit-position">
-      <g class="rabbit-body">
-        <ellipse cx="480" cy="145" rx="44" ry="31" fill="#dedbd4"/>
-        <ellipse cx="468" cy="135" rx="30" ry="24" fill="#eeeae3"/>
-        <circle cx="511" cy="120" r="28" fill="#f4f0e9"/>
-        <g class="rabbit-ear-left">
-          <ellipse cx="497" cy="82" rx="10" ry="35" fill="#f4f0e9" transform="rotate(-9 497 82)"/>
-          <ellipse cx="497" cy="82" rx="4" ry="27" fill="#d9a09d" opacity=".62" transform="rotate(-9 497 82)"/>
+    <path d="M38 169H1062" fill="none" stroke="#555961" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round" opacity=".48"/>
+    <path d="M66 174c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#363941" stroke-width="1.2" opacity=".5"/>
+    <g class="rabbit-position">
+      <ellipse class="rabbit-shadow" cx="190" cy="169" rx="69" ry="7" fill="#111318"/>
+      <g class="rabbit-breath">
+        <g class="rabbit-tail">
+          <circle cx="126" cy="137" r="18" fill="#f5f1ea"/><circle cx="121" cy="132" r="8" fill="#fff" opacity=".22"/>
         </g>
-        <g class="rabbit-ear-right">
-          <ellipse cx="520" cy="80" rx="10" ry="37" fill="#f4f0e9" transform="rotate(8 520 80)"/>
-          <ellipse cx="520" cy="80" rx="4" ry="29" fill="#d9a09d" opacity=".62" transform="rotate(8 520 80)"/>
-        </g>
-        <g class="rabbit-eye">
-          <circle cx="521" cy="115" r="4" fill="#20242d"/>
-          <circle cx="522" cy="114" r="1.2" fill="#fff" opacity=".9"/>
-        </g>
-        <ellipse class="rabbit-nose" cx="537" cy="124" rx="3.5" ry="2.7" fill="#b87c78"/>
-        <path d="M538 127c4 2 5 5 1 7M539 128c-3 3-3 6 0 8" fill="none" stroke="#9c7772" stroke-width="1.6" stroke-linecap="round"/>
-        <circle cx="526" cy="128" r="6" fill="#e9a29b" opacity=".2"/>
-        <path d="m539 125 19-3m-19 7 20 3m-22 1 17 8" fill="none" stroke="#d9d4cc" stroke-width="1.2" stroke-linecap="round"/>
-        <circle class="rabbit-tail" cx="437" cy="137" r="16" fill="#f4f0e9"/>
-        <ellipse cx="458" cy="166" rx="24" ry="9" fill="#e5e1da"/>
-        <ellipse cx="509" cy="167" rx="25" ry="9" fill="#e5e1da"/>
-      </g>
-    </g>
-    <g class="carrot-position" transform="translate(780 94) rotate(-8)">
-      <g class="carrot">
-        <g transform="scale(3.4167)">
-          <path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f28c28"/>
-          <g class="carrot-leaves">
-            <path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" stroke-width="3.5" stroke-linecap="round"/>
+        <ellipse cx="174" cy="139" rx="52" ry="31" fill="url(#footer-rabbit-coat)"/>
+        <ellipse cx="159" cy="132" rx="35" ry="25" fill="#e2ded7" opacity=".58"/>
+        <path d="M142 119c13-8 35-11 52-3M136 132c17-7 35-7 53-1M145 146c14 5 28 7 43 5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".14"/>
+        <g class="rabbit-head">
+          <g class="rabbit-ear-back">
+            <path d="M190 103C177 82 178 48 190 31c11 15 15 49 9 72Z" fill="#e5e1da"/>
+            <path d="M190 94c-7-18-7-42 0-54 6 14 8 38 5 54Z" fill="url(#footer-ear-warmth)"/>
           </g>
-          <path d="m2 7 6 2m-5 5 4 1" fill="none" stroke="#ffad4d" stroke-width="1.2" stroke-linecap="round"/>
+          <g class="rabbit-ear-front">
+            <path d="M211 102c-6-26 1-57 16-69 7 21 1 53-8 72Z" fill="#f7f3ec"/>
+            <path d="M214 94c-1-20 4-41 12-51 3 17-1 38-7 53Z" fill="url(#footer-ear-warmth)"/>
+            <path d="M225 39c3 7 4 14 3 20" fill="none" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity=".45"/>
+          </g>
+          <path d="M183 112c9-18 36-28 57-17 17 9 23 31 14 49-9 17-32 23-51 14-19-8-28-29-20-46Z" fill="url(#footer-rabbit-coat)"/>
+          <path d="M189 120c7-15 20-22 35-24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".26"/>
+          <ellipse cx="243" cy="137" rx="16" ry="12" fill="#faf6ef" opacity=".8"/>
+          <circle cx="238" cy="119" r="5.2" fill="#20242d"/>
+          <circle class="rabbit-pupil" cx="239.5" cy="117.6" r="1.55" fill="#fff"/>
+          <path class="rabbit-eyelid" d="M232 119q6-6 12 0q-6 5-12 0Z" fill="#eeeae3"/>
+          <path d="M231 110q7-4 13 1" fill="none" stroke="#c9c4bc" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
+          <circle cx="237" cy="134" r="7" fill="#e9a29b" opacity=".16"/>
+          <ellipse class="rabbit-nose" cx="258" cy="132" rx="4" ry="3" fill="#b97978"/>
+          <path d="M258 135c0 4-3 5-5 6m5-6c1 4 4 5 7 4" fill="none" stroke="#96716f" stroke-width="1.4" stroke-linecap="round"/>
+          <g class="rabbit-whiskers" fill="none" stroke="#d8d3cb" stroke-width="1.2" stroke-linecap="round">
+            <path d="m256 128 26-6m-25 11 28 1m-29 4 25 8"/>
+          </g>
+        </g>
+        <g class="rabbit-back-paw"><ellipse cx="151" cy="162" rx="31" ry="9" fill="#ddd9d2"/><path d="M125 161c9 2 19 2 29 0" fill="none" stroke="#f7f3ec" stroke-width="1.2" opacity=".55"/></g>
+        <g class="rabbit-front-paw"><ellipse cx="213" cy="163" rx="28" ry="8.5" fill="#eeeae3"/><path d="M218 161c8 2 15 2 21 0" fill="none" stroke="#c8c3bc" stroke-width="1" opacity=".6"/></g>
+      </g>
+    </g>
+    <g class="carrot-position" transform="translate(1000 103) rotate(24)">
+      <g class="carrot">
+        <g transform="scale(5.4)">
+          <use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/>
+          <g class="carrot-leaves"><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
+          <path d="m1.1 3.5 3.8.4M.8 6.2l3 .3" fill="none" stroke="#ffbd66" stroke-width=".55" stroke-linecap="round"/>
         </g>
       </g>
     </g>
-    <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="3" stroke-linecap="round">
-      <path d="m830 52 9-11M845 61l13-5M819 38l2-13"/>
-    </g>
-    <use href="#footer-rabbit"/>
+    <g opacity=".38" transform="translate(928 150) rotate(68) scale(2.1)"><use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
+    <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="2.5" stroke-linecap="round"><path d="m1024 50 8-12m7 23 13-5m-47-18-1-13"/></g>
   </g>
 </svg>
