@@ -18,6 +18,7 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.match(asset, /@keyframes rabbit-journey/);
   assert.match(asset, /@keyframes scene-loop/);
   assert.match(asset, /class="carrot-position" transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g class="carrot">/);
+  assert.match(asset, /<g class="carrot-position"[\s\S]*?<g class="rabbit-position"/);
   assert.doesNotMatch(asset, /class="carrot" transform=/);
   assert.match(asset, /animation:scene-loop 16s ease-in-out infinite/);
   assert.match(asset, /56%,89%\{transform:translate\(760px,0\)\}/);
@@ -34,6 +35,7 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
   assert.doesNotMatch(staticAsset, /animation:/);
+  assert.match(staticAsset, /<g transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g transform="translate\(760\)"/);
   assert.doesNotMatch(staticAsset, /cave|동굴/i);
   assert.match(component, /src="\/footer-rabbit-carrot\.svg"/);
   assert.match(globalCss, /footer-rabbit-carrot\{content:url\('\/footer-rabbit-carrot-static\.svg'\)\}/);

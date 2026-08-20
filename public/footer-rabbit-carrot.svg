@@ -62,6 +62,16 @@
   <g class="scene">
     <path d="M38 169H1062" fill="none" stroke="#555961" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round" opacity=".48"/>
     <path d="M66 174c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#363941" stroke-width="1.2" opacity=".5"/>
+    <g class="carrot-position" transform="translate(1000 103) rotate(24)">
+      <g class="carrot">
+        <g transform="scale(5.4)">
+          <use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/>
+          <g class="carrot-leaves"><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
+          <path d="m1.1 3.5 3.8.4M.8 6.2l3 .3" fill="none" stroke="#ffbd66" stroke-width=".55" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+    <g opacity=".38" transform="translate(928 150) rotate(68) scale(2.1)"><use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
     <g class="rabbit-position">
       <ellipse class="rabbit-shadow" cx="190" cy="169" rx="69" ry="7" fill="#111318"/>
       <g class="rabbit-breath">
@@ -99,16 +109,6 @@
         <g class="rabbit-front-paw"><ellipse cx="213" cy="163" rx="28" ry="8.5" fill="#eeeae3"/><path d="M218 161c8 2 15 2 21 0" fill="none" stroke="#c8c3bc" stroke-width="1" opacity=".6"/></g>
       </g>
     </g>
-    <g class="carrot-position" transform="translate(1000 103) rotate(24)">
-      <g class="carrot">
-        <g transform="scale(5.4)">
-          <use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/>
-          <g class="carrot-leaves"><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
-          <path d="m1.1 3.5 3.8.4M.8 6.2l3 .3" fill="none" stroke="#ffbd66" stroke-width=".55" stroke-linecap="round"/>
-        </g>
-      </g>
-    </g>
-    <g opacity=".38" transform="translate(928 150) rotate(68) scale(2.1)"><use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
     <g class="surprise" fill="none" stroke="#f5d14b" stroke-width="2.5" stroke-linecap="round"><path d="m1024 50 8-12m7 23 13-5m-47-18-1-13"/></g>
   </g>
 </svg>
