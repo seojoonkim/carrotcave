@@ -1,13 +1,7 @@
 {
-  "timestamp": "2026-08-19T13:19:41.972Z",
-  "newPosts": [
-    {
-      "slug": "post-201",
-      "title": "문이 열리는 쪽",
-      "msgId": 201
-    }
-  ],
-  "reactionsUpdated": 0,
+  "timestamp": "2026-08-19T19:09:34.313Z",
+  "newPosts": [],
+  "reactionsUpdated": 2,
   "errors": [],
-  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • 문이 열리는 쪽 (#201)"
+  "message": "🐇 **토끼굴 싱크 완료**\n\n✏️ **수정된 글 1편:**\n  • post-201\n\n💫 좋아요 2건 업데이트"
 }

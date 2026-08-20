@@ -16,5 +16,8 @@ test('fallback metadata generates a publishable summary for a new Telegram writi
   assert.equal(metadata.depth, 'deep');
   assert.equal(metadata.tags.length, 0);
   assertPublishableAbstract(metadata.summary, sample.content || sample.fullText, metadata.title, metadata.category);
-  assert.match(metadata.summary, /소설이다\.$/);
+  assert.equal(
+    metadata.summary,
+    '시뮬레이션 인간과 복제 의식, 무너진 문명과 새로 생긴 질문을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.',
+  );
 });
