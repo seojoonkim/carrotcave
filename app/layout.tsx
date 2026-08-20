@@ -58,6 +58,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={`${jetbrains.variable} ${notoSans.variable}`}>
+      <head>
+        <link rel="stylesheet" href="/shared-header-chrome.css" />
+      </head>
       <body
         className="antialiased min-h-screen"
         style={{ backgroundColor: '#24262c', color: '#f2f1ec' }}

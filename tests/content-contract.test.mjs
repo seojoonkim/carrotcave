@@ -36,6 +36,8 @@ const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zh
 const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/index.html', import.meta.url), 'utf8');
 const samReaderStyles = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/styles.css', import.meta.url), 'utf8');
 const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
+const sharedHeaderChromeStyles = readFileSync(new URL('../public/shared-header-chrome.css', import.meta.url), 'utf8');
+const rootLayoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
 const caveConstellationSource = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta.url), { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && existsSync(new URL(`../public/voices/${entry.name}/index.html`, import.meta.url)))
@@ -52,19 +54,18 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
     };
   });
 
-test('archive and voice headers preserve their stable graphite surfaces', () => {
-  assert.match(stylesSource, /:root\{[^}]*--cc-header-background:#282b32/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
-  assert.match(stylesSource, /\.cc-header\{[^}]*border:0!important/);
-  assert.doesNotMatch(stylesSource, /\.cc-header\{[^}]*backdrop-filter/);
-
-  for (const { slug, styles: readerStyles } of voiceReaderFixtures) {
-    assert.match(readerStyles, /\.site-header \{[^}]*background: rgba\(41,44,51,\.94\);[^}]*border-bottom: 1px solid rgba\(255,255,255,\.14\);[^}]*backdrop-filter: blur\(18px\);/, `${slug} must preserve the shared graphite header surface`);
-    assert.doesNotMatch(readerStyles, /\.site-header \{[^}]*background: rgba\(47,50,57,\.94\)/);
-  }
+test('archive and voice menu headers consume one shared chrome contract', () => {
+  assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
+  assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #22252b;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(255, 255, 255, 0\.12\);/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
+  assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);
+  assert.doesNotMatch(voiceReaderSystemStyles, /\.site-header\s*\{[^}]*border(?:-bottom)?:\s*0(?:\s*!important)?;/);
+  assert.doesNotMatch(voiceReaderSystemStyles, /\.site-header\s*\{[^}]*box-shadow:\s*none/);
 });
 
-test('all reading surfaces keep progress semantics without rendering a header line', () => {
+test('all reading surfaces keep progress semantics while the shared header divider stays independent', () => {
   assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
   assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
   assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);

@@ -1,0 +1,14 @@
+:root {
+  --cc-header-surface: #22252b;
+  --cc-header-divider: rgba(255, 255, 255, 0.12);
+  --cc-header-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+/* One header-chrome contract for the Next app and standalone voice readers. */
+.cc-header,
+.site-header {
+  background: var(--cc-header-surface) !important;
+  border-bottom: 1px solid var(--cc-header-divider) !important;
+  box-shadow: var(--cc-header-shadow) !important;
+  backdrop-filter: none !important;
+}

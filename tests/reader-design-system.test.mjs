@@ -14,6 +14,7 @@ const voicePaths = [
 ];
 
 const sharedVoiceLink = '<link rel="stylesheet" href="../reader-system.css">';
+const sharedChromeImport = '@import url("../shared-header-chrome.css");';
 
 const contracts = [
   '--reader-accent: #61adab',
@@ -62,6 +63,8 @@ test('ordinary posts and voice readers share one explicit reading scale', async 
 });
 
 test('every voice reader consumes the shared reader system without local scale drift', async () => {
+  const shared = await read('public/voices/reader-system.css');
+  assert.ok(shared.startsWith(sharedChromeImport), 'voice reader system must import the site-wide header chrome first');
   for (const path of voicePaths) {
     const html = await read(path);
     const localLink = '<link rel="stylesheet" href="styles.css">';

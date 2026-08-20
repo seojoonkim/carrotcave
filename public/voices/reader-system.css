@@ -1,3 +1,5 @@
+@import url("../shared-header-chrome.css");
+
 @font-face {
   font-family: "JetBrains Mono";
   font-style: normal;
@@ -34,10 +36,6 @@
   grid-template-columns: 56px minmax(0,1fr) auto;
   gap: 20px;
   padding: 12px max(clamp(20px, 4vw, 64px), calc((100vw - 1100px) / 2));
-  background: #282b32;
-  backdrop-filter: none;
-  border: 0 !important;
-  box-shadow: none !important;
 }
 .site-header::before,
 .site-header::after,
@@ -255,8 +253,7 @@ img { border: 0; outline: 0;  }
   .toc-drawer nav > a { border: 0; }
 }
 
-/* The reading header is a clean control bar: no decorative dividers. */
-.site-header { border-bottom: 0; }
+/* The reading header keeps its internal divider hidden; outer chrome is shared site-wide. */
 .reader-divider { display: none; }
 
 /* Match ordinary post chrome and reading measure at every desktop width. */
