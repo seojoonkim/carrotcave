@@ -280,7 +280,7 @@ AI가 쓴 글을 인간 글과 구분하지 못하는 순간은 올까. 텍스�
 
 어쩌면 우리가 지키려는 것은 순수한 문장이 아니라 선택의 자리인지도 모른다. 누가 마지막 문장을 남겼고, 틀렸을 때 누구의 이름으로 책임지는가.`,
     date: '2026-08-18',
-    reactions: 18,
+    reactions: 19,
     tags: ['AI 워터마크', '인간 저작', '창작 인증', '감시'],
     relatedSlugs: [],
     mediaUrls: ['/media/msg-200-0.jpg'],
@@ -771,7 +771,7 @@ Agent Plugins는 Agent Skills와 MCP 서버를 함께 배포하는 공개 멀티
 
 이 가방의 열쇠를 누가 쥐는가.`,
     date: '2026-08-14',
-    reactions: 18,
+    reactions: 20,
     tags: ['AI 에이전트', 'Agent Plugins', '기억', '휴머노이드'],
     relatedSlugs: ['post-191', 'post-187', 'post-189'],
     mediaUrls: ['/media/msg-193-0.jpg'],
