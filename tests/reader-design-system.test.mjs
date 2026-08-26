@@ -11,6 +11,7 @@ const voicePaths = [
   'public/voices/liang-wenfeng/index.html',
   'public/voices/yang-zhilin/index.html',
   'public/voices/sam-altman-startup-school-2026/index.html',
+  'public/voices/tibo-ai-wave/index.html',
 ];
 
 const sharedVoiceLink = '<link rel="stylesheet" href="../reader-system.css">';
@@ -36,6 +37,7 @@ const voiceTitleContracts = [
 const voiceSectionContracts = [
   '--reader-section-size: 36px',
   '--reader-section-size-mobile: 28px',
+  '--reader-transcript-start-gap: 20px',
 ];
 
 test('ordinary posts and voice readers share one explicit reading scale', async () => {
@@ -91,6 +93,7 @@ test('shared reader system applies the common scale to matching semantic levels'
     'font-size: var(--reader-body-size)',
     '.transcript-paragraph { padding-bottom: 28px; }',
     '.long-record-body .utterance { margin-bottom: 28px; }',
+    '.transcript-chapter > .transcript-segments { padding-top: var(--reader-transcript-start-gap); }',
     '.transcript-paragraph { padding-bottom: 24px; }',
     '.long-record-body .utterance { margin-bottom: 24px; }',
     '.section-heading h2, .chapter-heading h2',

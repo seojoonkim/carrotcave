@@ -23,6 +23,7 @@
   --reader-subsection-size: 27px;
   --reader-subsection-size-mobile: 24px;
   --reader-time-size: 12px;
+  --reader-transcript-start-gap: 20px;
   --reader-header-title-size: 16px;
   --reader-header-title-size-mobile: 15px;
   --reader-title-size: clamp(32px, calc(5.5vw - 2px), 44px);
@@ -184,6 +185,7 @@ img { border: 0; outline: 0;  }
 }
 .transcript-paragraph { padding-bottom: 28px; }
 .long-record-body .utterance { margin-bottom: 28px; }
+.transcript-chapter > .transcript-segments { padding-top: var(--reader-transcript-start-gap); }
 .highlight-marker h3, .topic-heading h3, .transcript-subheading {
   font-family: var(--font-sans);
   font-size: var(--reader-subsection-size);
