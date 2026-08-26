@@ -293,6 +293,10 @@ test('Tibo voice archive ships a Korean sentence-level transcript with source-sp
   assert.ok(koreanTranscript.items.every((item) => Number.isFinite(item.start) && Number.isFinite(item.end) && item.start < item.end));
   assert.ok(koreanTranscript.items.every((item) => typeof item.text === 'string' && /[가-힣]/.test(item.text)));
   assert.ok(koreanTranscript.items.every((item, index) => index === 0 || item.start >= koreanTranscript.items[index - 1].start));
+  const allowedSpeakers = new Set(['Tibo', 'Matthew Berman']);
+  assert.ok(koreanTranscript.items.every((item) => allowedSpeakers.has(item.speaker)));
+  assert.deepEqual(new Set(koreanTranscript.items.map((item) => item.speaker)), allowedSpeakers);
+  assert.ok(koreanTranscript.items.some((item, index) => index > 0 && item.speaker !== koreanTranscript.items[index - 1].speaker));
 
   assert.match(tiboReaderScript, /fetch\('transcript-ko\.json'\)/);
   assert.doesNotMatch(tiboReaderScript, /fetch\('transcript-en\.json'\)/);

@@ -17,8 +17,9 @@
   let lastFocus = null;
   const renderItems = data => {
     if (data.language !== 'ko' || !Array.isArray(data.items) || data.items.length < 100) throw new Error('Unexpected Korean transcript');
+    let previousSpeaker = null;
     data.items.forEach((item, index) => {
-      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start >= item.end || typeof item.text !== 'string' || !/[가-힣]/.test(item.text)) throw new Error(`Invalid transcript item ${index}`);
+      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start >= item.end || typeof item.text !== 'string' || !/[가-힣]/.test(item.text) || !['Tibo', 'Matthew Berman'].includes(item.speaker)) throw new Error(`Invalid transcript item ${index}`);
       const chapter = chapters.find(section => item.start >= Number(section.dataset.start) && item.start < Number(section.dataset.end));
       if (!chapter) throw new Error(`No chapter for transcript item ${index}`);
       const paragraph = document.createElement('p');
@@ -30,6 +31,14 @@
       anchor.dataset.segmentId = String(item.id);
       anchor.dataset.start = String(item.start);
       anchor.dataset.end = String(item.end);
+      if (item.speaker !== previousSpeaker) {
+        const speaker = document.createElement('span');
+        speaker.className = 'transcript-speaker';
+        speaker.dataset.speaker = item.speaker;
+        speaker.textContent = item.speaker;
+        paragraph.append(speaker);
+        previousSpeaker = item.speaker;
+      }
       const copy = document.createElement('span');
       copy.className = 'paragraph-text';
       copy.textContent = item.text;
