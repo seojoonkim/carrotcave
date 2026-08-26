@@ -392,6 +392,12 @@ img { border: 0; outline: 0;  }
 
 }
 
+@media (max-width: 599px) {
+  /* Chapter menu links land on the chapter header, not on the old padded section top. */
+  html { scroll-padding-top: var(--header); }
+  .transcript-chapter { padding-top: 16px; scroll-margin-top: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .voice-footer-rabbit-carrot { content: url('/footer-rabbit-carrot-static.svg'); }
 }

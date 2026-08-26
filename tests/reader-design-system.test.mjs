@@ -110,6 +110,8 @@ test('shared reader system applies the common scale to matching semantic levels'
     'padding: 22px 20px 5px;',
     '.toc-drawer nav > a {',
     'border-bottom: 0;',
+    'html { scroll-padding-top: var(--header); }',
+    '.transcript-chapter { padding-top: 16px; scroll-margin-top: 0; }',
   ]) assert.ok(shared.includes(required), `shared voice CSS missing: ${required}`);
   assert.match(
     shared,
