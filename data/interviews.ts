@@ -18,6 +18,22 @@ export interface InterviewArchive {
 
 export const interviews: InterviewArchive[] = [
   {
+    slug: 'tibo-ai-wave',
+    name: '티보',
+    eyebrow: 'OPENAI / PERSONAL AGENTS / AI SYSTEMS',
+    title: '모두가 보기 전에 다음 AI 파도를 이해하는 법',
+    summary: '티보는 개인 에이전트, 음성 인터페이스, 초고속 추론과 자기개선을 통해 AI의 다음 파도가 사람의 흐름에 맞춰지는 방식으로 온다고 말한다.',
+    description: 'Matthew Berman이 OpenAI의 티보와 AI 에이전트, 음성, 초고속 추론, 자기개선과 광범위한 접근성을 논한 인터뷰의 영어 원문 전사 리더.',
+    sourcePublishedAt: '2026-08-24',
+    thumbnailUrl: '/voices/tibo-ai-wave/tibo-interview.jpg',
+    sourceUrl: 'https://www.youtube.com/watch?v=4qjEgPojjzM',
+    duration: '44:28',
+    chapters: 7,
+    segments: 1232,
+    embedPath: '/voices/tibo-ai-wave/index.html',
+    status: 'published',
+  },
+  {
     slug: 'sam-altman-startup-school-2026',
     name: '샘 올트먼',
     eyebrow: 'STARTUP SCHOOL / AI / FOUNDERS',

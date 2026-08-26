@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
-const slugs = ['liang-wenfeng', 'liao-heng', 'sam-altman-startup-school-2026', 'yang-zhilin'];
+const slugs = ['liang-wenfeng', 'liao-heng', 'sam-altman-startup-school-2026', 'yang-zhilin', 'tibo-ai-wave'];
 
 function insightList(html) {
   const headingIndex = html.indexOf('CARROT CAVE INSIGHTS');
