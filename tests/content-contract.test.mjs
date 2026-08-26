@@ -36,7 +36,8 @@ const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zh
 const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/index.html', import.meta.url), 'utf8');
 const samReaderStyles = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/styles.css', import.meta.url), 'utf8');
 const tiboReaderSource = readFileSync(new URL('../public/voices/tibo-ai-wave/index.html', import.meta.url), 'utf8');
-const tiboTranscript = JSON.parse(readFileSync(new URL('../public/voices/tibo-ai-wave/transcript-en.json', import.meta.url), 'utf8'));
+const tiboReaderScript = readFileSync(new URL('../public/voices/tibo-ai-wave/script.js', import.meta.url), 'utf8');
+const tiboTranscript = JSON.parse(readFileSync(new URL('../public/voices/tibo-ai-wave/transcript-ko.json', import.meta.url), 'utf8'));
 const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
 const sharedHeaderChromeStyles = readFileSync(new URL('../public/shared-header-chrome.css', import.meta.url), 'utf8');
 const rootLayoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
@@ -280,6 +281,28 @@ test('all three voice archives preserve their complete reader contracts', () => 
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
 });
 
+test('Tibo voice archive ships a Korean sentence-level transcript with source-specific content', () => {
+  const transcriptUrl = new URL('../public/voices/tibo-ai-wave/transcript-ko.json', import.meta.url);
+  assert.ok(existsSync(transcriptUrl), 'Korean transcript must exist before release');
+  const koreanTranscript = JSON.parse(readFileSync(transcriptUrl, 'utf8'));
+
+  assert.equal(koreanTranscript.language, 'ko');
+  assert.ok(Array.isArray(koreanTranscript.items));
+  assert.ok(koreanTranscript.items.length >= 100 && koreanTranscript.items.length <= 250);
+  assert.ok(koreanTranscript.items.every((item, index) => item.id === index));
+  assert.ok(koreanTranscript.items.every((item) => Number.isFinite(item.start) && Number.isFinite(item.end) && item.start < item.end));
+  assert.ok(koreanTranscript.items.every((item) => typeof item.text === 'string' && /[가-힣]/.test(item.text)));
+  assert.ok(koreanTranscript.items.every((item, index) => index === 0 || item.start >= koreanTranscript.items[index - 1].start));
+
+  assert.match(tiboReaderScript, /fetch\('transcript-ko\.json'\)/);
+  assert.doesNotMatch(tiboReaderScript, /fetch\('transcript-en\.json'\)/);
+  assert.match(tiboReaderSource, /전체 한국어 번역 전사/);
+  assert.match(tiboReaderSource, /Matthew Berman/);
+  assert.match(tiboReaderSource, /Google · DeepMind에서 배운 출시의 교훈/);
+  assert.match(tiboReaderSource, /초고속 AI가 여는 다음 사용 방식/);
+  assert.doesNotMatch(tiboReaderSource, /Y Combinator|첫 YC|폴 그레이엄|Loopt|Startup School/);
+});
+
 test('Tibo transcript chapter ranges cover every caption segment without gaps', () => {
   const boundaries = [...tiboReaderSource.matchAll(/class="content-section chapter transcript-chapter"[^>]*data-start="([\d.]+)" data-end="([\d.]+)"/g)]
     .map(([, start, end]) => [Number(start), Number(end)]);
@@ -287,10 +310,11 @@ test('Tibo transcript chapter ranges cover every caption segment without gaps', 
   assert.equal(boundaries.length, 7);
   assert.ok(boundaries.every(([start, end]) => Number.isFinite(start) && Number.isFinite(end) && start < end));
   assert.ok(boundaries.every((range, index) => index === 0 || boundaries[index - 1][1] === range[0]));
-  for (const segment of tiboTranscript.segments) {
-    const containingRanges = boundaries.filter(([start, end]) => Number(segment.start) >= start && Number(segment.start) < end);
-    assert.equal(containingRanges.length, 1, `segment ${segment.id} at ${segment.start}s must belong to exactly one chapter`);
+  for (const item of tiboTranscript.items) {
+    const containingRanges = boundaries.filter(([start, end]) => Number(item.start) >= start && Number(item.start) < end);
+    assert.equal(containingRanges.length, 1, `item ${item.id} at ${item.start}s must belong to exactly one chapter`);
   }
+  assert.ok(boundaries.every(([start, end]) => tiboTranscript.items.some((item) => item.start >= start && item.start < end)));
 });
 
 test('all voice readers show timestamps only at chapter and editorial subchapter boundaries', () => {
