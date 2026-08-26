@@ -35,6 +35,8 @@ const yangReaderScript = readFileSync(new URL('../public/voices/yang-zhilin/scri
 const yangTranscript = JSON.parse(readFileSync(new URL('../public/voices/yang-zhilin/transcript-ko.json', import.meta.url), 'utf8'));
 const samReaderSource = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/index.html', import.meta.url), 'utf8');
 const samReaderStyles = readFileSync(new URL('../public/voices/sam-altman-startup-school-2026/styles.css', import.meta.url), 'utf8');
+const tiboReaderSource = readFileSync(new URL('../public/voices/tibo-ai-wave/index.html', import.meta.url), 'utf8');
+const tiboTranscript = JSON.parse(readFileSync(new URL('../public/voices/tibo-ai-wave/transcript-en.json', import.meta.url), 'utf8'));
 const voiceReaderSystemStyles = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
 const sharedHeaderChromeStyles = readFileSync(new URL('../public/shared-header-chrome.css', import.meta.url), 'utf8');
 const rootLayoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
@@ -276,6 +278,19 @@ test('all three voice archives preserve their complete reader contracts', () => 
     [2987, 3918], [3918, 4982], [4982, 6059],
   ]);
   assert.ok(yangBoundaries.every((range, index) => index === 0 || yangBoundaries[index - 1][1] === range[0]));
+});
+
+test('Tibo transcript chapter ranges cover every caption segment without gaps', () => {
+  const boundaries = [...tiboReaderSource.matchAll(/class="content-section chapter transcript-chapter"[^>]*data-start="([\d.]+)" data-end="([\d.]+)"/g)]
+    .map(([, start, end]) => [Number(start), Number(end)]);
+
+  assert.equal(boundaries.length, 7);
+  assert.ok(boundaries.every(([start, end]) => Number.isFinite(start) && Number.isFinite(end) && start < end));
+  assert.ok(boundaries.every((range, index) => index === 0 || boundaries[index - 1][1] === range[0]));
+  for (const segment of tiboTranscript.segments) {
+    const containingRanges = boundaries.filter(([start, end]) => Number(segment.start) >= start && Number(segment.start) < end);
+    assert.equal(containingRanges.length, 1, `segment ${segment.id} at ${segment.start}s must belong to exactly one chapter`);
+  }
 });
 
 test('all voice readers show timestamps only at chapter and editorial subchapter boundaries', () => {
