@@ -15466,5 +15466,110 @@
     },
     "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
     "status": "approved"
+  },
+  {
+    "from": "security-token-rail",
+    "sourceClaimId": "security-token-rail-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "status": "approved",
+    "to": "post-142",
+    "type": "DEEPENS",
+    "strength": 0.86,
+    "sourceEvidence": "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다.",
+    "targetEvidence": "지금 이동하는 것은 자산 뿐이 아니라, 자산을 둘러싼 거래, 결제, 시간, 관할, 인터페이스의 묶음이다.",
+    "label": "「가격은 국경을 넘고, 시장은 건물을 떠난다」는 「토큰증권보다 증권형 토큰이 더 중요하다」의 자산·결제 레일 문제를 더 깊이 파고든다",
+    "signalDetails": {
+      "lexicalOverlap": 6,
+      "overlapTokens": [
+        "토큰",
+        "자산",
+        "거래",
+        "결제",
+        "금융",
+        "시장"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "토큰화",
+        "금융 인프라"
+      ]
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=6;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "security-token-rail",
+    "sourceClaimId": "security-token-rail-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "status": "approved",
+    "to": "crypto-is-dead",
+    "type": "REFRAMES",
+    "strength": 0.82,
+    "sourceEvidence": "그래서 ‘증권형 토큰’이 ‘토큰증권’보다 중요한 이유는 번역 취향의 문제가 아니다.",
+    "targetEvidence": "블록체인이 현실 세계의 금융 인프라로 스며들기 시작했다는 것은 동시에 일어나고 있는 같은 전환의 양면이다.",
+    "label": "「\"크립토는 죽었다\"에 대한 생각」은 「토큰증권보다 증권형 토큰이 더 중요하다」의 공통 금융 레일을 산업 인프라 전환의 맥락에서 다시 바라본다",
+    "signalDetails": {
+      "lexicalOverlap": 7,
+      "overlapTokens": [
+        "블록체인",
+        "금융",
+        "인프라",
+        "자산",
+        "현실",
+        "시스템",
+        "토큰"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "블록체인 금융 인프라"
+      ]
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=7;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "security-token-rail",
+    "sourceClaimId": "security-token-rail-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "human-review"
+    ],
+    "status": "approved",
+    "to": "post-144",
+    "type": "APPLIES",
+    "strength": 0.78,
+    "sourceEvidence": "돈도 같은 레일에 올라와야 한다.",
+    "targetEvidence": "그렇게 되면 결제·재무 인프라로의 확장은 급속히 이루어질 겁니다.",
+    "label": "「Circle in Seoul: Jeremy Allaire와의 대화」는 「토큰증권보다 증권형 토큰이 더 중요하다」의 결제 레일 구상을 스테이블코인 인프라에 적용한다",
+    "signalDetails": {
+      "lexicalOverlap": 6,
+      "overlapTokens": [
+        "스테이블코인",
+        "결제",
+        "금융",
+        "인프라",
+        "토큰",
+        "은행"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "결제 인프라",
+        "스테이블코인"
+      ]
+    },
+    "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=6;titleOverlap=0;challengeSignal=false"
   }
 ]

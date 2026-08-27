@@ -1,7 +1,13 @@
 {
-  "timestamp": "2026-08-24T19:00:55.052Z",
-  "newPosts": [],
+  "timestamp": "2026-08-27T14:24:42.972Z",
+  "newPosts": [
+    {
+      "slug": "security-token-rail",
+      "title": "토큰증권보다 증권형 토큰이 더 중요하다",
+      "msgId": 202
+    }
+  ],
   "reactionsUpdated": 2,
   "errors": [],
-  "message": "🐇 **토끼굴 싱크 완료**\n\n💫 좋아요 2건 업데이트"
+  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • 토큰증권보다 증권형 토큰이 더 중요하다 (#202)\n\n💫 좋아요 2건 업데이트"
 }

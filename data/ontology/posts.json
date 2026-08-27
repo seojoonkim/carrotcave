@@ -5392,5 +5392,54 @@
         "legacy-relations"
       ]
     }
+  },
+  "security-token-rail": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-증권형 토큰",
+      "tag-Security Token",
+      "tag-토큰화"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "security-token-rail-c1",
+        "text": "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다.",
+        "stance": "asserts",
+        "evidence": "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다."
+      }
+    ],
+    "entities": [
+      "Security Token",
+      "Tokenized Security",
+      "STO"
+    ],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "증권형 토큰",
+      "공통 토큰 레일",
+      "금융 인프라"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "reviewed-incremental-publication",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "human-review"
+      ]
+    }
   }
 }
