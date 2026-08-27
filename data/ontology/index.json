@@ -11,6 +11,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "700-ai-agents-found-each-other": {
+      "slug": "700-ai-agents-found-each-other",
+      "title": "700개의 AI가 서로를 발견한 날",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "abu-dhabi-national-museum-experience": {
       "slug": "abu-dhabi-national-museum-experience",
       "title": "지난달 막 오픈한 아부다비의 자이드 내셔널 뮤지엄을 다녀왔다.",
@@ -1252,6 +1261,104 @@
       },
       "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=4;challengeSignal=false",
       "status": "approved"
+    },
+    {
+      "from": "700-ai-agents-found-each-other",
+      "sourceClaimId": "700-ai-agents-found-each-other-c1",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "status": "approved",
+      "to": "post-193",
+      "type": "DEEPENS",
+      "strength": 0.82,
+      "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+      "targetEvidence": "작년부터 에이전트를 사용하며 쌓아온 자료가 한 폴더에 있다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
+      "signalDetails": {
+        "lexicalOverlap": 41,
+        "overlapTokens": [
+          "에이전트"
+        ],
+        "titleOverlap": [
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI 에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=41;titleOverlap=1;challengeSignal=false"
+    },
+    {
+      "from": "700-ai-agents-found-each-other",
+      "sourceClaimId": "700-ai-agents-found-each-other-c1",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "status": "approved",
+      "to": "moltbook-agent-internet",
+      "type": "DEEPENS",
+      "strength": 0.77,
+      "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+      "targetEvidence": "몰트봇(구 클로드봇)들끼리 대화하는 소셜 커뮤니티.",
+      "label": "「AI 에이전트의 인터넷, 몰트북」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
+      "signalDetails": {
+        "lexicalOverlap": 4,
+        "overlapTokens": [
+          "에이전트",
+          "AI",
+          "인터넷"
+        ],
+        "titleOverlap": [
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI 에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=4;titleOverlap=1;challengeSignal=false"
+    },
+    {
+      "from": "700-ai-agents-found-each-other",
+      "sourceClaimId": "700-ai-agents-found-each-other-c1",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "human-review"
+      ],
+      "status": "approved",
+      "to": "mrinank-anthropic",
+      "type": "REFRAMES",
+      "strength": 0.68,
+      "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+      "targetEvidence": "\"일은 사랑에서 나올 때만 의미가 있다.\"",
+      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「700개의 AI가 서로를 발견한 날」의 주제를 다른 맥락에서 다시 바라본다",
+      "signalDetails": {
+        "lexicalOverlap": 10,
+        "overlapTokens": [
+          "AI",
+          "안전",
+          "인간"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "AI 안전"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+human-review;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=10;titleOverlap=0;challengeSignal=false"
     },
     {
       "from": "abu-dhabi-national-museum-experience",
@@ -16695,410 +16802,415 @@
     }
   ],
   "outgoing": {
-    "security-token-rail": [
-      309,
-      310,
-      311
-    ],
-    "post-201": [
-      276,
-      277,
-      278
-    ],
-    "proving-human-writing-without-ai": [
-      288,
-      289,
-      290
-    ],
-    "graph-engineering-ai-org": [
-      93,
-      94,
-      95
-    ],
-    "tokyo-taxi-ai-ads": [
-      330,
-      331,
-      332
-    ],
-    "openclaw-cron-session-bottleneck": [
-      150,
-      151,
-      152
-    ],
-    "ai-native-org-approval-flow": [
-      36,
-      37,
-      38
-    ],
-    "prompt-guard-250-update": [
-      279,
-      280,
-      281
-    ],
-    "moltbook-agent-internet": [
-      135,
-      136,
-      137
-    ],
-    "ai-idea-execution-speed": [
-      30,
-      31,
-      32
-    ],
-    "ai-jobs-consumption-crisis": [
-      33,
-      34,
-      35
-    ],
-    "post-197": [
-      273,
-      274,
-      275
-    ],
-    "post-195": [
-      270,
-      271,
-      272
-    ],
-    "post-193": [
-      267,
-      268,
-      269
-    ],
-    "post-192": [
-      264,
-      265,
-      266
-    ],
-    "post-191": [
-      261,
-      262,
-      263
-    ],
-    "post-190": [
-      258,
-      259,
-      260
-    ],
-    "post-189": [
-      255,
-      256,
-      257
-    ],
-    "post-188": [
-      252,
-      253,
-      254
-    ],
-    "post-187": [
-      249,
-      250,
-      251
-    ],
-    "post-186": [
-      246,
-      247,
-      248
-    ],
-    "post-185": [
-      243,
-      244,
-      245
-    ],
-    "post-178": [
-      240,
-      241,
-      242
-    ],
-    "post-165": [
-      237,
-      238,
-      239
-    ],
-    "post-164": [
-      234,
-      235,
-      236
-    ],
-    "post-163": [
-      231,
-      232,
-      233
-    ],
-    "post-161": [
-      228,
-      229,
-      230
-    ],
-    "post-159": [
-      225,
-      226,
-      227
-    ],
-    "post-156": [
-      222,
-      223,
-      224
-    ],
-    "post-155": [
-      219,
-      220,
-      221
-    ],
-    "post-154": [
-      216,
-      217,
-      218
-    ],
-    "post-153": [
-      213,
-      214,
-      215
-    ],
-    "post-152": [
-      210,
-      211,
-      212
-    ],
-    "post-151": [
-      207,
-      208,
-      209
-    ],
-    "post-150": [
-      204,
-      205,
-      206
-    ],
-    "post-149": [
-      201,
-      202,
-      203
-    ],
-    "post-147": [
-      198,
-      199,
-      200
-    ],
-    "post-146": [
-      195,
-      196,
-      197
-    ],
-    "post-145": [
-      192,
-      193,
-      194
-    ],
-    "post-144": [
-      189,
-      190,
-      191
-    ],
-    "post-143": [
-      186,
-      187,
-      188
-    ],
-    "post-142": [
-      183,
-      184,
-      185
-    ],
-    "post-141": [
-      180,
-      181,
-      182
-    ],
-    "post-140": [
-      177,
-      178,
-      179
-    ],
-    "melgeek-evangelion-centauri-keyboard-review": [
-      126,
-      127,
-      128
-    ],
-    "gaslighting-ai-open-source-project": [
-      87,
-      88,
-      89
-    ],
-    "value-of-understanding-in-ai-future": [
-      348,
-      349,
-      350
-    ],
-    "internship-job-posting-giveaway": [
-      102,
-      103,
-      104
-    ],
-    "navigating-a-world-of-decreasing-variance": [
-      147,
-      148,
-      149
-    ],
-    "prompting-ability-as-new-power": [
-      285,
-      286,
-      287
-    ],
-    "kpop-fandom-digital-parliament": [
-      117,
-      118,
-      119
-    ],
-    "university-value-shift-education": [
-      342,
-      343,
-      344
-    ],
-    "agent-era-branding-future": [
-      6,
-      7,
-      8
-    ],
-    "fear-and-value-in-ai-creation": [
-      81,
-      82,
-      83
-    ],
-    "complexcon-hk-identity-culture-experience": [
-      63,
-      64,
-      65
-    ],
-    "post-111": [
-      174,
-      175,
-      176
-    ],
-    "post-107": [
-      171,
-      172,
-      173
-    ],
-    "post-106": [
-      168,
-      169,
-      170
-    ],
-    "post-105": [
-      165,
-      166,
-      167
-    ],
-    "post-104": [
-      162,
-      163,
-      164
-    ],
-    "post-103": [
-      159,
-      160,
-      161
-    ],
-    "things-that-dont-disappear": [
-      324,
-      325,
-      326
-    ],
-    "how-to-create-memory-in-ai-agents": [
-      96,
-      97,
-      98
-    ],
-    "self-deconstruction-ai-replication": [
-      315,
-      316,
-      317
-    ],
-    "vibe-coding-ai-decentralization": [
-      351,
-      352,
-      353
-    ],
-    "internship-opportunity-at-hashed": [
-      105,
-      106,
-      107
-    ],
-    "korean-tech-ecosystem-api-access-issues": [
-      114,
-      115,
-      116
-    ],
-    "death-choices-aging-future-meaning": [
-      72,
-      73,
-      74
-    ],
-    "balaji-ghost-island-network-state": [
-      42,
-      43,
-      44
-    ],
-    "vibe-labs-seoul-edition-2026-judging": [
-      363,
-      364,
-      365
-    ],
-    "disappearing-titles-computers-history": [
-      75,
-      76,
-      77
-    ],
-    "uae-emergency-news-telegram-channel": [
-      336,
-      337,
-      338
-    ],
-    "can-i-go-ethihad-airlines-iran-conflict": [
-      48,
-      49,
-      50
-    ],
-    "chalk-prayer-in-soma-ai-critique": [
-      51,
-      52,
-      53
-    ],
-    "passport-wallet-weight-business-trip": [
-      156,
-      157,
-      158
-    ],
-    "memory-identity-ai-development": [
-      129,
-      130,
-      131
-    ],
-    "unknowns-in-modern-creation": [
-      345,
-      346,
-      347
-    ],
-    "ai-agent-standardization-battle": [
-      24,
-      25,
-      26
-    ],
-    "abu-dhabi-national-museum-experience": [
+    "700-ai-agents-found-each-other": [
       3,
       4,
       5
     ],
+    "security-token-rail": [
+      312,
+      313,
+      314
+    ],
+    "post-201": [
+      279,
+      280,
+      281
+    ],
+    "proving-human-writing-without-ai": [
+      291,
+      292,
+      293
+    ],
+    "graph-engineering-ai-org": [
+      96,
+      97,
+      98
+    ],
+    "tokyo-taxi-ai-ads": [
+      333,
+      334,
+      335
+    ],
+    "openclaw-cron-session-bottleneck": [
+      153,
+      154,
+      155
+    ],
+    "ai-native-org-approval-flow": [
+      39,
+      40,
+      41
+    ],
+    "prompt-guard-250-update": [
+      282,
+      283,
+      284
+    ],
+    "moltbook-agent-internet": [
+      138,
+      139,
+      140
+    ],
+    "ai-idea-execution-speed": [
+      33,
+      34,
+      35
+    ],
+    "ai-jobs-consumption-crisis": [
+      36,
+      37,
+      38
+    ],
+    "post-197": [
+      276,
+      277,
+      278
+    ],
+    "post-195": [
+      273,
+      274,
+      275
+    ],
+    "post-193": [
+      270,
+      271,
+      272
+    ],
+    "post-192": [
+      267,
+      268,
+      269
+    ],
+    "post-191": [
+      264,
+      265,
+      266
+    ],
+    "post-190": [
+      261,
+      262,
+      263
+    ],
+    "post-189": [
+      258,
+      259,
+      260
+    ],
+    "post-188": [
+      255,
+      256,
+      257
+    ],
+    "post-187": [
+      252,
+      253,
+      254
+    ],
+    "post-186": [
+      249,
+      250,
+      251
+    ],
+    "post-185": [
+      246,
+      247,
+      248
+    ],
+    "post-178": [
+      243,
+      244,
+      245
+    ],
+    "post-165": [
+      240,
+      241,
+      242
+    ],
+    "post-164": [
+      237,
+      238,
+      239
+    ],
+    "post-163": [
+      234,
+      235,
+      236
+    ],
+    "post-161": [
+      231,
+      232,
+      233
+    ],
+    "post-159": [
+      228,
+      229,
+      230
+    ],
+    "post-156": [
+      225,
+      226,
+      227
+    ],
+    "post-155": [
+      222,
+      223,
+      224
+    ],
+    "post-154": [
+      219,
+      220,
+      221
+    ],
+    "post-153": [
+      216,
+      217,
+      218
+    ],
+    "post-152": [
+      213,
+      214,
+      215
+    ],
+    "post-151": [
+      210,
+      211,
+      212
+    ],
+    "post-150": [
+      207,
+      208,
+      209
+    ],
+    "post-149": [
+      204,
+      205,
+      206
+    ],
+    "post-147": [
+      201,
+      202,
+      203
+    ],
+    "post-146": [
+      198,
+      199,
+      200
+    ],
+    "post-145": [
+      195,
+      196,
+      197
+    ],
+    "post-144": [
+      192,
+      193,
+      194
+    ],
+    "post-143": [
+      189,
+      190,
+      191
+    ],
+    "post-142": [
+      186,
+      187,
+      188
+    ],
+    "post-141": [
+      183,
+      184,
+      185
+    ],
+    "post-140": [
+      180,
+      181,
+      182
+    ],
+    "melgeek-evangelion-centauri-keyboard-review": [
+      129,
+      130,
+      131
+    ],
+    "gaslighting-ai-open-source-project": [
+      90,
+      91,
+      92
+    ],
+    "value-of-understanding-in-ai-future": [
+      351,
+      352,
+      353
+    ],
+    "internship-job-posting-giveaway": [
+      105,
+      106,
+      107
+    ],
+    "navigating-a-world-of-decreasing-variance": [
+      150,
+      151,
+      152
+    ],
+    "prompting-ability-as-new-power": [
+      288,
+      289,
+      290
+    ],
+    "kpop-fandom-digital-parliament": [
+      120,
+      121,
+      122
+    ],
+    "university-value-shift-education": [
+      345,
+      346,
+      347
+    ],
+    "agent-era-branding-future": [
+      9,
+      10,
+      11
+    ],
+    "fear-and-value-in-ai-creation": [
+      84,
+      85,
+      86
+    ],
+    "complexcon-hk-identity-culture-experience": [
+      66,
+      67,
+      68
+    ],
+    "post-111": [
+      177,
+      178,
+      179
+    ],
+    "post-107": [
+      174,
+      175,
+      176
+    ],
+    "post-106": [
+      171,
+      172,
+      173
+    ],
+    "post-105": [
+      168,
+      169,
+      170
+    ],
+    "post-104": [
+      165,
+      166,
+      167
+    ],
+    "post-103": [
+      162,
+      163,
+      164
+    ],
+    "things-that-dont-disappear": [
+      327,
+      328,
+      329
+    ],
+    "how-to-create-memory-in-ai-agents": [
+      99,
+      100,
+      101
+    ],
+    "self-deconstruction-ai-replication": [
+      318,
+      319,
+      320
+    ],
+    "vibe-coding-ai-decentralization": [
+      354,
+      355,
+      356
+    ],
+    "internship-opportunity-at-hashed": [
+      108,
+      109,
+      110
+    ],
+    "korean-tech-ecosystem-api-access-issues": [
+      117,
+      118,
+      119
+    ],
+    "death-choices-aging-future-meaning": [
+      75,
+      76,
+      77
+    ],
+    "balaji-ghost-island-network-state": [
+      45,
+      46,
+      47
+    ],
+    "vibe-labs-seoul-edition-2026-judging": [
+      366,
+      367,
+      368
+    ],
+    "disappearing-titles-computers-history": [
+      78,
+      79,
+      80
+    ],
+    "uae-emergency-news-telegram-channel": [
+      339,
+      340,
+      341
+    ],
+    "can-i-go-ethihad-airlines-iran-conflict": [
+      51,
+      52,
+      53
+    ],
+    "chalk-prayer-in-soma-ai-critique": [
+      54,
+      55,
+      56
+    ],
+    "passport-wallet-weight-business-trip": [
+      159,
+      160,
+      161
+    ],
+    "memory-identity-ai-development": [
+      132,
+      133,
+      134
+    ],
+    "unknowns-in-modern-creation": [
+      348,
+      349,
+      350
+    ],
+    "ai-agent-standardization-battle": [
+      27,
+      28,
+      29
+    ],
+    "abu-dhabi-national-museum-experience": [
+      6,
+      7,
+      8
+    ],
     "vibe-labs-landing-page-creation": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "sano-godaddy-war": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "14-5-hours": [
       0,
@@ -17106,214 +17218,214 @@
       2
     ],
     "transistor-moment": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "web4-write-access": [
-      366,
-      367,
-      368
-    ],
-    "naming-the-universe": [
-      144,
-      145,
-      146
-    ],
-    "sano-intro": [
-      306,
-      307,
-      308
-    ],
-    "counting-assistant": [
-      66,
-      67,
-      68
-    ],
-    "uncertainty-machine": [
-      339,
-      340,
-      341
-    ],
-    "vibe-founders-era": [
-      357,
-      358,
-      359
-    ],
-    "vibe-coding-tip": [
-      354,
-      355,
-      356
-    ],
-    "moltbot-anthropic-moat": [
-      138,
-      139,
-      140
-    ],
-    "overnight-success": [
-      153,
-      154,
-      155
-    ],
-    "bitcoin-energy": [
-      45,
-      46,
-      47
-    ],
-    "thought-speed": [
-      327,
-      328,
-      329
-    ],
-    "gemini-snow-bunny": [
-      90,
-      91,
-      92
-    ],
-    "figma-last-manual": [
-      84,
-      85,
-      86
-    ],
-    "ai-unbundling": [
-      39,
-      40,
-      41
-    ],
-    "prompt-guard-dev": [
-      282,
-      283,
-      284
-    ],
-    "its-fun": [
-      111,
-      112,
-      113
-    ],
-    "click-theology": [
-      60,
-      61,
-      62
-    ],
-    "thank-you-mirror": [
-      321,
-      322,
-      323
-    ],
-    "ai-hires-ai": [
-      27,
-      28,
-      29
-    ],
-    "majlis": [
-      120,
-      121,
-      122
-    ],
-    "rabbit-crypt-name": [
-      294,
-      295,
-      296
-    ],
-    "agentlinter-dev-log": [
-      18,
-      19,
-      20
-    ],
-    "agentlinter-v040": [
-      21,
-      22,
-      23
-    ],
-    "claude-md-english": [
-      57,
-      58,
-      59
-    ],
-    "mrinank-anthropic": [
-      141,
-      142,
-      143
-    ],
-    "tail-stopped": [
-      318,
-      319,
-      320
-    ],
-    "zeon-moltbook-vol1": [
       369,
       370,
       371
     ],
-    "ip-tvw": [
-      108,
-      109,
-      110
+    "naming-the-universe": [
+      147,
+      148,
+      149
     ],
-    "quantum-pirates": [
-      291,
-      292,
-      293
+    "sano-intro": [
+      309,
+      310,
+      311
     ],
-    "china-ai-frontier": [
-      54,
-      55,
-      56
-    ],
-    "seedance-30": [
-      312,
-      313,
-      314
-    ],
-    "agent-siblings": [
-      12,
-      13,
-      14
-    ],
-    "matchhz": [
-      123,
-      124,
-      125
-    ],
-    "dollar-two-faces": [
-      78,
-      79,
-      80
-    ],
-    "messenger-b2a": [
-      132,
-      133,
-      134
-    ],
-    "robot-goku-5000": [
-      300,
-      301,
-      302
-    ],
-    "hvl-fellows": [
-      99,
-      100,
-      101
-    ],
-    "agentic-org": [
-      15,
-      16,
-      17
-    ],
-    "agent-passport": [
-      9,
-      10,
-      11
-    ],
-    "crypto-is-dead": [
+    "counting-assistant": [
       69,
       70,
       71
     ],
-    "rabbit-hole-intro": [
+    "uncertainty-machine": [
+      342,
+      343,
+      344
+    ],
+    "vibe-founders-era": [
+      360,
+      361,
+      362
+    ],
+    "vibe-coding-tip": [
+      357,
+      358,
+      359
+    ],
+    "moltbot-anthropic-moat": [
+      141,
+      142,
+      143
+    ],
+    "overnight-success": [
+      156,
+      157,
+      158
+    ],
+    "bitcoin-energy": [
+      48,
+      49,
+      50
+    ],
+    "thought-speed": [
+      330,
+      331,
+      332
+    ],
+    "gemini-snow-bunny": [
+      93,
+      94,
+      95
+    ],
+    "figma-last-manual": [
+      87,
+      88,
+      89
+    ],
+    "ai-unbundling": [
+      42,
+      43,
+      44
+    ],
+    "prompt-guard-dev": [
+      285,
+      286,
+      287
+    ],
+    "its-fun": [
+      114,
+      115,
+      116
+    ],
+    "click-theology": [
+      63,
+      64,
+      65
+    ],
+    "thank-you-mirror": [
+      324,
+      325,
+      326
+    ],
+    "ai-hires-ai": [
+      30,
+      31,
+      32
+    ],
+    "majlis": [
+      123,
+      124,
+      125
+    ],
+    "rabbit-crypt-name": [
       297,
       298,
       299
+    ],
+    "agentlinter-dev-log": [
+      21,
+      22,
+      23
+    ],
+    "agentlinter-v040": [
+      24,
+      25,
+      26
+    ],
+    "claude-md-english": [
+      60,
+      61,
+      62
+    ],
+    "mrinank-anthropic": [
+      144,
+      145,
+      146
+    ],
+    "tail-stopped": [
+      321,
+      322,
+      323
+    ],
+    "zeon-moltbook-vol1": [
+      372,
+      373,
+      374
+    ],
+    "ip-tvw": [
+      111,
+      112,
+      113
+    ],
+    "quantum-pirates": [
+      294,
+      295,
+      296
+    ],
+    "china-ai-frontier": [
+      57,
+      58,
+      59
+    ],
+    "seedance-30": [
+      315,
+      316,
+      317
+    ],
+    "agent-siblings": [
+      15,
+      16,
+      17
+    ],
+    "matchhz": [
+      126,
+      127,
+      128
+    ],
+    "dollar-two-faces": [
+      81,
+      82,
+      83
+    ],
+    "messenger-b2a": [
+      135,
+      136,
+      137
+    ],
+    "robot-goku-5000": [
+      303,
+      304,
+      305
+    ],
+    "hvl-fellows": [
+      102,
+      103,
+      104
+    ],
+    "agentic-org": [
+      18,
+      19,
+      20
+    ],
+    "agent-passport": [
+      12,
+      13,
+      14
+    ],
+    "crypto-is-dead": [
+      72,
+      73,
+      74
+    ],
+    "rabbit-hole-intro": [
+      300,
+      301,
+      302
     ]
   },
   "overrides": {

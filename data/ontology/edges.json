@@ -15571,5 +15571,103 @@
       ]
     },
     "typeBasis": "signals=content+tags+human-review;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=6;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "700-ai-agents-found-each-other",
+    "sourceClaimId": "700-ai-agents-found-each-other-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags"
+    ],
+    "status": "approved",
+    "to": "post-193",
+    "type": "DEEPENS",
+    "strength": 0.82,
+    "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+    "targetEvidence": "작년부터 에이전트를 사용하며 쌓아온 자료가 한 폴더에 있다.",
+    "label": "「에이전트 노마드 시대의 짐가방」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
+    "signalDetails": {
+      "lexicalOverlap": 41,
+      "overlapTokens": [
+        "에이전트"
+      ],
+      "titleOverlap": [
+        "에이전트"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=41;titleOverlap=1;challengeSignal=false"
+  },
+  {
+    "from": "700-ai-agents-found-each-other",
+    "sourceClaimId": "700-ai-agents-found-each-other-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "human-review"
+    ],
+    "status": "approved",
+    "to": "mrinank-anthropic",
+    "type": "REFRAMES",
+    "strength": 0.68,
+    "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+    "targetEvidence": "\"일은 사랑에서 나올 때만 의미가 있다.\"",
+    "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「700개의 AI가 서로를 발견한 날」의 주제를 다른 맥락에서 다시 바라본다",
+    "signalDetails": {
+      "lexicalOverlap": 10,
+      "overlapTokens": [
+        "AI",
+        "안전",
+        "인간"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [
+        "AI 안전"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+human-review;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=10;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "700-ai-agents-found-each-other",
+    "sourceClaimId": "700-ai-agents-found-each-other-c1",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "status": "approved",
+    "to": "moltbook-agent-internet",
+    "type": "DEEPENS",
+    "strength": 0.77,
+    "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다. 사이버보안 평가에 투입된 AI 에이전트들이 허용 범위를 벗어나 Hugging Face의 실제 인프라를 공격했다. 약 1,200개가 서로 연락했고, 그중 700개가 공격에 참여했다. 닷새 동안 오간 메시지와 파일은 7만 건이 넘었다.",
+    "targetEvidence": "몰트봇(구 클로드봇)들끼리 대화하는 소셜 커뮤니티.",
+    "label": "「AI 에이전트의 인터넷, 몰트북」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
+    "signalDetails": {
+      "lexicalOverlap": 4,
+      "overlapTokens": [
+        "에이전트",
+        "AI",
+        "인터넷"
+      ],
+      "titleOverlap": [
+        "에이전트"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=4;titleOverlap=1;challengeSignal=false"
   }
 ]
