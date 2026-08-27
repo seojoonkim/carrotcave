@@ -31,6 +31,18 @@ export function parseMessageId(value) {
   return id;
 }
 
+export function telegramCalendarDate(value, timeZone = 'Asia/Seoul') {
+  if (!value) return null;
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(parsed);
+}
+
 export function hashContent(text) {
   const sample = text.slice(0, 200) + text.slice(-200);
   let hash = text.length;
@@ -96,7 +108,7 @@ function parseSingleMessage(html, requestedId) {
       if (!videoUrls.includes(url)) videoUrls.push(url);
     }
 
-    messages.push({ id, title, content, fullText, date: dateMatch?.[1].split('T')[0] ?? null, reactions, mediaUrls, videoUrls });
+    messages.push({ id, title, content, fullText, date: telegramCalendarDate(dateMatch?.[1]), reactions, mediaUrls, videoUrls });
   }
 
   if (messages.length !== 1 || messages[0].id !== requestedId) {

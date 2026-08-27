@@ -25,6 +25,7 @@ import { execFileSync, execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
 import ts from 'typescript';
+import { telegramCalendarDate } from './publish-single-message.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -225,7 +226,7 @@ function parseMessages(html) {
 
     // Date
     const dateMatch = block.match(/datetime="([^"]+)"/);
-    const date = dateMatch ? dateMatch[1].split('T')[0] : null;
+    const date = telegramCalendarDate(dateMatch?.[1]);
 
     // Reactions: parse tgme_widget_message_reactions div
     // Structure: <span class="tgme_reaction"><i class="emoji">...</i>COUNT</span>

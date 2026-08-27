@@ -68,12 +68,20 @@ test('archive and voice menu headers consume one shared chrome contract', () => 
   assert.doesNotMatch(voiceReaderSystemStyles, /\.site-header\s*\{[^}]*box-shadow:\s*none/);
 });
 
+test('mobile archive chrome draws its single divider below the menu rail', () => {
+  assert.match(stylesSource, /@media\(max-width:900px\)\{\s*\.cc-header:not\(\.cc-header--reading\)\{[^}]*border-bottom:0!important[^}]*\}/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[\s\S]*?\.cc-header-axis-mobile\{[^}]*border-bottom:1px solid var\(--cc-header-divider\)/);
+  assert.doesNotMatch(stylesSource, /\.cc-header-axis-mobile \.axis-rail\{[^}]*border-top:/);
+});
+
 test('all reading surfaces keep progress semantics while the shared header divider stays independent', () => {
   assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
   assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
   assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);
   assert.match(readingProgressSource, /style\.transform = `scaleX\(\$\{percent \/ 100\}\)`/);
   assert.match(stylesSource, /\.cc-reading-progress\{display:none!important\}/);
+  assert.match(syncSource, /telegramCalendarDate\(dateMatch\?\.\[1\]\)/);
+  assert.doesNotMatch(syncSource, /dateMatch\s*\?\s*dateMatch\[1\]\.split\('T'\)\[0\]/);
   assert.doesNotMatch(stylesSource, /\.cc-reading-progress\{[^}]*bottom:-1px;[^}]*height:1px;/);
 
   assert.ok(voiceReaderFixtures.length > 0, 'at least one voice reader directory must be discovered');

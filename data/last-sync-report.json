@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-08-27T14:24:42.972Z",
+  "timestamp": "2026-08-27T17:36:38.000Z",
   "newPosts": [
     {
-      "slug": "security-token-rail",
-      "title": "토큰증권보다 증권형 토큰이 더 중요하다",
-      "msgId": 202
+      "slug": "700-ai-agents-found-each-other",
+      "title": "700개의 AI가 서로를 발견한 날",
+      "msgId": 203
     }
   ],
-  "reactionsUpdated": 2,
+  "reactionsUpdated": 0,
   "errors": [],
-  "message": "🐇 **토끼굴 싱크 완료**\n\n➕ **새 글 1편 추가:**\n  • 토큰증권보다 증권형 토큰이 더 중요하다 (#202)\n\n💫 좋아요 2건 업데이트"
+  "message": "🐇 **토끼굴 싱크 완료**\n\n🔄 **Telegram 기준 재동기화 1편:**\n  • 700개의 AI가 서로를 발견한 날 (#203)"
 }

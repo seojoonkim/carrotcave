@@ -225,6 +225,11 @@
   .cc-header--reading .cc-brand{width:56px;min-width:56px;gap:10px}
 }
 
+@media(max-width:900px){
+  .cc-header:not(.cc-header--reading){border-bottom:0!important}
+  .cc-header-axis-mobile{border-bottom:1px solid var(--cc-header-divider)}
+}
+
 /* Narrow web widths use the same card rhythm and type scale as the mobile archive. */
 @media (min-width:521px) and (max-width:900px){
   .editorial-wall{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:12.6px}

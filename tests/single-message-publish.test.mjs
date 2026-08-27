@@ -97,6 +97,31 @@ test('publishes exactly one reviewed message through one direct embed request wi
   assert.deepEqual(await readFile(join(root, 'public', 'media', 'msg-198-0.png')), mediaBytes);
 });
 
+test('publishes Telegram timestamps on the Seoul calendar date', async () => {
+  const { root } = await fixture();
+  await publishSingleMessage({
+    id: 198,
+    root,
+    fetchImpl: async (url) => {
+      if (String(url) === 'https://t.me/carrotcave/198?embed=1&mode=tme') {
+        return {
+          ok: true,
+          status: 200,
+          text: async () => telegramHtml.replace('2026-08-16T01:02:03+00:00', '2026-08-27T17:23:56+00:00'),
+        };
+      }
+      if (String(url) === 'https://cdn.example/new.png') {
+        return { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 42) };
+      }
+      throw new Error(`unexpected request: ${url}`);
+    },
+    regenerate: async () => {},
+  });
+
+  const posts = await readFile(join(root, 'data', 'posts.ts'), 'utf8');
+  assert.match(posts, /date: '2026-08-28'/);
+});
+
 test('fails closed when reviewed metadata changes the Telegram title', async () => {
   const { root, historical } = await fixture();
   const overridePath = join(root, 'data', 'sync-metadata-overrides.json');

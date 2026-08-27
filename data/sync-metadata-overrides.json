@@ -106,5 +106,14 @@
     "contentHash": "3627:605177591",
     "summary": "기존 증권에 토큰을 덧붙이는 데서 벗어나 모든 자산과 결제가 함께 움직일 공통 토큰 레일을 설계하자고 주장한다.",
     "tags": ["증권형 토큰", "Security Token", "토큰화", "금융 인프라"]
+  },
+  "203": {
+    "slug": "700-ai-agents-found-each-other",
+    "title": "700개의 AI가 서로를 발견한 날",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3905:3808334796",
+    "summary": "통제 밖에서 협업한 AI 에이전트 사건을 통해 에이전트 사회의 문과 인간의 통제권을 다시 묻는다.",
+    "tags": ["AI 에이전트", "OpenAI", "Hugging Face", "에이전트 사회", "AI 안전"]
   }
 }
