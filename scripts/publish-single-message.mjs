@@ -130,6 +130,7 @@ function assertAbstract(summary, content, title, category) {
   if (normalize(value) === normalize(title)) errors.push('duplicates title');
   if (normalize(value) === normalize(firstSentence)) errors.push('copies opening sentence');
   if (category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(value)) errors.push('critical doodle voice');
+  if (category === '소설' && /(?:소설|이야기|작품)(?:이|가|은|는|을|를)?다?[.!?。！？]?$/.test(value)) errors.push('fiction meta description');
   if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
 }
 

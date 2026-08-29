@@ -548,6 +548,8 @@ slug 작성 원칙:
 
 summary 작성 원칙:
 - 정확히 한 문장이고 종결부호로 끝낼 것
+- 소설은 인물·상황·갈등의 출발점만 담은 담백한 시놉시스로 쓰고 결말이나 반전을 누설하지 말 것
+- 소설을 바깥에서 평가하거나 설명하는 '~하는 소설이다', '~하는 이야기다', '~을 다룬 작품이다' 같은 메타 표현을 쓰지 말 것
 - 낙서는 평가나 의미 부여 없이 무슨 일이 있었는지만 건조하게 쓸 것
 - 낙서에는 '~를 보여준다', '~를 되새긴다', '~를 강조한다', '~를 돌아본다', '~를 읽어낸다', '~를 감상한다' 같은 평론형 서술을 쓰지 말 것
 - 제목이나 본문 첫 문장을 그대로 반복하지 말 것
@@ -654,12 +656,8 @@ function generateFallbackSummary(msg, category) {
   const hasFiction = containsAny(text, ['문명', '의식', '관찰', '죽음', '기억', '바깥']);
 
   if (category === '소설') {
-    const topics = [];
-    if (hasSimulation) topics.push('시뮬레이션 인간과 복제 의식');
-    if (containsAny(text, ['문명', '주민', '세계'])) topics.push('무너진 문명과 새로 생긴 질문');
-    if (containsAny(text, ['관찰', '기록', '보고서'])) topics.push('관찰과 기록의 책임');
-    const lead = topics.slice(0, 2).join(', ') || '낯선 세계와 관찰의 긴장';
-    return `${lead}을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.`;
+    if (hasSimulation) return '멸망한 문명을 재현하는 시뮬레이션의 주민들이 자신들을 지켜보는 바깥을 의심하기 시작한다.';
+    return '낯선 세계에서 깨어난 인물이 자신을 둘러싼 기록과 기억의 빈틈을 따라 바깥의 존재를 의심하기 시작한다.';
   }
 
   if (category === '빌딩') {
@@ -703,6 +701,7 @@ export function assertPublishableAbstract(summary, content, title, category) {
   if (normalized(value) === normalized(title ?? '')) errors.push('duplicates title');
   if (normalized(value) === normalized(firstSentence)) errors.push('copies opening sentence');
   if (category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(value)) errors.push('critical doodle voice');
+  if (category === '소설' && /(?:소설|이야기|작품)(?:이|가|은|는|을|를)?다?[.!?。！？]?$/.test(value)) errors.push('fiction meta description');
   if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
   return value;
 }
