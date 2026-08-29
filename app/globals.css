@@ -227,7 +227,18 @@
 
 @media(max-width:900px){
   .cc-header:not(.cc-header--reading){border-bottom:0!important}
-  .cc-header-axis-mobile{border-bottom:1px solid var(--cc-header-divider)}
+  .cc-header-axis-mobile{border-bottom:0}
+  .cc-header-axis-mobile::after{
+    content:"";
+    position:absolute;
+    z-index:2;
+    right:0;
+    bottom:0;
+    left:0;
+    height:1px;
+    background:var(--cc-header-divider);
+    pointer-events:none;
+  }
 }
 
 /* Narrow web widths use the same card rhythm and type scale as the mobile archive. */

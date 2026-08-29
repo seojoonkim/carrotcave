@@ -70,7 +70,8 @@ test('archive and voice menu headers consume one shared chrome contract', () => 
 
 test('mobile archive chrome draws its single divider below the menu rail', () => {
   assert.match(stylesSource, /@media\(max-width:900px\)\{\s*\.cc-header:not\(\.cc-header--reading\)\{[^}]*border-bottom:0!important[^}]*\}/);
-  assert.match(stylesSource, /@media\(max-width:900px\)\{[\s\S]*?\.cc-header-axis-mobile\{[^}]*border-bottom:1px solid var\(--cc-header-divider\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[\s\S]*?\.cc-header-axis-mobile\{[^}]*border-bottom:0[^}]*\}/);
+  assert.match(stylesSource, /\.cc-header-axis-mobile::after\{[^}]*position:absolute;[^}]*z-index:2;[^}]*right:0;[^}]*bottom:0;[^}]*left:0;[^}]*height:1px;[^}]*background:var\(--cc-header-divider\);[^}]*pointer-events:none;/s);
   assert.doesNotMatch(stylesSource, /\.cc-header-axis-mobile \.axis-rail\{[^}]*border-top:/);
 });
 
