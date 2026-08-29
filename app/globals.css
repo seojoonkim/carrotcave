@@ -232,10 +232,11 @@
     content:"";
     position:absolute;
     z-index:2;
-    right:0;
     bottom:0;
-    left:0;
+    left:50%;
+    width:100vw;
     height:1px;
+    transform:translateX(-50%);
     background:color-mix(in srgb,var(--graphite) 80%,white 20%);
     pointer-events:none;
   }

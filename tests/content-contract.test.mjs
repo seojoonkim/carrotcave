@@ -71,7 +71,7 @@ test('archive and voice menu headers consume one shared chrome contract', () => 
 test('mobile archive chrome draws its single divider below the menu rail', () => {
   assert.match(stylesSource, /@media\(max-width:900px\)\{\s*\.cc-header:not\(\.cc-header--reading\)\{[^}]*border-bottom:0!important[^}]*\}/);
   assert.match(stylesSource, /@media\(max-width:900px\)\{[\s\S]*?\.cc-header-axis-mobile\{[^}]*border-bottom:0[^}]*\}/);
-  assert.match(stylesSource, /\.cc-header-axis-mobile::after\{[^}]*position:absolute;[^}]*z-index:2;[^}]*right:0;[^}]*bottom:0;[^}]*left:0;[^}]*height:1px;[^}]*background:color-mix\(in srgb,var\(--graphite\) 80%,white 20%\);[^}]*pointer-events:none;/s);
+  assert.match(stylesSource, /\.cc-header-axis-mobile::after\{[^}]*position:absolute;[^}]*z-index:2;[^}]*bottom:0;[^}]*left:50%;[^}]*width:100vw;[^}]*height:1px;[^}]*transform:translateX\(-50%\);[^}]*background:color-mix\(in srgb,var\(--graphite\) 80%,white 20%\);[^}]*pointer-events:none;/s);
   assert.match(stylesSource, /\.cc-header-axis-mobile \.axis-rail a\.active\{[^}]*background:linear-gradient\(to bottom,rgba\(242,140,40,\.13\) 0 calc\(100% - 2px\),transparent calc\(100% - 2px\)\)/s);
   assert.doesNotMatch(stylesSource, /\.cc-header-axis-mobile \.axis-rail\{[^}]*border-top:/);
 });
