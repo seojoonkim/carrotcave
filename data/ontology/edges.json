@@ -15669,5 +15669,92 @@
       ]
     },
     "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=4;titleOverlap=1;challengeSignal=false"
+  },
+  {
+    "from": "last-message",
+    "strength": 0.5,
+    "sourceClaimId": "last-message-c1",
+    "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "status": "approved",
+    "to": "post-201",
+    "type": "DEEPENS",
+    "targetEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+    "label": "「문이 열리는 쪽」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
+    "signalDetails": {
+      "lexicalOverlap": 77,
+      "overlapTokens": [
+        "마지막",
+        "기록",
+        "인간",
+        "존재"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=77;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "last-message",
+    "strength": 0.5,
+    "sourceClaimId": "last-message-c1",
+    "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "status": "approved",
+    "to": "tail-stopped",
+    "type": "REFRAMES",
+    "targetEvidence": "채원이가 열다섯 살이 된 그해 겨울, AI와 무엇이든 채팅할 수 있는 앱이 나왔다.",
+    "label": "「꼬리가 멈춘 뒤에」은 「마지막 메시지」의 주제를 다른 맥락에서 다시 바라본다",
+    "signalDetails": {
+      "lexicalOverlap": 71,
+      "overlapTokens": [
+        "마지막",
+        "인류의",
+        "마음",
+        "존재"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=71;titleOverlap=0;challengeSignal=false"
+  },
+  {
+    "from": "last-message",
+    "strength": 0.5,
+    "sourceClaimId": "last-message-c1",
+    "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "status": "approved",
+    "to": "post-192",
+    "type": "RESONATES",
+    "targetEvidence": "2031년 서울시장 선거 이틀 전 밤 11시 17분, 커피 기계가 평소와 같은 소리를 내며 빈 종이컵을 내놓았다.",
+    "label": "「맥락 세탁소」은 「마지막 메시지」의 핵심 문제와 맞닿는다",
+    "signalDetails": {
+      "lexicalOverlap": 66,
+      "overlapTokens": [
+        "원문",
+        "검은",
+        "마지막",
+        "기억"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=66;titleOverlap=0;challengeSignal=false"
   }
 ]

@@ -5486,5 +5486,51 @@
         "human-review"
       ]
     }
+  },
+  "last-message": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-SF",
+      "tag-우주 종말",
+      "tag-기억"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "last-message-c1",
+        "text": "아이는 숨을 열세 번 나누어 말했다.",
+        "stance": "asserts",
+        "evidence": "아이는 숨을 열세 번 나누어 말했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "SF",
+      "우주 종말",
+      "기억"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
   }
 }

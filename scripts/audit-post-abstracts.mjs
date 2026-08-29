@@ -17,6 +17,7 @@ const approvedFictionOpeningSynopses = new Map([
   ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원이 AI 앱에 뭉이가 마지막 순간 무엇을 느꼈는지 묻는다.'],
   ['matchhz', '2028년, 한 남자가 이상형을 잘 안다는 데이팅 서비스에 가입해 연애의 탐색과 대화를 AI 에이전트에 맡긴다.'],
   ['post-201', '시뮬레이션 인간과 복제 의식, 무너진 문명과 새로 생긴 질문을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.'],
+  ['last-message', '우주 종말에 남은 두 인격이 인류의 기억을 태워 다음 생명에게 전달할 단 하나의 문장을 남기는 이야기다.'],
 ]);
 const seen = new Map();
 const violations = [];

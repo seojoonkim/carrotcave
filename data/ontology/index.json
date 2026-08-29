@@ -371,6 +371,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "last-message": {
+      "slug": "last-message",
+      "title": "마지막 메시지",
+      "category": "소설",
+      "primaryTopics": [
+        "fiction"
+      ],
+      "reviewStatus": "approved"
+    },
     "majlis": {
       "slug": "majlis",
       "title": "느림과 공동체의 미학",
@@ -6343,6 +6352,93 @@
       },
       "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=74;titleOverlap=0;challengeSignal=false",
       "status": "approved"
+    },
+    {
+      "from": "last-message",
+      "strength": 0.5,
+      "sourceClaimId": "last-message-c1",
+      "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "status": "approved",
+      "to": "post-192",
+      "type": "RESONATES",
+      "targetEvidence": "2031년 서울시장 선거 이틀 전 밤 11시 17분, 커피 기계가 평소와 같은 소리를 내며 빈 종이컵을 내놓았다.",
+      "label": "「맥락 세탁소」은 「마지막 메시지」의 핵심 문제와 맞닿는다",
+      "signalDetails": {
+        "lexicalOverlap": 66,
+        "overlapTokens": [
+          "원문",
+          "검은",
+          "마지막",
+          "기억"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=66;titleOverlap=0;challengeSignal=false"
+    },
+    {
+      "from": "last-message",
+      "strength": 0.5,
+      "sourceClaimId": "last-message-c1",
+      "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "status": "approved",
+      "to": "post-201",
+      "type": "DEEPENS",
+      "targetEvidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+      "label": "「문이 열리는 쪽」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
+      "signalDetails": {
+        "lexicalOverlap": 77,
+        "overlapTokens": [
+          "마지막",
+          "기록",
+          "인간",
+          "존재"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=77;titleOverlap=0;challengeSignal=false"
+    },
+    {
+      "from": "last-message",
+      "strength": 0.5,
+      "sourceClaimId": "last-message-c1",
+      "sourceEvidence": "아이는 숨을 열세 번 나누어 말했다.",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "status": "approved",
+      "to": "tail-stopped",
+      "type": "REFRAMES",
+      "targetEvidence": "채원이가 열다섯 살이 된 그해 겨울, AI와 무엇이든 채팅할 수 있는 앱이 나왔다.",
+      "label": "「꼬리가 멈춘 뒤에」은 「마지막 메시지」의 주제를 다른 맥락에서 다시 바라본다",
+      "signalDetails": {
+        "lexicalOverlap": 71,
+        "overlapTokens": [
+          "마지막",
+          "인류의",
+          "마음",
+          "존재"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=71;titleOverlap=0;challengeSignal=false"
     },
     {
       "from": "majlis",
@@ -16802,25 +16898,30 @@
     }
   ],
   "outgoing": {
+    "last-message": [
+      123,
+      124,
+      125
+    ],
     "700-ai-agents-found-each-other": [
       3,
       4,
       5
     ],
     "security-token-rail": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "post-201": [
-      279,
-      280,
-      281
+      282,
+      283,
+      284
     ],
     "proving-human-writing-without-ai": [
-      291,
-      292,
-      293
+      294,
+      295,
+      296
     ],
     "graph-engineering-ai-org": [
       96,
@@ -16828,14 +16929,14 @@
       98
     ],
     "tokyo-taxi-ai-ads": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "openclaw-cron-session-bottleneck": [
-      153,
-      154,
-      155
+      156,
+      157,
+      158
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -16843,14 +16944,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      282,
-      283,
-      284
+      285,
+      286,
+      287
     ],
     "moltbook-agent-internet": [
-      138,
-      139,
-      140
+      141,
+      142,
+      143
     ],
     "ai-idea-execution-speed": [
       33,
@@ -16863,174 +16964,174 @@
       38
     ],
     "post-197": [
+      279,
+      280,
+      281
+    ],
+    "post-195": [
       276,
       277,
       278
     ],
-    "post-195": [
+    "post-193": [
       273,
       274,
       275
     ],
-    "post-193": [
+    "post-192": [
       270,
       271,
       272
     ],
-    "post-192": [
+    "post-191": [
       267,
       268,
       269
     ],
-    "post-191": [
+    "post-190": [
       264,
       265,
       266
     ],
-    "post-190": [
+    "post-189": [
       261,
       262,
       263
     ],
-    "post-189": [
+    "post-188": [
       258,
       259,
       260
     ],
-    "post-188": [
+    "post-187": [
       255,
       256,
       257
     ],
-    "post-187": [
+    "post-186": [
       252,
       253,
       254
     ],
-    "post-186": [
+    "post-185": [
       249,
       250,
       251
     ],
-    "post-185": [
+    "post-178": [
       246,
       247,
       248
     ],
-    "post-178": [
+    "post-165": [
       243,
       244,
       245
     ],
-    "post-165": [
+    "post-164": [
       240,
       241,
       242
     ],
-    "post-164": [
+    "post-163": [
       237,
       238,
       239
     ],
-    "post-163": [
+    "post-161": [
       234,
       235,
       236
     ],
-    "post-161": [
+    "post-159": [
       231,
       232,
       233
     ],
-    "post-159": [
+    "post-156": [
       228,
       229,
       230
     ],
-    "post-156": [
+    "post-155": [
       225,
       226,
       227
     ],
-    "post-155": [
+    "post-154": [
       222,
       223,
       224
     ],
-    "post-154": [
+    "post-153": [
       219,
       220,
       221
     ],
-    "post-153": [
+    "post-152": [
       216,
       217,
       218
     ],
-    "post-152": [
+    "post-151": [
       213,
       214,
       215
     ],
-    "post-151": [
+    "post-150": [
       210,
       211,
       212
     ],
-    "post-150": [
+    "post-149": [
       207,
       208,
       209
     ],
-    "post-149": [
+    "post-147": [
       204,
       205,
       206
     ],
-    "post-147": [
+    "post-146": [
       201,
       202,
       203
     ],
-    "post-146": [
+    "post-145": [
       198,
       199,
       200
     ],
-    "post-145": [
+    "post-144": [
       195,
       196,
       197
     ],
-    "post-144": [
+    "post-143": [
       192,
       193,
       194
     ],
-    "post-143": [
+    "post-142": [
       189,
       190,
       191
     ],
-    "post-142": [
+    "post-141": [
       186,
       187,
       188
     ],
-    "post-141": [
+    "post-140": [
       183,
       184,
       185
     ],
-    "post-140": [
-      180,
-      181,
-      182
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      129,
-      130,
-      131
+      132,
+      133,
+      134
     ],
     "gaslighting-ai-open-source-project": [
       90,
@@ -17038,9 +17139,9 @@
       92
     ],
     "value-of-understanding-in-ai-future": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "internship-job-posting-giveaway": [
       105,
@@ -17048,14 +17149,14 @@
       107
     ],
     "navigating-a-world-of-decreasing-variance": [
-      150,
-      151,
-      152
+      153,
+      154,
+      155
     ],
     "prompting-ability-as-new-power": [
-      288,
-      289,
-      290
+      291,
+      292,
+      293
     ],
     "kpop-fandom-digital-parliament": [
       120,
@@ -17063,9 +17164,9 @@
       122
     ],
     "university-value-shift-education": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "agent-era-branding-future": [
       9,
@@ -17083,39 +17184,39 @@
       68
     ],
     "post-111": [
+      180,
+      181,
+      182
+    ],
+    "post-107": [
       177,
       178,
       179
     ],
-    "post-107": [
+    "post-106": [
       174,
       175,
       176
     ],
-    "post-106": [
+    "post-105": [
       171,
       172,
       173
     ],
-    "post-105": [
+    "post-104": [
       168,
       169,
       170
     ],
-    "post-104": [
+    "post-103": [
       165,
       166,
       167
     ],
-    "post-103": [
-      162,
-      163,
-      164
-    ],
     "things-that-dont-disappear": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "how-to-create-memory-in-ai-agents": [
       99,
@@ -17123,14 +17224,14 @@
       101
     ],
     "self-deconstruction-ai-replication": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "vibe-coding-ai-decentralization": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "internship-opportunity-at-hashed": [
       108,
@@ -17153,9 +17254,9 @@
       47
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "disappearing-titles-computers-history": [
       78,
@@ -17163,9 +17264,9 @@
       80
     ],
     "uae-emergency-news-telegram-channel": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       51,
@@ -17178,19 +17279,19 @@
       56
     ],
     "passport-wallet-weight-business-trip": [
-      159,
-      160,
-      161
+      162,
+      163,
+      164
     ],
     "memory-identity-ai-development": [
-      132,
-      133,
-      134
+      135,
+      136,
+      137
     ],
     "unknowns-in-modern-creation": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -17203,14 +17304,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "sano-godaddy-war": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "14-5-hours": [
       0,
@@ -17218,24 +17319,24 @@
       2
     ],
     "transistor-moment": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "web4-write-access": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "naming-the-universe": [
-      147,
-      148,
-      149
+      150,
+      151,
+      152
     ],
     "sano-intro": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "counting-assistant": [
       69,
@@ -17243,29 +17344,29 @@
       71
     ],
     "uncertainty-machine": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "vibe-founders-era": [
+      363,
+      364,
+      365
+    ],
+    "vibe-coding-tip": [
       360,
       361,
       362
     ],
-    "vibe-coding-tip": [
-      357,
-      358,
-      359
-    ],
     "moltbot-anthropic-moat": [
-      141,
-      142,
-      143
+      144,
+      145,
+      146
     ],
     "overnight-success": [
-      156,
-      157,
-      158
+      159,
+      160,
+      161
     ],
     "bitcoin-energy": [
       48,
@@ -17273,9 +17374,9 @@
       50
     ],
     "thought-speed": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "gemini-snow-bunny": [
       93,
@@ -17293,9 +17394,9 @@
       44
     ],
     "prompt-guard-dev": [
-      285,
-      286,
-      287
+      288,
+      289,
+      290
     ],
     "its-fun": [
       114,
@@ -17308,9 +17409,9 @@
       65
     ],
     "thank-you-mirror": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "ai-hires-ai": [
       30,
@@ -17318,14 +17419,14 @@
       32
     ],
     "majlis": [
-      123,
-      124,
-      125
+      126,
+      127,
+      128
     ],
     "rabbit-crypt-name": [
-      297,
-      298,
-      299
+      300,
+      301,
+      302
     ],
     "agentlinter-dev-log": [
       21,
@@ -17343,19 +17444,19 @@
       62
     ],
     "mrinank-anthropic": [
-      144,
-      145,
-      146
+      147,
+      148,
+      149
     ],
     "tail-stopped": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "zeon-moltbook-vol1": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "ip-tvw": [
       111,
@@ -17363,9 +17464,9 @@
       113
     ],
     "quantum-pirates": [
-      294,
-      295,
-      296
+      297,
+      298,
+      299
     ],
     "china-ai-frontier": [
       57,
@@ -17373,9 +17474,9 @@
       59
     ],
     "seedance-30": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "agent-siblings": [
       15,
@@ -17383,9 +17484,9 @@
       17
     ],
     "matchhz": [
-      126,
-      127,
-      128
+      129,
+      130,
+      131
     ],
     "dollar-two-faces": [
       81,
@@ -17393,14 +17494,14 @@
       83
     ],
     "messenger-b2a": [
-      135,
-      136,
-      137
+      138,
+      139,
+      140
     ],
     "robot-goku-5000": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "hvl-fellows": [
       102,
@@ -17423,9 +17524,9 @@
       74
     ],
     "rabbit-hole-intro": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ]
   },
   "overrides": {
