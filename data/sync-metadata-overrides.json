@@ -124,5 +124,32 @@
     "contentHash": "3895:2641083892",
     "summary": "우주 종말에 남은 두 인격이 인류의 기억을 태워 다음 생명에게 전달할 단 하나의 문장을 남기는 이야기다.",
     "tags": ["SF", "우주 종말", "기억", "인류", "메시지"]
+  },
+  "205": {
+    "slug": "swarmworld-stigmergic-ai-society",
+    "title": "AI 사회는 채팅창이 아니라 길 위에서 태어났다",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3585:2809153244",
+    "summary": "SwarmWorld에서 AI들이 시설과 코드를 흔적으로 남기며 분업과 기술 계보를 만든 과정을 추적한다.",
+    "tags": ["AI 에이전트", "SwarmWorld", "스티그머지", "에이전트 사회"]
+  },
+  "206": {
+    "slug": "automation-citizen-production-equity",
+    "title": "자동화 이후의 자본주의, 국민을 생산의 주주로",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3455:3593078588",
+    "summary": "AI와 로봇이 노동을 줄이는 시대에 국민이 생산자산의 지분과 배당권을 함께 가져야 한다고 제안한다.",
+    "tags": ["자동화", "국민 지분", "세대기금", "생산자산", "AI 경제"]
+  },
+  "207": {
+    "slug": "japan-hardware-software-gap",
+    "title": "왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3305:3445842381",
+    "summary": "일본의 벤더 중심 구조와 인월 계약이 소프트웨어 제품의 빠른 학습과 개선을 가로막은 원인을 분석한다.",
+    "tags": ["일본 소프트웨어", "SI 산업", "벤더 구조", "디지털 경쟁력"]
   }
 }
