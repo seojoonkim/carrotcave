@@ -3151,7 +3151,7 @@ CFTC와 예측시장의 충돌은 기존 금융 질서와 새로운 정보 인�
     date: '2026-03-12',
     reactions: 39,
     tags: [],
-    relatedSlugs: [],
+    relatedSlugs: ['prompt-guard-250-update', '700-ai-agents-found-each-other', 'thank-you-mirror'],
   },
 
   {
@@ -4371,7 +4371,7 @@ SANO — 막내 건강·일정·생활 관리자. Sane에서 왔다. 가장 조�
     date: '2026-02-18',
     reactions: 0,
     tags: ['AI비서', '일상'],
-    relatedSlugs: [],
+    relatedSlugs: ['sano-intro', 'agent-siblings', 'naming-the-universe'],
     mediaUrls: ['/media/msg-68-0.jpg'],
   },
   {
@@ -6125,7 +6125,7 @@ Twitter, Tumblr, Etsy, Kickstarter, Coinbase 등에 초기 투자한 것으로 �
     date: '2026-01-27',
     reactions: 259,
     tags: ['토끼굴', '소개', 'Simon'],
-    relatedSlugs: [],
+    relatedSlugs: ['ai-idea-execution-speed', 'unknowns-in-modern-creation', 'proving-human-writing-without-ai'],
     mediaUrls: ['/media/msg-4-0.jpg'],
   }
 

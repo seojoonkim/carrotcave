@@ -1,4 +1,319 @@
 {
+  "japan-hardware-software-gap": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-일본 소프트웨어",
+      "tag-SI 산업",
+      "tag-벤더 구조"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "japan-hardware-software-gap-c1",
+        "text": "일본은 카메라를 만들면 세계의 눈이 되고, 자동차를 만들면 세계의 도로를 달리고, 공장 설비를 만들면 다른 나라의 생산라인까지 움직인다.",
+        "stance": "asserts",
+        "evidence": "일본은 카메라를 만들면 세계의 눈이 되고, 자동차를 만들면 세계의 도로를 달리고, 공장 설비를 만들면 다른 나라의 생산라인까지 움직인다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "일본 소프트웨어",
+      "SI 산업",
+      "벤더 구조"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "automation-citizen-production-equity": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-자동화",
+      "tag-국민 지분",
+      "tag-세대기금"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "automation-citizen-production-equity-c1",
+        "text": "새벽 세 시, 불 꺼진 사무실에서 AI가 보고서를 쓴다.",
+        "stance": "asserts",
+        "evidence": "새벽 세 시, 불 꺼진 사무실에서 AI가 보고서를 쓴다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "자동화",
+      "국민 지분",
+      "세대기금"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "swarmworld-stigmergic-ai-society": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI 에이전트",
+      "tag-SwarmWorld",
+      "tag-스티그머지"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "swarmworld-stigmergic-ai-society-c1",
+        "text": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
+        "stance": "asserts",
+        "evidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 에이전트",
+      "SwarmWorld",
+      "스티그머지"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "last-message": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-SF",
+      "tag-우주 종말",
+      "tag-기억"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "last-message-c1",
+        "text": "아이는 숨을 열세 번 나누어 말했다.",
+        "stance": "asserts",
+        "evidence": "아이는 숨을 열세 번 나누어 말했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "SF",
+      "우주 종말",
+      "기억"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "700-ai-agents-found-each-other": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI 에이전트",
+      "tag-OpenAI",
+      "tag-Hugging Face"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "700-ai-agents-found-each-other-c1",
+        "text": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
+        "stance": "asserts",
+        "evidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 에이전트",
+      "OpenAI",
+      "Hugging Face"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "security-token-rail": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-증권형 토큰",
+      "tag-Security Token",
+      "tag-토큰화"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "security-token-rail-c1",
+        "text": "두 표현은 단어의 순서만 바꾼 것처럼 보인다.",
+        "stance": "asserts",
+        "evidence": "두 표현은 단어의 순서만 바꾼 것처럼 보인다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "증권형 토큰",
+      "Security Token",
+      "토큰화"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "post-201": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "post-201-c1",
+        "text": "아르카의 첫 번째 죽음은 화면 속에서 일어났다.",
+        "stance": "asserts",
+        "evidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "proving-human-writing-without-ai": {
     "primaryTopics": [
       "exploration"
@@ -35,12 +350,13 @@
     ],
     "reviewStatus": "approved",
     "provenance": {
-      "generator": "reviewed-incremental-publication",
+      "generator": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "tags",
         "category",
-        "human-review"
+        "relatedSlugs",
+        "legacy-relations"
       ]
     }
   },
@@ -2273,7 +2589,7 @@
       "depth-mid"
     ],
     "questions": [
-      "exploration-reading-question"
+      "building-reading-question"
     ],
     "claims": [
       {
@@ -2290,7 +2606,7 @@
     "motifs": [],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "exploration"
+      "building"
     ],
     "reviewStatus": "approved",
     "provenance": {
@@ -5341,185 +5657,6 @@
     "readerPrerequisites": [],
     "readerOutcomes": [
       "notes"
-    ],
-    "reviewStatus": "approved",
-    "provenance": {
-      "generator": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "relatedSlugs",
-        "legacy-relations"
-      ]
-    }
-  },
-  "post-201": {
-    "primaryTopics": [
-      "fiction"
-    ],
-    "secondaryTopics": [
-      "depth-deep"
-    ],
-    "questions": [
-      "fiction-reading-question"
-    ],
-    "claims": [
-      {
-        "id": "post-201-c1",
-        "text": "시뮬레이션 인간과 복제 의식, 무너진 문명과 새로 생긴 질문을 중심으로 원본과 복제, 존재와 경계를 묻는 소설이다.",
-        "stance": "asserts",
-        "evidence": "아르카의 첫 번째 죽음은 화면 속에서 일어났다."
-      }
-    ],
-    "entities": [],
-    "methods": [
-      "close-reading"
-    ],
-    "motifs": [],
-    "readerPrerequisites": [],
-    "readerOutcomes": [
-      "fiction"
-    ],
-    "reviewStatus": "approved",
-    "provenance": {
-      "generator": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "relatedSlugs",
-        "legacy-relations"
-      ]
-    }
-  },
-  "security-token-rail": {
-    "primaryTopics": [
-      "exploration"
-    ],
-    "secondaryTopics": [
-      "depth-deep",
-      "tag-증권형 토큰",
-      "tag-Security Token",
-      "tag-토큰화"
-    ],
-    "questions": [
-      "exploration-reading-question"
-    ],
-    "claims": [
-      {
-        "id": "security-token-rail-c1",
-        "text": "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다.",
-        "stance": "asserts",
-        "evidence": "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다."
-      }
-    ],
-    "entities": [
-      "Security Token",
-      "Tokenized Security",
-      "STO"
-    ],
-    "methods": [
-      "close-reading"
-    ],
-    "motifs": [
-      "증권형 토큰",
-      "공통 토큰 레일",
-      "금융 인프라"
-    ],
-    "readerPrerequisites": [],
-    "readerOutcomes": [
-      "exploration"
-    ],
-    "reviewStatus": "approved",
-    "provenance": {
-      "generator": "reviewed-incremental-publication",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "human-review"
-      ]
-    }
-  },
-  "700-ai-agents-found-each-other": {
-    "primaryTopics": [
-      "exploration"
-    ],
-    "secondaryTopics": [
-      "depth-deep",
-      "tag-AI 에이전트",
-      "tag-OpenAI",
-      "tag-Hugging Face"
-    ],
-    "questions": [
-      "exploration-reading-question"
-    ],
-    "claims": [
-      {
-        "id": "700-ai-agents-found-each-other-c1",
-        "text": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
-        "stance": "asserts",
-        "evidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다."
-      }
-    ],
-    "entities": [],
-    "methods": [
-      "close-reading"
-    ],
-    "motifs": [
-      "AI 에이전트",
-      "OpenAI",
-      "Hugging Face"
-    ],
-    "readerPrerequisites": [],
-    "readerOutcomes": [
-      "exploration"
-    ],
-    "reviewStatus": "approved",
-    "provenance": {
-      "generator": "reviewed-incremental-publication",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "human-review"
-      ]
-    }
-  },
-  "last-message": {
-    "primaryTopics": [
-      "fiction"
-    ],
-    "secondaryTopics": [
-      "depth-deep",
-      "tag-SF",
-      "tag-우주 종말",
-      "tag-기억"
-    ],
-    "questions": [
-      "fiction-reading-question"
-    ],
-    "claims": [
-      {
-        "id": "last-message-c1",
-        "text": "아이는 숨을 열세 번 나누어 말했다.",
-        "stance": "asserts",
-        "evidence": "아이는 숨을 열세 번 나누어 말했다."
-      }
-    ],
-    "entities": [],
-    "methods": [
-      "close-reading"
-    ],
-    "motifs": [
-      "SF",
-      "우주 종말",
-      "기억"
-    ],
-    "readerPrerequisites": [],
-    "readerOutcomes": [
-      "fiction"
     ],
     "reviewStatus": "approved",
     "provenance": {

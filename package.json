@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/prepare-voice-fonts.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/prepare-voice-fonts.mjs",
+    "prebuild": "npm run audit:ontology && node scripts/prepare-voice-fonts.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

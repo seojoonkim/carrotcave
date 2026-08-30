@@ -286,6 +286,19 @@ export async function publishSingleMessage({
   nextState.lastSyncedAt = now();
 
   mkdirSync(mediaDir, { recursive: true });
+  const generatedPaths = [
+    join(root, 'data', 'ontology', 'posts.json'),
+    join(root, 'data', 'ontology', 'edges.json'),
+    join(root, 'data', 'ontology', 'vocabulary.json'),
+    join(root, 'data', 'ontology', 'index.json'),
+    join(root, 'docs', 'eval', 'ontology-semantic-sample.json'),
+  ];
+  const snapshots = new Map(
+    [postsPath, statePath, ...generatedPaths].map((path) => [
+      path,
+      existsSync(path) ? readFileSync(path) : null,
+    ]),
+  );
   const created = [];
   try {
     for (const file of prepared.pending) {
@@ -295,18 +308,19 @@ export async function publishSingleMessage({
       created.push(file.destination);
     }
     writeAtomically(postsPath, nextPosts);
-    try {
-      writeAtomically(statePath, `${JSON.stringify(nextState, null, 2)}\n`);
-    } catch (error) {
-      writeAtomically(postsPath, postsSource);
-      throw error;
-    }
+    writeAtomically(statePath, `${JSON.stringify(nextState, null, 2)}\n`);
+    await regenerate({ root });
   } catch (error) {
+    for (const [path, contents] of snapshots) {
+      if (contents === null) {
+        if (existsSync(path)) unlinkSync(path);
+      } else {
+        writeAtomically(path, contents);
+      }
+    }
     for (const path of created) if (existsSync(path)) unlinkSync(path);
     throw error;
   }
-
-  await regenerate({ root });
 
   return { id, slug: metadata.slug, media: prepared.images, videos: prepared.videos };
 }

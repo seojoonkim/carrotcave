@@ -97,6 +97,39 @@ test('publishes exactly one reviewed message through one direct embed request wi
   assert.deepEqual(await readFile(join(root, 'public', 'media', 'msg-198-0.png')), mediaBytes);
 });
 
+test('rolls back post, sync state, media, and generated ontology when ontology regeneration fails', async () => {
+  const { root, historical, state } = await fixture();
+  const ontologyPath = join(root, 'data', 'ontology', 'index.json');
+  await mkdir(join(root, 'data', 'ontology'), { recursive: true });
+  await writeFile(ontologyPath, '{"version":"before"}\n');
+
+  await assert.rejects(
+    publishSingleMessage({
+      id: 198,
+      root,
+      fetchImpl: async (url) => {
+        if (String(url) === 'https://t.me/carrotcave/198?embed=1&mode=tme') {
+          return { ok: true, status: 200, text: async () => telegramHtml };
+        }
+        if (String(url) === 'https://cdn.example/new.png') {
+          return { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 42) };
+        }
+        throw new Error(`unexpected request: ${url}`);
+      },
+      regenerate: async () => {
+        await writeFile(ontologyPath, '{"version":"partial"}\n');
+        throw new Error('semantic candidates missing');
+      },
+    }),
+    /semantic candidates missing/,
+  );
+
+  assert.equal(await readFile(join(root, 'data', 'posts.ts'), 'utf8'), historical);
+  assert.deepEqual(JSON.parse(await readFile(join(root, 'data', 'sync-state.json'), 'utf8')), state);
+  assert.equal(await readFile(ontologyPath, 'utf8'), '{"version":"before"}\n');
+  await assert.rejects(readFile(join(root, 'public', 'media', 'msg-198-0.png')), { code: 'ENOENT' });
+});
+
 test('publishes Telegram timestamps on the Seoul calendar date', async () => {
   const { root } = await fixture();
   await publishSingleMessage({

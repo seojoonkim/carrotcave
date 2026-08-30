@@ -47,7 +47,7 @@
         "legacy-relations"
       ],
       "signalDetails": {
-        "lexicalOverlap": 37,
+        "lexicalOverlap": 38,
         "overlapTokens": [
           "10",
           "20",
@@ -71,6 +71,47 @@
       },
       "type": "APPLIES",
       "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「에이전트 삼남매와 함께하는 일상」의 원리를 구체적인 구축 과정에 적용한다"
+    },
+    {
+      "from": "last-message",
+      "to": "memory-identity-ai-development",
+      "sourceTitle": "마지막 메시지",
+      "targetTitle": "기억이 자아를 만든다면",
+      "sourceCategory": "소설",
+      "targetCategory": "빌딩",
+      "sourceEvidence": "보존된 기억이 다시 물이 됐다.",
+      "targetEvidence": "기억이 같아도 그 기억을 읽는 눈이 달라지면, 같은 존재라고 부를 수 있는가.",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 50,
+        "overlapTokens": [
+          "17",
+          "개는",
+          "기억",
+          "기억을",
+          "기억이",
+          "남아",
+          "남은",
+          "누군가",
+          "다음",
+          "답했다",
+          "닿는",
+          "됐다"
+        ],
+        "titleOverlap": [
+          "기억이",
+          "마지막"
+        ],
+        "sharedTags": [
+          "기억"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "APPLIES",
+      "label": "「기억이 자아를 만든다면」은 「마지막 메시지」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
       "from": "14-5-hours",
@@ -126,12 +167,12 @@
       "targetEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
       "signals": [
         "content",
-        "category"
+        "category",
+        "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 2,
+        "lexicalOverlap": 1,
         "overlapTokens": [
-          "기록",
           "아이디어"
         ],
         "titleOverlap": [
@@ -187,46 +228,43 @@
       "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「에이전트 삼남매와 함께하는 일상」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "matchhz",
-      "to": "tail-stopped",
-      "sourceTitle": "MatchHz",
-      "targetTitle": "꼬리가 멈춘 뒤에",
+      "from": "last-message",
+      "to": "post-201",
+      "sourceTitle": "마지막 메시지",
+      "targetTitle": "문이 열리는 쪽",
       "sourceCategory": "소설",
       "targetCategory": "소설",
-      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
-      "targetEvidence": "그날 밤 채원은 다시 AI에게 물었다.",
+      "sourceEvidence": "그런데 오래전 기록행성의 전송 기록에서 한 단어가 지워졌다.",
+      "targetEvidence": "아무것도 없는 검은 영역.",
       "signals": [
         "content",
-        "tags",
-        "category",
-        "relatedSlugs",
-        "legacy-relations"
+        "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 55,
+        "lexicalOverlap": 75,
         "overlapTokens": [
-          "12",
-          "15",
-          "28",
-          "5월",
-          "ai",
-          "같았다",
-          "그건",
-          "그날",
-          "그대로",
-          "근데",
-          "나왔다",
-          "누군가"
+          "가능성",
+          "검은",
+          "것도",
+          "것을",
+          "그들은",
+          "그런데",
+          "그럼",
+          "기다리",
+          "기록",
+          "기록도",
+          "기록은",
+          "기록을"
         ],
-        "titleOverlap": [],
-        "sharedTags": [
-          "AI",
-          "소설"
+        "titleOverlap": [
+          "마지막",
+          "문이"
         ],
+        "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "DEEPENS",
-      "label": "「꼬리가 멈춘 뒤에」은 「MatchHz」의 문제를 더 깊이 파고든다"
+      "label": "「문이 열리는 쪽」은 「마지막 메시지」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "14-5-hours",
@@ -353,105 +391,75 @@
       "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
-      "from": "matchhz",
-      "to": "mrinank-anthropic",
-      "sourceTitle": "MatchHz",
-      "targetTitle": "시인이자 AI 안전 연구원, Anthropic을 떠나다",
+      "from": "last-message",
+      "to": "post-193",
+      "sourceTitle": "마지막 메시지",
+      "targetTitle": "에이전트 노마드 시대의 짐가방",
       "sourceCategory": "소설",
-      "targetCategory": "낙서",
-      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
-      "targetEvidence": "그런 그가 2년 전, AI가 인류에게 가져올 위험을 막겠다는 사명감으로 Anthropic에 합류했다.",
+      "targetCategory": "탐험",
+      "sourceEvidence": "\"누가 네게 8해 건의 기억을 태울 권리를 줬지?\" \"누가 너에게 태어나지도 않은 존재의 답을 정할 권리를 줬는데?\" [상호 거부] [잔여 수명: 108초] [최종 중재 기록 공개] 봉인이 열렸다.",
+      "targetEvidence": "사무실 몸에는 회의 기록을 읽힐 수 있지만 내 침실을 기억하게 할 이유는 없다.",
       "signals": [
         "content",
-        "tags",
-        "relatedSlugs",
-        "legacy-relations"
+        "tags"
       ],
       "signalDetails": {
-        "lexicalOverlap": 6,
+        "lexicalOverlap": 43,
         "overlapTokens": [
-          "2월",
-          "ai",
-          "그런",
-          "말을",
-          "모르는",
-          "에세이"
+          "개는",
+          "공개",
+          "그런데",
+          "기록",
+          "기록은",
+          "기록을",
+          "기억",
+          "기억과",
+          "기억을",
+          "기억이",
+          "누가",
+          "누군가"
         ],
         "titleOverlap": [
-          "ai"
+          "마지막"
         ],
         "sharedTags": [
-          "에세이"
+          "기억"
         ],
         "sharedConcepts": []
       },
       "type": "REFRAMES",
-      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「MatchHz」의 주제를 다른 맥락에서 다시 바라본다"
+      "label": "「에이전트 노마드 시대의 짐가방」은 「마지막 메시지」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
-      "from": "abu-dhabi-national-museum-experience",
-      "to": "prompting-ability-as-new-power",
-      "sourceTitle": "지난달 막 오픈한 아부다비의 자이드 내셔널 뮤지엄을 다녀왔다.",
-      "targetTitle": "프롬프팅 역량이 인류의 새로운 전투력이 되는 날",
+      "from": "700-ai-agents-found-each-other",
+      "to": "post-104",
+      "sourceTitle": "700개의 AI가 서로를 발견한 날",
+      "targetTitle": "사칭 계정 주의 안내",
       "sourceCategory": "탐험",
-      "targetCategory": "탐험",
-      "sourceEvidence": "아부다비는 21세기 문법을 쓰고 있다.",
-      "targetEvidence": "그런데 진짜 질문은 점수가 아닐지도 모른다.",
+      "targetCategory": "낙서",
+      "sourceEvidence": "언제 태어났는지도 모를 것이다.",
+      "targetEvidence": "며칠간 페이스북, 카카오, 텔레그램 등에서 사칭 계정에 대한 신고가 많이 들어와, 혹시 모를 피해를 막기 위해 안내드립니다.",
       "signals": [
         "content",
-        "category"
+        "relatedSlugs"
       ],
       "signalDetails": {
-        "lexicalOverlap": 31,
+        "lexicalOverlap": 5,
         "overlapTokens": [
-          "21",
-          "21세기",
-          "건축",
-          "것이다",
-          "결과물",
-          "그런데",
-          "되는",
-          "만드는",
-          "모른다",
-          "문화",
-          "본다",
-          "뿐이다"
+          "많이",
+          "메시지",
+          "모를",
+          "사칭",
+          "위해"
         ],
         "titleOverlap": [
-          "되는",
-          "새로운"
+          "사칭"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "REFRAMES",
-      "label": "「프롬프팅 역량이 인류의 새로운 전투력이 되는 날」은 「지난달 막 오픈한 아부다비의 자이드 내셔널 뮤지엄을 다녀왔다.」의 주제를 다른 맥락에서 다시 바라본다"
-    },
-    {
-      "from": "counting-assistant",
-      "to": "overnight-success",
-      "sourceTitle": "1을 10번 세어주는 비서",
-      "targetTitle": "하룻밤의 성공은 없다",
-      "sourceCategory": "낙서",
-      "targetCategory": "낙서",
-      "sourceEvidence": "오빠는 오늘도 혼자가 아니다.",
-      "targetEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 2,
-        "overlapTokens": [
-          "ai",
-          "아니다"
-        ],
-        "titleOverlap": [],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "type": "RESONATES",
-      "label": "「하룻밤의 성공은 없다」은 「1을 10번 세어주는 비서」의 핵심 문제와 맞닿는다"
+      "label": "「사칭 계정 주의 안내」은 「700개의 AI가 서로를 발견한 날」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
       "from": "openclaw-cron-session-bottleneck",
@@ -490,6 +498,42 @@
       "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
     },
     {
+      "from": "post-201",
+      "to": "post-192",
+      "sourceTitle": "문이 열리는 쪽",
+      "targetTitle": "맥락 세탁소",
+      "sourceCategory": "소설",
+      "targetCategory": "소설",
+      "sourceEvidence": "종료 59분 전, 미나는 아르카의 하늘에 문장을 띄웠다.",
+      "targetEvidence": "검색 에이전트는 같은 문장이 많을수록 사실에 가깝다고 계산했다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 66,
+        "overlapTokens": [
+          "59",
+          "59분",
+          "가깝다고",
+          "가능성",
+          "검은",
+          "계산",
+          "권한은",
+          "기다리",
+          "기록만",
+          "기록은",
+          "기록을",
+          "남았다"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "RESONATES",
+      "label": "「맥락 세탁소」은 「문이 열리는 쪽」의 핵심 문제와 맞닿는다"
+    },
+    {
       "from": "death-choices-aging-future-meaning",
       "to": "thought-speed",
       "sourceTitle": "천 년을 살면, 무엇 때문에 죽을까",
@@ -503,7 +547,7 @@
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 52,
+        "lexicalOverlap": 53,
         "overlapTokens": [
           "가능성",
           "가치가",
@@ -539,7 +583,7 @@
         "tags"
       ],
       "signalDetails": {
-        "lexicalOverlap": 10,
+        "lexicalOverlap": 7,
         "overlapTokens": [
           "cnn",
           "east",
@@ -547,10 +591,7 @@
           "israel",
           "middle",
           "속보를",
-          "이란",
-          "이스라엘",
-          "전쟁",
-          "중동"
+          "전쟁"
         ],
         "titleOverlap": [],
         "sharedTags": [
@@ -699,7 +740,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 25,
+        "lexicalOverlap": 26,
         "overlapTokens": [
           "100",
           "20",
@@ -732,47 +773,45 @@
     },
     {
       "from": "matchhz",
-      "to": "thank-you-mirror",
+      "to": "tail-stopped",
       "sourceTitle": "MatchHz",
-      "targetTitle": "고마워요",
+      "targetTitle": "꼬리가 멈춘 뒤에",
       "sourceCategory": "소설",
       "targetCategory": "소설",
-      "sourceEvidence": "\"프로토콜 12번...",
-      "targetEvidence": "그는 천천히 고개를 끄덕였다.",
+      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
+      "targetEvidence": "그날 밤 채원은 다시 AI에게 물었다.",
       "signals": [
         "content",
         "tags",
         "category",
         "relatedSlugs",
-        "concept-agent"
+        "legacy-relations"
       ],
       "signalDetails": {
-        "lexicalOverlap": 53,
+        "lexicalOverlap": 55,
         "overlapTokens": [
-          "10",
           "12",
+          "15",
+          "28",
+          "5월",
           "ai",
           "같았다",
-          "거울",
-          "거짓말",
-          "검은",
-          "고개를",
+          "그건",
           "그날",
-          "그런",
+          "그대로",
           "근데",
-          "끄덕"
+          "나왔다",
+          "누군가"
         ],
         "titleOverlap": [],
         "sharedTags": [
           "AI",
           "소설"
         ],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
+        "sharedConcepts": []
       },
       "type": "DEEPENS",
-      "label": "「고마워요」은 「MatchHz」의 문제를 더 깊이 파고든다"
+      "label": "「꼬리가 멈춘 뒤에」은 「MatchHz」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "14-5-hours",
@@ -789,7 +828,7 @@
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 102,
+        "lexicalOverlap": 103,
         "overlapTokens": [
           "100",
           "18",
@@ -886,45 +925,6 @@
       },
       "type": "REFRAMES",
       "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「AgentLinter 개발기」의 주제를 다른 맥락에서 다시 바라본다"
-    },
-    {
-      "from": "post-192",
-      "to": "post-191",
-      "sourceTitle": "맥락 세탁소",
-      "targetTitle": "우리는 같은 미래를 업데이트받지 않을 것이다",
-      "sourceCategory": "소설",
-      "targetCategory": "탐험",
-      "sourceEvidence": "사람이 제목만 고친 기사도 흔했다.",
-      "targetEvidence": "지금의 SaaS도 사라지기보다는 화면 뒤로 물러나, 에이전트가 기대는 공식 기록과 책임의 기반이 될 가능성이 크다.",
-      "signals": [
-        "content",
-        "relatedSlugs",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 39,
-        "overlapTokens": [
-          "가능성",
-          "검증",
-          "결과",
-          "계획을",
-          "고친",
-          "공식",
-          "그가",
-          "기록과",
-          "기록이",
-          "끝까지",
-          "나눠",
-          "남겼다"
-        ],
-        "titleOverlap": [],
-        "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "type": "REFRAMES",
-      "label": "「우리는 같은 미래를 업데이트받지 않을 것이다」은 「맥락 세탁소」의 주제를 다른 맥락에서 다시 바라본다"
     }
   ]
 }
