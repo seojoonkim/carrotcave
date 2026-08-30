@@ -269,3 +269,8 @@
   .editorial-wall .wall-card--voice{min-height:261px}
   .editorial-wall .wall-card h2{font-size:24px;line-height:1.18}
 }
+
+/* Mobile card separation and touch polish. */
+@media(max-width:520px){.editorial-wall{gap:12px}}
+@media(hover:none) and (pointer:coarse){.editorial-wall .wall-card{touch-action:manipulation;transition:transform .12s ease,opacity .12s ease}.editorial-wall .wall-card:active{transform:scale(.992);opacity:.92}}
+@media(prefers-reduced-motion:reduce){.editorial-wall .wall-card:active{transform:none!important}}

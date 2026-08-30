@@ -19,7 +19,7 @@ function WallCard({ post, index, rhythm }: { post: Post; index: number; rhythm: 
       summary={post.summary}
       imageUrl={imageUrl}
       className={`wall-card--uniform${hasImage ? '' : ' wall-card--generated'}`}
-      priority={index < 4}
+      priority={index < 2}
       rhythm={rhythm}
     />
   );
@@ -35,7 +35,7 @@ function VoiceWallCard({ interview, index, rhythm }: { interview: InterviewArchi
       summary={interview.summary}
       imageUrl={interview.thumbnailUrl}
       className="wall-card--voice"
-      priority={index < 4}
+      priority={index < 2}
       rhythm={rhythm}
     />
   );
