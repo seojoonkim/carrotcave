@@ -1,4 +1,188 @@
 {
+  "living-in-the-age-of-optimists": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-낙관론",
+      "tag-AI",
+      "tag-시행착오"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "living-in-the-age-of-optimists-c1",
+        "text": "예전 같으면 무모하다, 몇 달은 걸린다, 혼자서는 못 한다며 접었을 생각을 이제는 그냥 에이전트에게 적어준다.",
+        "stance": "asserts",
+        "evidence": "예전 같으면 무모하다, 몇 달은 걸린다, 혼자서는 못 한다며 접었을 생각을 이제는 그냥 에이전트에게 적어준다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "낙관론",
+      "AI",
+      "시행착오"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "brain-files-minecraft-flies": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-디지털 생명",
+      "tag-뇌 시뮬레이션",
+      "tag-마인크래프트"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "brain-files-minecraft-flies-c1",
+        "text": "초파리 한 마리가 마인크래프트 안에서 날아다닌다.",
+        "stance": "asserts",
+        "evidence": "초파리 한 마리가 마인크래프트 안에서 날아다닌다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "디지털 생명",
+      "뇌 시뮬레이션",
+      "마인크래프트"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "shopping-before-customers-arrive": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-에이전트 커머스",
+      "tag-MCP",
+      "tag-UCP"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "shopping-before-customers-arrive-c1",
+        "text": "주문은 들어오는데, 쇼핑몰을 둘러보는 손님은 없다.",
+        "stance": "asserts",
+        "evidence": "주문은 들어오는데, 쇼핑몰을 둘러보는 손님은 없다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "에이전트 커머스",
+      "MCP",
+      "UCP"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "hashed-ai-ecosystem-growth-intern": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-entry",
+      "tag-Nitro",
+      "tag-해시드",
+      "tag-AI 빌더"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "hashed-ai-ecosystem-growth-intern-c1",
+        "text": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+        "stance": "asserts",
+        "evidence": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Nitro",
+      "해시드",
+      "AI 빌더"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "japan-hardware-software-gap": {
     "primaryTopics": [
       "exploration"

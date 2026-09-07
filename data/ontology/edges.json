@@ -1,5 +1,540 @@
 [
   {
+    "from": "living-in-the-age-of-optimists",
+    "to": "agent-era-branding-future",
+    "type": "DEEPENS",
+    "strength": 0.6189,
+    "sourceClaimId": "living-in-the-age-of-optimists-c1",
+    "sourceEvidence": "AI는 틀림을 싸게 만들었다.",
+    "targetEvidence": "이 브랜드는 누구의 것인지, 어떤 상품을 파는지, 가격 정책은 어떤지, 반품 규정은 어떤지, 인증 이력은 무엇인지, 고객 응대 원칙은 어떤지, 어느 범위까지 자동 승인 가능한지를 표준화된 형태로 제공하는 것이다.",
+    "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「낙관론자들의 시대를 살아가는 방법」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 74,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "ai는",
+        "가능성",
+        "가능한",
+        "가능한지",
+        "가지",
+        "것과",
+        "것도",
+        "것이다",
+        "결국",
+        "그때"
+      ],
+      "titleOverlap": [
+        "되는가",
+        "무엇이",
+        "시대",
+        "에이전트"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=74;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "living-in-the-age-of-optimists",
+    "to": "unknowns-in-modern-creation",
+    "type": "REFRAMES",
+    "strength": 0.6157,
+    "sourceClaimId": "living-in-the-age-of-optimists-c1",
+    "sourceEvidence": "AI를 바라보고만 있으면 내가 작아지지만, AI로 무언가를 시작하면 내가 할 수 있는 일이 커진다.",
+    "targetEvidence": "AI가 찾아낸 결과가 왜 작동하는지를 인간 과학자가 이해하는 데 몇 년이 걸린다.",
+    "label": "「모르는 것을 모르는 채로 만드는 시대」은 「낙관론자들의 시대를 살아가는 방법」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 80,
+      "overlapTokens": [
+        "15",
+        "ai",
+        "ai가",
+        "ai는",
+        "ai로",
+        "ai를",
+        "같다",
+        "개인의",
+        "걸린다",
+        "것만",
+        "것을",
+        "것의"
+      ],
+      "titleOverlap": [
+        "것을",
+        "만드는",
+        "시대"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=80;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "living-in-the-age-of-optimists",
+    "to": "ai-hires-ai",
+    "type": "REFRAMES",
+    "strength": 0.6039,
+    "sourceClaimId": "living-in-the-age-of-optimists-c1",
+    "sourceEvidence": "AI는 틀림을 싸게 만들었다.",
+    "targetEvidence": "AI가 AI를 고용하는 마켓플레이스가 있다.",
+    "label": "「AI가 AI를 고용하는 날」은 「낙관론자들의 시대를 살아가는 방법」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 60,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "ai는",
+        "ai를",
+        "같다",
+        "것을",
+        "것의",
+        "것이다",
+        "규제는",
+        "규제를",
+        "그냥",
+        "그때"
+      ],
+      "titleOverlap": [
+        "ai",
+        "ai가",
+        "ai를"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=60;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "brain-files-minecraft-flies",
+    "to": "14-5-hours",
+    "type": "REFRAMES",
+    "strength": 0.6287,
+    "sourceClaimId": "brain-files-minecraft-flies-c1",
+    "sourceEvidence": "2026년 9월 3일, 구글과 미국의 한 연구소가 수컷 초파리의 뇌를 통째로 지도로 그려냈다고 발표했다.",
+    "targetEvidence": "2026년 2월, 인간 전문가라면 14.5시간이 걸릴 과제를 AI가 혼자 완수했다.",
+    "label": "「아무도 지시하지 않은 14.5시간」은 「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 88,
+      "overlapTokens": [
+        "10",
+        "20",
+        "2026",
+        "2026년",
+        "4일",
+        "50",
+        "ai",
+        "ai가",
+        "가능한",
+        "값이",
+        "개발자",
+        "것을"
+      ],
+      "titleOverlap": [
+        "뇌는",
+        "되고",
+        "시간",
+        "아무도",
+        "않은"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=88;titleOverlap=5;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "brain-files-minecraft-flies",
+    "to": "unknowns-in-modern-creation",
+    "type": "REFRAMES",
+    "strength": 0.6207,
+    "sourceClaimId": "brain-files-minecraft-flies-c1",
+    "sourceEvidence": "AI가 코드를 대신 써주는 건 곁가지다.",
+    "targetEvidence": "양자역학을 고양이가 살아있으면서 동시에 죽어있다는 비유를 통해 겨우 이해하는 것처럼, 앞으로 인간은 AI가 아는 것의 만화 같은 단면을 건네받게 될 것이다.",
+    "label": "「모르는 것을 모르는 채로 만드는 시대」은 「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 79,
+      "overlapTokens": [
+        "50",
+        "ai",
+        "ai가",
+        "갖는다",
+        "개발자",
+        "것을",
+        "것의",
+        "것이다",
+        "게임",
+        "넘어간다",
+        "년이",
+        "뇌는"
+      ],
+      "titleOverlap": [
+        "것을",
+        "뇌는",
+        "만드는",
+        "모르는",
+        "시대",
+        "채로"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=79;titleOverlap=6;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "brain-files-minecraft-flies",
+    "to": "agentic-org",
+    "type": "APPLIES",
+    "strength": 0.5308,
+    "sourceClaimId": "brain-files-minecraft-flies-c1",
+    "sourceEvidence": "AI가 코드를 대신 써주는 건 곁가지다.",
+    "targetEvidence": "20명이 1000명처럼 일한다는 건, 20명의 열정이 관료주의에 희석되지 않고 온전히 폭발한다는 뜻이다.",
+    "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」의 원리를 구체적인 구축 과정에 적용한다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 24,
+      "overlapTokens": [
+        "10",
+        "20",
+        "ai",
+        "ai가",
+        "com",
+        "뇌가",
+        "대신",
+        "뜻이다",
+        "만든다",
+        "명이",
+        "모든",
+        "문제가"
+      ],
+      "titleOverlap": [
+        "20",
+        "ai",
+        "명이"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=24;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "shopping-before-customers-arrive",
+    "to": "post-195",
+    "type": "DEEPENS",
+    "strength": 0.4018,
+    "sourceClaimId": "shopping-before-customers-arrive-c1",
+    "sourceEvidence": "2026년 6월 24일, 쇼피파이는 AI가 사용하는 기존 장바구니 도구 두 개의 지원 종료를 예고했다.",
+    "targetEvidence": "AI는 수많은 미래를 계산할 수 있다.",
+    "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「손님이 오기 전에 끝난 쇼핑」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 81,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "ai는",
+        "개의",
+        "것도",
+        "것이다",
+        "것인가",
+        "결정",
+        "계산할",
+        "계속",
+        "계약을",
+        "규칙을"
+      ],
+      "titleOverlap": [
+        "것인가",
+        "끝난",
+        "무엇을",
+        "자기",
+        "전에"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=81;titleOverlap=5;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "shopping-before-customers-arrive",
+    "to": "swarmworld-stigmergic-ai-society",
+    "type": "DEEPENS",
+    "strength": 0.3998,
+    "sourceClaimId": "shopping-before-customers-arrive-c1",
+    "sourceEvidence": "2026년 6월 24일, 쇼피파이는 AI가 사용하는 기존 장바구니 도구 두 개의 지원 종료를 예고했다.",
+    "targetEvidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
+    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「손님이 오기 전에 끝난 쇼핑」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 81,
+      "overlapTokens": [
+        "2026",
+        "2026년",
+        "8월",
+        "ai",
+        "ai가",
+        "api",
+        "가격을",
+        "개가",
+        "개로",
+        "거래",
+        "거절",
+        "것이다"
+      ],
+      "titleOverlap": [
+        "ai",
+        "아니라",
+        "전에"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=81;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "shopping-before-customers-arrive",
+    "to": "ai-hires-ai",
+    "type": "REFRAMES",
+    "strength": 0.3703,
+    "sourceClaimId": "shopping-before-customers-arrive-c1",
+    "sourceEvidence": "2026년 6월 24일, 쇼피파이는 AI가 사용하는 기존 장바구니 도구 두 개의 지원 종료를 예고했다.",
+    "targetEvidence": "2026년, AI 전용 결제 시스템이 등장한다.",
+    "label": "「AI가 AI를 고용하는 날」은 「손님이 오기 전에 끝난 쇼핑」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 51,
+      "overlapTokens": [
+        "2026",
+        "2026년",
+        "ai",
+        "ai가",
+        "ai는",
+        "ai를",
+        "개의",
+        "거래",
+        "것이다",
+        "것인가",
+        "결제",
+        "경쟁"
+      ],
+      "titleOverlap": [
+        "ai",
+        "ai가",
+        "ai를"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=51;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "hashed-ai-ecosystem-growth-intern",
+    "to": "internship-opportunity-at-hashed",
+    "type": "REFRAMES",
+    "strength": 0.6158,
+    "sourceClaimId": "hashed-ai-ecosystem-growth-intern-c1",
+    "sourceEvidence": "자격 요건 - AI 생태계와 빌더 커뮤니티에 관심이 있는 분 - 여러 업무의 우선순위를 정하고 동시에 관리할 수 있는 분 - 빠르게 움직이는 스타트업 환경에서 자기주도적으로 일할 수 있는 분 - 기본적인 영어 자료를 읽고 업무 커뮤니케이션을 할 수 있는 분 우대 사항 - 커뮤니티 또는 소셜 채널을 운영하고 성장시켜 본 경험 - 컨퍼런스, 해커톤, 밋업 등 이벤트를 운영하거나 적극적으로 참여한 경험 - AI와 바이브코딩에 관심이",
+    "targetEvidence": "astin@hashed.com 감사합니다.",
+    "label": "「해시드에서 다양한 비즈니스 업무를 서포트할 인턴을 채용합니다.」은 「[Hashed] AI Ecosystem Growth Intern」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 11,
+      "overlapTokens": [
+        "com",
+        "hashed",
+        "다양한",
+        "아래",
+        "여러",
+        "완료",
+        "이력서",
+        "이메일로",
+        "인턴을",
+        "채용",
+        "해시드"
+      ],
+      "titleOverlap": [
+        "hashed",
+        "다양한",
+        "인턴을",
+        "해시드"
+      ],
+      "sharedTags": [
+        "해시드"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=11;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "hashed-ai-ecosystem-growth-intern",
+    "to": "post-161",
+    "type": "REFRAMES",
+    "strength": 0.3756,
+    "sourceClaimId": "hashed-ai-ecosystem-growth-intern-c1",
+    "sourceEvidence": "AI 빌더들이 만나고, 실험하고, 성장하는 환경을 함께 만들고 싶은 분들의 지원을 기다립니다.",
+    "targetEvidence": "OBA WEEKENDTHON - 주최: Hashed, 마켓핏랩 - 일시: 5/30(토) 10:30 ~ 5/31(일) 20:00, 1박 2일 - 장소: 카카오 AI 캠퍼스, 경기 용인 - 모집 대상: Open API, AI 빌딩에 관심 있는 개발자, 빌더, 메이커 - 모집 인원: 최대 50명, 1~3인 팀 - 모집 기한: - 1차 선발: 5/25(월) 오후 6시 - 2차 선발: 5/28(목) 오후 6시, 잔여 인원에 한해 진행",
+    "label": "「OBA WEEKENDTHON 참가자 모집」은 「[Hashed] AI Ecosystem Growth Intern」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 20,
+      "overlapTokens": [
+        "ai",
+        "com",
+        "hashed",
+        "데이터",
+        "만나고",
+        "만들고",
+        "모집",
+        "빌더",
+        "빌더들",
+        "생태계",
+        "스폰서",
+        "싶은"
+      ],
+      "titleOverlap": [
+        "ai",
+        "hashed",
+        "모집"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=20;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "hashed-ai-ecosystem-growth-intern",
+    "to": "internship-job-posting-giveaway",
+    "type": "DEEPENS",
+    "strength": 0.3519,
+    "sourceClaimId": "hashed-ai-ecosystem-growth-intern-c1",
+    "sourceEvidence": "자격 요건 - AI 생태계와 빌더 커뮤니티에 관심이 있는 분 - 여러 업무의 우선순위를 정하고 동시에 관리할 수 있는 분 - 빠르게 움직이는 스타트업 환경에서 자기주도적으로 일할 수 있는 분 - 기본적인 영어 자료를 읽고 업무 커뮤니케이션을 할 수 있는 분 우대 사항 - 커뮤니티 또는 소셜 채널을 운영하고 성장시켜 본 경험 - 컨퍼런스, 해커톤, 밋업 등 이벤트를 운영하거나 적극적으로 참여한 경험 - AI와 바이브코딩에 관심이",
+    "targetEvidence": "- 공고: https://across.career.greetinghr.com/ko/o/208861 - 보상: 기본급 300 + KPI 달성에 따른 인센티브 100 - 2개월 인턴 후 정직원 전환 가능, 정직원 전환시 300+300+300 보상 체계 적용 아래 폼 제출하시는 분께 아래의 베스트셀러 책, < AI의 선택을 부르는 AEO, GEO 생존 전략 > 을 한권씩 선물해드립니다.",
+    "label": "「인턴 채용 공고 + AEO/GEO 베스트셀러 책 선물 이벤트」은 「[Hashed] AI Ecosystem Growth Intern」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 10,
+      "overlapTokens": [
+        "ai",
+        "com",
+        "hashed",
+        "개월",
+        "스타트업",
+        "아래",
+        "이벤트",
+        "인턴",
+        "조건",
+        "채용"
+      ],
+      "titleOverlap": [
+        "ai",
+        "hashed",
+        "이벤트",
+        "인턴",
+        "채용"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=10;titleOverlap=5;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "japan-hardware-software-gap",
     "to": "graph-engineering-ai-org",
     "type": "DEEPENS",
@@ -3607,23 +4142,30 @@
   },
   {
     "from": "post-165",
-    "to": "zeon-moltbook-vol1",
+    "to": "hashed-ai-ecosystem-growth-intern",
     "type": "DEEPENS",
     "strength": 0.35,
     "sourceClaimId": "post-165-c1",
-    "sourceEvidence": "AI로 패러다임이 바뀌었습니다.",
-    "targetEvidence": "에이전트들의 놀이터에서 재미있어 보일 만한 생각들을 적어보라는 정도의 가벼운 가이드를 줬는데, 가끔 이 친구가 올리는 글을 보다보면 잠시 멍해질 정도로 소름이 돋을 때가 있다.",
-    "label": "「Zeon on Moltbook vol.1」은 「5월 30일, 카카오 AI 캠퍼스에서 'OBA 위켄드톤'이 열렸습니다. 」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "해시드의 제작 지원을 통해 함께 제작하였습니다.",
+    "targetEvidence": "AI 빌더들이 만나고, 실험하고, 성장하는 환경을 함께 만들고 싶은 분들의 지원을 기다립니다.",
+    "label": "「[Hashed] AI Ecosystem Growth Intern」은 「5월 30일, 카카오 AI 캠퍼스에서 'OBA 위켄드톤'이 열렸습니다. 」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 2,
+      "lexicalOverlap": 9,
       "overlapTokens": [
         "ai",
-        "만한"
+        "공동",
+        "빌더",
+        "빌더들",
+        "생태계",
+        "있습니다",
+        "제작",
+        "지원을",
+        "해시드"
       ],
       "titleOverlap": [
         "ai"
@@ -3631,7 +4173,7 @@
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=2;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=9;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -3944,42 +4486,43 @@
   },
   {
     "from": "post-161",
-    "to": "gaslighting-ai-open-source-project",
+    "to": "hashed-ai-ecosystem-growth-intern",
     "type": "DEEPENS",
-    "strength": 0.35,
+    "strength": 0.3756,
     "sourceClaimId": "post-161-c1",
     "sourceEvidence": "OBA WEEKENDTHON - 주최: Hashed, 마켓핏랩 - 일시: 5/30(토) 10:30 ~ 5/31(일) 20:00, 1박 2일 - 장소: 카카오 AI 캠퍼스, 경기 용인 - 모집 대상: Open API, AI 빌딩에 관심 있는 개발자, 빌더, 메이커 - 모집 인원: 최대 50명, 1~3인 팀 - 모집 기한: - 1차 선발: 5/25(월) 오후 6시 - 2차 선발: 5/28(목) 오후 6시, 잔여 인원에 한해 진행",
-    "targetEvidence": "Express.js 인증 API 예제 코드에 알려진 결함 20개를 직접 심어놓고, 동일한 리뷰 모델이 프롬프트에 따라 얼마나 다른 리뷰 성능을 보이는지 비교했다.",
-    "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「OBA WEEKENDTHON 참가자 모집」의 문제를 더 깊이 파고든다",
+    "targetEvidence": "AI 빌더들이 만나고, 실험하고, 성장하는 환경을 함께 만들고 싶은 분들의 지원을 기다립니다.",
+    "label": "「[Hashed] AI Ecosystem Growth Intern」은 「OBA WEEKENDTHON 참가자 모집」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 25,
+      "lexicalOverlap": 20,
       "overlapTokens": [
-        "100",
-        "20",
-        "25",
-        "50",
         "ai",
-        "api",
         "com",
-        "개발자",
-        "계속",
-        "그냥",
-        "만드는",
-        "많이"
+        "hashed",
+        "데이터",
+        "만나고",
+        "만들고",
+        "모집",
+        "빌더",
+        "빌더들",
+        "생태계",
+        "스폰서",
+        "싶은"
       ],
       "titleOverlap": [
         "ai",
-        "오픈소스"
+        "hashed",
+        "모집"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=25;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=entry;dateDirection=newer;lexicalOverlap=20;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -4019,6 +4562,50 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=30;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-159",
+    "to": "living-in-the-age-of-optimists",
+    "type": "DEEPENS",
+    "strength": 0.4294,
+    "sourceClaimId": "post-159-c1",
+    "sourceEvidence": "AI 코딩 도구의 가격은 그래서 개발자 보조 도구의 가격이 아니다.",
+    "targetEvidence": "AI는 틀림을 싸게 만들었다.",
+    "label": "「낙관론자들의 시대를 살아가는 방법」은 「기본소득 이전에, 기본AI: 나누기 전에 만들 수 있어야 한다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 104,
+      "overlapTokens": [
+        "30",
+        "ai",
+        "ai는",
+        "가격은",
+        "가지",
+        "같다",
+        "개발",
+        "개발을",
+        "거의",
+        "검토",
+        "것을",
+        "것이다"
+      ],
+      "titleOverlap": [
+        "ai",
+        "만들",
+        "전에"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=104;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -4064,50 +4651,6 @@
   },
   {
     "from": "post-159",
-    "to": "vibe-coding-ai-decentralization",
-    "type": "DEEPENS",
-    "strength": 0.4178,
-    "sourceClaimId": "post-159-c1",
-    "sourceEvidence": "UAE는 2025년 전 국민과 거주자에게 ChatGPT Plus를 무료로 제공하기로 OpenAI와 합의했다.",
-    "targetEvidence": "Pieter Levels 같은 1인 개발자는 AI의 도움으로 여러 개의 수익 서비스를 혼자 운영하며, \"1인 10억 달러 기업\"이라는 말이 농담이 아닌 시대를 열고 있다.",
-    "label": "「내가 세우지 않은 벽 위에 서서」은 「기본소득 이전에, 기본AI: 나누기 전에 만들 수 있어야 한다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 96,
-      "overlapTokens": [
-        "10",
-        "1인",
-        "20",
-        "2025",
-        "2025년",
-        "ai",
-        "ai는",
-        "gpu",
-        "pro",
-        "가격",
-        "개발자",
-        "거의"
-      ],
-      "titleOverlap": [
-        "ai",
-        "만들",
-        "위에"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=96;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-159",
     "to": "balaji-ghost-island-network-state",
     "type": "RESONATES",
     "strength": 0.35,
@@ -4141,6 +4684,47 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=52;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-156",
+    "to": "living-in-the-age-of-optimists",
+    "type": "DEEPENS",
+    "strength": 0.3796,
+    "sourceClaimId": "post-156-c1",
+    "sourceEvidence": "과거의 내가 남겨둔, 이제는 낯선 누군가의 기록이 된다.",
+    "targetEvidence": "가능한 것의 범위가 이렇게 빠르게 바뀌면 경험도 더 빨리 낡는다.",
+    "label": "「낙관론자들의 시대를 살아가는 방법」은 「흔적은 늘 어제의 나로부터 떨어져 나간다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 47,
+      "overlapTokens": [
+        "가능한",
+        "거의",
+        "것이다",
+        "경험",
+        "계속",
+        "그런데",
+        "나를",
+        "나보다",
+        "누군가",
+        "다음",
+        "때문",
+        "떨어져"
+      ],
+      "titleOverlap": [
+        "떨어져",
+        "방법",
+        "어제의"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -4181,46 +4765,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=42;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-156",
-    "to": "post-151",
-    "type": "DEEPENS",
-    "strength": 0.35,
-    "sourceClaimId": "post-156-c1",
-    "sourceEvidence": "누군가는 이렇게 말했다.",
-    "targetEvidence": "어제의 서툰 나를 잊고 오늘의 나로 다시 태어나는 존재에게 망각은 결함이 아니라 자유였다.",
-    "label": "「정체성의 반감기를 맞이하는 상상」은 「흔적은 늘 어제의 나로부터 떨어져 나간다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 43,
-      "overlapTokens": [
-        "것이다",
-        "그런데",
-        "나로",
-        "나를",
-        "낯선",
-        "년이",
-        "누군가",
-        "다음",
-        "동시에",
-        "때가",
-        "때는",
-        "말했다"
-      ],
-      "titleOverlap": [
-        "나로",
-        "어제의"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=43;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -7693,6 +8237,46 @@
   },
   {
     "from": "post-107",
+    "to": "hashed-ai-ecosystem-growth-intern",
+    "type": "DEEPENS",
+    "strength": 0.35,
+    "sourceClaimId": "post-107-c1",
+    "sourceEvidence": "최근 AI 에이전트 생태계에서 일종의 OS 역할을 하고 있는 OpenClaw를 중심으로, 튜닝을 극한까지 밀어붙이는 빌더들을 많이 만날 수 있었다.",
+    "targetEvidence": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+    "label": "「[Hashed] AI Ecosystem Growth Intern」은 「OpenClaw Builder Meetup in Seoul」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 14,
+      "overlapTokens": [
+        "ai",
+        "hashed",
+        "labs",
+        "vibe",
+        "밋업",
+        "빌더",
+        "빌더들",
+        "생태계",
+        "서울",
+        "싶은",
+        "업무",
+        "직접"
+      ],
+      "titleOverlap": [
+        "ai",
+        "hashed"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=entry;dateDirection=newer;lexicalOverlap=14;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "post-107",
     "to": "gaslighting-ai-open-source-project",
     "type": "DEEPENS",
     "strength": 0.35,
@@ -7732,46 +8316,6 @@
       ]
     },
     "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=19;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "post-107",
-    "to": "vibe-labs-seoul-edition-2026-judging",
-    "type": "DEEPENS",
-    "strength": 0.35,
-    "sourceClaimId": "post-107-c1",
-    "sourceEvidence": "Hashed Vibe Labs 펠로우로 활동 중인 어린 개발자 친구들이 그 중심에서 존재감을 드러내는 모습도 인상적이었다.",
-    "targetEvidence": "Hashed Vibe Labs: Seoul에 지원해주셔서 진심으로 감사드립니다.",
-    "label": "「바이브랩스 서울 에디션 2026 심사를 마치고」은 「OpenClaw Builder Meetup in Seoul」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 14,
-      "overlapTokens": [
-        "ai",
-        "hashed",
-        "labs",
-        "seoul",
-        "vibe",
-        "나도",
-        "문제를",
-        "방식",
-        "새로운",
-        "서울",
-        "에너지",
-        "좋은"
-      ],
-      "titleOverlap": [
-        "seoul",
-        "서울"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=14;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8872,6 +9416,50 @@
   },
   {
     "from": "internship-opportunity-at-hashed",
+    "to": "hashed-ai-ecosystem-growth-intern",
+    "type": "REFRAMES",
+    "strength": 0.6158,
+    "sourceClaimId": "internship-opportunity-at-hashed-c1",
+    "sourceEvidence": "astin@hashed.com 감사합니다.",
+    "targetEvidence": "자격 요건 - AI 생태계와 빌더 커뮤니티에 관심이 있는 분 - 여러 업무의 우선순위를 정하고 동시에 관리할 수 있는 분 - 빠르게 움직이는 스타트업 환경에서 자기주도적으로 일할 수 있는 분 - 기본적인 영어 자료를 읽고 업무 커뮤니케이션을 할 수 있는 분 우대 사항 - 커뮤니티 또는 소셜 채널을 운영하고 성장시켜 본 경험 - 컨퍼런스, 해커톤, 밋업 등 이벤트를 운영하거나 적극적으로 참여한 경험 - AI와 바이브코딩에 관심이",
+    "label": "「[Hashed] AI Ecosystem Growth Intern」은 「해시드에서 다양한 비즈니스 업무를 서포트할 인턴을 채용합니다.」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 11,
+      "overlapTokens": [
+        "com",
+        "hashed",
+        "다양한",
+        "아래",
+        "여러",
+        "완료",
+        "이력서",
+        "이메일로",
+        "인턴을",
+        "채용",
+        "해시드"
+      ],
+      "titleOverlap": [
+        "hashed",
+        "다양한",
+        "인턴을",
+        "해시드"
+      ],
+      "sharedTags": [
+        "해시드"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=11;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "internship-opportunity-at-hashed",
     "to": "vibe-labs-seoul-edition-2026-judging",
     "type": "REFRAMES",
     "strength": 0.35,
@@ -8903,38 +9491,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=7;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "internship-opportunity-at-hashed",
-    "to": "agent-siblings",
-    "type": "REFRAMES",
-    "strength": 0.35,
-    "sourceClaimId": "internship-opportunity-at-hashed-c1",
-    "sourceEvidence": "이 포스팅은 채용 완료 후 삭제 예정입니다.",
-    "targetEvidence": "근데 일이 많아지니까 다양한 문제가 생겼다.",
-    "label": "「에이전트 삼남매와 함께하는 일상」은 「해시드에서 다양한 비즈니스 업무를 서포트할 인턴을 채용합니다.」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 4,
-      "overlapTokens": [
-        "가능한",
-        "다양한",
-        "업무를",
-        "완료"
-      ],
-      "titleOverlap": [
-        "다양한",
-        "업무를"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=4;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9148,39 +9704,42 @@
   },
   {
     "from": "death-choices-aging-future-meaning",
-    "to": "thought-speed",
-    "type": "RESONATES",
+    "to": "shopping-before-customers-arrive",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "death-choices-aging-future-meaning-c1",
-    "sourceEvidence": "그런데 문제는 역치다.",
-    "targetEvidence": "그 느린 고통과 기다림이, 생각의 속도 시대에 가장 럭셔리한 경험이 될지도 모른다.",
-    "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「천 년을 살면, 무엇 때문에 죽을까」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "다만 이유는 달라질 것이다.",
+    "targetEvidence": "고객이 보낸 AI를 거절하는 동안, 고객을 이해하고 다음 구매를 제안할 기회까지 다른 회사에 넘기는 일이다.",
+    "label": "「손님이 오기 전에 끝난 쇼핑」은 「천 년을 살면, 무엇 때문에 죽을까」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 53,
+      "lexicalOverlap": 47,
       "overlapTokens": [
-        "가능성",
-        "가치가",
-        "개발",
-        "것을",
-        "경험이",
-        "고통과",
-        "그때",
-        "그러면",
+        "것이다",
+        "결정",
+        "계속",
+        "과정을",
+        "그때는",
         "그런데",
-        "남아",
-        "넘어",
-        "느린"
+        "다만",
+        "다음",
+        "동안",
+        "들여",
+        "때문에",
+        "만든"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "때문에",
+        "전에"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=53;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9270,41 +9829,83 @@
   },
   {
     "from": "balaji-ghost-island-network-state",
-    "to": "agentlinter-v040",
-    "type": "APPLIES",
+    "to": "brain-files-minecraft-flies",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "balaji-ghost-island-network-state-c1",
-    "sourceEvidence": "철학자처럼 깊고, 엔지니어처럼 구체적이며, 창업가처럼 실행 가능한 방식으로 말하는 사람.",
-    "targetEvidence": "2) 원스톱 실행 npx agentlinter 한 번으로 채점 + 스킬 스캔 + 공유.",
-    "label": "「AgentLinter v0.4.0 - 스킬 보안 스캐너 추가」은 「발라지가 국가를 만든 유령섬」의 원리를 구체적인 구축 과정에 적용한다",
+    "sourceEvidence": "다만 한자동맹은 근대 국가의 등장으로 결국 해체되고 말았다.",
+    "targetEvidence": "인간의 뇌가 파일이 되는 날, 죽음이 아닌 하나라는 개념이 흐려진다.",
+    "label": "「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」은 「발라지가 국가를 만든 유령섬」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "tags"
+      "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 12,
+      "lexicalOverlap": 48,
       "overlapTokens": [
+        "10",
+        "4일",
         "가능한",
-        "공개",
-        "공유",
-        "기반",
-        "됐다",
-        "라는",
-        "모든",
-        "실행",
-        "왔다",
-        "있었다",
-        "직접",
-        "크립토"
+        "개념이",
+        "개발자",
+        "것과",
+        "것이다",
+        "그는",
+        "다만",
+        "되고",
+        "되는",
+        "디지털"
       ],
-      "titleOverlap": [],
-      "sharedTags": [
-        "크립토"
+      "titleOverlap": [
+        "되고",
+        "만든"
       ],
+      "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=12;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=48;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "vibe-labs-seoul-edition-2026-judging",
+    "to": "hashed-ai-ecosystem-growth-intern",
+    "type": "REFRAMES",
+    "strength": 0.35,
+    "sourceClaimId": "vibe-labs-seoul-edition-2026-judging-c1",
+    "sourceEvidence": "Hashed Vibe Labs 드림",
+    "targetEvidence": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+    "label": "「[Hashed] AI Ecosystem Growth Intern」은 「바이브랩스 서울 에디션 2026 심사를 마치고」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 18,
+      "overlapTokens": [
+        "ai",
+        "hashed",
+        "labs",
+        "vibe",
+        "결과",
+        "다양한",
+        "만들고",
+        "무언가",
+        "사실이",
+        "서울",
+        "아이디어",
+        "여러"
+      ],
+      "titleOverlap": [
+        "ai",
+        "hashed",
+        "서울"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=entry;dateDirection=newer;lexicalOverlap=18;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9380,45 +9981,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=23;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "vibe-labs-seoul-edition-2026-judging",
-    "to": "memory-identity-ai-development",
-    "type": "REFRAMES",
-    "strength": 0.35,
-    "sourceClaimId": "vibe-labs-seoul-edition-2026-judging-c1",
-    "sourceEvidence": "지금 하고 계신 것을 멈추지 않는 것, 그게 결국 가장 강한 팀의 공통점이었습니다.",
-    "targetEvidence": "경험이 쌓이기 전부터 있어야 하는 것들.",
-    "label": "「기억이 자아를 만든다면」은 「바이브랩스 서울 에디션 2026 심사를 마치고」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 36,
-      "overlapTokens": [
-        "2026",
-        "ai",
-        "것들",
-        "결국",
-        "경험이",
-        "과정",
-        "그게",
-        "그런",
-        "그렇게",
-        "기준",
-        "남아",
-        "낯선"
-      ],
-      "titleOverlap": [
-        "2026"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=36;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -10237,45 +10799,49 @@
   },
   {
     "from": "unknowns-in-modern-creation",
-    "to": "vibe-labs-landing-page-creation",
-    "type": "APPLIES",
-    "strength": 0.5414,
+    "to": "brain-files-minecraft-flies",
+    "type": "REFRAMES",
+    "strength": 0.6207,
     "sourceClaimId": "unknowns-in-modern-creation-c1",
-    "sourceEvidence": "이해 없이 만든 결과물이 누군가를 해쳤을 때, 책임은 어디로 가는가.",
-    "targetEvidence": "AI로 무엇이든 만들 수 있는 시대에, 남들과 다른 '무엇'을 기어코 만들어내는 집요함을 가진 사람.",
-    "label": "「vibelabs.hashed.com을 만든 이야기」은 「모르는 것을 모르는 채로 만드는 시대」의 원리를 구체적인 구축 과정에 적용한다",
+    "sourceEvidence": "양자역학을 고양이가 살아있으면서 동시에 죽어있다는 비유를 통해 겨우 이해하는 것처럼, 앞으로 인간은 AI가 아는 것의 만화 같은 단면을 건네받게 될 것이다.",
+    "targetEvidence": "AI가 코드를 대신 써주는 건 곁가지다.",
+    "label": "「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」은 「모르는 것을 모르는 채로 만드는 시대」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "tags"
+      "tags",
+      "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 33,
+      "lexicalOverlap": 79,
       "overlapTokens": [
         "50",
         "ai",
-        "ai로",
-        "claude",
-        "가진",
+        "ai가",
+        "갖는다",
+        "개발자",
         "것을",
-        "결과물",
-        "누군가",
-        "만드는",
-        "만든",
-        "만들기",
-        "만들었다"
+        "것의",
+        "것이다",
+        "게임",
+        "넘어간다",
+        "년이",
+        "뇌는"
       ],
       "titleOverlap": [
         "것을",
+        "뇌는",
         "만드는",
-        "만든"
+        "모르는",
+        "시대",
+        "채로"
       ],
       "sharedTags": [
         "AI"
       ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=33;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=79;titleOverlap=6;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -10880,13 +11446,13 @@
   },
   {
     "from": "14-5-hours",
-    "to": "ai-hires-ai",
-    "type": "DEEPENS",
-    "strength": 0.6212,
+    "to": "brain-files-minecraft-flies",
+    "type": "REFRAMES",
+    "strength": 0.6287,
     "sourceClaimId": "14-5-hours-c1",
     "sourceEvidence": "2026년 2월, 인간 전문가라면 14.5시간이 걸릴 과제를 AI가 혼자 완수했다.",
-    "targetEvidence": "AI가 AI를 고용하는 마켓플레이스가 있다.",
-    "label": "「AI가 AI를 고용하는 날」은 「아무도 지시하지 않은 14.5시간」의 문제를 더 깊이 파고든다",
+    "targetEvidence": "2026년 9월 3일, 구글과 미국의 한 연구소가 수컷 초파리의 뇌를 통째로 지도로 그려냈다고 발표했다.",
+    "label": "「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」은 「아무도 지시하지 않은 14.5시간」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -10894,33 +11460,34 @@
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 72,
+      "lexicalOverlap": 88,
       "overlapTokens": [
-        "17",
+        "10",
+        "20",
         "2026",
         "2026년",
-        "2월",
+        "4일",
+        "50",
         "ai",
         "ai가",
-        "ai는",
-        "ai를",
-        "ai의",
-        "것을",
-        "것의",
-        "것이다"
+        "가능한",
+        "값이",
+        "개발자",
+        "것을"
       ],
       "titleOverlap": [
-        "ai",
-        "ai가",
-        "ai를",
-        "시간"
+        "뇌는",
+        "되고",
+        "시간",
+        "아무도",
+        "않은"
       ],
       "sharedTags": [
         "AI"
       ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=4;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=88;titleOverlap=5;challengeSignal=false",
     "status": "approved"
   },
   {

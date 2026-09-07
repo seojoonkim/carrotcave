@@ -151,5 +151,61 @@
     "contentHash": "3305:3445842381",
     "summary": "일본의 벤더 중심 구조와 인월 계약이 소프트웨어 제품의 빠른 학습과 개선을 가로막은 원인을 분석한다.",
     "tags": ["일본 소프트웨어", "SI 산업", "벤더 구조", "디지털 경쟁력"]
+  },
+  "208": {
+    "slug": "hashed-ai-ecosystem-growth-intern",
+    "category": "빌딩",
+    "depth": "entry",
+    "summary": "해시드 Nitro의 프로그램 운영과 커뮤니티 성장, 콘텐츠와 파트너십을 함께할 AI 생태계 인턴을 모집한다.",
+    "tags": [
+      "Nitro",
+      "해시드",
+      "AI 빌더",
+      "인턴 채용"
+    ],
+    "title": "[Hashed] AI Ecosystem Growth Intern",
+    "contentHash": "1382:262861354"
+  },
+  "209": {
+    "slug": "shopping-before-customers-arrive",
+    "category": "탐험",
+    "depth": "deep",
+    "summary": "MCP와 UCP의 차이를 짚고, 구매 에이전트를 막는 한국 이커머스가 고객 이해와 선택권을 잃을 위험을 살핀다.",
+    "tags": [
+      "에이전트 커머스",
+      "MCP",
+      "UCP",
+      "이커머스"
+    ],
+    "title": "손님이 오기 전에 끝난 쇼핑",
+    "contentHash": "4004:439499316"
+  },
+  "210": {
+    "slug": "brain-files-minecraft-flies",
+    "category": "탐험",
+    "depth": "deep",
+    "summary": "마인크래프트 속 초파리 뇌 실험에서 출발해, 복제 가능한 뇌가 생명과 소유권, 정체성과 시간에 던지는 질문을 펼친다.",
+    "tags": [
+      "디지털 생명",
+      "뇌 시뮬레이션",
+      "마인크래프트",
+      "AI"
+    ],
+    "title": "뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다",
+    "contentHash": "3568:1954780387"
+  },
+  "211": {
+    "slug": "living-in-the-age-of-optimists",
+    "category": "탐험",
+    "depth": "deep",
+    "summary": "AI가 시행착오의 비용을 낮추는 시대에, 낙관을 확신이 아닌 반복 실험과 학습의 전략으로 바라본다.",
+    "tags": [
+      "낙관론",
+      "AI",
+      "시행착오",
+      "교육과 규제"
+    ],
+    "title": "낙관론자들의 시대를 살아가는 방법",
+    "contentHash": "4063:2375654650"
   }
 }
