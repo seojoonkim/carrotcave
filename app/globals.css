@@ -274,3 +274,32 @@
 @media(max-width:520px){.editorial-wall{gap:12px}}
 @media(hover:none) and (pointer:coarse){.editorial-wall .wall-card{touch-action:manipulation;transition:transform .12s ease,opacity .12s ease}.editorial-wall .wall-card:active{transform:scale(.992);opacity:.92}}
 @media(prefers-reduced-motion:reduce){.editorial-wall .wall-card:active{transform:none!important}}
+
+/* Quiet archive: imagery and type, with feedback only on interaction. */
+.wall-heading{border:0;padding-bottom:8px;margin-bottom:20px}
+.editorial-wall .wall-card{border:0;box-shadow:none;transition:transform .16s ease,opacity .16s ease}
+.editorial-wall .wall-card__date{border:0;padding:0;color:var(--muted);font-weight:400;letter-spacing:.02em}
+.editorial-wall .wall-card--with-image .wall-card__date{color:rgba(255,255,255,.8)}
+.editorial-wall .wall-card__image{transition:transform .18s ease,opacity .18s ease}
+.editorial-wall .wall-card h2,.editorial-wall .wall-card__axis{transition:none}
+.editorial-wall .wall-card--generated{background:linear-gradient(145deg,#292d35,#20232a)}
+.editorial-wall .wall-card--actual-deep::before{content:none}
+.cc-header-axis-mobile::after{content:none}
+.cc-header .axis-rail a,.cc-header-axis-mobile .axis-rail a{background:transparent!important;border:0;transition:transform .16s ease,opacity .16s ease}
+.cc-header .axis-rail a.active b,.cc-header-axis-mobile .axis-rail a.active b{color:var(--carrot-orange)!important}
+.cc-header .axis-rail a:not(.active) b,.cc-header-axis-mobile .axis-rail a:not(.active) b{color:var(--paper)!important}
+.cc-header .axis-rail a span,.cc-header-axis-mobile .axis-rail a span{color:var(--muted)!important}
+.axis-rail .axis-rail__carrot{display:none!important}
+.cc-brand .cc-brand-symbol,.cc-brand .carrot-cave-mark__rabbit,.cc-brand .carrot-cave-mark__carrot{animation:none!important}
+.cc-brand .cc-brand-symbol{transition:transform .16s ease,opacity .16s ease}
+.footer-rabbit-carrot{content:url('/footer-rabbit-carrot-static.svg')}
+@media(hover:hover) and (pointer:fine){
+  .editorial-wall .wall-card:hover{transform:translateY(-2px)}
+  .editorial-wall .wall-card:hover .wall-card__image{transform:scale(1.015)}
+  .cc-brand:is(:hover,:focus-visible) .cc-brand-symbol{transform:translateY(-1px)}
+  .cc-header .axis-rail a:hover,.cc-header-axis-mobile .axis-rail a:hover{opacity:.8;transform:translateY(-1px)}
+}
+.cc-header .axis-rail a:active,.cc-header-axis-mobile .axis-rail a:active{opacity:.7}
+@media(prefers-reduced-motion:reduce){
+  .cc-brand .cc-brand-symbol,.cc-header .axis-rail a,.cc-header-axis-mobile .axis-rail a{transform:none!important;transition:none!important}
+}

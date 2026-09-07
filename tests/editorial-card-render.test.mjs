@@ -69,3 +69,24 @@ test('EditorialCard omits only optional content and keeps the base contract', ()
   assert.match(html, /<time class="wall-card__date"/);
   assert.match(html, /<h2>/);
 });
+
+test('minimal archive keeps accessible dates without segmented date boxes or home counters', () => {
+  const html = render({});
+  assert.match(html, /<span class="sr-only">발행일 2025\.08\.27<\/span>/);
+  assert.match(html, /<span class="wall-card__date-visual" aria-hidden="true">2025\.08\.27<\/span>/);
+  assert.doesNotMatch(html, /wall-card__date-part/);
+  const home = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+  assert.doesNotMatch(home, /THE CAVE WALL|SECTION \/|ENTRIES/);
+});
+
+test('final archive CSS removes seams and idle motion while keeping short accessible feedback', () => {
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const quiet = css.slice(css.indexOf('/* Quiet archive:'));
+  assert.match(quiet, /\.editorial-wall \.wall-card\{border:0;box-shadow:none;transition:transform \.16s ease,opacity \.16s ease\}/);
+  assert.match(quiet, /\.editorial-wall \.wall-card__date\{border:0;padding:0/);
+  assert.match(quiet, /\.cc-header-axis-mobile::after\{content:none\}/);
+  assert.match(quiet, /\.cc-brand \.carrot-cave-mark__carrot\{animation:none!important\}/);
+  assert.match(quiet, /footer-rabbit-carrot-static\.svg/);
+  assert.match(quiet, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(quiet, /transform:none!important;transition:none!important/);
+});

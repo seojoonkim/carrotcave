@@ -47,9 +47,7 @@ export default function EditorialCard({
           <time className="wall-card__date" dateTime={date}>
             <span className="sr-only">발행일 {date.replaceAll('-', '.')}</span>
             <span className="wall-card__date-visual" aria-hidden="true">
-              {date.split('-').map((part, partIndex) => (
-                <span className="wall-card__date-part" key={`${part}-${partIndex}`}>{part}</span>
-              ))}
+              {date.replaceAll('-', '.')}
             </span>
           </time>
           <span className="wall-card__axis">{axis}</span>

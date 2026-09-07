@@ -62,12 +62,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       <section className="wall-shell" aria-labelledby="wall-heading">
         <header className="wall-heading">
           <div>
-            <p>{active ? `SECTION / ${active}` : 'THE CAVE WALL / NEWEST FIRST'}</p>
             <h1 id="wall-heading" className="wall-heading__menu-title">
               {active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}
             </h1>
           </div>
-          <span>{visibleEntries.length} ENTRIES</span>
         </header>
         {visibleEntries.length ? (
           <div className="editorial-wall">
