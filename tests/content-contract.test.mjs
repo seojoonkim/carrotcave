@@ -772,7 +772,7 @@ test('voice cards render a verified portrait thumbnail for every interview archi
   assert.match(interviewSource, /slug: 'yang-zhilin'/);
   assert.match(voiceListSource, /imageUrl=\{item\.thumbnailUrl\}/);
   assert.match(editorialCardSource, /className="wall-card__image"/);
-  assert.match(editorialCardSource, /imageUrl \? ' wall-card--with-image' : ''/);
+  assert.match(editorialCardSource, /EDITORIAL_CARD_FALLBACK_IMAGE/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__image\{[^}]*object-position:/);
 });
 
@@ -879,8 +879,8 @@ test('every post prefers its first image and falls back to a checked-in video st
   assert.match(socialMetadataSource, /post\.mediaUrls\?\.\[0\] \?\? \(post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg` : undefined\)/);
   assert.match(homeSource, /const imageUrl = archiveImageUrl\(post\)/);
   assert.match(homeSource, /imageUrl=\{imageUrl\}/);
-  assert.match(editorialCardSource, /imageUrl \? ' wall-card--with-image' : ''/);
-  assert.match(editorialCardSource, /\{imageUrl && \(\s*<Image/);
+  assert.match(editorialCardSource, /EDITORIAL_CARD_FALLBACK_IMAGE/);
+  assert.match(editorialCardSource, /resolvedImageUrl/);
   assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
 });
 

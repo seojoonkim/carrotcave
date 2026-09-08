@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+export const EDITORIAL_CARD_FALLBACK_IMAGE = '/editorial-card-fallback-v1.png';
+
 interface EditorialCardProps {
   href: string;
   date: string;
@@ -24,24 +26,25 @@ export default function EditorialCard({
   priority = false,
   rhythm,
 }: EditorialCardProps) {
+  const resolvedImageUrl = imageUrl ?? EDITORIAL_CARD_FALLBACK_IMAGE;
+  const isFallback = !imageUrl;
+
   return (
     <Link
-      className={`wall-card${imageUrl ? ' wall-card--with-image' : ''} ${className}`.trimEnd()}
+      className={`wall-card wall-card--with-image${className ? ` ${className}` : ''}`.trimEnd()}
       data-axis={axis}
       data-rhythm={rhythm}
       href={href}
     >
-      {imageUrl && (
-        <Image
+      <Image
           className="wall-card__image"
-          src={imageUrl}
-          alt=""
+          src={resolvedImageUrl}
+          alt={isFallback ? '이미지 준비 중인 CarrotCave 글' : ''}
           width={900}
           height={650}
           sizes="(max-width: 520px) 100vw, (max-width: 900px) 66vw, 50vw"
           priority={priority}
         />
-      )}
       <div className="wall-card__body">
         <div className="wall-card__meta">
           <time className="wall-card__date" dateTime={date}>
