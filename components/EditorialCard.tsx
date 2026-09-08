@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const EDITORIAL_CARD_FALLBACK_IMAGE = '/editorial-card-fallback-v2.png';
+export const EDITORIAL_CARD_FALLBACK_IMAGE = '/editorial-card-fallback-v3.png';
 
 interface EditorialCardProps {
   href: string;

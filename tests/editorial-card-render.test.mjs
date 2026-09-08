@@ -65,7 +65,7 @@ test('EditorialCard groups title and summary for the shared mobile bottom row', 
 test('EditorialCard omits only optional content and keeps the base contract', () => {
   const html = render({ summary: undefined, imageUrl: undefined, className: '' });
   assert.match(html, /class="wall-card wall-card--with-image"/);
-  assert.match(html, /class="wall-card__image"[^>]*src="\/editorial-card-fallback-v2\.png"/);
+  assert.match(html, /class="wall-card__image"[^>]*src="\/editorial-card-fallback-v3\.png"/);
   assert.match(html, /alt="이미지 준비 중인 CarrotCave 글"/);
   assert.match(html, /<time class="wall-card__date"/);
   assert.match(html, /<h2>/);
