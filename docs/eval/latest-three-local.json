@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-09-08T06:14:50.739Z",
+  "source": "https://t.me/s/carrotcave",
+  "base": "http://127.0.0.1:3187",
+  "items": [
+    {
+      "id": 213,
+      "title": "조성진의 쇼팽, 다음 음이 오기 전까지",
+      "slug": "seong-jin-cho-chopin-waiting-for-the-next-note",
+      "date": "2026-09-08",
+      "sourceDatetime": "2026-09-07T16:48:23+00:00",
+      "sourceUrl": "https://t.me/carrotcave/213",
+      "bodySha256Normalized": "34f92acd1e124079d2c24986004ee8378bdb323ce6631506469b2cd215843ed6",
+      "status": "live-verified",
+      "media": [
+        "/media/msg-213-0.jpg"
+      ]
+    },
+    {
+      "id": 211,
+      "title": "낙관론자들의 시대를 살아가는 방법",
+      "slug": "living-in-the-age-of-optimists",
+      "date": "2026-09-07",
+      "sourceDatetime": "2026-09-07T00:33:50+00:00",
+      "sourceUrl": "https://t.me/carrotcave/211",
+      "bodySha256Normalized": "ce90994ba3c8af0335bd14003397032a354b1221fa80e34ed4f3edc6565f54ef",
+      "status": "live-verified",
+      "media": []
+    },
+    {
+      "id": 210,
+      "title": "뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다",
+      "slug": "brain-files-minecraft-flies",
+      "date": "2026-09-06",
+      "sourceDatetime": "2026-09-06T12:30:54+00:00",
+      "sourceUrl": "https://t.me/carrotcave/210",
+      "bodySha256Normalized": "82330b1521f5099354060eaaf6e133c4dbc6a1cf9483515ffed67cc35e9ae3b4",
+      "status": "live-verified",
+      "media": [
+        "/media/msg-210-0.jpg"
+      ]
+    }
+  ],
+  "viewports": [
+    {
+      "width": 390,
+      "pages": [
+        {
+          "id": 213,
+          "status": 200,
+          "proseParagraphsVerified": 26,
+          "bodySha256": "34f92acd1e124079d2c24986004ee8378bdb323ce6631506469b2cd215843ed6",
+          "images": [
+            {
+              "src": "/media/msg-213-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 211,
+          "status": 200,
+          "proseParagraphsVerified": 33,
+          "bodySha256": "ce90994ba3c8af0335bd14003397032a354b1221fa80e34ed4f3edc6565f54ef",
+          "images": [],
+          "overflow": false
+        },
+        {
+          "id": 210,
+          "status": 200,
+          "proseParagraphsVerified": 21,
+          "bodySha256": "16855e4edc7ebaf21ae61ee010da05705aa4942800c8f217ef66861b1950d419",
+          "images": [],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "pages": [
+        {
+          "id": 213,
+          "status": 200,
+          "proseParagraphsVerified": 26,
+          "bodySha256": "34f92acd1e124079d2c24986004ee8378bdb323ce6631506469b2cd215843ed6",
+          "images": [
+            {
+              "src": "/media/msg-213-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 211,
+          "status": 200,
+          "proseParagraphsVerified": 33,
+          "bodySha256": "ce90994ba3c8af0335bd14003397032a354b1221fa80e34ed4f3edc6565f54ef",
+          "images": [],
+          "overflow": false
+        },
+        {
+          "id": 210,
+          "status": 200,
+          "proseParagraphsVerified": 21,
+          "bodySha256": "16855e4edc7ebaf21ae61ee010da05705aa4942800c8f217ef66861b1950d419",
+          "images": [],
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "assets": [
+    {
+      "path": "/media/msg-213-0.jpg",
+      "status": 200,
+      "sha256": "5c978f374655a1c96b13da133fe97fadfe58a9dd428a48f49bd0406c9a927979",
+      "bytes": 55678
+    },
+    {
+      "path": "/media/msg-210-0.jpg",
+      "status": 200,
+      "sha256": "de4eb14ab5d26b9d8c65e760e401fe9334f5335932b02892053ccc69ace50390",
+      "bytes": 20561
+    },
+    {
+      "path": "/footer-rabbit-carrot-v2.svg",
+      "status": 200,
+      "sha256": "a85950bdd165d0c44649a938a3ce74a324175bdda11db14e257110dfe5123439",
+      "bytes": 12933
+    }
+  ]
+}

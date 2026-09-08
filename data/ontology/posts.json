@@ -1,4 +1,50 @@
 {
+  "seong-jin-cho-chopin-waiting-for-the-next-note": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-음악",
+      "tag-AI",
+      "tag-아름다움"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
+        "text": "음악을 듣다가 아직 오지 않은 음을 기다리고 있는 나를 발견했다.",
+        "stance": "asserts",
+        "evidence": "음악을 듣다가 아직 오지 않은 음을 기다리고 있는 나를 발견했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "음악",
+      "AI",
+      "아름다움"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "living-in-the-age-of-optimists": {
     "primaryTopics": [
       "exploration"

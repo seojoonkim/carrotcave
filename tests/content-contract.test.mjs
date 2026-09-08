@@ -701,7 +701,7 @@ test('voice thumbnails use content abstracts instead of transcript-format descri
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
-test('post thumbnails replace sequence numbers with a prominent publication-date stamp', () => {
+test('post thumbnails replace sequence numbers with a quiet accessible publication date', () => {
   assert.doesNotMatch(homeSource, /const number = String\(index \+ 1\)\.padStart/);
   assert.doesNotMatch(homeSource, /<span>\{number\}<\/span>/);
   assert.match(homeSource, /date=\{post\.date\}/);
@@ -709,12 +709,12 @@ test('post thumbnails replace sequence numbers with a prominent publication-date
   assert.doesNotMatch(editorialCardSource, /<time[^>]*aria-label=/);
   assert.match(editorialCardSource, /<span className="sr-only">발행일 \{date\.replaceAll\('-', '\.'\)\}<\/span>/);
   assert.match(editorialCardSource, /<span className="wall-card__date-visual" aria-hidden="true">/);
-  assert.match(editorialCardSource, /date\.split\('-'\)\.map/);
-  assert.match(editorialCardSource, /className="wall-card__date-part"/);
+  assert.match(editorialCardSource, /className="wall-card__date-visual" aria-hidden="true">\s*\{date\.replaceAll\('-', '\.'\)\}/);
+  assert.doesNotMatch(editorialCardSource, /className="wall-card__date-part"/);
   assert.match(stylesSource, /\.sr-only\{[^}]*position:absolute[^}]*clip:/);
   assert.doesNotMatch(voiceListSource, /String\(index \+ 1\)\.padStart/);
   assert.match(stylesSource, /\.wall-card__date\{[^}]*display:flex[^}]*font:/);
-  assert.match(stylesSource, /\.wall-card__date-part\{[^}]*border-right:/);
+  assert.match(stylesSource, /\.editorial-wall \.wall-card__date\{border:0;padding:0;color:var\(--muted\);font-weight:400/);
   assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{margin-left:auto\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{display:none\}/);
   assert.match(stylesSource, /\.wall-card--actual-quote \.wall-card__date\{color:#555\}/);

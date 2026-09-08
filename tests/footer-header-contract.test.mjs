@@ -37,8 +37,8 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.doesNotMatch(staticAsset, /animation:/);
   assert.match(staticAsset, /<g transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g transform="translate\(760\)"/);
   assert.doesNotMatch(staticAsset, /cave|동굴/i);
-  assert.match(component, /src="\/footer-rabbit-carrot\.svg"/);
-  assert.match(globalCss, /footer-rabbit-carrot\{content:url\('\/footer-rabbit-carrot-static\.svg'\)\}/);
+  assert.match(component, /src="\/footer-rabbit-carrot-v2\.svg"/);
+  assert.doesNotMatch(globalCss, /footer-rabbit-carrot\{content:url\('\/footer-rabbit-carrot-static\.svg'\)\}/);
   assert.match(globalCss, /\.cc-footer\{[^}]*border-top:0;[^}]*linear-gradient\(180deg,var\(--graphite\) 0%,#202228 55%,#181a1f 100%\)/);
   assert.match(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 0;[\s\S]*?linear-gradient\(180deg, #24262c 0%, #202228 55%, #181a1f 100%\)/);
   assert.doesNotMatch(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 1px/);

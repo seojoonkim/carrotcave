@@ -11,7 +11,7 @@ test('the complete archive combines ordinary posts and voices without changing c
   assert.match(home, /active\s*\? visiblePosts\.map/);
   assert.match(home, /\.\.\.interviews\.map\(\(interview\) => \(\{ kind: 'voice' as const, date: interview\.sourcePublishedAt, interview \}\)\)/);
   assert.match(home, /entry\.kind === 'post'[\s\S]*?<VoiceWallCard/);
-  assert.match(home, /<span>\{visibleEntries\.length\} ENTRIES<\/span>/);
+  assert.doesNotMatch(home, /ENTRIES|THE CAVE WALL|SECTION \//);
   assert.match(rail, /<b>전체<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
 });
 
@@ -95,7 +95,7 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>@simonkim_nft<\/span>/);
   assert.doesNotMatch(footer, /<span>X @simonkim_nft<\/span>/);
   assert.match(css, /\.footer-rabbit-carrot\{[^}]*max-height:190px[^}]*border:0;background:transparent/);
-  assert.match(caveScene, /src="\/footer-rabbit-carrot\.svg"/);
+  assert.match(caveScene, /src="\/footer-rabbit-carrot-v2\.svg"/);
   assert.doesNotMatch(caveScene, /<rect\b|<path\b|<polygon\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);

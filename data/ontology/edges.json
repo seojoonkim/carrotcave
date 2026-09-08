@@ -1,5 +1,137 @@
 [
   {
+    "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "to": "14-5-hours",
+    "type": "REFRAMES",
+    "strength": 0.5935,
+    "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
+    "sourceEvidence": "그런데 AI는 언젠가 왜 여기서 기다려야 하는지 알게 될까.",
+    "targetEvidence": "AI는 이미 그것을 아득히 넘어섰다.",
+    "label": "「아무도 지시하지 않은 14.5시간」은 「조성진의 쇼팽, 다음 음이 오기 전까지」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 58,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "ai는",
+        "ai의",
+        "것을",
+        "것이다",
+        "것처럼",
+        "그것을",
+        "그런데",
+        "남는다",
+        "다음",
+        "될까"
+      ],
+      "titleOverlap": [
+        "다음",
+        "시간",
+        "않은"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=58;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "to": "unknowns-in-modern-creation",
+    "type": "REFRAMES",
+    "strength": 0.5818,
+    "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
+    "sourceEvidence": "나도 요즘 AI로 곡을 만든다.",
+    "targetEvidence": "훗날 AI가 교과서를 쓴다면, 거기에는 우리가 이해하지 못했던 진실이 시작된 이야기가 그들의 저학년 커리큘럼에 실려 있을 것이다.",
+    "label": "「모르는 것을 모르는 채로 만드는 시대」은 「조성진의 쇼팽, 다음 음이 오기 전까지」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 49,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "ai는",
+        "ai로",
+        "ai의",
+        "같다",
+        "거기",
+        "것을",
+        "것이다",
+        "것처럼",
+        "나를",
+        "누군가"
+      ],
+      "titleOverlap": [
+        "것을",
+        "다음",
+        "만드는"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=49;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "to": "fear-and-value-in-ai-creation",
+    "type": "DEEPENS",
+    "strength": 0.5787,
+    "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
+    "sourceEvidence": "나도 요즘 AI로 곡을 만든다.",
+    "targetEvidence": "누군가는 AI를 쓰는 일이 통제 없이 인턴 100명을 동시에 돌리는 것과 같다고 했다.",
+    "label": "「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」은 「조성진의 쇼팽, 다음 음이 오기 전까지」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 44,
+      "overlapTokens": [
+        "ai",
+        "ai로",
+        "같다",
+        "걸까",
+        "것과",
+        "것을",
+        "것이다",
+        "결국",
+        "곳은",
+        "그것을",
+        "그런데",
+        "기술적"
+      ],
+      "titleOverlap": [
+        "다음",
+        "보낸",
+        "전까지"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=44;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "living-in-the-age-of-optimists",
     "to": "agent-era-branding-future",
     "type": "DEEPENS",
@@ -7904,6 +8036,50 @@
   },
   {
     "from": "fear-and-value-in-ai-creation",
+    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "type": "DEEPENS",
+    "strength": 0.5787,
+    "sourceClaimId": "fear-and-value-in-ai-creation-c1",
+    "sourceEvidence": "누군가는 AI를 쓰는 일이 통제 없이 인턴 100명을 동시에 돌리는 것과 같다고 했다.",
+    "targetEvidence": "나도 요즘 AI로 곡을 만든다.",
+    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 44,
+      "overlapTokens": [
+        "ai",
+        "ai로",
+        "같다",
+        "걸까",
+        "것과",
+        "것을",
+        "것이다",
+        "결국",
+        "곳은",
+        "그것을",
+        "그런데",
+        "기술적"
+      ],
+      "titleOverlap": [
+        "다음",
+        "보낸",
+        "전까지"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=44;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "fear-and-value-in-ai-creation",
     "to": "gaslighting-ai-open-source-project",
     "type": "APPLIES",
     "strength": 0.5686,
@@ -7943,50 +8119,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=newer;lexicalOverlap=54;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "fear-and-value-in-ai-creation",
-    "to": "hvl-fellows",
-    "type": "DEEPENS",
-    "strength": 0.5448,
-    "sourceClaimId": "fear-and-value-in-ai-creation-c1",
-    "sourceEvidence": "지난달 제주도에서 Hashed Vibe Labs Fellow들과 며칠을 보냈다.",
-    "targetEvidence": "Hashed Vibe Labs 서울 에디션 지원은 오는 19일 마감된다.",
-    "label": "「Hashed Vibe Labs Fellows 소개」은 「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "tags",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 26,
-      "overlapTokens": [
-        "ai",
-        "hashed",
-        "hvl",
-        "labs",
-        "vibe",
-        "기술의",
-        "도구의",
-        "동시에",
-        "만드는",
-        "만든",
-        "모델의",
-        "빠르게"
-      ],
-      "titleOverlap": [
-        "hashed",
-        "labs",
-        "vibe"
-      ],
-      "sharedTags": [
-        "AI"
-      ],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=26;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8781,39 +8913,41 @@
   },
   {
     "from": "post-103",
-    "to": "post-141",
-    "type": "RESONATES",
+    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-103-c1",
     "sourceEvidence": "현실 경제를 읽고 그것을 대출로 번역하는 문법 자체가 고장난 것이다.",
-    "targetEvidence": "전기가 너무 싸고 너무 널리 퍼져 아무도 그것을 특별한 기술로 부르지 않게 되었을 때 세계가 바뀌었다.",
-    "label": "「왕관이 콘센트가 되는 순간」은 「돈을 받지도 빌려주지도 못하는 은행」의 핵심 문제와 맞닿는다",
+    "targetEvidence": "아니면 그것을 이해할 수 없을 것 같았던 나 자신이었을까.",
+    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「돈을 받지도 빌려주지도 못하는 은행」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 83,
+      "lexicalOverlap": 47,
       "overlapTokens": [
-        "20",
-        "30",
-        "개발자",
-        "개의",
+        "간다",
         "것과",
         "것을",
         "것이다",
-        "구조",
         "그것을",
         "그런데",
-        "기술",
-        "기업"
+        "그렇게",
+        "남는다",
+        "동안",
+        "되지만",
+        "만드는",
+        "머물러"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "못하는"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=83;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -10401,44 +10535,45 @@
   },
   {
     "from": "chalk-prayer-in-soma-ai-critique",
-    "to": "gaslighting-ai-open-source-project",
-    "type": "APPLIES",
-    "strength": 0.4511,
+    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "type": "REFRAMES",
+    "strength": 0.483,
     "sourceClaimId": "chalk-prayer-in-soma-ai-critique-c1",
-    "sourceEvidence": "AI를 만드는 회사에게 영혼을 지키라고 말하는 것은 이상한 부탁이다.",
-    "targetEvidence": "AI를 다루다 보면 여러가지로 사람같은 순간들이 자주 찾아온다.",
-    "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「길바닥에 쓰여진 분필의 기도」의 원리를 구체적인 구축 과정에 적용한다",
+    "sourceEvidence": "\"인류는 무엇을 잃어버렸기에 기술 기업의 문 앞에 무릎을 꿇었으며, 그 기업은 끝내 그 신뢰를 감당했는가.\" 분필은 이미 지워졌고, 수십억 달러짜리 전광판들이 밤새 AI의 미래를 밝히는 이 도시에서, 가장 오래 남을 질문만 콘크리트 밑에 스며들어 아직 마르지 않았다.",
+    "targetEvidence": "혹시 AI가 내가 끝내 풀지 못한 질문에 답한다면.",
+    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「길바닥에 쓰여진 분필의 기도」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "tags"
+      "tags",
+      "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 40,
+      "lexicalOverlap": 41,
       "overlapTokens": [
         "ai",
-        "ai를",
+        "ai가",
         "ai의",
-        "claude",
-        "you",
-        "가지고",
-        "강력한",
+        "것과",
         "것이다",
-        "나온",
+        "그런데",
+        "그렇게",
+        "기대와",
+        "기대의",
+        "끝내",
         "다음",
-        "도구를",
-        "되어가고"
+        "될까"
       ],
       "titleOverlap": [
-        "ai",
-        "ai를"
+        "다음",
+        "오기"
       ],
       "sharedTags": [
         "AI"
       ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=newer;lexicalOverlap=40;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=41;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -16155,40 +16290,45 @@
   },
   {
     "from": "robot-goku-5000",
-    "to": "quantum-pirates",
+    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
     "type": "REFRAMES",
-    "strength": 0.4551,
+    "strength": 0.4892,
     "sourceClaimId": "robot-goku-5000-c1",
-    "sourceEvidence": "2026년 초, 춘절 무대에서 손오공을 연기했다.",
-    "targetEvidence": "2026년 2월 12일, BIP 360이 공식 Bitcoin Improvement Proposal 저장소에 머지됐다.",
-    "label": "「690만 BTC를 노리는 양자 해적들: 비트코인판 \"대해적시대\"가 열린다」은 「5천 달러짜리 손오공」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "아무도 그것을 신기하다고 생각하지 않게 되는 날이 오면, 변화는 이미 완성된 것이다.",
+    "targetEvidence": "아니면 그것을 이해할 수 없을 것 같았던 나 자신이었을까.",
+    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「5천 달러짜리 손오공」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category",
-      "legacy-relations"
+      "tags",
+      "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 28,
+      "lexicalOverlap": 37,
       "overlapTokens": [
-        "2026",
-        "2026년",
-        "2030",
-        "2030년",
-        "360",
+        "ai",
+        "감정은",
         "같다",
-        "개의",
         "거기에",
+        "것과",
+        "것을",
         "것이다",
-        "것인가",
-        "그대로",
-        "나오는"
+        "그것을",
+        "그런데",
+        "그중",
+        "기술적",
+        "다음"
       ],
-      "titleOverlap": [],
-      "sharedTags": [],
+      "titleOverlap": [
+        "다음",
+        "전까지"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category+legacy-relations;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=28;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=37;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
