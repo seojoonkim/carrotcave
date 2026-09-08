@@ -303,3 +303,24 @@
 @media(prefers-reduced-motion:reduce){
   .cc-brand .cc-brand-symbol,.cc-header .axis-rail a,.cc-header-axis-mobile .axis-rail a{transform:none!important;transition:none!important}
 }
+
+/* 2026 editorial system contract: restrained final layer */
+:root{--site-container:1100px;--cc-header-surface:#25272d;--cc-header-height:72px;--cc-accent:#e87932;--cc-focus:#f29a62}
+body{background:var(--graphite);color:var(--paper);line-height:1.6}
+.cc-header{background:var(--cc-header-surface);border:0}
+.wall-shell{width:min(100% - 40px,var(--site-container));margin-inline:auto;padding-top:clamp(36px,6vw,72px);padding-bottom:clamp(72px,10vw,128px)}
+.wall-heading{margin-bottom:28px;padding-bottom:0;border:0}
+.wall-heading p{color:var(--cc-accent)}
+.editorial-wall{gap:18px}
+.editorial-wall .wall-card{border:0;background:#2b2e35;box-shadow:none}
+.editorial-wall .wall-card__body{padding:clamp(20px,2.8vw,32px)}
+.editorial-wall .wall-card h2{font-size:clamp(21px,2.1vw,25px);line-height:1.25}
+.editorial-wall .wall-card__abstract{color:rgba(242,241,236,.72);line-height:1.7}
+.post-reader-article{max-width:760px;margin-inline:auto;padding-top:clamp(48px,7vw,88px);padding-bottom:clamp(80px,10vw,136px)}
+.post-reader-header{margin-bottom:48px;padding-bottom:0;border:0}
+.post-content{line-height:1.9}
+.post-content a{color:var(--cc-accent);text-decoration-color:currentColor;text-underline-offset:3px}
+.cc-footer{border:0}
+:focus-visible{outline:2px solid var(--cc-focus);outline-offset:4px}
+@media(max-width:520px){.wall-shell{width:100%;padding:32px 16px 72px}.wall-heading{margin-bottom:20px}.editorial-wall{gap:12px}.editorial-wall .wall-card{min-height:232px}.editorial-wall .wall-card__body{padding:18px}.editorial-wall .wall-card h2{font-size:23px}.editorial-wall .wall-card__copy{display:block}.editorial-wall .wall-card__copy .wall-card__abstract{margin:12px 0 0}.post-reader-article{padding:40px 16px 80px}.post-reader-header{margin-bottom:36px}}
+@media(prefers-reduced-motion:reduce){.editorial-wall .wall-card:hover{transform:none!important}}
