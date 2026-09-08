@@ -1,0 +1,93 @@
+{
+  "base": "http://127.0.0.1:3189",
+  "results": [
+    {
+      "width": 390,
+      "state": {
+        "images": [
+          {
+            "src": "https://pbs.twimg.com/profile_images/2008681673697697792/8RgCYJEU_200x200.jpg",
+            "complete": true,
+            "width": 200
+          }
+        ],
+        "videos": [
+          {
+            "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+            "width": 1280
+          },
+          {
+            "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+            "width": 1280
+          }
+        ],
+        "overflow": false
+      },
+      "embedVideoCount": 1,
+      "failures": [
+        {
+          "url": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:3189/?section=%ED%83%90%ED%97%98&_rsc=ViHdWvvONJOS_h5p",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "playback": {
+        "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+        "time": 1.198896,
+        "width": 1280,
+        "height": 704,
+        "readyState": 4,
+        "error": null,
+        "frames": 42,
+        "insideLink": false
+      }
+    },
+    {
+      "width": 1280,
+      "state": {
+        "images": [
+          {
+            "src": "https://pbs.twimg.com/profile_images/2008681673697697792/8RgCYJEU_200x200.jpg",
+            "complete": true,
+            "width": 200
+          }
+        ],
+        "videos": [
+          {
+            "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+            "width": 1280
+          },
+          {
+            "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+            "width": 1280
+          }
+        ],
+        "overflow": false
+      },
+      "embedVideoCount": 1,
+      "failures": [
+        {
+          "url": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+          "error": "net::ERR_ABORTED"
+        },
+        {
+          "url": "http://127.0.0.1:3189/?section=%ED%83%90%ED%97%98&_rsc=ViHdWvvONJOS_h5p",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "playback": {
+        "src": "http://127.0.0.1:3189/media/msg-210-v0.mp4",
+        "time": 1.197623,
+        "width": 1280,
+        "height": 704,
+        "readyState": 4,
+        "error": null,
+        "frames": 42,
+        "insideLink": false
+      }
+    }
+  ]
+}

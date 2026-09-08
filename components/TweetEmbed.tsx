@@ -10,7 +10,7 @@ interface TweetData {
   date: string;
   likes: number;
   retweets: number;
-  media?: { url: string; type: string }[];
+  media?: { url: string; type: string; thumbnail_url?: string }[];
 }
 
 export default function TweetEmbed({ url }: { url: string }) {
@@ -40,7 +40,8 @@ export default function TweetEmbed({ url }: { url: string }) {
           likes: t.likes || 0,
           retweets: t.retweets || 0,
           media: t.media?.all?.map((m: any) => ({
-            url: m.url || m.thumbnail_url,
+            url: id === '2095975490708291948' && m.type === 'video' ? '/media/msg-210-v0.mp4' : (m.url || m.thumbnail_url),
+            thumbnail_url: m.thumbnail_url,
             type: m.type,
           })),
         });
@@ -89,12 +90,7 @@ export default function TweetEmbed({ url }: { url: string }) {
   };
 
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
-    >
+    <div data-tweet-embed style={{ color: 'inherit', display: 'block' }}>
       <div style={{
         border: '1px solid rgba(212,146,42,0.15)',
         borderRadius: '12px',
@@ -154,11 +150,18 @@ export default function TweetEmbed({ url }: { url: string }) {
             marginBottom: '0.625rem',
             maxHeight: '280px',
           }}>
-            <img
-              src={tweet.media[0].url}
-              alt=""
-              style={{ width: '100%', maxHeight: '280px', objectFit: 'cover', display: 'block' }}
-            />
+            {tweet.media[0].type === 'video' ? (
+              <video
+                src={tweet.media[0].url}
+                poster={tweet.media[0].thumbnail_url}
+                controls
+                playsInline
+                preload="metadata"
+                style={{ width: '100%', maxHeight: '280px', display: 'block' }}
+              />
+            ) : (
+              <img src={tweet.media[0].url} alt="" style={{ width: '100%', maxHeight: '280px', objectFit: 'cover', display: 'block' }} />
+            )}
           </div>
         )}
 
@@ -175,6 +178,6 @@ export default function TweetEmbed({ url }: { url: string }) {
           {tweet.likes > 0 && <span>❤️ {formatNum(tweet.likes)}</span>}
         </div>
       </div>
-    </a>
+    </div>
   );
 }
