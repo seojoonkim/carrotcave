@@ -12,3 +12,23 @@
   box-shadow: var(--cc-header-shadow) !important;
   backdrop-filter: none !important;
 }
+
+/* Mobile archive: one opaque surface, with depth only below the category row.
+   Keep the single-row desktop and reading-header chrome unchanged. */
+@media (max-width: 900px) {
+  .cc-header:not(.cc-header--reading) {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .cc-header-axis-mobile,
+  .cc-header-axis-mobile .axis-rail,
+  .cc-header-axis-mobile::before {
+    background: var(--cc-header-surface);
+    border: 0;
+  }
+
+  .cc-header-axis-mobile::before {
+    box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.22);
+  }
+}
