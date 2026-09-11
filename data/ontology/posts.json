@@ -1,4 +1,50 @@
 {
+  "waited-for-you": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-소설",
+      "tag-AI 상담",
+      "tag-가족"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "waited-for-you-c1",
+        "text": "딸이 사라지기 십 분 전, 나는 아이의 방문을 잠갔다.",
+        "stance": "asserts",
+        "evidence": "딸이 사라지기 십 분 전, 나는 아이의 방문을 잠갔다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "소설",
+      "AI 상담",
+      "가족"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "seong-jin-cho-chopin-waiting-for-the-next-note": {
     "primaryTopics": [
       "exploration"

@@ -511,42 +511,6 @@
       "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "post-201",
-      "to": "post-192",
-      "sourceTitle": "문이 열리는 쪽",
-      "targetTitle": "맥락 세탁소",
-      "sourceCategory": "소설",
-      "targetCategory": "소설",
-      "sourceEvidence": "종료 59분 전, 미나는 아르카의 하늘에 문장을 띄웠다.",
-      "targetEvidence": "검색 에이전트는 같은 문장이 많을수록 사실에 가깝다고 계산했다.",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 66,
-        "overlapTokens": [
-          "59",
-          "59분",
-          "가깝다고",
-          "가능성",
-          "검은",
-          "계산",
-          "권한은",
-          "기다리",
-          "기록만",
-          "기록은",
-          "기록을",
-          "남았다"
-        ],
-        "titleOverlap": [],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "type": "RESONATES",
-      "label": "「맥락 세탁소」은 「문이 열리는 쪽」의 핵심 문제와 맞닿는다"
-    },
-    {
       "from": "kpop-fandom-digital-parliament",
       "to": "fear-and-value-in-ai-creation",
       "sourceTitle": "K-POP 팬덤은 어떻게 디지털 의회가 되었나",
@@ -940,6 +904,42 @@
       },
       "type": "REFRAMES",
       "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「AgentLinter 개발기」의 주제를 다른 맥락에서 다시 바라본다"
+    },
+    {
+      "from": "matchhz",
+      "to": "mrinank-anthropic",
+      "sourceTitle": "MatchHz",
+      "targetTitle": "시인이자 AI 안전 연구원, Anthropic을 떠나다",
+      "sourceCategory": "소설",
+      "targetCategory": "낙서",
+      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
+      "targetEvidence": "그런 그가 2년 전, AI가 인류에게 가져올 위험을 막겠다는 사명감으로 Anthropic에 합류했다.",
+      "signals": [
+        "content",
+        "tags",
+        "relatedSlugs",
+        "legacy-relations"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 6,
+        "overlapTokens": [
+          "2월",
+          "ai",
+          "그런",
+          "말을",
+          "모르는",
+          "에세이"
+        ],
+        "titleOverlap": [
+          "ai"
+        ],
+        "sharedTags": [
+          "에세이"
+        ],
+        "sharedConcepts": []
+      },
+      "type": "REFRAMES",
+      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「MatchHz」의 주제를 다른 맥락에서 다시 바라본다"
     }
   ]
 }
