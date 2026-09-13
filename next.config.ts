@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
+import aliases from './data/post-route-aliases.json';
 
 const nextConfig: NextConfig = {
+  async redirects() { return aliases; },
   outputFileTracingIncludes: {
     '/': [
       './public/voices/liang-wenfeng/long-reader-ko.json',

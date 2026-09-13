@@ -695,7 +695,9 @@ test('category names are stored without decorative icons across production data 
 
 test('voice thumbnails use content abstracts instead of transcript-format descriptions', () => {
   assert.match(interviewSource, /summary: string;/);
-  assert.equal((interviewSource.match(/\n\s+summary: '/g) ?? []).length, 5);
+  const entries = (interviewSource.match(/\n\s+slug: '/g) ?? []).length;
+  assert.ok(entries > 0);
+  assert.equal((interviewSource.match(/\n\s+summary: '/g) ?? []).length, entries);
   assert.match(voiceListSource, /summary=\{item\.summary\}/);
   assert.doesNotMatch(voiceListSource, /summary=\{item\.description\}/);
   assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);

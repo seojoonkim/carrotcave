@@ -1,0 +1,47 @@
+[
+  {
+    "source": "/posts/post-215",
+    "destination": "/posts/the-right-to-turn-on-a-brain",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-214",
+    "destination": "/posts/waited-for-you",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-213",
+    "destination": "/posts/seong-jin-cho-chopin-waiting-for-the-next-note",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-211",
+    "destination": "/posts/living-in-the-age-of-optimists",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-210",
+    "destination": "/posts/brain-files-minecraft-flies",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-208",
+    "destination": "/posts/hashed-ai-ecosystem-growth-intern",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-207",
+    "destination": "/posts/japan-hardware-software-gap",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-206",
+    "destination": "/posts/automation-citizen-production-equity",
+    "permanent": true
+  },
+  {
+    "source": "/posts/post-205",
+    "destination": "/posts/swarmworld-stigmergic-ai-society",
+    "permanent": true
+  }
+]

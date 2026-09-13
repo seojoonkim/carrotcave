@@ -5,7 +5,10 @@
   "scripts": {
     "predev": "node scripts/prepare-voice-fonts.mjs",
     "dev": "next dev",
-    "prebuild": "npm run audit:ontology && node scripts/prepare-voice-fonts.mjs",
+    "prebuild": "node scripts/verify-release-baseline.mjs --content-only && npm run audit:ontology && node scripts/prepare-voice-fonts.mjs",
+    "release:check": "node scripts/verify-release-baseline.mjs",
+    "test:voice-layout": "node scripts/verify-voice-layout.cjs",
+    "release:production": "node scripts/release-production.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

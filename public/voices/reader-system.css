@@ -235,7 +235,8 @@ img { border: 0; outline: 0;  }
     right: auto;
     width: min(1100px, calc(100vw - 40px));
     max-height: calc(100svh - var(--header) - 20px);
-    padding: 20px max(22px, calc((100% - var(--reader-measure)) / 2)) 24px;
+    /* Keep padding relative to the bounded drawer, not the viewport. */
+    padding: 20px 22px 24px;
     border: 0;
     transform: translate(-50%, -18px);
   }

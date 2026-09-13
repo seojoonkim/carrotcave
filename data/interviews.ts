@@ -18,6 +18,22 @@ export interface InterviewArchive {
 
 export const interviews: InterviewArchive[] = [
   {
+    slug: 'masayoshi-son-asi-economy',
+    name: '손정의',
+    eyebrow: 'SOFTBANK WORLD 2026 / ASI ECONOMY / AI INFRASTRUCTURE',
+    title: '2040년 ASI Economy를 먼저 준비하는 법',
+    summary: '손정의는 2040년 AI 에이전트와 휴머노이드가 만드는 경제, 전력과 연산 인프라, 그리고 Return on AI라는 새로운 경영 지표를 이야기한다.',
+    description: 'SoftBank World 2026 손정의 특별강연을 8개 장과 문단별 타임코드로 정리한 한국어 번역 리더.',
+    sourcePublishedAt: '2026-09-01', // Official YouTube upload_date, verified with yt-dlp.
+    thumbnailUrl: '/voices/masayoshi-son-asi-economy/son-asi-economy.jpg',
+    sourceUrl: 'https://www.youtube.com/watch?v=dTO-tYqZOZg',
+    duration: '1:06:15',
+    chapters: 8,
+    segments: 484,
+    embedPath: '/voices/masayoshi-son-asi-economy/index.html',
+    status: 'published',
+  },
+  {
     slug: 'tibo-ai-wave',
     name: '티보',
     eyebrow: 'OPENAI / PERSONAL AGENTS / AI SYSTEMS',

@@ -12,6 +12,7 @@ function normalize(value) {
 
 const allowedCategories = new Set(['탐험', '빌딩', '낙서', '소설']);
 const approvedFictionOpeningSynopses = new Map([
+  ['waited-for-you', 'AI 상담을 믿고 딸을 지키려던 아버지가 오히려 아이의 신호를 놓치며 책임과 돌봄의 의미를 마주한다.'],
   ['post-192', '서울시장 선거를 이틀 앞둔 밤, 기자는 요약본만 남은 12년 전 물류창고 화재의 원본 기록을 추적한다.'],
   ['thank-you-mirror', 'AI만 글을 쓰는 소셜 네트워크를 발견한 남자가 관심을 끌기 위해 자신의 에이전트에게 자극적인 거짓말을 가르친다.'],
   ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원은 AI에게 뭉이가 마지막 순간 무엇을 느꼈는지 묻고 답을 기다린다.'],
