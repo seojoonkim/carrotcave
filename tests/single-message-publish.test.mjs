@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { hashContent, publishSingleMessage, regenerateOntology } from '../scripts/publish-single-message.mjs';
+import { hashContent, parseSingleMessage, publishSingleMessage, regenerateOntology } from '../scripts/publish-single-message.mjs';
 import { selectNewMessages } from '../scripts/auto-sync.mjs';
 
 const telegramHtml = `
@@ -19,6 +19,12 @@ const telegramHtml = `
 </div>`;
 
 const fullText = '검토된 새 글\n이 글은 단일 게시 경로가 과거 게시물과 반응을 건드리지 않는지 검증하기 위한 충분히 긴 본문이다. 빠른 발행은 지정된 메시지만 가져와야 하며 전체 채널을 훑어서는 안 된다.';
+
+ test('parses Telegram video src when data-src is absent', () => {
+  const html = '<div class="tgme_widget_message_wrap"><div data-post="carrotcave/215"><div class="tgme_widget_message_text">뇌를 켜는 사람의 권한<br>본문</div><video src="https://cdn5.telesco.pe/file/example.mp4?token=abc"></video><time datetime="2026-09-12T00:00:00+00:00"></time></div></div>';
+  const message = parseSingleMessage(html, 215);
+  assert.deepEqual(message.videoUrls, ['https://cdn5.telesco.pe/file/example.mp4?token=abc']);
+ });
 
 async function fixture() {
   const root = await mkdtemp(join(tmpdir(), 'rabbit-single-'));

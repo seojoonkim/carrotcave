@@ -73,7 +73,7 @@ function stripReactionSignature(content) {
   return content.replace(/(?:^|\n)\s*(?:\p{Extended_Pictographic}[\uFE0F\u200D\p{Extended_Pictographic}]*\s*\d+\s*)+\s*$/u, '').trimEnd();
 }
 
-function parseSingleMessage(html, requestedId) {
+export function parseSingleMessage(html, requestedId) {
   const blocks = html.split('tgme_widget_message_wrap');
   const messages = [];
 
@@ -102,7 +102,7 @@ function parseSingleMessage(html, requestedId) {
       if (!url.includes('/img/emoji/') && !url.includes('/img/tg/') && !mediaUrls.includes(url)) mediaUrls.push(url);
     }
     const videoUrls = [];
-    for (const match of block.matchAll(/data-src="([^"]*\.mp4[^\"]*)"/gi)) {
+    for (const match of block.matchAll(/(?:data-src|src)="([^"]*\.mp4[^\"]*)"/gi)) {
       let url = match[1];
       if (url.startsWith('//')) url = `https:${url}`;
       if (!videoUrls.includes(url)) videoUrls.push(url);

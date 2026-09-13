@@ -31,7 +31,8 @@ try {
     const lines = message.text.trim().split('\n');
     const title = lines.shift().trim();
     const content = lines.join('\n').trim();
-    assert.equal(title, post.title);
+    assert.equal(title, post.title, `Source title mapping #${message.id}`);
+    assert.equal(post.telegramMsgId, message.id, `Local ID mapping #${message.id}`);
     assert.equal(norm(content), norm(post.content), `Source body #${message.id}`);
     const date = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(message.datetime));
     assert.equal(date, post.date, `Source date #${message.id}`);

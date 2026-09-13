@@ -1,5 +1,132 @@
 [
   {
+    "from": "the-right-to-turn-on-a-brain",
+    "to": "brain-files-minecraft-flies",
+    "type": "DEEPENS",
+    "strength": 0.6291,
+    "sourceClaimId": "the-right-to-turn-on-a-brain-c1",
+    "sourceEvidence": "재현이 정교해질수록 그것을 생명으로 분류하지 않을 경제적 가치가 생긴다.",
+    "targetEvidence": "논문을 읽은 사람이 그날 저녁에 그것을 만든다.",
+    "label": "「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」은 「뇌를 켜는 사람의 권한」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 82,
+      "overlapTokens": [
+        "700",
+        "가능성",
+        "것과",
+        "것을",
+        "것이다",
+        "것인가",
+        "그것을",
+        "그런",
+        "기억",
+        "뇌를",
+        "뇌에서",
+        "다만"
+      ],
+      "titleOverlap": [
+        "뇌를",
+        "되고",
+        "켜는"
+      ],
+      "sharedTags": [
+        "뇌 시뮬레이션"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=82;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "the-right-to-turn-on-a-brain",
+    "to": "post-195",
+    "type": "DEEPENS",
+    "strength": 0.4029,
+    "sourceClaimId": "the-right-to-turn-on-a-brain-c1",
+    "sourceEvidence": "무엇을 만들 수 있는지를 넘어, 만든 뒤 누가 누구의 세계를 정하게 될지까지.",
+    "targetEvidence": "문제는 계산 밖에 남은 몫이다.",
+    "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「뇌를 켜는 사람의 권한」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 82,
+      "overlapTokens": [
+        "것이다",
+        "것인가",
+        "결과를",
+        "계산",
+        "계약을",
+        "과정이",
+        "구현",
+        "그런데",
+        "나를",
+        "남은",
+        "누가",
+        "누구의"
+      ],
+      "titleOverlap": [
+        "것인가",
+        "무엇을",
+        "사람의",
+        "자기"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=82;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "the-right-to-turn-on-a-brain",
+    "to": "14-5-hours",
+    "type": "REFRAMES",
+    "strength": 0.386,
+    "sourceClaimId": "the-right-to-turn-on-a-brain-c1",
+    "sourceEvidence": "계약을 어겼다고 항의할 상대와, 계약을 기억하는 능력을 지울 수 있는 상대는 전혀 다르다.",
+    "targetEvidence": "AI는 이미 그것을 아득히 넘어섰다.",
+    "label": "「아무도 지시하지 않은 14.5시간」은 「뇌를 켜는 사람의 권한」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 75,
+      "overlapTokens": [
+        "것을",
+        "것이다",
+        "구현",
+        "그것을",
+        "그런데",
+        "글을",
+        "기억",
+        "기준",
+        "능력",
+        "능력을",
+        "다음",
+        "당사자"
+      ],
+      "titleOverlap": [
+        "사람의",
+        "시간",
+        "않은"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "waited-for-you",
     "to": "unknowns-in-modern-creation",
     "type": "REFRAMES",
@@ -392,6 +519,50 @@
   },
   {
     "from": "brain-files-minecraft-flies",
+    "to": "the-right-to-turn-on-a-brain",
+    "type": "DEEPENS",
+    "strength": 0.6291,
+    "sourceClaimId": "brain-files-minecraft-flies-c1",
+    "sourceEvidence": "논문을 읽은 사람이 그날 저녁에 그것을 만든다.",
+    "targetEvidence": "재현이 정교해질수록 그것을 생명으로 분류하지 않을 경제적 가치가 생긴다.",
+    "label": "「뇌를 켜는 사람의 권한」은 「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 82,
+      "overlapTokens": [
+        "700",
+        "가능성",
+        "것과",
+        "것을",
+        "것이다",
+        "것인가",
+        "그것을",
+        "그런",
+        "기억",
+        "뇌를",
+        "뇌에서",
+        "다만"
+      ],
+      "titleOverlap": [
+        "뇌를",
+        "되고",
+        "켜는"
+      ],
+      "sharedTags": [
+        "뇌 시뮬레이션"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=82;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "brain-files-minecraft-flies",
     "to": "14-5-hours",
     "type": "REFRAMES",
     "strength": 0.6287,
@@ -481,49 +652,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=79;titleOverlap=6;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "brain-files-minecraft-flies",
-    "to": "agentic-org",
-    "type": "APPLIES",
-    "strength": 0.5308,
-    "sourceClaimId": "brain-files-minecraft-flies-c1",
-    "sourceEvidence": "AI가 코드를 대신 써주는 건 곁가지다.",
-    "targetEvidence": "20명이 1000명처럼 일한다는 건, 20명의 열정이 관료주의에 희석되지 않고 온전히 폭발한다는 뜻이다.",
-    "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」의 원리를 구체적인 구축 과정에 적용한다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "tags"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 24,
-      "overlapTokens": [
-        "10",
-        "20",
-        "ai",
-        "ai가",
-        "com",
-        "뇌가",
-        "대신",
-        "뜻이다",
-        "만든다",
-        "명이",
-        "모든",
-        "문제가"
-      ],
-      "titleOverlap": [
-        "20",
-        "ai",
-        "명이"
-      ],
-      "sharedTags": [
-        "AI"
-      ],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=24;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -1741,43 +1869,44 @@
   },
   {
     "from": "proving-human-writing-without-ai",
-    "to": "swarmworld-stigmergic-ai-society",
+    "to": "the-right-to-turn-on-a-brain",
     "type": "DEEPENS",
-    "strength": 0.389,
+    "strength": 0.3973,
     "sourceClaimId": "proving-human-writing-without-ai-c1",
-    "sourceEvidence": "AI가 고른 뉴스와 번역한 표현까지 지우려면 태어날 때부터 디지털 매체를 보지 않은 사람을 길러야 한다.",
-    "targetEvidence": "화면 속 AI가 자기 이름을 짓거나 반란을 선언할 거라고 생각한다.",
-    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "그래도 시장은 멈추지 않을 것이다.",
+    "targetEvidence": "무엇을 만들 수 있는지를 넘어, 만든 뒤 누가 누구의 세계를 정하게 될지까지.",
+    "label": "「뇌를 켜는 사람의 권한」은 「AI의 도움 없이 썼다는 걸 어떻게 증명할까」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 74,
+      "lexicalOverlap": 76,
       "overlapTokens": [
-        "ai",
-        "ai가",
-        "가능하다",
+        "가까운",
         "것이다",
-        "격리",
-        "결국",
-        "고른",
-        "고치는",
-        "공개",
-        "과정을",
-        "그대로",
-        "그래도"
+        "그래도",
+        "그런데",
+        "그렇다면",
+        "글을",
+        "기록",
+        "기억",
+        "나오면",
+        "넘어",
+        "뇌를",
+        "누가"
       ],
       "titleOverlap": [
-        "ai",
-        "아니라",
-        "어떻게"
+        "뇌를",
+        "사람의",
+        "어떻게",
+        "없이"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=74;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=76;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -4149,39 +4278,39 @@
   },
   {
     "from": "post-185",
-    "to": "kpop-fandom-digital-parliament",
+    "to": "the-right-to-turn-on-a-brain",
     "type": "RESONATES",
     "strength": 0.35,
     "sourceClaimId": "post-185-c1",
-    "sourceEvidence": "한국은 메모리와 칩, 제조 공급망, 초고속 네트워크, 대기업의 실제 업무 데이터, 안정적인 민주주의와 글로벌 기업 경험을 가진 나라다.",
-    "targetEvidence": "기술은 앞에 서지 않고 경험 뒤로 물러난다.",
-    "label": "「K-POP 팬덤은 어떻게 디지털 의회가 되었나」은 「Fable 5 차단 사태와 한국의 오픈 소버린 AI 전략」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "이제 중요한 것은 전 세계 사람들이 그 나라의 인프라 위에서 만들고 싶어 하게 만드는 것이다.",
+    "targetEvidence": "그래서 존재의 권리는 원하는 것을 얻는 데서 끝나서는 안 된다.",
+    "label": "「뇌를 켜는 사람의 권한」은 「Fable 5 차단 사태와 한국의 오픈 소버린 AI 전략」의 핵심 문제와 맞닿는다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 62,
+      "lexicalOverlap": 68,
       "overlapTokens": [
-        "가능한",
-        "가진",
         "강한",
-        "개발자",
         "것을",
-        "결국",
+        "것이다",
         "경험",
-        "계속",
-        "공개되",
-        "국경을",
-        "글로벌",
-        "나라"
+        "경험을",
+        "그런데",
+        "누가",
+        "답을",
+        "데서",
+        "돈을",
+        "되고",
+        "만드는"
       ],
       "titleOverlap": [],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=62;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=68;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8454,39 +8583,41 @@
   },
   {
     "from": "post-111",
-    "to": "fear-and-value-in-ai-creation",
-    "type": "RESONATES",
+    "to": "the-right-to-turn-on-a-brain",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-111-c1",
-    "sourceEvidence": "기술은 이미 준비됐지만 타임라인을 결정하는 건 의료법과 면허 체계뿐.",
-    "targetEvidence": "기술적으로 가장 정교한 팀이 아니라, 가치가 사용자에게 도달하는 경로를 가장 짧게 설계한 팀이 이겼다.",
-    "label": "「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」은 「다가오는 30개의 균열」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "팀을 만드는 능력보다 팀 없이 버티는 능력이 창업의 핵심 역량이 된다.",
+    "targetEvidence": "기술은 우리가 SF를 읽으며 상상한 미래를 더 자주 앞지를 것이다.",
+    "label": "「뇌를 켜는 사람의 권한」은 「다가오는 30개의 균열」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 57,
+      "lexicalOverlap": 43,
       "overlapTokens": [
-        "ai",
-        "가능한",
+        "가능성",
         "가치가",
-        "감각이",
-        "거의",
         "것과",
         "것이다",
-        "결정",
-        "경로",
-        "경쟁력",
-        "기술",
-        "기술은"
+        "관리",
+        "기술은",
+        "기술적",
+        "기준",
+        "능력",
+        "다만",
+        "만드는",
+        "모델"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "사람의"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=57;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=43;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8826,39 +8957,41 @@
   },
   {
     "from": "post-105",
-    "to": "value-of-understanding-in-ai-future",
-    "type": "RESONATES",
+    "to": "the-right-to-turn-on-a-brain",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-105-c1",
-    "sourceEvidence": "AI가 '다음 달 실업률' 시장 하나를 보고 자동으로 100개의 파생 시장을 생성한다.",
-    "targetEvidence": "AI는 존재들 사이의 번역기를 만들어낼 것이고, 롱지비티는 더 많은 사람에게 더 긴 시간을 건네줄 것이고, 오픈소스는 그 과실을 소수의 벽 밖으로 밀어낼 것이다.",
-    "label": "「풍요의 끝에서 더욱 가치있어지는 것들」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "모든 판단에 가격표가 붙는 세상 지난주 예측시장의 주간 거래 건수가 4,700만 건을 넘겼다.",
+    "targetEvidence": "그렇다면 무엇이 같고 다른지 같은 기준으로 설명해야 한다.",
+    "label": "「뇌를 켜는 사람의 권한」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 61,
+      "lexicalOverlap": 58,
       "overlapTokens": [
-        "10",
-        "ai",
-        "ai가",
-        "ai는",
-        "가격이",
-        "가능한",
-        "각자",
+        "700",
+        "가능성",
+        "거래",
+        "거부",
         "것이다",
-        "결국",
-        "구조를",
+        "결과를",
+        "과정",
+        "권력은",
+        "그렇다면",
+        "근거가",
         "기반",
-        "누군가"
+        "기준"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "모든"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=newer;lexicalOverlap=61;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=58;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9035,41 +9168,43 @@
   },
   {
     "from": "post-103",
-    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "to": "the-right-to-turn-on-a-brain",
     "type": "REFRAMES",
-    "strength": 0.35,
+    "strength": 0.3738,
     "sourceClaimId": "post-103-c1",
     "sourceEvidence": "현실 경제를 읽고 그것을 대출로 번역하는 문법 자체가 고장난 것이다.",
-    "targetEvidence": "아니면 그것을 이해할 수 없을 것 같았던 나 자신이었을까.",
-    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「돈을 받지도 빌려주지도 못하는 은행」의 주제를 다른 맥락에서 다시 바라본다",
+    "targetEvidence": "행동은 같아도 아무 경험이 없다면 무엇이 옮겨지지 않은 것인가.",
+    "label": "「뇌를 켜는 사람의 권한」은 「돈을 받지도 빌려주지도 못하는 은행」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 47,
+      "lexicalOverlap": 65,
       "overlapTokens": [
-        "간다",
+        "갖는가",
+        "거래",
         "것과",
         "것을",
         "것이다",
+        "것인가",
+        "경험이",
+        "권력",
         "그것을",
         "그런데",
-        "그렇게",
-        "남는다",
-        "동안",
-        "되지만",
-        "만드는",
-        "머물러"
+        "근거가",
+        "기록"
       ],
       "titleOverlap": [
-        "못하는"
+        "돈을",
+        "못하는",
+        "사람의"
       ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=65;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {

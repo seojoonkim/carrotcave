@@ -264,7 +264,7 @@ function parseMessages(html) {
     }
 
     const videoUrls = [];
-    const videoMatches = [...block.matchAll(/data-src="([^"]*\.mp4[^"]*)"/g)];
+    const videoMatches = [...block.matchAll(/(?:data-src|src)="([^"]*\.mp4[^"]*)"/gi)];
     for (const vm of videoMatches) {
       let url = vm[1];
       if (url.startsWith('//')) url = 'https:' + url;

@@ -1,4 +1,50 @@
 {
+  "the-right-to-turn-on-a-brain": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-뇌 시뮬레이션",
+      "tag-의식",
+      "tag-생명"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "the-right-to-turn-on-a-brain-c1",
+        "text": "며칠 전, 초파리 뇌지도 기반 시뮬레이션을 마인크래프트에 연결한 실험에 대한 글을 썼다.",
+        "stance": "asserts",
+        "evidence": "며칠 전, 초파리 뇌지도 기반 시뮬레이션을 마인크래프트에 연결한 실험에 대한 글을 썼다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "뇌 시뮬레이션",
+      "의식",
+      "생명"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "waited-for-you": {
     "primaryTopics": [
       "fiction"
