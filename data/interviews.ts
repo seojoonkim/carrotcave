@@ -18,6 +18,22 @@ export interface InterviewArchive {
 
 export const interviews: InterviewArchive[] = [
   {
+    slug: 'mark-zuckerberg-muse',
+    name: '마크 저커버그',
+    eyebrow: 'META / MUSE / PERSONAL SUPERINTELLIGENCE',
+    title: 'Muse, 개인 초지능을 일상의 도구로',
+    summary: '마크 저커버그는 Muse의 활용과 가격, 개인 에이전트의 프라이버시, AI 연구와 안전을 통해 개인 초지능을 널리 보급하려는 Meta의 구상을 이야기한다.',
+    description: 'Sources Podcast에서 마크 저커버그와 진행자 알렉스 히스가 나눈 대화의 영어 자동자막 전체를 공식 11개 장, 화자 미분리 한국어 번역 264개 문단으로 읽는 리더. 스폰서 구간 포함.',
+    sourcePublishedAt: '2026-09-08',
+    thumbnailUrl: '/voices/mark-zuckerberg-muse/zuckerberg-muse.jpg',
+    sourceUrl: 'https://www.youtube.com/watch?v=Lx8lrn-cytc',
+    duration: '1:10:10',
+    chapters: 11,
+    segments: 264,
+    embedPath: '/voices/mark-zuckerberg-muse/index.html',
+    status: 'published',
+  },
+  {
     slug: 'masayoshi-son-asi-economy',
     name: '손정의',
     eyebrow: 'SOFTBANK WORLD 2026 / ASI ECONOMY / AI INFRASTRUCTURE',

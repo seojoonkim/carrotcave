@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>마크 저커버그 인터뷰 · Muse와 개인 초지능</title>
+<meta name="description" content="Sources Podcast에서 마크 저커버그와 알렉스 히스가 나눈 Muse, 개인 초지능과 AI 안전에 관한 대화. 영어 자동자막 전체를 11개 장, 264개 한국어 번역 문단으로 읽습니다.">
+<meta name="theme-color" content="#292c33">
+<link rel="canonical" href="https://carrotcave.com/voices/mark-zuckerberg-muse/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CARROT CAVE · 목소리">
+<meta property="og:title" content="마크 저커버그 인터뷰 · Muse와 개인 초지능">
+<meta property="og:description" content="Muse의 사용과 가격, 개인 에이전트의 보안부터 AI 안전까지. Sources Podcast 인터뷰의 전체 한국어 번역 전사.">
+<meta property="og:url" content="https://carrotcave.com/voices/mark-zuckerberg-muse/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://carrotcave.com/voices/mark-zuckerberg-muse/zuckerberg-muse.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://carrotcave.com/voices/mark-zuckerberg-muse/zuckerberg-muse.jpg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/fonts/noto-kr/index.css">
+<link rel="stylesheet" href="../reader-system.css">
+<script src="../reader-runtime.js"></script>
+<script src="script.js" defer></script>
+<script src="../reading-progress.js" defer></script>
+</head>
+<body data-reader-type="segments" data-source-url="https://www.youtube.com/watch?v=Lx8lrn-cytc">
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
+<header class="site-header">
+<nav class="reader-nav" aria-label="CARROT CAVE 탐색"><a class="brand" href="/voices" target="_top" aria-label="목소리 목록으로 돌아가기"><span class="reader-back-chevron" aria-hidden="true">‹</span><svg class="brand-mark" viewBox="0 0 96 96" width="192" height="192" aria-hidden="true" focusable="false"><defs><radialGradient id="cc-reader-mark-glow" cx="50%" cy="54%" r="48%"><stop offset="0" stop-color="#f7d46a" stop-opacity=".7"/><stop offset=".55" stop-color="#d98c36" stop-opacity=".24"/><stop offset="1" stop-color="#d06f2d" stop-opacity="0"/></radialGradient></defs><g class="brand-mark__cave"><circle cx="48" cy="49" r="43" fill="url(#cc-reader-mark-glow)"/><path d="M12 82C15 38 28 15 48 12c20 3 33 26 36 70H69C67 50 60 31 48 28 36 31 29 50 27 82Z" fill="#171b23"/><path d="M20 82c3-31 12-51 28-57 16 6 25 26 28 57" fill="none" stroke="#e1a247" stroke-opacity=".5" stroke-width="2"/><path d="M9 83h78" stroke="#f0c15d" stroke-opacity=".34" stroke-width="2" stroke-linecap="round"/></g><g class="brand-mark__rabbit-position"><g class="brand-mark__rabbit"><ellipse cx="43" cy="57" rx="11" ry="13" fill="#f1eee7"/><circle cx="43" cy="43" r="9" fill="#f1eee7"/><ellipse cx="38" cy="30" rx="3.5" ry="11" fill="#f1eee7" transform="rotate(-9 38 30)"/><ellipse cx="47" cy="29" rx="3.5" ry="12" fill="#f1eee7" transform="rotate(7 47 29)"/><circle cx="39" cy="42" r="1.8" fill="#252832"/><circle cx="47" cy="42" r="1.8" fill="#252832"/><ellipse cx="34" cy="66" rx="6" ry="3" fill="#f1eee7"/><ellipse cx="50" cy="67" rx="6" ry="3" fill="#f1eee7"/></g></g><g class="brand-mark__carrot" transform="translate(61 54) rotate(-14)"><path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f28c28"/><path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" stroke-width="3.5" stroke-linecap="round"/><path d="m2 7 6 2m-5 5 4 1" stroke="#ffad4d" stroke-width="1.2" stroke-linecap="round"/></g></svg></a></nav>
+<span class="header-status"><span id="currentChapterNumber">00</span><span class="header-titles"><span class="header-site-title">목소리 · 마크 저커버그 · Muse와 개인 초지능</span><span class="header-mobile-title">마크 저커버그 인터뷰</span><span id="readingStatus" class="is-overview" aria-label="OVERVIEW"><span class="reading-status-number"></span><span class="reading-status-separator" aria-hidden="true">. </span><span class="reading-status-title">OVERVIEW</span></span></span></span>
+<button class="menu-button" id="menuButton" type="button" aria-label="목차 열기" aria-expanded="false" aria-controls="tocDrawer"><span>목차</span><i aria-hidden="true"></i></button>
+<span class="progress" id="readingProgress" role="progressbar" aria-label="전체 글 읽기 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progressBar" aria-hidden="true"></span></span>
+</header>
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="toc-drawer" id="tocDrawer" role="region" aria-hidden="true" aria-labelledby="tocTitle" inert>
+<header><h2 id="tocTitle">읽기 목차</h2></header>
+<nav aria-label="전체 목차">
+<a class="insights-link" href="#insights"><span>—</span><span>편집자 인사이트</span></a>
+<a href="#method"><span>—</span><span>출처와 번역 안내</span></a>
+<a class="toc-chapter-link" href="#chapter-1" data-nav-chapter="1"><span>01</span><span>저커버그의 AI 비전</span></a>
+<a class="toc-chapter-link" href="#chapter-2" data-nav-chapter="2"><span>02</span><span>데이터센터, 일자리와 지역사회</span></a>
+<a class="toc-chapter-link" href="#chapter-3" data-nav-chapter="3"><span>03</span><span>Meta가 개인 초지능을 만드는 이유</span></a>
+<a class="toc-chapter-link" href="#chapter-4" data-nav-chapter="4"><span>04</span><span>저커버그는 Muse를 어떻게 사용하는가</span></a>
+<a class="toc-chapter-link" href="#chapter-5" data-nav-chapter="5"><span>05</span><span>Muse의 가격과 비즈니스 모델</span></a>
+<a class="toc-chapter-link" href="#chapter-6" data-nav-chapter="6"><span>06</span><span>개인 에이전트의 프라이버시와 보안</span></a>
+<a class="toc-chapter-link" href="#chapter-7" data-nav-chapter="7"><span>07</span><span>개인 AI 에이전트 시장의 승자는 누구인가</span></a>
+<a class="toc-chapter-link" href="#chapter-8" data-nav-chapter="8"><span>08</span><span>Meta의 AI 연구소 재건</span></a>
+<a class="toc-chapter-link" href="#chapter-9" data-nav-chapter="9"><span>09</span><span>AI 안전과 정부와의 협력</span></a>
+<a class="toc-chapter-link" href="#chapter-10" data-nav-chapter="10"><span>10</span><span>스마트 안경과 프라이버시</span></a>
+<a class="toc-chapter-link" href="#chapter-11" data-nav-chapter="11"><span>11</span><span>청소년 안전과 소셜미디어 제한</span></a>
+</nav></aside>
+<main id="main-content" tabindex="-1">
+<section class="hero" id="top" aria-labelledby="page-title">
+<p class="kicker">목소리 · SOURCES PODCAST</p>
+<h1 id="page-title"><em>마크 저커버그</em> 인터뷰<br><span>Muse와 개인 초지능</span></h1>
+<figure class="hero-portrait"><a href="https://www.youtube.com/watch?v=Lx8lrn-cytc" target="_blank" rel="noopener noreferrer"><img src="zuckerberg-muse.jpg" alt="Sources Podcast 마크 저커버그 인터뷰의 공식 영상 썸네일" width="1280" height="720" loading="eager" fetchpriority="high"></a></figure>
+<p class="hero-deck">마크 저커버그가 진행자 알렉스 히스와 Muse의 활용과 가격, 개인 에이전트의 프라이버시, AI 연구와 안전을 이야기한다. 개인 초지능을 널리 보급하려는 Meta의 구상과 그에 따르는 질문을 읽는다.</p>
+<dl class="hero-stats"><div><dt>영상 길이</dt><dd>1:10:10</dd></div><div><dt>공식 챕터</dt><dd>11개 장</dd></div><div><dt>한국어 번역 전사</dt><dd>264개 문단</dd></div></dl>
+<a class="source-button" href="https://www.youtube.com/watch?v=Lx8lrn-cytc" target="_blank" rel="noopener noreferrer"><span class="play" aria-hidden="true">▶</span><span><small>SOURCES PODCAST · 2026-09-08</small>공식 인터뷰 영상 보기</span><span aria-hidden="true">↗</span></a>
+<a class="scroll-cue" href="#transcript"><span>전사 읽기</span><i aria-hidden="true"></i></a>
+</section>
+<div class="reader-shell"><div class="content-column">
+<section class="content-section carrot-cave-insights appendix" id="insights" tabindex="-1">
+<header class="section-heading"><h2>CARROT CAVE INSIGHTS</h2></header>
+<p class="editorial-label">편집자 인사이트 — 아래는 인터뷰를 읽고 정리한 요약·해석이며, 번역 전사나 직접 인용이 아닙니다.</p>
+<ol class="overview-insights">
+<li>저커버그는 AI의 역할을 기존 업무의 자동화보다 새로운 것의 발명에 두고, 접근을 제한하는 대신 힘의 분산과 견제·균형을 강조한다. <a href="#chapter-1">1장</a></li>
+<li>Muse가 이용자의 수입과 절약을 돕게 하겠다는 구상은, 다수가 무료로 쓸 수 있는 개인 초지능을 만들겠다는 목표와 맞물린다. 이는 인터뷰에서 제시한 방향이지 수익을 보장하는 약속으로 읽을 수는 없다. <a href="#chapter-5">5장</a></li>
+<li>개인 에이전트의 신뢰는 연결할 수 있는 서비스의 수만으로 결정되지 않는다. 이메일을 읽기 전용으로 연결하는 사례처럼, 처음부터 허용하는 권한의 범위가 중요하다. <a href="#chapter-6">6장</a></li>
+</ol></section>
+<section class="content-section appendix" id="method" tabindex="-1">
+<header class="section-heading"><h2>출처와 번역 안내</h2></header><ul>
+<li><strong>원제:</strong> Mark Zuckerberg on how Meta's Muse AI agent will make people money</li>
+<li><strong>인터뷰이:</strong> 마크 저커버그(Mark Zuckerberg) · Meta</li>
+<li><strong>진행자:</strong> 알렉스 히스(Alex Heath) · Sources Podcast</li>
+<li><strong>게시:</strong> Sources Podcast, <time datetime="2026-09-08">2026년 9월 8일</time>. 영상 길이 1:10:10(4210초).</li>
+<li><strong>공식 출처:</strong> <a href="https://www.youtube.com/watch?v=Lx8lrn-cytc" target="_blank" rel="noopener noreferrer">YouTube 원본 인터뷰</a>. 각 장과 문단의 타임코드는 원본의 해당 시각으로 연결됩니다.</li>
+<li><strong>작성 방법:</strong> 저장된 YouTube 영어 자동자막 2145개 cue 전체를 원래 순서대로 264개 문단으로 정리해 한국어로 번역했습니다. 원본의 공식 11개 챕터 제목을 번역하고 경계를 유지했으며, 경계에 걸친 문단은 시작 시각을 기준으로 배치했습니다.</li>
+<li><strong>화자 표시:</strong> 자동자막에 신뢰할 만한 화자 구분 정보가 없어 개별 발언에 화자를 임의로 배정하지 않았습니다. 참여자 이름은 인터뷰 정보에만 표시합니다.</li>
+<li><strong>포함 범위:</strong> 도입·본 대화·스폰서 광고를 포함한 전체 자동자막입니다. 자막 범위는 0.32초부터 4192.799초(1:09:52.799)까지입니다. 마지막 자막 이후 영상 끝 4210초(1:10:10)까지는 음성 확인에서 추가 발화가 없는 무음 구간으로 확인했습니다.</li>
+<li><strong>자료:</strong> <a href="transcript-ko.json" download>한국어 번역 전사 (.json)</a> · <a href="source-en.json" download>영어 자동자막 원자료 (.json)</a></li>
+</ul></section>
+<section class="content-section transcript-reader" id="transcript" aria-busy="true" tabindex="-1">
+<header class="section-heading"><h2>전체 한국어 번역 전사</h2></header>
+<div class="transcript-disclaimer" role="note"><strong>자동자막 번역의 한계:</strong> 공식 축자 전사나 검증된 화자별 대화록이 아닙니다. 영어 자동자막의 오인식·누락·중복, 고유명사와 문장 경계 오류가 번역에 남아 있을 수 있습니다. 원자료의 모든 cue를 포함했다는 뜻이지 모든 발화의 정확성을 보증한다는 뜻은 아닙니다. 스폰서 문구는 원영상의 일부이며 당근동굴의 추천이 아닙니다. 인용 전 원영상의 해당 시각을 확인해주세요.</div>
+<p id="transcriptLoading" class="transcript-state" role="status">한국어 번역 전사 264개 문단을 불러오는 중입니다…</p>
+<div id="transcriptError" class="transcript-state transcript-error" role="alert" hidden>번역 전사를 불러오지 못했습니다. 새로고침하거나 위의 공식 영상·자료 다운로드 링크를 확인해주세요.</div>
+<noscript><p class="transcript-state">전사를 표시하려면 JavaScript가 필요합니다. 위의 한국어 번역 전사 다운로드 링크로 전체 자료를 읽을 수 있습니다.</p></noscript>
+<section class="content-section chapter transcript-chapter" id="chapter-1" data-chapter="1" data-start="0" data-end="514" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 1</span><h2>저커버그의 AI 비전</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=0s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 00:00부터 보기">[00:00]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-2" data-chapter="2" data-start="514" data-end="903" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 2</span><h2>데이터센터, 일자리와 지역사회</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=514s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 08:34부터 보기">[08:34]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-3" data-chapter="3" data-start="903" data-end="1154" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 3</span><h2>Meta가 개인 초지능을 만드는 이유</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=903s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 15:03부터 보기">[15:03]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-4" data-chapter="4" data-start="1154" data-end="1500" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 4</span><h2>저커버그는 Muse를 어떻게 사용하는가</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=1154s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 19:14부터 보기">[19:14]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-5" data-chapter="5" data-start="1500" data-end="1831" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 5</span><h2>Muse의 가격과 비즈니스 모델</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=1500s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 25:00부터 보기">[25:00]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-6" data-chapter="6" data-start="1831" data-end="2466" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 6</span><h2>개인 에이전트의 프라이버시와 보안</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=1831s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 30:31부터 보기">[30:31]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-7" data-chapter="7" data-start="2466" data-end="2671" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 7</span><h2>개인 AI 에이전트 시장의 승자는 누구인가</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=2466s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 41:06부터 보기">[41:06]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-8" data-chapter="8" data-start="2671" data-end="3249" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 8</span><h2>Meta의 AI 연구소 재건</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=2671s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 44:31부터 보기">[44:31]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-9" data-chapter="9" data-start="3249" data-end="3711" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 9</span><h2>AI 안전과 정부와의 협력</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=3249s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 54:09부터 보기">[54:09]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-10" data-chapter="10" data-start="3711" data-end="3950" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 10</span><h2>스마트 안경과 프라이버시</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=3711s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 1:01:51부터 보기">[1:01:51]</a></header><div class="transcript-segments"></div></section>
+<section class="content-section chapter transcript-chapter" id="chapter-11" data-chapter="11" data-start="3950" data-end="4210" tabindex="-1"><header class="chapter-heading"><span class="chapter-index">CHAPTER 11</span><h2>청소년 안전과 소셜미디어 제한</h2><a class="chapter-time" href="https://www.youtube.com/watch?v=Lx8lrn-cytc&amp;t=3950s" target="_blank" rel="noopener noreferrer" aria-label="공식 영상 1:05:50부터 보기">[1:05:50]</a></header><div class="transcript-segments"></div></section>
+</section></div></div></main>
+<button class="back-to-top" id="backToTop" type="button" aria-label="맨 위로 이동" hidden>↑<span>TOP</span></button>
+<footer class="voice-shared-footer"><div class="voice-shared-footer__inner"><img class="voice-footer-rabbit-carrot" src="/footer-rabbit-carrot.svg" alt="당근을 발견하고 통통 뛰는 토끼" width="1100" height="190" loading="lazy"><div class="voice-shared-footer__copy"><p class="voice-shared-footer__identity"><strong>CARROT CAVE</strong> by Simon Kim</p><p class="voice-shared-footer__links"><a href="mailto:simon@hashed.com">simon@hashed.com</a><a href="https://x.com/simonkim_nft" target="_blank" rel="noopener noreferrer">X @simonkim_nft</a><a href="https://t.me/carrotcave" target="_blank" rel="noopener noreferrer">TELEGRAM</a></p></div></div></footer>
+</body>
+</html>

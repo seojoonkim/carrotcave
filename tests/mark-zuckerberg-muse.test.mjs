@@ -1,0 +1,53 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,stat} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const root=new URL('../',import.meta.url);
+const base='public/voices/mark-zuckerberg-muse/';
+const read=p=>readFile(new URL(p,root),'utf8');
+const source='https://www.youtube.com/watch?v=Lx8lrn-cytc';
+const boundaries=[0,514,903,1154,1500,1831,2466,2671,3249,3711,3950,4210];
+test('Zuckerberg metadata and Korean reader refer to the actual Sources interview',async()=>{
+ const [html,script,meta]=await Promise.all([read(base+'index.html'),read(base+'script.js'),read('data/interviews.ts')]);
+ assert.match(meta,/slug: 'mark-zuckerberg-muse'[\s\S]*?sourcePublishedAt: '2026-09-08'[\s\S]*?duration: '1:10:10'[\s\S]*?chapters: 11,[\s\S]*?segments: 264,[\s\S]*?embedPath: '\/voices\/mark-zuckerberg-muse\/index.html'/);
+ assert.ok(html.includes('data-source-url="'+source+'"'));
+ assert.ok(html.includes('Sources Podcast'));
+ assert.ok(html.includes('한국어 번역 전사'));
+ assert.ok(html.includes('화자'));
+ assert.ok(html.includes('4192.799') || html.includes('1:09:52'));
+ assert.ok(script.includes("fetch('transcript-ko.json')"));
+ assert.ok(script.includes('data.items.length !== 264'));
+ assert.doesNotMatch(html+script,/티보|Tibo|4qjEgPojjzM|Matthew Berman|ZIaOBAjvc38|Garry Tan|샘 올트먼|Startup School|MASAYOSHI|손정의/);
+ for(const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g)||[])assert.match(tag,/rel="noopener noreferrer"/);
+ for(const hook of ['menuButton','readingStatus','tocDrawer','readingProgress','progressBar','transcriptLoading','transcriptError'])assert.ok(html.includes('id="'+hook+'"'));
+ assert.match(html,/\.\.\/reader-system\.css/);assert.match(html,/\.\.\/reader-runtime\.js/);assert.match(html,/\.\.\/reading-progress\.js/);
+ assert.match(script,/copy\.textContent = item\.text/);
+});
+test('264 Korean paragraphs preserve every one of 2145 actual English cues exactly once',async()=>{
+ const ko=JSON.parse(await read(base+'transcript-ko.json'));
+ const en=JSON.parse(await read(base+'source-en.json'));
+ assert.equal(ko.language,'ko');assert.equal(ko.source,source);assert.equal(ko.durationSeconds,4210);
+ assert.equal(ko.items.length,264);assert.equal(en.segments.length,2145);
+ assert.equal(createHash('sha256').update(await read(base+'source-en.json')).digest('hex'),'deb9039b5d5c73edef1564b621f68ed89eefb9952ed429986339bd01da27de9d');
+ assert.deepEqual(ko.items.flatMap(x=>x.sourceCueIds),Array.from({length:2145},(_,i)=>i));
+ ko.items.forEach((x,i)=>{
+  assert.equal(x.id,i);assert.ok(Number.isFinite(x.start)&&Number.isFinite(x.end)&&x.end>x.start);
+  assert.ok(/[가-힣]/.test(x.text));assert.ok(x.text.trim());assert.equal(x.speaker,undefined);
+  assert.equal(x.start,en.segments[x.sourceCueIds[0]].start);
+  assert.ok(x.end<=4210);if(i)assert.ok(x.start>=ko.items[i-1].start);
+  assert.equal(boundaries.slice(0,-1).filter((start,j)=>x.start>=start&&x.start<boundaries[j+1]).length,1);
+  assert.ok(x.start>=boundaries[x.chapter-1]&&x.start<boundaries[x.chapter]);
+ });
+ assert.equal(ko.items[0].start,.32);assert.equal(ko.items.at(-1).end,4192.799);
+ assert.match(ko.items[0].text,/마크/);assert.match(ko.items.at(-1).text,/Framer|프레이머|framer/);
+});
+test('all eleven official chapters and real thumbnail are present',async()=>{
+ const html=await read(base+'index.html');const data=JSON.parse(await read(base+'transcript-ko.json'));
+ const matches=[...html.matchAll(/class="content-section chapter transcript-chapter"[^>]*data-chapter="(\d+)"[^>]*data-start="(\d+)"[^>]*data-end="(\d+)"/g)];
+ assert.equal(matches.length,11);
+ matches.forEach((m,i)=>{assert.equal(+m[1],i+1);assert.equal(+m[2],boundaries[i]);assert.equal(+m[3],boundaries[i+1]);assert.ok(data.items.some(x=>x.chapter===i+1));});
+ assert.equal((html.match(/class="chapter-time"/g)||[]).length,11);
+ assert.equal((html.match(/class="toc-chapter-link"/g)||[]).length,11);
+ assert.match(html,/<div id="transcriptError"[^>]*hidden/);
+ assert.ok((await stat(new URL(base+'zuckerberg-muse.jpg',root))).size>10000);
+});
