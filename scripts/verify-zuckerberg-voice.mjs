@@ -25,6 +25,9 @@ try {
   assert.equal(await frame.locator('#transcriptError').isVisible(),false);
   const actual=await frame.locator('.transcript-paragraph .paragraph-text').allTextContents();
   assert.deepEqual(actual,data.items.map(x=>x.text));
+  assert.equal(await frame.locator('.transcript-timestamp').count(),0);
+  assert.deepEqual(await frame.locator('.transcript-speaker').allTextContents(),data.items.map(x=>x.speaker));
+  assert.equal(await frame.locator('.transcript-dialogue').count(),data.items.length);
   assert.equal(await frame.locator('.transcript-chapter').count(),11);
   const chapterCounts=await frame.locator('.transcript-chapter').evaluateAll(nodes=>nodes.map(n=>n.querySelectorAll('.transcript-paragraph').length));
   assert.ok(chapterCounts.every(x=>x>0));
@@ -51,7 +54,7 @@ try {
   assert.equal(overflow,false);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   assert.deepEqual(errors,[]);
   const samples=[0,Math.floor(actual.length/2),actual.length-1].map(i=>({index:i,text:actual[i]}));
-  results.push({width,paragraphs:actual.length,chapters:chapterCounts,navigation,timeLinks,samples,overflow,errors});
+  results.push({width,paragraphs:actual.length,speakerTags:actual.length,paragraphTimestamps:0,chapters:chapterCounts,navigation,timeLinks,samples,overflow,errors});
   await frame.evaluate(()=>scrollTo(0,0));await page.screenshot({path:proof.replace('.json',`-${width}.png`)});
   await page.close();
  }

@@ -17,14 +17,6 @@
   let lastFocus = null;
   let loaded = false;
 
-  const formatTime = seconds => {
-    const total = Math.floor(seconds);
-    const hours = Math.floor(total / 3600);
-    const minutes = Math.floor(total % 3600 / 60);
-    const secs = String(total % 60).padStart(2, '0');
-    return hours ? `${hours}:${String(minutes).padStart(2, '0')}:${secs}` : `${String(minutes).padStart(2, '0')}:${secs}`;
-  };
-
   const renderItems = data => {
     if (!data || sourceUrl !== 'https://www.youtube.com/watch?v=Lx8lrn-cytc' || data.source !== sourceUrl || data.language !== 'ko' || data.durationSeconds !== 4210 || !Array.isArray(data.items) || data.items.length !== 264) {
       throw new Error('Unexpected Zuckerberg Korean transcript');
@@ -36,7 +28,7 @@
     let previousStart = -1;
     let nextCueId = 0;
     data.items.forEach((item, index) => {
-      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start < 0 || item.end <= item.start || item.end > 4210 || item.start < previousStart || typeof item.text !== 'string' || !item.text.trim() || !/[가-힣]/.test(item.text) || item.speaker !== undefined) {
+      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start < 0 || item.end <= item.start || item.end > 4210 || item.start < previousStart || typeof item.text !== 'string' || !item.text.trim() || !/[가-힣]/.test(item.text) || !['마크 저커버그', '알렉스 히스', '마크 저커버그 · 알렉스 히스'].includes(item.speaker)) {
         throw new Error(`Invalid Korean transcript paragraph ${index}`);
       }
       previousStart = item.start;
@@ -48,7 +40,7 @@
         nextCueId += 1;
       });
       const paragraph = document.createElement('p');
-      paragraph.className = 'transcript-paragraph';
+      paragraph.className = 'transcript-paragraph transcript-dialogue';
       paragraph.dataset.start = String(item.start);
       const anchor = document.createElement('span');
       anchor.className = 'segment-anchor';
@@ -56,17 +48,16 @@
       anchor.dataset.segmentId = String(item.id);
       anchor.dataset.start = String(item.start);
       anchor.dataset.end = String(item.end);
-      const time = document.createElement('a');
-      time.className = 'transcript-timestamp';
-      time.href = `${sourceUrl}&t=${Math.floor(item.start)}s`;
-      time.target = '_blank';
-      time.rel = 'noopener noreferrer';
-      time.textContent = `[${formatTime(item.start)}]`;
-      time.setAttribute('aria-label', `공식 영상 ${formatTime(item.start)}부터 듣기`);
+      const meta = document.createElement('span');
+      meta.className = 'transcript-turn-meta';
+      const speaker = document.createElement('strong');
+      speaker.className = 'transcript-speaker';
+      speaker.textContent = item.speaker;
+      meta.append(speaker);
       const copy = document.createElement('span');
       copy.className = 'paragraph-text';
       copy.textContent = item.text;
-      paragraph.append(anchor, time, copy);
+      paragraph.append(anchor, meta, copy);
       if (item.editorNote) {
         const note = document.createElement('small');
         note.className = 'transcript-editor-note';

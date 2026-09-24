@@ -32,7 +32,7 @@ test('264 Korean paragraphs preserve every one of 2145 actual English cues exact
  assert.deepEqual(ko.items.flatMap(x=>x.sourceCueIds),Array.from({length:2145},(_,i)=>i));
  ko.items.forEach((x,i)=>{
   assert.equal(x.id,i);assert.ok(Number.isFinite(x.start)&&Number.isFinite(x.end)&&x.end>x.start);
-  assert.ok(/[가-힣]/.test(x.text));assert.ok(x.text.trim());assert.equal(x.speaker,undefined);
+  assert.ok(/[가-힣]/.test(x.text));assert.ok(x.text.trim());assert.ok(['마크 저커버그','알렉스 히스','마크 저커버그 · 알렉스 히스'].includes(x.speaker));
   assert.equal(x.start,en.segments[x.sourceCueIds[0]].start);
   assert.ok(x.end<=4210);if(i)assert.ok(x.start>=ko.items[i-1].start);
   assert.equal(boundaries.slice(0,-1).filter((start,j)=>x.start>=start&&x.start<boundaries[j+1]).length,1);

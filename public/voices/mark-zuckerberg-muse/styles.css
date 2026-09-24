@@ -157,7 +157,5 @@ body.drawer-open{overflow:hidden}
 #insights .editorial-label { color: var(--muted); font-size: 14px; }
 #transcript .transcript-editor-note { display:block; margin-top:8px; color:#b8bbc3; font-size:13px; line-height:1.65; }
 #transcript .transcript-paragraph { display: block; }
-#transcript .paragraph-text { display: inline; width: auto; }
-#transcript .transcript-timestamp { display: block; width: max-content; min-height: 32px; margin-bottom: 6px; color: var(--cyan); font: 500 12px/32px var(--font-mono); text-decoration: none; }
-#transcript .transcript-timestamp:hover { text-decoration: underline; text-underline-offset: 3px; }
+#transcript .paragraph-text { display: block; width: auto; }
 @media (max-width:999px) { #tocDrawer { left: 16px; right: 16px; } }
