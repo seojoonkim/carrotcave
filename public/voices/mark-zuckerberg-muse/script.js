@@ -78,6 +78,25 @@
         });
         copy.append(document.createTextNode(turn.text.slice(cursor)));
       }
+      (turn.breakBefore || []).forEach(marker => {
+        let offset = turn.text.indexOf(marker);
+        if (offset <= 0) throw new Error(`Invalid paragraph break in ${item.id}`);
+        const walker = document.createTreeWalker(copy, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          if (offset <= node.length) {
+            const rest = node.splitText(offset);
+            for (let i = 0; i < 2; i++) {
+              const br = document.createElement('br');
+              br.className = 'editorial-break';
+              rest.parentNode.insertBefore(br, rest);
+            }
+            break;
+          }
+          offset -= node.length;
+        }
+        if (!node) throw new Error(`Unrendered paragraph break in ${item.id}`);
+      });
       paragraph.append(anchor, meta, copy);
       if (item.editorNote && turnIndex === item.turns.length - 1) {
         const note = document.createElement('small');

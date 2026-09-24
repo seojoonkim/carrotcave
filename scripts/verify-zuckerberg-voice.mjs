@@ -24,6 +24,9 @@ try {
   await frame.locator('#transcript[aria-busy="false"]').waitFor({timeout:20000});
   assert.equal(await frame.locator('#transcriptLoading').isVisible(),false);
   assert.equal(await frame.locator('#transcriptError').isVisible(),false);
+  const breakCount=turns.reduce((n,t)=>n+(t.breakBefore||[]).length,0);
+  assert.ok(breakCount>0, 'Editorial paragraph breaks are configured');
+  assert.equal(await frame.locator('.paragraph-text br.editorial-break').count(),breakCount*2);
   const emphasis=frame.locator('.paragraph-text strong.transcript-highlight');
   const expectedEmphasis=turns.flatMap(t=>t.highlights||[]);
   assert.ok(expectedEmphasis.length >= 12, 'Curated key sentences are present');
