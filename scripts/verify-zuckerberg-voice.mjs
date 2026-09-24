@@ -22,6 +22,7 @@ try {
   assert.equal(await card.count(),1);await card.click();await page.waitForURL(`**/voices/${slug}`);
   const frame=await (await page.locator('iframe.voice-reader-frame').elementHandle()).contentFrame();
   await frame.locator('#transcript[aria-busy="false"]').waitFor({timeout:20000});
+  assert.equal(await frame.locator('.transcript-disclaimer').count(),0);
   assert.equal(await frame.locator('#transcriptLoading').isVisible(),false);
   assert.equal(await frame.locator('#transcriptError').isVisible(),false);
   const breakCount=turns.reduce((n,t)=>n+(t.breakBefore||[]).length,0);
