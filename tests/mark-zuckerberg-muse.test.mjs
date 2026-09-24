@@ -21,7 +21,7 @@ test('Zuckerberg metadata and Korean reader refer to the actual Sources intervie
  for(const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g)||[])assert.match(tag,/rel="noopener noreferrer"/);
  for(const hook of ['menuButton','readingStatus','tocDrawer','readingProgress','progressBar','transcriptLoading','transcriptError'])assert.ok(html.includes('id="'+hook+'"'));
  assert.match(html,/\.\.\/reader-system\.css/);assert.match(html,/\.\.\/reader-runtime\.js/);assert.match(html,/\.\.\/reading-progress\.js/);
- assert.match(script,/copy\.textContent = item\.text/);
+ assert.match(script,/copy\.textContent = turn\.text/);
 });
 test('264 Korean paragraphs preserve every one of 2145 actual English cues exactly once',async()=>{
  const ko=JSON.parse(await read(base+'transcript-ko.json'));

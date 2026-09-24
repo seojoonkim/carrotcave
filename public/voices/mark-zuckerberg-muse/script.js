@@ -28,7 +28,7 @@
     let previousStart = -1;
     let nextCueId = 0;
     data.items.forEach((item, index) => {
-      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start < 0 || item.end <= item.start || item.end > 4210 || item.start < previousStart || typeof item.text !== 'string' || !item.text.trim() || !/[가-힣]/.test(item.text) || !['마크 저커버그', '알렉스 히스', '마크 저커버그 · 알렉스 히스'].includes(item.speaker)) {
+      if (!item || item.id !== index || !Number.isFinite(item.start) || !Number.isFinite(item.end) || item.start < 0 || item.end <= item.start || item.end > 4210 || item.start < previousStart || typeof item.text !== 'string' || !item.text.trim() || !/[가-힣]/.test(item.text) || !['마크 저커버그', '알렉스 히스'].includes(item.speaker)) {
         throw new Error(`Invalid Korean transcript paragraph ${index}`);
       }
       previousStart = item.start;
@@ -39,12 +39,14 @@
         if (cueId !== nextCueId) throw new Error(`Source cue gap or duplicate in paragraph ${index}`);
         nextCueId += 1;
       });
+      if (!Array.isArray(item.turns) || !item.turns.length || item.turns.map(t => t.text).join('') !== item.text || item.turns.some(t => !['마크 저커버그', '알렉스 히스'].includes(t.speaker) || !t.text.trim())) throw new Error(`Invalid speaker turns ${index}`);
+      item.turns.forEach((turn, turnIndex) => {
       const paragraph = document.createElement('p');
       paragraph.className = 'transcript-paragraph transcript-dialogue';
       paragraph.dataset.start = String(item.start);
       const anchor = document.createElement('span');
       anchor.className = 'segment-anchor';
-      anchor.id = `segment-${item.id}`;
+      anchor.id = turnIndex === 0 ? `segment-${item.id}` : `segment-${item.id}-turn-${turnIndex}`;
       anchor.dataset.segmentId = String(item.id);
       anchor.dataset.start = String(item.start);
       anchor.dataset.end = String(item.end);
@@ -52,33 +54,31 @@
       meta.className = 'transcript-turn-meta';
       const speaker = document.createElement('strong');
       speaker.className = 'transcript-speaker';
-      item.speaker.split(' · ').forEach((name, index) => {
-        if (index) speaker.append(document.createTextNode(' · '));
-        const person = document.createElement('span');
-        person.className = 'speaker-person';
-        person.dataset.person = name === '마크 저커버그' ? 'mark' : 'alex';
-        person.textContent = name;
-        speaker.append(person);
-      });
+      const person = document.createElement('span');
+      person.className = 'speaker-person';
+      person.dataset.person = turn.speaker === '마크 저커버그' ? 'mark' : 'alex';
+      person.textContent = turn.speaker;
+      speaker.append(person);
       meta.append(speaker);
       const copy = document.createElement('span');
       copy.className = 'paragraph-text';
-      copy.textContent = item.text;
+      copy.textContent = turn.text;
       paragraph.append(anchor, meta, copy);
-      if (item.editorNote) {
+      if (item.editorNote && turnIndex === item.turns.length - 1) {
         const note = document.createElement('small');
         note.className = 'transcript-editor-note';
         note.textContent = `편집자 주: ${item.editorNote}`;
         paragraph.append(note);
       }
       fragments[chapterIndex].append(paragraph);
+      });
     });
     if (nextCueId !== 2145 || data.items[0].start !== 0.32 || data.items[data.items.length - 1].end !== 4192.799 || fragments.some(fragment => !fragment.childNodes.length)) {
       throw new Error('Incomplete transcript or empty chapter');
     }
     // Commit only after every paragraph and source-cue reference has validated.
     chapters.forEach((chapter, i) => chapter.querySelector('.transcript-segments').replaceChildren(fragments[i]));
-    return data.items.length;
+    return data.items.reduce((count, item) => count + item.turns.length, 0);
   };
 
   const closeDrawer = ({ restoreFocus = true } = {}) => {

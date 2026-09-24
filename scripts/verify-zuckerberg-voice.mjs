@@ -8,6 +8,7 @@ const proof=process.env.PROOF_PATH || '/tmp/zuckerberg-voice-proof.json';
 const slug='mark-zuckerberg-muse';
 const asset=`public/voices/${slug}/`;
 const data=JSON.parse(readFileSync(asset+'transcript-ko.json','utf8'));
+const turns=data.items.flatMap(item=>item.turns);
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const results=[];
 const browser=await chromium.launch({channel:'chrome',headless:true});
@@ -24,16 +25,17 @@ try {
   assert.equal(await frame.locator('#transcriptLoading').isVisible(),false);
   assert.equal(await frame.locator('#transcriptError').isVisible(),false);
   const actual=await frame.locator('.transcript-paragraph .paragraph-text').allTextContents();
-  assert.deepEqual(actual,data.items.map(x=>x.text));
+  assert.deepEqual(actual,turns.map(x=>x.text));
   assert.equal(await frame.locator('.transcript-timestamp').count(),0);
-  assert.deepEqual(await frame.locator('.transcript-speaker').allTextContents(),data.items.map(x=>x.speaker));
+  assert.deepEqual(await frame.locator('.transcript-speaker').allTextContents(),turns.map(x=>x.speaker));
   const speakerColors=await frame.locator('.speaker-person').evaluateAll(nodes=>nodes.map(n=>({name:n.textContent,color:getComputedStyle(n).color})));
-  assert.ok(speakerColors.length >= data.items.length, 'Every turn has person-specific colored tags');
+  assert.ok(speakerColors.length === turns.length, 'Every turn has person-specific colored tags');
   const expectedColors={'마크 저커버그':'rgb(141, 198, 255)','알렉스 히스':'rgb(240, 190, 112)'};
   assert.ok(speakerColors.every(x=>x.color===expectedColors[x.name]), 'Speaker colors are stable, including mixed turns');
   assert.equal(new Set(speakerColors.map(x=>x.color)).size,2);
-  assert.equal(await frame.locator('.transcript-dialogue').count(),data.items.length);
+  assert.equal(await frame.locator('.transcript-dialogue').count(),turns.length);
   assert.equal(await frame.locator('.transcript-chapter').count(),11);
+  assert.ok(await frame.locator('.transcript-paragraph').evaluateAll(nodes=>nodes.every(n=>n.querySelectorAll('.speaker-person').length===1)), 'Exactly one person per turn');
   const chapterCounts=await frame.locator('.transcript-chapter').evaluateAll(nodes=>nodes.map(n=>n.querySelectorAll('.transcript-paragraph').length));
   assert.ok(chapterCounts.every(x=>x>0));
   assert.equal(await frame.locator('body').getAttribute('data-source-url'),data.source);
@@ -70,5 +72,5 @@ try {
   assets.push({file,sha256:sha(bytes),bytes:bytes.length});
  }
  mkdirSync(dirname(proof),{recursive:true});writeFileSync(proof,JSON.stringify({base,checkedAt:new Date().toISOString(),passed:true,results,assets},null,2));
- console.log(JSON.stringify({base,viewports:results.map(r=>r.width),paragraphs:data.items.length,chapters:11,passed:true,proof}));
+ console.log(JSON.stringify({base,viewports:results.map(r=>r.width),paragraphs:turns.length,chapters:11,passed:true,proof}));
 } finally {await browser.close();}
