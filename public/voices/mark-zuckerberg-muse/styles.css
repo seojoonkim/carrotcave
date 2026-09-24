@@ -146,6 +146,7 @@ body.drawer-open{overflow:hidden}
 
 .transcript-turn-meta{display:block;margin-bottom:7px}.transcript-speaker{margin:0}.chapter-time{display:inline-flex;min-height:32px;align-items:center;text-decoration:none}.chapter-time:hover{text-decoration:underline;text-underline-offset:3px}
 
+#transcript .paragraph-text .transcript-highlight { font-weight: 750; color: inherit; }
 #transcript .speaker-person[data-person="mark"] { color: #8dc6ff; }
 #transcript .speaker-person[data-person="alex"] { color: #f0be70; }
 /* Reader-local fit; shared archive chrome is unchanged. */

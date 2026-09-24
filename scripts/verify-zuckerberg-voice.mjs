@@ -24,6 +24,11 @@ try {
   await frame.locator('#transcript[aria-busy="false"]').waitFor({timeout:20000});
   assert.equal(await frame.locator('#transcriptLoading').isVisible(),false);
   assert.equal(await frame.locator('#transcriptError').isVisible(),false);
+  const emphasis=frame.locator('.paragraph-text strong.transcript-highlight');
+  const expectedEmphasis=turns.flatMap(t=>t.highlights||[]);
+  assert.ok(expectedEmphasis.length >= 12, 'Curated key sentences are present');
+  assert.deepEqual(await emphasis.allTextContents(),expectedEmphasis);
+  assert.ok(await emphasis.evaluateAll(nodes=>nodes.every(n=>Number(getComputedStyle(n).fontWeight)>=700)), 'Emphasis is visibly bold');
   const actual=await frame.locator('.transcript-paragraph .paragraph-text').allTextContents();
   assert.deepEqual(actual,turns.map(x=>x.text));
   assert.equal(await frame.locator('.transcript-timestamp').count(),0);
