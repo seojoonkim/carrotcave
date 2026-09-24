@@ -27,6 +27,11 @@ try {
   assert.deepEqual(actual,data.items.map(x=>x.text));
   assert.equal(await frame.locator('.transcript-timestamp').count(),0);
   assert.deepEqual(await frame.locator('.transcript-speaker').allTextContents(),data.items.map(x=>x.speaker));
+  const speakerColors=await frame.locator('.speaker-person').evaluateAll(nodes=>nodes.map(n=>({name:n.textContent,color:getComputedStyle(n).color})));
+  assert.ok(speakerColors.length >= data.items.length, 'Every turn has person-specific colored tags');
+  const expectedColors={'마크 저커버그':'rgb(141, 198, 255)','알렉스 히스':'rgb(240, 190, 112)'};
+  assert.ok(speakerColors.every(x=>x.color===expectedColors[x.name]), 'Speaker colors are stable, including mixed turns');
+  assert.equal(new Set(speakerColors.map(x=>x.color)).size,2);
   assert.equal(await frame.locator('.transcript-dialogue').count(),data.items.length);
   assert.equal(await frame.locator('.transcript-chapter').count(),11);
   const chapterCounts=await frame.locator('.transcript-chapter').evaluateAll(nodes=>nodes.map(n=>n.querySelectorAll('.transcript-paragraph').length));

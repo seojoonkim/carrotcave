@@ -52,7 +52,14 @@
       meta.className = 'transcript-turn-meta';
       const speaker = document.createElement('strong');
       speaker.className = 'transcript-speaker';
-      speaker.textContent = item.speaker;
+      item.speaker.split(' · ').forEach((name, index) => {
+        if (index) speaker.append(document.createTextNode(' · '));
+        const person = document.createElement('span');
+        person.className = 'speaker-person';
+        person.dataset.person = name === '마크 저커버그' ? 'mark' : 'alex';
+        person.textContent = name;
+        speaker.append(person);
+      });
       meta.append(speaker);
       const copy = document.createElement('span');
       copy.className = 'paragraph-text';
