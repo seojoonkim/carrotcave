@@ -490,3 +490,36 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
   .archive-row .archive-thumb{aspect-ratio:1/1;margin-top:2px}
   .archive-more{width:100%;margin-top:var(--space-4)}
 }
+
+/* 2026.09 type & carrot pass.
+   Pretendard (self-hosted, dynamic subset) for Korean; Noto stays as fallback.
+   Carrots appear as small, rare accents — never as decoration on every row. */
+:root{--sans:"Pretendard Variable",Pretendard,var(--font-sans),"Apple SD Gothic Neo",sans-serif;--mono:var(--font-mono),"Pretendard Variable",var(--font-sans),monospace;--carrot-mark:url("/carrot-mark.svg")}
+body{font-feature-settings:"ss06","tnum" 0;font-synthesis:none}
+.wall-heading #wall-heading,.archive-lead h2,.archive-row h2,.post-reader-header h1,.post-next__title{letter-spacing:-.025em}
+.post-content p{letter-spacing:-.005em}
+.post-content :is(h2,h3){letter-spacing:-.03em}
+
+/* Carrot 1 — heading: a tiny carrot tucked after the section title. */
+.wall-heading #wall-heading::after{content:"";display:inline-block;width:.78em;height:.78em;margin-left:.22em;vertical-align:-.04em;background:var(--carrot-mark) center/contain no-repeat;transform:rotate(-8deg);transform-origin:70% 30%}
+/* Carrot 2 — lead story: a small "new" carrot tag in the meta line. */
+.archive-lead .archive-meta::before{content:"";width:16px;height:16px;flex:0 0 16px;margin-right:-1px;background:var(--carrot-mark) center/contain no-repeat}
+/* Carrot 3 — row hover: a carrot peeks in beside the meta (desktop only). */
+.archive-row .archive-meta{position:relative}
+@media(hover:hover) and (pointer:fine){
+  .archive-row .archive-meta::after{content:"";width:13px;height:13px;margin-left:2px;background:var(--carrot-mark) center/contain no-repeat;opacity:0;transform:translateY(3px) rotate(-18deg);transition:opacity .18s ease,transform .22s var(--ease-out)}
+  .archive-row__link:hover .archive-meta::after{opacity:1;transform:none}
+  .wall-heading:hover #wall-heading::after{animation:carrot-wiggle .6s var(--ease-out)}
+  .archive-more:hover .archive-more__label::before,.archive-more:hover::before{animation:carrot-hop .5s var(--ease-out)}
+}
+/* Carrot 4 — load more: the carrot leads the button. */
+.archive-more::before{content:"";width:16px;height:16px;flex:0 0 16px;background:var(--carrot-mark) center/contain no-repeat}
+/* Carrot 5 — end of a post: a quiet carrot fleuron before "next". */
+.post-content::after{content:"";display:block;width:100%;height:22px;margin:56px 0 0;background:var(--carrot-mark) center/22px 22px no-repeat,linear-gradient(var(--hairline),var(--hairline)) left center/calc(50% - 22px) 1px no-repeat,linear-gradient(var(--hairline),var(--hairline)) right center/calc(50% - 22px) 1px no-repeat}
+/* Carrot 6 — empty search: a lonely carrot. */
+.archive-empty::before{content:"";display:block;width:28px;height:28px;margin:0 0 12px;background:var(--carrot-mark) center/contain no-repeat;transform:rotate(-12deg)}
+/* Carrot 7 — text selection tinted carrot. */
+::selection{background:rgba(242,140,40,.32);color:#fff}
+@keyframes carrot-wiggle{0%,100%{transform:rotate(-8deg)}30%{transform:rotate(10deg)}60%{transform:rotate(-14deg)}}
+@keyframes carrot-hop{0%,100%{transform:none}45%{transform:translateY(-4px) rotate(-10deg)}}
+@media(prefers-reduced-motion:reduce){.wall-heading #wall-heading::after,.archive-more::before,.archive-row .archive-meta::after{animation:none!important;transition:none!important}}

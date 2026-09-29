@@ -161,7 +161,8 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   assert.match(layout, /Noto_Sans_KR/);
   assert.doesNotMatch(layout, /Noto_Serif_KR|--font-serif/);
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
-  assert.doesNotMatch(css, /cdn\.jsdelivr\.net|Pretendard Variable/);
+  assert.doesNotMatch(css, /cdn\.jsdelivr\.net/);
+  assert.match(layout, /href="\/fonts\/pretendard\/pretendardvariable-dynamic-subset\.css"/);
   assert.match(css, /:root\{--graphite:#24262c/);
   assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#282b32 0,#24262c 640px\) no-repeat var\(--graphite\)/);
   assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);

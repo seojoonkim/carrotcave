@@ -60,6 +60,7 @@ export default function RootLayout({
     <html lang="ko" className={`${plexMono.variable} ${notoSans.variable}`}>
       <head>
         <link rel="stylesheet" href="/shared-header-chrome.css" />
+        <link rel="stylesheet" href="/fonts/pretendard/pretendardvariable-dynamic-subset.css" />
       </head>
       <body
         className="antialiased min-h-screen"

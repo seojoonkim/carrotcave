@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const read = (p) => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 test('mono stack falls back to Noto Sans KR for Hangul instead of system fonts', () => {
   assert.match(read('app/globals.css'), /--mono:var\(--font-mono\),var\(--font-sans\),monospace/);
-  assert.match(read('public/voices/reader-system.css'), /--font-mono: "IBM Plex Mono", "Noto Sans KR", monospace;/);
+  assert.match(read('public/voices/reader-system.css'), /--font-mono: "IBM Plex Mono", "Pretendard Variable", "Noto Sans KR", monospace;/);
 });
 test('site and voice readers share the field-notes mono', () => {
   assert.match(read('app/layout.tsx'), /IBM_Plex_Mono\(/);

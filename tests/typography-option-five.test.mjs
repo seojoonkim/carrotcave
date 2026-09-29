@@ -50,7 +50,7 @@ test('all static voice readers load local Noto Sans and share sans heading rules
   const fontPrep = read('scripts/prepare-voice-fonts.mjs');
   assert.ok(packageJson.dependencies['@fontsource-variable/noto-sans-kr']);
   assert.equal(packageJson.dependencies['@fontsource-variable/noto-serif-kr'], undefined);
-  assert.match(readerCss, /--font-sans: "Noto Sans KR"/);
+  assert.match(readerCss, /--font-sans: "Pretendard Variable", "Noto Sans KR"/);
   assert.match(readerCss, /\.hero #page-title\s*\{[^}]*font-family: var\(--font-sans\);[^}]*\}/);
   assert.match(readerCss, /\.section-heading h2, \.chapter-heading h2\s*\{[^}]*font-family: var\(--font-sans\);[^}]*\}/);
   assert.match(readerCss, /\.highlight-marker h3, \.topic-heading h3, \.transcript-subheading\s*\{[^}]*font-family: var\(--font-sans\);[^}]*\}/);
