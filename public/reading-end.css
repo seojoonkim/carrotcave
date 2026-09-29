@@ -85,18 +85,11 @@
   .cc-reading-end *{transition:none!important;animation:none!important}
 }
 
-/* Cave details shared with the lists: crop marks on the picture, carrot notch on the row */
+/* Cave detail shared with the lists: carrot notch on the row */
 .cc-reading-end .cave-constellation__thumbnail{--t:#f39a52}
-.cc-reading-end .cave-constellation__thumbnail::after{background:
-  linear-gradient(var(--t),var(--t)) 6px 6px/10px 1.5px,linear-gradient(var(--t),var(--t)) 6px 6px/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) calc(100% - 6px) 6px/10px 1.5px,linear-gradient(var(--t),var(--t)) calc(100% - 6px) 6px/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) 6px calc(100% - 6px)/10px 1.5px,linear-gradient(var(--t),var(--t)) 6px calc(100% - 6px)/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) calc(100% - 6px) calc(100% - 6px)/10px 1.5px,linear-gradient(var(--t),var(--t)) calc(100% - 6px) calc(100% - 6px)/1.5px 10px;
-  background-repeat:no-repeat;background-size:0 0;transition:background-size 0s}
 .cc-reading-end .cave-constellation__thumbnail-copy{position:relative}
 .cc-reading-end .cave-constellation__thumbnail-copy::before{content:"";position:absolute;left:-16px;top:50%;width:2px;height:0;background:var(--t);transform:translateY(-50%);transition:height .22s cubic-bezier(.2,.7,.2,1)}
 @media(hover:hover) and (pointer:fine){
-  .cc-reading-end a.cave-constellation__thumbnail:hover::after{background-size:10px 1.5px,1.5px 10px,10px 1.5px,1.5px 10px,10px 1.5px,1.5px 10px,10px 1.5px,1.5px 10px}
   .cc-reading-end a.cave-constellation__thumbnail:hover .cave-constellation__thumbnail-copy::before{height:28px}
 }
 @media (max-width:520px){.cc-reading-end .cave-constellation__thumbnail-copy::before{left:-12px}}

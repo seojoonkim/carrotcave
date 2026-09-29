@@ -700,26 +700,16 @@ article:not(.post-reader-article){padding-left:0!important;padding-right:0!impor
 .archive-lead:focus-visible::before,.archive-row__link:focus-visible::before{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.archive-lead::before,.archive-row__link::before{transition:none;transform:none}}
 
-/* ════ CAVE DETAILS — torch, crop marks, carrot notch ════════════════════ */
+/* ════ CAVE DETAILS — faint torch, carrot notch ════════════════════ */
 /* 1. Torch: faint warm light that follows the pointer (fine pointers only, off for reduced motion) */
-.cc-torch{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(420px circle at var(--torch-x,50%) var(--torch-y,50%),rgba(243,154,82,.055),rgba(243,154,82,.018) 38%,transparent 70%)}
+.cc-torch{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(360px circle at var(--torch-x,50%) var(--torch-y,50%),rgba(243,154,82,.032),rgba(243,154,82,.01) 40%,transparent 70%)}
 html[data-torch="on"] .cc-torch{opacity:1}
 @media(prefers-reduced-motion:reduce),(hover:none){.cc-torch{display:none}}
-
-/* 2. Crop marks: carrot corner ticks frame a thumbnail on hover, like a lens finding its subject */
-.archive-thumb{position:relative}
-.archive-thumb::after{content:"";position:absolute;inset:6px;z-index:3;pointer-events:none;opacity:0;transform:scale(1.04);transition:opacity .2s ease,transform .2s ease;
-  --t:#f39a52;background:
-  linear-gradient(var(--t),var(--t)) 0 0/10px 1.5px,linear-gradient(var(--t),var(--t)) 0 0/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) 100% 0/10px 1.5px,linear-gradient(var(--t),var(--t)) 100% 0/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) 0 100%/10px 1.5px,linear-gradient(var(--t),var(--t)) 0 100%/1.5px 10px,
-  linear-gradient(var(--t),var(--t)) 100% 100%/10px 1.5px,linear-gradient(var(--t),var(--t)) 100% 100%/1.5px 10px;background-repeat:no-repeat}
 
 /* 3. Carrot notch: a short carrot mark grows at the row's left edge on hover */
 .archive-lead::after,.archive-row__link::after{content:"";position:absolute;left:-16px;top:50%;width:2px;height:0;background:#f39a52;transform:translateY(-50%);transition:height .22s cubic-bezier(.2,.7,.2,1);pointer-events:none}
 @media(hover:hover) and (pointer:fine){
-  .archive-lead:hover .archive-thumb::after,.archive-row__link:hover .archive-thumb::after{opacity:1;transform:none}
   .archive-lead:hover::after,.archive-row__link:hover::after{height:28px}
 }
 .archive-lead:focus-visible::after,.archive-row__link:focus-visible::after{height:28px}
-@media(prefers-reduced-motion:reduce){.archive-thumb::after,.archive-lead::after,.archive-row__link::after{transition:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.archive-lead::after,.archive-row__link::after{transition:none;transform:none}}

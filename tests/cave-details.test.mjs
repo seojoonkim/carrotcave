@@ -22,8 +22,9 @@ test('torch follows the pointer only on fine pointers and respects reduced motio
   assert.match(css, /@media\(prefers-reduced-motion:reduce\),\(hover:none\)\{\.cc-torch\{display:none\}\}/);
 });
 
-test('lists and picks share crop marks and a carrot notch on hover', () => {
-  assert.match(css, /\.archive-thumb::after\{[^}]*opacity:0/);
+test('cave details stay minimal: faint torch and carrot notch only', () => {
+  assert.doesNotMatch(css + end, /Crop marks|10px 1\.5px/);
+  assert.match(css, /rgba\(243,154,82,\.032\)/);
   assert.match(css, /\.archive-row__link:hover::after\{height:28px\}/);
   assert.match(end, /a\.cave-constellation__thumbnail:hover \.cave-constellation__thumbnail-copy::before\{height:28px\}/);
 });
