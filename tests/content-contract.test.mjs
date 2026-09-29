@@ -61,7 +61,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice menu headers consume one shared chrome contract', () => {
   assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
   assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #211f1c;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #1f1f1f;/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(235, 228, 216, 0\.09\);/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
   assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);
@@ -625,7 +625,7 @@ test('post details share three clean actions without Telegram reaction labels or
   assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#a85a22/);
   assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#a85a22;color:#fff/);
   assert.match(stylesSource, /\.post-reader-action--share\{background:#4a3524;color:#f7eadb\}/);
-  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#35322e;color:#c5beb3\}/);
+  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#323232;color:#c5beb3\}/);
   assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:7px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);

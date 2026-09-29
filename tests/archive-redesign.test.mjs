@@ -115,13 +115,13 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
     read('app/globals.css'),
     read('public/shared-header-chrome.css'),
   ]);
-  assert.match(css, /:root\{[^}]*--cc-header-background:#22201d/);
+  assert.match(css, /:root\{[^}]*--cc-header-background:#202020/);
   assert.match(css, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
   assert.match(headerChrome, /border-bottom: 1px solid var\(--cc-header-divider\) !important;/);
   assert.match(headerChrome, /box-shadow: var\(--cc-header-shadow\) !important;/);
   assert.match(css, /\.axis-rail\{[^}]*background:transparent/);
   assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
-  assert.match(css, /\.wall-card:hover\{[^}]*background:#2a2825\}/);
+  assert.match(css, /\.wall-card:hover\{[^}]*background:#282828\}/);
   assert.match(css, /\.wall-card__image\{[^}]*opacity:\.56;z-index:0\}/);
   assert.match(css, /\.wall-card\{box-shadow:none\}\.wall-card--generated:after\{display:none\}/);
   assert.doesNotMatch(css, /\.cc-header\{[^}]*backdrop-filter/);
@@ -163,8 +163,8 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net/);
   assert.match(layout, /href="\/fonts\/pretendard\/pretendardvariable-dynamic-subset\.css"/);
-  assert.match(css, /:root\{--graphite:#1c1b19/);
-  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#22201d 0,#1c1b19 640px\) no-repeat var\(--graphite\)/);
+  assert.match(css, /:root\{--graphite:#1b1b1b/);
+  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#202020 0,#1b1b1b 640px\) no-repeat var\(--graphite\)/);
   assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
   assert.match(socialMetadata, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
   assert.match(layout, /images: \[\{ url: siteOgImage, width: 1200, height: 630, type: 'image\/png'/);

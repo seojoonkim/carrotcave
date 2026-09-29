@@ -302,7 +302,7 @@ img { border: 0; outline: 0;  }
   box-sizing: border-box;
   padding: 38px max(20px, calc((100vw - 1100px) / 2));
   border-top: 0;
-  background: linear-gradient(180deg, #1c1b19 0%, #181715 55%, #141312 100%);
+  background: linear-gradient(180deg, #1b1b1b 0%, #171717 55%, #131313 100%);
   color: #a39c92;
   font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .04em;
@@ -463,7 +463,7 @@ img { border: 0; outline: 0;  }
 
 /* Warm dark palette for every voice reader */
 :root { color-scheme: dark; --carrot-soft: rgba(243, 154, 82, .14); }
-body { background: radial-gradient(1100px 480px at 50% -160px, rgba(243, 154, 82, .05), transparent 70%) no-repeat, var(--ink) !important; }
+body { background: var(--ink) !important; }
 ::selection { background: rgba(243, 154, 82, .3); color: #fff7ec; }
 html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: thin; }
 .toc-drawer a[aria-current], .desktop-rail a[aria-current], .rail-chapter.is-active { color: var(--carrot-orange) !important; }

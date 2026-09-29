@@ -14,7 +14,7 @@ export default function CarrotCaveMark({ className = '' }: CarrotCaveMarkProps) 
       </defs>
       <g className="carrot-cave-mark__cave">
         <circle cx="48" cy="49" r="43" fill="url(#cc-mark-glow)" />
-        <path d="M12 82C15 38 28 15 48 12c20 3 33 26 36 70H69C67 50 60 31 48 28 36 31 29 50 27 82Z" fill="#1a1816" />
+        <path d="M12 82C15 38 28 15 48 12c20 3 33 26 36 70H69C67 50 60 31 48 28 36 31 29 50 27 82Z" fill="#181818" />
         <path d="M20 82c3-31 12-51 28-57 16 6 25 26 28 57" fill="none" stroke="#e1a247" strokeOpacity=".5" strokeWidth="2" />
         <path d="M9 83h78" stroke="#f0c15d" strokeOpacity=".34" strokeWidth="2" strokeLinecap="round" />
       </g>
@@ -24,8 +24,8 @@ export default function CarrotCaveMark({ className = '' }: CarrotCaveMarkProps) 
         <circle cx="43" cy="43" r="9" fill="#f1eee7" />
         <ellipse cx="38" cy="30" rx="3.5" ry="11" fill="#f1eee7" transform="rotate(-9 38 30)" />
         <ellipse cx="47" cy="29" rx="3.5" ry="12" fill="#f1eee7" transform="rotate(7 47 29)" />
-        <circle cx="39" cy="42" r="1.8" fill="#26221e" />
-        <circle cx="47" cy="42" r="1.8" fill="#26221e" />
+        <circle cx="39" cy="42" r="1.8" fill="#222222" />
+        <circle cx="47" cy="42" r="1.8" fill="#222222" />
         <ellipse cx="34" cy="66" rx="6" ry="3" fill="#f1eee7" />
         <ellipse cx="50" cy="67" rx="6" ry="3" fill="#f1eee7" />
         </g>
