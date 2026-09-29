@@ -322,7 +322,7 @@ body{background:var(--graphite);color:var(--paper);line-height:1.6}
 .post-content a{color:var(--cc-accent);text-decoration-color:currentColor;text-underline-offset:3px}
 .cc-footer{border:0}
 :focus-visible{outline:2px solid var(--cc-focus);outline-offset:4px}
-@media(max-width:520px){.wall-shell{width:100%;padding:32px 16px 72px}.wall-heading{margin-bottom:20px}.editorial-wall{gap:12px}.editorial-wall .wall-card{min-height:232px}.editorial-wall .wall-card__body{padding:18px}.editorial-wall .wall-card h2{font-size:23px}.editorial-wall .wall-card__copy{display:block}.editorial-wall .wall-card__copy .wall-card__abstract{margin:12px 0 0}.post-reader-article{padding:40px 16px 80px}.post-reader-header{margin-bottom:36px}}
+@media(max-width:520px){.wall-shell{width:100%;padding:32px 16px 72px}.wall-heading{margin-bottom:20px}.editorial-wall{gap:12px}.editorial-wall .wall-card{min-height:232px}.editorial-wall .wall-card__body{padding:18px}.editorial-wall .wall-card h2{font-size:23px}.editorial-wall .wall-card__copy{display:block}.editorial-wall .wall-card__copy .wall-card__abstract{margin:12px 0 0}.post-reader-article{padding:40px 0 80px}.post-reader-header{margin-bottom:36px}}
 @media(prefers-reduced-motion:reduce){.editorial-wall .wall-card:hover{transform:none!important}}
 
 /* 2026.09 refined archive system: one accent, calm list, thumbnails always present. */
