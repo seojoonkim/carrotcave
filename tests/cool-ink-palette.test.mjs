@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 
-// Reference: when-stars-ring-again — ink-navy surfaces (#0b0e14) and cool blue-gray body ink (#c9d1dc).
+// Reference: when-stars-ring-again — ink-navy surfaces (#0b0e14) and cool blue-gray body ink (#d6dde6).
 // Rule: every neutral (low-chroma) color used for surfaces, text and lines must not lean red (R ≤ B).
 // Carrot accents are saturated (chroma > 60) and stay exempt.
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
@@ -38,7 +38,7 @@ test('no neutral surface, ink or line color leans red anywhere on the site', () 
 test('base tokens follow the ink-navy reference', () => {
   const css = read('app/globals.css');
   assert.match(css, /#0b0e14/i, 'page background');
-  assert.match(css, /#c9d1dc/i, 'body ink');
+  assert.match(css, /#d6dde6/i, 'body ink');
   const voice = read('public/voices/reader-system.css');
   assert.match(voice, /#0b0e14|11,\s*14,\s*20/i);
 });

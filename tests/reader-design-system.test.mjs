@@ -134,7 +134,7 @@ test('ordinary post selectors consume the same reading tokens', async () => {
     '.post-content p{margin:0 0 24px',
     '--reader-header-title-size:16px;--reader-header-title-size-mobile:15px;--reader-title-size:clamp(32px,calc(5.5vw - 2px),44px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
-    '.post-content{overflow-wrap:anywhere;color:#c9d1dc;font:400 var(--reader-body-size)/var(--reader-body-leading)',
+    '.post-content{overflow-wrap:anywhere;color:#d6dde6;font:400 var(--reader-body-size)/var(--reader-body-leading)',
     '.post-content h2{margin:54px 0 22px;font-size:var(--reader-section-size)',
     '.post-content h3{margin:40px 0 18px;font-size:var(--reader-subsection-size)',
     '.post-reader-header h1{max-width:650px;margin:0 0 22px;color:#fff;font:500 var(--reader-title-size)/1.22',
