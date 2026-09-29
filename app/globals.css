@@ -630,12 +630,12 @@ html{scrollbar-color:rgba(243,154,82,.38) transparent;scrollbar-width:thin}
 /* ════════════════════════════════════════════════════════════════
    LAYOUT SYSTEM — one gutter, two widths, shared center axis.
    Rule 1  --gutter : the only side margin (20px phone → 48px desktop)
-   Rule 2  --frame  : chrome + index pages (header, nav, lists, recs, footer)
+   Rule 2  --frame  : = --measure. Header, lists, reading column and footer share ONE width
    Rule 3  --measure: reading column (article + reading header)
    Every container is centered on the same axis, so left edges line up
    either at the frame edge or at the measure edge — never in between.
    ════════════════════════════════════════════════════════════════ */
-:root{--gutter:clamp(20px,4vw,48px);--frame:960px;--measure:760px;--site-container:var(--frame);--index-measure:var(--frame);--reader-measure:var(--measure)}
+:root{--gutter:clamp(20px,4vw,48px);--measure:760px;--frame:var(--measure);--site-container:var(--frame);--index-measure:var(--frame);--reader-measure:var(--measure)}
 
 /* outer bands own the gutter */
 .cc-header,.cc-header:not(.cc-header--reading),.cc-header--reading,.cc-footer,.wall-shell{padding-left:var(--gutter)!important;padding-right:var(--gutter)!important}

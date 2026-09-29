@@ -8,7 +8,7 @@ const system = css.slice(css.indexOf('LAYOUT SYSTEM — one gutter'));
 test('one gutter, two widths: frame and reading measure', () => {
   assert.ok(system.length > 100, 'layout system block exists');
   assert.match(system, /--gutter:clamp\(20px,4vw,48px\)/);
-  assert.match(system, /--frame:960px/);
+  assert.match(system, /--measure:760px;--frame:var\(--measure\)/);
   assert.match(system, /--measure:760px/);
   assert.match(system, /\.cc-header__inner[^{]*\.cc-footer__inner[^{]*\{[^}]*max-width:var\(--frame\)/);
   assert.match(system, /\.cc-header--reading \.cc-header__inner\{max-width:var\(--measure\)/);
@@ -37,8 +37,17 @@ test('voice readers use the same gutter, measure and frame as ordinary posts', (
   assert.ok(sys.length > 100, 'voice layout block exists');
   assert.match(sys, /--gutter: clamp\(20px, 4vw, 48px\)/);
   assert.match(sys, /--measure: 760px/);
-  assert.match(sys, /--frame: 960px/);
+  assert.match(sys, /--measure: 760px; --frame: var\(--measure\);/);
   assert.match(sys, /\.site-header \{ padding-inline: max\(var\(--gutter\), calc\(\(100vw - var\(--measure\)\) \/ 2\)\) !important; \}/);
   assert.match(sys, /\.content-column, \.hero > \*[^{]*\{[^}]*max-width: var\(--measure\) !important/);
   assert.match(sys, /\.voice-shared-footer__inner \{ max-width: var\(--frame\) !important; \}/);
+});
+
+test('list pages and reading pages share one container width', () => {
+  const g = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const v = readFileSync(new URL('../public/voices/reader-system.css', import.meta.url), 'utf8');
+  for (const src of [g, v]) {
+    assert.doesNotMatch(src, /--frame:\s*960px/, 'frame must not drift wider than the reading column');
+    assert.match(src, /--frame:\s*var\(--measure\)/);
+  }
 });

@@ -477,7 +477,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
    Voice readers are reading pages, so header + every column sit on
    the 760 measure, exactly like ordinary posts; the footer uses 960.
    ════════════════════════════════════════════════════════════════ */
-:root { --gutter: clamp(20px, 4vw, 48px); --measure: 760px; --frame: 960px; --reader-measure: 760px; --reader-mobile-gutter: var(--gutter); }
+:root { --gutter: clamp(20px, 4vw, 48px); --measure: 760px; --frame: var(--measure); --reader-measure: 760px; --reader-mobile-gutter: var(--gutter); }
 .site-header { padding-inline: max(var(--gutter), calc((100vw - var(--measure)) / 2)) !important; }
 .reader-shell, .hero { padding-inline: var(--gutter) !important; }
 .content-column, .hero > *, .hero > .hero-portrait { width: 100%; max-width: var(--measure) !important; margin-left: auto !important; margin-right: auto !important; }
