@@ -448,3 +448,15 @@ img { border: 0; outline: 0;  }
   background: url("/carrot-mark.svg") center / contain no-repeat; transform: rotate(-8deg);
 }
 ::selection { background: rgba(242, 140, 40, .32); color: #fff; }
+
+/* Korean typesetting pass: break between words, not inside them; keep Hangul labels tightly tracked. */
+#transcript .paragraph-text, #transcript .speaker-person, #transcript .transcript-editor-note, .utterance, .transcript-paragraph {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+  text-wrap: pretty;
+}
+.header-site-title, .kicker, .hero dl dt, .hero dl dd, .menu-button span, .toc-toggle span, .rail-progress small, .desktop-rail p {
+  letter-spacing: .03em;
+}
+.hero h1, .section-heading h2, .chapter-heading h2 { letter-spacing: -.028em; }

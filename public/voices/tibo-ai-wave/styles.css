@@ -8,7 +8,7 @@
   --ink: var(--bg); --text: var(--foreground); --muted: #c7c9ce;
   --cyan: var(--ansi-cyan); --amber: var(--ansi-yellow);
   --header: 64px; --measure: 680px;
-  --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-sans: "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header) + 20px); }

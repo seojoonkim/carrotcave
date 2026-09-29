@@ -523,3 +523,8 @@ body{font-feature-settings:"ss06","tnum" 0;font-synthesis:none}
 @keyframes carrot-wiggle{0%,100%{transform:rotate(-8deg)}30%{transform:rotate(10deg)}60%{transform:rotate(-14deg)}}
 @keyframes carrot-hop{0%,100%{transform:none}45%{transform:translateY(-4px) rotate(-10deg)}}
 @media(prefers-reduced-motion:reduce){.wall-heading #wall-heading::after,.archive-more::before,.archive-row .archive-meta::after{animation:none!important;transition:none!important}}
+
+/* Korean typesetting pass */
+.cc-reading-info small,.cc-brand small{letter-spacing:.03em}
+.archive-row__summary,.archive-lead__summary,.cave-constellation-intro,.post-next__title{text-wrap:pretty;line-break:strict}
+.post-content p,.post-content li{line-break:strict;overflow-wrap:anywhere}
