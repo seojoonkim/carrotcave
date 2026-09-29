@@ -649,7 +649,6 @@ html{scrollbar-color:rgba(243,154,82,.38) transparent;scrollbar-width:thin}
 .cc-header__inner,.cc-header:not(.cc-header--reading) .cc-header__inner,.cc-footer__inner,
 .wall-shell .wall-heading,.wall-shell .archive,.editorial-wall{width:100%!important;max-width:var(--frame)!important;margin-inline:auto!important}
 .cc-header-axis-mobile{width:calc(100% - 2 * var(--gutter))!important;max-width:var(--frame)!important;margin-inline:auto!important}
-.cave-constellation-shell,.cave-constellation-shell.cave-constellation-shell--after-actions{width:min(var(--frame),100vw - 2 * var(--gutter))!important}
 
 /* reading column: article and the reading header share the same edges */
 .cc-header--reading .cc-header__inner{max-width:var(--measure)!important}
@@ -674,4 +673,33 @@ article:not(.post-reader-article){padding-left:0!important;padding-right:0!impor
   .post-next{margin-top:40px!important;padding:16px 18px!important}
   .post-reader-action{padding:0 10px!important;font-size:12px!important}
   .cave-constellation-shell,.cave-constellation-shell.cave-constellation-shell--after-actions{margin-top:64px!important;padding-top:44px}
+}
+
+/* ════════════════════════════════════════════════════════════════
+   POST END — recommendations share the reading measure
+   Everything after the body (next post, actions, recommendations)
+   sits on the same 760px column and the same left/right edges.
+   Each item: [rank · relation ........ 이 글 읽기] then a 16:9 card.
+   ════════════════════════════════════════════════════════════════ */
+.cave-constellation-shell,.cave-constellation-shell.cave-constellation-shell--after-actions{width:min(var(--measure),100vw - 2 * var(--gutter))!important}
+.cave-constellation-heading{max-width:none!important;font-size:clamp(26px,3.2vw,34px)!important}
+.cave-constellation-intro{max-width:none!important;margin-bottom:28px!important}
+.cave-constellation{background:none!important;border:0!important;border-radius:0!important;overflow:visible!important;animation:none}
+.cave-constellation::before{content:none!important}
+.cave-constellation__recommendation{--vein:var(--carrot-orange)!important;border-bottom:0!important}
+.cave-constellation__recommendation+.cave-constellation__recommendation{margin-top:36px}
+.cave-constellation__recommendation article{grid-template-columns:minmax(0,1fr) auto!important;gap:12px 16px!important;padding:0!important;background:none!important}
+.cave-constellation__recommendation:hover article{background:none!important}
+.cave-constellation__recommendation-header{grid-column:1!important;grid-row:1!important;flex-direction:row!important;align-items:center!important;gap:10px!important;padding:0!important;border:0!important}
+.cave-constellation__rank{font-size:13px!important;color:#e6ebf2}
+.cave-constellation__relationship-type{padding:4px 8px!important;border-radius:999px!important;background:rgba(243,154,82,.12)!important;color:#f5b07a!important}
+.cave-constellation__navigate{grid-column:2!important;grid-row:1!important;align-self:center!important;width:auto!important;min-width:0!important;min-height:44px!important;margin:0!important;padding:0 4px 0 12px!important;background:none!important;color:#f5b07a!important;font:600 14px/1 var(--sans)!important}
+.cave-constellation__navigate:hover{background:none!important;color:#f39a52!important;transform:translateX(2px)}
+.cave-constellation__thumbnail{grid-column:1 / -1!important;grid-row:2!important;min-height:0!important;aspect-ratio:16/9;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(201,209,220,.08)}
+.cave-constellation__thumbnail-copy{right:22px!important;bottom:20px!important;left:22px!important}
+.cave-constellation__thumbnail-category{color:#f5b07a!important}
+@media (max-width:760px){
+  .cave-constellation__recommendation+.cave-constellation__recommendation{margin-top:30px}
+  .cave-constellation__thumbnail{aspect-ratio:4/3;border-radius:12px}
+  .cave-constellation__thumbnail-copy{right:16px!important;bottom:15px!important;left:16px!important}
 }
