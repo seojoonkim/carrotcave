@@ -36,3 +36,13 @@ test('carrot touches: selection, focus, scrollbar and reading progress use the c
   assert.match(css, /background:linear-gradient\(90deg,#e27a2e,#f39a52 60%,#f6c07a\)!important/);
   assert.match(read('public/voices/reader-system.css'), /#transcript \.speaker-person \{ color: #f5b27a; \}/);
 });
+
+test('no cool blue/teal hex colors remain in any voice stylesheet', () => {
+  for (const d of readdirSync(new URL('../public/voices/', import.meta.url), { withFileTypes: true }).filter((e) => e.isDirectory())) {
+    const css = read(`public/voices/${d.name}/styles.css`);
+    for (const h of css.match(/#[0-9a-f]{6}\b/gi) || []) {
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+      assert.ok(!(b > r + 40 && g > r + 20), `${d.name} uses cool accent ${h}`);
+    }
+  }
+});
