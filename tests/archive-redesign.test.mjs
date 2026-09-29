@@ -93,7 +93,7 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>@simonkim_nft<\/span>/);
   assert.doesNotMatch(footer, /<span>X @simonkim_nft<\/span>/);
   assert.match(css, /\.footer-rabbit-carrot\{[^}]*max-height:190px[^}]*border:0;background:transparent/);
-  assert.match(caveScene, /src="\/footer-rabbit-carrot-v2\.svg"/);
+  assert.match(caveScene, /src="\/footer-rabbit-carrot-v3\.svg"/);
   assert.doesNotMatch(caveScene, /<rect\b|<path\b|<polygon\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);

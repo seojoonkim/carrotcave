@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
-const asset = new URL('../public/footer-rabbit-carrot-v2.svg', import.meta.url);
+const asset = new URL('../public/footer-rabbit-carrot-v3.svg', import.meta.url);
 const read = p => readFileSync(new URL(p, import.meta.url), 'utf8');
 function frames(svg, name) {
   const body = svg.split(`@keyframes ${name}{`)[1]?.split('\n    }')[0];
@@ -10,7 +10,7 @@ function frames(svg, name) {
 }
 test('versioned animated asset is wired without static replacement; header stays quiet', () => {
   assert.ok(existsSync(asset), 'versioned animation must exist');
-  assert.match(read('../components/FooterCaveScene.tsx'), /src="\/footer-rabbit-carrot-v2.svg"/);
+  assert.match(read('../components/FooterCaveScene.tsx'), /src="\/footer-rabbit-carrot-v3.svg"/);
   const css = read('../app/globals.css');
   assert.doesNotMatch(css, /content:url\('\/footer-rabbit-carrot-static.svg'\)/);
   assert.match(css, /\.cc-brand \.cc-brand-symbol,.*animation:none!important/);
@@ -35,7 +35,7 @@ test('reduced motion composes rabbit beside carrot with open eyes and no animati
   const svg = readFileSync(asset, 'utf8');
   const reduced = svg.split('@media (prefers-reduced-motion: reduce)')[1];
   assert.match(reduced, /animation:none!important/);
-  assert.match(reduced, /\.rabbit-position\{transform:translate\(760px,0\)/);
+  assert.match(reduced, /\.rabbit-position\{transform:translate\(690px,0\)/);
   assert.match(reduced, /\.rabbit-eyelid\{transform:scaleY\(0\)/);
   assert.match(reduced, /\.scene\{opacity:1/);
   const animated = [...svg.matchAll(/\.([\w-]+)\{[^{}]*animation:[\w-]+ 16s/g)].map(m => m[1]);

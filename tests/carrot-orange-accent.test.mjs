@@ -12,7 +12,7 @@ const voiceCss = read('public/voices/reader-system.css');
 const productionTextFiles = [
   'app/globals.css',
   'components/CarrotCaveMark.tsx',
-  'public/footer-rabbit-carrot.svg',
+  'public/footer-rabbit-carrot-v3.svg',
   'public/footer-rabbit-carrot-static.svg',
   'public/voices/reader-system.css',
   'public/voices/yang-zhilin/index.html',

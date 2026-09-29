@@ -46,7 +46,7 @@ try {
   await page.emulateMedia({reducedMotion:'reduce'});
   const rabbit=page.locator('.footer-rabbit-carrot');await rabbit.scrollIntoViewIfNeeded();
   await rabbit.evaluate(img=>img.decode());
-  assert.ok((await rabbit.getAttribute('src')).includes('footer-rabbit-carrot-v2.svg'));
+  assert.ok((await rabbit.getAttribute('src')).includes('footer-rabbit-carrot-v3.svg'));
   await page.locator('.wall-card').first().hover();
   assert.equal(await page.locator('.wall-card').first().evaluate(el=>getComputedStyle(el).transform),'none','reduced-motion card');
   await page.keyboard.press('Tab');

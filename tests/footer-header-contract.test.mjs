@@ -7,7 +7,7 @@ const read = (path) => readFile(new URL(path, root), 'utf8');
 
 test('all shared footers use the rabbit and carrot asset without cave markup', async () => {
   const [asset, staticAsset, component, globalCss, voiceCss, ...voices] = await Promise.all([
-    read('public/footer-rabbit-carrot.svg'),
+    read('public/footer-rabbit-carrot-v3.svg'),
     read('public/footer-rabbit-carrot-static.svg'),
     read('components/FooterCaveScene.tsx'),
     read('app/globals.css'),
@@ -15,34 +15,29 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
     ...['liao-heng', 'liang-wenfeng', 'sam-altman-startup-school-2026', 'yang-zhilin']
       .map((slug) => read(`public/voices/${slug}/index.html`)),
   ]);
-  assert.match(asset, /@keyframes rabbit-journey/);
-  assert.match(asset, /@keyframes scene-loop/);
-  assert.match(asset, /class="carrot-position" transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g class="carrot">/);
-  assert.match(asset, /<g class="carrot-position"[\s\S]*?<g class="rabbit-position"/);
-  assert.doesNotMatch(asset, /class="carrot" transform=/);
+  // One 16s story: sleepy carrot -> hops -> sniff -> carrot ducks into soil -> "?" -> pops out, winks -> nuzzle + hearts.
+  for (const name of ['scene-loop', 'rabbit-journey', 'rabbit-squash', 'shadow-hop', 'rabbit-blink', 'nose-sniff', 'whisker-quiver',
+    'tail-wiggle', 'front-paw', 'question-pop', 'carrot-play', 'carrot-sleep', 'carrot-awake', 'carrot-wink', 'zz-a', 'sparkle-pop', 'heart-a', 'dust-puff']) {
+    assert.match(asset, new RegExp(`@keyframes ${name}\\{`), `missing ${name}`);
+  }
   assert.match(asset, /animation:scene-loop 16s ease-in-out infinite/);
-  assert.match(asset, /56%,89%\{transform:translate\(760px,0\)\}/);
-  assert.match(asset, /97%,99%\{opacity:0\}/);
-  assert.match(asset, /@keyframes rabbit-blink/);
-  assert.match(asset, /@keyframes nose-sniff/);
-  assert.match(asset, /@keyframes tail-wiggle/);
-  assert.match(asset, /@keyframes whisker-quiver/);
-  assert.match(asset, /@keyframes front-paw/);
-  assert.match(asset, /@keyframes shadow-hop/);
+  assert.match(asset, /95%,99%\{opacity:0\}/);
+  assert.match(asset, /49%,62%\{transform:translate\(690px,0\)\}/);
+  assert.match(asset, /clip-path="url\(#ground-clip\)"[\s\S]*?<g class="carrot">/, 'carrot hides behind the soil line');
+  assert.match(asset, /61%,72%\{transform:translateY\(96px\)\}/, 'leaf tips stay peeking while hidden');
+  assert.match(asset, /class="carrot-wink"/);
+  assert.match(asset, /class="rabbit-eyes-happy"/);
   assert.match(asset, /id="footer-carrot-skin"[\s\S]*?#ffad4d[\s\S]*?#f39a52[\s\S]*?#d9651f/);
-  assert.match(asset, /id="footer-carrot-leaf" points="3\.36,7 0,1\.82 2\.24,1\.05 3\.84,4\.62 4\.16,0 6\.08,\.56 4\.88,4\.55 7\.2,1\.75 8,3\.36"/);
-  assert.doesNotMatch(asset, /<use href="#footer-rabbit"/);
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
-  assert.doesNotMatch(staticAsset, /animation:/);
-  assert.match(staticAsset, /<g transform="translate\(1000 103\) rotate\(24\)"[\s\S]*?<g transform="translate\(760\)"/);
+  assert.doesNotMatch(staticAsset, /animation:|@keyframes/);
+  assert.match(staticAsset, /<g class="rabbit-position" transform="translate\(690\)">/);
   assert.doesNotMatch(staticAsset, /cave|동굴/i);
-  assert.match(component, /src="\/footer-rabbit-carrot-v2\.svg"/);
+  assert.match(component, /src="\/footer-rabbit-carrot-v3\.svg"/);
   assert.doesNotMatch(globalCss, /footer-rabbit-carrot\{content:url\('\/footer-rabbit-carrot-static\.svg'\)\}/);
   assert.match(globalCss, /\.cc-footer\{[^}]*border-top:0;[^}]*linear-gradient\(180deg,var\(--graphite\) 0%,#181715 55%,#141312 100%\)/);
   assert.match(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 0;[\s\S]*?linear-gradient\(180deg, #1c1b19 0%, #181715 55%, #141312 100%\)/);
   assert.doesNotMatch(voiceCss, /\.voice-shared-footer \{[\s\S]*?border-top: 1px/);
-  assert.match(voiceCss, /\.voice-footer-rabbit-carrot/);
   assert.match(voiceCss, /voice-footer-rabbit-carrot \{ content: url\('\/footer-rabbit-carrot-static\.svg'\); \}/);
   assert.doesNotMatch(voiceCss, /voice-footer-cave-scene/);
   for (const voice of voices) {
@@ -60,4 +55,10 @@ test('voice chapter status keeps one visible space after the period', async () =
 test('general post header title uses regular weight', async () => {
   const css = await read('app/globals.css');
   assert.match(css, /\.cc-reading-title\{[^}]*font:400 var\(--reader-header-title-size,17px\)/);
+});
+
+test('phones get a closer crop of the footer story so faces stay readable', async () => {
+  const [globalCss, voiceCss] = await Promise.all([read('app/globals.css'), read('public/voices/reader-system.css')]);
+  assert.match(globalCss, /@media\(max-width:600px\)\{\.footer-rabbit-carrot\{height:120px!important;max-height:none;object-fit:cover;object-position:88% 100%\}\}/);
+  assert.match(voiceCss, /\.voice-footer-rabbit-carrot \{ height: 120px !important; max-height: none; object-fit: cover; object-position: 88% 100%; \}/);
 });

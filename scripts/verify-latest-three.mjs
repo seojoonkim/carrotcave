@@ -47,7 +47,7 @@ try {
       for (const item of proof.items) assert.equal(await page.locator(`a[href="/posts/${item.slug}"]`).count(), 1);
       assert.equal(await page.locator('.wall-card__date-part').count(), 0);
       assert.equal(await page.locator('.wall-heading').innerText().then(t => /ENTRIES|THE CAVE WALL/.test(t)), false);
-      assert.equal(await page.locator('.footer-rabbit-carrot').getAttribute('src'), '/footer-rabbit-carrot-v2.svg');
+      assert.equal(await page.locator('.footer-rabbit-carrot').getAttribute('src'), '/footer-rabbit-carrot-v3.svg');
       await page.locator(`a[href="/posts/${proof.items[0].slug}"]`).click();
       await page.waitForURL(`**/posts/${proof.items[0].slug}`);
       const pages = [];
@@ -72,7 +72,7 @@ try {
     assert.deepEqual(errors, []);
     proof.pageErrors = errors;
     proof.assets = [];
-    for (const path of [...new Set(proof.items.flatMap(x => x.media)), '/footer-rabbit-carrot-v2.svg']) {
+    for (const path of [...new Set(proof.items.flatMap(x => x.media)), '/footer-rabbit-carrot-v3.svg']) {
       const response = await page.request.get(`${base}${path}`);
       assert.equal(response.status(), 200);
       const bytes = await response.body();

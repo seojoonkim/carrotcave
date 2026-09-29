@@ -468,3 +468,5 @@ body { background: radial-gradient(1100px 480px at 50% -160px, rgba(243, 154, 82
 html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: thin; }
 .toc-drawer a[aria-current], .desktop-rail a[aria-current], .rail-chapter.is-active { color: var(--carrot-orange) !important; }
 #transcript .speaker-person { color: #f5b27a; }
+
+@media (max-width: 600px) { .voice-footer-rabbit-carrot { height: 120px !important; max-height: none; object-fit: cover; object-position: 88% 100%; } }

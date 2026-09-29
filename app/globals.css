@@ -565,3 +565,6 @@ html{scrollbar-color:rgba(243,154,82,.38) transparent;scrollbar-width:thin}
 @media(max-width:900px){.archive-row .archive-thumb__play{width:34px;height:34px}.archive-row .archive-thumb__play svg{width:15px;height:15px}.archive-row .archive-thumb__duration{right:4px;bottom:4px;padding:2px 5px}}
 @media(hover:hover) and (pointer:fine){.archive-row__link:hover .archive-thumb__play,.archive-lead:hover .archive-thumb__play{background:#f39a52;color:#1c1b19;transform:translate(-50%,-50%) scale(1.08)}}
 @media(prefers-reduced-motion:reduce){.archive-thumb__play{transition:none}}
+
+/* Footer scene on phones: zoom into the carrot corner so faces stay readable. */
+@media(max-width:600px){.footer-rabbit-carrot{height:120px!important;max-height:none;object-fit:cover;object-position:88% 100%}}
