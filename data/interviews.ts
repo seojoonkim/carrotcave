@@ -1,6 +1,8 @@
 export interface InterviewArchive {
   slug: string;
   name: string;
+  /** English name for English-only surfaces (share cards). */
+  nameEn?: string;
   eyebrow: string;
   title: string;
   summary: string;
@@ -20,6 +22,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'mark-zuckerberg-muse',
     name: '마크 저커버그',
+    nameEn: 'Mark Zuckerberg',
     eyebrow: 'META / MUSE / PERSONAL SUPERINTELLIGENCE',
     title: 'Muse, 개인 초지능을 일상의 도구로',
     summary: '마크 저커버그는 Muse의 활용과 가격, 개인 에이전트의 프라이버시, AI 연구와 안전을 통해 개인 초지능을 널리 보급하려는 Meta의 구상을 이야기한다.',
@@ -36,6 +39,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'masayoshi-son-asi-economy',
     name: '손정의',
+    nameEn: 'Masayoshi Son',
     eyebrow: 'SOFTBANK WORLD 2026 / ASI ECONOMY / AI INFRASTRUCTURE',
     title: '2040년 ASI Economy를 먼저 준비하는 법',
     summary: '손정의는 2040년 AI 에이전트와 휴머노이드가 만드는 경제, 전력과 연산 인프라, 그리고 Return on AI라는 새로운 경영 지표를 이야기한다.',
@@ -52,6 +56,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'tibo-ai-wave',
     name: '티보',
+    nameEn: 'Tibo',
     eyebrow: 'OPENAI / PERSONAL AGENTS / AI SYSTEMS',
     title: '모두가 보기 전에 다음 AI 파도를 이해하는 법',
     summary: '티보는 개인 에이전트, 음성 인터페이스, 초고속 추론과 자기개선을 통해 AI의 다음 파도가 사람의 흐름에 맞춰지는 방식으로 온다고 말한다.',
@@ -68,6 +73,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'sam-altman-startup-school-2026',
     name: '샘 올트먼',
+    nameEn: 'Sam Altman',
     eyebrow: 'STARTUP SCHOOL / AI / FOUNDERS',
     title: '지금보다 창업하기 좋은 때는 없다',
     summary: 'AI 에이전트 시대 창업과 통념을 깬 확신, 안전·권력 분산, 자유로운 미래를 샘 올트먼과 개리 탄이 논한다.',
@@ -84,6 +90,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'liao-heng',
     name: '랴오헝',
+    nameEn: 'Liao Heng',
     eyebrow: 'SEMICONDUCTOR / AI SYSTEMS',
     title: '반도체 연구자의 필드 노트',
     summary: '랴오헝은 화웨이 어센드 개발사를 통해 AI 반도체 경쟁의 승부처가 단일 칩이 아닌 공급망·소프트웨어·생태계까지 경제적으로 순환하는 전층 공동설계라고 주장한다.',
@@ -100,6 +107,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'liang-wenfeng',
     name: '량원펑',
+    nameEn: 'Liang Wenfeng',
     eyebrow: 'DEEPSEEK / PRIVATE MEETING / AGI',
     title: 'AGI를 향한 절제',
     summary: '량원펑은 오픈소스와 합리적 이윤의 절제가 단기 상업화보다 지속학습의 AGI 성공률을 높인다고 주장한다.',
@@ -116,6 +124,7 @@ export const interviews: InterviewArchive[] = [
   {
     slug: 'yang-zhilin',
     name: '양즈린',
+    nameEn: 'Yang Zhilin',
     eyebrow: 'KIMI / AGENTIC LLM / AGI',
     title: '무한의 시작에 서서',
     summary: '양즈린은 K2 강화학습과 범용 에이전트 전략을 짚고, AI를 문제 해결로 지식과 문명의 경계를 넓히는 증폭기로 본다.',

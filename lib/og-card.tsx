@@ -53,24 +53,59 @@ export async function localImage(publicPath?: string) {
   return undefined;
 }
 
-function titleSize(title: string, hasImage: boolean) {
-  const n = [...title].length;
-  const base = hasImage ? 58 : 66;
-  if (n > 44) return base - 14;
-  if (n > 30) return base - 8;
-  return base;
+// The site's original header icon (components/CarrotCaveMark.tsx), as a static SVG.
+// Same paths and colors; tests keep the two in sync.
+const MARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f7d46a" stop-opacity=".7"/><stop offset=".55" stop-color="#d98c36" stop-opacity=".24"/><stop offset="1" stop-color="#d06f2d" stop-opacity="0"/></radialGradient></defs>
+<circle cx="48" cy="49" r="43" fill="url(#g)"/>
+<path d="M12 82C15 38 28 15 48 12c20 3 33 26 36 70H69C67 50 60 31 48 28 36 31 29 50 27 82Z" fill="#090c11"/>
+<path d="M20 82c3-31 12-51 28-57 16 6 25 26 28 57" fill="none" stroke="#e1a247" stroke-opacity=".5" stroke-width="2"/>
+<path d="M9 83h78" stroke="#f0c15d" stroke-opacity=".34" stroke-width="2" stroke-linecap="round"/>
+<ellipse cx="43" cy="57" rx="11" ry="13" fill="#e6ebf2"/><circle cx="43" cy="43" r="9" fill="#e6ebf2"/>
+<ellipse cx="38" cy="30" rx="3.5" ry="11" fill="#e6ebf2" transform="rotate(-9 38 30)"/><ellipse cx="47" cy="29" rx="3.5" ry="12" fill="#e6ebf2" transform="rotate(7 47 29)"/>
+<circle cx="39" cy="42" r="1.8" fill="#11151c"/><circle cx="47" cy="42" r="1.8" fill="#11151c"/>
+<ellipse cx="34" cy="66" rx="6" ry="3" fill="#e6ebf2"/><ellipse cx="50" cy="67" rx="6" ry="3" fill="#e6ebf2"/>
+<g transform="translate(61 54) rotate(-14)"><path d="M0 0c9 1 13 7 8 24C2 17-2 8 0 0Z" fill="#f39a52"/>
+<path d="M3 1C0-7 1-13 4-17M5 1c4-8 8-12 12-14M4 0c7-5 12-6 16-5" fill="none" stroke="#79a85b" stroke-width="3.5" stroke-linecap="round"/>
+<path d="m2 7 6 2m-5 5 4 1" stroke="#ffad4d" stroke-width="1.2" stroke-linecap="round"/></g>
+</svg>`;
+export const MARK_DATA_URL = `data:image/svg+xml;base64,${Buffer.from(MARK_SVG).toString('base64')}`;
+
+/** English-only card copy. Hangul in any field is a bug (tests check the inputs). */
+export const CATEGORY_EN: Record<string, string> = { 탐험: 'EXPLORE', 빌딩: 'BUILD', 낙서: 'DOODLE', 소설: 'FICTION', 목소리: 'VOICES' };
+export const TAGLINE_EN = 'Field Notes from the Rabbit Hole';
+
+const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+export function dateEn(iso?: string) {
+  const m = iso && /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+  return m ? `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}` : undefined;
+}
+
+const HANGUL = /[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]/;
+function englishOnly(v?: string) {
+  return v && !HANGUL.test(v) ? v : undefined;
 }
 
 export interface OgCardInput {
-  kicker: string; // category or "목소리"
-  title: string;
-  summary?: string;
+  label: string; // EXPLORE / VOICES …
+  title: string; // big line
+  sub?: string; // one supporting line
+  meta?: string; // date
   image?: string; // data URL
-  byline?: string; // e.g. speaker name
 }
 
-export async function ogCard({ kicker, title, summary, image, byline }: OgCardInput) {
-  const symbol = await localImage('/carrot-cave-symbol.png');
+function titleSize(title: string, hasImage: boolean) {
+  const n = title.length;
+  if (hasImage) return n > 26 ? 76 : n > 18 ? 80 : 88;
+  return n > 34 ? 76 : n > 24 ? 88 : 100;
+}
+
+export async function ogCard(input: OgCardInput) {
+  const label = englishOnly(input.label) ?? 'CARROTCAVE';
+  const title = englishOnly(input.title) ?? TAGLINE_EN;
+  const sub = englishOnly(input.sub);
+  const meta = englishOnly(input.meta);
+  const { image } = input;
   const size = titleSize(title, Boolean(image));
   return new ImageResponse(
     (
@@ -86,48 +121,33 @@ export async function ogCard({ kicker, title, summary, image, byline }: OgCardIn
           overflow: 'hidden',
         }}
       >
-        {/* carrot rail on the left edge */}
-        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 10, background: CARROT, display: 'flex' }} />
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 12, background: CARROT, display: 'flex' }} />
 
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '64px 0 60px 82px', width: image ? 700 : 820 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 0 56px 80px', width: image ? 660 : 1080 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
+            <div style={{ display: 'flex', padding: '10px 20px 11px', borderRadius: 4, background: CARROT, color: INK, fontSize: 34, fontWeight: 700, letterSpacing: 2 }}>{label}</div>
+            {meta ? <div style={{ display: 'flex', color: BODY, fontSize: 32, fontWeight: 600, letterSpacing: 1 }}>{meta}</div> : null}
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, lineClamp: 3 }}>{title}</div>
+            {sub ? <div style={{ display: 'block', color: RABBIT, fontSize: 34, fontWeight: 600, lineHeight: 1.3, letterSpacing: 0.5, lineClamp: 2 }}>{sub}</div> : null}
+          </div>
+
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <div style={{ display: 'flex', padding: '9px 16px 10px', borderRadius: 3, background: CARROT, color: INK, fontSize: 24, fontWeight: 700, letterSpacing: -0.3 }}>{kicker}</div>
-            {byline ? <div style={{ display: 'flex', color: RABBIT, fontSize: 26, fontWeight: 600 }}>{byline}</div> : null}
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
-            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.2, letterSpacing: -1.6, lineClamp: 3, wordBreak: 'keep-all' }}>{title}</div>
-            {summary ? (
-              <div style={{ display: 'block', color: BODY, fontSize: 25, fontWeight: 500, lineHeight: 1.5, letterSpacing: -0.4, lineClamp: 2, wordBreak: 'keep-all' }}>{summary}</div>
-            ) : null}
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-            {symbol ? <img src={symbol} width={46} height={46} style={{ borderRadius: 3 }} /> : null}
-            <div style={{ display: 'flex', color: TITLE, fontSize: 25, fontWeight: 700, letterSpacing: -0.3 }}>CarrotCave</div>
-            <div style={{ display: 'flex', color: CARROT, fontSize: 25, fontWeight: 700, marginLeft: -14 }}>.com</div>
+            <img src={MARK_DATA_URL} width={72} height={72} />
+            <div style={{ display: 'flex', color: TITLE, fontSize: 40, fontWeight: 700, letterSpacing: -0.5 }}>CarrotCave</div>
+            <div style={{ display: 'flex', color: CARROT, fontSize: 40, fontWeight: 700, marginLeft: -16 }}>.com</div>
           </div>
         </div>
 
         {image ? (
-          <div style={{ position: 'absolute', right: 64, top: 118, width: 380, height: 394, display: 'flex' }}>
-            {/* offset carrot block behind the picture = a small, playful lift */}
-            <div style={{ position: 'absolute', left: 18, top: 18, width: 380, height: 394, borderRadius: 4, background: CARROT, display: 'flex' }} />
-            <img src={image} width={380} height={394} style={{ position: 'absolute', left: 0, top: 0, width: 380, height: 394, objectFit: 'cover', borderRadius: 4, border: '2px solid #0b0e14' }} />
+          <div style={{ position: 'absolute', right: 60, top: 104, width: 400, height: 410, display: 'flex' }}>
+            <div style={{ position: 'absolute', left: 18, top: 18, width: 400, height: 410, borderRadius: 4, background: CARROT, display: 'flex' }} />
+            <img src={image} width={400} height={410} style={{ position: 'absolute', left: 0, top: 0, width: 400, height: 410, objectFit: 'cover', borderRadius: 4, border: '2px solid #0b0e14' }} />
           </div>
         ) : (
-          <div style={{ position: 'absolute', right: 96, top: 150, width: 280, height: 330, display: 'flex' }}>
-            {/* cave mouth: a thick arch, open at the bottom */}
-            <div style={{ position: 'absolute', left: 0, top: 0, width: 280, height: 330, borderTop: '22px solid rgba(214,221,230,.07)', borderLeft: '22px solid rgba(214,221,230,.07)', borderRight: '22px solid rgba(214,221,230,.07)', borderTopLeftRadius: 140, borderTopRightRadius: 140, display: 'flex' }} />
-            {/* carrot waiting inside the cave (SVG: the renderer has no clip-path) */}
-            <svg width="76" height="120" viewBox="0 0 76 120" style={{ position: 'absolute', left: 102, top: 188 }}>
-              <path d="M34 30 C24 8 14 4 8 2 C18 14 24 22 30 32 Z" fill="#8fd18a" />
-              <path d="M40 30 C44 10 52 2 62 0 C56 14 50 24 44 32 Z" fill="#6fbf6a" />
-              <path d="M37 28 C37 14 38 8 38 4 C39 8 40 14 40 28 Z" fill="#8fd18a" />
-              <path d="M18 34 Q38 24 58 34 L42 116 Q38 122 34 116 Z" fill="#f39a52" />
-              <path d="M26 52 L36 50 M30 72 L41 70 M34 92 L42 91" stroke="#c8702e" stroke-width="3" stroke-linecap="round" />
-            </svg>
-          </div>
+          <img src={MARK_DATA_URL} width={360} height={360} style={{ position: 'absolute', right: 40, top: 120, opacity: 0.9 }} />
         )}
       </div>
     ),
