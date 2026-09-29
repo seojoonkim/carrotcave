@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { archiveImageUrl, siteName, siteOgImage } from '@/lib/social-metadata';
-import { posts, getPostBySlug } from '@/data/posts';
-import DepthBadge from '@/components/DepthBadge';
+import { posts, getPostBySlug, depthLabel } from '@/data/posts';
 import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
@@ -196,6 +195,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
   if (!post) notFound();
 
+  const axisPosts = posts
+    .filter((item) => item.category === post.category)
+    .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? 0) - (a.telegramMsgId ?? 0)));
+  const nextPost = axisPosts[axisPosts.findIndex((item) => item.slug === post.slug) + 1];
+
   const rawConstellation = buildTopRecommendations(slug, ontologyIndex as OntologyIndex);
   const postDetails = new Map(posts.map((item) => [item.slug, {
     summary: item.summary,
@@ -219,27 +223,16 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <article className="post-reader-article">
         <header className="post-reader-header">
-        {/* Category */}
-        <div className="post-reader-category">
-          {post.category.replace(/^[^\p{L}]+/u, '')}
-        </div>
-
-        {/* Title */}
-        <h1>
-          {post.title}
-        </h1>
-
-        {/* Meta row */}
-        <div className="post-reader-meta flex flex-wrap items-center">
-          <DepthBadge depth={post.depth} />
-          <span className="text-sm">
-            {new Date(post.date).toLocaleDateString('ko-KR', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </span>
-        </div>
+          <h1>
+            {post.title}
+          </h1>
+          <p className="post-reader-meta">
+            <span className="post-reader-meta__axis">{post.category.replace(/^[^\p{L}]+/u, '')}</span>
+            <span aria-hidden="true">·</span>
+            <span>{depthLabel(post.depth)}</span>
+            <span aria-hidden="true">·</span>
+            <time dateTime={post.date}>{post.date.replaceAll('-', '.')}</time>
+          </p>
         </header>
 
         {/* Media section — images (top, skip if video exists) */}
@@ -247,20 +240,15 @@ export default async function PostPage({ params }: PostPageProps) {
           <div
             className="post-media-grid"
             data-count={post.mediaUrls.length}
-            style={{ marginBottom: '2.5rem' }}
           >
             {post.mediaUrls.map((url, i) => (
               <img
                 key={i}
                 src={url}
                 alt=""
-                style={{
-                  width: '100%',
-                  aspectRatio: post.mediaUrls!.length === 1 ? 'auto' : '1 / 1',
-                  objectFit: 'cover',
-                  borderRadius: '0.5rem',
-                  display: 'block',
-                }}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                style={{ aspectRatio: post.mediaUrls!.length === 1 ? 'auto' : '1 / 1' }}
               />
             ))}
           </div>
@@ -268,7 +256,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Media section — videos (top) */}
         {post.videoUrls && post.videoUrls.length > 0 && (
-          <div style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div className="post-media-videos">
             {post.videoUrls.map((url, i) => (
               url.startsWith('/') || (url.startsWith('http') && !url.includes('t.me')) ? (
                 <AutoPlayVideo key={i} src={url} />
@@ -299,6 +287,14 @@ export default async function PostPage({ params }: PostPageProps) {
         <div className="post-content">
           {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title))}
         </div>
+
+        {nextPost && (
+          <Link className="post-next" href={`/posts/${nextPost.slug}`}>
+            <span className="post-next__label">{post.category.replace(/^[^\p{L}]+/u, '')}의 다음 글</span>
+            <span className="post-next__title">{nextPost.title}</span>
+            <span className="post-next__arrow" aria-hidden="true">→</span>
+          </Link>
+        )}
 
         <nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">
           <Link

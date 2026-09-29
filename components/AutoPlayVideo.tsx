@@ -39,8 +39,8 @@ export default function AutoPlayVideo({ src }: AutoPlayVideoProps) {
       preload="metadata"
       style={{
         width: '100%',
-        borderRadius: '0.75rem',
-        border: '1px solid rgba(212,146,42,0.15)',
+        borderRadius: '4px',
+        border: 0,
         background: '#000',
         display: 'block',
       }}

@@ -7,10 +7,9 @@ const read = path => readFile(new URL(path, root), 'utf8');
 
 test('the complete archive combines ordinary posts and voices without changing category filters', async () => {
   const [home, rail] = await Promise.all([read('app/page.tsx'), read('components/AxisRail.tsx')]);
-  assert.match(home, /import \{ interviews, InterviewArchive \} from '@\/data\/interviews';/);
-  assert.match(home, /active\s*\? visiblePosts\.map/);
-  assert.match(home, /\.\.\.interviews\.map\(\(interview\) => \(\{ kind: 'voice' as const, date: interview\.sourcePublishedAt, interview \}\)\)/);
-  assert.match(home, /entry\.kind === 'post'[\s\S]*?<VoiceWallCard/);
+  assert.match(home, /import \{ interviews \} from '@\/data\/interviews';/);
+  assert.match(home, /const visibleEntries = active\s*\? postEntries\s*: \[\.\.\.postEntries, \.\.\.voiceEntries\]/);
+  assert.match(home, /axis: '목소리'/);
   assert.doesNotMatch(home, /ENTRIES|THE CAVE WALL|SECTION \//);
   assert.match(rail, /<b>전체<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
 });
@@ -65,8 +64,7 @@ test('video-only posts use checked-in still frames as archive thumbnails', async
   const videoOnlySlugs = ['majlis', 'ip-tvw', 'messenger-b2a', 'robot-goku-5000'];
   assert.match(socialMetadata, /function archiveImageUrl\(post: Post\)/);
   assert.match(socialMetadata, /post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg`/);
-  assert.match(home, /const imageUrl = archiveImageUrl\(post\)/);
-  assert.match(home, /imageUrl=\{imageUrl\}/);
+  assert.match(home, /imageUrl: archiveImageUrl\(post\)/);
   for (const slug of videoOnlySlugs) {
     assert.match(posts, new RegExp(`slug: '${slug}'[\\s\\S]*?videoUrls:`));
     await read(`public/media/posters/${slug}.jpg`);
@@ -134,18 +132,17 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
 });
 
 test('archive stays uninterrupted while the footer keeps only the rabbit and carrot scene', async () => {
-  const [home, footer, rail, card, css] = await Promise.all([
+  const [home, footer, rail, list, css] = await Promise.all([
     read('app/page.tsx'),
     read('components/SiteFooter.tsx'),
     read('components/AxisRail.tsx'),
-    read('components/EditorialCard.tsx'),
+    read('components/ArchiveList.tsx'),
     read('app/globals.css'),
   ]);
-  assert.doesNotMatch(home, /journeyStep|cave-depth-divider|CaveJourneyScene|DEPTH 0/);
-  assert.match(home, /visibleEntries\.map\(\(entry, index\) => entry\.kind === 'post'/);
+  assert.doesNotMatch(home + list, /journeyStep|cave-depth-divider|CaveJourneyScene|DEPTH 0/);
   assert.match(footer, /<FooterCaveScene \/>/);
   assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
-  assert.doesNotMatch(card, /CaveJourneyScene|cave-depth-divider|axis-rail__carrot/);
+  assert.doesNotMatch(list, /axis-rail__carrot/);
   assert.doesNotMatch(css, /cave-depth-divider|cave-journey-scene/);
 });
 

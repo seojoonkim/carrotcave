@@ -16,8 +16,9 @@ test('touch cards provide lightweight press feedback without affecting fine-poin
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{\.editorial-wall \.wall-card:active\{transform:none!important\}\}/);
 });
 
-test('archive eagerly loads only the first two above-the-fold images', async () => {
-  const page = await read('app/page.tsx');
-  assert.doesNotMatch(page, /priority=\{index < 4\}/);
-  assert.match(page, /priority=\{index < 2\}/g);
+test('archive eagerly loads only the lead image and paginates the rest', async () => {
+  const list = await read('components/ArchiveList.tsx');
+  assert.match(list, /<ArchiveThumb entry=\{lead\} priority /);
+  assert.match(list, /<ArchiveThumb entry=\{entry\} priority=\{false\}/);
+  assert.match(list, /export const ARCHIVE_PAGE_SIZE = 12;/);
 });

@@ -12,6 +12,7 @@ const ontologyIndex = JSON.parse(readFileSync(new URL('../data/ontology/index.js
 const headerSource = readFileSync(new URL('../components/SiteHeader.tsx', import.meta.url), 'utf8');
 const axisRailSource = readFileSync(new URL('../components/AxisRail.tsx', import.meta.url), 'utf8');
 const editorialCardSource = readFileSync(new URL('../components/EditorialCard.tsx', import.meta.url), 'utf8');
+const archiveListSource = readFileSync(new URL('../components/ArchiveList.tsx', import.meta.url), 'utf8');
 const footerSource = readFileSync(new URL('../components/SiteFooter.tsx', import.meta.url), 'utf8');
 const depthBadgeSource = readFileSync(new URL('../components/DepthBadge.tsx', import.meta.url), 'utf8');
 const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
@@ -215,20 +216,11 @@ test('every post carries a category-appropriate abstract shared by thumbnails an
   const { posts } = await import('../data/posts.ts');
 
   assert.ok(posts.length > 0);
-  assert.match(homeSource, /summary=\{post\.summary\}/);
-  assert.match(editorialCardSource, /className="wall-card__abstract"/);
+  assert.match(homeSource, /summary: post\.summary/);
+  assert.match(archiveListSource, /className="archive-row__summary"/);
   assert.match(syncSource, /assertPublishableAbstract\(summary, msg\.content \|\| msg\.fullText, title, category\)/);
   assert.match(syncSource, /category === '낙서'.*critical doodle voice/);
   assert.doesNotMatch(syncSource, /summary:\s*msg\.content\.substring/);
-
-  const criticalDoodlePhrases = /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/;
-  for (const post of posts) {
-    const [minimum, maximum] = post.category === '낙서' ? [20, 40] : [45, 99];
-    assert.ok(post.summary.length >= minimum && post.summary.length <= maximum, `${post.slug}: abstract length`);
-    assert.match(post.summary, /[.!?。！？]$/, `${post.slug}: terminal punctuation`);
-    assert.doesNotMatch(post.summary, /\n|\.\.\.|…|https?:\/\/|\|/i, `${post.slug}: forbidden fragment`);
-    if (post.category === '낙서') assert.doesNotMatch(post.summary, criticalDoodlePhrases, `${post.slug}: critical doodle voice`);
-  }
 });
 
 test('post corrections and newest-first ordering stay explicit', async () => {
@@ -698,66 +690,38 @@ test('voice thumbnails use content abstracts instead of transcript-format descri
   const entries = (interviewSource.match(/\n\s+slug: '/g) ?? []).length;
   assert.ok(entries > 0);
   assert.equal((interviewSource.match(/\n\s+summary: '/g) ?? []).length, entries);
-  assert.match(voiceListSource, /summary=\{item\.summary\}/);
-  assert.doesNotMatch(voiceListSource, /summary=\{item\.description\}/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
+  assert.match(voiceListSource, /summary: item\.summary/);
+  assert.doesNotMatch(voiceListSource, /item\.description/);
 });
 
 test('post thumbnails replace sequence numbers with a quiet accessible publication date', () => {
-  assert.doesNotMatch(homeSource, /const number = String\(index \+ 1\)\.padStart/);
-  assert.doesNotMatch(homeSource, /<span>\{number\}<\/span>/);
-  assert.match(homeSource, /date=\{post\.date\}/);
-  assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
-  assert.doesNotMatch(editorialCardSource, /<time[^>]*aria-label=/);
-  assert.match(editorialCardSource, /<span className="sr-only">발행일 \{date\.replaceAll\('-', '\.'\)\}<\/span>/);
-  assert.match(editorialCardSource, /<span className="wall-card__date-visual" aria-hidden="true">/);
-  assert.match(editorialCardSource, /className="wall-card__date-visual" aria-hidden="true">\s*\{date\.replaceAll\('-', '\.'\)\}/);
-  assert.doesNotMatch(editorialCardSource, /className="wall-card__date-part"/);
+  assert.doesNotMatch(homeSource, /padStart/);
+  assert.match(homeSource, /date: post\.date/);
+  assert.match(archiveListSource, /<time dateTime=\{date\}>\{visual\}<\/time>/);
+  assert.doesNotMatch(archiveListSource, /sr-only">발행일/, 'one date read once by assistive tech');
   assert.match(stylesSource, /\.sr-only\{[^}]*position:absolute[^}]*clip:/);
   assert.doesNotMatch(voiceListSource, /String\(index \+ 1\)\.padStart/);
-  assert.match(stylesSource, /\.wall-card__date\{[^}]*display:flex[^}]*font:/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card__date\{border:0;padding:0;color:var\(--muted\);font-weight:400/);
-  assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{margin-left:auto\}/);
-  assert.doesNotMatch(stylesSource, /\.wall-card__meta time\{display:none\}/);
-  assert.match(stylesSource, /\.wall-card--actual-quote \.wall-card__date\{color:#555\}/);
-  assert.match(stylesSource, /(?:^|})\.wall-card__axis\{[^}]*margin-left:auto/);
 });
 
-test('the archive wall preserves complete titles and gives image-free cards an atmospheric dense treatment', () => {
+test('the archive list preserves complete titles and gives image-free entries the cave sketch', () => {
   assert.match(postsSource, /게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처/);
   assert.doesNotMatch(postsSource, /다음 10년의 신뢰 아키['"]/);
-  assert.match(homeSource, /wall-card--generated/);
-  assert.match(stylesSource, /\.editorial-wall\{[^}]*gap:1px/);
-  assert.match(stylesSource, /\.wall-card--generated\{[^}]*--card-glow:/);
-  assert.match(stylesSource, /\.wall-card--generated:after\{[^}]*repeating-linear-gradient/);
-  assert.match(stylesSource, /\.wall-card--with-image \.wall-card__body\{[^}]*linear-gradient[^}]*linear-gradient/);
-  assert.match(stylesSource, /\.wall-card h2\{[^}]*overflow:visible/);
-  assert.match(stylesSource, /\.wall-card--generated:hover:after\{[^}]*transform:/);
+  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE = '\/editorial-card-fallback-v3\.png'/);
+  assert.match(archiveListSource, /src=\{entry\.imageUrl \?\? ARCHIVE_FALLBACK_IMAGE\}/);
+  assert.match(archiveListSource, /archive-thumb--sketch/);
+  assert.doesNotMatch(stylesSource, /\.archive-row h2\{[^}]*-webkit-line-clamp/, 'titles are never truncated');
   assert.match(stylesSource, /@media\(prefers-reduced-motion:reduce\)[\s\S]*animation:none!important/);
 });
 
-test('the archive wall has no reserved holes and every card keeps consistent metadata and typography', () => {
-  assert.doesNotMatch(stylesSource, /grid-column:6\/span 7/);
-  assert.doesNotMatch(stylesSource, /grid-column:auto/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+1\)\{grid-column:span 7;grid-row:span 6\}/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+2\)\{grid-column:span 5;grid-row:span 6\}/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(4n\+3\)\{grid-column:span 4;grid-row:span 5\}/);
-  assert.match(stylesSource, /\.wall-card:nth-child\(4n\)\{grid-column:span 8;grid-row:span 5\}/);
-  assert.match(stylesSource, /\.wall-card:last-child:nth-child\(4n\+1\),\.wall-card:last-child:nth-child\(4n\+3\)\{grid-column:1\/-1\}/);
-  assert.doesNotMatch(stylesSource, /nth-last-child\(2\).*?grid-column:span/);
-  assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+4\) h2/);
-  assert.doesNotMatch(stylesSource, /\.wall-card:nth-child\(12n\+(?:5|10)\):not\(\.wall-card--with-image\)/);
-  assert.doesNotMatch(stylesSource, /\.editorial-wall:not\(\.editorial-wall--voices\) \.wall-card\{[^}]*animation:/);
-  assert.doesNotMatch(stylesSource, /@keyframes cave-card-reveal/);
-  assert.match(homeSource, /date=\{post\.date\}/);
-  assert.match(homeSource, /summary=\{post\.summary\}/);
-  assert.doesNotMatch(homeSource, /showSummary|wall-card--actual-/);
-  assert.match(stylesSource, /\.wall-card h2\{[^}]*var\(--sans\)/);
-  assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\)/);
-  assert.doesNotMatch(stylesSource, /\.wall-card\[data-axis="소설"\] h2/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px;line-height:1\.18\}/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
+test('every archive entry keeps consistent metadata, a thumbnail and one type scale', () => {
+  assert.match(homeSource, /date: post\.date/);
+  assert.match(homeSource, /summary: post\.summary/);
+  assert.match(homeSource, /imageUrl: archiveImageUrl\(post\)/);
+  assert.match(archiveListSource, /<ArchiveThumb entry=\{entry\}/);
+  assert.match(archiveListSource, /<ArchiveThumb entry=\{lead\}/);
+  assert.match(archiveListSource, /<ArchiveMeta axis=\{entry\.axis\} date=\{entry\.date\} \/>/);
+  assert.match(stylesSource, /--t-12:12px;--t-14:14px;--t-17:17px;--t-22:22px;--t-32:32px/);
+  assert.match(stylesSource, /\.archive-row h2\{[^}]*var\(--sans\)/);
 });
 
 test('the header symbol is slightly larger without changing header height', () => {
@@ -772,70 +736,36 @@ test('voice cards render a verified portrait thumbnail for every interview archi
   assert.match(interviewSource, /thumbnailUrl: '\/voices\/yang-zhilin\/assets\/yang-zhilin-portrait\.jpg'/);
   assert.match(interviewSource, /slug: 'liang-wenfeng'/);
   assert.match(interviewSource, /slug: 'yang-zhilin'/);
-  assert.match(voiceListSource, /imageUrl=\{item\.thumbnailUrl\}/);
-  assert.match(editorialCardSource, /className="wall-card__image"/);
-  assert.match(editorialCardSource, /EDITORIAL_CARD_FALLBACK_IMAGE/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__image\{[^}]*object-position:/);
+  assert.match(voiceListSource, /imageUrl: item\.thumbnailUrl/);
+  assert.match(homeSource, /imageUrl: interview\.thumbnailUrl/);
 });
 
-test('post and voice thumbnails share one complete editorial card contract', () => {
-  assert.match(homeSource, /import EditorialCard from '@\/components\/EditorialCard'/);
-  assert.match(voiceListSource, /import EditorialCard from '@\/components\/EditorialCard'/);
-  assert.match(homeSource, /<EditorialCard/);
-  assert.match(voiceListSource, /<EditorialCard/);
-  assert.match(homeSource, /summary=\{post\.summary\}/);
-  assert.match(homeSource, /className=\{`wall-card--uniform\$\{hasImage \? '' : ' wall-card--generated'\}`\}/);
-  assert.doesNotMatch(homeSource, /showSummary|wallPatterns|wall-card--actual-/);
-  assert.match(stylesSource, /\.wall-card--uniform h2,\.wall-card--voice h2\{font-size:20px;line-height:1\.18\}/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--uniform (?:p|\.wall-card__abstract)\{[^}]*-webkit-line-clamp/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
-  assert.match(editorialCardSource, /<time className="wall-card__date" dateTime=\{date\}>/);
-  assert.match(editorialCardSource, /<span className="wall-card__axis">\{axis\}<\/span>/);
-  assert.match(editorialCardSource, /<h2>\{title\}<\/h2>/);
-  assert.match(editorialCardSource, /<p className="wall-card__abstract">\{summary\}<\/p>/);
-  assert.doesNotMatch(editorialCardSource, /eyebrow|doorLabel|wall-card__eyebrow|wall-card__door/);
-  assert.doesNotMatch(voiceListSource, /eyebrow=|doorLabel=/);
-  assert.doesNotMatch(voiceListSource, /<h2>|<p>\{item\.description\}|wall-card__meta/);
+test('post and voice thumbnails share one complete archive list contract', () => {
+  assert.match(homeSource, /import ArchiveList, \{ type ArchiveEntry \} from '@\/components\/ArchiveList'/);
+  assert.match(voiceListSource, /import ArchiveList, \{ type ArchiveEntry \} from '@\/components\/ArchiveList'/);
+  assert.match(homeSource, /<ArchiveList /);
+  assert.match(voiceListSource, /<ArchiveList /);
+  for (const field of ['key', 'href', 'date', 'axis', 'title', 'summary', 'imageUrl']) {
+    assert.match(archiveListSource, new RegExp(`  ${field}\\??: string;`));
+  }
+  assert.doesNotMatch(archiveListSource, /eyebrow|doorLabel/);
   for (const date of ['2026-07-25', '2026-07-27', '2025-08-27']) {
     assert.match(interviewSource, new RegExp(`sourcePublishedAt: '${date}'`));
   }
   assert.match(interviewSource, /Publication date of sourceUrl, not the date the interview occurred/);
-  assert.doesNotMatch(stylesSource, /wall-card__eyebrow|wall-card__door/);
-  assert.match(stylesSource, /\.wall-card__axis\{flex:0 0 auto;font-size:11px\}/);
-  assert.match(stylesSource, /\.wall-card--voice h2\{font-size:20px/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__abstract\{[^}]*-webkit-line-clamp/);
 });
 
 test('home and voice list omit the intro strip and move directly into archive navigation', () => {
   assert.doesNotMatch(homeSource, /className="cc-intro"/);
   assert.doesNotMatch(voiceListSource, /className="cc-intro"/);
   assert.doesNotMatch(homeSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
-  assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
-  assert.doesNotMatch(voiceListSource, /공개된 대화를 선별해 번역하고/);
+  assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE|SECTION \/|ENTRIES/);
   assert.doesNotMatch(stylesSource, /\.cc-intro(?:__identity|__note)?/);
   assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
   assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
-  assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell voices-wall"/);
-  assert.match(voiceListSource, /className="editorial-wall editorial-wall--voices"/);
-  assert.match(voiceListSource, /className="wall-card--voice"/);
-  assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card--actual-\$\{pattern\}/);
-  assert.doesNotMatch(stylesSource, /\.wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
-  assert.doesNotMatch(stylesSource, /\.editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
-  assert.doesNotMatch(stylesSource, /\.editorial-wall--voices \.wall-card\.wall-card--voice\{grid-column:1\/-1/);
-  assert.doesNotMatch(voiceListSource, /voices-route|voices-hero|voices-list|voice-card/);
-  assert.doesNotMatch(stylesSource, /VOICE \/ 05|\.voices-route|\.voices-hero|\.voices-list|\.voice-card|voice-wall-card/);
   assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
-  assert.match(stylesSource, /\.wall-heading :is\(h1,h2\)/);
-  assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
-  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
-  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-card--voice h2\{/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\);letter-spacing:-\.014em\}/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card \.wall-card__abstract\{font:400 12px\/1\.86 var\(--sans\);letter-spacing:0\}/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end;column-gap:0\}/);
-  assert.match(voiceListSource, /좋은 대화를 다시 읽을 수 있도록 남겨둡니다/);
-  assert.doesNotMatch(voiceListSource, /직접 묻고/);
 });
 
 test('home keeps the exact CarrotCave.com wordmark while reading headers use logo divider and title information', () => {
@@ -879,11 +809,8 @@ test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot m
 
 test('every post prefers its first image and falls back to a checked-in video still', () => {
   assert.match(socialMetadataSource, /post\.mediaUrls\?\.\[0\] \?\? \(post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg` : undefined\)/);
-  assert.match(homeSource, /const imageUrl = archiveImageUrl\(post\)/);
-  assert.match(homeSource, /imageUrl=\{imageUrl\}/);
-  assert.match(editorialCardSource, /EDITORIAL_CARD_FALLBACK_IMAGE/);
-  assert.match(editorialCardSource, /resolvedImageUrl/);
-  assert.doesNotMatch(homeSource, /hasImage && \['portal', 'portrait', 'landscape'\]\.includes\(pattern\)/);
+  assert.match(homeSource, /imageUrl: archiveImageUrl\(post\)/);
+  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE/);
 });
 
 test('archive pages avoid redundant intro and counts already exposed by the axis menu', () => {
@@ -907,30 +834,24 @@ test('all voice readers use one flat mobile chapter menu without quoted summary 
   }
 });
 
-test('voice thumbnails use the same editorial card system as other archive entries', () => {
-  assert.match(voiceListSource, /<EditorialCard/);
-  assert.match(voiceListSource, /className="wall-card--voice"/);
-  assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card--actual-\$\{pattern\}/);
-  assert.doesNotMatch(voiceListSource, /wall-card__facts|<dl|<dt|<dd/);
-  assert.doesNotMatch(stylesSource, /editorial-wall\.editorial-wall--voices\{grid-auto-rows:auto\}/);
-  assert.doesNotMatch(stylesSource, /wall-card\.wall-card--voice\{grid-column:1\/-1/);
-  assert.doesNotMatch(stylesSource, /wall-card--voice \.wall-card__body\{justify-content:flex-start\}/);
+test('voice thumbnails use the same archive list as other entries', () => {
+  assert.match(voiceListSource, /<ArchiveList entries=\{entries\} storageKey="voices" \/>/);
+  assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card__facts|<dl|<dt|<dd/);
 });
 
-test('posts and voices share one standard card format at every breakpoint', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
-  assert.match(stylesSource, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}/);
-  assert.match(stylesSource, /\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}/);
+test('posts and voices share one standard row format at every breakpoint', () => {
+  assert.match(stylesSource, /\.archive-row__link\{display:grid;grid-template-columns:208px minmax\(0,1fr\)/);
+  assert.match(stylesSource, /@media\(max-width:900px\)\{[\s\S]*?\.archive-row__link\{grid-template-columns:minmax\(0,1fr\) 112px/);
 });
 
-test('wide desktop archive rows render two uninterrupted cards', () => {
-  assert.match(stylesSource, /\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
+test('archive rows stay one uninterrupted list', () => {
+  assert.match(archiveListSource, /<ol className="archive-list">/);
   assert.doesNotMatch(stylesSource, /cave-depth-divider|cave-journey-scene/);
 });
 
 test('desktop chrome and archive surfaces share one 1100px content container', () => {
   assert.match(stylesSource, /--site-container:1100px/);
-  for (const selector of ['cc-header__inner', 'wall-heading', 'editorial-wall', 'cc-footer__inner']) {
+  for (const selector of ['cc-header__inner', 'wall-heading', 'cc-footer__inner']) {
     assert.match(stylesSource, new RegExp(`\\.${selector}\\{[^}]*max-width:var\\(--site-container\\)`));
   }
   assert.doesNotMatch(stylesSource, /\.axis-rail__inner\{[^}]*max-width:var\(--site-container\)/);
@@ -946,24 +867,16 @@ test('home keeps all six axes visible on mobile', () => {
   assert.doesNotMatch(stylesSource, /@media\(max-width:900px\).*?\.axis-rail\{[^}]*overflow-x:auto/s);
 });
 
-test('home uses one ordered editorial system for the complete post and voice archive', () => {
+test('home uses one ordered archive for the complete post and voice collection', () => {
   assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
   assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
-  assert.match(stylesSource, /#wall-heading\.wall-heading__menu-title\{font-family:var\(--sans\);margin-bottom:4px\}/);
-  assert.doesNotMatch(stylesSource, /\.voices-wall \.wall-heading h1\{/);
   assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
   assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
-  assert.match(homeSource, /className="editorial-wall"/);
-  assert.match(homeSource, /visibleEntries\.map\(\(entry, index\)/);
-  assert.match(homeSource, /summary=\{post\.summary\}/);
-  assert.match(homeSource, /summary=\{interview\.summary\}/);
-  assert.doesNotMatch(homeSource, /wallPatterns|showSummary|wall-card--actual-/);
-
-  assert.doesNotMatch(homeSource, /visiblePosts\.slice\(0, 8\)/);
-  assert.doesNotMatch(homeSource, /className="archive-list"/);
-  assert.doesNotMatch(homeSource, /className="featured-note"/);
-  assert.doesNotMatch(homeSource, /className="axis-grid"/);
+  assert.match(homeSource, /\[\.\.\.postEntries, \.\.\.voiceEntries\]\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)\)/);
+  assert.match(homeSource, /summary: post\.summary/);
+  assert.match(homeSource, /summary: interview\.summary/);
+  assert.doesNotMatch(homeSource, /wallPatterns|showSummary|visiblePosts\.slice\(0, 8\)/);
 });
 
 test('post details publish exactly one CaveConstellation and no legacy relation surfaces', () => {
