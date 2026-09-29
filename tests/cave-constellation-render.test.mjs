@@ -120,13 +120,13 @@ test('responsive CSS preserves a readable thumbnail overlay and accessible links
   assert.match(end, /\.cc-reading-end\{[^}]*max-width:760px/);
   assert.match(end, /\.cc-reading-end \.cave-constellation__recommendation article\{[^}]*grid-template-columns:minmax\(0,1fr\) auto/);
   assert.match(end, /\.cc-reading-end \.cave-constellation__navigate\{[^}]*min-height:44px/);
-  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail\{[^}]*position:relative[^}]*aspect-ratio:16\/9/);
-  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(7,9,13,\.78\) 0,rgba\(7,9,13,\.4\) 42%,transparent 78%\)/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail\{[^}]*display:grid[^}]*grid-template-columns:minmax\(0,1fr\) 184px/, 'picks are compact rows: copy left, small 16:9 picture right');
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail img\{[^}]*grid-column:2[^}]*aspect-ratio:16\/9/);
   assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
-  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail-copy\{[^}]*position:absolute/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail-copy\{position:static;grid-column:1/);
   assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail h3\{[^}]*-webkit-line-clamp:2/);
-  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:3/);
-  assert.match(end, /@media \(max-width:520px\)\{[\s\S]*\.cc-reading-end \.cave-constellation__thumbnail\{aspect-ratio:4\/3/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:2/);
+  assert.match(end, /@media \(max-width:520px\)\{[\s\S]*\.cc-reading-end \.cave-constellation__thumbnail\{grid-template-columns:minmax\(0,1fr\) 104px/);
   assert.match(end, /overflow-wrap:anywhere/);
   assert.doesNotMatch(end + css, /cave-constellation__why|cave-constellation__connection-points/);
   assert.match(end, /prefers-reduced-motion:reduce/);
