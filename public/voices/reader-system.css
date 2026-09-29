@@ -456,7 +456,7 @@ img { border: 0; outline: 0;  }
   line-break: strict;
   text-wrap: pretty;
 }
-.header-site-title, .kicker, .hero dl dt, .hero dl dd, .menu-button span, .toc-toggle span, .rail-progress small, .desktop-rail p {
-  letter-spacing: .03em;
+.header-site-title, .hero .kicker, .hero > .kicker, .kicker, .hero dl dt, .hero dl dd, .menu-button span, .toc-toggle span, .rail-progress small, .desktop-rail p {
+  letter-spacing: .03em !important;
 }
 .hero h1, .section-heading h2, .chapter-heading h2 { letter-spacing: -.028em; }

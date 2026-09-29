@@ -528,3 +528,4 @@ body{font-feature-settings:"ss06","tnum" 0;font-synthesis:none}
 .cc-reading-info small,.cc-brand small{letter-spacing:.03em}
 .archive-row__summary,.archive-lead__summary,.cave-constellation-intro,.post-next__title{text-wrap:pretty;line-break:strict}
 .post-content p,.post-content li{line-break:strict;overflow-wrap:anywhere}
+.cave-constellation__thumbnail-category{letter-spacing:.03em!important}
