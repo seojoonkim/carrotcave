@@ -123,7 +123,7 @@ export async function ogCard(input: OgCardInput) {
       >
         <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 12, background: CARROT, display: 'flex' }} />
 
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 0 56px 80px', width: image ? 660 : 1080 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 0 56px 80px', width: image ? 660 : 780 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
             <div style={{ display: 'flex', padding: '10px 20px 11px', borderRadius: 4, background: CARROT, color: INK, fontSize: 34, fontWeight: 700, letterSpacing: 2 }}>{label}</div>
             {meta ? <div style={{ display: 'flex', color: BODY, fontSize: 32, fontWeight: 600, letterSpacing: 1 }}>{meta}</div> : null}
@@ -134,10 +134,9 @@ export async function ogCard(input: OgCardInput) {
             {sub ? <div style={{ display: 'block', color: RABBIT, fontSize: 34, fontWeight: 600, lineHeight: 1.3, letterSpacing: 0.5, lineClamp: 2 }}>{sub}</div> : null}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <img src={MARK_DATA_URL} width={72} height={72} />
-            <div style={{ display: 'flex', color: TITLE, fontSize: 40, fontWeight: 700, letterSpacing: -0.5 }}>CarrotCave</div>
-            <div style={{ display: 'flex', color: CARROT, fontSize: 40, fontWeight: 700, marginLeft: -16 }}>.com</div>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', color: TITLE, fontSize: 40, fontWeight: 700, letterSpacing: -0.5 }}>carrotcave</div>
+            <div style={{ display: 'flex', color: CARROT, fontSize: 40, fontWeight: 700 }}>.com</div>
           </div>
         </div>
 

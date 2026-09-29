@@ -72,11 +72,27 @@ test('share card type is large: title >= 76px, label/date >= 32px, wordmark 40px
   assert.ok(Math.min(...sizes) >= 76, `smallest title ${Math.min(...sizes)}`);
   assert.match(card, /fontSize: 34, fontWeight: 700, letterSpacing: 2 \}\}>\{label\}/);
   assert.match(card, /fontSize: 32, fontWeight: 600, letterSpacing: 1 \}\}>\{meta\}/);
-  assert.match(card, /fontSize: 40, fontWeight: 700, letterSpacing: -0\.5 \}\}>CarrotCave/);
+  assert.match(card, /fontSize: 40, fontWeight: 700, letterSpacing: -0\.5 \}\}>carrotcave</);
 });
 
 test('og-card file stays syntactically closed (single ternary per picture slot)', () => {
   const card = read('lib/og-card.tsx');
   assert.doesNotMatch(card, /\)\s*:\s*\(\s*[\s\S]*?\)\s*:\s*null\}/, 'no dangling second ternary branch');
   assert.doesNotMatch(card, /clipPath/, 'the OG renderer ignores clip-path');
+});
+
+test('wordmark is lowercase carrotcave.com with no icon in front of it', () => {
+  const card = read('lib/og-card.tsx');
+  const foot = card.match(/<div style=\{\{ display: 'flex', alignItems: 'center' \}\}>[\s\S]*?\.com<\/div>/)[0];
+  assert.doesNotMatch(foot, /<img/, 'no icon before the wordmark');
+  assert.match(foot, />carrotcave<\/div>[\s\S]*>\.com<\/div>/);
+  assert.doesNotMatch(card, />CarrotCave</, 'no capitalised wordmark');
+});
+
+test('text column never reaches the right-hand picture or icon', () => {
+  const card = read('lib/og-card.tsx');
+  const [, withPic, noPic] = card.match(/width: image \? (\d+) : (\d+)/).map(Number);
+  // picture starts at 1200-60-400=740, big icon at 1200-40-360=800; text starts at x=80
+  assert.ok(80 + withPic - 80 <= 740 - 20, `picture column ${withPic}`);
+  assert.ok(noPic <= 800 - 20, `icon column ${noPic}`);
 });
