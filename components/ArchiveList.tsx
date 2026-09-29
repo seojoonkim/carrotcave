@@ -134,7 +134,7 @@ export default function ArchiveList({
       </p>
 
       {lead && (
-        <Link className="archive-lead" href={lead.href}>
+        <Link className="archive-lead" href={lead.href} data-axis={lead.axis}>
           <ArchiveThumb entry={lead} priority sizes="(max-width: 900px) 100vw, 640px" />
           <span className="archive-lead__copy">
             <ArchiveMeta axis={lead.axis} date={lead.date} />
@@ -153,6 +153,7 @@ export default function ArchiveList({
             <li
               key={entry.key}
               className={`archive-row${reveal ? ' archive-row--reveal' : ''}`}
+              data-axis={entry.axis}
               hidden={hidden}
               style={reveal ? ({ '--reveal-index': index - (revealFrom ?? 0) } as CSSProperties) : undefined}
             >

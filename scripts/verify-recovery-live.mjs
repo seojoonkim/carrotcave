@@ -13,9 +13,10 @@ try {
   const page=await browser.newPage({viewport:{width,height:900}});
   const response=await page.goto(base,{waitUntil:'domcontentloaded'});
   assert.equal(response.status(),200);
-  const cards=page.locator('.editorial-wall > a.wall-card');
-  await cards.first().waitFor();
-  const rendered=await cards.evaluateAll(els=>els.map(e=>({href:e.getAttribute('href'),axis:e.dataset.axis,img:e.querySelector('img')?.getAttribute('src')})));
+  await page.locator('.archive-lead').first().waitFor();
+  const icon=await page.locator('.archive-search__icon').evaluate(e=>e.getBoundingClientRect().width);
+  assert(icon>0&&icon<40,`archive stylesheet missing in production (search icon ${icon}px)`);
+  const rendered=await page.locator('.archive-lead, .archive-row').evaluateAll(els=>els.map(e=>{const a=e.matches('a')?e:e.querySelector('a');return {href:a?.getAttribute('href'),axis:e.dataset.axis,img:e.querySelector('img')?.getAttribute('src')};}));
   for(const post of posts) {
    const card=rendered.find(r=>r.href===`/posts/${post.slug}`);
    assert(card,`missing card ${post.slug}`);
@@ -29,14 +30,14 @@ try {
   results.push({width,kind:'archive',cards:rendered.length,postCategories:posts.length,fallbackCards:fallback.length});persist();
   for(const section of ['빌딩','탐험']) {
    await page.goto(base+'/?section='+encodeURIComponent(section),{waitUntil:'domcontentloaded'});
-   const axes=await page.locator('.editorial-wall > a.wall-card').evaluateAll(els=>els.map(e=>e.dataset.axis));
+   const axes=await page.locator('.archive-lead, .archive-row').evaluateAll(els=>els.map(e=>e.dataset.axis));
    assert.equal(axes.length,posts.filter(p=>p.category===section).length);
    assert(axes.every(a=>a===section));
   }
   await page.goto(base+'/posts/post-215',{waitUntil:'domcontentloaded'});
   assert(new URL(page.url()).pathname.endsWith('/the-right-to-turn-on-a-brain'),'legacy route must redirect');
   assert.equal((await page.locator('h1').innerText()).trim(),'뇌를 켜는 사람의 권한');
-  assert.equal((await page.locator('.post-reader-category').innerText()).trim(),'탐험');
+  assert.equal((await page.locator('.post-reader-meta__axis').innerText()).trim(),'탐험');
   const video=page.locator('article video').first();
   assert.equal(await page.locator('article .post-media-grid').count(),0,'video replaced by still image');
   await video.scrollIntoViewIfNeeded();

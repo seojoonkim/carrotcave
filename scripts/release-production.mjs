@@ -32,7 +32,7 @@ try {
  if(git(['status','--porcelain']))throw new Error('Verification modified source files; commit/review before release.');
  if(process.argv.includes('--check-only'))console.log('Release preflight PASS; deployment not requested.');
  else {
-  run('vercel',['--prod','--yes']);
+  run('vercel',['--prod','--yes','--force']);
   run(process.execPath,['scripts/verify-voice-layout.cjs'],{VOICE_LAYOUT_BASE:'https://carrotcave.com',VOICE_LAYOUT_REPORT:'/tmp/carrot-voice-production.json'});
   run(process.execPath,['scripts/verify-recovery-live.mjs'],{APP_URL:'https://carrotcave.com',PROOF_PATH:'/tmp/carrot-recovery-production.json'});
   console.log(`VERIFIED_RELEASE ${baseline.head}`);
