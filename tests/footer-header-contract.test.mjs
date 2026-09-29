@@ -24,7 +24,7 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.match(asset, /95%,99%\{opacity:0\}/);
   assert.match(asset, /49%,62%\{transform:translate\(690px,0\)\}/);
   assert.match(asset, /clip-path="url\(#ground-clip\)"[\s\S]*?<g class="carrot">/, 'carrot hides behind the soil line');
-  assert.match(asset, /61%,72%\{transform:translateY\(96px\)\}/, 'leaf tips stay peeking while hidden');
+  assert.ok(asset.includes('61%,72%{transform:translateY(86px)}'), 'leaf tips stay peeking while hidden');
   assert.match(asset, /class="carrot-wink"/);
   assert.match(asset, /class="rabbit-eyes-happy"/);
   assert.match(asset, /id="footer-carrot-skin"[\s\S]*?#ffad4d[\s\S]*?#f39a52[\s\S]*?#d9651f/);
