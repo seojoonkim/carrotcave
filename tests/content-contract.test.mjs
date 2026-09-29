@@ -186,11 +186,11 @@ test('ordinary post endings omit tag chips and separate content, actions, and re
   assert.doesNotMatch(postSource, /post\.tags\.map|#\{tag\}/);
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
   assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
-  assert.match(stylesSource, /\.post-reader-actions--after-content\{margin-top:100px\}/);
-  assert.match(stylesSource, /\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
-  assert.match(stylesSource, /@media\(max-width:760px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.post-reader-actions--after-content\{margin-top:88px\}/);
-  assert.match(stylesSource, /@media\(max-width:480px\)\{[^\n]*\.cave-constellation-shell\.cave-constellation-shell--after-actions\{margin-top:124px\}/);
+  const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(postSource, /<section className="cc-reading-end" aria-label="다 읽은 뒤">/);
+  assert.match(endCss, /\.cc-reading-end \.post-reader-actions\{[^}]*margin:16px 0 0/);
+  assert.match(endCss, /\.cc-reading-end \.cave-constellation-shell\{[^}]*margin:64px 0 0;padding:48px 0 0;border-top:1px solid var\(--re-line\)/);
+  assert.doesNotMatch(stylesSource, /post-reader-action|cave-constellation|post-next/, 'reading-end styles live only in public/reading-end.css');
 });
 
 test('Telegram sync uses the canonical carrotcave channel', () => {
@@ -559,13 +559,13 @@ test('CARROT CAVE INSIGHTS structurally shares the interview method and source b
 
 test('archive and recommendation cards share description typography and restrained image treatment', () => {
   assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
-  assert.match(stylesSource, /\.cave-constellation__thumbnail p\{[^}]*font:500 13px\/1\.5 var\(--sans\)!important;letter-spacing:-\.015em!important/);
-  assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(7,9,13,\.72\) 0,rgba\(7,9,13,\.38\) 42%,transparent 78%\)/);
-  assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(7,9,13,\.97\)/);
+  const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(endCss, /\.cc-reading-end \.cave-constellation__thumbnail p\{[^}]*font:500 13px\/1\.5 var\(--re-sans\);letter-spacing:-\.015em/);
+  assert.doesNotMatch(endCss, /rgba\(7,9,13,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
   assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
-  assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--carrot-leaf\)[^}]*rotate\(22deg\)/);
-  assert.match(stylesSource, /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*var\(--carrot-orange\)/);
+  assert.match(readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8'), /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--re-leaf\)[^}]*rotate\(22deg\)/);
+  assert.match(readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8'), /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*var\(--re-carrot\)/);
   assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
 });
 
@@ -621,12 +621,10 @@ test('post details share three clean actions without Telegram reaction labels or
   assert.match(postSource, /className="post-reader-action post-reader-action--telegram"/);
   assert.match(postSource, /텔레그램 채널에서 보기/);
   assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
-  assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
-  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#a85a22/);
-  assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#a85a22;color:#fff/);
-  assert.match(stylesSource, /\.post-reader-action--share\{background:#1f2530;color:#e6ebf2\}/);
-  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#1f2530;color:#aab4c2\}/);
-  assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:7px\}/);
+  const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(endCss, /\.cc-reading-end \.post-reader-actions\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:0;[^}]*box-shadow:inset 0 0 0 1px var\(--re-line\);overflow:hidden\}/, 'one outlined bar split in three');
+  assert.match(endCss, /\.cc-reading-end \.post-reader-action\+\.post-reader-action::before\{[^}]*width:1px;background:var\(--re-line\)\}/, 'thin dividers between the three');
+  assert.match(endCss, /\.cc-reading-end \.post-reader-action\{[^}]*min-height:56px/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);
   assert.match(syncSource, /content: stripLeadingDuplicateTitle\(stripTrailingReactionSignature\(content \|\| fullText\), title\)/);

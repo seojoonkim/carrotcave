@@ -18,10 +18,11 @@ test('all live app and voice controls share a borderless surface contract', asyn
     read('public/voices/reader-system.css'),
   ]);
 
-  assert.match(appCss, /\.post-reader-action\{[^}]*border:0/);
-  assert.match(appCss, /\.cave-constellation__navigate\{[^}]*min-height:48px[^}]*border:0/s);
-  assert.doesNotMatch(appCss, /\.cave-constellation__navigate:hover\{[^}]*border-color/);
-  assert.match(appCss, /\.cave-constellation :focus-visible\{[^}]*outline:/);
+  const endCss = await read('public/reading-end.css');
+  assert.match(endCss, /\.cc-reading-end \.post-reader-action\{[^}]*border:0/);
+  assert.match(endCss, /\.cc-reading-end \.cave-constellation__navigate\{[^}]*min-height:44px/);
+  assert.doesNotMatch(endCss, /\.cave-constellation__navigate:hover\{[^}]*border-color/);
+  assert.match(endCss, /\.cc-reading-end \.cave-constellation :focus-visible\{[^}]*outline:/);
 
   assert.match(voiceCss, /\.menu-button,\s*\.source-button,\s*\.hero-action,\s*\.back-to-top\s*\{\s*border: 0;/);
   assert.match(voiceCss, /\.back-to-top\s*\{/s); assert.doesNotMatch(voiceCss, /\.back-to-top\s*\{[^}]*box-shadow\s*:\s*(?!none\b)/s);

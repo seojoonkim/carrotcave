@@ -13,17 +13,17 @@ test('one gutter, two widths: frame and reading measure', () => {
   assert.match(system, /\.cc-header__inner[^{]*\.cc-footer__inner[^{]*\{[^}]*max-width:var\(--frame\)/);
   assert.match(system, /\.cc-header--reading \.cc-header__inner\{max-width:var\(--measure\)/);
   assert.match(system, /\.post-reader-article\{[^}]*max-width:var\(--measure\)/);
-  const end = css.slice(css.indexOf('POST END — recommendations share the reading measure'));
-  assert.ok(end.length > 100, 'post-end block exists');
-  assert.match(end, /\.cave-constellation-shell[^{]*\{width:min\(var\(--measure\)/);
-  assert.doesNotMatch(css.slice(css.indexOf('LAYOUT SYSTEM')), /\.cave-constellation-shell[^{]*\{width:min\(var\(--frame\)/);
+  const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(end, /\.cc-reading-end\{[^}]*width:100%;max-width:760px;margin:64px auto 0/, 'reading end sits on the reading measure');
+  assert.match(end, /\.cc-reading-end \.cave-constellation-shell\{position:static;left:auto;width:100%/, 'picks never widen past the body');
 });
 
-test('end of a post has a single separator line', () => {
-  assert.match(system, /\.post-content::after\{[^}]*center\/20px 20px no-repeat!important/, 'fleuron is carrot only, no side rules');
-  assert.match(system, /\.post-next\{[^}]*border:0!important/);
-  assert.match(system, /\.post-reader-action[^{]*\{[^}]*border:0!important[^}]*box-shadow:none!important/);
-  assert.match(system, /\.cave-constellation-shell[^{]*\{[^}]*border-top:1px solid var\(--hairline\)/);
+test('end of a read has a single separator line, shared by posts and voices', () => {
+  const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(end, /\.cc-reading-end__mark\{[^}]*carrot-mark\.svg"\) center\/20px 20px no-repeat/, 'carrot only, no side rules');
+  assert.doesNotMatch(end, /\.post-next\{[^}]*border(-top|-bottom)?:1px/);
+  assert.equal((end.match(/border-top:1px/g) || []).length, 1, 'one separator: above the picks');
+  assert.doesNotMatch(css, /post-content::after|post-reader-action|cave-constellation|post-next/, 'no competing post-end rules in globals.css');
 });
 
 test('reading body text is 18px', () => {

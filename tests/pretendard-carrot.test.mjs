@@ -16,7 +16,8 @@ test('site and voice sans stacks lead with Pretendard and keep Noto as fallback'
 test('carrot accents stay sparse, shared, and motion-safe', () => {
   const css = read('app/globals.css');
   assert.ok(existsSync(new URL('../public/carrot-mark.svg', import.meta.url)));
-  for (const hook of ['.wall-heading #wall-heading::after', '.archive-lead .archive-meta::before', '.archive-more::before', '.post-content::after', '.archive-empty::before']) {
+  assert.ok(read('public/reading-end.css').includes('.cc-reading-end__mark{'), 'missing carrot accent .cc-reading-end__mark');
+  for (const hook of ['.wall-heading #wall-heading::after', '.archive-lead .archive-meta::before', '.archive-more::before', '.archive-empty::before']) {
     assert.ok(css.includes(hook), `missing carrot accent ${hook}`);
   }
   assert.doesNotMatch(css, /\.archive-row\b[^{}]*::before\{content:""[^}]*carrot-mark/, 'no always-on carrot on every list row');

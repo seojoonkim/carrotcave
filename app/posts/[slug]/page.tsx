@@ -351,42 +351,48 @@ export default async function PostPage({ params }: PostPageProps) {
           {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title))}
         </div>
 
-        {nextPost && (
-          <Link className="post-next" href={`/posts/${nextPost.slug}`}>
-            <span className="post-next__label">{post.category.replace(/^[^\p{L}]+/u, '')}의 다음 글</span>
-            <span className="post-next__title">{nextPost.title}</span>
-            <span className="post-next__arrow" aria-hidden="true">→</span>
-          </Link>
-        )}
+        <section className="cc-reading-end" aria-label="다 읽은 뒤">
+          <div className="cc-reading-end__mark" aria-hidden="true" />
 
-        <nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">
-          <Link
-            href={`/?section=${encodeURIComponent(axisOf(post))}`}
-            className="post-reader-action"
-          >
-            <span aria-hidden="true">←</span>
-            {axisDestinationLabel(post)}
-          </Link>
-          <PostShareButton title={post.title} path={`/posts/${post.slug}`} />
-          <a
-            href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="post-reader-action post-reader-action--telegram"
-          >
-            텔레그램 채널에서 보기
-            <span aria-hidden="true">↗</span>
-          </a>
-        </nav>
+          {nextPost && (
+            <Link className="post-next" href={`/posts/${nextPost.slug}`}>
+              <span className="post-next__label">{post.category.replace(/^[^\p{L}]+/u, '')}의 다음 글</span>
+              <span className="post-next__title">{nextPost.title}</span>
+              <span className="post-next__arrow" aria-hidden="true">→</span>
+            </Link>
+          )}
 
-        {constellation && (
-          <div className="cave-constellation-shell cave-constellation-shell--after-actions">
-            <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
-            <h2 className="cave-constellation-heading">다음으로 읽기 좋은 글 3개</h2>
-            <p className="cave-constellation-intro">지금 읽은 글과 생각이 이어지는 순서대로 골랐습니다.</p>
-            <CaveConstellation subgraph={constellation} />
-          </div>
-        )}
+          <nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">
+            <Link
+              href={`/?section=${encodeURIComponent(axisOf(post))}`}
+              className="post-reader-action"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10H4m0 0 5-5m-5 5 5 5" /></svg>
+              <span className="post-reader-action__long">{axisDestinationLabel(post)}</span>
+              <span className="post-reader-action__short">돌아가기</span>
+            </Link>
+            <PostShareButton title={post.title} path={`/posts/${post.slug}`} />
+            <a
+              href={post.telegramMsgId ? `https://t.me/carrotcave/${post.telegramMsgId}` : 'https://t.me/carrotcave'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="post-reader-action post-reader-action--telegram"
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17.5 3.5 2.8 9.2c-.7.3-.7.8.1 1l3.7 1.2 1.4 4.3c.2.5.5.6.9.2l2-1.9 3.9 2.9c.5.3.9.1 1-.5l2.3-11.4c.2-.8-.3-1.2-.6-1.5ZM7 11.2l7.4-4.7" /></svg>
+              <span className="post-reader-action__long">텔레그램 채널에서 보기</span>
+              <span className="post-reader-action__short">텔레그램</span>
+            </a>
+          </nav>
+
+          {constellation && (
+            <div className="cave-constellation-shell cave-constellation-shell--after-actions">
+              <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
+              <h2 className="cave-constellation-heading">다음으로 읽기 좋은 글 3개</h2>
+              <p className="cave-constellation-intro">지금 읽은 글과 생각이 이어지는 순서대로 골랐습니다.</p>
+              <CaveConstellation subgraph={constellation} />
+            </div>
+          )}
+        </section>
 
       </article>
       <SiteFooter />

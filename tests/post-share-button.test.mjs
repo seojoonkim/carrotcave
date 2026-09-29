@@ -22,6 +22,7 @@ test('ordinary post actions place an accessible share control between return and
   assert.match(share, /AbortError/);
   assert.match(share, /링크 복사됨/);
   assert.match(share, /aria-live="polite"/);
-  assert.match(css, /\.post-reader-actions\{[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
-  assert.match(css, /\.post-reader-action--share\{/);
+  const endCss = await read('public/reading-end.css');
+  assert.match(endCss, /\.cc-reading-end \.post-reader-actions\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
+  assert.match(endCss, /\.cc-reading-end \.post-reader-action__short\{display:none\}/);
 });

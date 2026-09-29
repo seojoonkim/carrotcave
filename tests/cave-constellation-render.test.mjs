@@ -116,21 +116,20 @@ test('keeps every relationship label without rendering relationship evidence', (
 });
 
 test('responsive CSS preserves a readable thumbnail overlay and accessible links', () => {
-  assert.match(css, /:root\{[^}]*--site-container:1100px/s);
-  assert.match(css, /\.cave-constellation-shell\{[^}]*width:min\(var\(--site-container\),calc\(100vw - 40px\)\)/s);
-  assert.match(css, /\.cave-constellation__recommendation article\{[^}]*grid-template-columns:86px minmax\(0,1fr\) auto/s);
-  assert.match(css, /\.cave-constellation__recommendation-header\{grid-row:1;/);
-  assert.match(css, /\.cave-constellation__navigate\{grid-column:3;grid-row:1;[^}]*min-height:48px/s);
-  assert.doesNotMatch(css, /grid-row:1\/3/);
-  assert.match(css, /\.cave-constellation__thumbnail\{[^}]*position:relative[^}]*min-height:260px/s);
-  assert.match(css, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(7,9,13,\.72\) 0[^}]*rgba\(7,9,13,\.38\) 42%[^}]*transparent 78%/s);
+  const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(end, /\.cc-reading-end\{[^}]*max-width:760px/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__recommendation article\{[^}]*grid-template-columns:minmax\(0,1fr\) auto/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__navigate\{[^}]*min-height:44px/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail\{[^}]*position:relative[^}]*aspect-ratio:16\/9/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(7,9,13,\.78\) 0,rgba\(7,9,13,\.4\) 42%,transparent 78%\)/);
   assert.match(pageSource, /media\\\/\[\^\?\#\]\+\\\.\(\?:avif\|gif\|jpe\?g\|png\|webp\)/);
-  assert.match(css, /\.cave-constellation__thumbnail-copy\{[^}]*position:absolute/s);
-  assert.match(css, /\.cave-constellation__thumbnail h3\{[^}]*-webkit-line-clamp:2/s);
-  assert.match(css, /\.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:3/s);
-  assert.match(css, /\.cave-constellation__thumbnail\{min-height:0;aspect-ratio:4\/3\}/);
-  assert.match(css, /overflow-wrap:anywhere/);
-  assert.doesNotMatch(css, /cave-constellation__why|cave-constellation__connection-points/);
-  assert.match(css, /prefers-reduced-motion:reduce/);
-  assert.match(css, /\.cave-constellation :focus-visible/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail-copy\{[^}]*position:absolute/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail h3\{[^}]*-webkit-line-clamp:2/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail p\{[^}]*-webkit-line-clamp:3/);
+  assert.match(end, /@media \(max-width:520px\)\{[\s\S]*\.cc-reading-end \.cave-constellation__thumbnail\{aspect-ratio:4\/3/);
+  assert.match(end, /overflow-wrap:anywhere/);
+  assert.doesNotMatch(end + css, /cave-constellation__why|cave-constellation__connection-points/);
+  assert.match(end, /prefers-reduced-motion:reduce/);
+  assert.match(end, /\.cave-constellation :focus-visible/);
+  assert.match(source, /className="cave-constellation__thumbnail"[\s\S]*href=\{hrefForSlug\(target\.slug\)\}[\s\S]*tabIndex=\{-1\}/, 'whole picture is a link, kept out of tab order');
 });

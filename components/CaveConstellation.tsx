@@ -52,9 +52,12 @@ export default function CaveConstellation({
                   <strong className="cave-constellation__relationship-type">{copy.label}</strong>
                 </header>
 
-                <div
+                <Link
                   className="cave-constellation__thumbnail"
                   data-has-image={target.imageUrl ? 'true' : 'false'}
+                  href={hrefForSlug(target.slug)}
+                  tabIndex={-1}
+                  aria-hidden="true"
                 >
                   {target.imageUrl && (
                     <Image
@@ -70,7 +73,7 @@ export default function CaveConstellation({
                     <h3>{target.title}</h3>
                     <p>{target.summary ?? target.title}</p>
                   </div>
-                </div>
+                </Link>
 
                 <Link className="cave-constellation__navigate" href={hrefForSlug(target.slug)}>
                   이 글 읽기 <span className="cave-constellation__carrot" aria-hidden="true" />

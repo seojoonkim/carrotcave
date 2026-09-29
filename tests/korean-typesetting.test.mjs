@@ -21,5 +21,5 @@ test('main site Hangul labels use tight tracking and strict Korean line breaking
   const css = read('app/globals.css');
   assert.match(css, /\.cc-reading-info small,\.cc-brand small\{letter-spacing:\.03em\}/);
   assert.match(css, /\.post-content p,\.post-content li\{line-break:strict;overflow-wrap:anywhere\}/);
-  assert.ok(css.includes('.cave-constellation__thumbnail-category{letter-spacing:.03em!important}'));
+  assert.match(readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8'), /\.cc-reading-end \.cave-constellation__thumbnail-category\{[^}]*letter-spacing:\.03em/);
 });

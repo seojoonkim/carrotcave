@@ -38,8 +38,11 @@ test('archive, post reader, recommendations, and swipe cards all use sans', () =
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\)/);
   assert.match(css, /\.post-reader-header h1\{[^}]*var\(--post-reader-sans\)/);
   assert.match(css, /\.post-content :is\(h2,h3\)\{[^}]*font-family:var\(--post-reader-sans\)/);
-  assert.match(css, /\.cave-constellation-heading\{[^}]*var\(--sans\)!important/);
-  assert.match(css, /\.cave-constellation__thumbnail h3\{[^}]*var\(--sans\)!important/);
+  const end = read('public/reading-end.css');
+  assert.match(end, /--re-sans:"Pretendard Variable"/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation-heading\{[^}]*var\(--re-sans\)/);
+  assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail h3\{[^}]*var\(--re-sans\)/);
+  assert.doesNotMatch(end, serifToken);
   assert.doesNotMatch(css, serifToken);
   assert.doesNotMatch(cardSwipe, serifToken);
 });
