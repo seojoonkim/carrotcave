@@ -275,7 +275,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 test('voice readers share one status runtime instead of duplicating header mutation', async () => {
   const runtime = await read('public/voices/reader-runtime.js');
   for (const required of [
-    'window.CarrotReader = Object.freeze({ createStatusController });',
+    'window.CarrotReader = Object.freeze({ createStatusController, markKeySentences });',
     "status.setAttribute('aria-label', `${number} ${title}`.trim());",
     'return Object.freeze({ set, setChapter });',
   ]) assert.ok(runtime.includes(required), `shared reader runtime missing: ${required}`);

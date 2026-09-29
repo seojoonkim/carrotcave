@@ -36,5 +36,57 @@
     return Object.freeze({ set, setChapter });
   };
 
-  window.CarrotReader = Object.freeze({ createStatusController });
+  // Shared key-sentence emphasis: episodes that ship key-sentences.json as
+  // [{ id, exact_quote }] get the same quiet highlight without per-episode code.
+  const markKeySentences = (items) => {
+    let marked = 0;
+    items.forEach(({ id, exact_quote: quote }) => {
+      if (!Number.isInteger(id) || typeof quote !== 'string' || !quote) return;
+      const anchor = document.getElementById(`segment-${id}`);
+      const scope = anchor?.closest('.transcript-paragraph');
+      if (!scope) return;
+      const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+        acceptNode: (node) => node.parentElement?.closest('.transcript-speaker, .transcript-turn-meta, .transcript-timestamp, mark')
+          ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+      });
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+        const at = node.nodeValue.indexOf(quote);
+        if (at < 0) continue;
+        const target = node.splitText(at);
+        target.splitText(quote.length);
+        const mark = document.createElement('mark');
+        mark.className = 'key-sentence';
+        target.replaceWith(mark);
+        mark.append(target);
+        marked += 1;
+        break;
+      }
+    });
+    document.getElementById('transcript')?.setAttribute('data-key-sentences', String(marked));
+    return marked;
+  };
+
+  const autoKeySentences = () => {
+    const transcript = document.getElementById('transcript');
+    if (!transcript) return;
+    let started = false;
+    const run = () => {
+      if (started || transcript.getAttribute('aria-busy') !== 'false') return;
+      if (document.querySelector('.key-sentence, .transcript-highlight')) return;
+      started = true;
+      fetch('key-sentences.json')
+        .then((response) => (response.ok ? response.json() : []))
+        .then((items) => {
+          if (!Array.isArray(items) || !items.length || !items.every((item) => Number.isInteger(item?.id))) return;
+          markKeySentences(items);
+        })
+        .catch(() => {});
+    };
+    new MutationObserver(run).observe(transcript, { attributes: true, attributeFilter: ['aria-busy'] });
+    run();
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', autoKeySentences, { once: true });
+  else autoKeySentences();
+
+  window.CarrotReader = Object.freeze({ createStatusController, markKeySentences });
 })();

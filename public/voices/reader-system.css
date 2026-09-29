@@ -402,3 +402,41 @@ img { border: 0; outline: 0;  }
 @media (prefers-reduced-motion: reduce) {
   .voice-footer-rabbit-carrot { content: url('/footer-rabbit-carrot-static.svg'); }
 }
+
+/* 2026.09 unified voice reading: one key-sentence treatment for every episode,
+   and a 12px floor for all labels. */
+#transcript mark.key-sentence,
+.utterance mark.key-sentence,
+#transcript .paragraph-text .transcript-highlight {
+  color: #fff;
+  font-weight: 650;
+  background: linear-gradient(transparent 64%, rgba(242, 140, 40, .24) 64%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 1px;
+}
+.header-site-title,
+.hero .kicker,
+.hero-stats dt,
+.source-button .play,
+.source-button small,
+.hero-action small,
+.hero-action strong,
+.scroll-cue,
+.scroll-cue span,
+.transcript-timestamp time,
+.timestamp time,
+.highlight-time,
+.transcript-highlights a span,
+.menu-button span,
+.back-to-top span,
+.voice-shared-footer__identity,
+.voice-shared-footer__identity strong,
+.voice-shared-footer__links a,
+.toc-drawer a span,
+.toc-drawer a small,
+.desktop-rail p,
+.desktop-rail a span,
+.rail-progress small,
+.rail-chapter-time,
+.toc-chapter-link span { font-size: 12px !important; }
