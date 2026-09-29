@@ -37,7 +37,7 @@ test('Voice header and hero typography inherit the ordinary post reading contrac
   assert.ok(ordinary.includes('.post-reader-headerh1{max-width:650px;margin:0022px;color:#fff;font:500var(--reader-title-size)/1.22var(--post-reader-sans);letter-spacing:-.035em'));
   assert.ok(voice.includes('.hero#page-title{max-width:650px;margin:0022px;color:var(--bright-white);font:500var(--reader-title-size)/1.22var(--font-sans);font-family:var(--font-sans);letter-spacing:-.035em'));
 
-  assert.ok(ordinary.includes('.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400var(--reader-body-size)/var(--reader-body-leading)var(--post-reader-sans);letter-spacing:0}'));
+  assert.ok(ordinary.includes('.post-content{overflow-wrap:anywhere;color:#e6dfd3;font:400var(--reader-body-size)/var(--reader-body-leading)var(--post-reader-sans);letter-spacing:0}'));
   assert.ok(voice.includes('.hero-deck{font:400var(--reader-body-size)/var(--reader-body-leading)var(--font-sans);letter-spacing:0;}'));
 });
 

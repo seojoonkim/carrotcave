@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#24262c',
+  themeColor: '#1c1b19',
   viewportFit: 'cover',
 };
 
@@ -64,7 +64,7 @@ export default function RootLayout({
       </head>
       <body
         className="antialiased min-h-screen"
-        style={{ backgroundColor: '#24262c', color: '#f2f1ec' }}
+        style={{ backgroundColor: '#1c1b19', color: '#ebe4d8' }}
       >
         {children}
       </body>

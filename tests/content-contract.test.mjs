@@ -61,8 +61,8 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice menu headers consume one shared chrome contract', () => {
   assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
   assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #22252b;/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(255, 255, 255, 0\.12\);/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #211f1c;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(235, 228, 216, 0\.09\);/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
   assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);
   assert.doesNotMatch(voiceReaderSystemStyles, /\.site-header\s*\{[^}]*border(?:-bottom)?:\s*0(?:\s*!important)?;/);
@@ -563,7 +563,7 @@ test('archive and recommendation cards share description typography and restrain
   assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(10,12,14,\.72\) 0,rgba\(10,12,14,\.38\) 42%,transparent 78%\)/);
   assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
-  assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f28c28;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
+  assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
   assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--carrot-leaf\)[^}]*rotate\(22deg\)/);
   assert.match(stylesSource, /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*var\(--carrot-orange\)/);
   assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
@@ -585,11 +585,11 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.9/);
-  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#e7e7e8/);
+  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#e6dfd3/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
   assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);
-  assert.match(stylesSource, /\.post-content p\{[^}]*color:#e7e7e8/);
+  assert.match(stylesSource, /\.post-content p\{[^}]*color:#e6dfd3/);
   assert.match(stylesSource, /\.post-content :is\(h2,h3\)\{[^}]*color:#fff/);
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--reader-accent\)[^}]*text-decoration:underline/);
 });
@@ -622,10 +622,10 @@ test('post details share three clean actions without Telegram reaction labels or
   assert.match(postSource, /텔레그램 채널에서 보기/);
   assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
   assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
-  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#167f78/);
-  assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#167f78;color:#fff/);
-  assert.match(stylesSource, /\.post-reader-action--share\{background:#285b59;color:#e5f4f2\}/);
-  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#3a3d45;color:#c8cbd0\}/);
+  assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#a85a22/);
+  assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#a85a22;color:#fff/);
+  assert.match(stylesSource, /\.post-reader-action--share\{background:#4a3524;color:#f7eadb\}/);
+  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#35322e;color:#c5beb3\}/);
   assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:7px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);

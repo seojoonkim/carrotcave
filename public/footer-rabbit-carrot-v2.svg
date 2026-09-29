@@ -4,7 +4,7 @@
   <defs>
     <linearGradient id="footer-carrot-skin" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffad4d"/><stop offset=".38" stop-color="#ffad4d"/>
-      <stop offset=".39" stop-color="#f28c28"/><stop offset=".72" stop-color="#f28c28"/>
+      <stop offset=".39" stop-color="#f39a52"/><stop offset=".72" stop-color="#f39a52"/>
       <stop offset=".73" stop-color="#d9651f"/><stop offset="1" stop-color="#d9651f"/>
     </linearGradient>
     <linearGradient id="footer-ear-warmth" x1="0" y1="0" x2="0" y2="1">
@@ -73,8 +73,8 @@
     }
   </style>
   <g class="scene">
-    <path d="M38 169H1062" fill="none" stroke="#555961" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round" opacity=".48"/>
-    <path d="M66 174c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#363941" stroke-width="1.2" opacity=".5"/>
+    <path d="M38 169H1062" fill="none" stroke="#5a554e" stroke-width="1" stroke-dasharray="1 15" stroke-linecap="round" opacity=".48"/>
+    <path d="M66 174c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#3a3632" stroke-width="1.2" opacity=".5"/>
     <g class="carrot-position" transform="translate(1000 103) rotate(24)">
       <g class="carrot">
         <g transform="scale(5.4)">
@@ -85,7 +85,7 @@
       </g>
     </g>
     <g opacity=".38" transform="translate(928 150) rotate(68) scale(2.1)"><use href="#footer-carrot-root" fill="url(#footer-carrot-skin)"/><use href="#footer-carrot-leaf" x="-1" y="-6.7" fill="#79a85b"/></g>
-    <g class="shadow-position"><ellipse class="rabbit-shadow" cx="190" cy="169" rx="69" ry="7" fill="#111318"/></g>
+    <g class="shadow-position"><ellipse class="rabbit-shadow" cx="190" cy="169" rx="69" ry="7" fill="#0f0e0d"/></g>
     <g class="rabbit-position">
       <g class="rabbit-breath">
         <g class="rabbit-tail">

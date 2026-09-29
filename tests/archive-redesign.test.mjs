@@ -20,9 +20,9 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(card, /data-rhythm=\{rhythm\}/);
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\.editorial-wall \.wall-card h2\{font-size:26px\}\}/);
-  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d7d7d3;[^}]*font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\)/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#d6cfc3;[^}]*font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:clamp\(19px,2\.1vw,28px\)\}/);
-  assert.match(css, /\.wall-heading :is\(h1,h2\)\{margin:0;color:#d7d7d3;font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\);letter-spacing:-\.035em\}/);
+  assert.match(css, /\.wall-heading :is\(h1,h2\)\{margin:0;color:#d6cfc3;font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\);letter-spacing:-\.035em\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\.editorial-wall \.wall-card h2\{font-size:24px\}\}/);
   assert.match(css, /\.editorial-wall \.wall-card h2\{font:400 29px\/1\.22 var\(--sans\);letter-spacing:-\.014em\}/);
   assert.match(css, /\.editorial-wall \.wall-card__copy\{display:grid;grid-template-columns:minmax\(0,8fr\) minmax\(0,5fr\);align-items:end;column-gap:0\}/);
@@ -115,13 +115,13 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
     read('app/globals.css'),
     read('public/shared-header-chrome.css'),
   ]);
-  assert.match(css, /:root\{[^}]*--cc-header-background:#282b32/);
+  assert.match(css, /:root\{[^}]*--cc-header-background:#22201d/);
   assert.match(css, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
   assert.match(headerChrome, /border-bottom: 1px solid var\(--cc-header-divider\) !important;/);
   assert.match(headerChrome, /box-shadow: var\(--cc-header-shadow\) !important;/);
   assert.match(css, /\.axis-rail\{[^}]*background:transparent/);
   assert.match(css, /\.wall-card\{[^}]*transition:background \.2s,border-color \.2s\}/);
-  assert.match(css, /\.wall-card:hover\{[^}]*background:#30343c\}/);
+  assert.match(css, /\.wall-card:hover\{[^}]*background:#2a2825\}/);
   assert.match(css, /\.wall-card__image\{[^}]*opacity:\.56;z-index:0\}/);
   assert.match(css, /\.wall-card\{box-shadow:none\}\.wall-card--generated:after\{display:none\}/);
   assert.doesNotMatch(css, /\.cc-header\{[^}]*backdrop-filter/);
@@ -163,8 +163,8 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net/);
   assert.match(layout, /href="\/fonts\/pretendard\/pretendardvariable-dynamic-subset\.css"/);
-  assert.match(css, /:root\{--graphite:#24262c/);
-  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#282b32 0,#24262c 640px\) no-repeat var\(--graphite\)/);
+  assert.match(css, /:root\{--graphite:#1c1b19/);
+  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#22201d 0,#1c1b19 640px\) no-repeat var\(--graphite\)/);
   assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
   assert.match(socialMetadata, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
   assert.match(layout, /images: \[\{ url: siteOgImage, width: 1200, height: 630, type: 'image\/png'/);

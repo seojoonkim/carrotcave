@@ -18,7 +18,7 @@ const sharedVoiceLink = '<link rel="stylesheet" href="../reader-system.css">';
 const sharedChromeImport = '@import url("../shared-header-chrome.css");';
 
 const contracts = [
-  '--reader-accent: #61adab',
+  '--reader-accent: #f39a52',
   '--reader-measure: 680px',
   '--reader-mobile-gutter: 20px',
   '--reader-body-size: 17px',
@@ -129,12 +129,12 @@ test('shared reader system applies the common scale to matching semantic levels'
 test('ordinary post selectors consume the same reading tokens', async () => {
   const css = await read('app/globals.css');
   for (const required of [
-    '.post-reader-page{--reader-accent:#61adab',
+    '.post-reader-page{--reader-accent:#f39a52',
     '--reader-body-leading:1.9',
     '.post-content p{margin:0 0 24px',
     '--reader-header-title-size:16px;--reader-header-title-size-mobile:15px;--reader-title-size:clamp(32px,calc(5.5vw - 2px),44px)',
     '.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));max-width:var(--reader-measure)',
-    '.post-content{overflow-wrap:anywhere;color:#e7e7e8;font:400 var(--reader-body-size)/var(--reader-body-leading)',
+    '.post-content{overflow-wrap:anywhere;color:#e6dfd3;font:400 var(--reader-body-size)/var(--reader-body-leading)',
     '.post-content h2{margin:54px 0 22px;font-size:var(--reader-section-size)',
     '.post-content h3{margin:40px 0 18px;font-size:var(--reader-subsection-size)',
     '.post-reader-header h1{max-width:650px;margin:0 0 22px;color:#fff;font:500 var(--reader-title-size)/1.22',
