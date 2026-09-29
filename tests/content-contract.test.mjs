@@ -61,8 +61,8 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice menu headers consume one shared chrome contract', () => {
   assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
   assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #1f1f1f;/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(235, 228, 216, 0\.09\);/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #0e1218;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(214, 222, 233, 0\.09\);/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
   assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);
   assert.doesNotMatch(voiceReaderSystemStyles, /\.site-header\s*\{[^}]*border(?:-bottom)?:\s*0(?:\s*!important)?;/);
@@ -560,8 +560,8 @@ test('CARROT CAVE INSIGHTS structurally shares the interview method and source b
 test('archive and recommendation cards share description typography and restrained image treatment', () => {
   assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
   assert.match(stylesSource, /\.cave-constellation__thumbnail p\{[^}]*font:500 13px\/1\.5 var\(--sans\)!important;letter-spacing:-\.015em!important/);
-  assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(10,12,14,\.72\) 0,rgba\(10,12,14,\.38\) 42%,transparent 78%\)/);
-  assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(10,12,14,\.97\)/);
+  assert.match(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*linear-gradient\(to top,rgba\(7,9,13,\.72\) 0,rgba\(7,9,13,\.38\) 42%,transparent 78%\)/);
+  assert.doesNotMatch(stylesSource, /\.cave-constellation__thumbnail::after\{[^}]*rgba\(7,9,13,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
   assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
   assert.match(stylesSource, /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--carrot-leaf\)[^}]*rotate\(22deg\)/);
@@ -585,11 +585,11 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:18px[^}]*--reader-body-leading:1\.9/);
-  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#e6dfd3/);
+  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#c9d1dc/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
   assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);
-  assert.match(stylesSource, /\.post-content p\{[^}]*color:#e6dfd3/);
+  assert.match(stylesSource, /\.post-content p\{[^}]*color:#c9d1dc/);
   assert.match(stylesSource, /\.post-content :is\(h2,h3\)\{[^}]*color:#fff/);
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--reader-accent\)[^}]*text-decoration:underline/);
 });
@@ -624,8 +624,8 @@ test('post details share three clean actions without Telegram reaction labels or
   assert.match(stylesSource, /\.post-reader-actions\{[^}]*display:grid[^}]*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
   assert.match(stylesSource, /\.post-reader-action\{[^}]*min-height:62px[^}]*border:0[^}]*background:#a85a22/);
   assert.match(stylesSource, /\.post-reader-action\{[^}]*background:#a85a22;color:#fff/);
-  assert.match(stylesSource, /\.post-reader-action--share\{background:#4a3524;color:#f7eadb\}/);
-  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#323232;color:#c5beb3\}/);
+  assert.match(stylesSource, /\.post-reader-action--share\{background:#1f2530;color:#e6ebf2\}/);
+  assert.match(stylesSource, /\.post-reader-action--telegram\{background:#1f2530;color:#aab4c2\}/);
   assert.match(stylesSource, /\.post-reader-actions\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:7px\}/);
   assert.match(postSource, /stripTrailingReactionSignature\(post\.content\)/);
   assert.match(syncSource, /function stripTrailingReactionSignature\(content\)/);

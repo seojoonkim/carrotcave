@@ -83,8 +83,8 @@
     @media (prefers-reduced-motion: reduce){.scene,.rabbit-position,.rabbit-body,.rabbit-shadow,.rabbit-head,.rabbit-ear-back,.rabbit-ear-front,.rabbit-eye-blink,.rabbit-eyes-open,.rabbit-eyes-happy,.rabbit-nose,.rabbit-whiskers,.rabbit-tail,.rabbit-front-paw,.rabbit-question-inner,.carrot,.carrot-leaves,.carrot-sleep-eyes,.carrot-eyes-open,.carrot-pupils,.carrot-eye-right,.carrot-wink,.carrot-blush,.zz-a,.zz-b,.dust,.sparkle,.heart-a,.heart-b{animation:none!important}.scene{opacity:1}.rabbit-position{transform:translate(690px,0)}.rabbit-eyelid,.rabbit-eye-blink{transform:scaleY(1)}.rabbit-eyelid{transform:scaleY(0)}.rabbit-eyes-open{opacity:1}.rabbit-eyes-happy{opacity:0}.rabbit-question-inner{opacity:0}.carrot-sleep-eyes{opacity:0}.carrot-eyes-open{opacity:1}.carrot-eye-right{opacity:0}.carrot-wink{opacity:1}.carrot-blush{opacity:.8}.zz-a,.zz-b,.dust,.sparkle,.heart-b{opacity:0}.heart-a{opacity:.95;transform:none}}
   </style>
   <g class="scene">
-    <path d="M24 169H1076" fill="none" stroke="#5a554e" stroke-width="1" stroke-dasharray="1 14" stroke-linecap="round" opacity=".5"/>
-    <path d="M60 175c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#3a3632" stroke-width="1.2" opacity=".55"/>
+    <path d="M24 169H1076" fill="none" stroke="#4d5563" stroke-width="1" stroke-dasharray="1 14" stroke-linecap="round" opacity=".5"/>
+    <path d="M60 175c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#2a303b" stroke-width="1.2" opacity=".55"/>
     <g fill="none" stroke="#5f7a4c" stroke-width="1.6" stroke-linecap="round" opacity=".7">
       <path d="M96 169c-1-6 0-10 3-13M101 169c0-5 2-8 5-10M92 169c-2-4-4-6-7-7"/>
       <path d="M470 169c-1-5 0-9 2-11M475 169c1-4 3-7 6-8"/>
@@ -143,10 +143,10 @@
           <circle cx="210" cy="116" r="26" fill="url(#rb-coat)" stroke="#d9cdbb" stroke-width="1.2"/>
           <path d="M193 104c4-6 11-9 18-9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
           <g class="rabbit-eyes-open"><g class="rabbit-eye-blink">
-            <ellipse cx="203" cy="115" rx="3.4" ry="4.4" fill="#2a2420"/><ellipse cx="222" cy="115" rx="3.4" ry="4.4" fill="#2a2420"/>
+            <ellipse cx="203" cy="115" rx="3.4" ry="4.4" fill="#1a1f28"/><ellipse cx="222" cy="115" rx="3.4" ry="4.4" fill="#1a1f28"/>
             <circle cx="204.4" cy="113.1" r="1.35" fill="#fff"/><circle cx="223.4" cy="113.1" r="1.35" fill="#fff"/>
           </g></g>
-          <g class="rabbit-eyes-happy"><path d="M199 116.5q4-5 8 0M218 116.5q4-5 8 0" fill="none" stroke="#2a2420" stroke-width="2.1" stroke-linecap="round"/></g>
+          <g class="rabbit-eyes-happy"><path d="M199 116.5q4-5 8 0M218 116.5q4-5 8 0" fill="none" stroke="#1a1f28" stroke-width="2.1" stroke-linecap="round"/></g>
           <g fill="#f39a9a" opacity=".55"><ellipse cx="197" cy="124" rx="5" ry="3"/><ellipse cx="228.5" cy="124" rx="4.4" ry="3"/></g>
           <path class="rabbit-nose" d="M210.4 120.6h3.6c.6 0 .9.7.5 1.1l-1.8 1.7c-.3.3-.7.3-1 0l-1.8-1.7c-.4-.4-.1-1.1.5-1.1Z" fill="#e98a8f"/>
           <path d="M212.2 123.8v1.4m0 0q-1.8 2.2-3.8.6m3.8-.6q1.8 2.2 3.8.6" fill="none" stroke="#8a6a62" stroke-width="1.1" stroke-linecap="round"/>

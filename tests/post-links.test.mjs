@@ -50,7 +50,7 @@ test('link cards meet touch size and use the carrot accent on neutral surfaces',
   assert.match(css, /\.post-link-card\{[^}]*min-height:44px/);
   assert.match(css, /\.post-youtube__caption a\{[^}]*min-height:44px/);
   assert.match(css, /\.post-link-card:hover\{[^}]*border-color:rgba\(243,154,82/);
-  assert.match(css, /\.post-link-card\{[^}]*background:#232323/);
+  assert.match(css, /\.post-link-card\{[^}]*background:#141922/);
   assert.match(css, /\.post-link-card\{[^}]*cursor:pointer/);
 });
 

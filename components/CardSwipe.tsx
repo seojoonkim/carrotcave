@@ -85,7 +85,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
       <div
         className="h-full flex items-center justify-center text-sm"
         style={{
-          color: '#8A7A5E',
+          color: '#7a8595',
           fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
           fontWeight: 300,
         }}
@@ -166,7 +166,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
             <span
               className="text-xs"
               style={{
-                color: '#8A7A5E',
+                color: '#7a8595',
                 fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
                 fontWeight: 300,
               }}
@@ -191,7 +191,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
                 fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
                 fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                 lineHeight: '1.7',
-                color: '#F0E4CC',
+                color: '#e6ebf2',
                 padding: '0 0.5rem',
               }}
             >
@@ -208,7 +208,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
             <p
               className="text-sm line-clamp-1"
               style={{
-                color: '#8A7A5E',
+                color: '#7a8595',
                 marginBottom: '1rem',
                 fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
               }}
@@ -226,7 +226,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
                 <span
                   className="text-xs"
                   style={{
-                    color: '#8A7A5E',
+                    color: '#7a8595',
                     fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
                     fontWeight: 300,
                   }}
@@ -236,7 +236,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
                 <span
                   className="text-xs"
                   style={{
-                    color: '#8A7A5E',
+                    color: '#7a8595',
                     fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
                     fontWeight: 300,
                   }}
@@ -248,7 +248,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
                 href={`/posts/${post.slug}`}
                 className="text-sm transition-colors group flex items-center"
                 style={{ color: '#D4922A', gap: '0.25rem' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#F0E4CC')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#e6ebf2')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = '#D4922A')}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -278,7 +278,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
           disabled={currentIndex === 0}
           className="text-xs transition-colors disabled:opacity-20"
           style={{
-            color: '#8A7A5E',
+            color: '#7a8595',
             fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
             fontWeight: 300,
             background: 'none',
@@ -288,7 +288,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
           onMouseEnter={(e) => {
             if (!e.currentTarget.disabled) e.currentTarget.style.color = '#D4922A';
           }}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#8A7A5E')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#7a8595')}
         >
           ← prev
         </button>
@@ -317,7 +317,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
           disabled={currentIndex >= posts.length - 1}
           className="text-xs transition-colors disabled:opacity-20"
           style={{
-            color: '#8A7A5E',
+            color: '#7a8595',
             fontFamily: "var(--font-sans), 'Noto Sans KR', sans-serif",
             fontWeight: 300,
             background: 'none',
@@ -327,7 +327,7 @@ export default function CardSwipe({ posts }: CardSwipeProps) {
           onMouseEnter={(e) => {
             if (!e.currentTarget.disabled) e.currentTarget.style.color = '#D4922A';
           }}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#8A7A5E')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#7a8595')}
         >
           next →
         </button>

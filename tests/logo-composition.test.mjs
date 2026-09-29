@@ -38,7 +38,7 @@ test('React logo enlarges the cave, grounds the rabbit, and keeps both eyes legi
   assert.match(css, /\.carrot-cave-mark__cave\{[^}]*transform:scale\(1\.13\)/);
   assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
   assert.match(mark, /<g className="carrot-cave-mark__rabbit-position">\s*<g className="carrot-cave-mark__rabbit">/);
-  assert.equal((mark.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#222222" \/>/g) ?? []).length, 2);
+  assert.equal((mark.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#11151c" \/>/g) ?? []).length, 2);
   assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:none\}/);
   assert.match(css, /@keyframes cc-rabbit-hop\{/);
   assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__rabbit\{animation:cc-rabbit-hop/);
@@ -61,6 +61,6 @@ test('all static reader logos share the grounded cave and legible two-eye geomet
   for (const slug of voiceSlugs) {
     const html = read(`public/voices/${slug}/index.html`);
     assert.match(html, /class="brand-mark__rabbit-position"><g class="brand-mark__rabbit">/);
-    assert.equal((html.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#222222"\/>/g) ?? []).length, 2, slug);
+    assert.equal((html.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#11151c"\/>/g) ?? []).length, 2, slug);
   }
 });
