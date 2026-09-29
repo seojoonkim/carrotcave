@@ -15,6 +15,8 @@ export interface ArchiveEntry {
   title: string;
   summary?: string;
   imageUrl?: string;
+  /** Set when the entry is (or is built around) a video; shown as a play badge + length. */
+  video?: { duration?: string };
 }
 
 function normalize(value: string) {
@@ -34,8 +36,9 @@ function ArchiveMeta({ axis, date }: { axis: string; date: string }) {
 
 function ArchiveThumb({ entry, priority, sizes }: { entry: ArchiveEntry; priority: boolean; sizes: string }) {
   const isFallback = !entry.imageUrl;
+  const video = entry.video;
   return (
-    <span className={`archive-thumb${isFallback ? ' archive-thumb--sketch' : ''}`}>
+    <span className={`archive-thumb${isFallback ? ' archive-thumb--sketch' : ''}${video ? ' archive-thumb--video' : ''}`}>
       <Image
         src={entry.imageUrl ?? ARCHIVE_FALLBACK_IMAGE}
         alt=""
@@ -44,8 +47,21 @@ function ArchiveThumb({ entry, priority, sizes }: { entry: ArchiveEntry; priorit
         sizes={sizes}
         priority={priority}
       />
+      {video && (
+        <>
+          <span className="archive-thumb__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M8.5 6.3v11.4c0 .8.9 1.3 1.6.9l9.1-5.7c.6-.4.6-1.3 0-1.7l-9.1-5.7c-.7-.5-1.6 0-1.6.8Z" /></svg>
+          </span>
+          {video.duration && <span className="archive-thumb__duration">{video.duration}</span>}
+        </>
+      )}
     </span>
   );
+}
+
+function videoLabel(entry: ArchiveEntry) {
+  if (!entry.video) return '';
+  return entry.video.duration ? `영상, ${entry.video.duration}` : '영상';
 }
 
 export default function ArchiveList({
@@ -138,7 +154,7 @@ export default function ArchiveList({
           <ArchiveThumb entry={lead} priority sizes="(max-width: 900px) 100vw, 640px" />
           <span className="archive-lead__copy">
             <ArchiveMeta axis={lead.axis} date={lead.date} />
-            <h2>{lead.title}</h2>
+            <h2>{lead.title}{lead.video && <span className="sr-only">, {videoLabel(lead)}</span>}</h2>
             {lead.summary && <span className="archive-lead__summary">{lead.summary}</span>}
           </span>
         </Link>
@@ -161,7 +177,7 @@ export default function ArchiveList({
                 <ArchiveThumb entry={entry} priority={false} sizes="(max-width: 900px) 112px, 208px" />
                 <span className="archive-row__copy">
                   <ArchiveMeta axis={entry.axis} date={entry.date} />
-                  <h2>{entry.title}</h2>
+                  <h2>{entry.title}{entry.video && <span className="sr-only">, {videoLabel(entry)}</span>}</h2>
                   {entry.summary && <span className="archive-row__summary">{entry.summary}</span>}
                 </span>
               </Link>

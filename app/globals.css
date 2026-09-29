@@ -553,3 +553,15 @@ html{scrollbar-color:rgba(243,154,82,.38) transparent;scrollbar-width:thin}
 ::-webkit-scrollbar-thumb{background:rgba(243,154,82,.32);border-radius:9px;border:2px solid var(--bg-1)}
 ::-webkit-scrollbar-thumb:hover{background:rgba(243,154,82,.55)}
 .cc-reading-progress__fill{background:linear-gradient(90deg,#e27a2e,#f39a52 60%,#f6c07a)!important;box-shadow:0 0 8px rgba(243,154,82,.35)}
+
+/* Video thumbnails: soft cinematic vignette, carrot play puck, length chip. */
+.archive-thumb--video::before{content:"";position:absolute;inset:0;z-index:1;border-radius:inherit;background:radial-gradient(circle at 50% 50%,transparent 38%,rgba(20,19,18,.28) 100%),linear-gradient(180deg,transparent 55%,rgba(20,19,18,.45));pointer-events:none}
+.archive-thumb__play{position:absolute;left:50%;top:50%;z-index:2;display:grid;width:44px;height:44px;place-items:center;border-radius:50%;background:rgba(20,19,18,.55);box-shadow:inset 0 0 0 1.5px rgba(243,154,82,.9),0 6px 18px rgba(0,0,0,.35);color:#f39a52;transform:translate(-50%,-50%);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:transform .2s var(--ease-out),background .2s ease,color .2s ease}
+.archive-thumb__play svg{width:20px;height:20px;margin-left:2px;fill:currentColor}
+.archive-thumb__duration{position:absolute;right:6px;bottom:6px;z-index:2;padding:3px 6px;border-radius:4px;background:rgba(20,19,18,.78);color:#ebe4d8;font:500 12px/1 var(--mono);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.archive-lead .archive-thumb__play{width:64px;height:64px}
+.archive-lead .archive-thumb__play svg{width:28px;height:28px}
+.archive-lead .archive-thumb__duration{right:10px;bottom:10px;padding:4px 8px}
+@media(max-width:900px){.archive-row .archive-thumb__play{width:34px;height:34px}.archive-row .archive-thumb__play svg{width:15px;height:15px}.archive-row .archive-thumb__duration{right:4px;bottom:4px;padding:2px 5px}}
+@media(hover:hover) and (pointer:fine){.archive-row__link:hover .archive-thumb__play,.archive-lead:hover .archive-thumb__play{background:#f39a52;color:#1c1b19;transform:translate(-50%,-50%) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.archive-thumb__play{transition:none}}

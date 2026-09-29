@@ -5,6 +5,7 @@ import SiteFooter from '@/components/SiteFooter';
 import { posts } from '@/data/posts';
 import { interviews } from '@/data/interviews';
 import { archiveImageUrl } from '@/lib/social-metadata';
+import { postVideo, voiceVideo } from '@/lib/archive-video';
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ section?: string }> }) {
   const { section } = await searchParams;
@@ -19,6 +20,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
     title: post.title,
     summary: post.summary,
     imageUrl: archiveImageUrl(post),
+    video: postVideo(post),
   }));
   const voiceEntries: ArchiveEntry[] = interviews.map((interview) => ({
     key: `voice-${interview.slug}`,
@@ -28,6 +30,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
     title: `${interview.name} · ${interview.title}`,
     summary: interview.summary,
     imageUrl: interview.thumbnailUrl,
+    video: voiceVideo(interview),
   }));
   const visibleEntries = active
     ? postEntries

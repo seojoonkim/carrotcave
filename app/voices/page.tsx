@@ -3,6 +3,7 @@ import AxisRail from '@/components/AxisRail';
 import ArchiveList, { type ArchiveEntry } from '@/components/ArchiveList';
 import SiteFooter from '@/components/SiteFooter';
 import { interviews } from '@/data/interviews';
+import { voiceVideo } from '@/lib/archive-video';
 
 export default function VoicesPage() {
   const entries: ArchiveEntry[] = interviews.map((item) => ({
@@ -13,6 +14,7 @@ export default function VoicesPage() {
     title: `${item.name} · ${item.title}`,
     summary: item.summary,
     imageUrl: item.thumbnailUrl,
+    video: voiceVideo(item),
   }));
 
   return (
