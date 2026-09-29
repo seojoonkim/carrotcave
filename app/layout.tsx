@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Mono, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
+import CaveTorch from '@/components/CaveTorch';
 import { siteDescription, siteName, siteOgImage } from '@/lib/social-metadata';
 
 const plexMono = IBM_Plex_Mono({
@@ -67,6 +68,7 @@ export default function RootLayout({
         className="antialiased min-h-screen"
         style={{ backgroundColor: '#0b0e14', color: '#d6dee9' }}
       >
+        <CaveTorch />
         {children}
       </body>
     </html>
