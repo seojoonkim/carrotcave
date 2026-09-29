@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root{--graphite:#24262c;--cc-header-background:#282b32;--panel:#30343c;--paper:#f2f1ec;--muted:#a9adb4;--line:rgba(255,255,255,.14);--cyan:#5fe0f2;--yellow:#f5d14b;--carrot-orange:#f28c28;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;--site-container:1100px;--cc-safe-top:env(safe-area-inset-top,0px);--cc-header-height:calc(72px + var(--cc-safe-top));--mono:var(--font-mono),monospace;--sans:var(--font-sans),sans-serif}
+:root{--graphite:#24262c;--cc-header-background:#282b32;--panel:#30343c;--paper:#f2f1ec;--muted:#a9adb4;--line:rgba(255,255,255,.14);--cyan:#5fe0f2;--yellow:#f5d14b;--carrot-orange:#f28c28;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;--site-container:1100px;--cc-safe-top:env(safe-area-inset-top,0px);--cc-header-height:calc(72px + var(--cc-safe-top));--mono:var(--font-mono),var(--font-sans),monospace;--sans:var(--font-sans),sans-serif}
 *{box-sizing:border-box}html{min-height:100%;background:var(--graphite);scroll-behavior:auto}body{min-height:100%;margin:0;background:linear-gradient(180deg,#282b32 0,#24262c 640px) no-repeat var(--graphite);color:var(--paper);font-family:var(--sans);font-weight:400}a{color:inherit;text-decoration:none}img{border:0;outline:0;box-shadow:none}::selection{background:var(--yellow);color:#111}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .cc-header{position:sticky;top:0;z-index:40;height:var(--cc-header-height);padding:var(--cc-safe-top) clamp(20px,4vw,64px) 0;background:var(--cc-header-background)}
 .cc-header::before,.cc-header::after,.cc-reading-divider{display:none!important;content:none!important}.cc-header__inner{width:100%;max-width:var(--site-container);height:100%;margin:auto;display:grid;grid-template-columns:minmax(210px,1.45fr) minmax(0,4.55fr);align-items:stretch}
@@ -459,3 +459,8 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .post-media-videos video,.post-media-grid img{border:0!important;border-radius:4px!important;box-shadow:none!important;background:#000}
 /* refined-reduced-motion */
 @media (prefers-reduced-motion: reduce){.archive-row--reveal,.archive-lead,.archive-row__link,.archive-thumb img{animation:none!important;transition:none!important}}
+/* 2026.09 type pass: field-notes mono, one Korean face, unified title weight */
+.axis-rail a b,.axis-rail a>span:first-child{font-family:var(--sans);letter-spacing:-.01em}
+.post-reader-header h1{font-weight:600!important;letter-spacing:-.03em!important}
+.post-content p{text-wrap:pretty}
+.post-reader-meta,.archive-row__meta,.archive-lead__meta{font-variant-numeric:tabular-nums;letter-spacing:.02em}

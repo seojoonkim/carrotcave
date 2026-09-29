@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { JetBrains_Mono, Noto_Sans_KR } from 'next/font/google';
+import { IBM_Plex_Mono, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import { siteDescription, siteName, siteOgImage } from '@/lib/social-metadata';
 
-const jetbrains = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '600'],
   variable: '--font-mono',
   display: 'swap',
 });
@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko" className={`${jetbrains.variable} ${notoSans.variable}`}>
+    <html lang="ko" className={`${plexMono.variable} ${notoSans.variable}`}>
       <head>
         <link rel="stylesheet" href="/shared-header-chrome.css" />
       </head>

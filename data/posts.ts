@@ -5467,7 +5467,7 @@ Bryan Johnson은 Moltbook을 보고 말했다. "인류의 섬뜩한 거울." 우
     id: '34',
     slug: 'majlis',
     title: '느림과 공동체의 미학',
-    category: '낙서',
+    category: '탐험',
     depth: 'deep',
     summary: "마질리스에서 함께 먹고 머문 시간을 적었다.",
     content: `지난 2년간 아부다비에 출장을 다니며 몇 차례 마질리스에 초대받았다. 마질리스(مجلس), 아랍어로 '앉는 공간'. 천 년의 시간이 그 한 단어 안에 고여 있다.

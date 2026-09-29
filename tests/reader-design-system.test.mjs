@@ -195,11 +195,11 @@ test('all rendered images are borderless and voice portraits have no internal la
   const [globals, shared, localMono] = await Promise.all([
     read('app/globals.css'),
     read('public/voices/reader-system.css'),
-    read('public/fonts/jetbrains-mono-500.ttf'),
+    read('public/fonts/ibm-plex-mono-500.ttf'),
   ]);
   assert.ok(localMono.length > 100_000, 'self-hosted mono font asset must exist');
   assert.doesNotMatch(shared, /https?:\/\//, 'voice CSS must not add third-party font requests');
-  assert.ok(shared.includes('src: url("/fonts/jetbrains-mono-500.ttf") format("truetype");'), 'voice meta must use the self-hosted mono font');
+  assert.ok(shared.includes('src: url("/fonts/ibm-plex-mono-500.ttf") format("truetype");'), 'voice meta must use the self-hosted mono font');
   assert.match(globals, /img\{border:0;outline:0;box-shadow:none\}/, 'app images must be explicitly borderless');
   assert.match(globals, /\.wall-card--with-image\{[^}]*border:0/, 'image cards must not retain a wrapper border');
   assert.match(globals, /\.wall-card--with-image:hover\{[^}]*border-color:transparent/, 'image cards must stay borderless on hover');

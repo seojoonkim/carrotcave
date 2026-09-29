@@ -1,11 +1,11 @@
 @import url("../shared-header-chrome.css");
 
 @font-face {
-  font-family: "JetBrains Mono";
+  font-family: "IBM Plex Mono";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("/fonts/jetbrains-mono-500.ttf") format("truetype");
+  src: url("/fonts/ibm-plex-mono-500.ttf") format("truetype");
 }
 
 :root {
@@ -13,7 +13,7 @@
   --carrot-orange: #f28c28;
   --carrot-leaf: #79a85b;
   --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "IBM Plex Mono", "Noto Sans KR", monospace;
   --reader-measure: 680px;
   --reader-mobile-gutter: 20px;
   --reader-body-size: 17px;

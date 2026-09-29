@@ -4982,7 +4982,7 @@
   },
   "majlis": {
     "primaryTopics": [
-      "notes"
+      "exploration"
     ],
     "secondaryTopics": [
       "depth-deep",
@@ -4991,7 +4991,7 @@
       "tag-공동체"
     ],
     "questions": [
-      "notes-reading-question"
+      "exploration-reading-question"
     ],
     "claims": [
       {
@@ -5012,7 +5012,7 @@
     ],
     "readerPrerequisites": [],
     "readerOutcomes": [
-      "notes"
+      "exploration"
     ],
     "reviewStatus": "approved",
     "provenance": {
