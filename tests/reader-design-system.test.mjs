@@ -21,7 +21,7 @@ const contracts = [
   '--reader-accent: #f39a52',
   '--reader-measure: 680px',
   '--reader-mobile-gutter: 20px',
-  '--reader-body-size: 17px',
+  '--reader-body-size: 18px',
   '--reader-body-leading: 1.9',
   '--reader-subsection-size: 27px',
   '--reader-subsection-size-mobile: 24px',

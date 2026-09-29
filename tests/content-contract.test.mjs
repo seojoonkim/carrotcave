@@ -584,7 +584,7 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.doesNotMatch(postSource, /fontFamily: "'Noto Serif KR'/);
   assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
-  assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:17px[^}]*--reader-body-leading:1\.9/);
+  assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:18px[^}]*--reader-body-leading:1\.9/);
   assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#e6dfd3/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
