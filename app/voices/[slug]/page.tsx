@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { interviews, getInterview } from '@/data/interviews';
-import { siteName, siteOgImage } from '@/lib/social-metadata';
+import { siteName } from '@/lib/social-metadata';
 
 export function generateStaticParams() { return interviews.map(({ slug }) => ({ slug })); }
 
@@ -11,7 +11,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!interview) return {};
   const title = `${interview.name} · ${interview.title}`;
   const canonical = `/voices/${interview.slug}`;
-  const image = interview.thumbnailUrl ?? siteOgImage;
   return {
     title,
     description: interview.summary,
@@ -24,13 +23,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: 'ko_KR',
       type: 'article',
       publishedTime: interview.sourcePublishedAt,
-      images: [{ url: image, alt: `${interview.name} 인터뷰` }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: interview.summary,
-      images: [image],
     },
   };
 }

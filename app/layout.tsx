@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Mono, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import CaveTorch from '@/components/CaveTorch';
-import { siteDescription, siteName, siteOgImage } from '@/lib/social-metadata';
+import { siteDescription, siteName } from '@/lib/social-metadata';
 
 const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
@@ -36,14 +36,12 @@ export const metadata: Metadata = {
     url: '/',
     siteName,
     locale: 'ko_KR',
-    images: [{ url: siteOgImage, width: 1200, height: 630, type: 'image/png', alt: 'CarrotCave.com · Field Notes from the Rabbit Hole' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: siteName,
     description: siteDescription,
-    images: [siteOgImage],
   },
 };
 

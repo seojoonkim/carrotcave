@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { archiveImageUrl, siteName, siteOgImage } from '@/lib/social-metadata';
+import { siteName } from '@/lib/social-metadata';
 import { posts, getPostBySlug, depthLabel } from '@/data/posts';
 import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {};
   const title = post.title;
   const canonical = `/posts/${post.slug}`;
-  const image = archiveImageUrl(post) ?? siteOgImage;
   return {
     title,
     description: post.summary,
@@ -41,13 +40,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       locale: 'ko_KR',
       type: 'article',
       publishedTime: post.date,
-      images: [{ url: image, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: post.summary,
-      images: [image],
     },
   };
 }

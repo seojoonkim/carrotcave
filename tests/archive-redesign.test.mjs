@@ -167,7 +167,7 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#0e1218 0,#0b0e14 640px\) no-repeat var\(--graphite\)/);
   assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
   assert.match(socialMetadata, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
-  assert.match(layout, /images: \[\{ url: siteOgImage, width: 1200, height: 630, type: 'image\/png'/);
+  assert.match(await read('app/opengraph-image.tsx'), /export const size = OG_SIZE/);
   assert.match(layout, /card: 'summary_large_image'/);
   assert.equal(og.readUInt32BE(16), 1200);
   assert.equal(og.readUInt32BE(20), 630);

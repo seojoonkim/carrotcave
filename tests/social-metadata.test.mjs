@@ -9,7 +9,7 @@ test('ordinary posts publish their own title, abstract, canonical URL, and card 
   const [page, helper] = await Promise.all([read('app/posts/[slug]/page.tsx'), read('lib/social-metadata.ts')]);
   assert.match(page, /export async function generateMetadata/);
   assert.match(page, /post\.summary/);
-  assert.match(page, /archiveImageUrl\(post\)/);
+  assert.match(await read('app/posts/[slug]/opengraph-image.tsx'), /archiveImageUrl\(post\)/);
   assert.match(page, /alternates: \{ canonical \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
@@ -24,7 +24,7 @@ test('voice pages publish interview-specific title, summary, canonical URL, and 
   const page = await read('app/voices/[slug]/page.tsx');
   assert.match(page, /export async function generateMetadata/);
   assert.match(page, /interview\.summary/);
-  assert.match(page, /interview\.thumbnailUrl/);
+  assert.match(await read('app/voices/[slug]/opengraph-image.tsx'), /voice\.thumbnailUrl/);
   assert.match(page, /alternates: \{ canonical \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
@@ -36,7 +36,7 @@ test('site fallback retains the 1200 by 630 root social card and description', a
   const [layout, helper] = await Promise.all([read('app/layout.tsx'), read('lib/social-metadata.ts')]);
   assert.match(helper, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
   assert.match(helper, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
-  assert.match(layout, /images: \[\{ url: siteOgImage, width: 1200, height: 630, type: 'image\/png'/);
+  assert.match(await read('app/opengraph-image.tsx'), /ogCard\(/);
   assert.match(layout, /url: '\/'/);
   assert.match(layout, /siteName,/);
   assert.match(layout, /locale: 'ko_KR'/);
