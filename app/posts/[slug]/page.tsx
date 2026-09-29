@@ -6,6 +6,10 @@ import { posts, getPostBySlug, depthLabel } from '@/data/posts';
 import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
 import TweetEmbed from '@/components/TweetEmbed';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
+import LinkCard from '@/components/LinkCard';
+import linkPreviews from '@/data/link-previews.json';
+import { INLINE_URL_RE, cleanUrl, findPreviewBlocks, normalizeTitle, prettyUrl, standaloneLinkOf, unwrapTelegramLinkPreview, youTubeIdOf, type LinkPreview, type PreviewBlock } from '@/lib/link-preview';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PostShareButton from '@/components/PostShareButton';
@@ -85,9 +89,44 @@ function stripLeadingDuplicateTitle(content: string, title: string) {
 }
 
 function renderContent(content: string) {
-  const lines = content.split('\n');
+  const lines = unwrapTelegramLinkPreview(content).split('\n');
+  const previewMap = linkPreviews as Record<string, LinkPreview>;
+
+  // Telegram link-preview leftovers: hide when a card already shows them, otherwise render one quiet card
+  const cardTitles = new Set<string>();
+  const linkLines = new Set<number>();
+  lines.forEach((line, i) => {
+    const hit = standaloneLinkOf(line);
+    if (!hit) return;
+    linkLines.add(i);
+    const t = previewMap[hit.url]?.title;
+    if (t) cardTitles.add(normalizeTitle(t.replace(/^GitHub - /, '')));
+  });
+  const hidden = new Set<number>();
+  const staticCards = new Map<number, PreviewBlock>();
+  for (const block of findPreviewBlocks(lines)) {
+    let prev = block.start - 1;
+    while (prev >= 0 && !lines[prev].trim()) prev--;
+    const title = normalizeTitle(block.title?.replace(/^GitHub - /, ''));
+    const duplicate = linkLines.has(prev) || [...cardTitles].some((t) => t && title && (t.includes(title) || title.includes(t)));
+    for (let k = block.start; k <= block.end; k++) hidden.add(k);
+    if (!duplicate) staticCards.set(block.start, block);
+  }
 
   return lines.map((line, i) => {
+    const staticCard = staticCards.get(i);
+    if (staticCard) {
+      return (
+        <div key={i} className="post-link-card post-link-card--static">
+          <span className="post-link-card__body">
+            {staticCard.title ? <span className="post-link-card__title">{staticCard.title}</span> : null}
+            {staticCard.description ? <span className="post-link-card__desc">{staticCard.description}</span> : null}
+            {staticCard.site ? <span className="post-link-card__host">{staticCard.site}</span> : null}
+          </span>
+        </div>
+      );
+    }
+    if (hidden.has(i)) return null;
     if (!line.trim()) return null;
 
     if (line.startsWith('### ')) {
@@ -112,10 +151,16 @@ function renderContent(content: string) {
       );
     }
 
-    // Twitter/X embed: standalone URL or markdown link on its own line
-    const tweetUrlMatch = line.trim().match(/^(?:\[.*?\]\()?(https?:\/\/(?:twitter\.com|x\.com)\/[^/]+\/status\/\d+[^\s)]*)\)?$/);
-    if (tweetUrlMatch) {
-      return <TweetEmbed key={i} url={tweetUrlMatch[1].replace(/\)$/, '')} />;
+    // Standalone link on its own line: tweet embed, YouTube thumbnail player, or link card
+    const standalone = standaloneLinkOf(line);
+    if (standalone) {
+      if (standalone.isTweet) return <TweetEmbed key={i} url={standalone.url} />;
+      const preview = (linkPreviews as Record<string, LinkPreview>)[standalone.url];
+      const youTubeId = youTubeIdOf(standalone.url);
+      if (youTubeId) {
+        return <YouTubeEmbed key={i} id={youTubeId} url={standalone.url} title={preview?.title} author={preview?.author} thumbnail={preview?.thumbnail} />;
+      }
+      return <LinkCard key={i} url={standalone.url} label={standalone.label} preview={preview} />;
     }
 
     if (line.trim() === '---') {
@@ -181,7 +226,25 @@ function renderInline(text: string) {
         </a>
       );
     }
-    return <span key={i}>{part}</span>;
+    return <span key={i}>{linkifyBareUrls(part)}</span>;
+  });
+}
+
+/** Bare URLs inside a sentence become short, readable links (host + path) instead of raw strings. */
+function linkifyBareUrls(text: string) {
+  if (!/https?:\/\//.test(text)) return text;
+  return text.split(INLINE_URL_RE).map((chunk, j) => {
+    if (!/^https?:\/\//.test(chunk)) return chunk;
+    const url = cleanUrl(chunk);
+    const rest = chunk.slice(url.length);
+    return (
+      <span key={j}>
+        <a className="post-inline-url" href={url} target="_blank" rel="noopener noreferrer" title={url}>
+          {prettyUrl(url)}
+        </a>
+        {rest}
+      </span>
+    );
   });
 }
 

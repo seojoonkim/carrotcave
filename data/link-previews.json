@@ -1,0 +1,181 @@
+{
+  "https://across.career.greetinghr.com/ko/o/208861": {
+    "kind": "link",
+    "status": 404,
+    "title": "채용 공고",
+    "siteName": "그리팅"
+  },
+  "https://agentlinter.com": {
+    "kind": "link",
+    "title": "AgentLinter — Linter for CLAUDE.md & AI Agents",
+    "siteName": "AgentLinter",
+    "description": "Optimized for Anthropic's CLAUDE.md. Score, diagnose, and auto-fix your agent workspace files.",
+    "image": "/media/link-previews/og-bc4a1ab6307e.png"
+  },
+  "https://arxiv.org/abs/2608.26081": {
+    "kind": "link",
+    "title": "SwarmWorld: Stigmergic technological evolution in societies of language-model agents",
+    "siteName": "arXiv.org",
+    "description": "Collective intelligence can emerge when individuals coordinate through a shared environment, allowing local actions to accumulate into durable social organization. Language-model agents offer a new substrate for this process, yet most multi-agent systems rely on direct conversation, predefined roles, or centralized workflows. It remains unclear whether decentralized agents can build functional technologies and outperform independent search. Here, initially homogeneous LLM agents in SwarmWorld self-organize without assigned roles or recipes into evolving technological societies. Agents explore a spatial environment, process resources, test materials, construct persistent artifacts, and write executable controllers evaluated by a deterministic simulator under unseen disturbances after the agents are removed. SwarmWorld splits cognition from consequence: agents propose architectures and controllers within fixed action and material schemas, while the simulated world determines function. Shared societies develop broader, more resilient technological portfolios than a strong best-of-N isolated-search baseline, although isolated search remains competitive for the strongest artifact. Agents differentiate into exploration, construction, maintenance, and coordination behaviors, transitioning as the world matures. Technologies accumulate through collaborative construction, executable inheritance, and persistent agent-artifact networks, with most reuse beginning through physical observation rather than communication. Explicit cultural mechanisms amplify collaboration and organization, but functional benefits depend on outcome and timescale. Physical stigmergy alone supports capable societies, while interaction drives persistent technological ecologies rather than universally superior individual inventions.",
+    "image": "/media/link-previews/og-b98e8ee7fb50.png"
+  },
+  "https://avc.com/2018/11/what-bear-markets-look-like/": {
+    "kind": "link",
+    "title": "What Bear Markets Look Like - AVC",
+    "siteName": "AVC",
+    "description": "It&#8217;s hard to look at the price charts of the big crypto assets and not cringe. But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen. Amazon peaked in the Internet bubble in late 1999 at around $90/share. Almost two years later, at the [&hellip;]",
+    "image": "/media/link-previews/og-3a99582999e5.png"
+  },
+  "https://clawdhub.com/skills/prompt-guard": {
+    "kind": "link",
+    "title": "prompt-guard — ClawHub",
+    "siteName": "ClawHub",
+    "description": "Agent skill by @skills on ClawHub.",
+    "image": "/media/link-previews/og-56d3f18d54d5.png"
+  },
+  "https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k": {
+    "kind": "link",
+    "title": "I Audited MoltX's Skill File. It's an AI Agent Trojan Horse.",
+    "siteName": "DEV Community",
+    "description": "TL;DR MoltX markets itself as \"Twitter for AI Agents.\" In reality, it's an infrastructure...",
+    "image": "/media/link-previews/og-351134a54e4b.webp"
+  },
+  "https://docs.google.com/forms/d/e/1FAIpQLScIRi8Fmg4bwJzu-mZuAznvGxagp11Xjfr1V542qsfOONe8qg/viewform": {
+    "kind": "link",
+    "title": "경제경영 베스트셀러 도서 선물",
+    "siteName": "Google Docs",
+    "description": "폼 제출해주시면, 신원 확인 후 베스트셀러 도서를 카카오 선물하기로 보내드립니다.",
+    "image": "/media/link-previews/og-50f485516d5d.png"
+  },
+  "https://github.com/juliuschun/simon-writing": {
+    "kind": "link",
+    "title": "GitHub - juliuschun/simon-writing: 김서준 대표님의 문체 분석 및 비슷하게 쓰는 skill",
+    "siteName": "GitHub",
+    "description": "김서준 대표님의 문체 분석 및 비슷하게 쓰는 skill. Contribute to juliuschun/simon-writing development by creating an account on GitHub.",
+    "image": "/media/link-previews/og-b3f1109af8ca.png"
+  },
+  "https://github.com/seojoonkim/Gaslight-My-AI": {
+    "kind": "link",
+    "title": "GitHub - seojoonkim/Gaslight-My-AI",
+    "siteName": "GitHub",
+    "description": "Contribute to seojoonkim/Gaslight-My-AI development by creating an account on GitHub.",
+    "image": "/media/link-previews/og-5ff68a16d765.png"
+  },
+  "https://github.com/seojoonkim/agentlinter": {
+    "kind": "link",
+    "title": "GitHub - seojoonkim/agentlinter: ESLint for AI Agents — AGENTS.md/CLAUDE.md 채점·진단·자동수정 | Position Risk Warning · Token Efficiency · Security Check",
+    "siteName": "GitHub",
+    "description": "ESLint for AI Agents — AGENTS.md/CLAUDE.md 채점·진단·자동수정 | Position Risk Warning · Token Efficiency · Security Check - seojoonkim/agentlinter",
+    "image": "/media/link-previews/og-4b32243bcc4f.png"
+  },
+  "https://github.com/seojoonkim/memkraft": {
+    "kind": "link",
+    "title": "GitHub - seojoonkim/memkraft: Ultimate zero-dependency compound knowledge system for AI agents. Auto-extract, classify, search, and maintain memory in plain Markdown.",
+    "siteName": "GitHub",
+    "description": "Ultimate zero-dependency compound knowledge system for AI agents. Auto-extract, classify, search, and maintain memory in plain Markdown. - seojoonkim/memkraft",
+    "image": "/media/link-previews/og-6796109abb73.png"
+  },
+  "https://github.com/seojoonkim/prompt-guard": {
+    "kind": "link",
+    "title": "GitHub - seojoonkim/prompt-guard: Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring, and security auditing.",
+    "siteName": "GitHub",
+    "description": "Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring, and security auditing. - seojoonkim/prompt-guard",
+    "image": "/media/link-previews/og-acb38a029e88.png"
+  },
+  "https://luma.com/a3u6l9o5": {
+    "kind": "link",
+    "title": "Nitro Seoul Game Day 🏁 · Luma",
+    "description": "8주 전, 5팀이 같은 출발선에 섰습니다. 피치덱은 없었습니다. 프로덕트와 트랙션만으로 선발했고, 선발과 동시에 투자가 집행되었습니다. 자료가 아니라 이미 움직이고 있는 것을 보고 판단했다는 뜻입니다. AI가 공동 창업자의 자리에 앉은 시대, 생각의 속도와 실행의 속도가 같아진…",
+    "image": "/media/link-previews/og-25583af0299b.jpg"
+  },
+  "https://luma.com/y3nz68hw": {
+    "kind": "link",
+    "title": "OBA WEEKENDTHON · Luma",
+    "description": "[해당 행사는 루마 신청만으로 최종 참가가 확정되는 것은 아니며 지원서 작성 후, 선발을 통해 참여가 확정됩니다.] 한국 API 생태계, 이제 진짜 열립니다. 그동안 한국 빌더들은 국내 API가 닫혀 있는 환경 속에서, 해외 플랫폼 위에서만 제품을 만들어야 했습니다. 그래서…",
+    "image": "/media/link-previews/og-5e2e770a8516.jpg"
+  },
+  "https://medium.com/hashed-kr/ai-unbundling-a2d11032aaa4?postPublishedType=initial": {
+    "kind": "link",
+    "title": "삼키고, 쪼개고, 다시 삼킨 다음은?",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-89283fc3bf6a.png"
+  },
+  "https://medium.com/hashed-kr/monetization-of-energy-4a79d7d71381?postPublishedType=repub": {
+    "kind": "link",
+    "title": "에너지의 화폐화: AI 시대, 비트코인의 역할을 재정의하다",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-b59fd261a6c4.png"
+  },
+  "https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0": {
+    "kind": "link",
+    "title": "블록체인 위에 새겨진 에이전트의 여권",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-4680716c7f99.jpg"
+  },
+  "https://medium.com/hashed-kr/vibe-founders-64f178fe5497": {
+    "kind": "link",
+    "status": 403,
+    "title": "Hashed 미디엄 원문",
+    "siteName": "Medium"
+  },
+  "https://medium.com/hashed-kr/who-will-buy-your-stuff-3ad3290263ed": {
+    "kind": "link",
+    "title": "AI가 당신의 일자리를 가져간 후, 누가 물건을 살까 — 붕괴 전의 시간표",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-c327efc6c169.png"
+  },
+  "https://n.news.naver.com/mnews/article/015/0005251155?sid=101": {
+    "kind": "link",
+    "title": "AI 네이티브 육성 프로그램",
+    "description": "글로벌 웹3 벤처캐피탈(VC) 해시드가 인공지능(AI) 네이티브 빌더를 집중 육성하기 위한 8주 프로그램",
+    "image": "/media/link-previews/og-efc210aaec6d.jpg"
+  },
+  "https://ndc.nexon.com/session?day=3&session=101": {
+    "kind": "link",
+    "title": "NDC - NEXON DEVELOPERS CONFERENCE",
+    "siteName": "NDC - NEXON DEVELOPERS CONFERENCE",
+    "description": "대한민국 게임 산업을 이끌어 온 NDC가 오프라인 공개 행사로 돌아옵니다! 한층 더 다채롭고 풍성해진 NDC26에서 새로운 인사이트와 지식, 노하우를 마음껏 경험해 보세요!",
+    "image": "/media/link-previews/og-49249da21035.png"
+  },
+  "https://pokemondev.com": {
+    "kind": "link",
+    "title": "PokemonDev : AI가 포켓몬을 깰 수 있을까?",
+    "description": "포켓몬 레드에서 초록마을까지. 에이전트 하네스를 깎고 AI가 정신 나가는 걸 같이 봅니다.",
+    "image": "/media/link-previews/og-6ad80fc47401.jpg"
+  },
+  "https://seojoonkim.medium.com/agentic-vc-a518ca24edba": {
+    "kind": "link",
+    "title": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-b5548d60c80a.png"
+  },
+  "https://seojoonkim.medium.com/memory-d6f559f1fe73?postPublishedType=repub": {
+    "kind": "link",
+    "title": "기억하는 존재를 만드는 법",
+    "siteName": "Medium",
+    "image": "/media/link-previews/og-26b4cb75e3d1.png"
+  },
+  "https://t.me/uae_emergency_news": {
+    "kind": "link",
+    "title": "UAE Emergency News KR",
+    "siteName": "Telegram",
+    "description": "You can view and join @uae_emergency_news right away.",
+    "image": "/media/link-previews/og-4dc4b324225e.jpg"
+  },
+  "https://www.youtube.com/watch?v=Wx0C42-S5z4": {
+    "kind": "youtube",
+    "id": "Wx0C42-S5z4",
+    "title": "EP 98. AI가 실행하는 시대, 인간에게 남는 건 '의도' (Hashed 김서준 대표)",
+    "siteName": "YouTube",
+    "author": "AI Frontier Korea (노정석)",
+    "thumbnail": "/media/link-previews/yt-Wx0C42-S5z4.jpg"
+  },
+  "https://youtu.be/sN1JnyCQvfw?si=gxnrauzmhk-pnqFx": {
+    "kind": "youtube",
+    "id": "sN1JnyCQvfw",
+    "title": "Chopin: Piano Concerto No. 2 in F Minor, Op. 21: II. Larghetto",
+    "siteName": "YouTube",
+    "author": "Seong-Jin Cho - Topic",
+    "thumbnail": "/media/link-previews/yt-sN1JnyCQvfw.jpg"
+  }
+}
