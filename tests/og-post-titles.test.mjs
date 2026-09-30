@@ -45,3 +45,12 @@ test('pictures with Korean text never reach a share card', () => {
   assert.match(card, /if \(!usableOgImage\(publicPath, ROOT\)\) return undefined/);
   assert.match(read('package.json'), /npm run audit:og-image-text/, 'OCR audit runs in verify');
 });
+
+test('every production release OCR-checks live share images for Korean text', () => {
+  const rel = read('scripts/release-production.mjs');
+  const deploy = rel.indexOf("run('vercel'");
+  const live = rel.indexOf("scripts/verify-og-live.mjs");
+  assert.ok(deploy > 0 && live > deploy, 'live OG check runs after deploy');
+  assert.ok(rel.indexOf('VERIFIED_RELEASE') > live, 'release is only VERIFIED after the live OG check');
+  assert.match(read('scripts/verify-og-live.mjs'), /process\.exit\(1\)/);
+});
