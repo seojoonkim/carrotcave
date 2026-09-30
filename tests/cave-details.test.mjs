@@ -22,9 +22,12 @@ test('torch follows the pointer only on fine pointers and respects reduced motio
   assert.match(css, /@media\(prefers-reduced-motion:reduce\),\(hover:none\)\{\.cc-torch\{display:none\}\}/);
 });
 
-test('cave details stay minimal: faint torch and carrot notch only', () => {
+test('cave details stay minimal: faint torch only, no orange hover bar on rows', () => {
   assert.doesNotMatch(css + end, /Crop marks|10px 1\.5px/);
   assert.match(css, /rgba\(243,154,82,\.032\)/);
-  assert.match(css, /\.archive-row__link:hover::after\{height:28px\}/);
-  assert.match(end, /a\.cave-constellation__thumbnail:hover \.cave-constellation__thumbnail-copy::before\{height:28px\}/);
+  // Simon 2026-10: the orange left bar on row hover is too much. Keep it gone in lists and picks.
+  assert.doesNotMatch(css + end, /[Cc]arrot notch/);
+  assert.doesNotMatch(css, /\.archive-(lead|row__link)(:hover|:focus-visible)?::after\{[^}]*(height:28px|#f39a52)/);
+  assert.doesNotMatch(end, /cave-constellation__thumbnail-copy::before/);
+  assert.doesNotMatch(css + end, /width:2px;height:0;background:(#f39a52|var\(--t\))/);
 });

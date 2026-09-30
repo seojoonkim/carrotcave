@@ -700,16 +700,8 @@ article:not(.post-reader-article){padding-left:0!important;padding-right:0!impor
 .archive-lead:focus-visible::before,.archive-row__link:focus-visible::before{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.archive-lead::before,.archive-row__link::before{transition:none;transform:none}}
 
-/* ════ CAVE DETAILS — faint torch, carrot notch ════════════════════ */
+/* ════ CAVE DETAILS — faint torch only ════════════════════ */
 /* 1. Torch: faint warm light that follows the pointer (fine pointers only, off for reduced motion) */
 .cc-torch{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(360px circle at var(--torch-x,50%) var(--torch-y,50%),rgba(243,154,82,.032),rgba(243,154,82,.01) 40%,transparent 70%)}
 html[data-torch="on"] .cc-torch{opacity:1}
 @media(prefers-reduced-motion:reduce),(hover:none){.cc-torch{display:none}}
-
-/* 3. Carrot notch: a short carrot mark grows at the row's left edge on hover */
-.archive-lead::after,.archive-row__link::after{content:"";position:absolute;left:-16px;top:50%;width:2px;height:0;background:#f39a52;transform:translateY(-50%);transition:height .22s cubic-bezier(.2,.7,.2,1);pointer-events:none}
-@media(hover:hover) and (pointer:fine){
-  .archive-lead:hover::after,.archive-row__link:hover::after{height:28px}
-}
-.archive-lead:focus-visible::after,.archive-row__link:focus-visible::after{height:28px}
-@media(prefers-reduced-motion:reduce){.archive-lead::after,.archive-row__link::after{transition:none;transform:none}}

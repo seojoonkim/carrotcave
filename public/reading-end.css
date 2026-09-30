@@ -84,13 +84,3 @@
 @media (prefers-reduced-motion:reduce){
   .cc-reading-end *{transition:none!important;animation:none!important}
 }
-
-/* Cave detail shared with the lists: carrot notch on the row */
-.cc-reading-end .cave-constellation__thumbnail{--t:#f39a52}
-.cc-reading-end .cave-constellation__thumbnail-copy{position:relative}
-.cc-reading-end .cave-constellation__thumbnail-copy::before{content:"";position:absolute;left:-16px;top:50%;width:2px;height:0;background:var(--t);transform:translateY(-50%);transition:height .22s cubic-bezier(.2,.7,.2,1)}
-@media(hover:hover) and (pointer:fine){
-  .cc-reading-end a.cave-constellation__thumbnail:hover .cave-constellation__thumbnail-copy::before{height:28px}
-}
-@media (max-width:520px){.cc-reading-end .cave-constellation__thumbnail-copy::before{left:-12px}}
-@media (prefers-reduced-motion:reduce){.cc-reading-end .cave-constellation__thumbnail-copy::before{transition:none}}
