@@ -152,6 +152,10 @@ function reviewedMetadata(overrides, message) {
     throw new Error('Invalid override tags');
   }
   assertAbstract(metadata.summary, message.content, metadata.title, metadata.category);
+  // Share cards are English-only: the reviewed English title ships with the post, never as a follow-up.
+  if (typeof metadata.titleEn !== 'string' || !metadata.titleEn.trim() || /[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]/.test(metadata.titleEn)) {
+    throw new Error(`Reviewed English share title (titleEn) required for msg #${message.id}`);
+  }
   return metadata;
 }
 
@@ -244,18 +248,28 @@ export function regenerateOntology({ root = DEFAULT_ROOT, run = spawnSync } = {}
   }
 }
 
+/** Fetch link-preview cards for standalone links (same script the link tests point to). */
+export async function updateLinkPreviews({ root }) {
+  const result = spawnSync(process.execPath, [join(root, 'scripts', 'update-link-previews.mjs')], { cwd: root, stdio: 'inherit' });
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error('Link preview update failed');
+}
+
 export async function publishSingleMessage({
   id,
   root = DEFAULT_ROOT,
   fetchImpl = fetch,
   now = () => new Date().toISOString(),
   regenerate = regenerateOntology,
+  updatePreviews = updateLinkPreviews,
 }) {
   if (!Number.isSafeInteger(id) || id <= 0) throw new Error('A positive numeric message ID is required');
   const dataDir = join(root, 'data');
   const postsPath = join(dataDir, 'posts.ts');
   const statePath = join(dataDir, 'sync-state.json');
   const overridesPath = join(dataDir, 'sync-metadata-overrides.json');
+  const titlesEnPath = join(dataDir, 'post-titles-en.json');
+  const previewsPath = join(dataDir, 'link-previews.json');
   const mediaDir = join(root, 'public', 'media');
 
   const postsSource = readFileSync(postsPath, 'utf8');
@@ -294,7 +308,7 @@ export async function publishSingleMessage({
     join(root, 'docs', 'eval', 'ontology-semantic-sample.json'),
   ];
   const snapshots = new Map(
-    [postsPath, statePath, ...generatedPaths].map((path) => [
+    [postsPath, statePath, titlesEnPath, previewsPath, ...generatedPaths].map((path) => [
       path,
       existsSync(path) ? readFileSync(path) : null,
     ]),
@@ -309,6 +323,9 @@ export async function publishSingleMessage({
     }
     writeAtomically(postsPath, nextPosts);
     writeAtomically(statePath, `${JSON.stringify(nextState, null, 2)}\n`);
+    const titlesEn = existsSync(titlesEnPath) ? JSON.parse(readFileSync(titlesEnPath, 'utf8')) : {};
+    writeAtomically(titlesEnPath, `${JSON.stringify({ [metadata.slug]: metadata.titleEn.trim(), ...titlesEn }, null, 2)}\n`);
+    await updatePreviews({ root });
     await regenerate({ root });
   } catch (error) {
     for (const [path, contents] of snapshots) {

@@ -48,11 +48,14 @@ async function fixture() {
       contentHash: hashContent(fullText),
       summary: '지정한 텔레그램 메시지만 즉시 발행하면서 기존 글과 반응 데이터를 보존하는 단일 게시 경로를 검증한다.',
       tags: ['동기화', '발행'],
+      titleEn: 'A Reviewed New Post',
     },
   };
   await writeFile(join(root, 'data', 'posts.ts'), historical);
   await writeFile(join(root, 'data', 'sync-state.json'), JSON.stringify(state, null, 2));
   await writeFile(join(root, 'data', 'sync-metadata-overrides.json'), JSON.stringify(override, null, 2));
+  await writeFile(join(root, 'data', 'post-titles-en.json'), JSON.stringify({ old: 'Old' }, null, 2));
+  await writeFile(join(root, 'data', 'link-previews.json'), '{}');
   return { root, historical, state };
 }
 
@@ -77,7 +80,7 @@ test('publishes exactly one reviewed message through one direct embed request wi
     root,
     fetchImpl,
     now: () => '2026-08-16T02:00:00.000Z',
-    regenerate: async () => { ontologyRuns += 1; },
+    regenerate: async () => { ontologyRuns += 1; }, updatePreviews: async () => {},
   });
 
   assert.deepEqual(requested, [
@@ -122,6 +125,7 @@ test('rolls back post, sync state, media, and generated ontology when ontology r
         }
         throw new Error(`unexpected request: ${url}`);
       },
+      updatePreviews: async () => {},
       regenerate: async () => {
         await writeFile(ontologyPath, '{"version":"partial"}\n');
         throw new Error('semantic candidates missing');
@@ -154,7 +158,7 @@ test('publishes Telegram timestamps on the Seoul calendar date', async () => {
       }
       throw new Error(`unexpected request: ${url}`);
     },
-    regenerate: async () => {},
+    regenerate: async () => {}, updatePreviews: async () => {},
   });
 
   const posts = await readFile(join(root, 'data', 'posts.ts'), 'utf8');
@@ -277,4 +281,44 @@ test('single-message CLI requires one positive numeric Telegram message ID', asy
   for (const value of [undefined, '0', '-1', '1.5', 'abc', '198x']) {
     assert.throws(() => parseMessageId(value), /positive numeric message ID/);
   }
+});
+
+test('publishing writes the English share title and link previews in the same step (no follow-up gates)', async () => {
+  const { root } = await fixture();
+  const fetchImpl = async (url) => {
+    if (String(url).includes('t.me/carrotcave/198')) return { ok: true, status: 200, text: async () => telegramHtml };
+    return { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 1) };
+  };
+  const previewRuns = [];
+  await publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async (r) => { previewRuns.push(r); } });
+  const titles = JSON.parse(await readFile(join(root, 'data', 'post-titles-en.json'), 'utf8'));
+  assert.equal(titles['reviewed-new-post'], 'A Reviewed New Post');
+  assert.equal(titles.old, 'Old');
+  assert.deepEqual(previewRuns, [{ root }]);
+});
+
+test('fails closed before writing when the reviewed English share title is missing or Korean', async () => {
+  for (const titleEn of [undefined, '한글 제목']) {
+    const { root, historical } = await fixture();
+    const path = join(root, 'data', 'sync-metadata-overrides.json');
+    const o = JSON.parse(await readFile(path, 'utf8'));
+    if (titleEn === undefined) delete o[198].titleEn; else o[198].titleEn = titleEn;
+    await writeFile(path, JSON.stringify(o));
+    const fetchImpl = async () => ({ ok: true, status: 200, text: async () => telegramHtml });
+    await assert.rejects(publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async () => {} }), /English share title/);
+    assert.equal(await readFile(join(root, 'data', 'posts.ts'), 'utf8'), historical);
+  }
+});
+
+test('preview update failure rolls back the post and the English title', async () => {
+  const { root, historical } = await fixture();
+  const fetchImpl = async (url) => String(url).includes('t.me') ? { ok: true, status: 200, text: async () => telegramHtml } : { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 1) };
+  await assert.rejects(publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async () => { throw new Error('preview down'); } }), /preview down/);
+  assert.equal(await readFile(join(root, 'data', 'posts.ts'), 'utf8'), historical);
+  assert.deepEqual(JSON.parse(await readFile(join(root, 'data', 'post-titles-en.json'), 'utf8')), { old: 'Old' });
+});
+
+test('the scheduled sync guide requires titleEn for new posts', async () => {
+  const guide = await readFile(new URL('../docs/latest-three-sync.md', import.meta.url), 'utf8');
+  assert.match(guide, /must include `titleEn`/);
 });

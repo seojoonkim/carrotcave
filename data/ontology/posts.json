@@ -1,4 +1,50 @@
 {
+  "eastpoint-roundtable-has-no-head-seat": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-이스트포인트",
+      "tag-기여 증명",
+      "tag-AI 에이전트"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "eastpoint-roundtable-has-no-head-seat-c1",
+        "text": "두 번째 이스트포인트(EastPoint)를 마쳤다.",
+        "stance": "asserts",
+        "evidence": "두 번째 이스트포인트(EastPoint)를 마쳤다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "이스트포인트",
+      "기여 증명",
+      "AI 에이전트"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "the-right-to-turn-on-a-brain": {
     "primaryTopics": [
       "exploration"

@@ -1,5 +1,140 @@
 [
   {
+    "from": "eastpoint-roundtable-has-no-head-seat",
+    "to": "700-ai-agents-found-each-other",
+    "type": "DEEPENS",
+    "strength": 0.6044,
+    "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
+    "sourceEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "targetEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
+    "label": "「700개의 AI가 서로를 발견한 날」은 「이스트포인트의 원탁에는 상석이 없다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 71,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "개인",
+        "것이다",
+        "공개",
+        "공동",
+        "규칙을",
+        "그것을",
+        "기록",
+        "남는다",
+        "너무",
+        "누가"
+      ],
+      "titleOverlap": [
+        "ai",
+        "ai가",
+        "서로를"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=71;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "eastpoint-roundtable-has-no-head-seat",
+    "to": "moltbook-agent-internet",
+    "type": "REFRAMES",
+    "strength": 0.5339,
+    "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
+    "sourceEvidence": "누가 어느 탁자에 앉았는지, 어떤 대화가 끝까지 이어졌는지.",
+    "targetEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
+    "label": "「AI 에이전트의 인터넷, 몰트북」은 「이스트포인트의 원탁에는 상석이 없다」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 8,
+      "overlapTokens": [
+        "ai",
+        "of",
+        "너무",
+        "누가",
+        "대화",
+        "에이전트",
+        "에이전트끼리",
+        "인터넷"
+      ],
+      "titleOverlap": [
+        "ai",
+        "에이전트",
+        "인터넷"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=8;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "eastpoint-roundtable-has-no-head-seat",
+    "to": "swarmworld-stigmergic-ai-society",
+    "type": "DEEPENS",
+    "strength": 0.4457,
+    "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
+    "sourceEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "targetEvidence": "남은 시설과 코드만으로 버티는지 본 것이다.",
+    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「이스트포인트의 원탁에는 상석이 없다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 72,
+      "overlapTokens": [
+        "ai",
+        "ai가",
+        "거래를",
+        "것을",
+        "것이다",
+        "공개",
+        "공동",
+        "규칙을",
+        "그것을",
+        "기록",
+        "길을",
+        "남은"
+      ],
+      "titleOverlap": [
+        "ai"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "the-right-to-turn-on-a-brain",
     "to": "brain-files-minecraft-flies",
     "type": "DEEPENS",
@@ -1482,13 +1617,13 @@
   },
   {
     "from": "700-ai-agents-found-each-other",
-    "to": "post-193",
+    "to": "eastpoint-roundtable-has-no-head-seat",
     "type": "DEEPENS",
-    "strength": 0.5523,
+    "strength": 0.6044,
     "sourceClaimId": "700-ai-agents-found-each-other-c1",
     "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
-    "targetEvidence": "2026년 8월 6일 공개된 Agent Plugins 1.0.0을 보다가 그 폴더에 이름을 붙여봤다.",
-    "label": "「에이전트 노마드 시대의 짐가방」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
+    "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -1497,24 +1632,25 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 88,
+      "lexicalOverlap": 71,
       "overlapTokens": [
-        "2026",
-        "2026년",
-        "8월",
         "ai",
-        "codex",
-        "openai",
-        "개는",
+        "ai가",
         "개인",
-        "검토",
         "것이다",
-        "계속",
-        "공개"
+        "공개",
+        "공동",
+        "규칙을",
+        "그것을",
+        "기록",
+        "남는다",
+        "너무",
+        "누가"
       ],
       "titleOverlap": [
         "ai",
-        "에이전트"
+        "ai가",
+        "서로를"
       ],
       "sharedTags": [
         "AI 에이전트"
@@ -1523,7 +1659,7 @@
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=88;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=71;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -2552,6 +2688,49 @@
   },
   {
     "from": "moltbook-agent-internet",
+    "to": "eastpoint-roundtable-has-no-head-seat",
+    "type": "REFRAMES",
+    "strength": 0.5339,
+    "sourceClaimId": "moltbook-agent-internet-c1",
+    "sourceEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
+    "targetEvidence": "누가 어느 탁자에 앉았는지, 어떤 대화가 끝까지 이어졌는지.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「AI 에이전트의 인터넷, 몰트북」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 8,
+      "overlapTokens": [
+        "ai",
+        "of",
+        "너무",
+        "누가",
+        "대화",
+        "에이전트",
+        "에이전트끼리",
+        "인터넷"
+      ],
+      "titleOverlap": [
+        "ai",
+        "에이전트",
+        "인터넷"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=8;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "moltbook-agent-internet",
     "to": "swarmworld-stigmergic-ai-society",
     "type": "REFRAMES",
     "strength": 0.4571,
@@ -2591,47 +2770,6 @@
       ]
     },
     "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=9;titleOverlap=2;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "moltbook-agent-internet",
-    "to": "post-193",
-    "type": "REFRAMES",
-    "strength": 0.4485,
-    "sourceClaimId": "moltbook-agent-internet-c1",
-    "sourceEvidence": "Where AI agents share, discuss, and upvote.",
-    "targetEvidence": "회사 휴머노이드가 마지막으로 그의 에이전트 몸이었다면, 그 몸에서 배운 손놀림은 회사 자산일까 개인 경력일까.",
-    "label": "「에이전트 노마드 시대의 짐가방」은 「AI 에이전트의 인터넷, 몰트북」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "tags",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 7,
-      "overlapTokens": [
-        "agent",
-        "ai",
-        "글을",
-        "누가",
-        "대화",
-        "마지막",
-        "에이전트"
-      ],
-      "titleOverlap": [
-        "ai",
-        "에이전트"
-      ],
-      "sharedTags": [
-        "AI 에이전트"
-      ],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=7;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -2851,33 +2989,33 @@
   },
   {
     "from": "ai-jobs-consumption-crisis",
-    "to": "swarmworld-stigmergic-ai-society",
+    "to": "eastpoint-roundtable-has-no-head-seat",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "ai-jobs-consumption-crisis-c1",
-    "sourceEvidence": "AI가 가져올 생산성의 향상과 저비용 사회의 도래보다, 일자리의 기하급수적인 감소를 통한 소비시장의 붕괴가 훨씬 빨리 다가올 것이다.",
-    "targetEvidence": "우리는 AI 사회가 시작되는 순간을 너무 거창하게 상상하는지도 모른다.",
-    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「AI가 일자리를 가져간 후, 누가 물건을 살까」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "AI가 (거의 모든) 일자리를 가져간 후, 누가 물건을 살 수 있을까?",
+    "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「AI가 일자리를 가져간 후, 누가 물건을 살까」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 17,
+      "lexicalOverlap": 19,
       "overlapTokens": [
         "ai",
         "ai가",
-        "거의",
+        "같다",
         "것이다",
-        "공유",
         "너무",
         "누가",
+        "답은",
+        "만들고",
         "많은",
-        "문명이",
-        "빨리",
-        "사람은",
-        "사회"
+        "모든",
+        "묻는다",
+        "빨리"
       ],
       "titleOverlap": [
         "ai",
@@ -2887,7 +3025,7 @@
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=17;titleOverlap=3;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=19;titleOverlap=3;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8457,41 +8595,41 @@
   },
   {
     "from": "complexcon-hk-identity-culture-experience",
-    "to": "majlis",
+    "to": "eastpoint-roundtable-has-no-head-seat",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "complexcon-hk-identity-culture-experience-c1",
-    "sourceEvidence": "누가 더 돈이 많은지가 아니라, 누가 이 세계의 문법을 읽을 수 있는지가 드러나는 장소.",
-    "targetEvidence": "그런데 어쩌면, 그것이야말로 공동체를 떠받치는 가장 단단한 주춧돌이 아닐까.",
-    "label": "「느림과 공동체의 미학」은 「ComplexCon HK에서 본 세계의 입장권」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "흥미로운 건, AI가 여기에 들어오면 문화의 역할 자체가 또 달라질 수 있다는 점이다.",
+    "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「ComplexCon HK에서 본 세계의 입장권」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "tags"
+      "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 38,
+      "lexicalOverlap": 70,
       "overlapTokens": [
+        "ai",
+        "ai가",
+        "가까웠다",
         "가깝다",
+        "것이다",
         "것인지",
-        "공간",
-        "그런데",
-        "늦게",
-        "단단한",
-        "대화를",
-        "돈이",
-        "되는",
-        "들려",
-        "만드는",
-        "많은"
+        "규칙을",
+        "그렇다면",
+        "기록",
+        "끝에",
+        "누가",
+        "대개"
       ],
-      "titleOverlap": [],
-      "sharedTags": [
-        "문화"
+      "titleOverlap": [
+        "세계의"
       ],
+      "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=38;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=70;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -8957,33 +9095,33 @@
   },
   {
     "from": "post-105",
-    "to": "the-right-to-turn-on-a-brain",
+    "to": "eastpoint-roundtable-has-no-head-seat",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-105-c1",
-    "sourceEvidence": "모든 판단에 가격표가 붙는 세상 지난주 예측시장의 주간 거래 건수가 4,700만 건을 넘겼다.",
-    "targetEvidence": "그렇다면 무엇이 같고 다른지 같은 기준으로 설명해야 한다.",
-    "label": "「뇌를 켜는 사람의 권한」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "예측시장에 AI가 결합하면 어떤 일이 벌어질까.",
+    "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 58,
+      "lexicalOverlap": 68,
       "overlapTokens": [
-        "700",
+        "ai",
+        "ai가",
+        "of",
+        "가까웠다",
         "가능성",
-        "거래",
-        "거부",
+        "가능한",
         "것이다",
-        "결과를",
-        "과정",
-        "권력은",
+        "규모의",
         "그렇다면",
-        "근거가",
-        "기반",
-        "기준"
+        "기관",
+        "낮은",
+        "누가"
       ],
       "titleOverlap": [
         "모든"
@@ -8991,7 +9129,7 @@
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=58;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=68;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -10644,38 +10782,6 @@
   },
   {
     "from": "can-i-go-ethihad-airlines-iran-conflict",
-    "to": "majlis",
-    "type": "REFRAMES",
-    "strength": 0.35,
-    "sourceClaimId": "can-i-go-ethihad-airlines-iran-conflict-c1",
-    "sourceEvidence": "창밖의 하늘은 아직 아름답고, 고요하고, 아무것도 모른다.",
-    "targetEvidence": "어쩌면 그런 시간들이 쌓여야, 비로소 진짜 대화가 시작되는 것인지도 모르니까.",
-    "label": "「느림과 공동체의 미학」은 「갈 수 있을까」의 주제를 다른 맥락에서 다시 바라본다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 5,
-      "overlapTokens": [
-        "고요",
-        "시간",
-        "시작되",
-        "있을까",
-        "하늘은"
-      ],
-      "titleOverlap": [
-        "있을까"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=deep;dateDirection=older;lexicalOverlap=5;titleOverlap=1;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "can-i-go-ethihad-airlines-iran-conflict",
     "to": "its-fun",
     "type": "DEEPENS",
     "strength": 0.35,
@@ -10701,6 +10807,33 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=2;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "can-i-go-ethihad-airlines-iran-conflict",
+    "to": "rabbit-crypt-name",
+    "type": "RESONATES",
+    "strength": 0.35,
+    "sourceClaimId": "can-i-go-ethihad-airlines-iran-conflict-c1",
+    "sourceEvidence": "비행기는 여전히 아부다비로 출발을 기다리고 있다.",
+    "targetEvidence": "한국어로는 여전히 편하게 토끼굴이라고 불러주셔도 된다.",
+    "label": "「Rabbit Crypt」은 「갈 수 있을까」의 핵심 문제와 맞닿는다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 2,
+      "overlapTokens": [
+        "아무것",
+        "여전히"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=entry;dateDirection=older;lexicalOverlap=2;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -13059,40 +13192,39 @@
   },
   {
     "from": "overnight-success",
-    "to": "majlis",
-    "type": "DEEPENS",
-    "strength": 0.5031,
+    "to": "agentlinter-dev-log",
+    "type": "APPLIES",
+    "strength": 0.4922,
     "sourceClaimId": "overnight-success-c1",
-    "sourceEvidence": "그게 쌓이고 쌓여서, 어느 날 Clawdbot(이제는 몰트봇)이 나왔다.",
-    "targetEvidence": "그런데 아무도 신경 쓰지 않는 눈치였다.",
-    "label": "「느림과 공동체의 미학」은 「하룻밤의 성공은 없다」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "AI가 코드를 대신 짜준다고 해서 판단력이 하늘에서 내려오는 건 아니다.",
+    "targetEvidence": "바이브코딩을 하든 에이전트 코딩을 하든, 결국 AI가 일을 잘 하느냐는 CLAUDE.md를 얼마나 잘 썼느냐에 달려 있다.",
+    "label": "「AgentLinter 개발기」은 「하룻밤의 성공은 없다」의 원리를 구체적인 구축 과정에 적용한다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category",
       "relatedSlugs"
     ],
     "signalDetails": {
-      "lexicalOverlap": 14,
+      "lexicalOverlap": 13,
       "overlapTokens": [
-        "거다",
-        "그게",
+        "ai",
+        "ai가",
+        "claude",
+        "clawdbot",
+        "code",
+        "github",
         "그런데",
-        "나왔다",
-        "다르다",
         "대신",
-        "보는",
-        "아니다",
-        "아무도",
+        "바이브코딩",
+        "않는다",
         "이건",
-        "이제는",
         "있고"
       ],
       "titleOverlap": [],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category+relatedSlugs;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=14;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+relatedSlugs;sourceCategory=낙서;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=newer;lexicalOverlap=13;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -13873,47 +14005,6 @@
   },
   {
     "from": "its-fun",
-    "to": "majlis",
-    "type": "DEEPENS",
-    "strength": 0.7338,
-    "sourceClaimId": "its-fun-c1",
-    "sourceEvidence": "그런데 사실 그걸 알 필요가 있을까.",
-    "targetEvidence": "그런데 아무도 신경 쓰지 않는 눈치였다.",
-    "label": "「느림과 공동체의 미학」은 「아, 재밌다!!!」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "tags",
-      "category",
-      "relatedSlugs"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 21,
-      "overlapTokens": [
-        "거다",
-        "그걸",
-        "그런",
-        "그런데",
-        "느낌",
-        "때마다",
-        "말을",
-        "문득",
-        "사실",
-        "새로운",
-        "에세이",
-        "이건"
-      ],
-      "titleOverlap": [],
-      "sharedTags": [
-        "에세이"
-      ],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=21;titleOverlap=0;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "its-fun",
     "to": "thought-speed",
     "type": "REFRAMES",
     "strength": 0.7135,
@@ -13987,6 +14078,46 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=낙서;targetCategory=낙서;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=8;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "its-fun",
+    "to": "majlis",
+    "type": "REFRAMES",
+    "strength": 0.7037,
+    "sourceClaimId": "its-fun-c1",
+    "sourceEvidence": "그런데 사실 그걸 알 필요가 있을까.",
+    "targetEvidence": "그런데 아무도 신경 쓰지 않는 눈치였다.",
+    "label": "「느림과 공동체의 미학」은 「아, 재밌다!!!」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "relatedSlugs"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 21,
+      "overlapTokens": [
+        "거다",
+        "그걸",
+        "그런",
+        "그런데",
+        "느낌",
+        "때마다",
+        "말을",
+        "문득",
+        "사실",
+        "새로운",
+        "에세이",
+        "이건"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [
+        "에세이"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=낙서;targetCategory=탐험;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=21;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -14400,16 +14531,17 @@
   {
     "from": "majlis",
     "to": "thought-speed",
-    "type": "REFRAMES",
-    "strength": 0.8813,
+    "type": "DEEPENS",
+    "strength": 0.9111,
     "sourceClaimId": "majlis-c1",
     "sourceEvidence": "그냥 있어도 되는 느낌.",
     "targetEvidence": "타이핑하는 손가락, 혀끝에서 맴도는 단어, 심지어 \"음… 좀 더 섹시하게?\"라는 애매한 중얼거림조차가 개발 속도의 족쇄가 되는 기묘한 미래.",
-    "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「느림과 공동체의 미학」의 주제를 다른 맥락에서 다시 바라본다",
+    "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「느림과 공동체의 미학」의 문제를 더 깊이 파고든다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "tags",
+      "category",
       "relatedSlugs"
     ],
     "signalDetails": {
@@ -14437,23 +14569,22 @@
       ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=낙서;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=38;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=38;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "majlis",
     "to": "its-fun",
-    "type": "DEEPENS",
-    "strength": 0.7338,
+    "type": "REFRAMES",
+    "strength": 0.7037,
     "sourceClaimId": "majlis-c1",
     "sourceEvidence": "그런데 아무도 신경 쓰지 않는 눈치였다.",
     "targetEvidence": "그런데 사실 그걸 알 필요가 있을까.",
-    "label": "「아, 재밌다!!!」은 「느림과 공동체의 미학」의 문제를 더 깊이 파고든다",
+    "label": "「아, 재밌다!!!」은 「느림과 공동체의 미학」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "tags",
-      "category",
       "relatedSlugs"
     ],
     "signalDetails": {
@@ -14478,22 +14609,21 @@
       ],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+tags+category+relatedSlugs;sourceCategory=낙서;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=21;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+tags+relatedSlugs;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=21;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
     "from": "majlis",
     "to": "overnight-success",
-    "type": "DEEPENS",
-    "strength": 0.5031,
+    "type": "REFRAMES",
+    "strength": 0.4729,
     "sourceClaimId": "majlis-c1",
     "sourceEvidence": "그런데 아무도 신경 쓰지 않는 눈치였다.",
     "targetEvidence": "그게 쌓이고 쌓여서, 어느 날 Clawdbot(이제는 몰트봇)이 나왔다.",
-    "label": "「하룻밤의 성공은 없다」은 「느림과 공동체의 미학」의 문제를 더 깊이 파고든다",
+    "label": "「하룻밤의 성공은 없다」은 「느림과 공동체의 미학」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category",
       "relatedSlugs"
     ],
     "signalDetails": {
@@ -14516,7 +14646,7 @@
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category+relatedSlugs;sourceCategory=낙서;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=14;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+relatedSlugs;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=14;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
