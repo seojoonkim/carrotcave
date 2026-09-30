@@ -49,6 +49,7 @@
       const speaker = document.createElement('span');
       speaker.className = 'transcript-speaker';
       speaker.dataset.speaker = item.speaker;
+      speaker.dataset.role = item.speaker === '손정의' ? 'main' : 'host';
       speaker.textContent = item.speaker;
       const copy = document.createElement('span');
       copy.className = 'paragraph-text';

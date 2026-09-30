@@ -54,6 +54,7 @@
       meta.className = 'transcript-turn-meta';
       const speaker = document.createElement('strong');
       speaker.className = 'transcript-speaker';
+      speaker.dataset.role = turn.speaker === '마크 저커버그' ? 'main' : 'host';
       const person = document.createElement('span');
       person.className = 'speaker-person';
       person.dataset.person = turn.speaker === '마크 저커버그' ? 'mark' : 'alex';

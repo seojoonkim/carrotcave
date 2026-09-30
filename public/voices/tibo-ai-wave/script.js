@@ -35,6 +35,7 @@
         const speaker = document.createElement('span');
         speaker.className = 'transcript-speaker';
         speaker.dataset.speaker = item.speaker;
+        speaker.dataset.role = item.speaker === 'Tibo' ? 'main' : 'host'; // Matthew Berman hosts
         speaker.textContent = item.speaker;
         paragraph.append(speaker);
         previousSpeaker = item.speaker;

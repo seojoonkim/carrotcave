@@ -26,7 +26,7 @@
       const anchor=document.createElement('span'); anchor.className='segment-anchor'; anchor.id=`segment-${segment.id}`; anchor.dataset.segmentId=String(segment.id); anchor.dataset.start=String(segment.start); anchor.dataset.end=String(segment.end);
       const copy=document.createElement('span'); copy.className='paragraph-text';
       const meta=document.createElement('span'); meta.className='transcript-turn-meta';
-      const speaker=document.createElement('strong'); speaker.className='transcript-speaker'; speaker.textContent=speakerNames[segment.speaker];
+      const speaker=document.createElement('strong'); speaker.className='transcript-speaker'; speaker.dataset.role=segment.speaker==='Sam Altman'?'main':segment.speaker==='Audience'?'audience':'host'; speaker.textContent=speakerNames[segment.speaker];
       meta.append(speaker); copy.append(meta,document.createTextNode(segment.text)); p.append(anchor,copy); chapter.querySelector('.transcript-segments').append(p);
     });
     return data.segments.length;

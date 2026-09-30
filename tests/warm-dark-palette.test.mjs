@@ -34,7 +34,7 @@ test('carrot touches: selection, focus, scrollbar and reading progress use the c
   assert.match(css, /::selection\{background:rgba\(243,154,82,\.3\)/);
   assert.match(css, /scrollbar-color:rgba\(243,154,82,\.38\)/);
   assert.match(css, /background:linear-gradient\(90deg,#e27a2e,#f39a52 60%,#f6c07a\)!important/);
-  assert.match(read('public/voices/reader-system.css'), /#transcript \.speaker-person \{ color: #f5b27a; \}/);
+  assert.match(read('public/voices/reader-system.css'), /\.transcript-speaker\[data-role="main"\] \{ color: var\(--carrot-orange\); \}/);
 });
 
 test('no cool blue/teal hex colors remain in any voice stylesheet', () => {
