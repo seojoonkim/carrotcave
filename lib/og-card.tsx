@@ -1,6 +1,9 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { ImageResponse } from 'next/og';
+import { titleClamp, titleSize, usableOgImage } from './og-rules';
+
+export { titleClamp, titleSize, titleWidth } from './og-rules';
 
 // One share-card template for every page: ink-navy cave, carrot accent, bright title.
 // Rendered at build time (static params), so fonts/images are read from disk.
@@ -36,7 +39,8 @@ const CONVERT = new Set(['.webp', '.gif', '.avif']);
  * (the card then uses its no-picture layout instead of failing the build).
  */
 export async function localImage(publicPath?: string) {
-  if (!publicPath || /^https?:/.test(publicPath)) return undefined;
+  if (!usableOgImage(publicPath, ROOT)) return undefined; // remote, missing, or has Korean text
+  if (!publicPath) return undefined;
   const file = join(ROOT, 'public', publicPath.split('?')[0]);
   const ext = extname(file).toLowerCase();
   if (!existsSync(file)) return undefined;
@@ -94,11 +98,6 @@ export interface OgCardInput {
   image?: string; // data URL
 }
 
-function titleSize(title: string, hasImage: boolean) {
-  const n = title.length;
-  if (hasImage) return n > 26 ? 76 : n > 18 ? 80 : 88;
-  return n > 34 ? 76 : n > 24 ? 88 : 100;
-}
 
 export async function ogCard(input: OgCardInput) {
   const label = englishOnly(input.label) ?? 'CARROTCAVE';
@@ -130,7 +129,7 @@ export async function ogCard(input: OgCardInput) {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, lineClamp: 3 }}>{title}</div>
+            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, lineClamp: titleClamp(size) }}>{title}</div>
             {sub ? <div style={{ display: 'block', color: RABBIT, fontSize: 34, fontWeight: 600, lineHeight: 1.3, letterSpacing: 0.5, lineClamp: 2 }}>{sub}</div> : null}
           </div>
 

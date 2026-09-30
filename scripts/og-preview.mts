@@ -11,6 +11,6 @@ for (const slug of process.argv.slice(2)) {
     : posts.some((p) => p.slug === slug)
       ? await fn(postRoute)({ params: Promise.resolve({ slug }) })
       : await fn(voiceRoute)({ params: Promise.resolve({ slug }) });
-  writeFileSync(`/tmp/og2-${slug.slice(0, 24)}.png`, Buffer.from(await res.arrayBuffer()));
-  console.log('ok', slug);
+  writeFileSync(`/tmp/og2-${slug}.png`, Buffer.from(await res.arrayBuffer()));
+  console.log('ok', slug, `/tmp/og2-${slug}.png`);
 }

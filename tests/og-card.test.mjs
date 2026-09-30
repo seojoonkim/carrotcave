@@ -68,7 +68,7 @@ test('share cards use the original header icon, kept in sync with CarrotCaveMark
 
 test('share card type is large: title >= 76px, label/date >= 32px, wordmark 40px', () => {
   const card = read('lib/og-card.tsx');
-  const sizes = [...card.match(/function titleSize[\s\S]*?\n}/)[0].matchAll(/\b(\d{2,3})\b/g)].map((m) => Number(m[1])).filter((n) => n > 40);
+  const sizes = [...read('lib/og-rules.ts').match(/function titleSize[\s\S]*?\n}/)[0].matchAll(/\b(\d{2,3})\b/g)].map((m) => Number(m[1])).filter((n) => n > 40);
   assert.ok(Math.min(...sizes) >= 76, `smallest title ${Math.min(...sizes)}`);
   assert.match(card, /fontSize: 34, fontWeight: 700, letterSpacing: 2 \}\}>\{label\}/);
   assert.match(card, /fontSize: 32, fontWeight: 600, letterSpacing: 1 \}\}>\{meta\}/);
