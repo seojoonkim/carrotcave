@@ -37,3 +37,10 @@ test('voice ending links leave the iframe and cover every published voice', () =
   assert.match(runtime, /원본 영상 보기/);
   assert.match(runtime, /navigator\.share/);
 });
+
+test('text-only voice sources are not labelled as video', () => {
+  const runtime = read('public/voices/reading-end.js');
+  assert.match(runtime, /"slug":"shin-jeongkyu-astra"[^}]*"video":false/);
+  assert.match(runtime, /"slug":"mark-zuckerberg-muse"[^}]*"video":true/);
+  assert.match(runtime, /me\.video \? '원본 영상 보기' : '원본 보기'/);
+});
