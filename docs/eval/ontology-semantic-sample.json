@@ -475,6 +475,32 @@
       "label": "「뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다」은 「아무도 지시하지 않은 14.5시간」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
+      "from": "can-i-go-ethihad-airlines-iran-conflict",
+      "to": "rabbit-crypt-name",
+      "sourceTitle": "갈 수 있을까",
+      "targetTitle": "Rabbit Crypt",
+      "sourceCategory": "낙서",
+      "targetCategory": "낙서",
+      "sourceEvidence": "비행기는 여전히 아부다비로 출발을 기다리고 있다.",
+      "targetEvidence": "한국어로는 여전히 편하게 토끼굴이라고 불러주셔도 된다.",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 2,
+        "overlapTokens": [
+          "아무것",
+          "여전히"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "type": "RESONATES",
+      "label": "「Rabbit Crypt」은 「갈 수 있을까」의 핵심 문제와 맞닿는다"
+    },
+    {
       "from": "openclaw-cron-session-bottleneck",
       "to": "click-theology",
       "sourceTitle": "오픈클로가 느려지는 주범",
@@ -792,13 +818,13 @@
     },
     {
       "from": "700-ai-agents-found-each-other",
-      "to": "post-193",
+      "to": "eastpoint-roundtable-has-no-head-seat",
       "sourceTitle": "700개의 AI가 서로를 발견한 날",
-      "targetTitle": "에이전트 노마드 시대의 짐가방",
+      "targetTitle": "이스트포인트의 원탁에는 상석이 없다",
       "sourceCategory": "탐험",
       "targetCategory": "탐험",
       "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
-      "targetEvidence": "2026년 8월 6일 공개된 Agent Plugins 1.0.0을 보다가 그 폴더에 이름을 붙여봤다.",
+      "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
       "signals": [
         "content",
         "tags",
@@ -806,24 +832,25 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 88,
+        "lexicalOverlap": 71,
         "overlapTokens": [
-          "2026",
-          "2026년",
-          "8월",
           "ai",
-          "codex",
-          "openai",
-          "개는",
+          "ai가",
           "개인",
-          "검토",
           "것이다",
-          "계속",
-          "공개"
+          "공개",
+          "공동",
+          "규칙을",
+          "그것을",
+          "기록",
+          "남는다",
+          "너무",
+          "누가"
         ],
         "titleOverlap": [
           "ai",
-          "에이전트"
+          "ai가",
+          "서로를"
         ],
         "sharedTags": [
           "AI 에이전트"
@@ -833,38 +860,39 @@
         ]
       },
       "type": "DEEPENS",
-      "label": "「에이전트 노마드 시대의 짐가방」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다"
+      "label": "「이스트포인트의 원탁에는 상석이 없다」은 「700개의 AI가 서로를 발견한 날」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "can-i-go-ethihad-airlines-iran-conflict",
-      "to": "majlis",
-      "sourceTitle": "갈 수 있을까",
-      "targetTitle": "느림과 공동체의 미학",
+      "from": "counting-assistant",
+      "to": "naming-the-universe",
+      "sourceTitle": "1을 10번 세어주는 비서",
+      "targetTitle": "내가 만든 존재들에게 이름을 주는 방법",
       "sourceCategory": "낙서",
       "targetCategory": "탐험",
-      "sourceEvidence": "창밖의 하늘은 아직 아름답고, 고요하고, 아무것도 모른다.",
-      "targetEvidence": "어쩌면 그런 시간들이 쌓여야, 비로소 진짜 대화가 시작되는 것인지도 모르니까.",
+      "sourceEvidence": "오빠는 오늘도 혼자가 아니다.",
+      "targetEvidence": "종합 가중 평가 (외계 15% · AI 20% · 메타 20% · 인지 15% · 연결 15% · 의미 15%) 순위 이름 외계 AI 메타 인지 연결 의미 총점 1 SION 92 88 85 95 98 90 91.1 2 ZEON 85 90 92 93 88 94 90.5 3 SANO 96 86 82 96 85 82 87.7 4 MION 90 94 88 88 86 80 87.6 5 NEOS 82 85 90 90 78 88 85.5",
       "signals": [
         "content",
-        "category"
+        "relatedSlugs",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 5,
+        "lexicalOverlap": 3,
         "overlapTokens": [
-          "고요",
-          "시간",
-          "시작되",
-          "있을까",
-          "하늘은"
+          "10",
+          "ai",
+          "아니다"
         ],
         "titleOverlap": [
-          "있을까"
+          "10"
         ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
       "type": "REFRAMES",
-      "label": "「느림과 공동체의 미학」은 「갈 수 있을까」의 주제를 다른 맥락에서 다시 바라본다"
+      "label": "「내가 만든 존재들에게 이름을 주는 방법」은 「1을 10번 세어주는 비서」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
       "from": "agentlinter-dev-log",
@@ -904,42 +932,6 @@
       },
       "type": "REFRAMES",
       "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「AgentLinter 개발기」의 주제를 다른 맥락에서 다시 바라본다"
-    },
-    {
-      "from": "matchhz",
-      "to": "mrinank-anthropic",
-      "sourceTitle": "MatchHz",
-      "targetTitle": "시인이자 AI 안전 연구원, Anthropic을 떠나다",
-      "sourceCategory": "소설",
-      "targetCategory": "낙서",
-      "sourceEvidence": "2028년 12월 커튼을 걷었다.",
-      "targetEvidence": "그런 그가 2년 전, AI가 인류에게 가져올 위험을 막겠다는 사명감으로 Anthropic에 합류했다.",
-      "signals": [
-        "content",
-        "tags",
-        "relatedSlugs",
-        "legacy-relations"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 6,
-        "overlapTokens": [
-          "2월",
-          "ai",
-          "그런",
-          "말을",
-          "모르는",
-          "에세이"
-        ],
-        "titleOverlap": [
-          "ai"
-        ],
-        "sharedTags": [
-          "에세이"
-        ],
-        "sharedConcepts": []
-      },
-      "type": "REFRAMES",
-      "label": "「시인이자 AI 안전 연구원, Anthropic을 떠나다」은 「MatchHz」의 주제를 다른 맥락에서 다시 바라본다"
     }
   ]
 }

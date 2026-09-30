@@ -342,10 +342,22 @@ export async function publishSingleMessage({
   return { id, slug: metadata.slug, media: prepared.images, videos: prepared.videos };
 }
 
+/** Every file one publish may touch; commit all of them together (docs/eval sample included). */
+export function publishArtifacts(slug, media = [], videos = []) {
+  return [
+    'data/posts.ts', 'data/sync-state.json', 'data/sync-metadata-overrides.json',
+    'data/post-titles-en.json', 'data/link-previews.json', 'public/media/link-previews/',
+    'data/ontology/posts.json', 'data/ontology/edges.json', 'data/ontology/vocabulary.json', 'data/ontology/index.json',
+    'docs/eval/ontology-semantic-sample.json',
+    ...[...media, ...videos].map((u) => `public${u}`),
+  ];
+}
+
 async function main() {
   const id = parseMessageId(process.argv[2]);
   const result = await publishSingleMessage({ id });
   console.log(`Published Telegram #${result.id} as ${result.slug}`);
+  console.log(`Commit together: git add ${publishArtifacts(result.slug, result.media, result.videos).join(' ')}`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === SCRIPT_PATH) {

@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-import { hashContent, parseSingleMessage, publishSingleMessage, regenerateOntology } from '../scripts/publish-single-message.mjs';
+import { hashContent, parseSingleMessage, publishArtifacts, publishSingleMessage, regenerateOntology } from '../scripts/publish-single-message.mjs';
 import { selectNewMessages } from '../scripts/auto-sync.mjs';
 
 const telegramHtml = `
@@ -321,4 +321,12 @@ test('preview update failure rolls back the post and the English title', async (
 test('the scheduled sync guide requires titleEn for new posts', async () => {
   const guide = await readFile(new URL('../docs/latest-three-sync.md', import.meta.url), 'utf8');
   assert.match(guide, /must include `titleEn`/);
+});
+
+test('the commit list names every generated file, including the docs/eval ontology sample', async () => {
+  const list = publishArtifacts('x', ['/media/msg-1-0.jpg']);
+  for (const f of ['docs/eval/ontology-semantic-sample.json', 'data/post-titles-en.json', 'data/link-previews.json', 'public/media/msg-1-0.jpg']) assert.ok(list.includes(f), f);
+  const src = await readFile(new URL('../scripts/publish-single-message.mjs', import.meta.url), 'utf8');
+  const touched = [...src.matchAll(/join\(root, '([^']+)', '([^']+)'(?:, '([^']+)')?\)/g)].map((m) => m.slice(1).filter(Boolean).join('/'));
+  for (const f of touched.filter((f) => /\.json$/.test(f))) assert.ok(list.includes(f), `publish writes ${f} but commit list misses it`);
 });
