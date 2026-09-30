@@ -17,6 +17,7 @@ import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import ontologyIndex from '@/data/ontology/index.json';
 import { buildTopRecommendations } from '@/lib/ontology/build-subgraph';
 import type { OntologyIndex } from '@/lib/ontology/types';
+import PostGallery from '@/components/PostGallery';
 
 export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -297,21 +298,16 @@ export default async function PostPage({ params }: PostPageProps) {
 
         {/* Media section — images (top, skip if video exists) */}
         {post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0) && (
-          <div
-            className="post-media-grid"
-            data-count={post.mediaUrls.length}
-          >
-            {post.mediaUrls.map((url, i) => (
-              <img
-                key={i}
-                src={url}
-                alt=""
-                loading={i === 0 ? 'eager' : 'lazy'}
-                decoding="async"
-                style={{ aspectRatio: post.mediaUrls!.length === 1 ? 'auto' : '1 / 1' }}
-              />
-            ))}
-          </div>
+          post.mediaUrls.length > 1 ? (
+            <PostGallery urls={post.mediaUrls} />
+          ) : (
+            <div
+              className="post-media-grid"
+              data-count={post.mediaUrls.length}
+            >
+              <img src={post.mediaUrls[0]} alt="" loading="eager" decoding="async" />
+            </div>
+          )
         )}
 
         {/* Media section — videos (top) */}
