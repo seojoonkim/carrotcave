@@ -11,3 +11,13 @@ When asked to sync the latest Telegram posts to the website:
 5. On one acquisition failure, switch directly between the channel page and the direct embed URL. Do not restart broad discovery.
 
 Target the shortest verified path. A normal three-post text-only sync should not include historical audits or unrelated research.
+
+## Voice reader house rules (목소리 기본 룰)
+
+Every published voice (`data/interviews.ts` `status: 'published'`) must have:
+
+1. **Key sentences highlighted** — at least 10 core quotes from the main speaker (about 2–3 per chapter), one format only: `key-sentences.json` as `[{ "id": <integer>, "exact_quote": "<exact text>" }]` rendered by the shared `reader-runtime.js`, or `<mark class="key-sentence">` in static readers. No per-page `<strong>` emphasis or custom highlight CSS; the style lives in `reader-system.css`.
+2. **Date line** right after `</h1>`: `<p class="hero-date">LABEL <time datetime="YYYY-MM-DD">YYYY년 M월 D일</time> · source</p>`. The label states what the date is (대담/인터뷰/공개/강연 영상 공개/회의/녹화), checked against the primary source.
+3. **Hero photo** `<figure class="hero-portrait">`, shown without fade or desaturation.
+
+`tests/voice-house-rules.test.mjs` enforces these in `npm run verify`, so a voice missing any rule cannot be released.

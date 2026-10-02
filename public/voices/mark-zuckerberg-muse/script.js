@@ -71,10 +71,10 @@
           const start = turn.text.indexOf(quote, cursor);
           if (!quote || start < cursor) throw new Error(`Invalid emphasis in ${item.id}`);
           copy.append(document.createTextNode(turn.text.slice(cursor, start)));
-          const strong = document.createElement('strong');
-          strong.className = 'transcript-highlight';
-          strong.textContent = quote;
-          copy.append(strong);
+          const mark = document.createElement('mark');
+          mark.className = 'key-sentence';
+          mark.textContent = quote;
+          copy.append(mark);
           cursor = start + quote.length;
         });
         copy.append(document.createTextNode(turn.text.slice(cursor)));

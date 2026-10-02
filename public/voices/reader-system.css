@@ -289,10 +289,20 @@ img { border: 0; outline: 0;  }
   max-width: var(--reader-measure);
   margin: 0 auto 22px;
 }
+/* Voice hero photo: crisp, flat frame. No top/bottom fade, no desaturation. */
+.hero > .hero-portrait { overflow: hidden; border-radius: 2px; background: #11151c; box-shadow: inset 0 0 0 1px rgba(214, 221, 230, .12); }
 .hero-portrait img {
+  display: block;
   width: 100%;
   height: auto;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  filter: none !important;
 }
+.hero-portrait a { display: block; }
+.hero-portrait figcaption { padding: 8px 0 0; text-align: left; }
+/* Voice key sentences: one highlight style across every voice. */
+.key-sentence { color: var(--ansi-yellow, #f6d06b); background: none; padding: 0; font: inherit; }
 
 @media (max-width: 480px) {
   .hero { padding-top: 44px; }
@@ -490,3 +500,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .voice-shared-footer { padding-inline: var(--gutter) !important; }
 .voice-shared-footer__inner { max-width: var(--frame) !important; }
 @media (max-width: 599px) { .site-header { padding-inline: var(--gutter) !important; } }
+
+/* Interview date: shown at the start of every voice reader. */
+.hero-date { margin: -10px 0 18px; color: var(--muted, #9fa9b8); font: 500 12px/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .06em; }
+.hero-date time { color: var(--bright-white, #fff); }
