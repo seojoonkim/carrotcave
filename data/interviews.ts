@@ -45,6 +45,7 @@ export const interviews: InterviewArchive[] = [
     summary: '신정규는 Astra 이후 모델 내부의 반복 계산과 추론 하드웨어, 낮아진 개발 비용이 AI 기업의 해자를 어디로 옮기는지 짚는다.',
     description: '래블업 신정규 대표와 해시드 김서준 대표의 2026년 9월 7일 대담을 7개 장, 188개 발화로 재구성한 대화록입니다. 편집자 보충 문답이 섞여 있고 당사자 검수 전입니다.',
     sourcePublishedAt: '2026-09-07', // Conversation date on the reconstructed source page.
+    thumbnailUrl: '/voices/shin-jeongkyu-astra/shin-jeongkyu.jpg',
     sourceUrl: 'https://astra-interview.vercel.app/',
     duration: '7개 장',
     chapters: 7,
