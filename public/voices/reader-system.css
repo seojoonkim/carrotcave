@@ -602,3 +602,31 @@ html { scrollbar-gutter: stable; }
 body.drawer-open { overflow: visible !important; }
 .toc-drawer { overscroll-behavior: contain; overflow-y: auto; }
 .drawer-backdrop { touch-action: none; }
+/* Motion system 2026.10 — same language as the site: quick, calm, opacity/transform only. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: cc-vt-out .16s ease-in both; }
+::view-transition-new(root) { animation: cc-vt-in .28s cubic-bezier(.22, .8, .24, 1) both; }
+@keyframes cc-vt-out { to { opacity: 0; } }
+@keyframes cc-vt-in { from { opacity: 0; transform: translateY(6px); } }
+@keyframes cc-settle { from { opacity: 0; transform: translateY(8px); } }
+.hero > * { animation: cc-settle .32s cubic-bezier(.22, .8, .24, 1) both; }
+.hero > .hero-portrait { animation-delay: 40ms; }
+.hero > #page-title { animation-delay: 70ms; }
+.hero > .hero-date, .hero > .hero-deck { animation-delay: 100ms; }
+.hero > .hero-stats, .hero > .source-button, .hero > .scroll-cue { animation-delay: 130ms; }
+.drawer-backdrop { animation: cc-fade .14s ease both; }
+@keyframes cc-fade { from { opacity: 0; } }
+.toc-drawer nav > a { transition: color .16s ease, background-color .16s ease; }
+.toc-drawer.open nav > a { animation: cc-item-in .22s cubic-bezier(.22, .8, .24, 1) both; }
+.toc-drawer.open nav > a:nth-child(2) { animation-delay: 20ms; }
+.toc-drawer.open nav > a:nth-child(3) { animation-delay: 40ms; }
+.toc-drawer.open nav > a:nth-child(4) { animation-delay: 60ms; }
+.toc-drawer.open nav > a:nth-child(n+5) { animation-delay: 80ms; }
+@keyframes cc-item-in { from { opacity: 0; transform: translateY(-4px); } }
+html:focus-within { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+  .hero > *, .drawer-backdrop, .toc-drawer.open nav > a { animation: none !important; }
+  html:focus-within { scroll-behavior: auto; }
+}

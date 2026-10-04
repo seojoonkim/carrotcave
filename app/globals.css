@@ -737,3 +737,32 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .axis-rail a,.cc-header a,.cc-header button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .axis-rail a:active{opacity:.7}
 .cc-axis-pending .wall-shell{opacity:.55;transition:opacity .12s ease}
+/* Motion system 2026.10 — calm, quick, compositor-only (opacity/transform). Off with reduced motion.
+   1 page change: the browser cross-fades documents; the header holds still.
+   2 category tabs: list content settles in; the carrot underline glides to the new tab.
+   3 opening a post: the article rises in.
+   4 gallery: photos cross-fade. */
+:root{--motion-fast:.16s;--motion-base:.28s;--motion-ease:cubic-bezier(.22,.8,.24,1)}
+@view-transition{navigation:auto}
+.cc-header{view-transition-name:cc-header}
+::view-transition-group(cc-header){animation:none}
+::view-transition-old(root){animation:cc-vt-out var(--motion-fast) ease-in both}
+::view-transition-new(root){animation:cc-vt-in var(--motion-base) var(--motion-ease) both}
+@keyframes cc-vt-out{to{opacity:0}}
+@keyframes cc-vt-in{from{opacity:0;transform:translateY(6px)}}
+@keyframes cc-settle{from{opacity:0;transform:translateY(8px)}}
+.wall-shell .wall-heading,.wall-shell .archive{animation:cc-list-in var(--motion-base) var(--motion-ease) both}
+@keyframes cc-list-in{from{opacity:.35;transform:translateY(6px)}}
+.post-reader-article{animation:cc-settle .32s var(--motion-ease) both}
+.cc-axis-pending .wall-shell{opacity:.55;transition:opacity .12s ease}
+.wall-shell{transition:opacity var(--motion-fast) ease}
+.axis-rail a::after{transition:transform var(--motion-base) var(--motion-ease),opacity var(--motion-fast) ease!important}
+.axis-rail a:not(.active)::after{opacity:0;transform:translateX(-50%) scaleX(.2)}
+.axis-rail a.active::after{opacity:1}
+.post-gallery-stage img,.post-gallery-slide img{transition:opacity var(--motion-base) ease}
+@media (prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+  .wall-shell .wall-heading,.wall-shell .archive,.post-reader-article{animation:none}
+  .axis-rail a::after,.wall-shell{transition:none!important}
+}
