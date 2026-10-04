@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { siteName } from '@/lib/social-metadata';
+import { siteName, archiveImageUrl } from '@/lib/social-metadata';
+import Image from 'next/image';
+import { EDITORIAL_CARD_FALLBACK_IMAGE } from '@/components/EditorialCard';
 import { posts, getPostBySlug, depthLabel } from '@/data/posts';
 import CaveConstellation from '@/components/CaveConstellation';
 import AutoPlayVideo from '@/components/AutoPlayVideo';
@@ -349,7 +351,10 @@ export default async function PostPage({ params }: PostPageProps) {
           <div className="cc-reading-end__mark" aria-hidden="true" />
 
           {nextPost && (
-            <Link className="post-next" href={`/posts/${nextPost.slug}`}>
+            <Link className="post-next" href={`/posts/${nextPost.slug}`} data-has-image={archiveImageUrl(nextPost) ? 'true' : 'false'}>
+              <span className="post-next__thumb" aria-hidden="true">
+                <Image src={archiveImageUrl(nextPost) ?? EDITORIAL_CARD_FALLBACK_IMAGE} alt="" width={480} height={300} sizes="(max-width: 600px) 104px, 176px" />
+              </span>
               <span className="post-next__label">{post.category.replace(/^[^\p{L}]+/u, '')}의 다음 글</span>
               <span className="post-next__title">{nextPost.title}</span>
               <span className="post-next__arrow" aria-hidden="true">→</span>

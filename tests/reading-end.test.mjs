@@ -44,3 +44,12 @@ test('text-only voice sources are not labelled as video', () => {
   assert.match(runtime, /"slug":"mark-zuckerberg-muse"[^}]*"video":true/);
   assert.match(runtime, /me\.video \? '원본 영상 보기' : '원본 보기'/);
 });
+
+test('next-in-category card shows the next post thumbnail, falling back to the character art', () => {
+  const page = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+  const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  assert.match(page, /className="post-next__thumb"[\s\S]*?archiveImageUrl\(nextPost\) \?\? EDITORIAL_CARD_FALLBACK_IMAGE/);
+  assert.match(end, /\.post-next\{grid-template-columns:176px minmax\(0,1fr\) auto/);
+  assert.match(end, /\.post-next__thumb\{[^}]*aspect-ratio:16\/10[^}]*border-radius:12px/);
+  assert.match(end, /max-width:600px\)\{\.cc-reading-end \.post-next\{grid-template-columns:104px/);
+});
