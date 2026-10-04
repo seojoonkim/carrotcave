@@ -25,7 +25,8 @@
     "verify": "npm test && npm run audit:og-titles && npm run audit:og-image-text && npm run audit:post-titles && npm run audit:post-abstracts && npm run audit:ontology && npm run build",
     "content-only-release-check": "node scripts/assert-content-only-release.mjs HEAD",
     "recategorize": "node scripts/recategorize-post.mjs",
-    "postbuild": "node scripts/check-build-css-fresh.mjs"
+    "postbuild": "node scripts/check-build-css-fresh.mjs",
+    "i18n:translate": "python3 scripts/i18n/run-with-lb.py node scripts/i18n/translate-posts.mjs && python3 scripts/i18n/run-with-lb.py node scripts/i18n/translate-voices.mjs && node scripts/i18n/bundle-en.mjs --strict"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",
