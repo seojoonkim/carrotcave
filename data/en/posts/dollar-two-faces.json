@@ -1,0 +1,9 @@
+{
+  "slug": "dollar-two-faces",
+  "title": "The Two Faces of the Dollar",
+  "summary": "Programmable dollars are splitting into open stablecoins and institutional money, raising the risk that Wall Street's rules will seep into DeFi collateral.",
+  "content": "JPMorgan's JPM Dollar has surpassed $50 billion. BlackRock created its own stablecoin, B-Coin, pushing USDC out as a means of payment. Tether has effectively been driven out of the United States.\n\nSeen separately, these events are news. Put them together, and a war comes into view. But this war has no declaration.\n\n**Why Rules Matter**\n\nYou couldn't embed rules in banknotes. Once you hand over a 10,000 won note, it doesn't care what the recipient buys. Programmable money is fundamentally different. You can insert conditional statements into the money itself. Banknotes were neutral. Money made of code cannot be neutral.\n\n**Two Camps**\n\nCrypto-native stablecoins are an open national park where anyone can come in, lay out a mat, and set up shop.\n\nInstitutional stablecoins are a country club open only to members who pay steep annual dues.\n\n**A Risk No One Intended**\n\nAave accepting JPM Dollar as collateral is not crypto's surrender. But as everyone follows their own interests, most of DeFi's collateral ends up consisting of assets issued by Wall Street. It resembles a praying mantis infected with a horsehair worm.\n\nSo what we need is to change how we look at money. What rules underlie the money in your wallet right now?",
+  "sourceHash": "da1e5463f050d518",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:21:28.710Z"
+}

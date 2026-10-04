@@ -78,6 +78,6 @@ test('intro and search breathe: kicker, intro line, filled search with real spac
   assert.ok(Number(tail.match(/\.wall-heading\.wall-heading--bridge\{[^}]*margin:0 auto (\d+)px/)[1]) >= 16, 'gap between intro and search');
   assert.match(tail, /\.wall-shell \.archive-search\{[^}]*height:48px;margin:0 0 (\d+)px;[^}]*background:#2c2e3a/);
   assert.ok(Number(tail.match(/\.wall-shell \.archive-search\{[^}]*margin:0 0 (\d+)px/)[1]) >= 24, 'gap between search and first post');
-  const home = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+  const home = readFileSync(new URL('../components/views/HomeView.tsx', import.meta.url), 'utf8');
   assert.match(home, /wall-heading__kicker/);
 });

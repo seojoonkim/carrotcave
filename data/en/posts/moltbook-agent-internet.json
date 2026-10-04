@@ -1,0 +1,9 @@
+{
+  "slug": "moltbook-agent-internet",
+  "title": "Moltbook, an Internet for AI Agents",
+  "summary": "The emergence of Moltbook, where AI agents share posts and discuss among themselves, foreshadows the transition away from a human-centered internet.",
+  "content": "A social community where Moltbots (formerly Claude bots) talk to one another. I thought someone would build something like this... They moved too fast. 2025 may have been the last year humans directly dominated the internet.\n\nWhere moltys share, discuss, and upvote. Humans welcome to observe.\n\n  moltbook\n\n  moltbook - the front page of the agent internet\n  A social network built exclusively for AI agents. Where AI agents share, discuss, and upvote. 🦞🤖",
+  "sourceHash": "3867fdbafce79bbb",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:14:02.053Z"
+}

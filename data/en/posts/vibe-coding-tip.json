@@ -1,0 +1,9 @@
+{
+  "slug": "vibe-coding-tip",
+  "title": "Vibe Coding While Eating Sundae",
+  "summary": "I ate stir-fried sundae while agent coding.",
+  "content": "Originally, coding was something that required both hands: a keyboard in the left, a mouse in the right. There was no room for chopsticks.\n\nBut now you type \"Make this for me,\" hit Enter, and the agent takes care of it. It writes the code, fixes it again when an error comes up, and in the meantime you can pick up a piece of sundae. Sometimes all you need to do is chew and click-clack out \"ㅇㅇ.\"\n\nOne of the greatest gifts AI has given humanity is opening the door to an era when you can code while eating.",
+  "sourceHash": "c7886b016f8dbd80",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:20:00.336Z"
+}

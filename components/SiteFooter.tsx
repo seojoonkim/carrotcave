@@ -3,6 +3,7 @@ import { posts } from '@/data/posts';
 
 const latestPostDate = posts.reduce((max, post) => (post.date > max ? post.date : max), '');
 import NewsletterForm from './NewsletterForm';
+import type { Locale } from '@/lib/i18n';
 
 function XMark() {
   return (
@@ -20,12 +21,12 @@ function TelegramMark() {
   );
 }
 
-export default function SiteFooter({ mood = 'all' }: { mood?: SceneMood }) {
+export default function SiteFooter({ mood = 'all', locale = 'ko' }: { mood?: SceneMood; locale?: Locale }) {
   return (
     <footer className="cc-footer">
       <div className="cc-footer__inner">
-        <FooterCaveScene mood={mood} latest={latestPostDate} />
-        <NewsletterForm />
+        <FooterCaveScene mood={mood} latest={latestPostDate} locale={locale} />
+        <NewsletterForm locale={locale} />
         <div className="cc-footer__copy">
           <p className="cc-footer__identity"><strong>CARROT CAVE</strong> by Simon Kim</p>
           <p className="cc-footer__links">

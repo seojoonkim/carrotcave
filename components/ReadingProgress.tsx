@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function ReadingProgress() {
+export default function ReadingProgress({ label = '전체 글 읽기 진행률' }: { label?: string }) {
   const fillRef = useRef<HTMLSpanElement>(null);
   const trackRef = useRef<HTMLSpanElement>(null);
 
@@ -35,7 +35,7 @@ export default function ReadingProgress() {
       ref={trackRef}
       className="cc-reading-progress"
       role="progressbar"
-      aria-label="전체 글 읽기 진행률"
+      aria-label={label}
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={0}

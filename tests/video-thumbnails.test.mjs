@@ -9,13 +9,13 @@ test('video entries get a play puck, a length chip and a screen-reader label', (
   assert.match(list, /archive-thumb--video/);
   assert.match(list, /className="archive-thumb__play" aria-hidden="true"/);
   assert.match(list, /className="archive-thumb__duration"/);
-  assert.match(list, /<span className="sr-only">, \{videoLabel\(entry\)\}<\/span>/);
+  assert.match(list, /<span className="sr-only">, \{videoLabel\(entry, locale\)\}<\/span>/);
 });
 
 test('home and voices wire video metadata; articles-only voices stay plain', () => {
-  assert.match(read('app/page.tsx'), /video: postVideo\(post\)/);
-  assert.match(read('app/page.tsx'), /video: voiceVideo\(interview\)/);
-  assert.match(read('app/voices/page.tsx'), /video: voiceVideo\(item\)/);
+  assert.match(read('components/views/HomeView.tsx'), /video: postVideo\(post\)/);
+  assert.match(read('components/views/HomeView.tsx'), /video: voiceVideo\(interview\)/);
+  assert.match(read('components/views/VoicesView.tsx'), /video: voiceVideo\(item\)/);
   const lib = read('lib/archive-video.ts');
   assert.match(lib, /youtube\\\.com\|youtu\\\.be\|bilibili\\\.com/);
 });

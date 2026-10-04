@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import CaveBuddy from './CaveBuddy';
+import { axisLabel, formatDate, t, type Locale } from '@/lib/i18n';
 
 export const ARCHIVE_PAGE_SIZE = 12;
 export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v6.png';
@@ -24,11 +25,11 @@ function normalize(value: string) {
   return value.normalize('NFKC').toLocaleLowerCase('ko-KR').replace(/\s+/g, ' ').trim();
 }
 
-function ArchiveMeta({ axis, date }: { axis: string; date: string }) {
-  const visual = date.replaceAll('-', '.');
+function ArchiveMeta({ axis, date, locale }: { axis: string; date: string; locale: Locale }) {
+  const visual = formatDate(locale, date);
   return (
     <p className="archive-meta">
-      <span className="archive-meta__axis">{axis}</span>
+      <span className="archive-meta__axis">{axisLabel(locale, axis)}</span>
       <span className="archive-meta__dot" aria-hidden="true">·</span>
       <time dateTime={date}>{visual}</time>
     </p>
@@ -60,20 +61,24 @@ function ArchiveThumb({ entry, priority, sizes }: { entry: ArchiveEntry; priorit
   );
 }
 
-function videoLabel(entry: ArchiveEntry) {
+function videoLabel(entry: ArchiveEntry, locale: Locale) {
   if (!entry.video) return '';
-  return entry.video.duration ? `영상, ${entry.video.duration}` : '영상';
+  const word = t(locale).video;
+  return entry.video.duration ? `${word}, ${entry.video.duration}` : word;
 }
 
 export default function ArchiveList({
   entries,
   storageKey,
   featured = true,
+  locale = 'ko',
 }: {
   entries: ArchiveEntry[];
   storageKey: string;
   featured?: boolean;
+  locale?: Locale;
 }) {
+  const L = t(locale);
   const [visible, setVisible] = useState(ARCHIVE_PAGE_SIZE);
   const [query, setQuery] = useState('');
   const [revealFrom, setRevealFrom] = useState<number | null>(null);
@@ -98,8 +103,8 @@ export default function ArchiveList({
   }, []);
 
   const searchIndex = useMemo(
-    () => entries.map((entry) => normalize(`${entry.title} ${entry.summary ?? ''} ${entry.axis}`)),
-    [entries],
+    () => entries.map((entry) => normalize(`${entry.title} ${entry.summary ?? ''} ${entry.axis} ${axisLabel(locale, entry.axis)}`)),
+    [entries, locale],
   );
   const trimmed = normalize(query);
   const matches = useMemo(() => {
@@ -127,7 +132,7 @@ export default function ArchiveList({
   return (
     <div className="archive" data-searching={searching ? 'true' : 'false'}>
       <div className="archive-search" role="search">
-        <label className="sr-only" htmlFor={`archive-search-${storageKey}`}>기록 찾기</label>
+        <label className="sr-only" htmlFor={`archive-search-${storageKey}`}>{L.searchLabel}</label>
         <svg className="archive-search__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <circle cx="8.5" cy="8.5" r="5.75" fill="none" stroke="currentColor" strokeWidth="1.5" />
           <path d="m13 13 4.5 4.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -138,7 +143,7 @@ export default function ArchiveList({
           className="archive-search__input"
           type="search"
           value={query}
-          placeholder="제목이나 요약으로 찾기"
+          placeholder={L.searchPlaceholder}
           autoComplete="off"
           enterKeyHint="search"
           onChange={(event) => setQuery(event.target.value)}
@@ -147,15 +152,15 @@ export default function ArchiveList({
         <kbd className="archive-search__hint" aria-hidden="true">/</kbd>
       </div>
       <p className="archive-status" role="status" aria-live="polite">
-        {searching ? (matches.size ? `${matches.size}개의 기록을 찾았어요.` : '찾는 기록이 아직 없어요. 다른 단어로 찾아보세요.') : ''}
+        {searching ? (matches.size ? L.searchFound(matches.size) : L.searchNone) : ''}
       </p>
 
       {lead && (
         <Link className="archive-lead" href={lead.href} data-axis={lead.axis}>
           <ArchiveThumb entry={lead} priority sizes="(max-width: 900px) 100vw, 640px" />
           <span className="archive-lead__copy">
-            <ArchiveMeta axis={lead.axis} date={lead.date} />
-            <h2>{lead.title}{lead.video && <span className="sr-only">, {videoLabel(lead)}</span>}</h2>
+            <ArchiveMeta axis={lead.axis} date={lead.date} locale={locale} />
+            <h2>{lead.title}{lead.video && <span className="sr-only">, {videoLabel(lead, locale)}</span>}</h2>
             {lead.summary && <span className="archive-lead__summary">{lead.summary}</span>}
           </span>
         </Link>
@@ -177,8 +182,8 @@ export default function ArchiveList({
               <Link className="archive-row__link" href={entry.href}>
                 <ArchiveThumb entry={entry} priority={false} sizes="(max-width: 900px) 112px, 208px" />
                 <span className="archive-row__copy">
-                  <ArchiveMeta axis={entry.axis} date={entry.date} />
-                  <h2>{entry.title}{entry.video && <span className="sr-only">, {videoLabel(entry)}</span>}</h2>
+                  <ArchiveMeta axis={entry.axis} date={entry.date} locale={locale} />
+                  <h2>{entry.title}{entry.video && <span className="sr-only">, {videoLabel(entry, locale)}</span>}</h2>
                   {entry.summary && <span className="archive-row__summary">{entry.summary}</span>}
                 </span>
               </Link>
@@ -189,11 +194,11 @@ export default function ArchiveList({
 
       {!searching && remaining > 0 && (
         <button ref={moreRef} type="button" className="archive-more" onClick={showMore}>
-          더 보기
+          {L.more}
           <span className="archive-more__count">{Math.min(visible, entries.length)} / {entries.length}</span>
         </button>
       )}
-      {searching && shown === 0 && <div className="archive-empty"><CaveBuddy mood="lost"><strong>굴을 다 뒤졌는데 못 찾았어요.</strong><span>검색어를 지우면 전체 기록으로 돌아가요.</span></CaveBuddy></div>}
+      {searching && shown === 0 && <div className="archive-empty"><CaveBuddy mood="lost"><strong>{L.searchEmptyTitle}</strong><span>{L.searchEmptyBody}</span></CaveBuddy></div>}
     </div>
   );
 }

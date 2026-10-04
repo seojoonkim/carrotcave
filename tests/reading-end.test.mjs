@@ -9,7 +9,7 @@ const voiceDirs = readdirSync(new URL('../public/voices/', import.meta.url), { w
 
 test('posts and voices share one reading-end stylesheet and the same block class', () => {
   assert.match(read('app/layout.tsx'), /<link rel="stylesheet" href="\/reading-end\.css" \/>/);
-  assert.match(read('app/posts/[slug]/page.tsx'), /className="cc-reading-end"/);
+  assert.match(read('components/views/PostView.tsx'), /className="cc-reading-end"/);
   const runtime = read('public/voices/reading-end.js');
   assert.match(runtime, /end\.className = 'cc-reading-end'/);
   for (const cls of ['cc-reading-end__mark', 'post-next', 'post-reader-actions', 'post-reader-action--share', 'cave-constellation-shell', 'cave-constellation__thumbnail', 'cave-constellation__navigate']) {
@@ -46,7 +46,7 @@ test('text-only voice sources are not labelled as video', () => {
 });
 
 test('next-in-category card shows the next post thumbnail, falling back to the character art', () => {
-  const page = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+  const page = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
   const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
   assert.match(page, /className="post-next__thumb"[\s\S]*?archiveImageUrl\(nextPost\) \?\? EDITORIAL_CARD_FALLBACK_IMAGE/);
   assert.match(end, /\.post-next\{grid-template-columns:176px minmax\(0,1fr\) auto/);

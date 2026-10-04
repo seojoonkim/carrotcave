@@ -66,7 +66,7 @@ export const kstDate = (d: Date) => new Date(d.getTime() + 9 * 3_600_000).toISOS
 const esc = (s: string) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 // ── RSS ───────────────────────────────────────────────────────────
-export function rssXml(items: FeedItem[], site = 'https://carrotcave.com') {
+export function rssXml(items: FeedItem[], site = 'https://carrotcave.com', lang: 'ko' | 'en' = 'ko') {
   const entries = items.map((i) => `    <item>
       <title>${esc(i.title)}</title>
       <link>${esc(i.url)}</link>
@@ -78,11 +78,11 @@ export function rssXml(items: FeedItem[], site = 'https://carrotcave.com') {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Carrot Cave</title>
-    <link>${site}</link>
-    <description>토끼를 따라왔는데, 생각이 길을 잃었습니다. Simon Kim의 글과 목소리 아카이브.</description>
-    <language>ko</language>
-    <atom:link href="${site}/rss.xml" rel="self" type="application/rss+xml" />
+    <title>${lang === 'en' ? 'Carrot Cave (English)' : 'Carrot Cave'}</title>
+    <link>${lang === 'en' ? `${site}/en` : site}</link>
+    <description>${lang === 'en' ? 'Followed the rabbit. Lost the thread. The writing and voices archive of Simon Kim.' : '토끼를 따라왔는데, 생각이 길을 잃었습니다. Simon Kim의 글과 목소리 아카이브.'}</description>
+    <language>${lang}</language>
+    <atom:link href="${site}${lang === 'en' ? '/en' : ''}/rss.xml" rel="self" type="application/rss+xml" />
 ${entries}
   </channel>
 </rss>

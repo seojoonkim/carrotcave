@@ -1,10 +1,12 @@
 "use client";
 import { useState } from 'react';
 import CaveBuddy from './CaveBuddy';
+import { t, type Locale } from '@/lib/i18n';
 
 type Phase = 'idle' | 'sending' | 'done' | 'already' | 'error';
 
-export default function NewsletterForm() {
+export default function NewsletterForm({ locale = 'ko' }: { locale?: Locale }) {
+  const L = t(locale);
   const [phase, setPhase] = useState<Phase>('idle');
   const [queued, setQueued] = useState(false);
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -12,7 +14,7 @@ export default function NewsletterForm() {
     const data = new FormData(event.currentTarget);
     setPhase('sending');
     try {
-      const res = await fetch('/api/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: data.get('email'), website: data.get('website') }) });
+      const res = await fetch('/api/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: data.get('email'), website: data.get('website'), lang: locale }) });
       const json = await res.json();
       if (!res.ok || !json.ok) return setPhase('error');
       setQueued(json.delivery === 'outbox');
@@ -20,31 +22,31 @@ export default function NewsletterForm() {
     } catch { setPhase('error'); }
   }
   return (
-    <form className="cc-newsletter" onSubmit={onSubmit} aria-label="새 글 메일 구독">
+    <form className="cc-newsletter" onSubmit={onSubmit} aria-label={L.nlAria}>
       <div className="cc-newsletter__head">
         <p className="cc-newsletter__eyebrow">NEWSLETTER</p>
-        <p className="cc-newsletter__title">새 글을 메일로 받아보세요</p>
-        <p className="cc-newsletter__desc">새 글이 올라온 다음 날 아침 8시에 한 번만 보내드려요.</p>
+        <p className="cc-newsletter__title">{L.nlTitle}</p>
+        <p className="cc-newsletter__desc">{L.nlDesc}</p>
       </div>
       {phase === 'done' || phase === 'already' ? (
         <div className="cc-newsletter__note" role="status">
           <CaveBuddy mood="happy">
-            <strong>{phase === 'already' ? '이미 같은 굴 친구예요!' : '당근 하나 접수했어요!'}</strong>
-            <span>{phase === 'already' ? '이미 구독 중이에요. 고마워요.' : queued ? '신청을 받았어요. 확인 메일을 곧 보내드릴게요.' : '확인 메일을 보냈어요. 메일의 버튼을 누르면 구독이 시작돼요.'}</span>
+            <strong>{phase === 'already' ? L.nlAlreadyTitle : L.nlDoneTitle}</strong>
+            <span>{phase === 'already' ? L.nlAlreadyBody : queued ? L.nlQueuedBody : L.nlSentBody}</span>
           </CaveBuddy>
         </div>
       ) : (
         <div className="cc-newsletter__row">
-          <label className="sr-only" htmlFor="cc-newsletter-email">이메일</label>
+          <label className="sr-only" htmlFor="cc-newsletter-email">{L.nlEmail}</label>
           <input id="cc-newsletter-email" name="email" type="email" required autoComplete="email" inputMode="email" placeholder="you@example.com" />
           <input className="cc-newsletter__trap" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-          <button type="submit" disabled={phase === 'sending'}>{phase === 'sending' ? '보내는 중' : '구독'}</button>
+          <button type="submit" disabled={phase === 'sending'}>{phase === 'sending' ? L.nlSending : L.nlSubmit}</button>
         </div>
       )}
-      {phase === 'error' && <p className="cc-newsletter__note" role="alert">이메일 주소를 다시 확인해 주세요.</p>}
+      {phase === 'error' && <p className="cc-newsletter__note" role="alert">{L.nlError}</p>}
       <p className="cc-newsletter__meta">
-        <span>언제든 한 번에 구독을 끊을 수 있어요.</span>
-        <a className="cc-newsletter__rss" href="/rss.xml">RSS로 받기</a>
+        <span>{L.nlLeave}</span>
+        <a className="cc-newsletter__rss" href={locale === 'en' ? '/en/rss.xml' : '/rss.xml'}>{L.nlRss}</a>
       </p>
     </form>
   );

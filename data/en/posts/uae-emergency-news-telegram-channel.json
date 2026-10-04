@@ -1,0 +1,9 @@
+{
+  "slug": "uae-emergency-news-telegram-channel",
+  "title": "UAE Emergency News",
+  "summary": "I’m announcing that I created a Telegram channel that delivers Korean translations of breaking war news from 20 media outlets every three minutes, for the safety of my colleagues and acquaintances in the UAE.",
+  "content": "\n\nTogether with Jeon, I created a Telegram channel for my colleagues and Korean acquaintances living in Abu Dhabi. It translates and delivers local breaking news related to the war in Korean every three minutes.\n\nhttps://t.me/uae_emergency_news\n\nIf you have family or acquaintances in the UAE, please share this with them. I sincerely hope everyone stays safe.\n\nIt refers to the following list of 20 sources.\n\n| #  | Source             | Description          |\n| --- | ------------------ | ----------- |\n| 1  | Al Jazeera         | Leading Middle East outlet       |\n| 2  | The National       | UAE local      |\n| 3  | Gulf News          | UAE local      |\n| 4  | Khaleej Times      | UAE local      |\n| 5  | Arab News          | Saudi Arabia         |\n| 6  | Reuters            | Global         |\n| 7  | AP News            | Global         |\n| 8  | BBC                | Global         |\n| 9  | CNN                | Global         |\n| 10 | Al Arabiya         | Arab world         |\n| 11 | WAM                | Official UAE state news agency |\n| 12 | France24           | Global         |\n| 13 | Iran International | Iran monitoring       |\n| 14 | Middle East Eye    | Middle East specialist       |\n| 15 | Times of Israel    | Israel        |\n| 16 | Haaretz            | Israel        |\n| 17 | Al-Monitor         | Middle East analysis       |\n| 18 | DW                 | Global         |\n| 19 | Jerusalem Post     | Israel        |\n| 20 | Sky News Arabia    | Arab world         |\n❤48👍26🙏5",
+  "sourceHash": "68b792bfbf02c3d9",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:18:45.709Z"
+}

@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import CaveTorch from '@/components/CaveTorch';
 import { siteDescription, siteName } from '@/lib/social-metadata';
+import { languageAlternates } from '@/lib/i18n';
 
 const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://carrotcave.com'),
   title: `${siteName} · 토끼를 따라왔는데, 생각이 길을 잃었습니다.`,
   description: siteDescription,
-  alternates: { canonical: '/', types: { 'application/rss+xml': [{ url: '/rss.xml', title: 'Carrot Cave' }] } },
+  alternates: { canonical: '/', languages: languageAlternates('/'), types: { 'application/rss+xml': [{ url: '/rss.xml', title: 'Carrot Cave' }] } },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -58,6 +59,8 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${plexMono.variable} ${notoSans.variable}`}>
       <head>
+        {/* English pages live under /en; keep <html lang> in step for screen readers and search. */}
+        <script dangerouslySetInnerHTML={{ __html: "(function(){var p=location.pathname;if(p==='/en'||p.indexOf('/en/')===0)document.documentElement.lang='en'})()" }} />
         <link rel="stylesheet" href="/shared-header-chrome.css" />
         <link rel="stylesheet" href="/reading-end.css" />
         <link rel="stylesheet" href="/fonts/pretendard/pretendardvariable-dynamic-subset.css" />

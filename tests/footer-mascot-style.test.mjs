@@ -25,8 +25,8 @@ test('moon rabbit, burrow and signpost are redrawn in the mascot style', () => {
 });
 
 test('mascot speaks in empty, done and lost states', () => {
-  assert.ok(existsSync(new URL('../app/not-found.tsx', import.meta.url)));
-  assert.match(read('app/not-found.tsx'), /<CaveBuddy mood="lost">/);
+  assert.ok(existsSync(new URL('../components/views/NotFoundView.tsx', import.meta.url)));
+  assert.match(read('components/views/NotFoundView.tsx'), /<CaveBuddy mood="lost">/);
   assert.match(read('components/ArchiveList.tsx'), /archive-empty"><CaveBuddy mood="lost">/);
   assert.match(read('components/NewsletterForm.tsx'), /<CaveBuddy mood="happy">/);
   assert.match(read('components/CaveBuddy.tsx'), /<CarrotCaveMark className="cc-buddy__mark" \/>/);

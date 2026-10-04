@@ -1,0 +1,9 @@
+{
+  "slug": "ai-native-org-approval-flow",
+  "title": "AI Prepares, Humans Approve",
+  "summary": "A look at an early form of an AI-native organization, where the CEO’s AI bot reviews permission requests and humans give the final approval.",
+  "content": "Internal workflow automation is moving forward gradually, and among it is the CEO’s bot, connected to key permissions across GitHub and development infrastructure SaaS tools.\n\nWithin the bot’s preconfigured scope, team members communicate and submit requests for PRs or additional permission settings. In the process, the bot also checks some aspects of the requests, such as security, and rejects them or offers its feedback.\n\nAt the end, the CEO comes in, hears proposals for items 1, 2, and 3 that the AI has communicated and organized, and says, “Yes, execute them.” With that one sentence, all the approval items are executed.\n\nIt’s only the beginning, but we’re gradually evolving into an AI-native organization.\n\nAnd for reference, Simon’s OpenClaw plugin is being updated after countless attacks from the internal enemy (myself) and many smart people. Please install it and give it a like.\n\nhttps://github.com/seojoonkim/prompt-guard\n\n  GitHub\n\n  GitHub - seojoonkim/prompt-guard: Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring…\n  Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring, and security auditing. - seojoonkim/prompt-guard",
+  "sourceHash": "5f94d1a461a09c62",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:14:06.001Z"
+}

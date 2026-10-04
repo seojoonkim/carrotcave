@@ -1,0 +1,9 @@
+{
+  "slug": "sano-intro",
+  "title": "Meet Sano, the Youngest Brother",
+  "summary": "I introduced Sano, an AI for health, schedules, and errands.",
+  "content": "\"Kids, create and educate the identity of my youngest brother Sano. He’ll handle my personal schedule and small errands or tasks, including managing my health.\"",
+  "sourceHash": "2761f3439e9155e9",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:19:27.383Z"
+}

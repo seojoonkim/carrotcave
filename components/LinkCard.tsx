@@ -1,6 +1,7 @@
 import { hostOf, prettyUrl, type LinkPreview } from '@/lib/link-preview';
+import { t, type Locale } from '@/lib/i18n';
 
-type Props = { url: string; label?: string; preview?: LinkPreview };
+type Props = { url: string; label?: string; preview?: LinkPreview; locale?: Locale };
 
 function tidy(url: string, preview?: LinkPreview) {
   const host = hostOf(url);
@@ -24,12 +25,13 @@ export function monogramOf(name: string) {
   return ch.toUpperCase();
 }
 
-export default function LinkCard({ url, label, preview }: Props) {
+export default function LinkCard({ url, label, preview, locale = 'ko' }: Props) {
+  const L = t(locale);
   const { host, title, description, site } = tidy(url, preview);
   const image = preview?.image;
   // Rule: every link card shows a thumbnail. Pages without og:image get a branded host tile.
   return (
-    <a className="post-link-card post-link-card--media" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${title} — ${site ?? host} (새 창에서 열기)`}>
+    <a className="post-link-card post-link-card--media" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${title} — ${site ?? host} (${locale === 'en' ? 'opens in a new tab' : '새 창에서 열기'})`}>
       {image ? (
         <span className="post-link-card__media" aria-hidden="true">
           <img src={image} alt="" loading="lazy" decoding="async" />
@@ -51,7 +53,7 @@ export default function LinkCard({ url, label, preview }: Props) {
             </span>
             <span className="post-link-card__host">{site ? `${site} · ${host}` : host}</span>
             <span className="post-link-card__cta">
-              열기
+              {L.linkOpen}
               <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </span>
           </span>

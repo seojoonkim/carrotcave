@@ -17,7 +17,7 @@ test('every page family gets a generated 1200x630 share card from one template',
 });
 
 test('pages do not override the generated card with raw thumbnails', () => {
-  for (const f of ['app/layout.tsx', 'app/posts/[slug]/page.tsx', 'app/voices/[slug]/page.tsx']) {
+  for (const f of ['app/layout.tsx', 'components/views/PostView.tsx', 'app/voices/[slug]/page.tsx']) {
     assert.doesNotMatch(read(f), /images: \[/, f);
   }
 });

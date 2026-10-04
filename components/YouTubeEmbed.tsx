@@ -1,13 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { t, type Locale } from '@/lib/i18n';
 
-type Props = { id: string; url: string; title?: string; author?: string; thumbnail?: string };
+type Props = { id: string; url: string; title?: string; author?: string; thumbnail?: string; locale?: Locale };
 
 /** Lite YouTube: shows the stored thumbnail first, loads the player only when tapped. */
-export default function YouTubeEmbed({ id, url, title, author, thumbnail }: Props) {
+export default function YouTubeEmbed({ id, url, title, author, thumbnail, locale = 'ko' }: Props) {
+  const L = t(locale);
   const [playing, setPlaying] = useState(false);
-  const label = title ?? 'YouTube 영상';
+  const label = title ?? L.youtube;
 
   return (
     <figure className="post-youtube" data-playing={playing ? 'true' : 'false'}>
@@ -20,7 +22,7 @@ export default function YouTubeEmbed({ id, url, title, author, thumbnail }: Prop
             allowFullScreen
           />
         ) : (
-          <button type="button" className="post-youtube__poster" onClick={() => setPlaying(true)} aria-label={`${label} 재생`}>
+          <button type="button" className="post-youtube__poster" onClick={() => setPlaying(true)} aria-label={L.play(label)}>
             <img src={thumbnail ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" />
             <span className="post-youtube__play" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5.5v13l11-6.5z" fill="currentColor" /></svg>

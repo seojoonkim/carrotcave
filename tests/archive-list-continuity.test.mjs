@@ -6,7 +6,7 @@ const root = new URL('../', import.meta.url);
 const read = (path) => readFile(new URL(path, root), 'utf8');
 
 test('archive entries render as one uninterrupted list without depth dividers', async () => {
-  const [page, list] = await Promise.all([read('app/page.tsx'), read('components/ArchiveList.tsx')]);
+  const [page, list] = await Promise.all([read('components/views/HomeView.tsx'), read('components/ArchiveList.tsx')]);
   assert.doesNotMatch(page + list, /CaveJourneyScene|journeyStep|cave-depth-divider|DEPTH 0/);
   assert.match(list, /rows\.map\(\(entry, index\) =>/);
 });

@@ -1,0 +1,9 @@
+{
+  "slug": "post-165",
+  "title": "OBA Weekendthon at Kakao",
+  "summary": "An introduction to a collaborative event where Korean companies opened their APIs and assets to builders, arguing that global competition requires an open technology ecosystem and joint market expansion rather than fighting among companies.",
+  "content": "AI has changed the paradigm. Fighting among ourselves in a narrow market no longer means anything. To compete globally, we need to join forces and grow the size of the market first. For that to happen, the closed technology ecosystem had to open up first.\nSomeone had to raise this issue. When Hashed proposed an alliance and set the stage, the market responded. NEXON, LG U+, GS Neotek, and others opened up their APIs and assets to builders, and OpenAI also participated as a sponsor.\nEven if it doesn't make money right away, this is something that needs to be done. Even if smart calculations lie behind it, there is clearly a sincerity worth respecting in taking the lead and opening the door, saying that we shouldn't fight among ourselves but make the playing field bigger. We co-produced this with Hashed's production support. I hope more of these events are introduced and that more of them take place in Korea.",
+  "sourceHash": "3fbdd192a6877150",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:15:18.025Z"
+}

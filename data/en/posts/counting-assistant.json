@@ -1,0 +1,9 @@
+{
+  "slug": "counting-assistant",
+  "title": "An Assistant That Counts to One, Ten Times",
+  "summary": "I now have an assistant that counts to one ten times.",
+  "content": "That's right, I now have an assistant that counts to one ten times.\nI'm not alone today, either.",
+  "sourceHash": "80d83e8e30918622",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:19:29.811Z"
+}

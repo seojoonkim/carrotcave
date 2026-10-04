@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { OntologyEdge, OntologySubgraph, SubgraphNode } from '@/lib/ontology/types';
+import { t, type Locale } from '@/lib/i18n';
 
 export type CaveConstellationNode = SubgraphNode;
 export type CaveConstellationRelationship = OntologyEdge;
@@ -17,13 +18,16 @@ export interface CaveConstellationProps {
   subgraph: OntologySubgraph;
   hrefForSlug?: (slug: string) => string;
   className?: string;
+  locale?: Locale;
 }
 
 export default function CaveConstellation({
   subgraph,
   hrefForSlug = (slug) => `/posts/${slug}`,
   className = '',
+  locale = 'ko',
 }: CaveConstellationProps) {
+  const L = t(locale);
   const byId = new Map(subgraph.nodes.map((node) => [node.slug, node]));
   const recommendations = subgraph.edges
     .filter((edge) => edge.from === subgraph.center.slug && byId.has(edge.to))
@@ -32,12 +36,12 @@ export default function CaveConstellation({
   return (
     <section
       className={`cave-constellation cave-constellation--reduced-motion-ready ${className}`.trim()}
-      aria-label="이어 읽을 글 추천"
+      aria-label={L.picksAria}
     >
       <ol className="cave-constellation__recommendations">
         {recommendations.map((relationship, index) => {
           const target = byId.get(relationship.to)!;
-          const copy = RELATIONSHIP_COPY[relationship.type];
+          const copy = { label: L.relationship[relationship.type] ?? RELATIONSHIP_COPY[relationship.type].label };
           return (
             <li
               key={`${relationship.from}:${relationship.to}:${relationship.type}`}
@@ -47,7 +51,7 @@ export default function CaveConstellation({
               <article>
                 <header className="cave-constellation__recommendation-header">
                   <span className="cave-constellation__rank">
-                    <span>{index + 1}순위</span>
+                    <span>{L.rank(index + 1)}</span>
                   </span>
                   <strong className="cave-constellation__relationship-type">{copy.label}</strong>
                 </header>
@@ -76,7 +80,7 @@ export default function CaveConstellation({
                 </Link>
 
                 <Link className="cave-constellation__navigate" href={hrefForSlug(target.slug)}>
-                  이 글 읽기 <span className="cave-constellation__carrot" aria-hidden="true" />
+                  {L.readThis} <span className="cave-constellation__carrot" aria-hidden="true" />
                 </Link>
               </article>
             </li>

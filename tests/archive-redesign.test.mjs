@@ -6,12 +6,12 @@ const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
 
 test('the complete archive combines ordinary posts and voices without changing category filters', async () => {
-  const [home, rail] = await Promise.all([read('app/page.tsx'), read('components/AxisRail.tsx')]);
+  const [home, rail] = await Promise.all([read('components/views/HomeView.tsx'), read('components/AxisRail.tsx')]);
   assert.match(home, /import \{ interviews \} from '@\/data\/interviews';/);
   assert.match(home, /const visibleEntries = active\s*\? postEntries\s*: \[\.\.\.postEntries, \.\.\.voiceEntries\]/);
   assert.match(home, /axis: '목소리'/);
   assert.doesNotMatch(home, /ENTRIES|THE CAVE WALL|SECTION \//);
-  assert.match(rail, /<b>전체<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
+  assert.match(rail, /<b>\{axisLabel\(locale, '전체'\)\}<i className="axis-rail__carrot" aria-hidden="true" \/><\/b><span>\{posts\.length \+ interviews\.length\}<\/span>/);
 });
 
 test('archive cards use one standard format for posts and voices at every breakpoint', async () => {
@@ -39,7 +39,8 @@ test('header keeps the exact wordmark while the grounded rabbit stays fixed and 
     read('lib/social-metadata.ts'),
   ]);
   assert.match(header, />CarrotCave<span className="cc-brand-domain">\.com<\/span>/);
-  assert.match(header, /aria-label=\{readingTitle \? readingBackLabel : 'CarrotCave\.com 홈'\}/);
+  assert.match(header, /aria-label=\{readingTitle \? backLabel : L\.homeAria\}/);
+  assert.match(await read('lib/i18n.ts'), /homeAria: 'CarrotCave\.com 홈'/);
   assert.match(socialMetadata, /siteName = 'CarrotCave\.com'/);
   assert.match(layout, /title: `\$\{siteName\} · 토끼를 따라왔는데, 생각이 길을 잃었습니다\.`/);
   assert.match(css, /\.cc-brand-name\{[^}]*font-size:15px/);
@@ -57,7 +58,7 @@ test('header keeps the exact wordmark while the grounded rabbit stays fixed and 
 });
 
 test('video-only posts use checked-in still frames as archive thumbnails', async () => {
-  const [home, posts, socialMetadata] = await Promise.all([read('app/page.tsx'), read('data/posts.ts'), read('lib/social-metadata.ts')]);
+  const [home, posts, socialMetadata] = await Promise.all([read('components/views/HomeView.tsx'), read('data/posts.ts'), read('lib/social-metadata.ts')]);
   const videoOnlySlugs = ['majlis', 'ip-tvw', 'messenger-b2a', 'robot-goku-5000'];
   assert.match(socialMetadata, /function archiveImageUrl\(post: Post\)/);
   assert.match(socialMetadata, /post\.videoUrls\?\.\[0\] \? `\/media\/posters\/\$\{post\.slug\}\.jpg`/);
@@ -79,11 +80,11 @@ test('archive thumbnail type and contrast remain legible without restoring image
 test('shared footer publishes the requested two-line identity and icon links', async () => {
   const [footer, home, voices, css, caveScene, postReader] = await Promise.all([
     read('components/SiteFooter.tsx'),
-    read('app/page.tsx'),
-    read('app/voices/page.tsx'),
+    read('components/views/HomeView.tsx'),
+    read('components/views/VoicesView.tsx'),
     read('app/globals.css'),
     read('components/FooterCaveScene.tsx'),
-    read('app/posts/[slug]/page.tsx'),
+    read('components/views/PostView.tsx'),
   ]);
   assert.match(footer, /<strong>CARROT CAVE<\/strong> by Simon Kim/);
   assert.match(footer, /href="mailto:simon@hashed\.com">simon@hashed\.com<\/a>/);
@@ -94,15 +95,15 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.doesNotMatch(caveScene, /<rect\b|<path\b|<polygon\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
-  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} \/>/);
+  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} locale=\{locale\} \/>/);
   assert.doesNotMatch(css, /carrot-cave-mark__(?:rabbit|carrot)[^{]*\{[^}]*scale\(/);
-  assert.match(home, /<SiteFooter mood=\{axisMood\[active \?\? '전체'\]/);
-  assert.match(voices, /<SiteFooter mood=\"voices\" \/>/);
+  assert.match(home, /<SiteFooter locale=\{locale\} mood=\{axisMood\[active \?\? '전체'\]/);
+  assert.match(voices, /<SiteFooter locale=\{locale\} mood="voices" \/>/);
 
   assert.match(css, /\.cc-footer__copy \.cc-footer__links\{display:flex;width:max-content;max-width:100%;align-items:center;flex-wrap:nowrap;gap:24px;white-space:nowrap\}/);
   assert.match(css, /\.cc-footer__links a\{[^}]*min-height:24px[^}]*font:500 11px\/1\.4 var\(--mono\)/);
   assert.match(postReader, /import SiteFooter from '@\/components\/SiteFooter'/);
-  assert.match(postReader, /<\/article>\s*<SiteFooter mood=\{/);
+  assert.match(postReader, /<\/article>\s*<SiteFooter locale=\{locale\} mood=\{/);
 });
 
 test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
@@ -128,14 +129,14 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
 
 test('archive stays uninterrupted while the footer keeps only the rabbit and carrot scene', async () => {
   const [home, footer, rail, list, css] = await Promise.all([
-    read('app/page.tsx'),
+    read('components/views/HomeView.tsx'),
     read('components/SiteFooter.tsx'),
     read('components/AxisRail.tsx'),
     read('components/ArchiveList.tsx'),
     read('app/globals.css'),
   ]);
   assert.doesNotMatch(home + list, /journeyStep|cave-depth-divider|CaveJourneyScene|DEPTH 0/);
-  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} \/>/);
+  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} locale=\{locale\} \/>/);
   assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
   assert.doesNotMatch(list, /axis-rail__carrot/);
   assert.doesNotMatch(css, /cave-depth-divider|cave-journey-scene/);

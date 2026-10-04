@@ -8,7 +8,20 @@ import { transformSync } from 'next/dist/build/swc/index.js';
 
 const source = readFileSync(new URL('../components/CaveConstellation.tsx', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
-const pageSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+const pageSource = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
+
+// The real i18n dictionary (pure module, no runtime imports) so rendered copy is the shipped copy.
+function loadI18n() {
+  const { code } = transformSync(readFileSync(new URL('../lib/i18n.ts', import.meta.url), 'utf8'), {
+    filename: 'i18n.ts', isModule: true,
+    jsc: { parser: { syntax: 'typescript' }, target: 'es2020' },
+    module: { type: 'commonjs' },
+  });
+  const module = { exports: {} };
+  vm.runInNewContext(code, { module, exports: module.exports, require: () => ({}) });
+  return module.exports;
+}
+const i18n = loadI18n();
 
 function loadComponent() {
   const { code } = transformSync(source, {
@@ -31,6 +44,7 @@ function loadComponent() {
     require(id) {
       if (id === 'next/link') return { __esModule: true, default: Link };
       if (id === 'next/image') return { __esModule: true, default: Image };
+      if (id === '@/lib/i18n') return i18n;
       return {};
     },
   });

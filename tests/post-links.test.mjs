@@ -4,7 +4,7 @@ import test from 'node:test';
 import { standaloneLinkOf, youTubeIdOf, prettyUrl, findPreviewBlocks, unwrapTelegramLinkPreview } from '../lib/link-preview.ts';
 
 const previews = JSON.parse(readFileSync(new URL('../data/link-previews.json', import.meta.url), 'utf8'));
-const page = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+const page = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 
 test('standalone link parsing covers bare URLs, labels, bullets and markdown links', () => {

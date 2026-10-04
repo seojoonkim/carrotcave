@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { t, type Locale } from '@/lib/i18n';
 
 interface PostShareButtonProps {
   title: string;
   path: string;
+  locale?: Locale;
 }
 
 async function copyLink(url: string) {
@@ -25,7 +27,8 @@ async function copyLink(url: string) {
   if (!copied) throw new Error('copy failed');
 }
 
-export default function PostShareButton({ title, path }: PostShareButtonProps) {
+export default function PostShareButton({ title, path, locale = 'ko' }: PostShareButtonProps) {
+  const L = t(locale);
   const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -59,7 +62,7 @@ export default function PostShareButton({ title, path }: PostShareButtonProps) {
     }
   };
 
-  const label = status === 'copied' ? '링크 복사됨' : status === 'failed' ? '복사 실패' : '공유하기';
+  const label = status === 'copied' ? L.shareCopied : status === 'failed' ? L.shareFailed : L.share;
 
   return (
     <button type="button" className="post-reader-action post-reader-action--share" onClick={share} aria-live="polite">

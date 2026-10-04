@@ -10,7 +10,7 @@ test('ordinary posts publish their own title, abstract, canonical URL, and card 
   assert.match(page, /export async function generateMetadata/);
   assert.match(page, /post\.summary/);
   assert.match(await read('app/posts/[slug]/opengraph-image.tsx'), /archiveImageUrl\(post\)/);
-  assert.match(page, /alternates: \{ canonical \}/);
+  assert.match(page, /alternates: \{ canonical, languages: languageAlternates\(canonical\) \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
   assert.match(page, /const title = post\.title;/);
@@ -25,7 +25,7 @@ test('voice pages publish interview-specific title, summary, canonical URL, and 
   assert.match(page, /export async function generateMetadata/);
   assert.match(page, /interview\.summary/);
   assert.match(await read('app/voices/[slug]/opengraph-image.tsx'), /voice\.thumbnailUrl/);
-  assert.match(page, /alternates: \{ canonical \}/);
+  assert.match(page, /alternates: \{ canonical, languages: languageAlternates\(canonical\) \}/);
   assert.match(page, /openGraph:/);
   assert.match(page, /twitter:/);
   assert.match(page, /const title = `\$\{interview\.name\} · \$\{interview\.title\}`;/);

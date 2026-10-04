@@ -1,0 +1,50 @@
+{
+  "mark-zuckerberg-muse": {
+    "name": "Mark Zuckerberg",
+    "title": "Muse: Personal Superintelligence for Everyday Use",
+    "summary": "Mark Zuckerberg discusses Meta’s plans to make personal superintelligence widely available, covering Muse’s uses and pricing, privacy for personal agents, and AI research and safety.",
+    "sourceHash": "c394fddb4eedf646"
+  },
+  "shin-jeongkyu-astra": {
+    "name": "Jeongkyu Shin",
+    "title": "What Remains for AI Companies After Astra?",
+    "summary": "Jeongkyu Shin examines how iterative computation within models, inference hardware, and lower development costs are shifting AI companies’ competitive advantages after Astra.",
+    "sourceHash": "40ee9e2e5ab6ac78"
+  },
+  "masayoshi-son-asi-economy": {
+    "name": "Masayoshi Son",
+    "title": "Preparing for the ASI Economy of 2040",
+    "summary": "Masayoshi Son discusses an economy shaped by AI agents and humanoid robots in 2040, the power and computing infrastructure it requires, and a new business metric called Return on AI.",
+    "sourceHash": "c8bd89b6f36134d4"
+  },
+  "tibo-ai-wave": {
+    "name": "Tibo",
+    "title": "Understanding the Next AI Wave Early",
+    "summary": "Tibo argues that personal agents, voice interfaces, ultrafast inference, and self-improvement will make the next wave of AI fit more naturally into people’s lives.",
+    "sourceHash": "0417c1108ee02fc0"
+  },
+  "sam-altman-startup-school-2026": {
+    "name": "Sam Altman",
+    "title": "No Better Time to Start a Company",
+    "summary": "Sam Altman and Garry Tan discuss starting companies in the AI agent era, convictions that challenge conventional wisdom, safety, decentralizing power, and a future that preserves freedom.",
+    "sourceHash": "ad849c8e6e27c8f6"
+  },
+  "liao-heng": {
+    "name": "Liao Heng",
+    "title": "A Semiconductor Researcher’s Field Notes",
+    "summary": "Drawing on the development history of Huawei’s Ascend, Liao Heng argues that competition in AI chips hinges not on individual chips but on economically sustainable co-design across the supply chain, software, and wider ecosystem.",
+    "sourceHash": "a2c42c22d6de778b"
+  },
+  "liang-wenfeng": {
+    "name": "Liang Wenfeng",
+    "title": "Restraint in Pursuit of AGI",
+    "summary": "Liang Wenfeng argues that open source and keeping profits reasonable offer better prospects for achieving AGI through continual learning than pursuing short-term commercialization.",
+    "sourceHash": "cd0098131e056636"
+  },
+  "yang-zhilin": {
+    "name": "Yang Zhilin",
+    "title": "At the Beginning of Infinity",
+    "summary": "Yang Zhilin discusses K2’s reinforcement learning and a general-purpose agent strategy, viewing AI as a tool that amplifies problem-solving to expand the boundaries of knowledge and civilization.",
+    "sourceHash": "cdbae24e28a2444f"
+  }
+}

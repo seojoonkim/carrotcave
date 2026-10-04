@@ -1,13 +1,15 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { t, type Locale } from '@/lib/i18n';
 
 /**
  * Multi-image post gallery: one large image with a thumbnail strip below.
  * The stage is a native scroll-snap track, so touch swipe, trackpad and
  * keyboard all work without a gesture library; thumbnails jump to a slide.
  */
-export default function PostGallery({ urls }: { urls: string[] }) {
+export default function PostGallery({ urls, locale = 'ko' }: { urls: string[]; locale?: Locale }) {
+  const L = t(locale);
   const trackRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -56,7 +58,7 @@ export default function PostGallery({ urls }: { urls: string[] }) {
   };
 
   return (
-    <figure className="post-gallery" aria-roledescription="carousel" aria-label={`사진 ${urls.length}장`}>
+    <figure className="post-gallery" aria-roledescription="carousel" aria-label={L.galleryAria(urls.length)}>
       <div className="post-gallery-stage">
         <div
           ref={trackRef}
@@ -77,18 +79,18 @@ export default function PostGallery({ urls }: { urls: string[] }) {
             </div>
           ))}
         </div>
-        <button type="button" className="post-gallery-nav is-prev" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label="이전 사진">‹</button>
-        <button type="button" className="post-gallery-nav is-next" onClick={() => goTo(active + 1)} disabled={active === urls.length - 1} aria-label="다음 사진">›</button>
+        <button type="button" className="post-gallery-nav is-prev" onClick={() => goTo(active - 1)} disabled={active === 0} aria-label={L.galleryPrev}>‹</button>
+        <button type="button" className="post-gallery-nav is-next" onClick={() => goTo(active + 1)} disabled={active === urls.length - 1} aria-label={L.galleryNext}>›</button>
         <span className="post-gallery-count" aria-hidden="true">{active + 1} / {urls.length}</span>
       </div>
-      <div ref={thumbsRef} className="post-gallery-thumbs" role="tablist" aria-label="사진 선택">
+      <div ref={thumbsRef} className="post-gallery-thumbs" role="tablist" aria-label={L.galleryPick}>
         {urls.map((url, i) => (
           <button
             key={url}
             type="button"
             role="tab"
             aria-selected={i === active}
-            aria-label={`사진 ${i + 1}`}
+            aria-label={L.galleryItem(i + 1)}
             className="post-gallery-thumb"
             onClick={() => goTo(i)}
           >

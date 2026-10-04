@@ -2,10 +2,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { FOOTER_SCENE_SVG } from './footer-scene-svg';
 
-import { CARROT_LINES, daypartOf, isFresh, type Daypart, type SceneMood } from '@/lib/footer-scene';
+import { daypartOf, isFresh, type Daypart, type SceneMood } from '@/lib/footer-scene';
+import { t, type Locale } from '@/lib/i18n';
 export type { SceneMood } from '@/lib/footer-scene';
 
-export default function FooterCaveScene({ mood = 'all', latest }: { mood?: SceneMood; latest?: string }) {
+export default function FooterCaveScene({ mood = 'all', latest, locale = 'ko' }: { mood?: SceneMood; latest?: string; locale?: Locale }) {
+  const L = t(locale);
+  const lines = L.carrotLines;
   const ref = useRef<HTMLDivElement>(null);
   const taps = useRef(0);
   const [daypart, setDaypart] = useState<Daypart>('night');
@@ -23,7 +26,7 @@ export default function FooterCaveScene({ mood = 'all', latest }: { mood?: Scene
     const root = ref.current;
     if (!root) return;
     const pet = () => {
-      const line = CARROT_LINES[taps.current++ % CARROT_LINES.length];
+      const line = lines[taps.current++ % lines.length];
       const text = root.querySelector('.tap-text');
       if (text) text.textContent = line;
       root.classList.remove('is-tapped');
@@ -40,12 +43,14 @@ export default function FooterCaveScene({ mood = 'all', latest }: { mood?: Scene
     root.addEventListener('keydown', onKey);
     root.addEventListener('animationend', onEnd);
     return () => { root.removeEventListener('click', onClick); root.removeEventListener('keydown', onKey); root.removeEventListener('animationend', onEnd); };
-  }, []);
+  }, [lines]);
+
+  const svg = locale === 'ko' ? FOOTER_SCENE_SVG : FOOTER_SCENE_SVG.replaceAll('당근 쓰다듬기', L.carrotHit);
 
   return (
     <div ref={ref} className="footer-scene" data-mood={mood} data-daypart={daypart} data-fresh={fresh ? 'true' : 'false'}>
-      <p className="sr-only">졸던 당근에게 깡충깡충 다가간 토끼와, 숨었다가 튀어나와 윙크하는 당근. 당근을 누르면 말을 걸어요.</p>
-      <div className="footer-scene__art" dangerouslySetInnerHTML={{ __html: FOOTER_SCENE_SVG }} />
+      <p className="sr-only">{L.sceneSr}</p>
+      <div className="footer-scene__art" dangerouslySetInnerHTML={{ __html: svg }} />
       <span className="sr-only" aria-live="polite">{said}</span>
     </div>
   );

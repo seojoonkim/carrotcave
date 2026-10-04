@@ -1,0 +1,11 @@
+- 김서준 → Simon Kim
+- 당근동굴 / 카로케이브 → CarrotCave
+- 해시드 → Hashed
+- 탐험 (category) → Explore; 빌딩 → Build; 낙서 → Doodle; 소설 → Fiction
+- 토끼굴 → rabbit hole
+- 이스트포인트 → EastPoint
+- 모드하우스 → MODHAUS
+- SM엔터테인먼트 → SM Entertainment
+- 트리플에스 → tripleS
+- 아르테미스 → ARTMS
+- 원 → won (use "KRW" only for tables)

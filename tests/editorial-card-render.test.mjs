@@ -76,7 +76,7 @@ test('minimal archive keeps accessible dates without segmented date boxes or hom
   assert.match(html, /<span class="sr-only">발행일 2025\.08\.27<\/span>/);
   assert.match(html, /<span class="wall-card__date-visual" aria-hidden="true">2025\.08\.27<\/span>/);
   assert.doesNotMatch(html, /wall-card__date-part/);
-  const home = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+  const home = readFileSync(new URL('../components/views/HomeView.tsx', import.meta.url), 'utf8');
   assert.doesNotMatch(home, /THE CAVE WALL|SECTION \/|ENTRIES/);
 });
 

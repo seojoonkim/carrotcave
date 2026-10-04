@@ -1,0 +1,9 @@
+{
+  "slug": "overnight-success",
+  "title": "There Is No Overnight Success",
+  "summary": "A collection of small projects and failures from before Moltbot.",
+  "content": "\"Clawdbot, wow. 60,000 stars overnight.\"\n\nBut open the GitHub profile of its creator, Peter Steinberger, and the picture looks different. Clawdbot, VibeTunnel, CodexBar, Peekaboo, RepoBar, go-cli, Poltergeist, wacli, sag, Brabble, sonoscli, ElevenLabsKit, goplaces, gifgrep, camsnap, spogo, ordercli, blucli, macOS Automator MCP, Claude Code MCP, AXorcist, Tachikoma, tokentally, TauTUI, Commander, remindctl, mcporter, Sweet Cookie.\n\nEach one is a small CLI tool, MCP server, Swift SDK, or terminal utility. Some probably got attention, while others were used by no one. They piled up, one after another, until one day Clawdbot—now Moltbot—came out.\n\nA major hit does not just drop out of the sky. Someone builds dozens of projects where no one is looking, abandons them, refines them, and builds again. Then one day, one of them happens to take off.\n\nThe age of vibe coding is no different. Just because AI writes the code for you does not mean judgment descends from the sky. The sense to distinguish between \"this is worth building\" and \"that isn't\" comes from building things yourself, failing, and building again.",
+  "sourceHash": "bd80b1ae998e69f9",
+  "model": "gpt-6-astra",
+  "translatedAt": "2026-10-04T21:20:03.624Z"
+}

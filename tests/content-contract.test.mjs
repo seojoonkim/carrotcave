@@ -4,7 +4,8 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 const syncSource = readFileSync(new URL('../scripts/auto-sync.mjs', import.meta.url), 'utf8');
 const postsSource = readFileSync(new URL('../data/posts.ts', import.meta.url), 'utf8');
-const homeSource = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+const i18nSource = readFileSync(new URL('../lib/i18n.ts', import.meta.url), 'utf8');
+const homeSource = readFileSync(new URL('../components/views/HomeView.tsx', import.meta.url), 'utf8');
 const socialMetadataSource = readFileSync(new URL('../lib/social-metadata.ts', import.meta.url), 'utf8');
 const stylesSource = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 const interviewSource = readFileSync(new URL('../data/interviews.ts', import.meta.url), 'utf8');
@@ -15,9 +16,9 @@ const editorialCardSource = readFileSync(new URL('../components/EditorialCard.ts
 const archiveListSource = readFileSync(new URL('../components/ArchiveList.tsx', import.meta.url), 'utf8');
 const footerSource = readFileSync(new URL('../components/SiteFooter.tsx', import.meta.url), 'utf8');
 const depthBadgeSource = readFileSync(new URL('../components/DepthBadge.tsx', import.meta.url), 'utf8');
-const postSource = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
+const postSource = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
 const layoutSource = readFileSync(new URL('../app/layout.tsx', import.meta.url), 'utf8');
-const voiceListSource = readFileSync(new URL('../app/voices/page.tsx', import.meta.url), 'utf8');
+const voiceListSource = readFileSync(new URL('../components/views/VoicesView.tsx', import.meta.url), 'utf8');
 const voiceReaderSource = readFileSync(new URL('../app/voices/[slug]/page.tsx', import.meta.url), 'utf8');
 const readingProgressSource = readFileSync(new URL('../components/ReadingProgress.tsx', import.meta.url), 'utf8');
 const voiceProgressSource = readFileSync(new URL('../public/voices/reading-progress.js', import.meta.url), 'utf8');
@@ -78,8 +79,9 @@ test('mobile archive chrome draws its single divider below the menu rail', () =>
 });
 
 test('all reading surfaces keep progress semantics while the shared header divider stays independent', () => {
-  assert.match(headerSource, /readingTitle && <ReadingProgress \/>/);
-  assert.match(readingProgressSource, /aria-label="전체 글 읽기 진행률"/);
+  assert.match(headerSource, /readingTitle && <ReadingProgress label=\{L\.progressAria\} \/>/);
+  assert.match(readingProgressSource, /label = '전체 글 읽기 진행률'/);
+  assert.match(i18nSource, /progressAria: '전체 글 읽기 진행률'/);
   assert.match(readingProgressSource, /document\.documentElement\.scrollHeight - window\.innerHeight/);
   assert.match(readingProgressSource, /style\.transform = `scaleX\(\$\{percent \/ 100\}\)`/);
   assert.match(stylesSource, /\.cc-reading-progress\{display:none!important\}/);
@@ -187,7 +189,8 @@ test('ordinary post endings omit tag chips and separate content, actions, and re
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
   assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
   const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
-  assert.match(postSource, /<section className="cc-reading-end" aria-label="다 읽은 뒤">/);
+  assert.match(postSource, /<section className="cc-reading-end" aria-label=\{L\.readingEndAria\}>/);
+  assert.match(i18nSource, /readingEndAria: '다 읽은 뒤'/);
   assert.match(endCss, /\.cc-reading-end \.post-reader-actions\{[^}]*margin:16px 0 0/);
   assert.match(endCss, /\.cc-reading-end \.cave-constellation-shell\{[^}]*margin:64px 0 0;padding:48px 0 0;border-top:1px solid var\(--re-line\)/);
   assert.doesNotMatch(stylesSource, /post-reader-action|cave-constellation|post-next/, 'reading-end styles live only in public/reading-end.css');
@@ -243,11 +246,12 @@ test('post corrections and newest-first ordering stay explicit', async () => {
 
 test('home and voice list share one editorial-axis navigation component', () => {
   for (const axis of ['탐험', '빌딩', '낙서', '소설', '목소리']) assert.match(axisRailSource, new RegExp(axis));
-  assert.match(axisRailSource, /<nav className="axis-rail" aria-label="편집 축">/);
-  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
-  assert.match(homeSource, /<div className="cc-header-axis-mobile"><AxisRail active=\{active\} \/><\/div>/);
-  assert.match(voiceListSource, /<AxisRail active="목소리" \/>/);
-  assert.match(voiceListSource, /<div className="cc-header-axis-mobile"><AxisRail active="목소리" \/><\/div>/);
+  assert.match(axisRailSource, /<nav className="axis-rail" aria-label=\{L\.axisRailAria\}>/);
+  assert.match(i18nSource, /axisRailAria: '편집 축'/);
+  assert.match(homeSource, /<SiteHeader locale=\{locale\}><AxisRail active=\{active\} locale=\{locale\} \/><\/SiteHeader>/);
+  assert.match(homeSource, /<div className="cc-header-axis-mobile"><AxisRail active=\{active\} locale=\{locale\} \/><\/div>/);
+  assert.match(voiceListSource, /<AxisRail active="목소리" locale=\{locale\} \/>/);
+  assert.match(voiceListSource, /<div className="cc-header-axis-mobile"><AxisRail active="목소리" locale=\{locale\} \/><\/div>/);
   assert.doesNotMatch(homeSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(voiceListSource, /<nav className="axis-rail"/);
   assert.doesNotMatch(headerSource, /className="cc-nav"/);
@@ -259,7 +263,8 @@ test('home and voice list share one editorial-axis navigation component', () => 
 });
 
 test('home archive heading uses the same title contract as category archives', () => {
-  assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">[\s\S]*active \? axisNotes\[active\] : '모든 기록은 서로 다른 입구입니다\.'/);
+  assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">[\s\S]*active \? L\.axisNotes\[active\] : L\.wallAll/);
+  assert.match(i18nSource, /wallAll: '모든 기록은 서로 다른 입구입니다\.'/);
   assert.match(homeSource, /wall-heading wall-heading--bridge/);
   assert.doesNotMatch(stylesSource, /wall-heading__home-title|font-size:70%/);
   assert.match(stylesSource, /@media\(max-width:520px\)\{[^\n]*\.wall-heading #wall-heading\{font-size:21px\}/);
@@ -575,8 +580,10 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(postSource, /<article className="post-reader-article" data-mood=/);
   assert.match(postSource, /className="post-reader-header"/);
   assert.match(postSource, /className="post-content"/);
-  assert.match(postSource, /readingBackHref=\{`\/\?section=\$\{encodeURIComponent\(post\.category\)\}`\}/);
-  assert.match(postSource, /readingBackLabel=\{`\$\{post\.category\} 목록으로 돌아가기`\}/);
+  assert.match(postSource, /readingBackHref=\{axisHref\(locale, post\.category\)\}/);
+  assert.match(postSource, /readingBackLabel=\{L\.backToAxis\(axisName\)\}/);
+  assert.match(i18nSource, /backToAxis: \(axis: string\) => `\$\{axis\} 목록으로 돌아가기`/);
+  assert.match(i18nSource, /`\$\{localePath\(locale, '\/'\)\}\?section=\$\{encodeURIComponent\(axisParam\(locale, axis\)\)\}`/);
   assert.match(headerSource, /className="cc-reading-back-chevron" aria-hidden="true">‹<\/span>/);
   assert.match(stylesSource, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px;gap:0\}/);
   assert.doesNotMatch(stylesSource, /\.cc-header--reading \.cc-brand\{width:34px\}/);
@@ -616,11 +623,12 @@ test('ordinary post bodies suppress a duplicated title line or title-prefixed op
 
 test('post details share three clean actions without Telegram reaction labels or counts', () => {
   assert.doesNotMatch(postSource, /\{post\.reactions\}|>텔레그램 반응<\/span>/);
-  assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content" aria-label="글 이동">/);
+  assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content" aria-label=\{L\.postNavAria\}>/);
+  assert.match(i18nSource, /postNavAria: '글 이동'/);
   assert.match(postSource, /className="post-reader-action"/);
-  assert.match(postSource, /<PostShareButton title=\{post\.title\} path=\{`\/posts\/\$\{post\.slug\}`\} \/>/);
+  assert.match(postSource, /<PostShareButton title=\{post\.title\} path=\{postHref\(post\.slug\)\} locale=\{locale\} \/>/);
   assert.match(postSource, /className="post-reader-action post-reader-action--telegram"/);
-  assert.match(postSource, /텔레그램 채널에서 보기/);
+  assert.match(i18nSource, /telegramLong: '텔레그램 채널에서 보기'/);
   assert.equal((postSource.match(/axisDestinationLabel\(post\)/g) || []).length, 1);
   const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
   assert.match(endCss, /\.cc-reading-end \.post-reader-actions\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:0;[^}]*box-shadow:inset 0 0 0 1px var\(--re-line\);overflow:hidden\}/, 'one outlined bar split in three');
@@ -665,8 +673,8 @@ test('editorial categories follow the reader reward rather than development keyw
   assert.match(syncSource, /구현 과정·시행착오·출시·운영 결과 자체가 주된 독자 보상이면 빌딩/);
   assert.match(syncSource, /const ALLOWED_CATEGORIES = new Set\(\['탐험', '빌딩', '낙서', '소설'\]\)/);
   assert.match(syncSource, /replace\(\/\^\[\^\\p\{L\}\]\+\/u, ''\)[\s\S]*ALLOWED_CATEGORIES\.has\(normalizedCategory\)[\s\S]*throw new Error\(`Invalid category:/);
-  assert.match(postSource, /href=\{`\/\?section=\$\{encodeURIComponent\(axisOf\(post\)\)/);
-  assert.match(postSource, /\{axisDestinationLabel\(post\)\}/);
+  assert.match(postSource, /href=\{axisHref\(locale, axisOf\(post\)\)\}/);
+  assert.match(postSource, /locale === 'ko' \? axisDestinationLabel\(post\) : L\.backToAxisLong\(axisName\)/);
   assert.doesNotMatch(postSource, /탐험로 돌아가기/);
 });
 
@@ -718,7 +726,7 @@ test('every archive entry keeps consistent metadata, a thumbnail and one type sc
   assert.match(homeSource, /imageUrl: archiveImageUrl\(post\)/);
   assert.match(archiveListSource, /<ArchiveThumb entry=\{entry\}/);
   assert.match(archiveListSource, /<ArchiveThumb entry=\{lead\}/);
-  assert.match(archiveListSource, /<ArchiveMeta axis=\{entry\.axis\} date=\{entry\.date\} \/>/);
+  assert.match(archiveListSource, /<ArchiveMeta axis=\{entry\.axis\} date=\{entry\.date\} locale=\{locale\} \/>/);
   assert.match(stylesSource, /--t-12:12px;--t-14:14px;--t-17:17px;--t-22:22px;--t-32:32px/);
   assert.match(stylesSource, /\.archive-row h2\{[^}]*var\(--sans\)/);
 });
@@ -760,11 +768,12 @@ test('home and voice list omit the intro strip and move directly into archive na
   assert.doesNotMatch(homeSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE/);
   assert.doesNotMatch(voiceListSource, /PERSONAL ARCHIVE|SIMON KIM · SEOUL \/ EVERYWHERE|SECTION \/|ENTRIES/);
   assert.doesNotMatch(stylesSource, /\.cc-intro(?:__identity|__note)?/);
-  assert.match(homeSource, /<SiteHeader><AxisRail active=\{active\} \/><\/SiteHeader>/);
-  assert.match(voiceListSource, /<SiteHeader><AxisRail active="목소리" \/><\/SiteHeader>/);
+  assert.match(homeSource, /<SiteHeader locale=\{locale\}><AxisRail active=\{active\} locale=\{locale\} \/><\/SiteHeader>/);
+  assert.match(voiceListSource, /<SiteHeader locale=\{locale\}><AxisRail active="목소리" locale=\{locale\} \/><\/SiteHeader>/);
   assert.match(axisRailSource, /active === '목소리'/);
   assert.match(voiceListSource, /className="wall-shell voices-wall"/);
-  assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.<\/h1>/);
+  assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">\{L\.wallVoices\}<\/h1>/);
+  assert.match(i18nSource, /wallVoices: '좋은 대화를 다시 읽을 수 있도록 남겨둡니다\.'/);
 });
 
 test('home keeps the exact CarrotCave.com wordmark while reading headers use logo divider and title information', () => {
@@ -834,7 +843,7 @@ test('all voice readers use one flat mobile chapter menu without quoted summary 
 });
 
 test('voice thumbnails use the same archive list as other entries', () => {
-  assert.match(voiceListSource, /<ArchiveList entries=\{entries\} storageKey="voices" \/>/);
+  assert.match(voiceListSource, /<ArchiveList entries=\{entries\} storageKey=\{locale === 'en' \? 'en-voices' : 'voices'\} locale=\{locale\} \/>/);
   assert.doesNotMatch(voiceListSource, /voicePatterns|wall-card__facts|<dl|<dt|<dd/);
 });
 
@@ -870,7 +879,7 @@ test('home uses one ordered archive for the complete post and voice collection',
   assert.match(homeSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
   assert.match(voiceListSource, /<h1 id="wall-heading" className="wall-heading__menu-title">/);
   assert.doesNotMatch(homeSource, /<h2 id="wall-heading">/);
-  assert.match(homeSource, /<AxisRail active=\{active\} \/>/);
+  assert.match(homeSource, /<AxisRail active=\{active\} locale=\{locale\} \/>/);
   assert.match(axisRailSource, /className="axis-rail"/);
   assert.match(homeSource, /\[\.\.\.postEntries, \.\.\.voiceEntries\]\.sort\(\(a, b\) => b\.date\.localeCompare\(a\.date\)\)/);
   assert.match(homeSource, /summary: post\.summary/);

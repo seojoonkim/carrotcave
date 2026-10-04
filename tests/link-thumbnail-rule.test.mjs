@@ -51,7 +51,8 @@ test('link cards always render a thumbnail: OG image or a branded host tile', ()
 });
 
 test('post reading-end kicker uses the rabbit-hole theme word', () => {
-  const page = readFileSync(new URL('../app/posts/[slug]/page.tsx', import.meta.url), 'utf8');
-  assert.match(page, />DOWN THE RABBIT HOLE</);
+  const page = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
+  assert.match(page, /className="cave-constellation-kicker">\{L\.picksKicker\}</);
+  assert.equal((readFileSync(new URL('../lib/i18n.ts', import.meta.url), 'utf8').match(/picksKicker: 'DOWN THE RABBIT HOLE'/g) ?? []).length, 2, 'same kicker in both languages');
   assert.doesNotMatch(page, /CAVE CONSTELLATION/);
 });

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { interviews, getInterview } from '@/data/interviews';
 import { siteName } from '@/lib/social-metadata';
+import { languageAlternates } from '@/lib/i18n';
 
 export function generateStaticParams() { return interviews.map(({ slug }) => ({ slug })); }
 
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description: interview.summary,
-    alternates: { canonical },
+    alternates: { canonical, languages: languageAlternates(canonical) },
     openGraph: {
       title,
       description: interview.summary,
