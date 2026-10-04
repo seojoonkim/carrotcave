@@ -28,3 +28,8 @@ test('never symlinks node_modules and reinstalls when the lockfile changes', () 
   assert.match(src, /-L "\$DIR\/node_modules"/);
   assert.match(src, /package-lock\.json/);
 });
+
+test('carries the git-ignored Vercel project link into a fresh worktree', () => {
+  assert.match(src, /cp "\$REPO\/\.vercel\/project\.json" "\$DIR\/\.vercel\/project\.json"/);
+  assert.match(src, /Vercel link missing/);
+});

@@ -32,6 +32,12 @@ fi
 
 git -C "$DIR" checkout -q --detach "$SHA" || { echo "release-worktree: checkout failed" >&2; exit 5; }
 
+# The Vercel project link is git-ignored, so a fresh worktree never has it. Copy it from the main checkout.
+if [ ! -f "$DIR/.vercel/project.json" ]; then
+  [ -f "$REPO/.vercel/project.json" ] || { echo "release-worktree: $REPO/.vercel/project.json missing (run vercel link once in the main checkout)" >&2; exit 8; }
+  mkdir -p "$DIR/.vercel" && cp "$REPO/.vercel/project.json" "$DIR/.vercel/project.json"
+fi
+
 STAMP="$DIR/node_modules/.lock-sha"
 LOCK_SHA="$(shasum -a 256 "$DIR/package-lock.json" | cut -d' ' -f1)"
 if [ -L "$DIR/node_modules" ] || [ ! -f "$STAMP" ] || [ "$(cat "$STAMP")" != "$LOCK_SHA" ]; then
@@ -41,6 +47,7 @@ if [ -L "$DIR/node_modules" ] || [ ! -f "$STAMP" ] || [ "$(cat "$STAMP")" != "$L
 fi
 
 healthy "$DIR" || { echo "release-worktree: worktree still unhealthy" >&2; exit 7; }
+[ -f "$DIR/.vercel/project.json" ] || { echo "release-worktree: Vercel link missing" >&2; exit 8; }
 echo "release-worktree: ready $DIR @ $(git -C "$DIR" rev-parse --short HEAD)"
 [ "${PREFLIGHT_ONLY:-0}" = "1" ] && exit 0
 
