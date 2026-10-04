@@ -1,8 +1,13 @@
-import { del, head, list, put } from '@vercel/blob';
+import { BlobNotFoundError, del, head, list, put } from '@vercel/blob';
 import type { Store } from './core';
 
 const PREFIX = 'newsletter/';
-const notFound = (e: unknown) => /not.?found/i.test(String((e as Error)?.name) + String((e as Error)?.message));
+/** Missing blobs must read as "empty", never as a crash. Class names are minified in production builds,
+ *  so match the class, the code and the message ("does not exist") — not just the word "not found". */
+export const isBlobMissing = (e: unknown) =>
+  e instanceof BlobNotFoundError ||
+  /not.?found|does not exist|no such blob/i.test(`${(e as Error)?.name ?? ''} ${(e as Error)?.message ?? ''} ${(e as { code?: string })?.code ?? ''}`);
+const notFound = isBlobMissing;
 
 /** Vercel Blob storage. Subscriber records are AES-GCM sealed before they are written. */
 export function blobStore(token = process.env.BLOB_READ_WRITE_TOKEN): Store {

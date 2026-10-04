@@ -135,3 +135,11 @@ test('admin table scrolls inside its own box and never widens the page', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.match(css, /\.cc-admin__table-wrap\{position:relative;max-width:100%;overflow-x:auto\}/);
 });
+
+test('missing blob reads as empty even when the error class name is minified', async () => {
+  const { isBlobMissing } = await import('../lib/newsletter/blob-store.ts');
+  const minified = new Error('Vercel Blob: The requested blob does not exist'); // production: name is plain "Error"
+  assert.equal(isBlobMissing(minified), true);
+  assert.equal(isBlobMissing(Object.assign(new Error('x'), { name: 'BlobNotFoundError' })), true);
+  assert.equal(isBlobMissing(new Error('Vercel Blob: Access denied')), false);
+});
