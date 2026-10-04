@@ -504,3 +504,85 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 /* Interview date: shown at the start of every voice reader. */
 .hero-date { margin: -10px 0 18px; color: var(--muted, #9fa9b8); font: 500 12px/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .06em; }
 .hero-date time { color: var(--bright-white, #fff); }
+/* ═══ DESIGN PASS 2026.10 — refined reading, small carrot charms ═══
+   Restraint first: one carrot accent, soft radii, quiet chips.
+   Cute points are few and small: carrot kicker, leaf dot on the date,
+   carrot sticker on the photo, round carrot "top" button, a wiggle on hover. */
+:root { --cc-radius: 14px; --cc-chip: rgba(243, 154, 82, .12); --cc-host-chip: rgba(143, 179, 217, .12); }
+
+/* One hero order on every voice: kicker → photo → title → date → deck → stats → source. */
+.hero { display: flex; flex-direction: column; }
+.hero > * { order: 9; }
+.hero > .kicker { order: 1; }
+.hero > .hero-portrait { order: 2; }
+.hero > #page-title { order: 3; }
+.hero > .hero-date { order: 4; }
+.hero > .hero-deck { order: 5; }
+.hero > .hero-stats { order: 6; }
+.hero > .source-button { order: 7; }
+
+/* Kicker: a tiny carrot before 목소리. */
+.hero > .kicker { display: flex; align-items: center; gap: 7px; }
+.hero > .kicker::before { content: ""; width: 14px; height: 14px; flex: 0 0 14px; background: url("/carrot-mark.svg") center / contain no-repeat; }
+
+/* Photo: soft radius, gentle lift, carrot sticker in the corner. */
+.hero > .hero-portrait { position: relative; border-radius: var(--cc-radius); margin-bottom: 28px !important; box-shadow: 0 18px 40px -24px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(214, 221, 230, .1); }
+.hero > .hero-portrait img { border-radius: var(--cc-radius); }
+.hero > .hero-portrait::after {
+  content: ""; position: absolute; right: 14px; bottom: 14px; width: 34px; height: 34px; border-radius: 50%;
+  background: #eef2f7 url("/carrot-mark.svg") center / 22px no-repeat; box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+  transform: rotate(-10deg); pointer-events: none;
+}
+.hero > .hero-portrait:has(figcaption)::after { bottom: 44px; }
+
+/* Title: the speaker's name carries the carrot colour. */
+.hero #page-title { margin-bottom: 14px !important; }
+.hero > .hero-deck { margin-left: auto !important; margin-right: auto !important; }
+.hero #page-title em { color: var(--carrot-orange); font-style: normal; }
+
+/* Date: a small leaf dot leads the line. */
+.hero > .hero-date { display: flex; align-items: center; gap: 8px; margin: 0 auto 22px !important; }
+.hero > .hero-date::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--carrot-leaf); flex: 0 0 6px; }
+
+/* Deck: softer accent rule. */
+.hero-deck { border-left: 2px solid rgba(243, 154, 82, .55) !important; padding-left: 16px !important; color: #c9d2de !important; }
+
+/* Stats: rounded quiet card instead of hard table lines. */
+.hero-stats { border-radius: 12px; background: rgba(255, 255, 255, .025); }
+
+/* Speakers: quiet rounded chips coloured by role. */
+#transcript .transcript-speaker { width: fit-content; padding: 2px 9px; border-radius: 999px; font-size: 12px !important; letter-spacing: .01em; background: rgba(154, 165, 180, .1); }
+#transcript .transcript-speaker[data-role="main"] { background: var(--cc-chip); }
+#transcript .transcript-speaker[data-role="host"] { background: var(--cc-host-chip); }
+
+/* Key sentences: a hand-drawn marker stroke that sits under the words. */
+#transcript mark.key-sentence,
+.utterance mark.key-sentence,
+#transcript .paragraph-text .transcript-highlight {
+  background: linear-gradient(104deg, transparent .4em, rgba(243, 154, 82, .4) .5em, rgba(243, 154, 82, .3) 96%, transparent) no-repeat 0 86% / 100% .5em !important;
+  border-radius: .2em; padding: 0 2px;
+}
+
+/* Chapter number: a small carrot badge. */
+.chapter-index {
+  display: inline-grid; place-items: center; min-width: 30px; height: 22px; padding: 0 8px; border-radius: 999px;
+  background: var(--cc-chip); color: var(--carrot-orange) !important; font: 600 12px/1 var(--font-mono) !important; letter-spacing: .04em !important;
+}
+
+/* Back to top: a round carrot button. */
+.back-to-top { width: 48px !important; height: 48px !important; border-radius: 50% !important; background: rgba(243, 154, 82, .14) !important; color: var(--carrot-orange) !important; transition: transform .2s ease, background-color .2s ease; }
+.back-to-top:hover { transform: translateY(-2px); background: rgba(243, 154, 82, .24) !important; }
+
+/* Source button: soft corners to match. */
+.source-button { border-radius: 12px !important; }
+
+/* Header brand carrot wiggles once on hover. */
+@keyframes cc-wiggle { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-12deg); } 60% { transform: rotate(8deg); } }
+.reader-nav .brand:hover .brand-mark__carrot { transform-box: fill-box; transform-origin: 50% 90%; animation: cc-wiggle .6s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .reader-nav .brand:hover .brand-mark__carrot { animation: none; }
+  .back-to-top, .back-to-top:hover { transition: none; transform: none; }
+}
+
+/* Sub-topic numbers: quiet carrot numerals aligned to the heading. */
+.topic-number { color: rgba(243, 154, 82, .75) !important; font: 600 12px/2.6 var(--font-mono) !important; letter-spacing: .04em !important; font-variant-numeric: tabular-nums; }
