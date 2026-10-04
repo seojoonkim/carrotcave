@@ -84,7 +84,7 @@ export const posts: Post[] = [
     slug: 'eastpoint-2026-keynote-my-writing-became-a-warehouse',
     telegramMsgId: 221,
     title: "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
-    category: "빌딩",
+    category: "탐험",
     depth: "deep",
     summary: "이스트포인트 기조연설 '동쪽의 낙관론자들'을 글쓰기 에이전트 시온이 내 글을 창고 삼아 자율로 만든 과정을 돌아보고, 기록이 에이전트 시대의 신원 증명이 되는 이유를 묻는다.",
     content: `9월 28일 아침, 서울의 해는 6시 24분에 떴다. 몇 시간 뒤 나는 이스트포인트 무대에 올라 화면 수평선 끝의 작은 주황색 점을 가리키며 첫 문장을 시작했다. 기조연설의 제목은 '동쪽의 낙관론자들'이었다.

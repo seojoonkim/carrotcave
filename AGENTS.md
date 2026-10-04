@@ -21,3 +21,7 @@ Every published voice (`data/interviews.ts` `status: 'published'`) must have:
 3. **Hero photo** `<figure class="hero-portrait">`, shown without fade or desaturation.
 
 `tests/voice-house-rules.test.mjs` enforces these in `npm run verify`, so a voice missing any rule cannot be released.
+
+## Changing a post's category
+
+Use `npm run recategorize -- <slug> <탐험|빌딩|낙서|소설>`. It updates `data/posts.ts` and the metadata override, then regenerates the ontology in the publish order (draft → build → audit). Running only `ontology:regen` leaves stale annotations and fails `npm run verify`.
