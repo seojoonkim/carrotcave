@@ -705,7 +705,7 @@ test('post thumbnails replace sequence numbers with a quiet accessible publicati
 test('the archive list preserves complete titles and gives image-free entries the cave sketch', () => {
   assert.match(postsSource, /게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처/);
   assert.doesNotMatch(postsSource, /다음 10년의 신뢰 아키['"]/);
-  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE = '\/editorial-card-fallback-v4\.png'/);
+  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE = '\/editorial-card-fallback-v5\.png'/);
   assert.match(archiveListSource, /src=\{entry\.imageUrl \?\? ARCHIVE_FALLBACK_IMAGE\}/);
   assert.match(archiveListSource, /archive-thumb--sketch/);
   assert.doesNotMatch(stylesSource, /\.archive-row h2\{[^}]*-webkit-line-clamp/, 'titles are never truncated');
