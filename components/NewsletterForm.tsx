@@ -20,7 +20,11 @@ export default function NewsletterForm() {
   }
   return (
     <form className="cc-newsletter" onSubmit={onSubmit} aria-label="새 글 메일 구독">
-      <p className="cc-newsletter__title">새 글이 올라오면 다음 날 아침 8시에 메일로 보내드려요.</p>
+      <div className="cc-newsletter__head">
+        <p className="cc-newsletter__eyebrow">NEWSLETTER</p>
+        <p className="cc-newsletter__title">새 글을 메일로 받아보세요</p>
+        <p className="cc-newsletter__desc">새 글이 올라온 다음 날 아침 8시에 한 번만 보내드려요.</p>
+      </div>
       {phase === 'done' || phase === 'already' ? (
         <p className="cc-newsletter__note" role="status">
           {phase === 'already' ? '이미 구독 중이에요. 고마워요.' : queued ? '신청을 받았어요. 확인 메일을 곧 보내드릴게요.' : '확인 메일을 보냈어요. 메일의 버튼을 누르면 구독이 시작돼요.'}
@@ -34,7 +38,10 @@ export default function NewsletterForm() {
         </div>
       )}
       {phase === 'error' && <p className="cc-newsletter__note" role="alert">이메일 주소를 다시 확인해 주세요.</p>}
-      <a className="cc-newsletter__rss" href="/rss.xml">RSS로 받기</a>
+      <p className="cc-newsletter__meta">
+        <span>언제든 한 번에 구독을 끊을 수 있어요.</span>
+        <a className="cc-newsletter__rss" href="/rss.xml">RSS로 받기</a>
+      </p>
     </form>
   );
 }

@@ -180,3 +180,13 @@ test('login action checks the throttle before comparing the password', () => {
   assert.match(body, /recordLoginFailure/);
   assert.match(body, /sessionSecret\(secret, expected\)/);
 });
+
+test('footer newsletter breathes away from the rabbit scene and keeps RSS inside its meta line', () => {
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const block = css.slice(css.indexOf('/* Newsletter footer layout 2026.10 */'));
+  const top = Number(block.match(/\.cc-footer \.cc-newsletter\{[^}]*margin:(\d+)px/)[1]);
+  assert.ok(top >= 40, `newsletter top margin ${top}px is too tight`);
+  assert.match(block, /\.cc-footer \.cc-newsletter__meta a\.cc-newsletter__rss\{margin-left:0/); // beats .cc-footer a{margin-left:auto}
+  const form = readFileSync(new URL('../components/NewsletterForm.tsx', import.meta.url), 'utf8');
+  assert.match(form, /cc-newsletter__meta[\s\S]*cc-newsletter__rss/);
+});
