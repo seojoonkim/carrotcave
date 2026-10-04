@@ -44,11 +44,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
 
       <section className="wall-shell" data-mood={axisMood[active ?? '전체']} aria-labelledby="wall-heading">
         <header className="wall-heading wall-heading--bridge">
-          {active && <span className="wall-heading__axis" aria-hidden="true">{active}</span>}
+          <p className="wall-heading__kicker"><span className="wall-heading__axis">{active ?? '전체'}</span><span className="wall-heading__count">{visibleEntries.length}편</span></p>
           <h1 id="wall-heading" className="wall-heading__menu-title">
             {active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}
           </h1>
-          <span className="wall-heading__count">{visibleEntries.length}개의 입구</span>
         </header>
         {visibleEntries.length ? (
           <ArchiveList key={active ?? 'all'} entries={visibleEntries} storageKey={active ?? 'all'} />

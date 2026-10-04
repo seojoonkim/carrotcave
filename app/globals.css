@@ -969,3 +969,21 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .cc-admin__fine{margin:16px 0 0;color:#6f7a8a;font-size:12px;line-height:1.7}
 @media(max-width:900px){.cc-admin__kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.cc-admin__kpis div:nth-child(odd){border-left:0}.cc-admin__kpis div:nth-child(n+3){border-top:1px solid var(--line)}.cc-admin__kpis div:last-child{grid-column:1/-1}.cc-admin__grid{grid-template-columns:1fr}}
 @media(max-width:640px){.cc-admin{padding:18px 16px 72px}.cc-admin__head{grid-template-columns:1fr auto;gap:12px}.cc-admin__tabs{grid-column:1/-1;grid-row:2;justify-self:stretch}.cc-admin__tabs a{flex:1;justify-content:center}.cc-admin__kpis b{font-size:22px}.cc-admin__field,.cc-admin__field--end{width:100%;margin-left:0}.cc-admin__field input{flex:1 1 auto;width:auto}.cc-admin__toolbar,.cc-admin__buttons{width:100%}.cc-admin__buttons{display:grid;grid-template-columns:1fr 1fr}.cc-admin__buttons form:last-child{grid-column:1/-1}.cc-admin__buttons button{width:100%;padding:0 10px;white-space:nowrap}.cc-admin__hide-sm{display:none}}
+/* Intro + search 2026.10 — kicker / intro line / filled search field, on an 8px rhythm */
+.wall-shell{padding-top:40px}
+.wall-heading.wall-heading--bridge{display:grid;gap:8px;margin:0 auto 20px;padding:0;border:0}
+.wall-heading__kicker{display:flex;align-items:center;gap:10px;margin:0;font:600 13px/1 var(--sans);letter-spacing:.02em}
+.wall-heading.wall-heading--bridge .wall-heading__kicker .wall-heading__axis{flex:none;color:var(--carrot-orange);font:600 13px/1 var(--sans)!important;letter-spacing:.02em}
+.wall-heading__kicker .wall-heading__axis::after{content:none}
+.wall-heading.wall-heading--bridge .wall-heading__kicker .wall-heading__count{display:inline;color:var(--ink-3);font:400 13px/1 var(--sans)!important;font-variant-numeric:tabular-nums}
+.wall-heading__kicker .wall-heading__count::before{content:"";display:inline-block;width:3px;height:3px;margin:0 10px 0 0;border-radius:50%;background:var(--ink-3);vertical-align:middle}
+.wall-heading--bridge #wall-heading{margin:0;color:var(--ink-1);font:500 15px/1.5 var(--sans);letter-spacing:-.01em}
+.wall-heading--bridge #wall-heading::after{width:.85em;height:.85em;margin-left:.3em;vertical-align:-.1em}
+.wall-shell .archive-search{height:48px;margin:0 0 36px;padding:0 16px;border:1px solid transparent;border-radius:4px;background:#121720;box-shadow:none;transition:border-color .16s ease,background-color .16s ease}
+.wall-shell .archive-search:hover{background:#151b25}
+.wall-shell .archive-search:focus-within{border-color:rgba(243,154,82,.7);background:#151b25;box-shadow:none}
+.wall-shell .archive-search__input{padding:0 12px;font-size:15px}
+.wall-shell .archive-status:empty{display:none}
+.wall-shell .archive-status{margin:-24px 0 24px;color:var(--ink-2);font-size:14px}
+@media(hover:hover) and (pointer:fine){.wall-shell .archive-search__hint{display:inline-block;padding:2px 7px;border:1px solid #2a3240;border-radius:3px;color:var(--ink-3);font:500 12px/1.3 var(--mono)}.wall-shell .archive-search:focus-within .archive-search__hint{display:none}}
+@media(max-width:520px){.wall-shell{padding-top:28px}.wall-heading.wall-heading--bridge{gap:6px;margin:0 8px 16px}.wall-heading--bridge #wall-heading{font-size:14px}.wall-heading__kicker .wall-heading__count{display:inline}.wall-shell .archive-search{height:46px;margin-bottom:24px;padding:0 14px}.wall-shell .archive-search__hint{display:none!important}}

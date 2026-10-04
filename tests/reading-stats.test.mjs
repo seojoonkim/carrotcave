@@ -66,7 +66,18 @@ test('every page (site layout and each voice reader) loads the beacon; admin sho
 
 test('home intro is a quiet bridge line, smaller than the lead post title', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
-  const bridge = Number(css.match(/\.wall-heading--bridge #wall-heading\{[^}]*font:400 (\d+)px/)?.[1]);
+  const bridge = Number([...css.matchAll(/\.wall-heading--bridge #wall-heading\{[^}]*font:\d00 (\d+)px/g)].at(-1)?.[1]);
   const lead = 32; // .archive-lead h2 uses --t-32
   assert.ok(bridge && bridge <= 16 && bridge < lead / 2, `bridge ${bridge}px must stay a caption`);
+});
+
+test('intro and search breathe: kicker, intro line, filled search with real spacing', () => {
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const tail = css.slice(css.indexOf('Intro + search 2026.10'));
+  assert.match(tail, /\.wall-heading\.wall-heading--bridge\{[^}]*margin:0 auto (\d+)px/);
+  assert.ok(Number(tail.match(/\.wall-heading\.wall-heading--bridge\{[^}]*margin:0 auto (\d+)px/)[1]) >= 16, 'gap between intro and search');
+  assert.match(tail, /\.wall-shell \.archive-search\{[^}]*height:48px;margin:0 0 (\d+)px;[^}]*background:#121720/);
+  assert.ok(Number(tail.match(/\.wall-shell \.archive-search\{[^}]*margin:0 0 (\d+)px/)[1]) >= 24, 'gap between search and first post');
+  const home = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8');
+  assert.match(home, /wall-heading__kicker/);
 });

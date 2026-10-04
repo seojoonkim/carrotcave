@@ -24,9 +24,8 @@ export default function VoicesPage() {
 
       <section className="wall-shell voices-wall" data-mood="voices" aria-labelledby="wall-heading">
         <header className="wall-heading wall-heading--bridge">
-          <span className="wall-heading__axis" aria-hidden="true">목소리</span>
+          <p className="wall-heading__kicker"><span className="wall-heading__axis">목소리</span><span className="wall-heading__count">{entries.length}편</span></p>
           <h1 id="wall-heading" className="wall-heading__menu-title">좋은 대화를 다시 읽을 수 있도록 남겨둡니다.</h1>
-          <span className="wall-heading__count">{entries.length}개의 대화</span>
         </header>
         <ArchiveList entries={entries} storageKey="voices" />
       </section>
