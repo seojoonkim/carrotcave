@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import AxisRailInstant from './AxisRailInstant';
 import { posts, Post } from '@/data/posts';
 import { interviews } from '@/data/interviews';
 
@@ -28,11 +29,12 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
   return (
     <nav className="axis-rail" aria-label="편집 축">
       <div className="axis-rail__inner">
-      <Link className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
+      <Link prefetch className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
         <b>전체<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.length + interviews.length}</span>
       </Link>
       {editorialAxes.map((axis) => (
         <Link
+          prefetch
           key={axis}
           className={active === axis ? 'active' : ''}
           href={`/?section=${axis}`}
@@ -42,10 +44,11 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
           <b>{axis}<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.filter((post) => axisOf(post) === axis).length}</span>
         </Link>
       ))}
-      <Link className={active === '목소리' ? 'active' : ''} href="/voices" aria-current={active === '목소리' ? 'page' : undefined}>
+      <Link prefetch className={active === '목소리' ? 'active' : ''} href="/voices" aria-current={active === '목소리' ? 'page' : undefined}>
         <b>목소리<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{interviews.length}</span>
       </Link>
       </div>
+      <AxisRailInstant />
     </nav>
   );
 }

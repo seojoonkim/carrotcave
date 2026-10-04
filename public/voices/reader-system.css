@@ -590,3 +590,15 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 :root { --text: #cdd5df; --foreground: #cdd5df; --bright-white: #dfe5ed; }
 #transcript .utterance-text, #transcript .paragraph-text, .transcript-paragraph, .long-record-body .utterance { color: #cdd5df; }
 .hero #page-title, .chapter-heading h2, .topic-heading h3, .section-heading h2 { color: #dfe5ed; }
+/* Fast menu 2026.10: the reading index opens at once. No backdrop blur (expensive paint), short motion. */
+.menu-button, .back-to-top, .toc-drawer a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.menu-button { transition: none !important; }
+.toc-drawer { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s linear .14s !important; will-change: transform; }
+.toc-drawer.open { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s !important; }
+.drawer-backdrop { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(11, 14, 20, .72) !important; }
+@media (prefers-reduced-motion: reduce) { .toc-drawer, .toc-drawer.open { transition: none !important; } }
+/* Opening the index must not relayout the long transcript: keep the scrollbar width fixed, and contain scrolling in the drawer instead of locking the page. */
+html { scrollbar-gutter: stable; }
+body.drawer-open { overflow: visible !important; }
+.toc-drawer { overscroll-behavior: contain; overflow-y: auto; }
+.drawer-backdrop { touch-action: none; }

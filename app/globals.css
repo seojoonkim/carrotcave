@@ -733,3 +733,7 @@ html[data-torch="on"] .cc-torch{opacity:1}
 :root{--ink-head:#dfe5ed}
 .post-reader-page h1,.post-reader-page h2,.post-reader-page h3,.post-reader-title,.archive-row__link:hover h2,.archive-lead:hover h2{color:var(--ink-head)!important}
 .post-reader-page strong,.post-content strong{color:var(--ink-head)}
+/* Fast menu 2026.10: no tap delay, instant press feedback, list dims while the next section loads. */
+.axis-rail a,.cc-header a,.cc-header button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.axis-rail a:active{opacity:.7}
+.cc-axis-pending .wall-shell{opacity:.55;transition:opacity .12s ease}
