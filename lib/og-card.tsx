@@ -77,7 +77,7 @@ export const MARK_DATA_URL = `data:image/svg+xml;base64,${Buffer.from(MARK_SVG).
 
 /** English-only card copy. Hangul in any field is a bug (tests check the inputs). */
 export const CATEGORY_EN: Record<string, string> = { 탐험: 'EXPLORE', 빌딩: 'BUILD', 낙서: 'DOODLE', 소설: 'FICTION', 목소리: 'VOICES' };
-export const TAGLINE_EN = 'Field Notes from the Rabbit Hole';
+export const TAGLINE_EN = 'Followed the rabbit. Lost the thread.';
 
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 export function dateEn(iso?: string) {

@@ -89,7 +89,7 @@ test('final archive CSS removes seams and idle motion while keeping short access
   assert.match(quiet, /\.cc-brand \.carrot-cave-mark__carrot\{animation:none!important\}/);
   assert.doesNotMatch(quiet, /footer-rabbit-carrot-static\.svg/);
   const footer = readFileSync(new URL('../components/FooterCaveScene.tsx', import.meta.url), 'utf8');
-  assert.match(footer, /src="\/footer-rabbit-carrot-v3\.svg"/);
+  assert.match(footer, /import \{ FOOTER_SCENE_SVG \} from \x27\.\/footer-scene-svg\x27/);
   assert.match(quiet, /@media\(prefers-reduced-motion:reduce\)/);
   assert.match(quiet, /transform:none!important;transition:none!important/);
 });

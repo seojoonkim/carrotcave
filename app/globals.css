@@ -737,6 +737,40 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .axis-rail a,.cc-header a,.cc-header button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .axis-rail a:active{opacity:.7}
 .cc-axis-pending .wall-shell{opacity:.55;transition:opacity .12s ease}
+/* Footer scene moods 2026.10 — menu props, time of day, NEW flag, carrot tap */
+.footer-scene{position:relative;width:100%}
+.footer-scene__art{display:block;width:100%;line-height:0}
+.footer-scene .footer-rabbit-carrot{display:block;width:100%;height:auto;max-height:190px;aspect-ratio:1100/190;overflow:visible}
+.footer-scene .prop,.footer-scene .news-flag{display:none}
+.footer-scene[data-mood=explore] .prop--explore,.footer-scene[data-mood=build] .prop--build,.footer-scene[data-mood=doodle] .prop--doodle,.footer-scene[data-mood=fiction] .prop--fiction,.footer-scene[data-mood=voices] .prop--voices{display:inline}
+.footer-scene .sign-hi path{opacity:0;transition:opacity .3s ease}
+.footer-scene[data-mood=explore] .sign-hi--explore,.footer-scene[data-mood=build] .sign-hi--make,.footer-scene[data-mood=doodle] .sign-hi--make,.footer-scene[data-mood=fiction] .sign-hi--make,.footer-scene[data-mood=voices] .sign-hi--voices{animation:cc-sign-pulse 2.4s ease-in-out infinite}
+@keyframes cc-sign-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+.footer-scene .sun-group{opacity:0;transition:opacity .3s ease}
+.footer-scene[data-daypart=day] .sun-group,.footer-scene[data-daypart=dusk] .sun-group{opacity:1}
+.footer-scene[data-daypart=dusk] .sun-disc,.footer-scene[data-daypart=dusk] .sun-halo{fill:#ff9f6b}
+.footer-scene[data-daypart=dusk] .sun-rays{stroke:#ff9f6b;opacity:.6}
+.footer-scene[data-daypart=day] .moon,.footer-scene[data-daypart=dusk] .moon{opacity:0}
+.footer-scene[data-daypart=day] .stars,.footer-scene[data-daypart=day] .fireflies,.footer-scene[data-daypart=day] .shooting{opacity:0!important}
+.footer-scene[data-daypart=dusk] .stars{opacity:.35}
+.footer-scene[data-daypart=day] .sun-rays{animation:cc-sun-spin 24s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes cc-sun-spin{to{transform:rotate(360deg)}}
+.footer-scene[data-fresh=true] .news-flag{display:inline}
+.footer-scene .carrot-hit{cursor:pointer;outline:none}
+.footer-scene .carrot-hit:focus-visible{stroke:var(--carrot-orange);stroke-width:2;stroke-dasharray:4 4}
+.footer-scene .tap-pop{opacity:0;pointer-events:none}
+.footer-scene.is-tapped .tap-pop{animation:cc-tap-pop 1.8s ease-out both}
+.footer-scene.is-tapped .carrot-clip{transform-box:fill-box;transform-origin:50% 100%;animation:cc-carrot-boing .6s ease-out}
+.footer-scene.is-tapped .tap-heart--a{animation:cc-tap-heart 1.4s ease-out both}
+.footer-scene.is-tapped .tap-heart--b{animation:cc-tap-heart 1.4s .15s ease-out both}
+@keyframes cc-tap-pop{0%{opacity:0;transform:translate(965px,56px) scale(.6)}14%{opacity:1;transform:translate(965px,44px) scale(1.04)}22%,78%{opacity:1;transform:translate(965px,46px) scale(1)}100%{opacity:0;transform:translate(965px,40px) scale(1)}}
+@keyframes cc-carrot-boing{0%{transform:scale(1,1)}30%{transform:scale(1.1,.88)}55%{transform:scale(.94,1.08)}80%{transform:scale(1.03,.97)}100%{transform:scale(1,1)}}
+@keyframes cc-tap-heart{0%{opacity:0;transform:translateY(6px)}30%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+@media(max-width:600px){.footer-scene .footer-rabbit-carrot{height:120px;max-height:none;aspect-ratio:auto}.footer-scene{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}}
+@media(prefers-reduced-motion:reduce){.footer-scene .sign-hi path,.footer-scene .sun-rays,.footer-scene.is-tapped .carrot-clip,.footer-scene.is-tapped .tap-heart--a,.footer-scene.is-tapped .tap-heart--b{animation:none!important}.footer-scene[data-mood] .sign-hi path{opacity:0}.footer-scene[data-mood=explore] .sign-hi--explore,.footer-scene[data-mood=build] .sign-hi--make,.footer-scene[data-mood=doodle] .sign-hi--make,.footer-scene[data-mood=fiction] .sign-hi--make,.footer-scene[data-mood=voices] .sign-hi--voices{opacity:.85}}
+/* Brand tagline */
+.cc-brand small.cc-brand-tagline{margin-top:6px;font:italic 400 12.5px/1.25 var(--sans);letter-spacing:.005em;text-transform:none;color:var(--ink-2)}
+/* /Footer scene moods */
 /* Motion system 2026.10 — calm, quick, compositor-only (opacity/transform). Off with reduced motion.
    1 page change: the browser cross-fades documents; the header holds still.
    2 category tabs: list content settles in; the carrot underline glides to the new tab.
@@ -760,10 +794,35 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .axis-rail a:not(.active)::after{opacity:0;transform:translateX(-50%) scaleX(.2)}
 .axis-rail a.active::after{opacity:1}
 .post-gallery-stage img,.post-gallery-slide img{transition:opacity var(--motion-base) ease}
+/* Menu moods (motion) */
+.wall-shell[data-mood=explore] .archive{animation-name:cc-mood-explore}
+.wall-shell[data-mood=build] .archive{animation-name:cc-mood-build}
+.wall-shell[data-mood=doodle] .archive{animation-name:cc-mood-doodle}
+.wall-shell[data-mood=fiction] .archive{animation-name:cc-mood-fiction}
+.wall-shell[data-mood=voices] .archive{animation-name:cc-mood-voices}
+@keyframes cc-mood-explore{from{opacity:.35;transform:translateX(-14px)}}
+@keyframes cc-mood-build{from{opacity:.35;transform:translateY(14px) scale(.985)}}
+@keyframes cc-mood-doodle{from{opacity:.35;transform:rotate(-.8deg) translateY(6px)}}
+@keyframes cc-mood-fiction{from{opacity:.35;transform:scale(.97)}}
+@keyframes cc-mood-voices{from{opacity:.35;transform:translateY(-10px)}}
+.axis-rail a[data-mood]:is(:hover,:focus-visible) b{display:inline-block;animation:var(--mood-hover,none) .32s ease-out}
+.axis-rail a[data-mood=explore]{--mood-hover:cc-hover-explore}
+.axis-rail a[data-mood=build]{--mood-hover:cc-hover-build}
+.axis-rail a[data-mood=doodle]{--mood-hover:cc-hover-doodle}
+.axis-rail a[data-mood=fiction]{--mood-hover:cc-hover-fiction}
+.axis-rail a[data-mood=voices]{--mood-hover:cc-hover-voices}
+.axis-rail a[data-mood=all]{--mood-hover:cc-hover-all}
+@keyframes cc-hover-explore{40%{transform:translateX(3px)}}
+@keyframes cc-hover-build{30%{transform:translateY(2px)}60%{transform:translateY(-2px)}}
+@keyframes cc-hover-doodle{35%{transform:rotate(-4deg)}70%{transform:rotate(3deg)}}
+@keyframes cc-hover-fiction{50%{opacity:.55;transform:scale(1.06)}}
+@keyframes cc-hover-voices{30%{transform:scale(1.08)}60%{transform:scale(.97)}}
+@keyframes cc-hover-all{50%{transform:translateY(-2px)}}
 @media (prefers-reduced-motion:reduce){
   @view-transition{navigation:none}
   ::view-transition-old(root),::view-transition-new(root){animation:none}
   .wall-shell .wall-heading,.wall-shell .archive,.post-reader-article{animation:none}
+  .axis-rail a[data-mood] b{animation:none!important}
   .axis-rail a::after,.wall-shell{transition:none!important}
 }
 /* Newsletter + admin 2026.10 */

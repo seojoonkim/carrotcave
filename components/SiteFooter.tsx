@@ -1,4 +1,7 @@
-import FooterCaveScene from './FooterCaveScene';
+import FooterCaveScene, { type SceneMood } from './FooterCaveScene';
+import { posts } from '@/data/posts';
+
+const latestPostDate = posts.reduce((max, post) => (post.date > max ? post.date : max), '');
 import NewsletterForm from './NewsletterForm';
 
 function XMark() {
@@ -17,11 +20,11 @@ function TelegramMark() {
   );
 }
 
-export default function SiteFooter() {
+export default function SiteFooter({ mood = 'all' }: { mood?: SceneMood }) {
   return (
     <footer className="cc-footer">
       <div className="cc-footer__inner">
-        <FooterCaveScene />
+        <FooterCaveScene mood={mood} latest={latestPostDate} />
         <NewsletterForm />
         <div className="cc-footer__copy">
           <p className="cc-footer__identity"><strong>CARROT CAVE</strong> by Simon Kim</p>

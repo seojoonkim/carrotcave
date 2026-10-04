@@ -2,6 +2,7 @@ import SiteHeader from '@/components/SiteHeader';
 import AxisRail, { axisNotes, axisOf, editorialAxes } from '@/components/AxisRail';
 import ArchiveList, { type ArchiveEntry } from '@/components/ArchiveList';
 import SiteFooter from '@/components/SiteFooter';
+import { axisMood } from '@/components/AxisRail';
 import { posts } from '@/data/posts';
 import { interviews } from '@/data/interviews';
 import { archiveImageUrl } from '@/lib/social-metadata';
@@ -41,7 +42,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
       <SiteHeader><AxisRail active={active} /></SiteHeader>
       <div className="cc-header-axis-mobile"><AxisRail active={active} /></div>
 
-      <section className="wall-shell" aria-labelledby="wall-heading">
+      <section className="wall-shell" data-mood={axisMood[active ?? '전체']} aria-labelledby="wall-heading">
         <header className="wall-heading">
           <h1 id="wall-heading" className="wall-heading__menu-title">
             {active ? axisNotes[active] : '모든 기록은 서로 다른 입구입니다.'}
@@ -52,7 +53,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ s
         ) : <p className="archive-empty">이 분류에 공개된 기록이 아직 없습니다.</p>}
       </section>
 
-      <SiteFooter />
+      <SiteFooter mood={axisMood[active ?? '전체'] as 'all'} />
     </main>
   );
 }

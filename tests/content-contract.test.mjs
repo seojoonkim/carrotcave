@@ -571,7 +571,7 @@ test('archive and recommendation cards share description typography and restrain
 
 test('ordinary posts use the same graphite reading surface and typography as voice readers', () => {
   assert.match(postSource, /className="post-reader-page min-h-screen"/);
-  assert.match(postSource, /<article className="post-reader-article">/);
+  assert.match(postSource, /<article className="post-reader-article" data-mood=/);
   assert.match(postSource, /className="post-reader-header"/);
   assert.match(postSource, /className="post-content"/);
   assert.match(postSource, /readingBackHref=\{`\/\?section=\$\{encodeURIComponent\(post\.category\)\}`\}/);

@@ -6,5 +6,5 @@ export const contentType = 'image/png';
 export const alt = `${siteName} · ${TAGLINE_EN}`;
 
 export default async function Image() {
-  return ogCard({ label: 'FIELD NOTES', title: TAGLINE_EN, sub: 'Technology, people, markets and the future.' });
+  return ogCard({ label: 'CARROT CAVE', title: TAGLINE_EN, sub: 'Technology, people, markets and the future.' });
 }

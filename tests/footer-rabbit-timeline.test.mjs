@@ -10,7 +10,7 @@ function frames(svg, name) {
 }
 test('versioned animated asset is wired without static replacement; header stays quiet', () => {
   assert.ok(existsSync(asset), 'versioned animation must exist');
-  assert.match(read('../components/FooterCaveScene.tsx'), /src="\/footer-rabbit-carrot-v3.svg"/);
+  assert.match(read('../components/FooterCaveScene.tsx'), /import \{ FOOTER_SCENE_SVG \} from \x27\.\/footer-scene-svg\x27/);
   const css = read('../app/globals.css');
   assert.doesNotMatch(css, /content:url\('\/footer-rabbit-carrot-static.svg'\)/);
   assert.match(css, /\.cc-brand \.cc-brand-symbol,.*animation:none!important/);

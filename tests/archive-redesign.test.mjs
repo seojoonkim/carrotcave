@@ -93,21 +93,21 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /href="https:\/\/x\.com\/simonkim_nft"[\s\S]*?<XMark \/>[\s\S]*?<span>@simonkim_nft<\/span>/);
   assert.doesNotMatch(footer, /<span>X @simonkim_nft<\/span>/);
   assert.match(css, /\.footer-rabbit-carrot\{[^}]*max-height:190px[^}]*border:0;background:transparent/);
-  assert.match(caveScene, /src="\/footer-rabbit-carrot-v3\.svg"/);
+  assert.match(caveScene, /import \{ FOOTER_SCENE_SVG \} from \x27\.\/footer-scene-svg\x27/);
   assert.doesNotMatch(caveScene, /<rect\b|<path\b|<polygon\b/);
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
-  assert.match(footer, /<FooterCaveScene \/>/);
+  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} \/>/);
   assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.13\)\}/);
   assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
   assert.doesNotMatch(css, /carrot-cave-mark__(?:rabbit|carrot)[^{]*\{[^}]*scale\(/);
-  assert.match(home, /<SiteFooter \/>/);
-  assert.match(voices, /<SiteFooter \/>/);
+  assert.match(home, /<SiteFooter mood=\{axisMood\[active \?\? '전체'\]/);
+  assert.match(voices, /<SiteFooter mood=\"voices\" \/>/);
 
   assert.match(css, /\.cc-footer__copy \.cc-footer__links\{display:flex;width:max-content;max-width:100%;align-items:center;flex-wrap:nowrap;gap:24px;white-space:nowrap\}/);
   assert.match(css, /\.cc-footer__links a\{[^}]*min-height:24px[^}]*font:500 11px\/1\.4 var\(--mono\)/);
   assert.match(postReader, /import SiteFooter from '@\/components\/SiteFooter'/);
-  assert.match(postReader, /<\/article>\s*<SiteFooter \/>/);
+  assert.match(postReader, /<\/article>\s*<SiteFooter mood=\{/);
 });
 
 test('archive scrolling uses one simple compositor-safe surface at every width', async () => {
@@ -140,7 +140,7 @@ test('archive stays uninterrupted while the footer keeps only the rabbit and car
     read('app/globals.css'),
   ]);
   assert.doesNotMatch(home + list, /journeyStep|cave-depth-divider|CaveJourneyScene|DEPTH 0/);
-  assert.match(footer, /<FooterCaveScene \/>/);
+  assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} \/>/);
   assert.match(rail, /className="axis-rail__carrot" aria-hidden="true"/);
   assert.doesNotMatch(list, /axis-rail__carrot/);
   assert.doesNotMatch(css, /cave-depth-divider|cave-journey-scene/);

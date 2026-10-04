@@ -18,7 +18,7 @@ export default function SiteHeader({ children, readingTitle, readingMeta, readin
         <Link className="cc-brand" href={readingTitle ? readingBackHref : '/'} aria-label={readingTitle ? readingBackLabel : 'CarrotCave.com 홈'}>
           {readingTitle && <span className="cc-reading-back-chevron" aria-hidden="true">‹</span>}
           <CarrotCaveMark className="cc-brand-symbol" />
-          {!readingTitle && <span><span className="cc-brand-name">CarrotCave<span className="cc-brand-domain">.com</span></span><small>FIELD NOTES FROM THE RABBIT HOLE</small></span>}
+          {!readingTitle && <span><span className="cc-brand-name">CarrotCave<span className="cc-brand-domain">.com</span></span><small className="cc-brand-tagline">Followed the rabbit. Lost the thread.</small></span>}
         </Link>
         {readingTitle ? (
           <>

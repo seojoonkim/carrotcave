@@ -12,6 +12,7 @@ import linkPreviews from '@/data/link-previews.json';
 import { INLINE_URL_RE, cleanUrl, findPreviewBlocks, normalizeTitle, prettyUrl, standaloneLinkOf, unwrapTelegramLinkPreview, youTubeIdOf, type LinkPreview, type PreviewBlock } from '@/lib/link-preview';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { axisMood } from '@/components/AxisRail';
 import PostShareButton from '@/components/PostShareButton';
 import { axisDestinationLabel, axisOf } from '@/components/AxisRail';
 import ontologyIndex from '@/data/ontology/index.json';
@@ -282,7 +283,7 @@ export default async function PostPage({ params }: PostPageProps) {
         readingBackLabel={`${post.category} 목록으로 돌아가기`}
       />
 
-      <article className="post-reader-article">
+      <article className="post-reader-article" data-mood={axisMood[post.category as keyof typeof axisMood] ?? 'all'}>
         <header className="post-reader-header">
           <h1>
             {post.title}
@@ -388,7 +389,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </section>
 
       </article>
-      <SiteFooter />
+      <SiteFooter mood={(axisMood[post.category as keyof typeof axisMood] ?? 'all') as 'all'} />
     </div>
   );
 }

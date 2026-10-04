@@ -13,6 +13,8 @@ export const axisNotes: Record<typeof editorialAxes[number], string> = {
   소설: '사실 밖의 가능한 세계',
 };
 
+export const axisMood: Record<EditorialAxis | '전체', string> = { 전체: 'all', 탐험: 'explore', 빌딩: 'build', 낙서: 'doodle', 소설: 'fiction', 목소리: 'voices' };
+
 export function axisOf(post: Post) {
   return post.category;
 }
@@ -29,13 +31,14 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
   return (
     <nav className="axis-rail" aria-label="편집 축">
       <div className="axis-rail__inner">
-      <Link prefetch className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
+      <Link prefetch data-mood="all" className={!active ? 'active' : ''} href="/" aria-current={!active ? 'page' : undefined}>
         <b>전체<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.length + interviews.length}</span>
       </Link>
       {editorialAxes.map((axis) => (
         <Link
           prefetch
           key={axis}
+          data-mood={axisMood[axis]}
           className={active === axis ? 'active' : ''}
           href={`/?section=${axis}`}
           aria-current={active === axis ? 'page' : undefined}
@@ -44,7 +47,7 @@ export default function AxisRail({ active }: { active?: EditorialAxis }) {
           <b>{axis}<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{posts.filter((post) => axisOf(post) === axis).length}</span>
         </Link>
       ))}
-      <Link prefetch className={active === '목소리' ? 'active' : ''} href="/voices" aria-current={active === '목소리' ? 'page' : undefined}>
+      <Link prefetch data-mood="voices" className={active === '목소리' ? 'active' : ''} href="/voices" aria-current={active === '목소리' ? 'page' : undefined}>
         <b>목소리<i className="axis-rail__carrot" aria-hidden="true" /></b><span>{interviews.length}</span>
       </Link>
       </div>
