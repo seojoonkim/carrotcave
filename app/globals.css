@@ -992,3 +992,21 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .cc-header .axis-rail a.active span,.cc-header-axis-mobile .axis-rail a.active span{color:rgba(243,154,82,.78)!important}
 .cc-header .axis-rail a.active::after,.cc-header-axis-mobile .axis-rail a.active::after{height:3px!important;width:30px!important;border-radius:2px;background:var(--carrot-orange)!important;box-shadow:0 0 4px rgba(243,154,82,.32)}
 .cc-header .axis-rail a.active,.cc-header-axis-mobile .axis-rail a.active{background:radial-gradient(50% 55% at 50% 100%,rgba(243,154,82,.06),transparent 70%)!important}
+
+/* Link card thumbnail rule 2026.10 — every card has a thumbnail; no-image links get a monogram tile */
+.post-link-card__media--tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#10141c;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px}
+.post-link-card__tile-mark{display:grid;place-items:center;width:58px;height:58px;border-radius:4px;background:rgba(243,154,82,.14);border:1px solid rgba(243,154,82,.42);color:#f39a52;font:700 28px/1 var(--font-sans,system-ui),sans-serif}
+.post-link-card__tile-host{max-width:86%;font-size:12px;font-weight:600;letter-spacing:.02em;color:#9aa5b4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.post-link-card:hover .post-link-card__tile-mark{background:#f39a52;color:#0b0e14;border-color:#f39a52}
+@media (min-width:720px){
+  .post-link-card--media{flex-direction:row}
+  .post-link-card--media .post-link-card__media{order:2;flex:0 0 260px;max-width:260px;aspect-ratio:auto;min-height:136px;border-bottom:0;border-left:1px solid rgba(255,255,255,.06)}
+  .post-link-card--media .post-link-card__desc{-webkit-line-clamp:1}
+}
+
+/* Second accent 2026.10 — carrot-leaf green. Orange = action/selection, leaf = discovery/labels/fresh. */
+:root{--leaf-pop:#a6d36b;--leaf-soft:rgba(166,211,107,.14);--leaf-line:rgba(166,211,107,.42)}
+.post-link-card__label{color:var(--leaf-pop)}
+.cc-footer .cc-newsletter__eyebrow{color:var(--leaf-pop)}
+.wall-heading.wall-heading--bridge .wall-heading__kicker .wall-heading__count::before{color:var(--leaf-pop)}
+.post-link-card__tile-host{color:var(--leaf-pop);opacity:.82}

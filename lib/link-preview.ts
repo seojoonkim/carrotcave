@@ -43,9 +43,17 @@ export function standaloneLinkOf(line: string): StandaloneLink | null {
     return { url, label, isTweet: isTweetUrl(url) };
   }
   const m = t.match(new RegExp(`^(?:[-*•]\\s*)?(?:([^\\s:：][^:：]{0,24}?)\\s*[:：]\\s*)?(${URL_RE.source})$`, 'u'));
-  if (!m) return null;
-  const url = cleanUrl(m[2]);
-  return { url, label: m[1]?.trim() || undefined, isTweet: isTweetUrl(url) };
+  if (m) {
+    const url = cleanUrl(m[2]);
+    return { url, label: m[1]?.trim() || undefined, isTweet: isTweetUrl(url) };
+  }
+  // Short label without a colon: "한국어 https://…", "🔗 GitHub https://…", "English https://…"
+  const bare = t.match(new RegExp(`^(?:[-*•]\\s*)?([^\\s:：*\\[][^:：*\\[\\]]{0,23}?)\\s+(${URL_RE.source})$`, 'u'));
+  if (!bare) return null;
+  const label = bare[1].trim();
+  if (label.split(/\s+/).length > 3 || /[.!?。]$/.test(label) || /https?:/.test(label)) return null;
+  const url = cleanUrl(bare[2]);
+  return { url, label, isTweet: isTweetUrl(url) };
 }
 
 export function hostOf(url: string) {

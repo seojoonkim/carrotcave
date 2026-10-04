@@ -380,7 +380,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
           {constellation && (
             <div className="cave-constellation-shell cave-constellation-shell--after-actions">
-              <p className="cave-constellation-kicker">CAVE CONSTELLATION</p>
+              <p className="cave-constellation-kicker">DOWN THE RABBIT HOLE</p>
               <h2 className="cave-constellation-heading">다음으로 읽기 좋은 글 3개</h2>
               <p className="cave-constellation-intro">지금 읽은 글과 생각이 이어지는 순서대로 골랐습니다.</p>
               <CaveConstellation subgraph={constellation} />

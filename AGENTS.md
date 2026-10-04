@@ -25,3 +25,13 @@ Every published voice (`data/interviews.ts` `status: 'published'`) must have:
 ## Changing a post's category
 
 Use `npm run recategorize -- <slug> <탐험|빌딩|낙서|소설>`. It updates `data/posts.ts` and the metadata override, then regenerates the ontology in the publish order (draft → build → audit). Running only `ontology:regen` leaves stale annotations and fails `npm run verify`.
+
+## Link thumbnail rule
+
+Every link that stands on its own line (bare URL, `라벨: URL`, `라벨 URL`, bullet, or markdown link) renders as a thumbnail card.
+After publishing or editing a post, run `node --experimental-strip-types scripts/update-link-previews.mjs` so each link has preview data.
+Pages without `og:image` automatically get a monogram tile, so a card is never text-only. `tests/link-thumbnail-rule.test.mjs` enforces this in `npm run verify`.
+
+## Accent colors
+
+Carrot orange (`--carrot-orange`) is for action and selection. Leaf green (`--leaf-pop`, #a6d36b) is the supporting accent for labels, discovery, and section kickers. Never use leaf for the selected menu or primary buttons.

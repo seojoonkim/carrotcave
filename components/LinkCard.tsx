@@ -18,16 +18,28 @@ function tidy(url: string, preview?: LinkPreview) {
   return { host, title: title || prettyUrl(url, 60), description, site };
 }
 
+/** First visible letter of the site name, used when a page has no og:image. */
+export function monogramOf(name: string) {
+  const ch = [...name.replace(/^(?:www\.)/, '').trim()].find((c) => /[\p{L}\p{N}]/u.test(c)) ?? '•';
+  return ch.toUpperCase();
+}
+
 export default function LinkCard({ url, label, preview }: Props) {
   const { host, title, description, site } = tidy(url, preview);
   const image = preview?.image;
+  // Rule: every link card shows a thumbnail. Pages without og:image get a branded host tile.
   return (
-    <a className={`post-link-card${image ? ' post-link-card--media' : ''}`} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${title} — ${site ?? host} (새 창에서 열기)`}>
+    <a className="post-link-card post-link-card--media" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${title} — ${site ?? host} (새 창에서 열기)`}>
       {image ? (
         <span className="post-link-card__media" aria-hidden="true">
           <img src={image} alt="" loading="lazy" decoding="async" />
         </span>
-      ) : null}
+      ) : (
+        <span className="post-link-card__media post-link-card__media--tile" aria-hidden="true">
+          <span className="post-link-card__tile-mark">{monogramOf(site ?? host)}</span>
+          <span className="post-link-card__tile-host">{site ?? host}</span>
+        </span>
+      )}
       <span className="post-link-card__main">
         <span className="post-link-card__body">
           {label ? <span className="post-link-card__label">{label}</span> : null}

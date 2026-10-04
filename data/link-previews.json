@@ -137,6 +137,18 @@
     "description": "대한민국 게임 산업을 이끌어 온 NDC가 오프라인 공개 행사로 돌아옵니다! 한층 더 다채롭고 풍성해진 NDC26에서 새로운 인사이트와 지식, 노하우를 마음껏 경험해 보세요!",
     "image": "/media/link-previews/og-49249da21035.png"
   },
+  "https://optimists-of-the-east.vercel.app/en": {
+    "kind": "link",
+    "title": "Optimists of the East",
+    "description": "EastPoint: Seoul 2026 keynote by Simon Kim (Hashed) · 26 slides with speaker notes",
+    "image": "/media/link-previews/og-2a3b8615079b.jpg"
+  },
+  "https://optimists-of-the-east.vercel.app/ko": {
+    "kind": "link",
+    "title": "동쪽의 낙관론자들",
+    "description": "이스트포인트 서울 2026 오프닝 키노트 · 김서준(Hashed) · 슬라이드 26장과 발표 원고",
+    "image": "/media/link-previews/og-f83f7379a18e.jpg"
+  },
   "https://pokemondev.com": {
     "kind": "link",
     "title": "PokemonDev : AI가 포켓몬을 깰 수 있을까?",

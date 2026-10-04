@@ -45,8 +45,8 @@
 
 /* 4 · three picks */
 .cc-reading-end .cave-constellation-shell{position:static;left:auto;width:100%;margin:64px 0 0;padding:48px 0 0;border-top:1px solid var(--re-line);transform:none;color:var(--re-ink-1)}
-.cc-reading-end .cave-constellation-kicker{display:flex;align-items:center;gap:12px;color:var(--re-carrot);font:650 12px/1 var(--re-mono);letter-spacing:.16em}
-.cc-reading-end .cave-constellation-kicker::after{content:"";width:72px;height:1px;background:linear-gradient(90deg,var(--re-carrot),transparent)}
+.cc-reading-end .cave-constellation-kicker{display:flex;align-items:center;gap:12px;color:#a6d36b;font:650 12px/1 var(--re-mono);letter-spacing:.16em}
+.cc-reading-end .cave-constellation-kicker::after{content:"";width:72px;height:1px;background:linear-gradient(90deg,#a6d36b,var(--re-carrot) 55%,transparent)}
 .cc-reading-end .cave-constellation-heading{margin:12px 0 8px;color:#dfe5ed;font:720 clamp(26px,3.2vw,34px)/1.12 var(--re-sans);letter-spacing:-.045em}
 .cc-reading-end .cave-constellation-intro{margin:0 0 28px;color:var(--re-ink-2);font:400 14px/1.7 var(--re-sans);text-wrap:pretty}
 .cc-reading-end .cave-constellation{position:relative;border:0;background:none;animation:none}
