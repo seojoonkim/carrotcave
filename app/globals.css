@@ -373,7 +373,9 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .archive-thumb{position:relative;display:block;overflow:hidden;background:var(--surface-1);border-radius:3px}
 .archive-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease-out),filter .3s ease;filter:saturate(.9)}
 .archive-thumb::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none}
-.archive-thumb--sketch img{filter:grayscale(.2) brightness(.92)}
+.archive-thumb--sketch{background:#0b0e14}
+.archive-thumb--sketch::after{box-shadow:none}
+.archive-thumb--sketch img{filter:none}
 
 /* Lead entry */
 .archive-lead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:36px;align-items:center;padding:20px 0 36px;border-bottom:1px solid var(--hairline)}
@@ -794,17 +796,7 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .axis-rail a:not(.active)::after{opacity:0;transform:translateX(-50%) scaleX(.2)}
 .axis-rail a.active::after{opacity:1}
 .post-gallery-stage img,.post-gallery-slide img{transition:opacity var(--motion-base) ease}
-/* Menu moods (motion) */
-.wall-shell[data-mood=explore] .archive{animation-name:cc-mood-explore}
-.wall-shell[data-mood=build] .archive{animation-name:cc-mood-build}
-.wall-shell[data-mood=doodle] .archive{animation-name:cc-mood-doodle}
-.wall-shell[data-mood=fiction] .archive{animation-name:cc-mood-fiction}
-.wall-shell[data-mood=voices] .archive{animation-name:cc-mood-voices}
-@keyframes cc-mood-explore{from{opacity:.35;transform:translateX(-14px)}}
-@keyframes cc-mood-build{from{opacity:.35;transform:translateY(14px) scale(.985)}}
-@keyframes cc-mood-doodle{from{opacity:.35;transform:rotate(-.8deg) translateY(6px)}}
-@keyframes cc-mood-fiction{from{opacity:.35;transform:scale(.97)}}
-@keyframes cc-mood-voices{from{opacity:.35;transform:translateY(-10px)}}
+/* Menu moods: footer prop + menu hover only. List entrance is ONE shared motion for every menu (cc-list-in). */
 .axis-rail a[data-mood]:is(:hover,:focus-visible) b{display:inline-block;animation:var(--mood-hover,none) .32s ease-out}
 .axis-rail a[data-mood=explore]{--mood-hover:cc-hover-explore}
 .axis-rail a[data-mood=build]{--mood-hover:cc-hover-build}
@@ -987,3 +979,10 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .wall-shell .archive-status{margin:-24px 0 24px;color:var(--ink-2);font-size:14px}
 @media(hover:hover) and (pointer:fine){.wall-shell .archive-search__hint{display:inline-block;padding:2px 7px;border:1px solid #2a3240;border-radius:3px;color:var(--ink-3);font:500 12px/1.3 var(--mono)}.wall-shell .archive-search:focus-within .archive-search__hint{display:none}}
 @media(max-width:520px){.wall-shell{padding-top:28px}.wall-heading.wall-heading--bridge{gap:6px;margin:0 8px 16px}.wall-heading--bridge #wall-heading{font-size:14px}.wall-heading__kicker .wall-heading__count{display:inline}.wall-shell .archive-search{height:46px;margin-bottom:24px;padding:0 14px}.wall-shell .archive-search__hint{display:none!important}}
+
+/* One-line bridge 2026.10 */
+.wall-heading.wall-heading--bridge{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px;row-gap:4px;margin:0 auto 20px;padding:0;border:0}
+.wall-heading--bridge .wall-heading__kicker{flex:none;line-height:1.5}
+.wall-heading--bridge .wall-heading__kicker::after{content:"";display:inline-block;width:1px;height:.9em;margin-left:14px;background:var(--line);vertical-align:-.1em}
+.wall-heading--bridge #wall-heading{flex:1 1 auto;min-width:0;line-height:1.5}
+@media(max-width:520px){.wall-heading.wall-heading--bridge{column-gap:9px;margin:0 8px 16px}.wall-heading--bridge .wall-heading__kicker::after{margin-left:9px}.wall-heading--bridge .wall-heading__kicker,.wall-heading.wall-heading--bridge .wall-heading__kicker :is(.wall-heading__axis,.wall-heading__count){font-size:12px!important}.wall-heading--bridge .wall-heading__kicker .wall-heading__count::before{margin-right:7px}.wall-heading--bridge #wall-heading{font-size:13px;letter-spacing:-.02em}}

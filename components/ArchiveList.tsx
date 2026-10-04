@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 
 export const ARCHIVE_PAGE_SIZE = 12;
-export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v3.png';
+export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v4.png';
 
 export interface ArchiveEntry {
   key: string;

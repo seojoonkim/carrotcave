@@ -22,12 +22,11 @@ test('inlined svg styles are scoped to .footer-scene and cannot leak into the si
   assert.equal(scopeCss('.a,.b{x:1}@media (x){.c{y:2}}'), '.footer-scene .a,.footer-scene .b{x:1}@media (x){.footer-scene .c{y:2}}');
 });
 
-test('every menu has its own prop, its own signpost highlight and its own list entrance', () => {
+test('every menu has its own prop and signpost highlight', () => {
   for (const m of moods) {
     assert.match(svg, new RegExp(`class="prop prop--${m}"`), `prop for ${m}`);
     assert.match(css, new RegExp(`\\.footer-scene\\[data-mood=${m}\\] \\.prop--${m}`), `prop switch for ${m}`);
     assert.match(css, new RegExp(`\\.footer-scene\\[data-mood=${m}\\] \\.sign-hi--`), `sign highlight for ${m}`);
-    assert.match(css, new RegExp(`\\.wall-shell\\[data-mood=${m}\\] \\.archive\\{animation-name:cc-mood-${m}\\}`), `list motion for ${m}`);
     assert.match(css, new RegExp(`\\.axis-rail a\\[data-mood=${m}\\]\\{--mood-hover:cc-hover-${m}\\}`), `menu hover for ${m}`);
   }
   const rail = read('components/AxisRail.tsx');
@@ -36,11 +35,12 @@ test('every menu has its own prop, its own signpost highlight and its own list e
   assert.match(rail, /data-mood="all"/);
 });
 
-test('mood list entrances never blank the list (start >= 30% visible)', () => {
-  for (const m of moods) {
-    const k = css.match(new RegExp(`@keyframes cc-mood-${m}\\{from\\{opacity:([\\d.]+)`));
-    assert.ok(k && Number(k[1]) >= 0.3, m);
-  }
+test('menu switch uses ONE identical entrance for every menu (no per-menu directions)', () => {
+  assert.doesNotMatch(css, /@keyframes cc-mood-/, 'no per-menu list keyframes');
+  assert.doesNotMatch(css, /\.wall-shell\[data-mood=[a-z]+\][^{]*\{[^}]*animation/, 'no per-menu list animation override');
+  assert.match(css, /\.wall-shell \.wall-heading,\.wall-shell \.archive\{animation:cc-list-in /);
+  const k = css.match(/@keyframes cc-list-in\{from\{([^}]*)\}/)[1];
+  assert.doesNotMatch(k, /translateX|rotate|scale/, 'shared entrance is a gentle fade-up only');
 });
 
 test('time of day: day 06-17, dusk 17-19, night otherwise', () => {

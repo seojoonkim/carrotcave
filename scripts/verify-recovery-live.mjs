@@ -23,9 +23,9 @@ try {
    assert.equal(card.axis,post.category,`category ${post.slug}`);
   }
   assert.equal(rendered.length,posts.length+interviews.length);
-  const fallback=rendered.filter(r=>decodeURIComponent(r.img||'').includes('/editorial-card-fallback-v3.png'));
+  const fallback=rendered.filter(r=>decodeURIComponent(r.img||'').includes('/editorial-card-fallback-v4.png'));
   assert(fallback.length>0,'restored fallback cards absent');
-  const pic=await page.request.get(base+'/editorial-card-fallback-v3.png');
+  const pic=await page.request.get(base+'/editorial-card-fallback-v4.png');
   assert.equal(pic.status(),200); assert((await pic.body()).length>1000);
   results.push({width,kind:'archive',cards:rendered.length,postCategories:posts.length,fallbackCards:fallback.length});persist();
   for(const section of ['빌딩','탐험']) {
