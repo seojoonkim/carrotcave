@@ -84,3 +84,25 @@
 @media (prefers-reduced-motion:reduce){
   .cc-reading-end *{transition:none!important;animation:none!important}
 }
+
+/* Whole-card recommendation 2026.10 — rank, relation, read cue and the post are one hover/click target */
+.cc-reading-end .cave-constellation__recommendation article{position:relative;margin:0 -16px;padding:14px 16px 16px!important;border-radius:4px;transition:background-color .2s ease,box-shadow .2s ease}
+.cc-reading-end .cave-constellation__thumbnail{margin:0;padding:12px 0 0;background:none!important;box-shadow:none!important}
+.cc-reading-end .cave-constellation__navigate{position:static;transform:none!important}
+.cc-reading-end .cave-constellation__navigate::before{content:"";position:absolute;inset:0;z-index:2;border-radius:4px}
+.cc-reading-end .cave-constellation__carrot{transition:transform .18s ease}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within){background:rgba(214,221,230,.045);box-shadow:inset 0 0 0 1px rgba(243,154,82,.28)}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__navigate{color:var(--re-carrot)}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__carrot{transform:rotate(22deg) translateX(3px)}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__thumbnail img{filter:saturate(1) brightness(1)}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__thumbnail h3{color:#dfe5ed}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__rank{color:#eef2f7}
+.cc-reading-end .cave-constellation__navigate:focus-visible{outline:none}
+.cc-reading-end .cave-constellation__navigate:focus-visible::before{outline:2px solid var(--re-carrot);outline-offset:2px}
+@media (max-width:520px){
+  .cc-reading-end .cave-constellation__recommendation article{margin:0 -12px;padding:12px!important}
+  .cc-reading-end .cave-constellation__thumbnail{margin:0;padding:10px 0 0}
+}
+@media (prefers-reduced-motion:reduce){
+  .cc-reading-end .cave-constellation__recommendation article,.cc-reading-end .cave-constellation__carrot{transition:none}
+}
