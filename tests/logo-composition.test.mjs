@@ -5,62 +5,44 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const read = relativePath => fs.readFileSync(path.join(root, relativePath), 'utf8');
-const voiceSlugs = ['liao-heng', 'liang-wenfeng', 'yang-zhilin', 'sam-altman-startup-school-2026'];
+const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
+const voiceSlugs = fs.readdirSync(path.join(root, 'public/voices')).filter((d) => fs.existsSync(path.join(root, 'public/voices', d, 'index.html')));
 
-function numericMatch(source, pattern, label) {
-  const match = source.match(pattern);
-  assert.ok(match, `${label}: geometry token missing`);
-  return Number(match[1]);
+// Logo v4: chibi rabbit + smiling carrot drawn in final coordinates (no CSS scale/offset tricks).
+function checkMark(label, mark) {
+  const floor = Number(mark.match(/<path d="M3 ([\d.]+)h90"/)?.[1]);
+  assert.ok(floor, `${label}: burrow floor missing`);
+  const feet = [...mark.matchAll(/<ellipse cx="(?:35|49)" cy="([\d.]+)" rx="5\.6" ry="([\d.]+)"/g)];
+  assert.equal(feet.length, 2, `${label}: two feet`);
+  for (const [, cy, ry] of feet) assert.ok(Math.abs(Number(cy) + Number(ry) - floor) <= 1, `${label}: feet stand on the floor`);
+  assert.equal((mark.match(/__eye"/g) ?? []).length, 2, `${label}: two eyes`);
+  assert.match(mark, /#f4a9b6/, `${label}: pink inner ears`);
+  assert.match(mark, /#f4a0a8/, `${label}: blush`);
+  assert.match(mark, /__carrot"/, `${label}: carrot`);
+  assert.match(mark, /#f39a52/, `${label}: carrot orange`);
+  assert.match(mark, /#79a85b/, `${label}: leaf green`);
 }
 
-function assertGroundedGeometry({ label, mark, css, caveClass, rabbitPositionClass }) {
-  const caveScale = numericMatch(css, new RegExp(`\\.${caveClass}[^}]*transform:\\s*scale\\(([^)]+)\\)`), `${label} cave scale`);
-  const rabbitOffset = numericMatch(css, new RegExp(`\\.${rabbitPositionClass}[^}]*translateY\\(([-.\\d]+)px\\)`), `${label} rabbit offset`);
-  const floorY = numericMatch(mark, /<path d="M9 ([\d.]+)h78"/, `${label} cave floor`);
-  const feet = [...mark.matchAll(/<ellipse cx="(?:34|50)" cy="([\d.]+)" rx="6" ry="([\d.]+)"/g)];
-  assert.equal(feet.length, 2, `${label}: both feet geometry must exist`);
-  const footBottomY = Math.max(...feet.map(([, cy, ry]) => Number(cy) + Number(ry)));
-  const transformedFloorY = 48 + ((floorY - 48) * caveScale);
-  assert.ok(Math.abs(transformedFloorY - (footBottomY + rabbitOffset)) <= 1, `${label}: rabbit feet must meet the enlarged cave floor`);
-}
-
-test('React logo enlarges the cave, grounds the rabbit, and keeps both eyes legible', () => {
+test('React logo is the chibi rabbit + smiling carrot standing on the burrow floor', () => {
   const mark = read('components/CarrotCaveMark.tsx');
+  checkMark('React logo', mark);
+  assert.match(mark, /<g className="carrot-cave-mark__rabbit-position"><g className="carrot-cave-mark__rabbit">/);
   const css = read('app/globals.css');
-  assertGroundedGeometry({
-    label: 'React logo',
-    mark,
-    css,
-    caveClass: 'carrot-cave-mark__cave',
-    rabbitPositionClass: 'carrot-cave-mark__rabbit-position',
-  });
-  assert.match(css, /\.carrot-cave-mark__cave\{[^}]*transform:scale\(1\.13\)/);
-  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
-  assert.match(mark, /<g className="carrot-cave-mark__rabbit-position">\s*<g className="carrot-cave-mark__rabbit">/);
-  assert.equal((mark.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#11151c" \/>/g) ?? []).length, 2);
-  assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:none\}/);
-  assert.match(css, /@keyframes cc-rabbit-hop\{/);
+  assert.match(css, /\.carrot-cave-mark__cave\{transform:none!important\}/);
+  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:none!important\}/);
   assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__rabbit\{animation:cc-rabbit-hop/);
-  assert.match(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__carrot\{animation:cc-carrot-tap/);
-  assert.doesNotMatch(css, /\.cc-brand:is\(:hover,:focus-visible\) \.carrot-cave-mark__cave\{/);
 });
 
-test('all static reader logos share the grounded cave and legible two-eye geometry', () => {
+test('every voice reader ships the same logo geometry as the site', () => {
   const css = read('public/voices/reader-system.css');
-  const representativeMark = read(`public/voices/${voiceSlugs[0]}/index.html`);
-  assertGroundedGeometry({
-    label: 'Static reader logo',
-    mark: representativeMark,
-    css,
-    caveClass: 'brand-mark__cave',
-    rabbitPositionClass: 'brand-mark__rabbit-position',
-  });
-  assert.match(css, /\.reader-nav \.brand-mark__cave \{[^}]*transform: scale\(1\.13\)/);
-  assert.match(css, /\.reader-nav \.brand-mark__rabbit-position \{ transform: translateY\(17px\); \}/);
+  assert.match(css, /\.reader-nav \.brand-mark__cave \{ transform: none; \}/);
+  assert.match(css, /\.reader-nav \.brand-mark__rabbit-position \{ transform: none; \}/);
+  const site = read('components/CarrotCaveMark.tsx');
+  const sig = (s) => [...s.matchAll(/<(?:ellipse|circle|path)[^>]*?(?:cx|d)="([^"]+)"/g)].map((m) => m[1]).join('|');
   for (const slug of voiceSlugs) {
     const html = read(`public/voices/${slug}/index.html`);
-    assert.match(html, /class="brand-mark__rabbit-position"><g class="brand-mark__rabbit">/);
-    assert.equal((html.match(/<circle cx="(?:39|47)" cy="42" r="1\.8" fill="#11151c"\/>/g) ?? []).length, 2, slug);
+    const svg = html.match(/<svg class="brand-mark".*?<\/svg>/s)?.[0] ?? '';
+    checkMark(slug, svg);
+    assert.equal(sig(svg), sig(site), `${slug}: logo drifted from the site logo`);
   }
 });

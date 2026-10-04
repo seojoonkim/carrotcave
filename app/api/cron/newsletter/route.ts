@@ -1,6 +1,7 @@
 import { runDigest } from '@/lib/newsletter/core';
 import { newsletterDeps } from '@/lib/newsletter/deps';
 import { feedItems } from '@/lib/newsletter/feed';
+import { compactDays } from '@/lib/stats/core';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +9,8 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret || request.headers.get('authorization') !== `Bearer ${secret}`) return new Response('Unauthorized', { status: 401 });
-  const result = await runDigest(newsletterDeps(), feedItems(), { mode: 'cron' });
-  return Response.json(result);
+  const deps = newsletterDeps();
+  const compacted = await compactDays(deps.store, new Date()).catch(() => -1);
+  const result = await runDigest(deps, feedItems(), { mode: 'cron' });
+  return Response.json({ ...result, statsDaysCompacted: compacted });
 }

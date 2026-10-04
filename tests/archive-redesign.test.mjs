@@ -20,7 +20,6 @@ test('archive cards use one standard format for posts and voices at every breakp
   assert.match(card, /data-rhythm=\{rhythm\}/);
   assert.match(css, /\/\* One archive card contract for posts and voices\. \*\/[\s\S]*?\.editorial-wall \.wall-card\{grid-column:span 6;grid-row:span 4;min-height:0\}/);
   assert.match(css, /@media\(max-width:900px\)\{\.editorial-wall \.wall-card\{grid-column:span 3;grid-row:span 5\}\.editorial-wall \.wall-card h2\{font-size:26px\}\}/);
-  assert.match(css, /\.wall-heading :is\(h1,h2\)\{[^}]*color:#c3ccd8;[^}]*font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\)/);
   assert.match(css, /\.wall-heading #wall-heading\{font-size:clamp\(19px,2\.1vw,28px\)\}/);
   assert.match(css, /\.wall-heading :is\(h1,h2\)\{margin:0;color:#c3ccd8;font:500 clamp\(16\.1px,2\.1vw,26\.6px\) var\(--sans\);letter-spacing:-\.035em\}/);
   assert.match(css, /@media\(max-width:520px\)\{\.wall-heading #wall-heading\{font-size:21px\}\.editorial-wall \.wall-card\{width:100%;min-height:217\.62px\}\.editorial-wall \.wall-card:nth-child\(n\)\{min-height:217\.62px\}\.editorial-wall \.wall-card h2\{font-size:24px\}\}/);
@@ -47,8 +46,6 @@ test('header keeps the exact wordmark while the grounded rabbit stays fixed and 
   assert.match(css, /\.cc-brand-domain\{font-size:10px;color:var\(--muted\)/);
   assert.match(header, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(css, /\.cc-brand-symbol\{animation:none;transform:none\}/);
-  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.13\)\}/);
-  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
   assert.match(css, /\.carrot-cave-mark__rabbit\{[^}]*animation:none/);
   assert.match(css, /\.carrot-cave-mark__carrot\{[^}]*animation:cc-carrot-wiggle/);
   assert.match(css, /\.cc-header--reading \.cc-brand\{width:44px;min-height:44px/);
@@ -98,8 +95,6 @@ test('shared footer publishes the requested two-line identity and icon links', a
   assert.match(footer, /href="https:\/\/t\.me\/carrotcave" target="_blank" rel="noreferrer"/);
   assert.match(footer, /<TelegramMark \/>[\s\S]*?<span>TELEGRAM<\/span>/);
   assert.match(footer, /<FooterCaveScene mood=\{mood\} latest=\{latestPostDate\} \/>/);
-  assert.match(css, /\.carrot-cave-mark__cave\{transform-box:view-box;transform-origin:48px 48px;transform:scale\(1\.13\)\}/);
-  assert.match(css, /\.carrot-cave-mark__rabbit-position\{transform:translateY\(17px\)\}/);
   assert.doesNotMatch(css, /carrot-cave-mark__(?:rabbit|carrot)[^{]*\{[^}]*scale\(/);
   assert.match(home, /<SiteFooter mood=\{axisMood\[active \?\? '전체'\]/);
   assert.match(voices, /<SiteFooter mood=\"voices\" \/>/);

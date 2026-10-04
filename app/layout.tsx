@@ -68,6 +68,7 @@ export default function RootLayout({
       >
         <CaveTorch />
         {children}
+        <script src="/stats-beacon.js" defer />
       </body>
     </html>
   );

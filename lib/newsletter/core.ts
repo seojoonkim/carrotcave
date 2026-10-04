@@ -94,7 +94,7 @@ export function renderDigest(items: FeedItem[], unsubscribeUrl: string, site = '
   const subject = items.length === 1 ? `[당근동굴] ${items[0].title}` : `[당근동굴] 새 글 ${items.length}편 · ${items[0].title} 외`;
   const rows = items.map((i) => `<tr><td style="padding:22px 0;border-top:1px solid #253041">
 <p style="margin:0 0 6px;color:#f39a52;font:600 12px/1.4 -apple-system,Segoe UI,sans-serif;letter-spacing:.06em">${esc(i.category)} · ${esc(i.date)}</p>
-<a href="${esc(i.url)}" style="color:#dfe5ed;text-decoration:none;font:700 20px/1.4 -apple-system,Segoe UI,sans-serif">${esc(i.title)}</a>
+<a href="${esc(i.url)}?utm_source=newsletter" style="color:#dfe5ed;text-decoration:none;font:700 20px/1.4 -apple-system,Segoe UI,sans-serif">${esc(i.title)}</a>
 <p style="margin:8px 0 0;color:#a3adbb;font:400 15px/1.7 -apple-system,Segoe UI,sans-serif">${esc(i.summary)}</p>
 </td></tr>`).join('');
   const html = `<!doctype html><html lang="ko"><body style="margin:0;background:#0b0e14">

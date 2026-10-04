@@ -630,3 +630,8 @@ html:focus-within { scroll-behavior: smooth; }
   .hero > *, .drawer-backdrop, .toc-drawer.open nav > a { animation: none !important; }
   html:focus-within { scroll-behavior: auto; }
 }
+
+/* Logo v4 2026.10 — geometry drawn in place */
+.reader-nav .brand-mark__cave { transform: none; }
+.reader-nav .brand-mark__rabbit-position { transform: none; }
+.reader-nav .brand-mark { width: 38px; height: 38px; flex: 0 0 38px; }
