@@ -89,25 +89,19 @@
     <g clip-path="url(#ground-clip)">
       <g transform="translate(965 103)">
         <g class="carrot">
-          <g class="carrot-leaves">
-            <path d="M-1-1C-6-12-16-17-21-28-9-27-3-17-1-1Z" fill="#79a85b"/>
-            <path d="M0-1C-2-15 1-26-1-38 9-28 7-14 0-1Z" fill="#79a85b"/>
-            <path d="M1-1C7-11 16-16 23-24 21-12 11-6 1-1Z" fill="#79a85b"/>
-            <path d="M0-4C0-14 1-22 0-31" fill="none" stroke="#6b9656" stroke-width="1" stroke-linecap="round" opacity=".7"/>
-          </g>
-          <path d="M-21 3C-21-6 21-6 21 3 21 26 9 51 3 64 1 69-1 69-3 64-9 51-21 26-21 3Z" fill="url(#footer-carrot-skin)" stroke="#c96a26" stroke-width="1.2"/>
-          <path d="M-17 30h8M9 38h8M-12 47h6" fill="none" stroke="#ffad4d" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M-14 2c6-3 14-3 20-1" fill="none" stroke="#ffd29a" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+          <g class="carrot-leaves"><path d="M-9 -3C-18 -24 -15 -39 -6 -48M0 -3c0 -24 6 -39 15 -45M6 0c15 -18 27 -24 39 -21" fill="none" stroke="#79a85b" stroke-width="7.5" stroke-linecap="round"/><path d="M0 -6c0 -16 3 -28 9 -36" fill="none" stroke="#6b9656" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></g>
+          <path d="M-21 -3h42c3.6 21 -6.6 48 -21 72 -14.4 -24 -24.6 -51 -21 -72Z" fill="url(#footer-carrot-skin)" stroke="#c96a26" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M-14 31h9M6 41h9M-7 52h7" fill="none" stroke="#ffad4d" stroke-width="3" stroke-linecap="round"/>
           <g class="carrot-sleep-eyes"><path d="M-10 13q3 2.6 6 0M4 13q3 2.6 6 0" fill="none" stroke="#5a2a0e" stroke-width="1.6" stroke-linecap="round"/></g>
           <g class="carrot-eyes-open">
             <g class="carrot-pupils">
-              <circle cx="-7" cy="12.5" r="2.7" fill="#5a2a0e"/><circle cx="-6.1" cy="11.5" r=".95" fill="#fff"/>
-              <g class="carrot-eye-right"><circle cx="7" cy="12.5" r="2.7" fill="#5a2a0e"/><circle cx="7.9" cy="11.5" r=".95" fill="#fff"/></g>
+              <circle cx="-7" cy="12.6" r="3" fill="#5a2a0e"/><circle cx="-6.1" cy="11.5" r=".95" fill="#fff"/>
+              <g class="carrot-eye-right"><circle cx="7" cy="12.6" r="3" fill="#5a2a0e"/><circle cx="7.9" cy="11.5" r=".95" fill="#fff"/></g>
             </g>
             <path class="carrot-wink" d="M4 13.2q3-2.6 6 0" fill="none" stroke="#5a2a0e" stroke-width="1.7" stroke-linecap="round"/>
           </g>
           <g class="carrot-blush" fill="#f4a0a8"><ellipse cx="-12.5" cy="19.5" rx="3.8" ry="2.2"/><ellipse cx="12.5" cy="19.5" rx="3.8" ry="2.2"/></g>
-          <path d="M-3 19q3 2.8 6 0" fill="none" stroke="#5a2a0e" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M-3.6 19.2q3.6 2.7 7.2 0" fill="none" stroke="#5a2a0e" stroke-width="2" stroke-linecap="round"/>
         </g>
       </g>
     </g>
@@ -124,11 +118,14 @@
       <g transform="translate(1002 68)"><path class="zz-b" d="M0 0h5l-5 6h5"/></g>
     </g>
     <g class="rabbit-position" transform="translate(690)">
-      <ellipse class="rabbit-shadow" cx="182" cy="170" rx="44" ry="5.5" fill="#0f0e0d"/>
+      <ellipse class="rabbit-shadow" cx="210" cy="170" rx="34" ry="5" fill="#0f0e0d"/>
       <g class="rabbit-body">
-        <g class="rabbit-tail"><circle cx="144" cy="146" r="11" fill="#f6f8fb" stroke="#d5dde7" stroke-width="1"/><circle cx="141" cy="143" r="4.5" fill="#fff" opacity=".7"/></g>
-        <path d="M146 150c0-18 16-30 36-30s38 12 38 28c0 13-9 21-21 21h-34c-12 0-19-8-19-19Z" fill="url(#rb-coat)" stroke="#d5dde7" stroke-width="1.2"/>
-        <g class="rabbit-satchel">
+        <g class="rabbit-tail"><circle cx="187.6" cy="157.6" r="8" fill="#f6f8fb"/><circle cx="186" cy="156" r="3.5" fill="#fff"/></g>
+        <ellipse cx="210" cy="152.8" rx="20.8" ry="16.8" fill="#e3e9f1"/>
+        <ellipse cx="210" cy="155.2" rx="13.6" ry="11.2" fill="#f6f8fb" opacity=".7"/>
+        <ellipse cx="198.8" cy="167.2" rx="9" ry="4" fill="#e3e9f1"/>
+        <ellipse cx="221.2" cy="167.2" rx="9" ry="4" fill="#e3e9f1"/>
+        <g class="rabbit-satchel"><g transform="translate(26 -2)">
           <path d="M190 124c-8 8-17 15-27 21" fill="none" stroke="#7a5236" stroke-width="2.6" stroke-linecap="round"/>
           <rect x="160" y="141" width="11" height="14" rx="1.6" fill="#f7f1e8" stroke="#cdbfa9" stroke-width=".8" transform="rotate(-8 165 148)"/>
           <path d="M162 145h6M162 148h6" stroke="#9aa6b5" stroke-width=".8" stroke-linecap="round" transform="rotate(-8 165 148)"/>
@@ -136,24 +133,20 @@
           <rect x="152" y="146" width="27" height="19" rx="5" fill="#8a5a3a" stroke="#6b4630" stroke-width="1.1"/>
           <path d="M152 151c0-3 2-5 5-5h17c3 0 5 2 5 5v4c-9 3-18 3-27 0Z" fill="#a8704a"/>
           <circle cx="165.5" cy="156.4" r="2" fill="#f39a52" stroke="#6b4630" stroke-width=".8"/>
-        </g>
-        <ellipse cx="174" cy="150" rx="13" ry="8" fill="#fff" opacity=".4"/>
-        <ellipse cx="160" cy="165" rx="14" ry="5.5" fill="#e3e9f1" stroke="#d5dde7" stroke-width="1"/>
-        <g class="rabbit-front-paw"><ellipse cx="205" cy="166" rx="8" ry="4.6" fill="#f6f8fb" stroke="#d5dde7" stroke-width="1"/></g>
+        </g></g>
+        <g class="rabbit-front-paw"><ellipse cx="228.4" cy="144.8" rx="5.4" ry="4.5" fill="#f6f8fb"/></g>
+        
         <g class="rabbit-head">
-          <g class="rabbit-ear-back"><ellipse cx="197" cy="74" rx="8.5" ry="24" transform="rotate(-14 197 96)" fill="#e3e9f1" stroke="#d5dde7" stroke-width="1.1"/><ellipse cx="197" cy="78" rx="4" ry="16" transform="rotate(-14 197 96)" fill="#f4a9b6" opacity=".75"/></g>
-          <g class="rabbit-ear-front"><ellipse cx="218" cy="70" rx="9" ry="26" transform="rotate(10 218 94)" fill="#f6f8fb" stroke="#d5dde7" stroke-width="1.1"/><ellipse cx="218" cy="74" rx="4.4" ry="17" transform="rotate(10 218 94)" fill="#f4a9b6" opacity=".85"/></g>
-          <circle cx="210" cy="116" r="26" fill="url(#rb-coat)" stroke="#d5dde7" stroke-width="1.2"/>
-          <path d="M193 104c4-6 11-9 18-9" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
-          <g class="rabbit-eyes-open"><g class="rabbit-eye-blink">
-            <ellipse cx="203" cy="115" rx="3.4" ry="4.4" fill="#11151c"/><ellipse cx="222" cy="115" rx="3.4" ry="4.4" fill="#11151c"/>
-            <circle cx="204.4" cy="113.1" r="1.35" fill="#fff"/><circle cx="223.4" cy="113.1" r="1.35" fill="#fff"/>
-          </g></g>
-          <g class="rabbit-eyes-happy"><path d="M199 116.5q4-5 8 0M218 116.5q4-5 8 0" fill="none" stroke="#11151c" stroke-width="2.1" stroke-linecap="round"/></g>
-          <g fill="#f4a0a8" opacity=".55"><ellipse cx="197" cy="124" rx="5" ry="3"/><ellipse cx="228.5" cy="124" rx="4.4" ry="3"/></g>
-          <path class="rabbit-nose" d="M210.4 120.6h3.6c.6 0 .9.7.5 1.1l-1.8 1.7c-.3.3-.7.3-1 0l-1.8-1.7c-.4-.4-.1-1.1.5-1.1Z" fill="#e8909b"/>
-          <path d="M212.2 123.8v1.4m0 0q-1.8 2.2-3.8.6m3.8-.6q1.8 2.2 3.8.6" fill="none" stroke="#c27b84" stroke-width="1.1" stroke-linecap="round"/>
-          <g class="rabbit-whiskers" fill="none" stroke="#c9d2dd" stroke-width=".9" stroke-linecap="round" opacity=".85"><path d="M229 120.5l10-2.5M229 123.5l10 .8"/></g>
+          <g class="rabbit-ear-back"><ellipse cx="198.8" cy="79.2" rx="8.3" ry="21.6" fill="#f6f8fb" transform="rotate(-12 198.8 79.2)"/><ellipse cx="198.8" cy="80.8" rx="3.7" ry="14.4" fill="#f4a9b6" transform="rotate(-12 198.8 80.8)"/></g>
+          <g class="rabbit-ear-front"><ellipse cx="221.2" cy="77.6" rx="8.3" ry="22.4" fill="#f6f8fb" transform="rotate(10 221.2 77.6)"/><ellipse cx="221.2" cy="79.2" rx="3.7" ry="15.2" fill="#f4a9b6" transform="rotate(10 221.2 79.2)"/></g>
+          <circle cx="210" cy="116" r="23.2" fill="#f6f8fb"/>
+          <g class="rabbit-eyes-open"><g class="rabbit-eye-blink"><circle cx="201.4" cy="116" r="4" fill="#11151c"/><circle cx="218.6" cy="116" r="4" fill="#11151c"/><circle cx="202.8" cy="114.4" r="1.4" fill="#fff"/><circle cx="220.1" cy="114.4" r="1.4" fill="#fff"/></g></g>
+          <g class="rabbit-eyes-happy"><path d="M197.5 117q3.8 -4.5 7.7 0M214.8 117q3.8 -4.5 7.7 0" fill="none" stroke="#11151c" stroke-width="2.2" stroke-linecap="round"/></g>
+          <g fill="#f4a0a8" opacity=".85"><ellipse cx="193.7" cy="124.6" rx="4.8" ry="2.9"/><ellipse cx="226.3" cy="124.6" rx="4.8" ry="2.9"/></g>
+          <ellipse class="rabbit-nose" cx="210" cy="121.8" rx="2.1" ry="1.6" fill="#e8909b"/>
+          <path d="M207.4 124.6q2.6 2.1 5.1 0" fill="none" stroke="#c27b84" stroke-width="1.7" stroke-linecap="round"/>
+          <g class="rabbit-whiskers" fill="none" stroke="#c9d2dd" stroke-width=".9" stroke-linecap="round" opacity=".5"><path d="M230.8 120.8l8-2M230.8 124l8 .6"/></g>
+          
         </g>
       </g>
       <g transform="translate(250 74)"><g class="rabbit-question-inner"><path d="M-5-8c0-6 10-6 10 0 0 4-5 4.5-5 9" fill="none" stroke="#f6c07a" stroke-width="2.6" stroke-linecap="round"/><circle cx="0" cy="6.5" r="1.7" fill="#f6c07a"/></g></g>
