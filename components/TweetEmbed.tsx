@@ -74,7 +74,7 @@ export default function TweetEmbed({ url }: { url: string }) {
         padding: '1rem',
         margin: '1rem 0',
         background: 'rgba(255,255,255,0.03)',
-        color: 'rgba(230,235,242,0.4)',
+        color: 'rgba(236,238,245,0.4)',
         fontSize: '0.875rem',
       }}>
         Loading post...
@@ -115,14 +115,14 @@ export default function TweetEmbed({ url }: { url: string }) {
             />
           )}
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontWeight: 600, fontSize: '0.9375rem', color: '#e6ebf2' }}>
+            <div style={{ fontWeight: 600, fontSize: '0.9375rem', color: '#eceef5' }}>
               {tweet.author}
             </div>
-            <div style={{ fontSize: '0.8125rem', color: 'rgba(230,235,242,0.45)' }}>
+            <div style={{ fontSize: '0.8125rem', color: 'rgba(236,238,245,0.45)' }}>
               @{tweet.handle}
             </div>
           </div>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(230,235,242,0.4)" style={{ flexShrink: 0 }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(236,238,245,0.4)" style={{ flexShrink: 0 }}>
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
         </div>
@@ -131,7 +131,7 @@ export default function TweetEmbed({ url }: { url: string }) {
         <div style={{
           fontSize: '0.9375rem',
           lineHeight: '1.5',
-          color: 'rgba(230,235,242,0.8)',
+          color: 'rgba(236,238,245,0.8)',
           marginBottom: tweet.media?.length ? '0.75rem' : '0.5rem',
           whiteSpace: 'pre-wrap',
           display: '-webkit-box',
@@ -170,7 +170,7 @@ export default function TweetEmbed({ url }: { url: string }) {
           display: 'flex',
           gap: '1.25rem',
           fontSize: '0.8125rem',
-          color: 'rgba(230,235,242,0.35)',
+          color: 'rgba(236,238,245,0.35)',
           alignItems: 'center',
         }}>
           <span>{formatDate(tweet.date)}</span>

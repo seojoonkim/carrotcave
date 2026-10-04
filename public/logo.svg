@@ -46,7 +46,7 @@
 
   <!-- Vertical divider -->
   <line x1="38" y1="8" x2="38" y2="32"
-    stroke="#30363D" stroke-width="0.7" stroke-linecap="round"/>
+    stroke="#44475a" stroke-width="0.7" stroke-linecap="round"/>
 
   <!-- ═══ Text area ═══ -->
 
@@ -63,7 +63,7 @@
     font-family="'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif"
     font-size="8.5"
     font-weight="400"
-    fill="#8B949E"
+    fill="#a0a6bb"
     letter-spacing="1.2">토끼굴</text>
 
 </svg>

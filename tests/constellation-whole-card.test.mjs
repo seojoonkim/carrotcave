@@ -7,6 +7,7 @@ const tail = css.slice(css.indexOf('Whole-card recommendation 2026.10'));
 test('recommendation hover covers the whole card: rank, relation, read cue and post', () => {
   assert.ok(tail.length > 40, 'whole-card block present');
   assert.match(tail, /\.cave-constellation__recommendation article\{position:relative;[^}]*border-radius:4px/);
+  assert.match(tail, /\.cave-constellation__recommendation article\{border-radius:16px!important\}/, 'soft-night rounded card');
   assert.match(tail, /article:is\(:hover,:focus-within\)\{background:/);
   assert.match(tail, /\.cave-constellation__thumbnail\{margin:0;[^}]*background:none!important/);
 });

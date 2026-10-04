@@ -17,7 +17,7 @@ test('shared speaker palette: main is carrot orange, host and audience are disti
   const rule = (role) => (system.match(new RegExp(`\\.transcript-speaker\\[data-role="${role}"\\][^{]*\\{([^}]*)\\}`)) || [])[1] || '';
   assert.match(rule('main'), /color:\s*var\(--carrot-orange\)/);
   assert.match(rule('host'), /color:\s*#8fb3d9/);
-  assert.match(rule('audience'), /color:\s*#9aa5b4/);
+  assert.match(rule('audience'), /color:\s*#b0b5c9/);
   assert.doesNotMatch(system, /#transcript \.speaker-person \{ color: #f5b27a; \}/);
 });
 
@@ -32,6 +32,6 @@ test('every multi-speaker reader tags each speaker with a role', () => {
 
 test('no per-reader override paints the main speaker grey or the host orange', () => {
   const css = read('public/voices/mark-zuckerberg-muse/styles.css');
-  assert.doesNotMatch(css, /speaker-person\[data-person="mark"\][^}]*#c3ccd8/);
+  assert.doesNotMatch(css, /speaker-person\[data-person="mark"\][^}]*#c6cad9/);
   assert.doesNotMatch(css, /speaker-person\[data-person="alex"\][^}]*#f0be70/);
 });

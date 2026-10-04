@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import test from 'node:test';
 
-// Reference: when-stars-ring-again — ink-navy surfaces (#0b0e14) and cool blue-gray body ink (#cdd5df since the 2026.10 eye-comfort pass).
+// Reference: when-stars-ring-again — ink-navy surfaces (#282a36) and cool blue-gray body ink (#eceef5 since the 2026.10 eye-comfort pass).
 // Rule: every neutral (low-chroma) color used for surfaces, text and lines must not lean red (R ≤ B).
 // Carrot accents are saturated (chroma > 60) and stay exempt.
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
@@ -29,6 +29,8 @@ test('no neutral surface, ink or line color leans red anywhere on the site', () 
     let src; try { src = read(f); } catch { continue; }
     for (const { text, rgb: [r, g, b] } of colorsIn(src)) {
       const chroma = Math.max(r, g, b) - Math.min(r, g, b);
+      // Mascot fur (soft-night 2026-10-05) is a chosen warm cream; only these two exact values are exempt.
+      if (/^#(?:f7f3ea|ebe3d3)$/i.test(text)) continue;
       if (chroma <= 60 && r > b + 2 && r + g + b < 760) offenders.push(`${f}: ${text}`);
     }
   }
@@ -37,8 +39,8 @@ test('no neutral surface, ink or line color leans red anywhere on the site', () 
 
 test('base tokens follow the ink-navy reference', () => {
   const css = read('app/globals.css');
-  assert.match(css, /#0b0e14/i, 'page background');
-  assert.match(css, /#cdd5df/i, 'body ink (eye-comfort 2026.10)');
+  assert.match(css, /#282a36/i, 'page background');
+  assert.match(css, /#eceef5/i, 'body ink (eye-comfort 2026.10)');
   const voice = read('public/voices/reader-system.css');
-  assert.match(voice, /#0b0e14|11,\s*14,\s*20/i);
+  assert.match(voice, /#282a36|11,\s*14,\s*20/i);
 });

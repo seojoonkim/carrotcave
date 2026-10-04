@@ -20,22 +20,22 @@ for (const file of ['public/footer-rabbit-carrot-v3.svg', 'public/footer-rabbit-
   const svg = read(file);
   test(`${file}: rabbit fur, ears and face use the logo palette`, () => {
     const head = colors(stripProps(group(svg, 'rabbit-head')));
-    for (const c of ['#f6f8fb', '#f4a9b6', '#11151c']) {
+    for (const c of ['#f7f3ea', '#00d9a8', '#1c2a3a']) {
       assert.ok(logo.includes(c), `logo has ${c}`);
       assert.ok(head.has(c), `footer rabbit head uses logo ${c}`);
     }
     for (const warm of ['#fbf6ee', '#fffaf2', '#f7f1e8', '#efe6d8', '#f2b6b0']) assert.ok(!head.has(warm), `old warm cream ${warm} gone from rabbit head`);
-    assert.match(svg, /<radialGradient id="rb-coat"[^>]*>\s*<stop offset="0" stop-color="#ffffff"\/><stop offset=".7" stop-color="#f6f8fb"\/><stop offset="1" stop-color="#e3e9f1"\/>/);
+    assert.match(svg, /<radialGradient id="rb-coat"[^>]*>\s*<stop offset="0" stop-color="#ffffff"\/><stop offset=".7" stop-color="#f7f3ea"\/><stop offset="1" stop-color="#ebe3d3"\/>/);
   });
   test(`${file}: carrot body, leaves and face use the logo palette`, () => {
     const carrot = colors(group(svg, 'carrot'));
-    for (const c of ['#79a85b', '#c96a26', '#5a2a0e', '#f4a0a8']) assert.ok(carrot.has(c), `footer carrot uses logo ${c}`);
-    for (const old of ['#93c07a', '#3a1d0c', '#5a2a10', '#ff6f5e', '#c9601f']) assert.ok(!carrot.has(old), `old carrot color ${old} gone`);
+    for (const c of ['#00c08b', '#ff7a45', '#1c2a3a', '#ff9fb2']) assert.ok(carrot.has(c), `footer carrot uses logo ${c}`);
+    for (const old of ['#2fd1a3', '#3a1d0c', '#5a2a10', '#ff6f5e', '#c9601f']) assert.ok(!carrot.has(old), `old carrot color ${old} gone`);
     assert.match(svg, /<linearGradient id="footer-carrot-skin"[^>]*>\s*<stop offset="0" stop-color="#f39a52"\/><stop offset="1" stop-color="#f39a52"\/>/);
   });
 }
 
 test('the inlined footer module is regenerated from the recolored svg', () => {
   const mod = read('components/footer-scene-svg.ts');
-  assert.ok(mod.includes('#f6f8fb') && !mod.includes('#fbf6ee'), 'run node scripts/build-footer-scene.mjs');
+  assert.ok(mod.includes('#f7f3ea') && mod.includes('#ff7a45') && !mod.includes('#fbf6ee'), 'run node scripts/build-footer-scene.mjs');
 });

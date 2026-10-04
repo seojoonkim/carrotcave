@@ -22,12 +22,14 @@ test('pages do not override the generated card with raw thumbnails', () => {
   }
 });
 
-test('card keeps the cave palette: ink navy, carrot accent, sharp corners', () => {
+test('card keeps the soft-night palette: slate ink, carrot accent, rounded mascot shapes', () => {
   const card = read('lib/og-card.tsx');
-  assert.match(card, /INK = '#0b0e14'/);
+  assert.match(card, /INK = '#282a36'/);
   assert.match(card, /CARROT = '#f39a52'/);
   const radii = [...card.matchAll(/borderRadius: (\d+)/g)].map((m) => Number(m[1]));
-  assert.ok(radii.every((r) => r <= 4), `radii ${radii}`);
+  assert.ok(radii.length >= 3 && radii.every((r) => [24, 28, 999].includes(r)), `radii ${radii}`);
+  assert.match(card, /PANEL = '#343746'/);
+  assert.match(card, /<img src=\{MARK_DATA_URL\} width=\{290\} height=\{290\} \/>/, 'no-photo card shows the mascot logo on a rounded panel');
 });
 
 test('non-JPEG/PNG pictures are converted and a bad picture never breaks the build', () => {

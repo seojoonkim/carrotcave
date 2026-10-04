@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0b0e14',
+  themeColor: '#282a36',
   viewportFit: 'cover',
 };
 
@@ -64,7 +64,7 @@ export default function RootLayout({
       </head>
       <body
         className="antialiased min-h-screen"
-        style={{ backgroundColor: '#0b0e14', color: '#cdd5df' }}
+        style={{ backgroundColor: '#282a36', color: '#eceef5' }}
       >
         <CaveTorch />
         {children}

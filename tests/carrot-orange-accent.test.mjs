@@ -22,7 +22,7 @@ const productionTextFiles = [
 ];
 
 test('shared decorative accent uses carrot orange while leaves retain their own green', () => {
-  assert.match(globalCss, /--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b/);
+  assert.match(globalCss, /--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#00c08b/);
   assert.doesNotMatch(globalCss, /--green:/);
   assert.match(globalCss, /wall-card--generated \.wall-card__date-part:last-child\{color:var\(--carrot-orange\)!important\}/);
   assert.match(globalCss, /wall-card\[data-axis="빌딩"\] \.wall-card__axis\{color:var\(--carrot-orange\)\}/);
@@ -37,7 +37,7 @@ test('active axis marker has a filled emoji-like orange body and three-leaf silh
 test('ordinary and voice reading progress carrots share the orange and leaf palette', () => {
   for (const css of [globalCss, voiceCss]) {
     assert.match(css, /--carrot-orange:\s*#f39a52/);
-    assert.match(css, /--carrot-leaf:\s*#79a85b/);
+    assert.match(css, /--carrot-leaf:\s*#00c08b/);
     assert.match(css, /progress[^}]*carrot[\s\S]*?var\(--carrot-leaf\)/);
     assert.match(css, /progress[^}]*carrot::after[\s\S]*?var\(--carrot-orange\)/);
   }
@@ -51,7 +51,7 @@ test('all shipped carrot assets use the unified palette and no legacy palette', 
   }
   for (const relativePath of productionTextFiles.filter((file) => /(?:CarrotCaveMark|footer-rabbit-carrot|voices\/.+\/index)/.test(file))) {
     const source = read(relativePath).toLowerCase();
-    assert.match(source, /#f39a52/, `${relativePath} is missing carrot orange`);
-    assert.match(source, /#79a85b/, `${relativePath} is missing leaf green`);
+    assert.match(source, /#ff7a45/, `${relativePath} is missing the mascot carrot coral (2026-10-05 soft-night)`);
+    assert.match(source, /#00c08b/, `${relativePath} is missing leaf green`);
   }
 });

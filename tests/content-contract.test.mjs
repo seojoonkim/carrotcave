@@ -61,7 +61,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice menu headers consume one shared chrome contract', () => {
   assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
   assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #0e1218;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #252733;/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(214, 222, 233, 0\.09\);/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
   assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);
@@ -562,9 +562,9 @@ test('archive and recommendation cards share description typography and restrain
   assert.match(stylesSource, /\.wall-card__abstract\{[^}]*font:500 13px\/1\.5 var\(--sans\);letter-spacing:-\.015em/);
   const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
   assert.match(endCss, /\.cc-reading-end \.cave-constellation__thumbnail p\{[^}]*font:500 13px\/1\.5 var\(--re-sans\);letter-spacing:-\.015em/);
-  assert.doesNotMatch(endCss, /rgba\(7,9,13,\.97\)/);
+  assert.doesNotMatch(endCss, /rgba\(30,31,40,\.97\)/);
   assert.match(caveConstellationSource, /className="cave-constellation__carrot" aria-hidden="true"/);
-  assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#79a85b;/);
+  assert.match(stylesSource, /:root\{[^}]*--carrot-orange:#f39a52;--carrot-orange-ink:#9c4a06;--carrot-leaf:#00c08b;/);
   assert.match(readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8'), /\.cave-constellation__carrot\{[^}]*width:12px;height:20px[^}]*var\(--re-leaf\)[^}]*rotate\(22deg\)/);
   assert.match(readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8'), /\.cave-constellation__carrot::after\{[^}]*top:5px;left:2px;width:9px;height:15px[^}]*clip-path:polygon\(12% 0,100% 8%,62% 100%,39% 86%,0 8%\)[^}]*var\(--re-carrot\)/);
   assert.doesNotMatch(caveConstellationSource, /<span aria-hidden="true">→<\/span>/);
@@ -586,11 +586,11 @@ test('ordinary posts use the same graphite reading surface and typography as voi
   assert.match(stylesSource, /--post-reader-sans:var\(--sans\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*background:var\(--graphite\)/);
   assert.match(stylesSource, /\.post-reader-page\{[^}]*--reader-measure:680px[^}]*--reader-body-size:18px[^}]*--reader-body-leading:1\.9/);
-  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#cdd5df/);
+  assert.match(stylesSource, /\.post-content p\{margin:0 0 24px;color:#eceef5/);
   assert.doesNotMatch(postSource, /return <br key=\{i\} \/>/);
   assert.match(stylesSource, /\.post-reader-article\{[^}]*max-width:var\(--reader-measure\)/);
   assert.match(stylesSource, /\.post-content\{[^}]*font:400 var\(--reader-body-size\)\/var\(--reader-body-leading\) var\(--post-reader-sans\)/);
-  assert.match(stylesSource, /\.post-content p\{[^}]*color:#cdd5df/);
+  assert.match(stylesSource, /\.post-content p\{[^}]*color:#eceef5/);
   assert.match(stylesSource, /\.post-content :is\(h2,h3\)\{[^}]*color:var\(--ink-head\)/);
   assert.match(stylesSource, /\.post-content a\{[^}]*color:var\(--reader-accent\)[^}]*text-decoration:underline/);
 });
@@ -705,7 +705,7 @@ test('post thumbnails replace sequence numbers with a quiet accessible publicati
 test('the archive list preserves complete titles and gives image-free entries the cave sketch', () => {
   assert.match(postsSource, /게임과 AI 에이전트 그리고 온체인 경제 - 다음 10년의 신뢰 아키텍처/);
   assert.doesNotMatch(postsSource, /다음 10년의 신뢰 아키['"]/);
-  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE = '\/editorial-card-fallback-v5\.png'/);
+  assert.match(archiveListSource, /ARCHIVE_FALLBACK_IMAGE = '\/editorial-card-fallback-v6\.png'/);
   assert.match(archiveListSource, /src=\{entry\.imageUrl \?\? ARCHIVE_FALLBACK_IMAGE\}/);
   assert.match(archiveListSource, /archive-thumb--sketch/);
   assert.doesNotMatch(stylesSource, /\.archive-row h2\{[^}]*-webkit-line-clamp/, 'titles are never truncated');

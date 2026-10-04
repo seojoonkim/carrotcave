@@ -24,7 +24,7 @@ test('end of a read has a single separator line, shared by posts and voices', ()
   assert.doesNotMatch(end, /\.post-next\{[^}]*border(-top|-bottom)?:1px/);
   assert.equal((end.match(/border-top:1px solid var\(--re-line\)/g) || []).length, 1, 'one section separator: above the picks');
   assert.equal((end.match(/border-top:1px/g) || []).length, 2, 'plus only a faint hairline between ranked picks');
-  assert.match(end, /\.cave-constellation__recommendation\+\.cave-constellation__recommendation\{[^}]*border-top:1px solid rgba\(214,221,230,\.08\)/);
+  assert.match(end, /\.cave-constellation__recommendation\+\.cave-constellation__recommendation\{[^}]*border-top:1px solid rgba\(217,220,232,\.08\)/);
   assert.doesNotMatch(css, /post-content::after|post-reader-action|cave-constellation|post-next/, 'no competing post-end rules in globals.css');
 });
 

@@ -16,11 +16,14 @@ function checkMark(label, mark) {
   assert.equal(feet.length, 2, `${label}: two feet`);
   for (const [, cy, ry] of feet) assert.ok(Math.abs(Number(cy) + Number(ry) - floor) <= 1, `${label}: feet stand on the floor`);
   assert.equal((mark.match(/__eye"/g) ?? []).length, 2, `${label}: two eyes`);
-  assert.match(mark, /#f4a9b6/, `${label}: pink inner ears`);
-  assert.match(mark, /#f4a0a8/, `${label}: blush`);
+  assert.match(mark, /#00d9a8/, `${label}: mint inner ears (soft-night mascot)`);
+  assert.match(mark, /#f7f3ea/, `${label}: cream fur`);
+  assert.match(mark, /__eye"[^>]*fill="#1c2a3a"/, `${label}: navy dot eyes`);
+  assert.match(mark, /#ff9fb2/, `${label}: blush`);
   assert.match(mark, /__carrot"/, `${label}: carrot`);
-  assert.match(mark, /#f39a52/, `${label}: carrot orange`);
-  assert.match(mark, /#79a85b/, `${label}: leaf green`);
+  assert.match(mark, /#ff7a45/, `${label}: coral carrot`);
+  assert.equal((mark.match(/fill="#00c08b"/g) ?? []).length, 3, `${label}: three rounded mint leaf blobs`);
+  assert.match(mark, /#00c08b/, `${label}: leaf green`);
 }
 
 test('React logo is the chibi rabbit + smiling carrot standing on the burrow floor', () => {

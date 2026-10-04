@@ -8,9 +8,9 @@
 .cc-reading-end{
   --re-sans:"Pretendard Variable",Pretendard,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
   --re-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --re-ink-1:#dfe5ed;--re-ink-2:#9fa9b8;--re-ink-3:#7a8595;--re-title:#cdd5df;
-  --re-panel:#141922;--re-panel-2:#171c25;--re-line:rgba(214,222,233,.1);
-  --re-carrot:#f39a52;--re-carrot-soft:#f5b07a;--re-leaf:#79a85b;
+  --re-ink-1:#f6f7fb;--re-ink-2:#b7bccf;--re-ink-3:#959bb2;--re-title:#eceef5;
+  --re-panel:#303241;--re-panel-2:#343746;--re-line:rgba(214,222,233,.1);
+  --re-carrot:#f39a52;--re-carrot-soft:#f5b07a;--re-leaf:#00c08b;
   width:100%;max-width:760px;margin:64px auto 0;padding:0;
   color:var(--re-ink-1);font-family:var(--re-sans);text-align:left;
 }
@@ -45,12 +45,12 @@
 
 /* 4 · three picks */
 .cc-reading-end .cave-constellation-shell{position:static;left:auto;width:100%;margin:64px 0 0;padding:48px 0 0;border-top:1px solid var(--re-line);transform:none;color:var(--re-ink-1)}
-.cc-reading-end .cave-constellation-kicker{display:flex;align-items:center;gap:12px;color:#a6d36b;font:650 12px/1 var(--re-mono);letter-spacing:.16em}
-.cc-reading-end .cave-constellation-kicker::after{content:"";width:72px;height:1px;background:linear-gradient(90deg,#a6d36b,var(--re-carrot) 55%,transparent)}
-.cc-reading-end .cave-constellation-heading{margin:12px 0 8px;color:#dfe5ed;font:720 clamp(26px,3.2vw,34px)/1.12 var(--re-sans);letter-spacing:-.045em}
+.cc-reading-end .cave-constellation-kicker{display:flex;align-items:center;gap:12px;color:#3ddcb4;font:650 12px/1 var(--re-mono);letter-spacing:.16em}
+.cc-reading-end .cave-constellation-kicker::after{content:"";width:72px;height:1px;background:linear-gradient(90deg,#3ddcb4,var(--re-carrot) 55%,transparent)}
+.cc-reading-end .cave-constellation-heading{margin:12px 0 8px;color:#f6f7fb;font:720 clamp(26px,3.2vw,34px)/1.12 var(--re-sans);letter-spacing:-.045em}
 .cc-reading-end .cave-constellation-intro{margin:0 0 28px;color:var(--re-ink-2);font:400 14px/1.7 var(--re-sans);text-wrap:pretty}
 .cc-reading-end .cave-constellation{position:relative;border:0;background:none;animation:none}
-.cc-reading-end .cave-constellation__recommendation+.cave-constellation__recommendation{margin-top:20px;padding-top:20px;border-top:1px solid rgba(214,221,230,.08)}
+.cc-reading-end .cave-constellation__recommendation+.cave-constellation__recommendation{margin-top:20px;padding-top:20px;border-top:1px solid rgba(217,220,232,.08)}
 .cc-reading-end .cave-constellation__recommendation article{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:0;background:none}
 .cc-reading-end .cave-constellation__recommendation-header{grid-column:1;grid-row:1;display:flex;align-items:center;gap:10px;min-width:0}
 .cc-reading-end .cave-constellation__rank{color:var(--re-ink-1);font:700 13px/1 var(--re-sans);letter-spacing:-.01em}
@@ -58,13 +58,13 @@
 .cc-reading-end .cave-constellation__navigate{grid-column:2;grid-row:1;align-self:center;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 4px 0 12px;color:var(--re-carrot-soft);font:600 14px/1 var(--re-sans);transition:color .16s ease,transform .16s ease}
 .cc-reading-end .cave-constellation__navigate:hover{color:var(--re-carrot);transform:translateX(2px)}
 .cc-reading-end .cave-constellation__thumbnail{position:relative;isolation:isolate;display:grid;grid-column:1 / -1;grid-row:2;grid-template-columns:minmax(0,1fr) 184px;align-items:center;gap:24px;padding:12px 16px 16px;margin:0 -16px;border-radius:4px;color:inherit;transition:background-color .2s ease,box-shadow .2s ease}
-.cc-reading-end .cave-constellation__thumbnail::after{content:"";grid-column:2;grid-row:1;width:100%;aspect-ratio:16/9;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(214,221,230,.08);pointer-events:none;z-index:1}
-.cc-reading-end .cave-constellation__thumbnail::before{content:"";grid-column:2;grid-row:1;width:100%;aspect-ratio:16/9;border-radius:3px;background:linear-gradient(145deg,#171c25,#07090d)}.cc-reading-end .cave-constellation__thumbnail[data-has-image="false"]::before{background:repeating-linear-gradient(112deg,transparent 0 23px,rgba(243,154,82,.14) 24px,transparent 25px),linear-gradient(145deg,#171c25,#07090d)}
+.cc-reading-end .cave-constellation__thumbnail::after{content:"";grid-column:2;grid-row:1;width:100%;aspect-ratio:16/9;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(217,220,232,.08);pointer-events:none;z-index:1}
+.cc-reading-end .cave-constellation__thumbnail::before{content:"";grid-column:2;grid-row:1;width:100%;aspect-ratio:16/9;border-radius:3px;background:linear-gradient(145deg,#343746,#1e1f28)}.cc-reading-end .cave-constellation__thumbnail[data-has-image="false"]::before{background:#282a36 url(/editorial-card-fallback-v6.png) center/cover no-repeat;border-radius:12px}
 .cc-reading-end .cave-constellation__thumbnail img{position:relative;grid-column:2;grid-row:1;width:100%;height:auto;aspect-ratio:16/9;max-width:none;margin:0;border-radius:3px;object-fit:cover;filter:saturate(.85) brightness(.86);transition:transform .3s cubic-bezier(.2,.7,.2,1),filter .3s ease}
-@media(hover:hover) and (pointer:fine){.cc-reading-end a.cave-constellation__thumbnail:hover{background:rgba(214,221,230,.045);box-shadow:inset 0 0 0 1px rgba(214,221,230,.06)}.cc-reading-end a.cave-constellation__thumbnail:hover img{filter:saturate(1) brightness(1)}.cc-reading-end a.cave-constellation__thumbnail:hover h3{color:#dfe5ed}}
+@media(hover:hover) and (pointer:fine){.cc-reading-end a.cave-constellation__thumbnail:hover{background:rgba(217,220,232,.045);box-shadow:inset 0 0 0 1px rgba(217,220,232,.06)}.cc-reading-end a.cave-constellation__thumbnail:hover img{filter:saturate(1) brightness(1)}.cc-reading-end a.cave-constellation__thumbnail:hover h3{color:#f6f7fb}}
 .cc-reading-end .cave-constellation__thumbnail-copy{position:static;grid-column:1;grid-row:1;display:flex;min-width:0;flex-direction:column;align-items:flex-start}
 .cc-reading-end .cave-constellation__thumbnail-category{margin-bottom:7px;color:var(--re-carrot-soft);font:650 12px/1.25 var(--re-mono);letter-spacing:.03em}
-.cc-reading-end .cave-constellation__thumbnail h3{display:-webkit-box;overflow:hidden;margin:0 0 8px;color:#eef2f7;font:700 clamp(18px,1.9vw,21px)/1.3 var(--re-sans);letter-spacing:-.03em;text-wrap:pretty;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere;transition:color .2s ease}
+.cc-reading-end .cave-constellation__thumbnail h3{display:-webkit-box;overflow:hidden;margin:0 0 8px;color:#f2f3f8;font:700 clamp(18px,1.9vw,21px)/1.3 var(--re-sans);letter-spacing:-.03em;text-wrap:pretty;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere;transition:color .2s ease}
 .cc-reading-end .cave-constellation__thumbnail p{display:-webkit-box;overflow:hidden;margin:0;color:var(--re-ink-2);font:500 13px/1.5 var(--re-sans);letter-spacing:-.015em;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere}
 .cc-reading-end .cave-constellation__carrot{position:relative;display:inline-block;width:12px;height:20px;background:linear-gradient(38deg,transparent 0 42%,var(--re-leaf) 43% 64%,transparent 65%) 0 0/8px 8px no-repeat,linear-gradient(-38deg,transparent 0 42%,var(--re-leaf) 43% 64%,transparent 65%) 4px 0/8px 8px no-repeat;transform:rotate(22deg)}
 .cc-reading-end .cave-constellation__carrot::after{content:"";position:absolute;top:5px;left:2px;width:9px;height:15px;clip-path:polygon(12% 0,100% 8%,62% 100%,39% 86%,0 8%);background:linear-gradient(105deg,#ffad4d 0 38%,var(--re-carrot) 39% 72%,#d9651f 73% 100%)}
@@ -91,12 +91,12 @@
 .cc-reading-end .cave-constellation__navigate{position:static;transform:none!important}
 .cc-reading-end .cave-constellation__navigate::before{content:"";position:absolute;inset:0;z-index:2;border-radius:4px}
 .cc-reading-end .cave-constellation__carrot{transition:transform .18s ease}
-.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within){background:rgba(214,221,230,.045);box-shadow:inset 0 0 0 1px rgba(243,154,82,.28)}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within){background:rgba(217,220,232,.045);box-shadow:inset 0 0 0 1px rgba(243,154,82,.28)}
 .cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__navigate{color:var(--re-carrot)}
 .cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__carrot{transform:rotate(22deg) translateX(3px)}
 .cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__thumbnail img{filter:saturate(1) brightness(1)}
-.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__thumbnail h3{color:#dfe5ed}
-.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__rank{color:#eef2f7}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__thumbnail h3{color:#f6f7fb}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__rank{color:#f2f3f8}
 .cc-reading-end .cave-constellation__navigate:focus-visible{outline:none}
 .cc-reading-end .cave-constellation__navigate:focus-visible::before{outline:2px solid var(--re-carrot);outline-offset:2px}
 @media (max-width:520px){
@@ -106,3 +106,6 @@
 @media (prefers-reduced-motion:reduce){
   .cc-reading-end .cave-constellation__recommendation article,.cc-reading-end .cave-constellation__carrot{transition:none}
 }
+/* SOFT NIGHT SHAPES 2026.10 */
+.cave-constellation__recommendation article{border-radius:16px!important}
+.cave-constellation__thumbnail img,.cave-constellation__thumbnail{border-radius:12px}

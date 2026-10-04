@@ -5,11 +5,14 @@ const read = (p) => readFileSync(new URL('../' + p, import.meta.url), 'utf8');
 const css = read('app/globals.css');
 const end = read('public/reading-end.css');
 
-test('corners stay sharp: no pixel radius above 4px', () => {
+test('corners follow the soft-night mascot scale (2026-10-05): only 12/16px or pills above 4px', () => {
   for (const src of [css, end]) {
-    const big = [...src.matchAll(/border-radius\s*:\s*(\d+)px/g)].map((m) => Number(m[1])).filter((n) => n > 4);
+    const big = [...src.matchAll(/border-radius\s*:\s*(\d+)px/g)].map((m) => Number(m[1])).filter((n) => n > 4 && ![12, 16, 999].includes(n));
     assert.deepEqual(big, []);
   }
+  assert.match(css, /--r-thumb:12px;--r-card:16px;--r-pill:999px/);
+  assert.match(css, /\.post-link-card,[^{]*\{border-radius:var\(--r-card\)\}/);
+  assert.match(css, /\.wall-shell \.archive-search,[^{]*\{border-radius:var\(--r-pill\)\}/);
 });
 
 test('torch follows the pointer only on fine pointers and respects reduced motion', () => {

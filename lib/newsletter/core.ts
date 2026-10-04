@@ -92,31 +92,31 @@ ${entries}
 // ── Mail rendering ────────────────────────────────────────────────
 export function renderDigest(items: FeedItem[], unsubscribeUrl: string, site = 'https://carrotcave.com') {
   const subject = items.length === 1 ? `[당근동굴] ${items[0].title}` : `[당근동굴] 새 글 ${items.length}편 · ${items[0].title} 외`;
-  const rows = items.map((i) => `<tr><td style="padding:22px 0;border-top:1px solid #253041">
+  const rows = items.map((i) => `<tr><td style="padding:22px 0;border-top:1px solid #44475a">
 <p style="margin:0 0 6px;color:#f39a52;font:600 12px/1.4 -apple-system,Segoe UI,sans-serif;letter-spacing:.06em">${esc(i.category)} · ${esc(i.date)}</p>
-<a href="${esc(i.url)}?utm_source=newsletter" style="color:#dfe5ed;text-decoration:none;font:700 20px/1.4 -apple-system,Segoe UI,sans-serif">${esc(i.title)}</a>
-<p style="margin:8px 0 0;color:#a3adbb;font:400 15px/1.7 -apple-system,Segoe UI,sans-serif">${esc(i.summary)}</p>
+<a href="${esc(i.url)}?utm_source=newsletter" style="color:#f6f7fb;text-decoration:none;font:700 20px/1.4 -apple-system,Segoe UI,sans-serif">${esc(i.title)}</a>
+<p style="margin:8px 0 0;color:#aab0c4;font:400 15px/1.7 -apple-system,Segoe UI,sans-serif">${esc(i.summary)}</p>
 </td></tr>`).join('');
-  const html = `<!doctype html><html lang="ko"><body style="margin:0;background:#0b0e14">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0e14"><tr><td align="center" style="padding:36px 20px">
+  const html = `<!doctype html><html lang="ko"><body style="margin:0;background:#282a36">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#282a36"><tr><td align="center" style="padding:36px 20px">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px">
-<tr><td style="padding-bottom:18px"><a href="${site}" style="color:#dfe5ed;text-decoration:none;font:600 15px/1 ui-monospace,Menlo,monospace">CarrotCave<span style="color:#8e99a8">.com</span></a></td></tr>
+<tr><td style="padding-bottom:18px"><a href="${site}" style="color:#f6f7fb;text-decoration:none;font:600 15px/1 ui-monospace,Menlo,monospace">CarrotCave<span style="color:#a6abc0">.com</span></a></td></tr>
 ${rows}
-<tr><td style="padding:26px 0 0;border-top:1px solid #253041;color:#7a8595;font:400 12px/1.7 -apple-system,Segoe UI,sans-serif">
+<tr><td style="padding:26px 0 0;border-top:1px solid #44475a;color:#959bb2;font:400 12px/1.7 -apple-system,Segoe UI,sans-serif">
 당근동굴 새 글 알림을 신청하셔서 받는 메일입니다. 새 글이 있는 날 아침 8시에 한 번만 보내드려요.<br>
-<a href="${esc(unsubscribeUrl)}" style="color:#a3adbb">구독 해지</a> · <a href="${site}/rss.xml" style="color:#a3adbb">RSS</a>
+<a href="${esc(unsubscribeUrl)}" style="color:#aab0c4">구독 해지</a> · <a href="${site}/rss.xml" style="color:#aab0c4">RSS</a>
 </td></tr></table></td></tr></table></body></html>`;
   const text = `${items.map((i) => `${i.title}\n${i.summary}\n${i.url}`).join('\n\n')}\n\n구독 해지: ${unsubscribeUrl}\n`;
   return { subject, html, text };
 }
 export function renderConfirm(confirmUrl: string, site = 'https://carrotcave.com') {
   const subject = '[당근동굴] 구독을 확인해 주세요';
-  const html = `<!doctype html><html lang="ko"><body style="margin:0;background:#0b0e14;padding:40px 20px">
-<div style="max-width:520px;margin:0 auto;font:400 16px/1.7 -apple-system,Segoe UI,sans-serif;color:#cdd5df">
-<p style="font:600 15px/1 ui-monospace,Menlo,monospace;color:#dfe5ed">CarrotCave<span style="color:#8e99a8">.com</span></p>
+  const html = `<!doctype html><html lang="ko"><body style="margin:0;background:#282a36;padding:40px 20px">
+<div style="max-width:520px;margin:0 auto;font:400 16px/1.7 -apple-system,Segoe UI,sans-serif;color:#eceef5">
+<p style="font:600 15px/1 ui-monospace,Menlo,monospace;color:#f6f7fb">CarrotCave<span style="color:#a6abc0">.com</span></p>
 <p>당근동굴 새 글 알림을 신청해 주셔서 고마워요. 아래 버튼을 누르면 구독이 확정돼요.</p>
-<p><a href="${esc(confirmUrl)}" style="display:inline-block;padding:12px 20px;border-radius:4px;background:#f39a52;color:#0b0e14;font-weight:700;text-decoration:none">구독 확정하기</a></p>
-<p style="color:#7a8595;font-size:13px">직접 신청하지 않으셨다면 이 메일은 무시하셔도 돼요. 링크는 7일 동안 유효해요. · <a href="${site}" style="color:#a3adbb">${site.replace('https://', '')}</a></p>
+<p><a href="${esc(confirmUrl)}" style="display:inline-block;padding:12px 20px;border-radius:4px;background:#f39a52;color:#282a36;font-weight:700;text-decoration:none">구독 확정하기</a></p>
+<p style="color:#959bb2;font-size:13px">직접 신청하지 않으셨다면 이 메일은 무시하셔도 돼요. 링크는 7일 동안 유효해요. · <a href="${site}" style="color:#aab0c4">${site.replace('https://', '')}</a></p>
 </div></body></html>`;
   return { subject, html, text: `당근동굴 구독을 확정하려면 아래 링크를 열어 주세요.\n${confirmUrl}\n` };
 }

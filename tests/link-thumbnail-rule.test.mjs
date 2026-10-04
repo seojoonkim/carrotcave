@@ -45,7 +45,7 @@ test('every standalone non-tweet link has collected preview metadata', () => {
 test('link cards always render a thumbnail: OG image or a branded host tile', () => {
   assert.match(card, /className="post-link-card post-link-card--media"/);
   assert.match(card, /post-link-card__media--tile/);
-  assert.match(css, /\.post-link-card__media--tile\{[^}]*background:#10141c/);
+  assert.match(css, /\.post-link-card__media--tile\{[^}]*background:#2c2e3a/);
   assert.match(card, /monogramOf\(site \?\? host\)/);
   assert.doesNotMatch(card, /image \? \(\s*<span className="post-link-card__media"[\s\S]{0,200}\) : null\}/);
 });

@@ -1,11 +1,11 @@
 
 :root {
   /* Sampled from Google's official Antigravity dark UI image; accents are 4% more saturated. */
-  --bg: #0b0e14; --panel: #141922; --panel-2: #1b212b; --line: #2a3140;
-  --foreground: #d6dde6; --bright-white: #e6ebf2; --inactive: #9fa9b8;
+  --bg: #282a36; --panel: #303241; --panel-2: #383b4c; --line: #44475a;
+  --foreground: #d9dce8; --bright-white: #eceef5; --inactive: #b7bccf;
   --ansi-cyan: #f39a52; --ansi-bright-cyan: #f5b27a; --ansi-yellow: #f6c07a;
   --ansi-green: #63c664; --ansi-red: #ef6462;
-  --ink: var(--bg); --text: var(--foreground); --muted: #aab4c2;
+  --ink: var(--bg); --text: var(--foreground); --muted: #b3b8cb;
   --cyan: var(--ansi-cyan); --amber: var(--ansi-yellow);
   --header: 64px; --measure: 680px;
   --font-sans: "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;

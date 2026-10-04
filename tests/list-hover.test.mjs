@@ -9,5 +9,5 @@ test('list rows get a soft, motion-safe hover wash only on fine pointers', () =>
 });
 test('body ink is the slightly brighter cool gray', () => {
   assert.doesNotMatch(css, /#c9d1dc/i);
-  assert.match(css, /\.post-content p\{margin:0 0 24px;color:#cdd5df/);
+  assert.match(css, /\.post-content p\{margin:0 0 24px;color:#eceef5/);
 });

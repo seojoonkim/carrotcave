@@ -12,7 +12,7 @@
 :root {
   --reader-accent: #f39a52;
   --carrot-orange: #f39a52;
-  --carrot-leaf: #79a85b;
+  --carrot-leaf: #00c08b;
   --font-sans: "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
   --font-mono: "IBM Plex Mono", "Pretendard Variable", "Noto Sans KR", monospace;
   --reader-measure: 680px;
@@ -56,7 +56,7 @@
 .reader-nav .brand-mark__cave { transform-box: view-box; transform-origin: 48px 48px; transform: scale(1.13); }
 .reader-nav .brand-mark__rabbit-position { transform: translateY(17px); }
 .reader-nav .brand-mark__rabbit { animation: none; }
-.reader-back-chevron { display: grid; width: 10px; height: 34px; place-items: center; color: #8e99a8; font: 400 28px/1 var(--font-sans); transition: color .16s ease, transform .16s ease; }
+.reader-back-chevron { display: grid; width: 10px; height: 34px; place-items: center; color: #a6abc0; font: 400 28px/1 var(--font-sans); transition: color .16s ease, transform .16s ease; }
 .reader-nav .brand:hover .reader-back-chevron { color: var(--bright-white); transform: translateX(-1px); }
 img { border: 0; outline: 0;  }
 .hero-portrait::before { content: none; }
@@ -290,7 +290,7 @@ img { border: 0; outline: 0;  }
   margin: 0 auto 22px;
 }
 /* Voice hero photo: crisp, flat frame. No top/bottom fade, no desaturation. */
-.hero > .hero-portrait { overflow: hidden; border-radius: 2px; background: #11151c; box-shadow: inset 0 0 0 1px rgba(214, 221, 230, .12); }
+.hero > .hero-portrait { overflow: hidden; border-radius: 2px; background: #2c2e3a; box-shadow: inset 0 0 0 1px rgba(217,220,232, .12); }
 .hero-portrait img {
   display: block;
   width: 100%;
@@ -312,8 +312,8 @@ img { border: 0; outline: 0;  }
   box-sizing: border-box;
   padding: 38px max(20px, calc((100vw - 1100px) / 2));
   border-top: 0;
-  background: linear-gradient(180deg, #0b0e14 0%, #090c11 55%, #07090d 100%);
-  color: #8e99a8;
+  background: linear-gradient(180deg, #282a36 0%, #1e1f28 55%, #1e1f28 100%);
+  color: #a6abc0;
   font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .04em;
 }
@@ -328,7 +328,7 @@ img { border: 0; outline: 0;  }
 }
 .voice-shared-footer__copy { display: grid; gap: 8px; padding-top: 20px; }
 .voice-shared-footer__copy p { display: block; margin: 0; }
-.voice-shared-footer__identity strong { color: #d6dee9; font-weight: 700; }
+.voice-shared-footer__identity strong { color: #d9dce8; font-weight: 700; }
 .voice-shared-footer__copy .voice-shared-footer__links {
   display: flex;
   width: max-content;
@@ -350,7 +350,7 @@ img { border: 0; outline: 0;  }
   text-decoration: none;
   white-space: nowrap;
 }
-.voice-shared-footer__links a:first-child { color: #d6dee9; }
+.voice-shared-footer__links a:first-child { color: #d9dce8; }
 .voice-shared-footer__links a:hover { color: #f6c07a; }
 .voice-shared-footer__social-icon { width: 14px; height: 14px; flex: 0 0 14px; }
 .overview-insights {
@@ -419,7 +419,7 @@ img { border: 0; outline: 0;  }
 #transcript mark.key-sentence,
 .utterance mark.key-sentence,
 #transcript .paragraph-text .transcript-highlight {
-  color: #dfe5ed;
+  color: #f6f7fb;
   font-weight: 600;
   background: linear-gradient(transparent 64%, rgba(242, 140, 40, .24) 64%);
   -webkit-box-decoration-break: clone;
@@ -457,7 +457,7 @@ img { border: 0; outline: 0;  }
   content: ""; display: inline-block; width: .55em; height: .55em; margin-left: .3em; vertical-align: .05em;
   background: url("/carrot-mark.svg") center / contain no-repeat; transform: rotate(-8deg);
 }
-::selection { background: rgba(243, 154, 82, .3); color: #eef2f7; }
+::selection { background: rgba(243, 154, 82, .3); color: #f2f3f8; }
 
 /* Korean typesetting pass: break between words, not inside them; keep Hangul labels tightly tracked. */
 #transcript .paragraph-text, #transcript .speaker-person, #transcript .transcript-editor-note, .utterance, .transcript-paragraph {
@@ -474,14 +474,14 @@ img { border: 0; outline: 0;  }
 /* Warm dark palette for every voice reader */
 :root { color-scheme: dark; --carrot-soft: rgba(243, 154, 82, .14); }
 body { background: var(--ink) !important; }
-::selection { background: rgba(243, 154, 82, .3); color: #eef2f7; }
+::selection { background: rgba(243, 154, 82, .3); color: #f2f3f8; }
 html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: thin; }
 .toc-drawer a[aria-current], .desktop-rail a[aria-current], .rail-chapter.is-active { color: var(--carrot-orange) !important; }
 /* Speaker roles: the reader's main voice is carrot orange; hosts and audience each get their own quiet color. */
 #transcript .transcript-speaker, #transcript .transcript-speaker .speaker-person { color: inherit; }
 #transcript .transcript-speaker[data-role="main"] { color: var(--carrot-orange); }
 #transcript .transcript-speaker[data-role="host"] { color: #8fb3d9; }
-#transcript .transcript-speaker[data-role="audience"] { color: #9aa5b4; }
+#transcript .transcript-speaker[data-role="audience"] { color: #b0b5c9; }
 
 @media (max-width: 600px) { .voice-footer-rabbit-carrot { height: 120px !important; max-height: none; object-fit: cover; object-position: 88% 100%; } }
 
@@ -502,8 +502,8 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 @media (max-width: 599px) { .site-header { padding-inline: var(--gutter) !important; } }
 
 /* Interview date: shown at the start of every voice reader. */
-.hero-date { margin: -10px 0 18px; color: var(--muted, #9fa9b8); font: 500 12px/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .06em; }
-.hero-date time { color: #dfe5ed; }
+.hero-date { margin: -10px 0 18px; color: var(--muted, #b7bccf); font: 500 12px/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .06em; }
+.hero-date time { color: #f6f7fb; }
 /* ═══ DESIGN PASS 2026.10 — refined reading, small carrot charms ═══
    Restraint first: one carrot accent, soft radii, quiet chips.
    Cute points are few and small: carrot kicker, leaf dot on the date,
@@ -526,11 +526,11 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .hero > .kicker::before { content: ""; width: 14px; height: 14px; flex: 0 0 14px; background: url("/carrot-mark.svg") center / contain no-repeat; }
 
 /* Photo: soft radius, gentle lift, carrot sticker in the corner. */
-.hero > .hero-portrait { position: relative; border-radius: var(--cc-radius); margin-bottom: 28px !important; box-shadow: 0 18px 40px -24px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(214, 221, 230, .1); }
+.hero > .hero-portrait { position: relative; border-radius: var(--cc-radius); margin-bottom: 28px !important; box-shadow: 0 18px 40px -24px rgba(0, 0, 0, .8), inset 0 0 0 1px rgba(217,220,232, .1); }
 .hero > .hero-portrait img { border-radius: var(--cc-radius); }
 .hero > .hero-portrait::after {
   content: ""; position: absolute; right: 14px; bottom: 14px; width: 34px; height: 34px; border-radius: 50%;
-  background: #eef2f7 url("/carrot-mark.svg") center / 22px no-repeat; box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+  background: #f2f3f8 url("/carrot-mark.svg") center / 22px no-repeat; box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
   transform: rotate(-10deg); pointer-events: none;
 }
 .hero > .hero-portrait:has(figcaption)::after { bottom: 44px; }
@@ -545,7 +545,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .hero > .hero-date::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--carrot-leaf); flex: 0 0 6px; }
 
 /* Deck: softer accent rule. */
-.hero-deck { border-left: 2px solid rgba(243, 154, 82, .55) !important; padding-left: 16px !important; color: #c9d2de !important; }
+.hero-deck { border-left: 2px solid rgba(243, 154, 82, .55) !important; padding-left: 16px !important; color: #ccd0de !important; }
 
 /* Stats: rounded quiet card instead of hard table lines. */
 .hero-stats { border-radius: 12px; background: rgba(255, 255, 255, .025); }
@@ -587,15 +587,15 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 /* Sub-topic numbers: quiet carrot numerals aligned to the heading. */
 .topic-number { color: rgba(243, 154, 82, .75) !important; font: 600 12px/2.6 var(--font-mono) !important; letter-spacing: .04em !important; font-variant-numeric: tabular-nums; }
 /* Eye comfort 2026.10: same ink scale as the site. Titles ~15:1, body ~13:1, no pure white. */
-:root { --text: #cdd5df; --foreground: #cdd5df; --bright-white: #dfe5ed; }
-#transcript .utterance-text, #transcript .paragraph-text, .transcript-paragraph, .long-record-body .utterance { color: #cdd5df; }
-.hero #page-title, .chapter-heading h2, .topic-heading h3, .section-heading h2 { color: #dfe5ed; }
+:root { --text: #eceef5; --foreground: #eceef5; --bright-white: #f6f7fb; }
+#transcript .utterance-text, #transcript .paragraph-text, .transcript-paragraph, .long-record-body .utterance { color: #eceef5; }
+.hero #page-title, .chapter-heading h2, .topic-heading h3, .section-heading h2 { color: #f6f7fb; }
 /* Fast menu 2026.10: the reading index opens at once. No backdrop blur (expensive paint), short motion. */
 .menu-button, .back-to-top, .toc-drawer a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .menu-button { transition: none !important; }
 .toc-drawer { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s linear .14s !important; will-change: transform; }
 .toc-drawer.open { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s !important; }
-.drawer-backdrop { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(11, 14, 20, .72) !important; }
+.drawer-backdrop { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(40,42,54, .72) !important; }
 @media (prefers-reduced-motion: reduce) { .toc-drawer, .toc-drawer.open { transition: none !important; } }
 /* Opening the index must not relayout the long transcript: keep the scrollbar width fixed, and contain scrolling in the drawer instead of locking the page. */
 html { scrollbar-gutter: stable; }
