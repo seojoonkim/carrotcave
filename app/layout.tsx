@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://carrotcave.com'),
   title: `${siteName} · 토끼를 따라왔는데, 생각이 길을 잃었습니다.`,
   description: siteDescription,
-  alternates: { canonical: '/' },
+  alternates: { canonical: '/', types: { 'application/rss+xml': [{ url: '/rss.xml', title: 'Carrot Cave' }] } },
   icons: {
     icon: [
       { url: '/favicon.ico' },
