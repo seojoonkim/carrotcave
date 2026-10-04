@@ -248,6 +248,23 @@ export function regenerateOntology({ root = DEFAULT_ROOT, run = spawnSync } = {}
   }
 }
 
+/** Share-card gates that `npm run verify` enforces, run at publish time so a post never "publishes" and then blocks the release. */
+export function shareCardChecks({ root = DEFAULT_ROOT, run = spawnSync } = {}) {
+  const steps = [
+    ['scripts/og-image-hangul-audit.mjs', '--fix'],
+    ['scripts/og-title-fit.mts'],
+  ];
+  for (const [script, ...args] of steps) {
+    const result = run(process.execPath, [script, ...args], { cwd: root, stdio: 'inherit' });
+    if (result?.error) throw result.error;
+    if (result?.status !== 0) {
+      throw new Error(script.includes('title-fit')
+        ? 'English share title (titleEn) is too long for the share card; shorten it in data/sync-metadata-overrides.json'
+        : `Share-card check failed: ${script}`);
+    }
+  }
+}
+
 /** Fetch link-preview cards for standalone links (same script the link tests point to). */
 export async function updateLinkPreviews({ root }) {
   const result = spawnSync(process.execPath, [join(root, 'scripts', 'update-link-previews.mjs')], { cwd: root, stdio: 'inherit' });
@@ -262,6 +279,7 @@ export async function publishSingleMessage({
   now = () => new Date().toISOString(),
   regenerate = regenerateOntology,
   updatePreviews = updateLinkPreviews,
+  checkShareCard = shareCardChecks,
 }) {
   if (!Number.isSafeInteger(id) || id <= 0) throw new Error('A positive numeric message ID is required');
   const dataDir = join(root, 'data');
@@ -270,6 +288,7 @@ export async function publishSingleMessage({
   const overridesPath = join(dataDir, 'sync-metadata-overrides.json');
   const titlesEnPath = join(dataDir, 'post-titles-en.json');
   const previewsPath = join(dataDir, 'link-previews.json');
+  const ogHangulPath = join(dataDir, 'og-image-hangul.json');
   const mediaDir = join(root, 'public', 'media');
 
   const postsSource = readFileSync(postsPath, 'utf8');
@@ -308,7 +327,7 @@ export async function publishSingleMessage({
     join(root, 'docs', 'eval', 'ontology-semantic-sample.json'),
   ];
   const snapshots = new Map(
-    [postsPath, statePath, titlesEnPath, previewsPath, ...generatedPaths].map((path) => [
+    [postsPath, statePath, titlesEnPath, previewsPath, ogHangulPath, ...generatedPaths].map((path) => [
       path,
       existsSync(path) ? readFileSync(path) : null,
     ]),
@@ -326,6 +345,7 @@ export async function publishSingleMessage({
     const titlesEn = existsSync(titlesEnPath) ? JSON.parse(readFileSync(titlesEnPath, 'utf8')) : {};
     writeAtomically(titlesEnPath, `${JSON.stringify({ [metadata.slug]: metadata.titleEn.trim(), ...titlesEn }, null, 2)}\n`);
     await updatePreviews({ root });
+    await checkShareCard({ root });
     await regenerate({ root });
   } catch (error) {
     for (const [path, contents] of snapshots) {
@@ -346,7 +366,7 @@ export async function publishSingleMessage({
 export function publishArtifacts(slug, media = [], videos = []) {
   return [
     'data/posts.ts', 'data/sync-state.json', 'data/sync-metadata-overrides.json',
-    'data/post-titles-en.json', 'data/link-previews.json', 'public/media/link-previews/',
+    'data/post-titles-en.json', 'data/link-previews.json', 'public/media/link-previews/', 'data/og-image-hangul.json',
     'data/ontology/posts.json', 'data/ontology/edges.json', 'data/ontology/vocabulary.json', 'data/ontology/index.json',
     'docs/eval/ontology-semantic-sample.json',
     ...[...media, ...videos].map((u) => `public${u}`),

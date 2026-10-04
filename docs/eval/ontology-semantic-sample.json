@@ -501,40 +501,33 @@
       "label": "「Rabbit Crypt」은 「갈 수 있을까」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "openclaw-cron-session-bottleneck",
-      "to": "click-theology",
-      "sourceTitle": "오픈클로가 느려지는 주범",
-      "targetTitle": "딸깍의 신학",
+      "from": "post-143",
+      "to": "uae-emergency-news-telegram-channel",
+      "sourceTitle": "MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템",
+      "targetTitle": "UAE Emergency News",
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
-      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
-      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
+      "sourceEvidence": "20개 이상의 커맨드가 첫날부터 전부 사용 가능하고, Backlink, Fuzzy Search, Agentic Search, Meeting Brief, Open Loop Tracking, Decision Distillation까지 에이전트 운영에 필요한 워크플로우가 다 들어있다.",
+      "targetEvidence": "다음의 20개 소스 목록을 참조한다.",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 54,
+        "lexicalOverlap": 5,
         "overlapTokens": [
-          "claude",
-          "가깝다",
-          "가끔은",
-          "같다",
-          "개의",
-          "것과",
-          "것이다",
-          "것처럼",
-          "그렇다면",
-          "글을",
-          "나에게",
-          "누구나"
+          "20",
+          "20개",
+          "만들었다",
+          "소스",
+          "있으면"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "RESONATES",
-      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
+      "label": "「UAE Emergency News」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다"
     },
     {
       "from": "kpop-fandom-digital-parliament",
@@ -654,50 +647,50 @@
       "label": "「Zeon on Moltbook vol.1」은 「에이전트 삼남매와 함께하는 일상」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
-      "from": "agent-era-branding-future",
-      "to": "agentic-org",
-      "sourceTitle": "에이전트 시대, 브랜드는 무엇이 되는가",
-      "targetTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "from": "700-ai-agents-found-each-other",
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "sourceTitle": "700개의 AI가 서로를 발견한 날",
+      "targetTitle": "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
       "sourceCategory": "탐험",
       "targetCategory": "빌딩",
-      "sourceEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
-      "targetEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
+      "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
+      "targetEvidence": "그날의 슬라이드 26장과 발표 원고를 한국어와 영어로 정리해 공개한다.",
       "signals": [
         "content",
         "tags",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 30,
+        "lexicalOverlap": 50,
         "overlapTokens": [
-          "10",
+          "2026",
+          "26",
           "ai",
           "ai가",
-          "ai는",
-          "가까워질",
-          "결정",
-          "구조는",
-          "권한",
-          "단순히",
-          "대신",
-          "때문",
-          "만들기"
+          "것이다",
+          "공개",
+          "규칙을",
+          "기록이",
+          "누구인지",
+          "누군가",
+          "다음",
+          "동안"
         ],
         "titleOverlap": [
+          "2026",
           "ai",
-          "만들기",
-          "에이전트"
+          "ai가",
+          "창고가"
         ],
         "sharedTags": [
-          "AI",
-          "에이전트"
+          "AI 에이전트"
         ],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
       "type": "APPLIES",
-      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「에이전트 시대, 브랜드는 무엇이 되는가」의 원리를 구체적인 구축 과정에 적용한다"
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「700개의 AI가 서로를 발견한 날」의 원리를 구체적인 구축 과정에 적용한다"
     },
     {
       "from": "can-i-go-ethihad-airlines-iran-conflict",
@@ -728,51 +721,46 @@
       "label": "「아, 재밌다!!!」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "gaslighting-ai-open-source-project",
-      "to": "agentic-org",
-      "sourceTitle": "AI를 가스라이팅하는 오픈소스를 만들었다",
-      "targetTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "to": "post-143",
+      "sourceTitle": "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
+      "targetTitle": "MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템",
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
-      "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
-      "targetEvidence": "AI는 인간을 대체하지 않는다.",
+      "sourceEvidence": "이 경험을 발표의 한가운데 문장과 겹쳐 보면 한 가지 진실이 더 보인다.",
+      "targetEvidence": "2026년에 쓴 마크다운 파일은 2036년에도 똑같이 읽을 수 있다.",
       "signals": [
         "content",
-        "tags",
         "category",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 26,
+        "lexicalOverlap": 37,
         "overlapTokens": [
-          "100",
-          "20",
+          "2026",
+          "33",
           "ai",
-          "ai는",
-          "ai를",
-          "com",
-          "seojoonkim",
-          "결과는",
-          "단순히",
-          "레이어",
-          "많이",
-          "모든"
+          "source",
+          "truth",
+          "가지",
+          "것을",
+          "것이다",
+          "경험을",
+          "깔끔",
+          "꺼내",
+          "년에"
         ],
         "titleOverlap": [
-          "20",
-          "ai",
-          "ai를",
+          "2026",
           "에이전트"
         ],
-        "sharedTags": [
-          "AI"
-        ],
+        "sharedTags": [],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
       "type": "DEEPENS",
-      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 문제를 더 깊이 파고든다"
+      "label": "「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "matchhz",

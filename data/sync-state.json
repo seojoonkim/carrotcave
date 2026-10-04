@@ -1,6 +1,6 @@
 {
-  "lastSyncedAt": "2026-09-30T19:28:39.915Z",
-  "lastMsgId": 216,
+  "lastSyncedAt": "2026-10-04T14:12:17.856Z",
+  "lastMsgId": 221,
   "processedMsgIds": [
     1,
     3,
@@ -151,7 +151,8 @@
     213,
     214,
     215,
-    216
+    216,
+    221
   ],
   "skippedMsgIds": [
     1,
@@ -305,7 +306,8 @@
     "seong-jin-cho-chopin-waiting-for-the-next-note": 213,
     "waited-for-you": 214,
     "the-right-to-turn-on-a-brain": 215,
-    "eastpoint-roundtable-has-no-head-seat": 216
+    "eastpoint-roundtable-has-no-head-seat": 216,
+    "eastpoint-2026-keynote-my-writing-became-a-warehouse": 221
   },
   "contentHashes": {
     "4": "159:251392095",
@@ -445,6 +447,7 @@
     "213": "2792:3863752321",
     "214": "3265:3985227955",
     "215": "3333:275669412",
-    "216": "3385:2541680326"
+    "216": "3385:2541680326",
+    "221": "2454:2794519786"
   }
 }

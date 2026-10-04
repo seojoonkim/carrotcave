@@ -272,6 +272,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "eastpoint-2026-keynote-my-writing-became-a-warehouse": {
+      "slug": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "title": "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
+      "category": "빌딩",
+      "primaryTopics": [
+        "building"
+      ],
+      "reviewStatus": "approved"
+    },
     "eastpoint-roundtable-has-no-head-seat": {
       "slug": "eastpoint-roundtable-has-no-head-seat",
       "title": "이스트포인트의 원탁에는 상석이 없다",
@@ -1469,34 +1478,49 @@
     },
     {
       "from": "700-ai-agents-found-each-other",
-      "to": "post-104",
-      "type": "REFRAMES",
-      "strength": 0.5319,
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "APPLIES",
+      "strength": 0.5562,
       "sourceClaimId": "700-ai-agents-found-each-other-c1",
-      "sourceEvidence": "언제 태어났는지도 모를 것이다.",
-      "targetEvidence": "며칠간 페이스북, 카카오, 텔레그램 등에서 사칭 계정에 대한 신고가 많이 들어와, 혹시 모를 피해를 막기 위해 안내드립니다.",
-      "label": "「사칭 계정 주의 안내」은 「700개의 AI가 서로를 발견한 날」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
+      "targetEvidence": "그날의 슬라이드 26장과 발표 원고를 한국어와 영어로 정리해 공개한다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「700개의 AI가 서로를 발견한 날」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "relatedSlugs"
+        "tags",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 5,
+        "lexicalOverlap": 50,
         "overlapTokens": [
-          "많이",
-          "메시지",
-          "모를",
-          "사칭",
-          "위해"
+          "2026",
+          "26",
+          "ai",
+          "ai가",
+          "것이다",
+          "공개",
+          "규칙을",
+          "기록이",
+          "누구인지",
+          "누군가",
+          "다음",
+          "동안"
         ],
         "titleOverlap": [
-          "사칭"
+          "2026",
+          "ai",
+          "ai가",
+          "창고가"
         ],
-        "sharedTags": [],
-        "sharedConcepts": []
+        "sharedTags": [
+          "AI 에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+relatedSlugs;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=5;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=50;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -5085,6 +5109,187 @@
       "status": "approved"
     },
     {
+      "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "to": "eastpoint-roundtable-has-no-head-seat",
+      "type": "REFRAMES",
+      "strength": 0.7708,
+      "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+      "sourceEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
+      "targetEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
+      "label": "「이스트포인트의 원탁에는 상석이 없다」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 85,
+        "overlapTokens": [
+          "28",
+          "28일",
+          "9월",
+          "ai",
+          "ai가",
+          "of",
+          "가지",
+          "같다",
+          "것을",
+          "것이다",
+          "공개",
+          "규칙을"
+        ],
+        "titleOverlap": [
+          "기조연설",
+          "이스트포인트"
+        ],
+        "sharedTags": [
+          "AI 에이전트",
+          "이스트포인트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=85;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "to": "post-193",
+      "type": "REFRAMES",
+      "strength": 0.5648,
+      "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+      "sourceEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
+      "targetEvidence": "플랫폼을 10년 살 본집으로 믿지 않는 사람이다.",
+      "label": "「에이전트 노마드 시대의 짐가방」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 52,
+        "overlapTokens": [
+          "10",
+          "10년",
+          "2026",
+          "ai",
+          "claude",
+          "vercel",
+          "가진",
+          "것이다",
+          "공개",
+          "규칙을",
+          "그때",
+          "글을"
+        ],
+        "titleOverlap": [
+          "2026",
+          "시대의",
+          "에이전트"
+        ],
+        "sharedTags": [
+          "AI 에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=52;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "to": "post-143",
+      "type": "DEEPENS",
+      "strength": 0.35,
+      "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+      "sourceEvidence": "이 경험을 발표의 한가운데 문장과 겹쳐 보면 한 가지 진실이 더 보인다.",
+      "targetEvidence": "2026년에 쓴 마크다운 파일은 2036년에도 똑같이 읽을 수 있다.",
+      "label": "「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 37,
+        "overlapTokens": [
+          "2026",
+          "33",
+          "ai",
+          "source",
+          "truth",
+          "가지",
+          "것을",
+          "것이다",
+          "경험을",
+          "깔끔",
+          "꺼내",
+          "년에"
+        ],
+        "titleOverlap": [
+          "2026",
+          "에이전트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=37;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "eastpoint-roundtable-has-no-head-seat",
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "APPLIES",
+      "strength": 0.7708,
+      "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
+      "sourceEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
+      "targetEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「이스트포인트의 원탁에는 상석이 없다」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 85,
+        "overlapTokens": [
+          "28",
+          "28일",
+          "9월",
+          "ai",
+          "ai가",
+          "of",
+          "가지",
+          "같다",
+          "것을",
+          "것이다",
+          "공개",
+          "규칙을"
+        ],
+        "titleOverlap": [
+          "기조연설",
+          "이스트포인트"
+        ],
+        "sharedTags": [
+          "AI 에이전트",
+          "이스트포인트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=85;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "eastpoint-roundtable-has-no-head-seat",
       "to": "700-ai-agents-found-each-other",
       "type": "DEEPENS",
@@ -5172,51 +5377,6 @@
         ]
       },
       "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=8;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "eastpoint-roundtable-has-no-head-seat",
-      "to": "swarmworld-stigmergic-ai-society",
-      "type": "DEEPENS",
-      "strength": 0.4457,
-      "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
-      "sourceEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
-      "targetEvidence": "남은 시설과 코드만으로 버티는지 본 것이다.",
-      "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「이스트포인트의 원탁에는 상석이 없다」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "tags",
-        "category",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 72,
-        "overlapTokens": [
-          "ai",
-          "ai가",
-          "거래를",
-          "것을",
-          "것이다",
-          "공개",
-          "공동",
-          "규칙을",
-          "그것을",
-          "기록",
-          "길을",
-          "남은"
-        ],
-        "titleOverlap": [
-          "ai"
-        ],
-        "sharedTags": [
-          "AI 에이전트"
-        ],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -8125,39 +8285,42 @@
     },
     {
       "from": "moltbook-agent-internet",
-      "to": "claude-md-english",
-      "type": "DEEPENS",
-      "strength": 0.35,
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "APPLIES",
+      "strength": 0.4258,
       "sourceClaimId": "moltbook-agent-internet-c1",
-      "sourceEvidence": "Where AI agents share, discuss, and upvote.",
-      "targetEvidence": "Available in your terminal, IDE, desktop app, and browser.",
-      "label": "「CLAUDE.md, 영어로 써야 하는 이유」은 「AI 에이전트의 인터넷, 몰트북」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
+      "targetEvidence": "한국어 https://optimists-of-the-east.vercel.app/ko English https://optimists-of-the-east.vercel.app/en 내 글을 꾸준히 읽어 온 분들이라면 한동안 내가 당근동굴(Carrot Cave)에 쓴 주제들이 한 줄로 엮였다는 인상을 받으실 것 같다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「AI 에이전트의 인터넷, 몰트북」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category",
+        "tags",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 6,
+        "lexicalOverlap": 7,
         "overlapTokens": [
-          "agents",
           "ai",
-          "and",
+          "of",
+          "the",
+          "글을",
+          "마지막",
           "에이전트",
-          "중심",
           "직접"
         ],
         "titleOverlap": [
           "ai",
           "에이전트"
         ],
-        "sharedTags": [],
+        "sharedTags": [
+          "AI 에이전트"
+        ],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=6;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=7;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -8763,39 +8926,42 @@
     },
     {
       "from": "openclaw-cron-session-bottleneck",
-      "to": "click-theology",
-      "type": "RESONATES",
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
-      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
-      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
-      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "사람을 불러서 시키고, 너는 나한테 보고만 해\"라고 말하는 것과 같다.",
+      "targetEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「오픈클로가 느려지는 주범」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 54,
+        "lexicalOverlap": 47,
         "overlapTokens": [
+          "10",
+          "24",
+          "30",
           "claude",
-          "가깝다",
-          "가끔은",
+          "가격",
+          "가지",
           "같다",
-          "개의",
+          "건네는",
           "것과",
+          "것을",
           "것이다",
-          "것처럼",
-          "그렇다면",
-          "글을",
-          "나에게",
-          "누구나"
+          "글쓰기"
         ],
         "titleOverlap": [],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=54;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=0;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -16001,36 +16167,38 @@
     },
     {
       "from": "swarmworld-stigmergic-ai-society",
-      "to": "moltbook-agent-internet",
-      "type": "REFRAMES",
-      "strength": 0.4571,
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "APPLIES",
+      "strength": 0.4836,
       "sourceClaimId": "swarmworld-stigmergic-ai-society-c1",
-      "sourceEvidence": "그 위에는 에이전트끼리 쓰는 기관도 생길 수 있다.",
-      "targetEvidence": "2025년은 인간이 직접 인터넷을 지배하던 마지막 해였을지도.",
-      "label": "「AI 에이전트의 인터넷, 몰트북」은 「AI 사회는 채팅창이 아니라 길 위에서 태어났다」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
+      "targetEvidence": "그날의 슬라이드 26장과 발표 원고를 한국어와 영어로 정리해 공개한다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「AI 사회는 채팅창이 아니라 길 위에서 태어났다」의 원리를 구체적인 구축 과정에 적용한다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "tags",
-        "category",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 9,
+        "lexicalOverlap": 54,
         "overlapTokens": [
+          "2026",
+          "26",
           "ai",
-          "너무",
-          "누가",
-          "마지막",
-          "에이전트",
-          "에이전트끼리",
-          "인간",
-          "중심",
-          "직접"
+          "ai가",
+          "것을",
+          "것이다",
+          "공개",
+          "과정을",
+          "규칙을",
+          "기록을",
+          "나눠",
+          "남긴"
         ],
         "titleOverlap": [
-          "ai",
-          "에이전트"
+          "2026",
+          "ai"
         ],
         "sharedTags": [
           "AI 에이전트"
@@ -16039,7 +16207,7 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=9;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=54;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -18609,30 +18777,35 @@
     }
   ],
   "outgoing": {
-    "eastpoint-roundtable-has-no-head-seat": [
+    "eastpoint-2026-keynote-my-writing-became-a-warehouse": [
       90,
       91,
       92
     ],
+    "eastpoint-roundtable-has-no-head-seat": [
+      93,
+      94,
+      95
+    ],
     "the-right-to-turn-on-a-brain": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "waited-for-you": [
-      402,
-      403,
-      404
+      405,
+      406,
+      407
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "living-in-the-age-of-optimists": [
-      141,
-      142,
-      143
+      144,
+      145,
+      146
     ],
     "brain-files-minecraft-flies": [
       54,
@@ -18640,19 +18813,19 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "hashed-ai-ecosystem-growth-intern": [
-      108,
-      109,
-      110
+      111,
+      112,
+      113
     ],
     "japan-hardware-software-gap": [
-      129,
-      130,
-      131
+      132,
+      133,
+      134
     ],
     "automation-citizen-production-equity": [
       45,
@@ -18660,14 +18833,14 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "last-message": [
-      138,
-      139,
-      140
+      141,
+      142,
+      143
     ],
     "700-ai-agents-found-each-other": [
       3,
@@ -18675,34 +18848,34 @@
       5
     ],
     "security-token-rail": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "post-201": [
-      300,
-      301,
-      302
+      303,
+      304,
+      305
     ],
     "proving-human-writing-without-ai": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "graph-engineering-ai-org": [
-      105,
-      106,
-      107
+      108,
+      109,
+      110
     ],
     "tokyo-taxi-ai-ads": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "openclaw-cron-session-bottleneck": [
-      174,
-      175,
-      176
+      177,
+      178,
+      179
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -18710,14 +18883,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "moltbook-agent-internet": [
-      159,
-      160,
-      161
+      162,
+      163,
+      164
     ],
     "ai-idea-execution-speed": [
       33,
@@ -18730,209 +18903,209 @@
       38
     ],
     "post-197": [
+      300,
+      301,
+      302
+    ],
+    "post-195": [
       297,
       298,
       299
     ],
-    "post-195": [
+    "post-193": [
       294,
       295,
       296
     ],
-    "post-193": [
+    "post-192": [
       291,
       292,
       293
     ],
-    "post-192": [
+    "post-191": [
       288,
       289,
       290
     ],
-    "post-191": [
+    "post-190": [
       285,
       286,
       287
     ],
-    "post-190": [
+    "post-189": [
       282,
       283,
       284
     ],
-    "post-189": [
+    "post-188": [
       279,
       280,
       281
     ],
-    "post-188": [
+    "post-187": [
       276,
       277,
       278
     ],
-    "post-187": [
+    "post-186": [
       273,
       274,
       275
     ],
-    "post-186": [
+    "post-185": [
       270,
       271,
       272
     ],
-    "post-185": [
+    "post-178": [
       267,
       268,
       269
     ],
-    "post-178": [
+    "post-165": [
       264,
       265,
       266
     ],
-    "post-165": [
+    "post-164": [
       261,
       262,
       263
     ],
-    "post-164": [
+    "post-163": [
       258,
       259,
       260
     ],
-    "post-163": [
+    "post-161": [
       255,
       256,
       257
     ],
-    "post-161": [
+    "post-159": [
       252,
       253,
       254
     ],
-    "post-159": [
+    "post-156": [
       249,
       250,
       251
     ],
-    "post-156": [
+    "post-155": [
       246,
       247,
       248
     ],
-    "post-155": [
+    "post-154": [
       243,
       244,
       245
     ],
-    "post-154": [
+    "post-153": [
       240,
       241,
       242
     ],
-    "post-153": [
+    "post-152": [
       237,
       238,
       239
     ],
-    "post-152": [
+    "post-151": [
       234,
       235,
       236
     ],
-    "post-151": [
+    "post-150": [
       231,
       232,
       233
     ],
-    "post-150": [
+    "post-149": [
       228,
       229,
       230
     ],
-    "post-149": [
+    "post-147": [
       225,
       226,
       227
     ],
-    "post-147": [
+    "post-146": [
       222,
       223,
       224
     ],
-    "post-146": [
+    "post-145": [
       219,
       220,
       221
     ],
-    "post-145": [
+    "post-144": [
       216,
       217,
       218
     ],
-    "post-144": [
+    "post-143": [
       213,
       214,
       215
     ],
-    "post-143": [
+    "post-142": [
       210,
       211,
       212
     ],
-    "post-142": [
+    "post-141": [
       207,
       208,
       209
     ],
-    "post-141": [
+    "post-140": [
       204,
       205,
       206
     ],
-    "post-140": [
-      201,
-      202,
-      203
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      150,
-      151,
-      152
+      153,
+      154,
+      155
     ],
     "gaslighting-ai-open-source-project": [
-      99,
-      100,
-      101
+      102,
+      103,
+      104
     ],
     "value-of-understanding-in-ai-future": [
-      384,
-      385,
-      386
+      387,
+      388,
+      389
     ],
     "internship-job-posting-giveaway": [
-      117,
-      118,
-      119
+      120,
+      121,
+      122
     ],
     "navigating-a-world-of-decreasing-variance": [
-      171,
-      172,
-      173
+      174,
+      175,
+      176
     ],
     "prompting-ability-as-new-power": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "kpop-fandom-digital-parliament": [
-      135,
-      136,
-      137
+      138,
+      139,
+      140
     ],
     "university-value-shift-education": [
-      378,
-      379,
-      380
+      381,
+      382,
+      383
     ],
     "agent-era-branding-future": [
       9,
@@ -18940,9 +19113,9 @@
       11
     ],
     "fear-and-value-in-ai-creation": [
-      93,
-      94,
-      95
+      96,
+      97,
+      98
     ],
     "complexcon-hk-identity-culture-experience": [
       72,
@@ -18950,64 +19123,64 @@
       74
     ],
     "post-111": [
+      201,
+      202,
+      203
+    ],
+    "post-107": [
       198,
       199,
       200
     ],
-    "post-107": [
+    "post-106": [
       195,
       196,
       197
     ],
-    "post-106": [
+    "post-105": [
       192,
       193,
       194
     ],
-    "post-105": [
+    "post-104": [
       189,
       190,
       191
     ],
-    "post-104": [
+    "post-103": [
       186,
       187,
       188
     ],
-    "post-103": [
-      183,
-      184,
-      185
-    ],
     "things-that-dont-disappear": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "how-to-create-memory-in-ai-agents": [
-      111,
-      112,
-      113
+      114,
+      115,
+      116
     ],
     "self-deconstruction-ai-replication": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "vibe-coding-ai-decentralization": [
-      387,
-      388,
-      389
+      390,
+      391,
+      392
     ],
     "internship-opportunity-at-hashed": [
-      120,
-      121,
-      122
+      123,
+      124,
+      125
     ],
     "korean-tech-ecosystem-api-access-issues": [
-      132,
-      133,
-      134
+      135,
+      136,
+      137
     ],
     "death-choices-aging-future-meaning": [
       81,
@@ -19020,9 +19193,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      399,
-      400,
-      401
+      402,
+      403,
+      404
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -19030,9 +19203,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -19045,19 +19218,19 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      180,
-      181,
-      182
+      183,
+      184,
+      185
     ],
     "memory-identity-ai-development": [
-      153,
-      154,
-      155
+      156,
+      157,
+      158
     ],
     "unknowns-in-modern-creation": [
-      381,
-      382,
-      383
+      384,
+      385,
+      386
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -19070,14 +19243,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      396,
-      397,
-      398
+      399,
+      400,
+      401
     ],
     "sano-godaddy-war": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "14-5-hours": [
       0,
@@ -19085,24 +19258,24 @@
       2
     ],
     "transistor-moment": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "web4-write-access": [
-      405,
-      406,
-      407
+      408,
+      409,
+      410
     ],
     "naming-the-universe": [
-      168,
-      169,
-      170
+      171,
+      172,
+      173
     ],
     "sano-intro": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "counting-assistant": [
       75,
@@ -19110,29 +19283,29 @@
       77
     ],
     "uncertainty-machine": [
-      375,
-      376,
-      377
+      378,
+      379,
+      380
     ],
     "vibe-founders-era": [
+      396,
+      397,
+      398
+    ],
+    "vibe-coding-tip": [
       393,
       394,
       395
     ],
-    "vibe-coding-tip": [
-      390,
-      391,
-      392
-    ],
     "moltbot-anthropic-moat": [
-      162,
-      163,
-      164
+      165,
+      166,
+      167
     ],
     "overnight-success": [
-      177,
-      178,
-      179
+      180,
+      181,
+      182
     ],
     "bitcoin-energy": [
       51,
@@ -19140,19 +19313,19 @@
       53
     ],
     "thought-speed": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "gemini-snow-bunny": [
-      102,
-      103,
-      104
+      105,
+      106,
+      107
     ],
     "figma-last-manual": [
-      96,
-      97,
-      98
+      99,
+      100,
+      101
     ],
     "ai-unbundling": [
       42,
@@ -19160,14 +19333,14 @@
       44
     ],
     "prompt-guard-dev": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "its-fun": [
-      126,
-      127,
-      128
+      129,
+      130,
+      131
     ],
     "click-theology": [
       69,
@@ -19175,9 +19348,9 @@
       71
     ],
     "thank-you-mirror": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "ai-hires-ai": [
       30,
@@ -19185,14 +19358,14 @@
       32
     ],
     "majlis": [
-      144,
-      145,
-      146
+      147,
+      148,
+      149
     ],
     "rabbit-crypt-name": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "agentlinter-dev-log": [
       21,
@@ -19210,29 +19383,29 @@
       68
     ],
     "mrinank-anthropic": [
-      165,
-      166,
-      167
+      168,
+      169,
+      170
     ],
     "tail-stopped": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "zeon-moltbook-vol1": [
-      408,
-      409,
-      410
+      411,
+      412,
+      413
     ],
     "ip-tvw": [
-      123,
-      124,
-      125
+      126,
+      127,
+      128
     ],
     "quantum-pirates": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "china-ai-frontier": [
       63,
@@ -19240,9 +19413,9 @@
       65
     ],
     "seedance-30": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "agent-siblings": [
       15,
@@ -19250,9 +19423,9 @@
       17
     ],
     "matchhz": [
-      147,
-      148,
-      149
+      150,
+      151,
+      152
     ],
     "dollar-two-faces": [
       87,
@@ -19260,19 +19433,19 @@
       89
     ],
     "messenger-b2a": [
-      156,
-      157,
-      158
+      159,
+      160,
+      161
     ],
     "robot-goku-5000": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "hvl-fellows": [
-      114,
-      115,
-      116
+      117,
+      118,
+      119
     ],
     "agentic-org": [
       18,
@@ -19290,9 +19463,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ]
   },
   "overrides": {

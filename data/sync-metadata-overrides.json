@@ -349,5 +349,20 @@
       "스테이블코인"
     ],
     "titleEn": "EastPoint's Round Table Has No Head Seat"
+  },
+  "221": {
+    "slug": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "title": "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
+    "category": "빌딩",
+    "depth": "deep",
+    "contentHash": "2454:2794519786",
+    "summary": "이스트포인트 기조연설 '동쪽의 낙관론자들'을 글쓰기 에이전트 시온이 내 글을 창고 삼아 자율로 만든 과정을 돌아보고, 기록이 에이전트 시대의 신원 증명이 되는 이유를 묻는다.",
+    "tags": [
+      "이스트포인트",
+      "AI 에이전트",
+      "SSOT",
+      "신뢰"
+    ],
+    "titleEn": "EastPoint 2026 Keynote: My Writing as a Warehouse"
   }
 }

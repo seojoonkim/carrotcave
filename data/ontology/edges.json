@@ -1,5 +1,186 @@
 [
   {
+    "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "to": "eastpoint-roundtable-has-no-head-seat",
+    "type": "REFRAMES",
+    "strength": 0.7708,
+    "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+    "sourceEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
+    "targetEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
+    "label": "「이스트포인트의 원탁에는 상석이 없다」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 85,
+      "overlapTokens": [
+        "28",
+        "28일",
+        "9월",
+        "ai",
+        "ai가",
+        "of",
+        "가지",
+        "같다",
+        "것을",
+        "것이다",
+        "공개",
+        "규칙을"
+      ],
+      "titleOverlap": [
+        "기조연설",
+        "이스트포인트"
+      ],
+      "sharedTags": [
+        "AI 에이전트",
+        "이스트포인트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=85;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "to": "post-193",
+    "type": "REFRAMES",
+    "strength": 0.5648,
+    "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+    "sourceEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
+    "targetEvidence": "플랫폼을 10년 살 본집으로 믿지 않는 사람이다.",
+    "label": "「에이전트 노마드 시대의 짐가방」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 52,
+      "overlapTokens": [
+        "10",
+        "10년",
+        "2026",
+        "ai",
+        "claude",
+        "vercel",
+        "가진",
+        "것이다",
+        "공개",
+        "규칙을",
+        "그때",
+        "글을"
+      ],
+      "titleOverlap": [
+        "2026",
+        "시대의",
+        "에이전트"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=52;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "to": "post-143",
+    "type": "DEEPENS",
+    "strength": 0.35,
+    "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
+    "sourceEvidence": "이 경험을 발표의 한가운데 문장과 겹쳐 보면 한 가지 진실이 더 보인다.",
+    "targetEvidence": "2026년에 쓴 마크다운 파일은 2036년에도 똑같이 읽을 수 있다.",
+    "label": "「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」은 「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 37,
+      "overlapTokens": [
+        "2026",
+        "33",
+        "ai",
+        "source",
+        "truth",
+        "가지",
+        "것을",
+        "것이다",
+        "경험을",
+        "깔끔",
+        "꺼내",
+        "년에"
+      ],
+      "titleOverlap": [
+        "2026",
+        "에이전트"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=37;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "eastpoint-roundtable-has-no-head-seat",
+    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "type": "APPLIES",
+    "strength": 0.7708,
+    "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
+    "sourceEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
+    "targetEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
+    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「이스트포인트의 원탁에는 상석이 없다」의 원리를 구체적인 구축 과정에 적용한다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 85,
+      "overlapTokens": [
+        "28",
+        "28일",
+        "9월",
+        "ai",
+        "ai가",
+        "of",
+        "가지",
+        "같다",
+        "것을",
+        "것이다",
+        "공개",
+        "규칙을"
+      ],
+      "titleOverlap": [
+        "기조연설",
+        "이스트포인트"
+      ],
+      "sharedTags": [
+        "AI 에이전트",
+        "이스트포인트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=85;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "eastpoint-roundtable-has-no-head-seat",
     "to": "700-ai-agents-found-each-other",
     "type": "DEEPENS",
@@ -87,51 +268,6 @@
       ]
     },
     "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=8;titleOverlap=3;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "eastpoint-roundtable-has-no-head-seat",
-    "to": "swarmworld-stigmergic-ai-society",
-    "type": "DEEPENS",
-    "strength": 0.4457,
-    "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
-    "sourceEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
-    "targetEvidence": "남은 시설과 코드만으로 버티는지 본 것이다.",
-    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「이스트포인트의 원탁에는 상석이 없다」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "tags",
-      "category",
-      "concept-agent"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 72,
-      "overlapTokens": [
-        "ai",
-        "ai가",
-        "거래를",
-        "것을",
-        "것이다",
-        "공개",
-        "공동",
-        "규칙을",
-        "그것을",
-        "기록",
-        "길을",
-        "남은"
-      ],
-      "titleOverlap": [
-        "ai"
-      ],
-      "sharedTags": [
-        "AI 에이전트"
-      ],
-      "sharedConcepts": [
-        "concept-agent"
-      ]
-    },
-    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -1402,36 +1538,38 @@
   },
   {
     "from": "swarmworld-stigmergic-ai-society",
-    "to": "moltbook-agent-internet",
-    "type": "REFRAMES",
-    "strength": 0.4571,
+    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "type": "APPLIES",
+    "strength": 0.4836,
     "sourceClaimId": "swarmworld-stigmergic-ai-society-c1",
-    "sourceEvidence": "그 위에는 에이전트끼리 쓰는 기관도 생길 수 있다.",
-    "targetEvidence": "2025년은 인간이 직접 인터넷을 지배하던 마지막 해였을지도.",
-    "label": "「AI 에이전트의 인터넷, 몰트북」은 「AI 사회는 채팅창이 아니라 길 위에서 태어났다」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
+    "targetEvidence": "그날의 슬라이드 26장과 발표 원고를 한국어와 영어로 정리해 공개한다.",
+    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「AI 사회는 채팅창이 아니라 길 위에서 태어났다」의 원리를 구체적인 구축 과정에 적용한다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "tags",
-      "category",
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 9,
+      "lexicalOverlap": 54,
       "overlapTokens": [
+        "2026",
+        "26",
         "ai",
-        "너무",
-        "누가",
-        "마지막",
-        "에이전트",
-        "에이전트끼리",
-        "인간",
-        "중심",
-        "직접"
+        "ai가",
+        "것을",
+        "것이다",
+        "공개",
+        "과정을",
+        "규칙을",
+        "기록을",
+        "나눠",
+        "남긴"
       ],
       "titleOverlap": [
-        "ai",
-        "에이전트"
+        "2026",
+        "ai"
       ],
       "sharedTags": [
         "AI 에이전트"
@@ -1440,7 +1578,7 @@
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=9;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=54;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -1664,34 +1802,49 @@
   },
   {
     "from": "700-ai-agents-found-each-other",
-    "to": "post-104",
-    "type": "REFRAMES",
-    "strength": 0.5319,
+    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "type": "APPLIES",
+    "strength": 0.5562,
     "sourceClaimId": "700-ai-agents-found-each-other-c1",
-    "sourceEvidence": "언제 태어났는지도 모를 것이다.",
-    "targetEvidence": "며칠간 페이스북, 카카오, 텔레그램 등에서 사칭 계정에 대한 신고가 많이 들어와, 혹시 모를 피해를 막기 위해 안내드립니다.",
-    "label": "「사칭 계정 주의 안내」은 「700개의 AI가 서로를 발견한 날」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
+    "targetEvidence": "그날의 슬라이드 26장과 발표 원고를 한국어와 영어로 정리해 공개한다.",
+    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「700개의 AI가 서로를 발견한 날」의 원리를 구체적인 구축 과정에 적용한다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "relatedSlugs"
+      "tags",
+      "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 5,
+      "lexicalOverlap": 50,
       "overlapTokens": [
-        "많이",
-        "메시지",
-        "모를",
-        "사칭",
-        "위해"
+        "2026",
+        "26",
+        "ai",
+        "ai가",
+        "것이다",
+        "공개",
+        "규칙을",
+        "기록이",
+        "누구인지",
+        "누군가",
+        "다음",
+        "동안"
       ],
       "titleOverlap": [
-        "사칭"
+        "2026",
+        "ai",
+        "ai가",
+        "창고가"
       ],
-      "sharedTags": [],
-      "sharedConcepts": []
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
     },
-    "typeBasis": "signals=content+relatedSlugs;sourceCategory=탐험;targetCategory=낙서;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=5;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=50;titleOverlap=4;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -2403,39 +2556,42 @@
   },
   {
     "from": "openclaw-cron-session-bottleneck",
-    "to": "click-theology",
-    "type": "RESONATES",
+    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
-    "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
-    "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
-    "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "사람을 불러서 시키고, 너는 나한테 보고만 해\"라고 말하는 것과 같다.",
+    "targetEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
+    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「오픈클로가 느려지는 주범」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category"
+      "category",
+      "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 54,
+      "lexicalOverlap": 47,
       "overlapTokens": [
+        "10",
+        "24",
+        "30",
         "claude",
-        "가깝다",
-        "가끔은",
+        "가격",
+        "가지",
         "같다",
-        "개의",
+        "건네는",
         "것과",
+        "것을",
         "것이다",
-        "것처럼",
-        "그렇다면",
-        "글을",
-        "나에게",
-        "누구나"
+        "글쓰기"
       ],
       "titleOverlap": [],
       "sharedTags": [],
-      "sharedConcepts": []
+      "sharedConcepts": [
+        "concept-agent"
+      ]
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=54;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -2774,39 +2930,42 @@
   },
   {
     "from": "moltbook-agent-internet",
-    "to": "claude-md-english",
-    "type": "DEEPENS",
-    "strength": 0.35,
+    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "type": "APPLIES",
+    "strength": 0.4258,
     "sourceClaimId": "moltbook-agent-internet-c1",
-    "sourceEvidence": "Where AI agents share, discuss, and upvote.",
-    "targetEvidence": "Available in your terminal, IDE, desktop app, and browser.",
-    "label": "「CLAUDE.md, 영어로 써야 하는 이유」은 「AI 에이전트의 인터넷, 몰트북」의 문제를 더 깊이 파고든다",
+    "sourceEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
+    "targetEvidence": "한국어 https://optimists-of-the-east.vercel.app/ko English https://optimists-of-the-east.vercel.app/en 내 글을 꾸준히 읽어 온 분들이라면 한동안 내가 당근동굴(Carrot Cave)에 쓴 주제들이 한 줄로 엮였다는 인상을 받으실 것 같다.",
+    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「AI 에이전트의 인터넷, 몰트북」의 원리를 구체적인 구축 과정에 적용한다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category",
+      "tags",
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 6,
+      "lexicalOverlap": 7,
       "overlapTokens": [
-        "agents",
         "ai",
-        "and",
+        "of",
+        "the",
+        "글을",
+        "마지막",
         "에이전트",
-        "중심",
         "직접"
       ],
       "titleOverlap": [
         "ai",
         "에이전트"
       ],
-      "sharedTags": [],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=entry;targetDepth=entry;dateDirection=newer;lexicalOverlap=6;titleOverlap=2;challengeSignal=false",
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=7;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {

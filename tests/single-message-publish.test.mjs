@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
+import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { hashContent, parseSingleMessage, publishArtifacts, publishSingleMessage, regenerateOntology } from '../scripts/publish-single-message.mjs';
@@ -80,7 +81,7 @@ test('publishes exactly one reviewed message through one direct embed request wi
     root,
     fetchImpl,
     now: () => '2026-08-16T02:00:00.000Z',
-    regenerate: async () => { ontologyRuns += 1; }, updatePreviews: async () => {},
+    regenerate: async () => { ontologyRuns += 1; }, updatePreviews: async () => {}, checkShareCard: async () => {},
   });
 
   assert.deepEqual(requested, [
@@ -125,7 +126,7 @@ test('rolls back post, sync state, media, and generated ontology when ontology r
         }
         throw new Error(`unexpected request: ${url}`);
       },
-      updatePreviews: async () => {},
+      updatePreviews: async () => {}, checkShareCard: async () => {},
       regenerate: async () => {
         await writeFile(ontologyPath, '{"version":"partial"}\n');
         throw new Error('semantic candidates missing');
@@ -158,7 +159,7 @@ test('publishes Telegram timestamps on the Seoul calendar date', async () => {
       }
       throw new Error(`unexpected request: ${url}`);
     },
-    regenerate: async () => {}, updatePreviews: async () => {},
+    regenerate: async () => {}, updatePreviews: async () => {}, checkShareCard: async () => {},
   });
 
   const posts = await readFile(join(root, 'data', 'posts.ts'), 'utf8');
@@ -290,7 +291,7 @@ test('publishing writes the English share title and link previews in the same st
     return { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 1) };
   };
   const previewRuns = [];
-  await publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async (r) => { previewRuns.push(r); } });
+  await publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, checkShareCard: async () => {}, updatePreviews: async (r) => { previewRuns.push(r); } });
   const titles = JSON.parse(await readFile(join(root, 'data', 'post-titles-en.json'), 'utf8'));
   assert.equal(titles['reviewed-new-post'], 'A Reviewed New Post');
   assert.equal(titles.old, 'Old');
@@ -305,7 +306,7 @@ test('fails closed before writing when the reviewed English share title is missi
     if (titleEn === undefined) delete o[198].titleEn; else o[198].titleEn = titleEn;
     await writeFile(path, JSON.stringify(o));
     const fetchImpl = async () => ({ ok: true, status: 200, text: async () => telegramHtml });
-    await assert.rejects(publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async () => {} }), /English share title/);
+    await assert.rejects(publishSingleMessage({ id: 198, root, fetchImpl, regenerate: async () => {}, updatePreviews: async () => {}, checkShareCard: async () => {} }), /English share title/);
     assert.equal(await readFile(join(root, 'data', 'posts.ts'), 'utf8'), historical);
   }
 });
@@ -329,4 +330,13 @@ test('the commit list names every generated file, including the docs/eval ontolo
   const src = await readFile(new URL('../scripts/publish-single-message.mjs', import.meta.url), 'utf8');
   const touched = [...src.matchAll(/join\(root, '([^']+)', '([^']+)'(?:, '([^']+)')?\)/g)].map((m) => m.slice(1).filter(Boolean).join('/'));
   for (const f of touched.filter((f) => /\.json$/.test(f))) assert.ok(list.includes(f), `publish writes ${f} but commit list misses it`);
+});
+
+test('share-card checks run at publish time, and a failing check rolls the post back', async () => {
+  const src = readFileSync(new URL('../scripts/publish-single-message.mjs', import.meta.url), 'utf8');
+  assert.match(src, /await checkShareCard\(\{ root \}\);\n    await regenerate/);
+  assert.match(src, /'scripts\/og-image-hangul-audit\.mjs', '--fix'/);
+  assert.match(src, /'scripts\/og-title-fit\.mts'/);
+  assert.match(src, /ogHangulPath, \.\.\.generatedPaths/);
+  assert.ok(publishArtifacts('x').includes('data/og-image-hangul.json'));
 });
