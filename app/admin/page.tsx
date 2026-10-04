@@ -26,8 +26,8 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
         <form action={login} className="cc-admin__login">
           <h1>Carrot Cave 관리자</h1>
           <label htmlFor="cc-admin-password">비밀번호</label>
-          <input id="cc-admin-password" name="password" type="password" required autoComplete="current-password" />
-          {e && <p className="cc-admin__error" role="alert">비밀번호가 맞지 않아요.</p>}
+          <input id="cc-admin-password" name="password" type="password" required autoComplete="current-password" inputMode="numeric" />
+          {e && <p className="cc-admin__error" role="alert">{e === 'locked' ? '잘못된 시도가 많아 잠시 잠겼어요. 15분 뒤 다시 시도해 주세요.' : '비밀번호가 맞지 않아요.'}</p>}
           <button type="submit">들어가기</button>
         </form>
       </main>

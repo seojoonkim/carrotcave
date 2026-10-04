@@ -150,3 +150,33 @@ test('email field keeps its 44px height when the mobile row stacks into a column
   assert.doesNotMatch(rule, /flex:1;/); // flex-basis 0 collapses the height in a column
   assert.match(rule, /min-height:44px/);
 });
+
+test('short PIN is protected: 5 wrong tries lock the client, others still pass until the global ceiling', async () => {
+  const store = nl.memoryStore ? nl.memoryStore() : (() => { const m = new Map(); return {
+    async getJSON(k) { return m.has(k) ? JSON.parse(m.get(k)) : null; }, async putJSON(k, v) { m.set(k, JSON.stringify(v)); },
+    async list(p) { return [...m.keys()].filter((k) => k.startsWith(p)); }, async del(k) { m.delete(k); } }; })();
+  const t0 = 1_000_000;
+  for (let i = 0; i < 4; i++) await nl.recordLoginFailure(store, '1.1.1.1', t0 + i);
+  assert.equal((await nl.loginGate(store, '1.1.1.1', t0 + 10)).locked, false);
+  await nl.recordLoginFailure(store, '1.1.1.1', t0 + 5);
+  assert.equal((await nl.loginGate(store, '1.1.1.1', t0 + 10)).locked, true);
+  assert.equal((await nl.loginGate(store, '2.2.2.2', t0 + 10)).locked, false);
+  assert.equal((await nl.loginGate(store, '1.1.1.1', t0 + 15 * 60_000 + 10)).locked, false); // window expires
+  for (let i = 0; i < 30; i++) await nl.recordLoginFailure(store, `9.9.9.${i}`, t0 + 100 + i);
+  assert.equal((await nl.loginGate(store, '3.3.3.3', t0 + 200)).locked, true); // distributed guessing ceiling
+  await nl.clearLoginFailures(store, '1.1.1.1');
+});
+
+test('changing the admin password invalidates every existing admin session', () => {
+  const tok = nl.adminToken(nl.sessionSecret('s3cret', 'old-password'));
+  assert.equal(nl.isAdminToken(tok, nl.sessionSecret('s3cret', 'old-password')), true);
+  assert.equal(nl.isAdminToken(tok, nl.sessionSecret('s3cret', '2026')), false);
+});
+
+test('login action checks the throttle before comparing the password', () => {
+  const src = readFileSync(new URL('../app/admin/actions.ts', import.meta.url), 'utf8');
+  const body = src.slice(src.indexOf('export async function login('), src.indexOf('export async function logout('));
+  assert.ok(body.indexOf('loginGate') > -1 && body.indexOf('loginGate') < body.indexOf('safeEqual'));
+  assert.match(body, /recordLoginFailure/);
+  assert.match(body, /sessionSecret\(secret, expected\)/);
+});

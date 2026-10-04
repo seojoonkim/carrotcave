@@ -301,3 +301,30 @@ export async function testSend(deps: Deps, items: FeedItem[], to: unknown) {
 }
 export const adminToken = (secret: string, now = Date.now()) => signToken({ a: 'admin', id: 'owner', exp: now + 7 * DAY }, secret);
 export const isAdminToken = (token: unknown, secret: string, now = Date.now()) => verifyToken(token, 'admin', secret, now) === 'owner';
+
+/* ── Admin login throttle ──────────────────────────────────────────────
+ * A short PIN (e.g. 4 digits) is only safe behind a hard attempt limit.
+ * Per client: 5 wrong tries per 15 min → locked 15 min.
+ * Site-wide ceiling: 30 wrong tries per hour → everyone locked for the rest of the hour
+ * (stops distributed guessing across many IPs; the owner can wait it out). */
+export const LOGIN_LIMITS = { perClient: 5, clientWindowMs: 15 * 60_000, global: 30, globalWindowMs: 60 * 60_000 };
+type Attempts = { fails: number[] };
+const clientKey = (client: string) => `auth/fail-${createHash('sha256').update(client).digest('hex').slice(0, 24)}.json`;
+const recent = (a: Attempts | null, now: number, win: number) => (a?.fails ?? []).filter((t) => now - t < win);
+export async function loginGate(store: Store, client: string, now = Date.now()) {
+  const mine = recent(await store.getJSON<Attempts>(clientKey(client)), now, LOGIN_LIMITS.clientWindowMs);
+  const all = recent(await store.getJSON<Attempts>('auth/fail-global.json'), now, LOGIN_LIMITS.globalWindowMs);
+  return { locked: mine.length >= LOGIN_LIMITS.perClient || all.length >= LOGIN_LIMITS.global };
+}
+export async function recordLoginFailure(store: Store, client: string, now = Date.now()) {
+  const mine = recent(await store.getJSON<Attempts>(clientKey(client)), now, LOGIN_LIMITS.clientWindowMs);
+  const all = recent(await store.getJSON<Attempts>('auth/fail-global.json'), now, LOGIN_LIMITS.globalWindowMs);
+  await store.putJSON(clientKey(client), { fails: [...mine, now] });
+  await store.putJSON('auth/fail-global.json', { fails: [...all, now].slice(-200) });
+}
+export async function clearLoginFailures(store: Store, client: string) {
+  await store.del(clientKey(client));
+}
+/** Session cookies are bound to the current password: changing ADMIN_PASSWORD logs every browser out. */
+export const sessionSecret = (secret: string, password: string) =>
+  createHmac('sha256', secret).update('admin-session:' + password).digest('base64url');

@@ -1,7 +1,7 @@
 "use server";
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { adminAdd, adminRemove, adminToken, resendConfirmations, runDigest, safeEqual, skipToday, testSend } from '@/lib/newsletter/core';
+import { adminAdd, adminRemove, adminToken, clearLoginFailures, loginGate, recordLoginFailure, resendConfirmations, runDigest, safeEqual, sessionSecret, skipToday, testSend } from '@/lib/newsletter/core';
 import { newsletterDeps } from '@/lib/newsletter/deps';
 import { feedItems } from '@/lib/newsletter/feed';
 import { ADMIN_COOKIE, requireAdmin } from './auth';
@@ -10,11 +10,21 @@ export async function login(form: FormData) {
   const password = String(form.get('password') ?? '');
   const expected = process.env.ADMIN_PASSWORD;
   const secret = process.env.NEWSLETTER_SECRET;
-  if (!expected || !secret || !safeEqual(password, expected)) {
+  if (!expected || !secret) redirect('/admin?e=1');
+  const h = await headers();
+  const client = (h.get('x-real-ip') || h.get('x-forwarded-for')?.split(',')[0] || 'unknown').trim();
+  const { store } = newsletterDeps();
+  if ((await loginGate(store, client)).locked) {
+    await new Promise((r) => setTimeout(r, 900));
+    redirect('/admin?e=locked');
+  }
+  if (!safeEqual(password, expected)) {
+    await recordLoginFailure(store, client);
     await new Promise((r) => setTimeout(r, 900));
     redirect('/admin?e=1');
   }
-  (await cookies()).set(ADMIN_COOKIE, adminToken(secret), { httpOnly: true, secure: true, sameSite: 'strict', path: '/admin', maxAge: 7 * 86400 });
+  await clearLoginFailures(store, client);
+  (await cookies()).set(ADMIN_COOKIE, adminToken(sessionSecret(secret, expected)), { httpOnly: true, secure: true, sameSite: 'strict', path: '/admin', maxAge: 7 * 86400 });
   redirect('/admin');
 }
 export async function logout() {
