@@ -64,7 +64,7 @@ export default function RootLayout({
       </head>
       <body
         className="antialiased min-h-screen"
-        style={{ backgroundColor: '#0b0e14', color: '#d6dee9' }}
+        style={{ backgroundColor: '#0b0e14', color: '#cdd5df' }}
       >
         <CaveTorch />
         {children}

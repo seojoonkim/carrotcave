@@ -419,8 +419,8 @@ img { border: 0; outline: 0;  }
 #transcript mark.key-sentence,
 .utterance mark.key-sentence,
 #transcript .paragraph-text .transcript-highlight {
-  color: #fff;
-  font-weight: 650;
+  color: #dfe5ed;
+  font-weight: 600;
   background: linear-gradient(transparent 64%, rgba(242, 140, 40, .24) 64%);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
@@ -457,7 +457,7 @@ img { border: 0; outline: 0;  }
   content: ""; display: inline-block; width: .55em; height: .55em; margin-left: .3em; vertical-align: .05em;
   background: url("/carrot-mark.svg") center / contain no-repeat; transform: rotate(-8deg);
 }
-::selection { background: rgba(242, 140, 40, .32); color: #fff; }
+::selection { background: rgba(243, 154, 82, .3); color: #eef2f7; }
 
 /* Korean typesetting pass: break between words, not inside them; keep Hangul labels tightly tracked. */
 #transcript .paragraph-text, #transcript .speaker-person, #transcript .transcript-editor-note, .utterance, .transcript-paragraph {
@@ -503,7 +503,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 
 /* Interview date: shown at the start of every voice reader. */
 .hero-date { margin: -10px 0 18px; color: var(--muted, #9fa9b8); font: 500 12px/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .06em; }
-.hero-date time { color: var(--bright-white, #fff); }
+.hero-date time { color: #dfe5ed; }
 /* ═══ DESIGN PASS 2026.10 — refined reading, small carrot charms ═══
    Restraint first: one carrot accent, soft radii, quiet chips.
    Cute points are few and small: carrot kicker, leaf dot on the date,
@@ -586,3 +586,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 
 /* Sub-topic numbers: quiet carrot numerals aligned to the heading. */
 .topic-number { color: rgba(243, 154, 82, .75) !important; font: 600 12px/2.6 var(--font-mono) !important; letter-spacing: .04em !important; font-variant-numeric: tabular-nums; }
+/* Eye comfort 2026.10: same ink scale as the site. Titles ~15:1, body ~13:1, no pure white. */
+:root { --text: #cdd5df; --foreground: #cdd5df; --bright-white: #dfe5ed; }
+#transcript .utterance-text, #transcript .paragraph-text, .transcript-paragraph, .long-record-body .utterance { color: #cdd5df; }
+.hero #page-title, .chapter-heading h2, .topic-heading h3, .section-heading h2 { color: #dfe5ed; }

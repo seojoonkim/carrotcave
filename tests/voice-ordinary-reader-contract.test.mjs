@@ -34,10 +34,10 @@ test('Voice header and hero typography inherit the ordinary post reading contrac
   assert.ok(voice.includes('.header-site-title{display:block;overflow:hidden;color:var(--reader-accent);font:5009px/1var(--font-mono);letter-spacing:.1em;text-overflow:ellipsis;white-space:nowrap;}'));
   assert.ok(voice.includes('.header-status#readingStatus{display:inline-flex;min-width:0;overflow:hidden;align-items:baseline;color:var(--bright-white);font:400var(--reader-header-title-size)/1.2var(--font-sans);letter-spacing:-.02em;text-overflow:ellipsis;white-space:nowrap;}'));
 
-  assert.ok(ordinary.includes('.post-reader-headerh1{max-width:650px;margin:0022px;color:#fff;font:500var(--reader-title-size)/1.22var(--post-reader-sans);letter-spacing:-.035em'));
+  assert.ok(ordinary.includes('.post-reader-headerh1{max-width:650px;margin:0022px;color:var(--ink-head);font:500var(--reader-title-size)/1.22var(--post-reader-sans);letter-spacing:-.035em'));
   assert.ok(voice.includes('.hero#page-title{max-width:650px;margin:0022px;color:var(--bright-white);font:500var(--reader-title-size)/1.22var(--font-sans);font-family:var(--font-sans);letter-spacing:-.035em'));
 
-  assert.ok(ordinary.includes('.post-content{overflow-wrap:anywhere;color:#d6dde6;font:400var(--reader-body-size)/var(--reader-body-leading)var(--post-reader-sans);letter-spacing:0}'));
+  assert.ok(ordinary.includes('.post-content{overflow-wrap:anywhere;color:#cdd5df;font:400var(--reader-body-size)/var(--reader-body-leading)var(--post-reader-sans);letter-spacing:0}'));
   assert.ok(voice.includes('.hero-deck{font:400var(--reader-body-size)/var(--reader-body-leading)var(--font-sans);letter-spacing:0;}'));
 });
 
