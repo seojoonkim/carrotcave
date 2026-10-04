@@ -143,3 +143,10 @@ test('missing blob reads as empty even when the error class name is minified', a
   assert.equal(isBlobMissing(Object.assign(new Error('x'), { name: 'BlobNotFoundError' })), true);
   assert.equal(isBlobMissing(new Error('Vercel Blob: Access denied')), false);
 });
+
+test('email field keeps its 44px height when the mobile row stacks into a column', () => {
+  const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
+  const rule = css.match(/\.cc-newsletter input\[type=email\]\{[^}]*\}/)[0];
+  assert.doesNotMatch(rule, /flex:1;/); // flex-basis 0 collapses the height in a column
+  assert.match(rule, /min-height:44px/);
+});

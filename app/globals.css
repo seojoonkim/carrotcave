@@ -770,7 +770,7 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .cc-newsletter{display:grid;gap:10px;max-width:520px;margin:0 0 22px}
 .cc-newsletter__title{margin:0;color:var(--paper);font:500 15px/1.6 var(--sans)}
 .cc-newsletter__row{display:flex;gap:8px}
-.cc-newsletter input[type=email]{flex:1;min-width:0;height:44px;padding:0 16px;border:0;border-radius:4px;background:#171c25;color:#dfe5ed;font:400 15px var(--sans)}
+.cc-newsletter input[type=email]{flex:1 1 auto;min-width:0;height:44px;min-height:44px;padding:0 16px;border:0;border-radius:4px;background:#171c25;color:#dfe5ed;font:400 15px var(--sans)}
 .cc-newsletter input[type=email]:focus-visible{outline:2px solid var(--carrot);outline-offset:2px}
 .cc-newsletter button,.cc-newsletter-page__unsub button{height:44px;padding:0 20px;border:0;border-radius:4px;background:var(--carrot);color:#0b0e14;font:700 14px var(--sans);cursor:pointer;transition:opacity .16s ease}
 .cc-newsletter button:disabled{opacity:.6;cursor:default}
