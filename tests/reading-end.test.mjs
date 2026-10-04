@@ -53,3 +53,19 @@ test('next-in-category card shows the next post thumbnail, falling back to the c
   assert.match(end, /\.post-next__thumb\{[^}]*aspect-ratio:16\/10[^}]*border-radius:12px/);
   assert.match(end, /max-width:600px\)\{\.cc-reading-end \.post-next\{grid-template-columns:104px/);
 });
+
+test('reading end separates body, next panel and picks with generous section gaps', () => {
+  const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
+  const tail = end.slice(end.lastIndexOf('/* Section rhythm'));
+  const px = (name, block) => Number(new RegExp(`${name}:(\\d+)px`).exec(block)?.[1]);
+  const desk = tail.slice(0, tail.indexOf('@media'));
+  const mob = tail.slice(tail.indexOf('@media'));
+  for (const [scope, block, min] of [['desktop', desk, { body: 112, next: 64, picks: 104, in: 64 }], ['mobile', mob, { body: 80, next: 48, picks: 80, in: 48 }]]) {
+    assert.ok(px('--re-gap-body', block) >= min.body, `${scope} body gap`);
+    assert.ok(px('--re-gap-next', block) >= min.next, `${scope} next gap`);
+    assert.ok(px('--re-gap-picks', block) >= min.picks, `${scope} picks gap`);
+    assert.ok(px('--re-gap-picks-in', block) >= min.in, `${scope} picks inner gap`);
+  }
+  assert.match(tail, /\.cc-reading-end \.post-next\{margin-top:var\(--re-gap-next\)\}/);
+  assert.match(tail, /\.cave-constellation-shell\{margin-top:var\(--re-gap-picks\);padding-top:var\(--re-gap-picks-in\)\}/);
+});
