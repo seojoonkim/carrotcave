@@ -70,16 +70,22 @@ export function validate(p, t) {
   if (missing.length) problems.push(`urls missing: ${missing.slice(0, 3).join(' ')}`);
   const hangul = (t.title + t.summary + t.content).match(/[\uac00-\ud7a3]/g)?.length ?? 0;
   if (hangul > 40) problems.push(`hangul left: ${hangul}`);
+  for (const [ko, en] of NAME_MAP) {
+    if (new RegExp(`(?<![가-힣])${ko}`).test(p.content) && !(t.title + t.summary + t.content).includes(en)) problems.push(`proper name ${ko} must be written "${en}"`);
+  }
   const ratio = t.content.length / Math.max(1, p.content.length);
   if (p.content.length > 200 && (ratio < 0.9 || ratio > 4.5)) problems.push(`length ratio ${ratio.toFixed(2)}`);
   return problems;
 }
 
+// Proper names the model tends to romanize wrongly (e.g. 제온 → "Jeon"). Shared with tests/i18n.test.mjs.
+export const NAME_MAP = JSON.parse(readFileSync(join(root, 'scripts/i18n/names.json'), 'utf8'));
+
 async function translate(p) {
   const file = join(outDir, `${p.slug}.json`);
   const hash = sourceHash(p);
   if (existsSync(file)) {
-    try { if (JSON.parse(readFileSync(file, 'utf8')).sourceHash === hash) return 'skip'; } catch {}
+    try { const prev = JSON.parse(readFileSync(file, 'utf8')); if (prev.sourceHash === hash && validate(p, prev).length === 0) return 'skip'; } catch {}
   }
   let last = '';
   for (let attempt = 1; attempt <= 3; attempt++) {

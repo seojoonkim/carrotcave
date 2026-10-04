@@ -9,3 +9,5 @@
 - 트리플에스 → tripleS
 - 아르테미스 → ARTMS
 - 원 → won (use "KRW" only for tables)
+- Simon's AI agents (proper names, always exactly these spellings): 제온 → Zeon; 시온 → Sion; 미온 → Mion; 사노 → Sano; 라온 → Raon; 소울 → Soul. Never "Jeon", "Zion", "Shion". With a Korean name suffix (제온이, 시온아) drop the suffix: Zeon, Sion.
+- 클로드봇 → Clawdbot (the agent app, later renamed Moltbot, now OpenClaw); 몰트봇 → Moltbot; 오픈클로 → OpenClaw. Never "ClaudeBot" or "Claude bot".

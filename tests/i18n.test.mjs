@@ -45,6 +45,7 @@ test('all posts and voices have an English version that keeps every link', async
   const { interviews } = await import('../data/interviews.ts');
   const en = JSON.parse(read('data/en/posts.json'));
   const voices = JSON.parse(read('data/en/voices.json'));
+  const enPost = (p) => `${en[p.slug].title}\n${en[p.slug].summary}\n${en[p.slug].content}`;
   const urls = (s) => (s.match(/https?:\/\/[^\s)\]>"']+/g) ?? []);
   for (const p of posts) {
     const t = en[p.slug];
@@ -54,6 +55,13 @@ test('all posts and voices have an English version that keeps every link', async
     assert.deepEqual(missing, [], `${p.slug} lost links in translation`);
     assert.ok(((t.title + t.summary + t.content).match(/[\uac00-\ud7a3]/g) ?? []).length <= 40, `${p.slug} still has Korean text`);
   }
+  const names = JSON.parse(read('scripts/i18n/names.json'));
+  const wrongNames = [];
+  for (const p of posts) for (const [ko, en] of names) {
+    const t = en && enPost(p);
+    if (new RegExp(`(?<![가-힣])${ko}`).test(p.content) && !t.includes(en)) wrongNames.push(`${p.slug}: ${ko}→${en}`);
+  }
+  assert.deepEqual(wrongNames, [], 'agent/product names must keep their official English spelling');
   for (const v of interviews) assert.ok(voices[v.slug]?.title, `no English voice entry for ${v.slug}`);
 });
 
