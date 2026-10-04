@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import CaveBuddy from './CaveBuddy';
 
 export const ARCHIVE_PAGE_SIZE = 12;
 export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v6.png';
@@ -192,7 +193,7 @@ export default function ArchiveList({
           <span className="archive-more__count">{Math.min(visible, entries.length)} / {entries.length}</span>
         </button>
       )}
-      {searching && shown === 0 && <p className="archive-empty">검색어를 지우면 전체 기록으로 돌아가요.</p>}
+      {searching && shown === 0 && <div className="archive-empty"><CaveBuddy mood="lost"><strong>굴을 다 뒤졌는데 못 찾았어요.</strong><span>검색어를 지우면 전체 기록으로 돌아가요.</span></CaveBuddy></div>}
     </div>
   );
 }

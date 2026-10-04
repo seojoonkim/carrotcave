@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import CaveBuddy from './CaveBuddy';
 
 type Phase = 'idle' | 'sending' | 'done' | 'already' | 'error';
 
@@ -26,9 +27,12 @@ export default function NewsletterForm() {
         <p className="cc-newsletter__desc">새 글이 올라온 다음 날 아침 8시에 한 번만 보내드려요.</p>
       </div>
       {phase === 'done' || phase === 'already' ? (
-        <p className="cc-newsletter__note" role="status">
-          {phase === 'already' ? '이미 구독 중이에요. 고마워요.' : queued ? '신청을 받았어요. 확인 메일을 곧 보내드릴게요.' : '확인 메일을 보냈어요. 메일의 버튼을 누르면 구독이 시작돼요.'}
-        </p>
+        <div className="cc-newsletter__note" role="status">
+          <CaveBuddy mood="happy">
+            <strong>{phase === 'already' ? '이미 같은 굴 친구예요!' : '당근 하나 접수했어요!'}</strong>
+            <span>{phase === 'already' ? '이미 구독 중이에요. 고마워요.' : queued ? '신청을 받았어요. 확인 메일을 곧 보내드릴게요.' : '확인 메일을 보냈어요. 메일의 버튼을 누르면 구독이 시작돼요.'}</span>
+          </CaveBuddy>
+        </div>
       ) : (
         <div className="cc-newsletter__row">
           <label className="sr-only" htmlFor="cc-newsletter-email">이메일</label>
