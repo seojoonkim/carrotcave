@@ -42,3 +42,14 @@ test('site fallback retains the 1200 by 630 root social card and description', a
   assert.match(layout, /locale: 'ko_KR'/);
   assert.match(layout, /card: 'summary_large_image'/);
 });
+
+test('static fallback share images are the soft-slate mascot card, not the old blue-silhouette art', async () => {
+  const { createHash } = await import('node:crypto');
+  const OLD_BLUE_SILHOUETTE = 'c7477ac23cbdbc5a53945157f2b6e148bd7c0c6551050a585dee284e2d57f220';
+  for (const f of ['public/carrotcave-og-20260814.png', 'public/opengraph-image.png']) {
+    const buf = await readFile(new URL(`../${f}`, import.meta.url));
+    assert.equal(buf.readUInt32BE(16), 1200, f);
+    assert.equal(buf.readUInt32BE(20), 630, f);
+    assert.notEqual(createHash('sha256').update(buf).digest('hex'), OLD_BLUE_SILHOUETTE, `${f} is still the pre-redesign card`);
+  }
+});
