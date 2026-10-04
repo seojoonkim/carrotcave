@@ -1,4 +1,50 @@
 {
+  "kpop-next-chapter-ip-and-fandom": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-K-POP",
+      "tag-팬덤",
+      "tag-IP"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "kpop-next-chapter-ip-and-fandom-c1",
+        "text": "2026년 9월 28일 서울, 이스트포인트 2026 김서준: 두 분과 함께 앉으니 감회가 새롭네요.",
+        "stance": "asserts",
+        "evidence": "2026년 9월 28일 서울, 이스트포인트 2026 김서준: 두 분과 함께 앉으니 감회가 새롭네요."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "K-POP",
+      "팬덤",
+      "IP"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "eastpoint-2026-keynote-my-writing-became-a-warehouse": {
     "primaryTopics": [
       "building"

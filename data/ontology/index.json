@@ -425,6 +425,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "kpop-next-chapter-ip-and-fandom": {
+      "slug": "kpop-next-chapter-ip-and-fandom",
+      "title": "K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "last-message": {
       "slug": "last-message",
       "title": "마지막 메시지",
@@ -4471,41 +4480,45 @@
     },
     {
       "from": "complexcon-hk-identity-culture-experience",
-      "to": "eastpoint-roundtable-has-no-head-seat",
+      "to": "kpop-next-chapter-ip-and-fandom",
       "type": "REFRAMES",
-      "strength": 0.35,
+      "strength": 0.375,
       "sourceClaimId": "complexcon-hk-identity-culture-experience-c1",
-      "sourceEvidence": "흥미로운 건, AI가 여기에 들어오면 문화의 역할 자체가 또 달라질 수 있다는 점이다.",
-      "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
-      "label": "「이스트포인트의 원탁에는 상석이 없다」은 「ComplexCon HK에서 본 세계의 입장권」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "캐릭터 IP와 디자이너 토이가 더 강한 중력을 만들고 있었다.",
+      "targetEvidence": "정병기 대표님, AI는 K-POP을 어디까지 바꿀까요?",
+      "label": "「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」은 「ComplexCon HK에서 본 세계의 입장권」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 70,
+        "lexicalOverlap": 58,
         "overlapTokens": [
           "ai",
           "ai가",
-          "가까웠다",
-          "가깝다",
-          "것이다",
-          "것인지",
-          "규칙을",
+          "ai는",
+          "ip",
+          "ip와",
+          "pop",
+          "결국",
+          "구조를",
+          "그런데",
           "그렇다면",
-          "기록",
-          "끝에",
-          "누가",
-          "대개"
+          "넘어",
+          "노래를"
         ],
         "titleOverlap": [
-          "세계의"
+          "ip",
+          "ip와",
+          "pop",
+          "다음",
+          "엔터테인먼트"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=70;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=58;titleOverlap=5;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -7191,6 +7204,55 @@
     },
     {
       "from": "kpop-fandom-digital-parliament",
+      "to": "kpop-next-chapter-ip-and-fandom",
+      "type": "REFRAMES",
+      "strength": 0.8332,
+      "sourceClaimId": "kpop-fandom-digital-parliament-c1",
+      "sourceEvidence": "모드하우스의 세 팀, tripleS, ARTMS, idntt를 통해 누적 발행된 포토카드는 1,500만 개를 넘었고, 거래량은 그 두 배를 넘긴다.",
+      "targetEvidence": "그렇게 트리플에스(tripleS)와 아르테미스(ARTMS), 아이덴티티(idntt)가 시작됐습니다.",
+      "label": "「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」은 「K-POP 팬덤은 어떻게 디지털 의회가 되었나」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 67,
+        "overlapTokens": [
+          "artms",
+          "idntt",
+          "pop",
+          "triples",
+          "것을",
+          "결국",
+          "경험",
+          "계속",
+          "관계는",
+          "그런",
+          "글로벌",
+          "기존"
+        ],
+        "titleOverlap": [
+          "pop",
+          "대표와",
+          "모드하우스",
+          "어떻게",
+          "엔터테인먼트",
+          "정병기",
+          "팬덤"
+        ],
+        "sharedTags": [
+          "K-POP",
+          "팬덤"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=67;titleOverlap=7;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "kpop-fandom-digital-parliament",
       "to": "ip-tvw",
       "type": "DEEPENS",
       "strength": 0.5883,
@@ -7278,40 +7340,139 @@
       "status": "approved"
     },
     {
-      "from": "kpop-fandom-digital-parliament",
-      "to": "fear-and-value-in-ai-creation",
-      "type": "RESONATES",
-      "strength": 0.35,
-      "sourceClaimId": "kpop-fandom-digital-parliament-c1",
-      "sourceEvidence": "팬덤이라는 가장 감정적이고 인간적인 영역에서, 99%의 신뢰와 100%에 가까운 검증 가능성이 실제로 다른 세계를 만든다는 것을 보여주기 때문이다.",
-      "targetEvidence": "검증된 것을 세상에 도달시키는 비용.",
-      "label": "「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」은 「K-POP 팬덤은 어떻게 디지털 의회가 되었나」의 핵심 문제와 맞닿는다",
+      "from": "kpop-next-chapter-ip-and-fandom",
+      "to": "kpop-fandom-digital-parliament",
+      "type": "REFRAMES",
+      "strength": 0.8332,
+      "sourceClaimId": "kpop-next-chapter-ip-and-fandom-c1",
+      "sourceEvidence": "그렇게 트리플에스(tripleS)와 아르테미스(ARTMS), 아이덴티티(idntt)가 시작됐습니다.",
+      "targetEvidence": "모드하우스의 세 팀, tripleS, ARTMS, idntt를 통해 누적 발행된 포토카드는 1,500만 개를 넘었고, 거래량은 그 두 배를 넘긴다.",
+      "label": "「K-POP 팬덤은 어떻게 디지털 의회가 되었나」은 「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
+        "tags",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 72,
+        "lexicalOverlap": 67,
         "overlapTokens": [
-          "100",
-          "가격",
-          "가능한",
-          "가진",
-          "가치는",
-          "감각",
-          "강한",
-          "검증",
-          "검증된",
+          "artms",
+          "idntt",
+          "pop",
+          "triples",
           "것을",
-          "결과를",
-          "결국"
+          "결국",
+          "경험",
+          "계속",
+          "관계는",
+          "그런",
+          "글로벌",
+          "기존"
         ],
-        "titleOverlap": [],
-        "sharedTags": [],
+        "titleOverlap": [
+          "pop",
+          "대표와",
+          "모드하우스",
+          "어떻게",
+          "엔터테인먼트",
+          "정병기",
+          "팬덤"
+        ],
+        "sharedTags": [
+          "K-POP",
+          "팬덤"
+        ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=72;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=67;titleOverlap=7;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "kpop-next-chapter-ip-and-fandom",
+      "to": "ip-tvw",
+      "type": "REFRAMES",
+      "strength": 0.5769,
+      "sourceClaimId": "kpop-next-chapter-ip-and-fandom-c1",
+      "sourceEvidence": "그런데 IT와 AI, 블록체인이 그 구조를 무너뜨렸습니다.",
+      "targetEvidence": "AI가 창작의 비용을 제로에 수렴시킨 세상에서, 블록체인은 그 창작의 가치를 정산하는 레이어가 된다.",
+      "label": "「창작의 비용이 제로가 된 세상에서, 세계관의 가치는 어디에 잠길까」은 「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 33,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ip",
+          "결국",
+          "다음",
+          "만든",
+          "만들",
+          "많은",
+          "블록체인",
+          "빠르게",
+          "산업이",
+          "세계"
+        ],
+        "titleOverlap": [
+          "ip",
+          "다음",
+          "어디에"
+        ],
+        "sharedTags": [
+          "IP"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=33;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "kpop-next-chapter-ip-and-fandom",
+      "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "type": "APPLIES",
+      "strength": 0.5321,
+      "sourceClaimId": "kpop-next-chapter-ip-and-fandom-c1",
+      "sourceEvidence": "2026년 9월 28일 서울, 이스트포인트 2026 김서준: 두 분과 함께 앉으니 감회가 새롭네요.",
+      "targetEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
+      "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」의 원리를 구체적인 구축 과정에 적용한다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 34,
+        "overlapTokens": [
+          "10",
+          "10년",
+          "2026",
+          "28",
+          "28일",
+          "9월",
+          "ai",
+          "ai가",
+          "ai의",
+          "것을",
+          "다음",
+          "동안"
+        ],
+        "titleOverlap": [
+          "2026",
+          "다음",
+          "이스트포인트"
+        ],
+        "sharedTags": [
+          "이스트포인트"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=34;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -9501,41 +9662,42 @@
     },
     {
       "from": "post-105",
-      "to": "eastpoint-roundtable-has-no-head-seat",
+      "to": "kpop-next-chapter-ip-and-fandom",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-105-c1",
-      "sourceEvidence": "예측시장에 AI가 결합하면 어떤 일이 벌어질까.",
-      "targetEvidence": "AI가 가장 싸게 만든 것은 지능보다 틀림이라는 이야기로 시작했다.",
-      "label": "「이스트포인트의 원탁에는 상석이 없다」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "AI가 '다음 달 실업률' 시장 하나를 보고 자동으로 100개의 파생 시장을 생성한다.",
+      "targetEvidence": "정병기 대표님, AI는 K-POP을 어디까지 바꿀까요?",
+      "label": "「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」은 「모든 판단에 가격표가 붙는 세계에 대한 생각들」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 68,
+        "lexicalOverlap": 44,
         "overlapTokens": [
+          "10",
+          "10년",
+          "15",
+          "5년",
           "ai",
           "ai가",
-          "of",
-          "가까웠다",
-          "가능성",
-          "가능한",
-          "것이다",
-          "규모의",
+          "ai는",
+          "결국",
+          "구조를",
           "그렇다면",
-          "기관",
-          "낮은",
-          "누가"
+          "글로벌",
+          "기존"
         ],
         "titleOverlap": [
+          "다음",
           "모든"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=68;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=44;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10122,39 +10284,42 @@
     },
     {
       "from": "post-141",
-      "to": "post-103",
-      "type": "RESONATES",
+      "to": "kpop-next-chapter-ip-and-fandom",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-141-c1",
-      "sourceEvidence": "전기가 너무 싸고 너무 널리 퍼져 아무도 그것을 특별한 기술로 부르지 않게 되었을 때 세계가 바뀌었다.",
-      "targetEvidence": "현실 경제를 읽고 그것을 대출로 번역하는 문법 자체가 고장난 것이다.",
-      "label": "「돈을 받지도 빌려주지도 못하는 은행」은 「왕관이 콘센트가 되는 순간」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "Sora는 한때 OpenAI가 텍스트를 넘어 영상까지 지배할 수 있다는 야심의 상징이었다.",
+      "targetEvidence": "그런데 IT와 AI, 블록체인이 그 구조를 무너뜨렸습니다.",
+      "label": "「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」은 「왕관이 콘센트가 되는 순간」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 83,
+        "lexicalOverlap": 50,
         "overlapTokens": [
+          "12",
+          "15",
           "20",
-          "30",
-          "개발자",
-          "개의",
-          "것과",
+          "ai",
           "것을",
-          "것이다",
-          "구조",
-          "그것을",
+          "결국",
           "그런데",
-          "기술",
-          "기업"
+          "그렇다면",
+          "너무",
+          "넘어",
+          "다음",
+          "동안"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "다음",
+          "되는"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=83;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=50;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12162,6 +12327,47 @@
     },
     {
       "from": "post-163",
+      "to": "kpop-next-chapter-ip-and-fandom",
+      "type": "DEEPENS",
+      "strength": 0.4017,
+      "sourceClaimId": "post-163-c1",
+      "sourceEvidence": "AI가 실행하는 시대, 인간에게 남는 건 '의도' (Hashed 김서준 대표) Hashed 김서준 대표가 'AI 프론티어'에 출연해 노정석 대표와 AI·에이전트 시대가 바꿀 미래를 깊이 있게 풀어냅니다.",
+      "targetEvidence": "정병기 대표님, AI는 K-POP을 어디까지 바꿀까요?",
+      "label": "「K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화」은 「AI 프론티어 인터뷰 후기」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 51,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "감사합니다",
+          "겁니다",
+          "것을",
+          "결국",
+          "기존",
+          "김서준",
+          "깊이",
+          "대신",
+          "대표"
+        ],
+        "titleOverlap": [
+          "ai",
+          "대표",
+          "대표와"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=51;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "post-163",
       "to": "value-of-understanding-in-ai-future",
       "type": "DEEPENS",
       "strength": 0.3916,
@@ -12202,50 +12408,6 @@
         ]
       },
       "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=mid;dateDirection=older;lexicalOverlap=50;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "post-163",
-      "to": "agent-era-branding-future",
-      "type": "DEEPENS",
-      "strength": 0.3858,
-      "sourceClaimId": "post-163-c1",
-      "sourceEvidence": "실행은 AI가 대신하고 사람에게는 '의도'만 남는 세상, 바이브 코딩으로 혼자 모든 것을 만들어내는 새로운 창업가 종(種)의 등장, 그리고 VC·대학·회사라는 전통적 개념의 해체를 짚어봅니다.",
-      "targetEvidence": "AI가 읽고, 고르고, 비교하고, 실행하는 순간, 브랜드는 사람의 눈을 설득하는 상징에서 기계의 판단 안에 들어가는 구조로 변해야 한다.",
-      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「AI 프론티어 인터뷰 후기」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category",
-        "concept-agent"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 44,
-        "overlapTokens": [
-          "ai",
-          "ai가",
-          "ai는",
-          "강한",
-          "결국",
-          "결제",
-          "남을",
-          "대신",
-          "되는",
-          "라는",
-          "마지막",
-          "모든"
-        ],
-        "titleOverlap": [
-          "ai",
-          "시대",
-          "에이전트"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
-      },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=older;lexicalOverlap=44;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -18777,6 +18939,11 @@
     }
   ],
   "outgoing": {
+    "kpop-next-chapter-ip-and-fandom": [
+      141,
+      142,
+      143
+    ],
     "eastpoint-2026-keynote-my-writing-became-a-warehouse": [
       90,
       91,
@@ -18788,24 +18955,24 @@
       95
     ],
     "the-right-to-turn-on-a-brain": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "waited-for-you": [
-      405,
-      406,
-      407
+      408,
+      409,
+      410
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "living-in-the-age-of-optimists": [
-      144,
-      145,
-      146
+      147,
+      148,
+      149
     ],
     "brain-files-minecraft-flies": [
       54,
@@ -18813,9 +18980,9 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "hashed-ai-ecosystem-growth-intern": [
       111,
@@ -18833,14 +19000,14 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "last-message": [
-      141,
-      142,
-      143
+      144,
+      145,
+      146
     ],
     "700-ai-agents-found-each-other": [
       3,
@@ -18848,19 +19015,19 @@
       5
     ],
     "security-token-rail": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "post-201": [
-      303,
-      304,
-      305
+      306,
+      307,
+      308
     ],
     "proving-human-writing-without-ai": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "graph-engineering-ai-org": [
       108,
@@ -18868,14 +19035,14 @@
       110
     ],
     "tokyo-taxi-ai-ads": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "openclaw-cron-session-bottleneck": [
-      177,
-      178,
-      179
+      180,
+      181,
+      182
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -18883,14 +19050,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      306,
-      307,
-      308
+      309,
+      310,
+      311
     ],
     "moltbook-agent-internet": [
-      162,
-      163,
-      164
+      165,
+      166,
+      167
     ],
     "ai-idea-execution-speed": [
       33,
@@ -18903,174 +19070,174 @@
       38
     ],
     "post-197": [
+      303,
+      304,
+      305
+    ],
+    "post-195": [
       300,
       301,
       302
     ],
-    "post-195": [
+    "post-193": [
       297,
       298,
       299
     ],
-    "post-193": [
+    "post-192": [
       294,
       295,
       296
     ],
-    "post-192": [
+    "post-191": [
       291,
       292,
       293
     ],
-    "post-191": [
+    "post-190": [
       288,
       289,
       290
     ],
-    "post-190": [
+    "post-189": [
       285,
       286,
       287
     ],
-    "post-189": [
+    "post-188": [
       282,
       283,
       284
     ],
-    "post-188": [
+    "post-187": [
       279,
       280,
       281
     ],
-    "post-187": [
+    "post-186": [
       276,
       277,
       278
     ],
-    "post-186": [
+    "post-185": [
       273,
       274,
       275
     ],
-    "post-185": [
+    "post-178": [
       270,
       271,
       272
     ],
-    "post-178": [
+    "post-165": [
       267,
       268,
       269
     ],
-    "post-165": [
+    "post-164": [
       264,
       265,
       266
     ],
-    "post-164": [
+    "post-163": [
       261,
       262,
       263
     ],
-    "post-163": [
+    "post-161": [
       258,
       259,
       260
     ],
-    "post-161": [
+    "post-159": [
       255,
       256,
       257
     ],
-    "post-159": [
+    "post-156": [
       252,
       253,
       254
     ],
-    "post-156": [
+    "post-155": [
       249,
       250,
       251
     ],
-    "post-155": [
+    "post-154": [
       246,
       247,
       248
     ],
-    "post-154": [
+    "post-153": [
       243,
       244,
       245
     ],
-    "post-153": [
+    "post-152": [
       240,
       241,
       242
     ],
-    "post-152": [
+    "post-151": [
       237,
       238,
       239
     ],
-    "post-151": [
+    "post-150": [
       234,
       235,
       236
     ],
-    "post-150": [
+    "post-149": [
       231,
       232,
       233
     ],
-    "post-149": [
+    "post-147": [
       228,
       229,
       230
     ],
-    "post-147": [
+    "post-146": [
       225,
       226,
       227
     ],
-    "post-146": [
+    "post-145": [
       222,
       223,
       224
     ],
-    "post-145": [
+    "post-144": [
       219,
       220,
       221
     ],
-    "post-144": [
+    "post-143": [
       216,
       217,
       218
     ],
-    "post-143": [
+    "post-142": [
       213,
       214,
       215
     ],
-    "post-142": [
+    "post-141": [
       210,
       211,
       212
     ],
-    "post-141": [
+    "post-140": [
       207,
       208,
       209
     ],
-    "post-140": [
-      204,
-      205,
-      206
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      153,
-      154,
-      155
+      156,
+      157,
+      158
     ],
     "gaslighting-ai-open-source-project": [
       102,
@@ -19078,9 +19245,9 @@
       104
     ],
     "value-of-understanding-in-ai-future": [
-      387,
-      388,
-      389
+      390,
+      391,
+      392
     ],
     "internship-job-posting-giveaway": [
       120,
@@ -19088,14 +19255,14 @@
       122
     ],
     "navigating-a-world-of-decreasing-variance": [
-      174,
-      175,
-      176
+      177,
+      178,
+      179
     ],
     "prompting-ability-as-new-power": [
-      312,
-      313,
-      314
+      315,
+      316,
+      317
     ],
     "kpop-fandom-digital-parliament": [
       138,
@@ -19103,9 +19270,9 @@
       140
     ],
     "university-value-shift-education": [
-      381,
-      382,
-      383
+      384,
+      385,
+      386
     ],
     "agent-era-branding-future": [
       9,
@@ -19123,39 +19290,39 @@
       74
     ],
     "post-111": [
+      204,
+      205,
+      206
+    ],
+    "post-107": [
       201,
       202,
       203
     ],
-    "post-107": [
+    "post-106": [
       198,
       199,
       200
     ],
-    "post-106": [
+    "post-105": [
       195,
       196,
       197
     ],
-    "post-105": [
+    "post-104": [
       192,
       193,
       194
     ],
-    "post-104": [
+    "post-103": [
       189,
       190,
       191
     ],
-    "post-103": [
-      186,
-      187,
-      188
-    ],
     "things-that-dont-disappear": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "how-to-create-memory-in-ai-agents": [
       114,
@@ -19163,14 +19330,14 @@
       116
     ],
     "self-deconstruction-ai-replication": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "vibe-coding-ai-decentralization": [
-      390,
-      391,
-      392
+      393,
+      394,
+      395
     ],
     "internship-opportunity-at-hashed": [
       123,
@@ -19193,9 +19360,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      402,
-      403,
-      404
+      405,
+      406,
+      407
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -19203,9 +19370,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      375,
-      376,
-      377
+      378,
+      379,
+      380
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -19218,19 +19385,19 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      183,
-      184,
-      185
+      186,
+      187,
+      188
     ],
     "memory-identity-ai-development": [
-      156,
-      157,
-      158
+      159,
+      160,
+      161
     ],
     "unknowns-in-modern-creation": [
-      384,
-      385,
-      386
+      387,
+      388,
+      389
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -19243,14 +19410,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      399,
-      400,
-      401
+      402,
+      403,
+      404
     ],
     "sano-godaddy-war": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "14-5-hours": [
       0,
@@ -19258,24 +19425,24 @@
       2
     ],
     "transistor-moment": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "web4-write-access": [
-      408,
-      409,
-      410
+      411,
+      412,
+      413
     ],
     "naming-the-universe": [
-      171,
-      172,
-      173
+      174,
+      175,
+      176
     ],
     "sano-intro": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "counting-assistant": [
       75,
@@ -19283,29 +19450,29 @@
       77
     ],
     "uncertainty-machine": [
-      378,
-      379,
-      380
+      381,
+      382,
+      383
     ],
     "vibe-founders-era": [
+      399,
+      400,
+      401
+    ],
+    "vibe-coding-tip": [
       396,
       397,
       398
     ],
-    "vibe-coding-tip": [
-      393,
-      394,
-      395
-    ],
     "moltbot-anthropic-moat": [
-      165,
-      166,
-      167
+      168,
+      169,
+      170
     ],
     "overnight-success": [
-      180,
-      181,
-      182
+      183,
+      184,
+      185
     ],
     "bitcoin-energy": [
       51,
@@ -19313,9 +19480,9 @@
       53
     ],
     "thought-speed": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "gemini-snow-bunny": [
       105,
@@ -19333,9 +19500,9 @@
       44
     ],
     "prompt-guard-dev": [
-      309,
-      310,
-      311
+      312,
+      313,
+      314
     ],
     "its-fun": [
       129,
@@ -19348,9 +19515,9 @@
       71
     ],
     "thank-you-mirror": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "ai-hires-ai": [
       30,
@@ -19358,14 +19525,14 @@
       32
     ],
     "majlis": [
-      147,
-      148,
-      149
+      150,
+      151,
+      152
     ],
     "rabbit-crypt-name": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "agentlinter-dev-log": [
       21,
@@ -19383,19 +19550,19 @@
       68
     ],
     "mrinank-anthropic": [
-      168,
-      169,
-      170
+      171,
+      172,
+      173
     ],
     "tail-stopped": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "zeon-moltbook-vol1": [
-      411,
-      412,
-      413
+      414,
+      415,
+      416
     ],
     "ip-tvw": [
       126,
@@ -19403,9 +19570,9 @@
       128
     ],
     "quantum-pirates": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "china-ai-frontier": [
       63,
@@ -19413,9 +19580,9 @@
       65
     ],
     "seedance-30": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "agent-siblings": [
       15,
@@ -19423,9 +19590,9 @@
       17
     ],
     "matchhz": [
-      150,
-      151,
-      152
+      153,
+      154,
+      155
     ],
     "dollar-two-faces": [
       87,
@@ -19433,14 +19600,14 @@
       89
     ],
     "messenger-b2a": [
-      159,
-      160,
-      161
+      162,
+      163,
+      164
     ],
     "robot-goku-5000": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "hvl-fellows": [
       117,
@@ -19463,9 +19630,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ]
   },
   "overrides": {

@@ -530,40 +530,40 @@
       "label": "「UAE Emergency News」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "kpop-fandom-digital-parliament",
-      "to": "fear-and-value-in-ai-creation",
-      "sourceTitle": "K-POP 팬덤은 어떻게 디지털 의회가 되었나",
-      "targetTitle": "물리법칙이 바뀐 곳에서 며칠을 보낸 이야기",
+      "from": "post-106",
+      "to": "post-103",
+      "sourceTitle": "거울 앞의 괴물",
+      "targetTitle": "돈을 받지도 빌려주지도 못하는 은행",
       "sourceCategory": "탐험",
       "targetCategory": "탐험",
-      "sourceEvidence": "팬덤이라는 가장 감정적이고 인간적인 영역에서, 99%의 신뢰와 100%에 가까운 검증 가능성이 실제로 다른 세계를 만든다는 것을 보여주기 때문이다.",
-      "targetEvidence": "검증된 것을 세상에 도달시키는 비용.",
+      "sourceEvidence": "AI가 게임 파일을 수정하는 것과 회계 장부를 수정하는 것은 구조가 같다.",
+      "targetEvidence": "현실 경제를 읽고 그것을 대출로 번역하는 문법 자체가 고장난 것이다.",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 72,
+        "lexicalOverlap": 73,
         "overlapTokens": [
-          "100",
-          "가격",
-          "가능한",
-          "가진",
-          "가치는",
-          "감각",
-          "강한",
-          "검증",
-          "검증된",
+          "가면",
+          "가치를",
+          "가치에",
+          "개의",
+          "것과",
           "것을",
-          "결과를",
-          "결국"
+          "것이다",
+          "것인가",
+          "경제를",
+          "곳이",
+          "공식",
+          "구조"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "RESONATES",
-      "label": "「물리법칙이 바뀐 곳에서 며칠을 보낸 이야기」은 「K-POP 팬덤은 어떻게 디지털 의회가 되었나」의 핵심 문제와 맞닿는다"
+      "label": "「돈을 받지도 빌려주지도 못하는 은행」은 「거울 앞의 괴물」의 핵심 문제와 맞닿는다"
     },
     {
       "from": "can-i-go-ethihad-airlines-iran-conflict",
