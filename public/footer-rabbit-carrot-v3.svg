@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="190" viewBox="0 0 1100 190" role="img" aria-labelledby="footer-rabbit-title footer-rabbit-description">
-  <title id="footer-rabbit-title">당근에게 깡충깡충 다가가는 토끼</title>
-  <desc id="footer-rabbit-description">토끼가 네 번 뛰어 졸고 있던 당근에게 다가가 냄새를 맡자, 깜짝 놀란 당근이 흙 속으로 쏙 숨고 토끼는 고개를 갸웃한다. 당근이 반짝이며 튀어 올라 윙크하면 둘이 볼을 비비고 하트가 떠오르는 16초 애니메이션</desc>
+  <title id="footer-rabbit-title">당근을 찾아 굴 밖으로 나온 탐험가 토끼</title>
+  <desc id="footer-rabbit-description">달토끼가 뜬 밤, 노트를 넣은 가방을 멘 토끼가 토끼굴 옆 등불에서 출발해 탐험·낙서·목소리 표지판을 지나 졸고 있던 당근에게 깡충깡충 다가간다. 놀란 당근이 흙 속에 숨었다가 윙크하며 튀어나오고, 둘이 볼을 비비면 하트가 떠오른다. 하늘에는 별이 반짝이고 종이비행기 편지가 지나간다. 16초 애니메이션</desc>
   <defs>
     <linearGradient id="footer-carrot-skin" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffad4d"/><stop offset=".38" stop-color="#ffad4d"/>
@@ -11,6 +11,11 @@
       <stop offset="0" stop-color="#fffaf2"/><stop offset=".7" stop-color="#f5ede1"/><stop offset="1" stop-color="#e6dccd"/>
     </radialGradient>
     <clipPath id="ground-clip"><rect x="880" y="0" width="180" height="169.5"/></clipPath>
+  
+    <linearGradient id="land-fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#10151e" stop-opacity="0"/><stop offset=".07" stop-color="#10151e"/><stop offset=".93" stop-color="#10151e"/><stop offset="1" stop-color="#10151e" stop-opacity="0"/></linearGradient>
+    <radialGradient id="ff-glow"><stop offset="0" stop-color="#ffe9a3" stop-opacity=".75"/><stop offset="1" stop-color="#ffe9a3" stop-opacity="0"/></radialGradient>
+    <radialGradient id="lantern-glow"><stop offset="0" stop-color="#ffc56b" stop-opacity=".45"/><stop offset="1" stop-color="#ffc56b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="shoot-tail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6dc" stop-opacity="0"/><stop offset="1" stop-color="#fff6dc"/></linearGradient>
   </defs>
   <style>
     .scene{animation:scene-loop 16s ease-in-out infinite}
@@ -82,6 +87,84 @@
     @keyframes heart-b{0%,83%,94%,100%{opacity:0;transform:translateY(8px) scale(.4)}86%{opacity:.9;transform:translateY(0) scale(1)}93%{opacity:0;transform:translateY(-24px) scale(.8)}}
     @media (prefers-reduced-motion: reduce){.scene,.rabbit-position,.rabbit-body,.rabbit-shadow,.rabbit-head,.rabbit-ear-back,.rabbit-ear-front,.rabbit-eye-blink,.rabbit-eyes-open,.rabbit-eyes-happy,.rabbit-nose,.rabbit-whiskers,.rabbit-tail,.rabbit-front-paw,.rabbit-question-inner,.carrot,.carrot-leaves,.carrot-sleep-eyes,.carrot-eyes-open,.carrot-pupils,.carrot-eye-right,.carrot-wink,.carrot-blush,.zz-a,.zz-b,.dust,.sparkle,.heart-a,.heart-b{animation:none!important}.scene{opacity:1}.rabbit-position{transform:translate(690px,0)}.rabbit-eyelid,.rabbit-eye-blink{transform:scaleY(1)}.rabbit-eyelid{transform:scaleY(0)}.rabbit-eyes-open{opacity:1}.rabbit-eyes-happy{opacity:0}.rabbit-question-inner{opacity:0}.carrot-sleep-eyes{opacity:0}.carrot-eyes-open{opacity:1}.carrot-eye-right{opacity:0}.carrot-wink{opacity:1}.carrot-blush{opacity:.8}.zz-a,.zz-b,.dust,.sparkle,.heart-b{opacity:0}.heart-a{opacity:.95;transform:none}}
   </style>
+  <style>
+    .sky-star{transform-box:fill-box;transform-origin:center;animation:twinkle 3.6s ease-in-out infinite}
+    .moon{animation:moon-bob 7s ease-in-out infinite}
+    .shooting{opacity:0;animation:shooting 16s linear infinite}
+    .paper-plane-track{animation:plane-fly 20s linear infinite}
+    .paper-plane{animation:plane-bob 2.6s ease-in-out infinite}
+    .firefly{animation:firefly 6s ease-in-out infinite}
+    .lantern-glow{transform-box:fill-box;transform-origin:center;animation:lantern 2.8s ease-in-out infinite}
+    .lantern-flame{animation:flame 1.4s ease-in-out infinite}
+    .sign-board{transform-box:fill-box;transform-origin:0% 50%;animation:sign-sway 5s ease-in-out infinite}
+    @keyframes twinkle{0%,100%{opacity:.35;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+    @keyframes moon-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes shooting{0%,27%{opacity:0;transform:translate(330px,8px)}29%{opacity:1}34%{opacity:0;transform:translate(500px,62px)}100%{opacity:0;transform:translate(500px,62px)}}
+    @keyframes plane-fly{0%{transform:translate(-80px,58px)}45%{transform:translate(560px,30px)}80%{transform:translate(1180px,46px)}100%{transform:translate(1180px,46px)}}
+    @keyframes plane-bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-6px) rotate(5deg)}}
+    @keyframes firefly{0%,100%{opacity:.25;transform:translate(0,0)}35%{opacity:1;transform:translate(9px,-10px)}70%{opacity:.55;transform:translate(-7px,-4px)}}
+    @keyframes lantern{0%,100%{opacity:.8;transform:scale(1)}45%{opacity:1;transform:scale(1.12)}70%{opacity:.7;transform:scale(.95)}}
+    @keyframes flame{0%,100%{opacity:.85}50%{opacity:1}}
+    @keyframes sign-sway{0%,100%{transform:rotate(0)}50%{transform:rotate(-2.5deg)}}
+    @media (prefers-reduced-motion: reduce){.sky-star,.moon,.shooting,.paper-plane-track,.paper-plane,.firefly,.lantern-glow,.lantern-flame,.sign-board{animation:none!important}.shooting{opacity:0}.paper-plane-track{transform:translate(470px,34px)}.firefly{opacity:.7}}
+  </style>
+  <g class="sky" aria-hidden="true">
+    <g fill="#e9dcc0" opacity=".85"><g transform="translate(60 22)"><path class="sky-star" style="animation-delay:-0.4s" d="M0 -3.84Q0.96 -0.96 3.84 0Q0.96 0.96 0 3.84Q-0.96 0.96 -3.84 0Q-0.96 -0.96 0 -3.84Z"/></g><g transform="translate(170 44)"><path class="sky-star" style="animation-delay:-2.1s" d="M0 -2.88Q0.72 -0.72 2.88 0Q0.72 0.72 0 2.88Q-0.72 0.72 -2.88 0Q-0.72 -0.72 0 -2.88Z"/></g><g transform="translate(290 16)"><path class="sky-star" style="animation-delay:-1.2s" d="M0 -3.36Q0.84 -0.84 3.36 0Q0.84 0.84 0 3.36Q-0.84 0.84 -3.36 0Q-0.84 -0.84 0 -3.36Z"/></g><g transform="translate(410 52)"><path class="sky-star" style="animation-delay:-3.0s" d="M0 -2.64Q0.66 -0.66 2.64 0Q0.66 0.66 0 2.64Q-0.66 0.66 -2.64 0Q-0.66 -0.66 0 -2.64Z"/></g><g transform="translate(470 24)"><path class="sky-star" style="animation-delay:-0.9s" d="M0 -4.32Q1.08 -1.08 4.32 0Q1.08 1.08 0 4.32Q-1.08 1.08 -4.32 0Q-1.08 -1.08 0 -4.32Z"/></g><g transform="translate(560 40)"><path class="sky-star" style="animation-delay:-2.6s" d="M0 -2.88Q0.72 -0.72 2.88 0Q0.72 0.72 0 2.88Q-0.72 0.72 -2.88 0Q-0.72 -0.72 0 -2.88Z"/></g><g transform="translate(640 14)"><path class="sky-star" style="animation-delay:-1.7s" d="M0 -3.6Q0.9 -0.9 3.6 0Q0.9 0.9 0 3.6Q-0.9 0.9 -3.6 0Q-0.9 -0.9 0 -3.6Z"/></g><g transform="translate(830 26)"><path class="sky-star" style="animation-delay:-0.2s" d="M0 -3.12Q0.78 -0.78 3.12 0Q0.78 0.78 0 3.12Q-0.78 0.78 -3.12 0Q-0.78 -0.78 0 -3.12Z"/></g><g transform="translate(900 56)"><path class="sky-star" style="animation-delay:-2.9s" d="M0 -2.64Q0.66 -0.66 2.64 0Q0.66 0.66 0 2.64Q-0.66 0.66 -2.64 0Q-0.66 -0.66 0 -2.64Z"/></g><g transform="translate(980 18)"><path class="sky-star" style="animation-delay:-1.4s" d="M0 -4.08Q1.02 -1.02 4.08 0Q1.02 1.02 0 4.08Q-1.02 1.02 -4.08 0Q-1.02 -1.02 0 -4.08Z"/></g><g transform="translate(1060 44)"><path class="sky-star" style="animation-delay:-2.2s" d="M0 -2.88Q0.72 -0.72 2.88 0Q0.72 0.72 0 2.88Q-0.72 0.72 -2.88 0Q-0.72 -0.72 0 -2.88Z"/></g><g transform="translate(1080 12)"><path class="sky-star" style="animation-delay:-0.7s" d="M0 -2.4Q0.6 -0.6 2.4 0Q0.6 0.6 0 2.4Q-0.6 0.6 -2.4 0Q-0.6 -0.6 0 -2.4Z"/></g></g>
+    <g transform="translate(742 40)"><g class="moon">
+      <circle r="34" fill="#f3e6c4" opacity=".05"/><circle r="25" fill="#f3e6c4" opacity=".06"/>
+      <circle r="17" fill="#f1e2bb"/>
+      <path d="M-11-9a17 17 0 0 1 9-7" fill="none" stroke="#fffaf0" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+      <g fill="#d9c79d" opacity=".9">
+        <ellipse cx="2" cy="4" rx="5.6" ry="4.4"/><ellipse cx="-3.4" cy="-3.4" rx="1.6" ry="4.6" transform="rotate(-18 -3.4 -3.4)"/><ellipse cx="0" cy="-4.2" rx="1.5" ry="4.4" transform="rotate(8 0 -4.2)"/><circle cx="-3.6" cy="5.6" r="1.6"/>
+        <rect x="6.5" y="1" width="2" height="9" rx="1" transform="rotate(32 7.5 5)"/><path d="M5 10.5h8l-1.2 3.4h-5.6Z"/>
+      </g>
+      <circle cx="-9" cy="7" r="1.4" fill="#e3d2a8"/><circle cx="10" cy="-8" r="1.1" fill="#e3d2a8"/>
+    </g></g>
+    <g class="shooting"><path d="M0 0l-46 15" stroke="url(#shoot-tail)" stroke-width="1.8" stroke-linecap="round"/><circle r="1.8" fill="#fff6dc"/></g>
+    <g class="paper-plane-track"><g class="paper-plane">
+      <path d="M-34 6c-10 2-20-2-30 1" fill="none" stroke="#8e99a8" stroke-width="1" stroke-dasharray="2 4" stroke-linecap="round" opacity=".7"/>
+      <path d="M0 0l22 7-22 7 5-7Z" fill="#dfe5ed"/><path d="M0 0l22 7-17 0Z" fill="#b9c3cf"/><path d="M5 7l3 6 14-6" fill="#9aa6b5"/>
+      <rect x="-2" y="5" width="4" height="4" rx="1" fill="#f39a52" transform="rotate(12 0 7)"/>
+    </g></g>
+  </g>
+  <g class="land" aria-hidden="true">
+    <path d="M0 190V158c70-14 150-16 230-6s150 4 230-4 170-10 260 2 160 6 230-2 110-4 150 2V190Z" fill="url(#land-fade)"/>
+    <g transform="translate(78 169)">
+      <path d="M-46 0c4-24 22-36 46-36s42 12 46 36Z" fill="#221e1b"/>
+      <path d="M-38 0c3-18 18-27 38-27s35 9 38 27" fill="none" stroke="#3a332c" stroke-width="1.4" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-2" rx="20" ry="15" fill="#060709"/>
+      <path d="M-20-2c4 3 9 4 14 4m26-4c-4 3-9 4-14 4" fill="none" stroke="#3a332c" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M-30-30c-3-6-2-11 2-14M-27-31c2-5 5-8 9-9" fill="none" stroke="#5f7a4c" stroke-width="1.5" stroke-linecap="round"/>
+      <g transform="translate(36 0)">
+        <path d="M0 0v-40" stroke="#6b4a32" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M0-40c6 0 10 2 12 6" fill="none" stroke="#6b4a32" stroke-width="2" stroke-linecap="round"/>
+        <g transform="translate(12 -30)">
+          <circle class="lantern-glow" r="15" fill="url(#lantern-glow)"/>
+          <path d="M-4-4h8l1 9h-10Z" fill="#f6c46a" stroke="#8a6440" stroke-width="1"/>
+          <path d="M-5-4h10M-5 5h10" stroke="#8a6440" stroke-width="1.6" stroke-linecap="round"/>
+          <circle class="lantern-flame" cx="0" cy="1" r="1.8" fill="#fff1c8"/>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(598 169)">
+      <path d="M0 0v-66" stroke="#6b4a32" stroke-width="4" stroke-linecap="round"/>
+      <path d="M-3-8l3 8 3-8" fill="#4e3624"/>
+      <g class="sign-board">
+        <path d="M2-62h40l9 8-9 8H2Z" fill="#e9d6b8" stroke="#8a6440" stroke-width="1.2" stroke-linejoin="round"/>
+        <g transform="translate(20 -54)" fill="none" stroke="#6b4a32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle r="5.2"/><path d="M0-3.4 1.4 0 0 3.4-1.4 0Z" fill="#f39a52" stroke="none"/></g>
+      </g>
+      <path d="M-2-42h-38l-9 8 9 8h38Z" fill="#dcc6a4" stroke="#8a6440" stroke-width="1.2" stroke-linejoin="round"/>
+      <g transform="translate(-21 -34)" fill="none" stroke="#6b4a32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-5 4l7-7 2 2-7 7-3 1Z"/><path d="M0-1.5l2 2" /></g>
+      <path d="M2-22h34l9 7-9 7H2Z" fill="#e9d6b8" stroke="#8a6440" stroke-width="1.2" stroke-linejoin="round"/>
+      <g transform="translate(18 -15)" fill="none" stroke="#6b4a32" stroke-width="1.5" stroke-linecap="round"><rect x="-2.4" y="-5" width="4.8" height="7" rx="2.4"/><path d="M-4.2 0a4.2 4.2 0 0 0 8.4 0M0 4.2v2"/></g>
+      <path d="M-1-66c-6-6-4-12 1-14 5 2 7 8 1 14" fill="#79a85b"/>
+    </g>
+    <g transform="translate(330 169)"><path d="M0 0v-9" stroke="#5f7a4c" stroke-width="1.4"/><g fill="#efe3cf"><circle cx="0" cy="-13" r="2.6"/><circle cx="3.6" cy="-10.4" r="2.6"/><circle cx="-3.6" cy="-10.4" r="2.6"/><circle cx="2.2" cy="-6.6" r="2.4"/><circle cx="-2.2" cy="-6.6" r="2.4"/></g><circle cx="0" cy="-9.6" r="2" fill="#f39a52"/></g>
+    <g transform="translate(712 169)"><path d="M0 0v-7" stroke="#5f7a4c" stroke-width="1.3"/><g fill="#f2b6b0"><circle cx="0" cy="-10.4" r="2.2"/><circle cx="3" cy="-8.2" r="2.2"/><circle cx="-3" cy="-8.2" r="2.2"/><circle cx="1.8" cy="-5" r="2"/><circle cx="-1.8" cy="-5" r="2"/></g><circle cx="0" cy="-7.6" r="1.6" fill="#fff3c4"/></g>
+    <g transform="translate(1064 169)"><path d="M-3 0c0-5 1-8 3-8s3 3 3 8Z" fill="#efe3cf"/><path d="M-9-7c0-7 4-11 9-11s9 4 9 11Z" fill="#f39a52"/><g fill="#fff3e6"><circle cx="-4" cy="-12" r="1.5"/><circle cx="3" cy="-14" r="1.2"/><circle cx="5" cy="-9.6" r="1"/></g></g>
+    <g fill="#3a4250"><ellipse cx="420" cy="170" rx="5" ry="2.6"/><ellipse cx="428" cy="171" rx="3" ry="1.8"/><ellipse cx="780" cy="170" rx="4" ry="2.2"/></g>
+  </g>
+  <g class="fireflies" aria-hidden="true"><g transform="translate(330 128)"><g class="firefly" style="animation-delay:-1s"><circle r="7" fill="url(#ff-glow)"/><circle r="1.7" fill="#fff3c4"/></g></g><g transform="translate(505 112)"><g class="firefly" style="animation-delay:-3.4s"><circle r="7" fill="url(#ff-glow)"/><circle r="1.7" fill="#fff3c4"/></g></g><g transform="translate(760 140)"><g class="firefly" style="animation-delay:-2.2s"><circle r="7" fill="url(#ff-glow)"/><circle r="1.7" fill="#fff3c4"/></g></g><g transform="translate(1072 120)"><g class="firefly" style="animation-delay:-4.6s"><circle r="7" fill="url(#ff-glow)"/><circle r="1.7" fill="#fff3c4"/></g></g><g transform="translate(250 150)"><g class="firefly" style="animation-delay:-5.2s"><circle r="7" fill="url(#ff-glow)"/><circle r="1.7" fill="#fff3c4"/></g></g></g>
   <g class="scene">
     <path d="M24 169H1076" fill="none" stroke="#4d5563" stroke-width="1" stroke-dasharray="1 14" stroke-linecap="round" opacity=".5"/>
     <path d="M60 175c92-4 170-3 250 0m50 0c168-5 300-4 444 0m48 0c58-2 112-2 164 0" fill="none" stroke="#2a303b" stroke-width="1.2" opacity=".55"/>
@@ -134,6 +217,15 @@
       <g class="rabbit-body">
         <g class="rabbit-tail"><circle cx="144" cy="146" r="11" fill="#fbf6ee" stroke="#d9cdbb" stroke-width="1"/><circle cx="141" cy="143" r="4.5" fill="#fff" opacity=".7"/></g>
         <path d="M146 150c0-18 16-30 36-30s38 12 38 28c0 13-9 21-21 21h-34c-12 0-19-8-19-19Z" fill="url(#rb-coat)" stroke="#d9cdbb" stroke-width="1.2"/>
+        <g class="rabbit-satchel">
+          <path d="M190 124c-8 8-17 15-27 21" fill="none" stroke="#7a5236" stroke-width="2.6" stroke-linecap="round"/>
+          <rect x="160" y="141" width="11" height="14" rx="1.6" fill="#f7f1e8" stroke="#cdbfa9" stroke-width=".8" transform="rotate(-8 165 148)"/>
+          <path d="M162 145h6M162 148h6" stroke="#9aa6b5" stroke-width=".8" stroke-linecap="round" transform="rotate(-8 165 148)"/>
+          <path d="M171 136l3-9 2 1-2 9Z" fill="#f39a52"/><path d="M174 127l1-2.4 1.4 2.8Z" fill="#3a332c"/>
+          <rect x="152" y="146" width="27" height="19" rx="5" fill="#8a5a3a" stroke="#6b4630" stroke-width="1.1"/>
+          <path d="M152 151c0-3 2-5 5-5h17c3 0 5 2 5 5v4c-9 3-18 3-27 0Z" fill="#a8704a"/>
+          <circle cx="165.5" cy="156.4" r="2" fill="#f39a52" stroke="#6b4630" stroke-width=".8"/>
+        </g>
         <ellipse cx="174" cy="150" rx="13" ry="8" fill="#fff" opacity=".4"/>
         <ellipse cx="160" cy="165" rx="14" ry="5.5" fill="#f3ece1" stroke="#d9cdbb" stroke-width="1"/>
         <g class="rabbit-front-paw"><ellipse cx="205" cy="166" rx="8" ry="4.6" fill="#f7f1e8" stroke="#d9cdbb" stroke-width="1"/></g>
