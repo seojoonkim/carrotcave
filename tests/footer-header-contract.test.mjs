@@ -27,7 +27,7 @@ test('all shared footers use the rabbit and carrot asset without cave markup', a
   assert.ok(asset.includes('61%,72%{transform:translateY(86px)}'), 'leaf tips stay peeking while hidden');
   assert.match(asset, /class="carrot-wink"/);
   assert.match(asset, /class="rabbit-eyes-happy"/);
-  assert.match(asset, /id="footer-carrot-skin"[\s\S]*?#ffad4d[\s\S]*?#f39a52[\s\S]*?#d9651f/);
+  assert.match(asset, /id="footer-carrot-skin"[\s\S]*?#f39a52/); // flat logo orange; stripes carry the highlight
   assert.match(asset, /prefers-reduced-motion: reduce/);
   assert.doesNotMatch(asset, /cave|동굴/i);
   assert.doesNotMatch(staticAsset, /animation:|@keyframes/);
