@@ -200,3 +200,7 @@
   .cc-depth[data-fresh="true"] .cc-depth__floor,.post-content [id^="take-"]:target{animation:none}
   .cc-depth__meter span,.post-takeaways__go{transition:none}
 }
+.post-turn__dot--photo{width:36px;height:36px;object-fit:cover;background:var(--re-panel,#303241);box-shadow:0 0 0 2px var(--turn-bg)}
+.post-turn__who:has(.post-turn__dot--photo){gap:10px}
+.post-turn:has(.post-turn__dot--photo) .post-turn__line{padding-left:46px}
+@media (max-width:520px){.post-turn__dot--photo{width:32px;height:32px}.post-turn:has(.post-turn__dot--photo) .post-turn__line{padding-left:0}}

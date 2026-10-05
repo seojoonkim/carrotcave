@@ -1,0 +1,21 @@
+{
+ "simon.webp": {
+  "who": "김서준 (Simon Kim)",
+  "source": "Simon official face reference (/Users/gimseojun/.hermes/shared/simon-face-reference), authorized 2026-08-22"
+ },
+ "jeong-byungki.webp": {
+  "who": "정병기 (Jaden Jeong), Modhaus CEO",
+  "source": "https://www.billboard.com/music/pop/jaden-jeong-interview-modhaus-kpop-storytelling-loona-legacy-1235881717/",
+  "credit": "Modhaus (press photo via Billboard)"
+ },
+ "lee-sungsoo.webp": {
+  "who": "이성수 (Lee Sung-soo)",
+  "source": "https://commons.wikimedia.org/wiki/File:Lee_Sung-soo_on_2017.png",
+  "credit": "일산알파실용음악학원, CC BY 3.0, via Wikimedia Commons"
+ },
+ "jeremy-allaire.webp": {
+  "who": "Jeremy Allaire, Circle CEO",
+  "source": "https://commons.wikimedia.org/wiki/File:Jeremy_Allaire_at_MoneyConf_2018_(2)_(cropped).jpg",
+  "credit": "MoneyConf, CC BY 2.0, via Wikimedia Commons"
+ }
+}

@@ -70,6 +70,13 @@ type Aids = Record<string, { ko: Aid; en: Aid }>;
 // at least two speakers each have two or more turns, so a stray "Note: ..." never turns into a speaker.
 const TURN_RE = /^(?:\*\*)?([^\s:：*]{2,12}(?: [A-Z][a-z]+(?:-[a-z]+)?)?)(?:\*\*)?\s?[:：]\s+(.+)$/;
 const HOSTS = new Set(['김서준', 'Simon', 'Simon Kim', '서준']);
+// Speaker thumbnails (public/people, 192px square). Sources: data/people-photos.json.
+export const SPEAKER_PHOTOS: Record<string, string> = {
+  김서준: '/people/simon.webp', Simon: '/people/simon.webp', 'Simon Kim': '/people/simon.webp', 서준: '/people/simon.webp',
+  정병기: '/people/jeong-byungki.webp', 'Byung-ki Chung': '/people/jeong-byungki.webp',
+  이성수: '/people/lee-sungsoo.webp', 'Sung-su Lee': '/people/lee-sungsoo.webp',
+  Jeremy: '/people/jeremy-allaire.webp', 'Jeremy Allaire': '/people/jeremy-allaire.webp',
+};
 export function dialogueSpeakers(content: string): string[] {
   const count = new Map<string, number>();
   for (const line of content.split('\n')) {
@@ -207,7 +214,12 @@ function renderContent(content: string, locale: Locale, reading: Reading = { hig
       return (
         <p key={i} id={id} className="post-turn" data-host={host ? 'true' : 'false'} data-voice={speakerIndex.get(who)! % 4}>
           <span className="post-turn__who">
-            <span className="post-turn__dot" aria-hidden="true">{[...who][0]}</span>
+            {SPEAKER_PHOTOS[who] ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="post-turn__dot post-turn__dot--photo" src={SPEAKER_PHOTOS[who]} alt="" width={36} height={36} loading="lazy" decoding="async" />
+            ) : (
+              <span className="post-turn__dot" aria-hidden="true">{[...who][0]}</span>
+            )}
             {who}
           </span>
           <span className="post-turn__line">{renderWithHighlight(turn[2], reading.highlights)}</span>

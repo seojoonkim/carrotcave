@@ -89,3 +89,14 @@ test('key-sentence highlight is an underline only, no leading bullet dot (2026-1
   const css = read('public/reading-end.css');
   assert.ok(!/mark\.post-key::before/.test(css), 'mark.post-key must not draw a ::before bullet');
 });
+
+test('every dialogue speaker photo file exists and has a recorded source (2026-10-06)', () => {
+  const src = read('components/views/PostView.tsx');
+  const credits = JSON.parse(read('data/people-photos.json'));
+  const files = new Set([...src.matchAll(/'\/people\/([a-z-]+\.webp)'/g)].map((m) => m[1]));
+  assert.ok(files.size >= 4);
+  for (const f of files) {
+    assert.ok(fs.existsSync(new URL('public/people/' + f, root)), `missing public/people/${f}`);
+    assert.ok(credits[f]?.source, `no source recorded for ${f}`);
+  }
+});
