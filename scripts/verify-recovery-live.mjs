@@ -38,6 +38,8 @@ try {
   assert(new URL(page.url()).pathname.endsWith('/the-right-to-turn-on-a-brain'),'legacy route must redirect');
   assert.equal((await page.locator('h1').innerText()).trim(),'뇌를 켜는 사람의 권한');
   assert.equal((await page.locator('.post-reader-meta__axis').innerText()).trim(),'탐험');
+  // 2026-10-05 release EXIT 1: the video node was re-rendered right after domcontentloaded ("Element is not attached"); settle first.
+  await page.waitForLoadState('load'); await page.waitForTimeout(400);
   const video=page.locator('article video').first();
   assert.equal(await page.locator('article .post-media-grid').count(),0,'video replaced by still image');
   await video.scrollIntoViewIfNeeded();
