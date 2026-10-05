@@ -33,3 +33,14 @@ test('carries the git-ignored Vercel project link into a fresh worktree', () => 
   assert.match(src, /cp "\$REPO\/\.vercel\/project\.json" "\$DIR\/\.vercel\/project\.json"/);
   assert.match(src, /Vercel link missing/);
 });
+
+test('stops in seconds when the commit is not pushed (HEAD must equal origin/main)', async () => {
+  const { spawnSync } = await import('node:child_process');
+  const repo = new URL('..', import.meta.url).pathname;
+  const parent = spawnSync('git', ['-C', repo, 'rev-parse', 'origin/main~1'], { encoding: 'utf8' }).stdout.trim();
+  const r = spawnSync('bash', [repo + 'scripts/release-worktree.sh', parent, '/dev/null'], {
+    encoding: 'utf8', env: { ...process.env, PREFLIGHT_ONLY: '1', RELEASE_DIR: repo + '../cc-never-created' }, timeout: 60000,
+  });
+  assert.equal(r.status, 9, r.stderr);
+  assert.match(r.stderr, /git push origin main/);
+});

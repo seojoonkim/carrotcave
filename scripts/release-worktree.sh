@@ -16,6 +16,11 @@ esac
 
 git -C "$REPO" fetch -q origin || { echo "release-worktree: fetch failed" >&2; exit 3; }
 git -C "$REPO" cat-file -e "$SHA^{commit}" 2>/dev/null || { echo "release-worktree: unknown commit $SHA" >&2; exit 3; }
+# release-production refuses unless HEAD == origin/main, but only after minutes of worktree setup.
+# Fail in a second instead (2026-10-06: 9df4147 was deployed before it was pushed).
+if [ "$(git -C "$REPO" rev-parse "$SHA^{commit}")" != "$(git -C "$REPO" rev-parse origin/main)" ]; then
+  echo "release-worktree: $SHA is not origin/main; run git push origin main first" >&2; exit 9
+fi
 
 healthy() {
   [ -d "$1" ] && [ "$(git -C "$1" rev-parse --show-toplevel 2>/dev/null)" = "$(cd "$1" && pwd -P)" ]
