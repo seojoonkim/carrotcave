@@ -61,3 +61,20 @@ test('dark cave palette tokens are defined once', () => {
   assert.match(css, /--cave-0:#1e1f28;--cave-1:#272a37;--cave-2:#3a3e52/);
   assert.match(css, /--carrot-kit:#ff7a3d/);
 });
+
+// 2026-10-05 release EXIT 1: the release worktree ran the brand generator under Homebrew python3.14, which wrote
+// scripts/brand/__pycache__ in-tree, and the release gate refused ("Verification modified source files").
+// Apple's /usr/bin/python3 hides this (its pycache_prefix points to ~/Library/Caches), so pick a python that writes in-tree.
+test('brand generator leaves the worktree clean (no __pycache__)', async () => {
+  const { rmSync, existsSync } = await import('node:fs');
+  const py = ['/opt/homebrew/bin/python3', '/usr/local/bin/python3', 'python3'].find((p) => {
+    try { return execFileSync(p, ['-c', 'import sys;print(sys.pycache_prefix)']).toString().trim() === 'None'; } catch { return false; }
+  });
+  assert.ok(py, 'need a python3 that writes __pycache__ in-tree to reproduce the release failure');
+  rmSync('scripts/brand/__pycache__', { recursive: true, force: true });
+  execFileSync(py, ['scripts/brand/build_brand.py'], { stdio: 'ignore' });
+  const leaked = existsSync('scripts/brand/__pycache__');
+  rmSync('scripts/brand/__pycache__', { recursive: true, force: true });
+  assert.equal(leaked, false, 'generator wrote __pycache__ into the worktree');
+  assert.match(readFileSync('.gitignore', 'utf8'), /^__pycache__\/$/m);
+});

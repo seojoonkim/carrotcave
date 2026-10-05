@@ -14,6 +14,7 @@ Run: python3 scripts/brand/build_brand.py   (then node scripts/brand/raster.mjs 
 import json
 import re
 import sys
+sys.dont_write_bytecode = True  # release gate: verify must leave the tree clean (no __pycache__)
 from pathlib import Path
 
 HERE = Path(__file__).parent
