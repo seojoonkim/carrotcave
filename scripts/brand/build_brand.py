@@ -139,6 +139,88 @@ BLINK = 0.14  # seconds the blink eyes cover each cut
 R_X, C_X, FLOOR = 640, 868, 204
 R_S, C_S = .62, .52
 
+# ---- rabbit choreography (seconds on the shared LOOP; local units are the rabbit's own 240-wide box)
+# The rabbit tells a small story with the carrot: hops in, sways bored, sneaks toward the rock where the carrot
+# hides, gets dizzy looking for it, jumps back when it pops out, flips for joy and walks home.
+# (start, end, peak height) — each hop gets anticipation squash, take-off stretch and landing squash.
+R_HOPS = [(0.6, 1.2, 26), (6.2, 6.6, 16), (7.05, 7.45, 16), (10.4, 11.6, 40), (12.6, 13.6, 34), (14.05, 14.75, 22)]
+# horizontal travel (local units, right = toward the carrot). Never left of home: phones crop the left side.
+R_WALK = [(0, 0), (6.2, 0), (6.6, 24), (7.05, 24), (7.45, 44), (10.4, 44), (11.6, 12), (14.05, 12), (14.75, 0), (LOOP, 0)]
+R_WALK_MAX = 44
+# whole-body lean (deg, around the feet): bored sway, curious lean toward the rock, dizzy wobble, startle, joy wiggle
+R_TILT = [(0, 0), (3.0, 0), (3.5, -4), (4.4, 4), (5.3, -3), (5.9, 0), (7.45, 0), (7.8, 6), (8.3, 6), (8.6, -6), (8.9, 6),
+          (9.2, -5), (9.5, 4), (9.8, -2), (10.1, 0), (10.45, -7), (11.2, 0), (14.8, 0), (15.0, -5), (15.2, 5), (15.4, 0), (LOOP, 0)]
+R_FLIP = (12.62, 13.58)  # one full somersault inside the joy hop
+# ears (both together, from the base): droop when bored, perk when curious, shoot up when startled
+R_EARS = [(0, 1), (3.0, 1), (3.4, .86), (5.8, .86), (6.1, 1), (7.6, 1.07), (8.4, 1.07), (8.6, 1), (10.3, 1),
+          (10.45, 1.16), (10.9, 1), (LOOP, 1)]
+SQUASH_PRE, SQUASH_POST = .12, .26
+
+
+def kf(name, stops, prop):
+    """@keyframes from [(seconds, value)] — merges equal times, clamps to the loop."""
+    body = ''.join(f'{pct(min(max(t, 0), LOOP))}{{{prop}:{v}}}' for t, v in stops)
+    return f'@keyframes {name}{{{body}}}'
+
+
+def lerp_track(track, t):
+    for (a, va), (b, vb) in zip(track, track[1:]):
+        if a <= t <= b:
+            return va if b == a else va + (vb - va) * (t - a) / (b - a)
+    return track[-1][1]
+
+
+def hop_height(t):
+    for a, b, h in R_HOPS:
+        if a <= t <= b:
+            m = (a + b) / 2
+            return h * (1 - ((t - m) / (m - a)) ** 2)  # parabola: the shadow follows the real arc
+    return 0.0
+
+
+def rabbit_motion_css():
+    """Classes + keyframes for the rabbit's layered motion. Returns (css rules, keyframes, checks)."""
+    hop = []
+    for a, b, h in R_HOPS:
+        m = (a + b) / 2
+        hop += [(a, 'translateY(0);animation-timing-function:cubic-bezier(.2,.7,.4,1)'),
+                (m, f'translateY(-{h}px);animation-timing-function:cubic-bezier(.6,0,.8,.3)'), (b, 'translateY(0)')]
+    hop = [(0, 'translateY(0)')] + hop + [(LOOP, 'translateY(0)')]
+    sq = [(0, 'scale(1,1)')]
+    for a, b, h in R_HOPS:
+        sq += [(a - SQUASH_PRE - .06, 'scale(1,1)'), (a - .02, 'scale(1.12,.86)'), (a + .08, 'scale(.9,1.12)'),
+               ((a + b) / 2, 'scale(1,1)'), (b, 'scale(1.14,.84)'), (b + .14, 'scale(.97,1.03)'), (b + SQUASH_POST, 'scale(1,1)')]
+    sq.append((LOOP, 'scale(1,1)'))
+    # squash windows must not overlap or the body would snap between hops
+    wins = [(a - SQUASH_PRE - .06, b + SQUASH_POST) for a, b, _ in R_HOPS]
+    assert all(w1[1] <= w2[0] for w1, w2 in zip(wins, wins[1:])), 'rabbit squash windows overlap'
+    a, b = R_FLIP
+    flip = [(0, 'rotate(0deg)'), (a, 'rotate(0deg);animation-timing-function:cubic-bezier(.45,0,.55,1)'),
+            (b, 'rotate(-360deg)'), (LOOP, 'rotate(-360deg)')]
+    walk = [(t, f'translateX({x}px)') for t, x in R_WALK]
+    tilt = [(t, f'rotate({d}deg)') for t, d in R_TILT]
+    ears = [(t, f'scale(1,{v})') for t, v in R_EARS]
+    # the shadow is in scene units: follows the walk, shrinks and fades while the rabbit is in the air
+    times = sorted({round(t, 3) for t, _ in R_WALK} | {round(x, 3) for a, b, _ in R_HOPS for x in (a, (a + b) / 2, b)}
+                   | {round(a + (b - a) * k / 4, 3) for a, b, _ in R_HOPS for k in (1, 3)})
+    shadow = [(t, f'translateX({lerp_track(R_WALK, t) * R_S:.1f}px) scale({1 - .45 * hop_height(t) / 40:.3f})')
+              for t in times]
+    L = f'{LOOP}s'
+    css = [
+        f'.rabbit-walk{{animation:cc-r-walk {L} cubic-bezier(.4,0,.4,1) infinite}}',
+        f'.rabbit-hop{{animation:cc-r-hop {L} linear infinite}}',
+        f'.rabbit-squash,.rabbit-tilt{{transform-box:fill-box;transform-origin:50% 100%}}',
+        f'.rabbit-squash{{animation:cc-r-squash {L} ease-in-out infinite}}',
+        f'.rabbit-tilt{{animation:cc-r-tilt {L} ease-in-out infinite}}',
+        f'.rabbit-flip{{transform-box:fill-box;transform-origin:50% 55%;animation:cc-r-flip {L} linear infinite}}',
+        f'.ears{{transform-box:fill-box;transform-origin:50% 100%;animation:cc-r-ears {L} ease-in-out infinite}}',
+        f'.rabbit-shadow{{transform-box:fill-box;transform-origin:50% 50%;animation:cc-r-shadow {L} linear infinite}}',
+    ]
+    kfs = [kf('cc-r-walk', walk, 'transform'), kf('cc-r-hop', hop, 'transform'), kf('cc-r-squash', sq, 'transform'),
+           kf('cc-r-tilt', tilt, 'transform'), kf('cc-r-flip', flip, 'transform'), kf('cc-r-ears', ears, 'transform'),
+           kf('cc-r-shadow', shadow, 'transform')]
+    return css, kfs
+
 
 def pct(t):
     return f'{t / LOOP * 100:.3f}%'
@@ -227,14 +309,18 @@ def footer_svg():
             f'<text x="1026" y="{FLOOR - 52}" text-anchor="middle" font-size="13" font-weight="800" font-family="Pretendard, sans-serif" fill="{NAVY}">NEW</text></g>')
 
     rabbit = (f'<g class="rabbit-position" transform="translate({R_X - 120 * R_S:.1f} {FLOOR - 262 * R_S:.1f}) scale({R_S})">'
-              f'<g class="rabbit-hop"><g class="rabbit-breathe">'
-              f'{dashes(G.MINT, 120, -10, "rabbit-dashes")}{G.rabbit_svg(r_layers, cid="fr")}</g></g></g>')
+              f'<g class="rabbit-walk"><g class="rabbit-hop"><g class="rabbit-react"><g class="rabbit-squash"><g class="rabbit-tilt">'
+              f'<g class="rabbit-flip"><g class="rabbit-breathe">'
+              f'{dashes(G.MINT, 120, -10, "rabbit-dashes")}{G.rabbit_svg(r_layers, cid="fr")}</g></g></g></g></g></g></g></g>')
     hole = f'<ellipse class="burrow-hole" cx="{C_X}" cy="{FLOOR + 1}" rx="54" ry="8" fill="#101117"/>'
     carrot = (f'<g clip-path="url(#fc-ground)"><g class="carrot-position" transform="translate({C_X - 120 * C_S:.1f} {FLOOR - 262 * C_S:.1f}) scale({C_S})">'
               f'<g class="carrot-hide"><g class="carrot-hop"><g class="carrot-clip">'
               f'{dashes(G.ORANGE, 120, 2, "carrot-dashes")}{G.carrot_svg(c_layers + tap_face, cid="fc")}</g></g></g></g></g>')
     hit = (f'<rect class="carrot-hit" x="{C_X - 70}" y="{FLOOR - 160}" width="140" height="160" rx="24" fill="transparent" '
            'role="button" tabindex="0" aria-label="당근 쓰다듬기"/>')
+    # rabbit tap target covers its whole walk (home .. +R_WALK_MAX) and the ears
+    r_hit = (f'<rect class="rabbit-hit" x="{R_X - 80}" y="{FLOOR - 172}" width="{160 + R_WALK_MAX * R_S:.0f}" height="172" rx="24" '
+             'fill="transparent" role="button" tabindex="0" aria-label="토끼 쓰다듬기"/>')
     pop = (f'<g class="tap-pop"><rect x="{C_X - 78}" y="12" width="156" height="40" rx="20" fill="#F4EEDF"/>'
            f'<path d="M{C_X - 8} 50 L{C_X} 62 L{C_X + 8} 50 Z" fill="#F4EEDF"/>'
            f'<text class="tap-text" x="{C_X}" y="38" text-anchor="middle" font-size="17" font-weight="700" font-family="Pretendard, sans-serif" fill="{NAVY}">들켰다!</text></g>')
@@ -253,15 +339,12 @@ def footer_svg():
             f'<ellipse class="rabbit-shadow" cx="{R_X}" cy="{FLOOR}" rx="64" ry="7" fill="{C["shadow"]}"/>'
             f'<ellipse class="carrot-shadow" cx="{C_X}" cy="{FLOOR}" rx="44" ry="7" fill="{C["shadow"]}"/>'
             f'{rock}{hole}{rabbit}{carrot}'
-            f'{hit}{pop}</g></svg>')
+            f'{r_hit}{hit}{pop}</g></svg>')
 
 
 def scene_css(face_css, face_kf):
     L = f'{LOOP}s'
-    hop = (f'@keyframes cc-r-hop{{0%,{pct(1.2)},{pct(10.4)},{pct(12.6)},{pct(13.6)},100%{{transform:translateY(0)}}'
-           f'{pct(.6)}{{transform:translateY(0)}}{pct(.9)}{{transform:translateY(-26px)}}'
-           f'{pct(11.0)}{{transform:translateY(-30px)}}{pct(11.6)}{{transform:translateY(0)}}'
-           f'{pct(13.0)}{{transform:translateY(-34px)}}}}')
+    r_css, r_kfs = rabbit_motion_css()
     c_hop = (f'@keyframes cc-c-hop{{0%,{pct(.9)},{pct(1.9)},{pct(12.4)},{pct(13.4)},100%{{transform:translateY(0)}}'
              f'{pct(1.35)}{{transform:translateY(-40px)}}{pct(12.9)}{{transform:translateY(-46px)}}}}')
     # carrot ducks behind the rock (6.6 -> 7.6), stays hidden, peeks (9.2), pops out (10.2)
@@ -275,8 +358,8 @@ def scene_css(face_css, face_kf):
         '.scene{opacity:1}',
         '.mouth-sky{fill:#2B3550;transition:fill .6s ease}.sun{opacity:0}.sky-night{opacity:1}',
         '.rabbit-position,.carrot-position{will-change:transform}',
-        f'.rabbit-hop{{animation:cc-r-hop {L} cubic-bezier(.3,.7,.3,1) infinite}}',
-        '.rabbit-breathe{transform-box:fill-box;transform-origin:50% 100%;animation:cc-breathe 3.2s ease-in-out infinite}',
+        *r_css,
+        '.rabbit-breathe{transform-box:fill-box;transform-origin:50% 100%;animation:cc-breathe 2.6s ease-in-out infinite}',
         '.cc-rabbit-ears,.ears>g{transform-box:fill-box;transform-origin:50% 100%}',
         '.ears>g:first-child{animation:cc-ear-l 4.6s ease-in-out infinite}.ears>g:last-child{animation:cc-ear-r 4.6s .3s ease-in-out infinite}',
         f'.carrot-hop{{animation:cc-c-hop {L} cubic-bezier(.3,.7,.3,1) infinite}}',
@@ -290,16 +373,16 @@ def scene_css(face_css, face_kf):
         '.mote{opacity:.55;animation:cc-mote 7s ease-in-out infinite}.mote--1{animation-delay:-2.3s}.mote--2{animation-delay:-4.6s}',
         '.sky-star{fill:#F4EEDF;animation:cc-twinkle 3.4s ease-in-out infinite}.sky-star:nth-child(2n){animation-delay:-1.7s}',
     ] + face_css
-    kfs = [hop, c_hop, hide, c_shadow,
+    kfs = [*r_kfs, c_hop, hide, c_shadow,
            dash('cc-r-dash', [(10.2, 12.0), (12.4, 14.6)]), dash('cc-c-dash', [(1.0, 2.6), (10.2, 12.2), (12.4, 14.6)]),
-           '@keyframes cc-breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.015,.985)}}',
+           '@keyframes cc-breathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.035,.965)}}',
            '@keyframes cc-ear-l{0%,70%,100%{transform:rotate(0)}78%{transform:rotate(-7deg)}86%{transform:rotate(3deg)}}',
            '@keyframes cc-ear-r{0%,64%,100%{transform:rotate(0)}72%{transform:rotate(8deg)}80%{transform:rotate(-3deg)}}',
            '@keyframes cc-leaf{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}',
            '@keyframes cc-mote{0%,100%{transform:translateY(0);opacity:.25}50%{transform:translateY(-14px);opacity:.7}}',
            '@keyframes cc-twinkle{0%,100%{opacity:.35}50%{opacity:1}}'] + face_kf
     reduced = ('@media (prefers-reduced-motion: reduce){'
-               '.rabbit-hop,.rabbit-breathe,.ears>g,.carrot-hop,.carrot-hide,.carrot-shadow,.leaves,.dashes,.rabbit-dashes,.carrot-dashes,.mote,.sky-star,'
+               '.rabbit-walk,.rabbit-hop,.rabbit-squash,.rabbit-tilt,.rabbit-flip,.rabbit-shadow,.ears,.rabbit-breathe,.ears>g,.carrot-hop,.carrot-hide,.carrot-shadow,.leaves,.dashes,.rabbit-dashes,.carrot-dashes,.mote,.sky-star,'
                '.fr-eyes,.fr-mouth,.fc-eyes,.fc-mouth{animation:none!important}'
                '.fr-eyes--joy,.fr-mouth--crescent,.fc-eyes--sparkle,.fc-mouth--crescent{opacity:1}}')
     return ''.join(base) + ''.join(kfs) + reduced

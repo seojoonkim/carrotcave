@@ -34,18 +34,33 @@ export default function FooterCaveScene({ mood = 'all', latest, locale = 'ko' }:
       root.classList.add('is-tapped');
       setSaid(line);
     };
-    const onClick = (e: Event) => { if ((e.target as Element).closest('.carrot-hit')) pet(); };
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.key === 'Enter' || e.key === ' ') && (e.target as Element).closest('.carrot-hit')) { e.preventDefault(); pet(); }
+    const hop = () => {
+      root.classList.remove('is-rabbit');
+      void root.offsetWidth; // restart the spin hop on every tap
+      root.classList.add('is-rabbit');
     };
-    const onEnd = (e: AnimationEvent) => { if (e.animationName === 'cc-tap-pop') root.classList.remove('is-tapped'); };
+    const onClick = (e: Event) => {
+      const el = e.target as Element;
+      if (el.closest('.carrot-hit')) pet();
+      else if (el.closest('.rabbit-hit')) hop();
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (!(e.key === 'Enter' || e.key === ' ')) return;
+      const el = e.target as Element;
+      if (el.closest('.carrot-hit')) { e.preventDefault(); pet(); }
+      else if (el.closest('.rabbit-hit')) { e.preventDefault(); hop(); }
+    };
+    const onEnd = (e: AnimationEvent) => {
+      if (e.animationName === 'cc-tap-pop') root.classList.remove('is-tapped');
+      if (e.animationName === 'cc-rabbit-spinhop') root.classList.remove('is-rabbit');
+    };
     root.addEventListener('click', onClick);
     root.addEventListener('keydown', onKey);
     root.addEventListener('animationend', onEnd);
     return () => { root.removeEventListener('click', onClick); root.removeEventListener('keydown', onKey); root.removeEventListener('animationend', onEnd); };
   }, [lines]);
 
-  const svg = locale === 'ko' ? FOOTER_SCENE_SVG : FOOTER_SCENE_SVG.replaceAll('당근 쓰다듬기', L.carrotHit);
+  const svg = locale === 'ko' ? FOOTER_SCENE_SVG : FOOTER_SCENE_SVG.replaceAll('당근 쓰다듬기', L.carrotHit).replaceAll('토끼 쓰다듬기', L.rabbitHit);
 
   return (
     <div ref={ref} className="footer-scene" data-mood={mood} data-daypart={daypart} data-fresh={fresh ? 'true' : 'false'}>

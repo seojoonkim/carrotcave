@@ -80,3 +80,30 @@ test('brand tagline reads "Followed the rabbit. Lost the thread." in header and 
   assert.match(read('lib/og-card.tsx'), /TAGLINE_EN = 'Followed the rabbit\. Lost the thread\.'/);
   assert.doesNotMatch(read('components/SiteHeader.tsx'), /FIELD NOTES FROM THE RABBIT HOLE/);
 });
+
+test('rabbit moves in layers: walk, hop arc, squash-stretch, lean, somersault, ears and a shadow that follows', () => {
+  for (const c of ['rabbit-walk', 'rabbit-hop', 'rabbit-react', 'rabbit-squash', 'rabbit-tilt', 'rabbit-flip', 'rabbit-breathe']) {
+    assert.match(svg, new RegExp(`<g class="${c}">`), `layer ${c}`);
+  }
+  for (const k of ['cc-r-walk', 'cc-r-hop', 'cc-r-squash', 'cc-r-tilt', 'cc-r-flip', 'cc-r-ears', 'cc-r-shadow']) {
+    assert.match(svg, new RegExp(`@keyframes ${k}\\{`), `keyframes ${k}`);
+  }
+  // every layer stops under reduced motion
+  const reduced = svg.match(/@media \(prefers-reduced-motion: reduce\)\{([^{]*)\{animation:none!important\}/)[1];
+  for (const c of ['rabbit-walk', 'rabbit-hop', 'rabbit-squash', 'rabbit-tilt', 'rabbit-flip', 'rabbit-shadow', 'ears']) {
+    assert.ok(reduced.split(',').includes(`.${c}`), `reduced motion stops .${c}`);
+  }
+  // the walk never goes left of home (phones crop the left of the scene)
+  const walk = svg.match(/@keyframes cc-r-walk\{(.*?)\}\}/)[1];
+  for (const m of walk.matchAll(/translateX\((-?[\d.]+)px\)/g)) assert.ok(Number(m[1]) >= 0 && Number(m[1]) <= 44, `walk ${m[1]}`);
+});
+
+test('rabbit is a keyboard-reachable button: tap = spin hop, carrot tap makes it flinch; both short and reduced-motion safe', () => {
+  assert.match(svg, /class="rabbit-hit"[^>]*role="button"[^>]*tabindex="0"[^>]*aria-label="토끼 쓰다듬기"/);
+  const comp = read('components/FooterCaveScene.tsx');
+  assert.match(comp, /closest\('\.rabbit-hit'\)\) hop\(\)/);
+  assert.match(comp, /replaceAll\('토끼 쓰다듬기', L\.rabbitHit\)/);
+  assert.match(css, /\.footer-scene\.is-rabbit \.rabbit-react\{[^}]*animation:cc-rabbit-spinhop \.36s/);
+  assert.match(css, /\.footer-scene\.is-tapped \.rabbit-react\{animation:cc-rabbit-flinch \.36s/);
+  assert.match(css, /prefers-reduced-motion:reduce\)\{\.footer-scene \.rabbit-react\{animation:none!important\}/);
+});
