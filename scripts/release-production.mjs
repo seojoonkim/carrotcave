@@ -37,6 +37,7 @@ try {
   run(process.execPath,['scripts/verify-recovery-live.mjs'],{APP_URL:'https://carrotcave.com',PROOF_PATH:'/tmp/carrot-recovery-production.json'});
   run(process.execPath,['scripts/verify-og-live.mjs'],{APP_URL:'https://carrotcave.com'});
   run(process.execPath,['scripts/verify-no-react-errors.mjs','https://carrotcave.com']);
+  run(process.execPath,['scripts/verify-og-coverage.mjs','https://carrotcave.com']);
   run(process.execPath,['scripts/verify-footer-legal-visible.mjs','https://carrotcave.com']);
   run(process.execPath,['scripts/verify-footer-overlap.mjs','https://carrotcave.com']);
   console.log(`VERIFIED_RELEASE ${baseline.head}`);
