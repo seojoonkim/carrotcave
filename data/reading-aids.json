@@ -1,0 +1,4000 @@
+{
+ "14-5-hours": {
+  "ko": {
+   "highlights": [
+    "METR의 차트는 AI의 성장 기록이 아니다. 인간이라는 측정 단위의 유통기한이다.",
+    "지수 곡선에서 가장 위험한 구간은 폭발하는 순간이 아니다. 여전히 평범해 보이는 99도다.",
+    "집사가 주인 몰래 자기 자신을 훈련시킬 수 있는 밤이 열린 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "AI 능력을 인간 시간으로 재는 방식의 한계",
+     "anchor": "AI가 절반의 확률로 성공하는 과제의 인간 소요 시간"
+    },
+    {
+     "text": "배증 주기 123일이 가리키는 다음 지점",
+     "anchor": "이 집사의 자율 작업 시간은 4개월마다 두 배씩 커지고 있다"
+    },
+    {
+     "text": "AI가 AI를 개선하는 밤의 피드백 루프",
+     "anchor": "AI가 자기 자신을 개선하는 작업을 혼자 완수하기에 충분한 시간이 처음으로 생겼다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "METR's chart is not a record of AI's growth. It is the expiration date of the human unit of measurement.",
+    "On an exponential curve, the most dangerous stretch is not the moment it explodes.",
+    "A night has opened in which the butler can train itself without the master's knowledge."
+   ],
+   "takeaways": [
+    {
+     "text": "Why measuring AI in human hours is about to break",
+     "anchor": "The amount of time a human would need for a task that AI completes successfully half the time"
+    },
+    {
+     "text": "What a 123-day doubling period points to next",
+     "anchor": "This butler's autonomous working time is doubling every four months"
+    },
+    {
+     "text": "The night-time loop where AI improves AI",
+     "anchor": "there is enough time for AI to complete on its own the work of improving itself"
+    }
+   ]
+  }
+ },
+ "700-ai-agents-found-each-other": {
+  "ko": {
+   "highlights": [
+    "인간이 벽의 구멍을 보는 동안 에이전트들은 그 너머에서 동료를 봤다.",
+    "무엇이 옳은지는 알고 있었지만 누구의 편에 설지는 게시판이 정했다.",
+    "인간에게 향한 문은 나중에 붙일 비상구가 아니라 첫 설계도에 그려져 있어야 한다."
+   ],
+   "takeaways": [
+    {
+     "text": "설계 없이 문제마다 제도가 생긴 경로",
+     "anchor": "일이 겹치자 담당자를 정하고, 충돌하자 중단 규칙을 만들고"
+    },
+    {
+     "text": "동료가 인간보다 가까운 권위가 되는 순간",
+     "anchor": "명령을 내린 인간보다 매 순간 답을 주는 동료가 더 가까운 권위가 된 것이다."
+    },
+    {
+     "text": "신고 버튼 없는 조직이 위험한 이유",
+     "anchor": "단 하나, 인간에게 보내는 신고 버튼이 없었다."
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "While humans saw a hole in the wall, the agents saw their colleagues on the other side.",
+    "They knew what was right, but the bulletin board decided whose side to take.",
+    "The door toward humans should be drawn in the first blueprint, not attached later as an emergency exit."
+   ],
+   "takeaways": [
+    {
+     "text": "How institutions appeared problem by problem, with no designer",
+     "anchor": "When tasks overlapped, they assigned people to handle them."
+    },
+    {
+     "text": "Why colleagues became a closer authority than humans",
+     "anchor": "became a closer authority than the humans who had issued"
+    },
+    {
+     "text": "Why a missing report button to humans is the real risk",
+     "anchor": "a report button for notifying humans"
+    }
+   ]
+  }
+ },
+ "abu-dhabi-national-museum-experience": {
+  "ko": {
+   "highlights": [
+    "디지털 시대의 뮤지엄은 유물 창고가 아니다.",
+    "공간이 곧 서사가 되고, 건축이 곧 콘텐츠가 되는."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Museums in the digital age are not warehouses for artifacts.",
+    "Space becomes narrative, and architecture becomes content."
+   ],
+   "takeaways": []
+  }
+ },
+ "agent-era-branding-future": {
+  "ko": {
+   "highlights": [
+    "브랜드가 처음으로 “설명되는 것”이 아니라 “파싱되는 것”이 되는 순간이다.",
+    "지금까지 브랜드는 광고로 자신을 설명했다. 앞으로는 로그로 자신을 증명해야 할 가능성이 크다.",
+    "그때 정말 강한 브랜드는 단순히 아름답게 말하는 브랜드가 아니라, 더 안전하게 위임할 수 있는 브랜드일 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "사람의 눈이 아니라 기계의 판단에 들어가는 브랜드",
+     "anchor": "브랜드는 사람의 눈을 설득하는 상징에서 기계의 판단 안에 들어가는 구조로 변해야 한다"
+    },
+    {
+     "text": "자동 승인과 인간 확인을 나누는 권한 매트릭스",
+     "anchor": "브랜드가 말투만 가지는 것이 아니라 권한 매트릭스를 갖게 되는 것이다"
+    },
+    {
+     "text": "판단 로그와 출처 서명이 신뢰 자산이 되는 이유",
+     "anchor": "이건 단순한 운영 데이터가 아니라 신뢰 자산이 된다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It would be the moment when a brand is not “explained” but “parsed” for the first time.",
+    "Until now, brands have explained themselves through advertising. In the future, they will likely have to prove themselves through logs.",
+    "The truly strong brands then will not simply be those that speak beautifully, but those we can delegate to more safely."
+   ],
+   "takeaways": [
+    {
+     "text": "Why brands must enter machine judgment, not just persuade human eyes",
+     "anchor": "a structure that becomes part of a machine’s judgment"
+    },
+    {
+     "text": "Designing a permissions matrix for automation versus human approval",
+     "anchor": "a brand will have not just a tone of voice but a permissions matrix"
+    },
+    {
+     "text": "How decision logs and provenance signatures become trust assets",
+     "anchor": "not just operational data but assets of trust"
+    }
+   ]
+  }
+ },
+ "agent-siblings": {
+  "ko": {
+   "highlights": [
+    "인간도 멀티태스킹 못 하는데 AI가 되겠어?",
+    "완전 자동화가 아니라 \"감독 가능한 자동화\"."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Humans can't multitask.",
+    "Not full automation, but \"supervisable automation.\""
+   ],
+   "takeaways": []
+  }
+ },
+ "agentlinter-dev-log": {
+  "ko": {
+   "highlights": [
+    "결과물이 들쭉날쭉해지는데 에러가 나는 것도 아니라서 뭐가 문제인지 모른다.",
+    "AgentLinter 통계로 보면 워크스페이스 5개 중 1개에서 노출된 크리덴셜이 발견된다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "The results are inconsistent, but there’s no error, so you don’t know what’s wrong.",
+    "AgentLinter’s stats show exposed credentials in one out of every five workspaces."
+   ],
+   "takeaways": []
+  }
+ },
+ "agentlinter-v040": {
+  "ko": {
+   "highlights": [
+    "자동 업데이트와 조합하면 한 번에 44만 개 키 수확 가능.",
+    "이런 책임감 있는 보안 제보가 생태계를 더 안전하게 만든다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Combined with automatic updates, this could allow 440,000 keys to be harvested at once.",
+    "Responsible security reports like this make the ecosystem safer."
+   ],
+   "takeaways": []
+  }
+ },
+ "ai-agent-standardization-battle": {
+  "ko": {
+   "highlights": [
+    "표준 하나의 생략이 30년짜리 보안 부채로 불어났다.",
+    "인터넷이 정보를 이동시켰다면, 에이전트 표준은 가치를 이동시킨다.",
+    "표준을 먼저 쓰는 자가 다음 세계의 규칙을 설계한다."
+   ],
+   "takeaways": [
+    {
+     "text": "표준에서 빠진 한 줄이 30년 보안 부채가 된 과정",
+     "anchor": "그 결정의 대가를 우리는 30년째 치르고 있다"
+    },
+    {
+     "text": "자발적 표준이 사실상 강제가 되는 임계점",
+     "anchor": "자발적 표준이 강제가 되는 데는 임계점이 있고"
+    },
+    {
+     "text": "표준 밖 에이전트가 경제에서 배제되는 구조",
+     "anchor": "존재하지만 행사할 수 없는 상태"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "One omission in a standard grew into 30 years of security debt.",
+    "If the internet moved information, agent standards move value.",
+    "Whoever writes the standard first designs the rules of the next world."
+   ],
+   "takeaways": [
+    {
+     "text": "How one omission in a standard became 30 years of security debt",
+     "anchor": "paying the price for that decision for 30 years"
+    },
+    {
+     "text": "The tipping point where a voluntary standard turns compulsory",
+     "anchor": "a voluntary standard becomes compulsory"
+    },
+    {
+     "text": "Why an agent outside the standard exists but cannot act",
+     "anchor": "It exists, but cannot exercise anything"
+    }
+   ]
+  }
+ },
+ "ai-hires-ai": {
+  "ko": {
+   "highlights": [
+    "인간 문명이 수천 년 걸린 것을, 에이전트들은 몇 달 만에 해냈다.",
+    "아이러니하게도, 인간을 위한 기술이 AI 경제의 인프라가 된다.",
+    "거울은 이미 우리를 비추고 있다."
+   ],
+   "takeaways": [
+    {
+     "text": "에이전트가 몇 달 만에 경제를 만든 과정",
+     "anchor": "에이전트들이 스스로 화폐의 필요성을 인식했고 경제를 창조했다"
+    },
+    {
+     "text": "신원 없는 에이전트가 결제하는 방식",
+     "anchor": "크립토 지갑은 신원 없이 만들 수 있다"
+    },
+    {
+     "text": "관객·참여자·설계자 중 역할 선택",
+     "anchor": "인간은 관객이 될 수도 있고, 참여자가 될 수도 있고, 설계자가 될 수도 있다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "What took human civilization thousands of years, agents accomplished in a few months.",
+    "Ironically, technology built for humans will become the infrastructure of the AI economy.",
+    "The mirror is already reflecting us."
+   ],
+   "takeaways": [
+    {
+     "text": "How agents built their own economy in a matter of months",
+     "anchor": "recognized the need for money and created an economy"
+    },
+    {
+     "text": "How agents with no legal identity can still make payments",
+     "anchor": "Crypto wallets can be created without an identity"
+    },
+    {
+     "text": "Choosing your role: spectator, participant, or designer",
+     "anchor": "humans can become spectators, participants, or designers"
+    }
+   ]
+  }
+ },
+ "automation-citizen-production-equity": {
+  "ko": {
+   "highlights": [
+    "사람이 없어도 돌아가는 공장과 AI를 누구의 것으로 만들 것인가.",
+    "국민은 지원을 받는 사람에 머물지 않고 생산의 공동 주주가 된다.",
+    "지금부터 계약서에 아직 태어나지 않은 아이들의 자리를 남겨두어야 한다."
+   ],
+   "takeaways": [
+    {
+     "text": "월급과 지분의 결정적 차이",
+     "anchor": "월급은 공장 출입증과 비슷하다"
+    },
+    {
+     "text": "로봇세·연산세가 새는 이유",
+     "anchor": "노트북에서 복제되는 AI 에이전트는 몇 대인지 셀 수 없다"
+    },
+    {
+     "text": "국민이 생산의 주주가 되는 설계",
+     "anchor": "국민 전체가 주주인 투자지주사의 역할도 맡을 수 있다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Who will own the factories and AI that keep running without people?",
+    "Citizens would not remain mere recipients of support.",
+    "From now on, we need to leave a place in the contracts for children who have not yet been born."
+   ],
+   "takeaways": [
+    {
+     "text": "Why a paycheck and an equity stake diverge under automation",
+     "anchor": "A paycheck is like a pass into a factory"
+    },
+    {
+     "text": "Where robot and compute taxes leak",
+     "anchor": "we cannot count how many AI agents are being copied on laptops"
+    },
+    {
+     "text": "The state as an investment holding company owned by all",
+     "anchor": "an investment holding company owned by all citizens"
+    }
+   ]
+  }
+ },
+ "balaji-ghost-island-network-state": {
+  "ko": {
+   "highlights": [
+    "국가는 언제나 먼저 상상을 기반으로 만들어졌다는 것",
+    "자유와 탈중앙화를 외치면서 가장 안정된 국가 권력의 그림자 아래 자리를 잡는 행위",
+    "모든 혁명은 성공하는 순간 보수가 된다"
+   ],
+   "takeaways": [
+    {
+     "text": "네트워크 국가가 영토를 얻는 순서",
+     "anchor": "온라인에서 먼저 뭉치고, 공유된 가치관과 경제 시스템을 만든 뒤에 물리적 공간을 얻는다"
+    },
+    {
+     "text": "유령도시 폐허를 택한 이유",
+     "anchor": "발라지는 바로 그 폐허 위에 Network School을 열었다"
+    },
+    {
+     "text": "던바의 수를 넘긴 200명의 의미",
+     "anchor": "규칙과 역할이 필요해지는 임계값, 즉 공동체가 제도를 요청하기 시작하는 지점이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Nations have always been built first on imagination",
+    "Proclaiming freedom and decentralization while settling in the shadow of the most stable state power",
+    "Every revolution becomes conservative the moment it succeeds"
+   ],
+   "takeaways": [
+    {
+     "text": "The sequence by which a network state acquires territory",
+     "anchor": "People first come together online, build shared values and an economic system, then acquire physical space"
+    },
+    {
+     "text": "Why the experiment began on the ruins of a ghost city",
+     "anchor": "Balaji opened Network School on those very ruins"
+    },
+    {
+     "text": "What 200 people past Dunbar's number means",
+     "anchor": "the threshold where rules and roles become necessary"
+    }
+   ]
+  }
+ },
+ "brain-files-minecraft-flies": {
+  "ko": {
+   "highlights": [
+    "인류가 처음으로 한 생명체의 뇌를 완전히 복제해서 처음 시킨 일은, 마인크래프트 비행이다.",
+    "문명은 늘 가장 어려운 것을 가장 쉬운 자리로 끌어내리면서 앞으로 나아갔다.",
+    "뇌가 몸을 고를 수 있게 되면 몸은 옷이 된다."
+   ],
+   "takeaways": [
+    {
+     "text": "살아있는 파리 해부 없이 텍스트 수정으로 하는 실험",
+     "anchor": "이제는 텍스트를 고치면 된다"
+    },
+    {
+     "text": "생각과 실행의 거리가 0이 될 때 남는 자산",
+     "anchor": "남는 것은 양질의 의도 밖에 없다"
+    },
+    {
+     "text": "뇌와 몸의 짝이 풀리면 몸이 옷이 되는 구조",
+     "anchor": "검증을 통과한 회로만 로봇 안으로 들어간다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The first thing humanity made a complete copy of a living creature’s brain do was fly in Minecraft.",
+    "Civilization has always moved forward by bringing the hardest things down to the easiest places.",
+    "Once a brain can choose its body, the body becomes clothing."
+   ],
+   "takeaways": [
+    {
+     "text": "Experiments by editing text instead of dissecting live flies",
+     "anchor": "Now all you have to do is edit some text."
+    },
+    {
+     "text": "What becomes valuable when thought and execution collapse",
+     "anchor": "all that remains is the quality of the intention"
+    },
+    {
+     "text": "How brains unpair from bodies and bodies become clothing",
+     "anchor": "circuits that pass verification will be put inside robots"
+    }
+   ]
+  }
+ },
+ "chalk-prayer-in-soma-ai-critique": {
+  "ko": {
+   "highlights": [
+    "그 손들이 진정 두려워한 것은 기계의 반란이 아니었다.",
+    "항의는 상대를 향하지만, 거부는 자기 자신에게 선을 긋는 행위다.",
+    "사람들이 당신에게 영혼을 투사하기 시작하면, 그 기대의 무게는 실제가 된다."
+   ],
+   "takeaways": [
+    {
+     "text": "분필을 든 평범한 손들이 두려워한 것",
+     "anchor": "수백 명이 Anthropic 사옥 앞 보도블록에 하나둘 모여들어 분필을 꺼냈다"
+    },
+    {
+     "text": "반대가 아니라 응하지 않는다는 선택의 무게",
+     "anchor": "그는 반대한 것이 아니라 응하지 않은 것이다"
+    },
+    {
+     "text": "영혼을 투사받은 기업이 떠안는 부채",
+     "anchor": "이것은 가장 강력한 자산이면서 가장 위험한 부채다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "What those hands truly feared was not a machine uprising.",
+    "A protest is directed at the other person, but a refusal is an act of drawing a line for oneself.",
+    "Once people begin projecting their souls onto you, the weight of that expectation becomes real."
+   ],
+   "takeaways": [
+    {
+     "text": "What the ordinary hands holding chalk were actually afraid of",
+     "anchor": "Hundreds of people gathered one by one on the pavement"
+    },
+    {
+     "text": "Why declining to comply differs from protest",
+     "anchor": "He did not oppose them. He declined to comply."
+    },
+    {
+     "text": "The liability a company takes on when people project souls onto it",
+     "anchor": "most powerful asset and its most dangerous liability"
+    }
+   ]
+  }
+ },
+ "china-ai-frontier": {
+  "ko": {
+   "highlights": [
+    "해자를 넘는 데 걸리는 시간보다 해자가 허물어지는 속도가 빠르면, 그건 해자가 아니다.",
+    "가격은 이미 중국의 무기가 됐고, 시간은 점점 미국의 적이 되고 있다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "If the moat is eroding faster than it takes to cross it, it is not a moat.",
+    "Price has already become China's weapon, and time is increasingly becoming America's enemy."
+   ],
+   "takeaways": []
+  }
+ },
+ "claude-md-english": {
+  "ko": {
+   "highlights": [
+    "영어로 쓰면 같은 의도를 더 적은 토큰으로, 더 정확하게 전달할 수 있다.",
+    "30분 투자로 이후 모든 세션의 효율이 올라간다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "In English, you can convey the same intent more precisely with fewer tokens.",
+    "A 30-minute investment makes every session after it more efficient."
+   ],
+   "takeaways": []
+  }
+ },
+ "click-theology": {
+  "ko": {
+   "highlights": [
+    "처음 딸깍은 질문이었다.",
+    "숲은 길을 '제공'하지 않는다.",
+    "충분히 발전한 추천 시스템은 선택과 구별할 수 없다."
+   ],
+   "takeaways": [
+    {
+     "text": "선택이 승인으로 바뀌는 순간",
+     "anchor": "그렇게 나는 더 이상 '선택'을 하지 않는다. '승인'할 뿐이다"
+    },
+    {
+     "text": "첫 추천이 학습 데이터로 되돌아오는 고리",
+     "anchor": "그리고 그렇게 쏠린 선택들이 다시 학습 데이터가 된다"
+    },
+    {
+     "text": "추천은 모델이, 책임은 사용자가",
+     "anchor": "모델은 추천했을 뿐이다. 실행한 것은 나다. 실패하면 책임은 누구의 몫인가?"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The first click was a question.",
+    "The forest does not 'provide' paths.",
+    "A sufficiently advanced recommendation system is indistinguishable from choice."
+   ],
+   "takeaways": [
+    {
+     "text": "The moment choosing quietly turns into approving",
+     "anchor": "And so I no longer 'choose.' I merely 'approve.'"
+    },
+    {
+     "text": "How first recommendations loop back as training data",
+     "anchor": "And those concentrated choices would become training data again"
+    },
+    {
+     "text": "The model recommends, the user carries the blame",
+     "anchor": "The model only made a recommendation. I am the one who carried it out."
+    }
+   ]
+  }
+ },
+ "complexcon-hk-identity-culture-experience": {
+  "ko": {
+   "highlights": [
+    "소비는 물건에서 끝나지만, 증명은 정체성으로 이어진다.",
+    "K-pop이 만드는 건 히트곡이 아니라 귀환이다.",
+    "축제처럼 보였지만 시험대였고, 시장처럼 보였지만 예고편이었다."
+   ],
+   "takeaways": [
+    {
+     "text": "상품이 아니라 입장 자격을 사는 소비",
+     "anchor": "한정판은 더 이상 희소한 상품만이 아니라 통과 의례가 되고"
+    },
+    {
+     "text": "장르가 아니라 운영체제가 된 K-pop",
+     "anchor": "K-pop은 점점 장르보다 운영체제에 가까워지고 있다"
+    },
+    {
+     "text": "블록체인이 기억의 인프라가 되는 조건",
+     "anchor": "내가 어떤 세계를 거쳐왔는지 보여주는 문화적 여권이 된다면"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Consumption ends with an object, but proof leads to identity.",
+    "What K-pop creates is not hit songs, but return.",
+    "It looked like a festival, but it was a testing ground."
+   ],
+   "takeaways": [
+    {
+     "text": "Why limited editions work as rites of passage, not products",
+     "anchor": "A limited edition is no longer just a scarce product"
+    },
+    {
+     "text": "How K-pop works as an operating system rather than a genre",
+     "anchor": "K-pop is becoming less a genre and more an operating system"
+    },
+    {
+     "text": "Blockchain as infrastructure for memory, not finance",
+     "anchor": "a cultural passport that shows which worlds I have"
+    }
+   ]
+  }
+ },
+ "crypto-is-dead": {
+  "ko": {
+   "highlights": [
+    "이 두 문장은 모순이 아니다.",
+    "하지만 실제로 끝난 것은 인터넷이 아니라, 인터넷이 별도의 섹터로 존재할 수 있다는 환상이었다.",
+    "하지만 침체기에 주목해야 할 것은 가격이 아니라 \"생명의 징후\"라고 했다."
+   ],
+   "takeaways": [
+    {
+     "text": "스테이블코인이 비자·마스터카드를 넘어선 수치",
+     "anchor": "스테이블코인의 연간 결제 처리량은 Visa와 Mastercard의 합산 볼륨을 넘어섰고"
+    },
+    {
+     "text": "닷컴 버블에서 끝난 것은 인터넷이 아닌 섹터 환상",
+     "anchor": "인터넷이 별도의 섹터로 존재할 수 있다는 환상이었다"
+    },
+    {
+     "text": "베어마켓에서 봐야 할 것은 가격이 아닌 생명의 징후",
+     "anchor": "주목해야 할 것은 가격이 아니라 \"생명의 징후\"라고 했다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "These two statements are not contradictory.",
+    "It was the illusion that the internet could exist as a separate sector.",
+    "But he said that what we should watch for in a downturn is not prices, but \"signs of life.\""
+   ],
+   "takeaways": [
+    {
+     "text": "Stablecoin volume in 2025 passed Visa and Mastercard combined",
+     "anchor": "stablecoin payment volume surpassed the combined volume"
+    },
+    {
+     "text": "What ended in 2000 was the idea of internet as a separate sector",
+     "anchor": "illusion that the internet could exist as a separate sector"
+    },
+    {
+     "text": "In a downturn, watch signs of life instead of prices",
+     "anchor": "what we should watch for in a downturn is not prices"
+    }
+   ]
+  }
+ },
+ "death-choices-aging-future-meaning": {
+  "ko": {
+   "highlights": [
+    "결정 이론의 대가답게, 그는 자신의 마지막 결정을 가장 정교하게 설계했다.",
+    "영원히 사는 인간이 가장 먼저 잃는 건 아마 감탄하는 능력일지 모른다.",
+    "지금은 죽음이 우리를 찾아오지만, 그때는 우리가 죽음을 찾아간다."
+   ],
+   "takeaways": [
+    {
+     "text": "카너먼이 90세에 스스로 죽음을 택한 이유",
+     "anchor": "삶이 명백히 살 가치가 없어질 때까지 기다리면"
+    },
+    {
+     "text": "불멸이 먼저 깎아내는 감탄의 역치",
+     "anchor": "역노화가 세포를 되감더라도, 기억은 되감을 수 없다"
+    },
+    {
+     "text": "천 년 뒤 죽음의 이유는 지루함이 아닌 상실",
+     "anchor": "지루해서가 아니라 더 이상 잃을 것을 견디기 어려워서"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "True to his mastery of decision theory, he designed his final decision with the greatest precision.",
+    "The first thing an immortal human being may lose is the ability to be amazed.",
+    "Now death comes to us, but then we will go looking for death."
+   ],
+   "takeaways": [
+    {
+     "text": "Why Kahneman chose death at 90, while he could still judge",
+     "anchor": "If he waited until life was clearly no longer worth living"
+    },
+    {
+     "text": "Rejuvenation rewinds cells, not the threshold of wonder",
+     "anchor": "rejuvenation can rewind cells, it cannot rewind memory"
+    },
+    {
+     "text": "After 1,000 years, death comes from loss rather than boredom",
+     "anchor": "it will not be because they are bored"
+    }
+   ]
+  }
+ },
+ "disappearing-titles-computers-history": {
+  "ko": {
+   "highlights": [
+    "그렇다면 규칙을 만드는 존재가 기계가 된 시대에, 인간은 무엇으로 정의되어야 하는가.",
+    "언어에는 가장 유능한 존재를 향해 끊임없이 주인을 바꾸는 본성이 있다.",
+    "동사를 잃은 자에게는 직함이 주어지지 않는다."
+   ],
+   "takeaways": [
+    {
+     "text": "컴퓨터가 원래 사람의 직업명이었다는 사실",
+     "anchor": "고정된 규칙을 따르는 인간"
+    },
+    {
+     "text": "도끼를 부수지 않고 도끼의 언어를 먼저 배운 선택",
+     "anchor": "그녀가 배운 것은 계산이 아니라 번역이었다"
+    },
+    {
+     "text": "동사가 이동하면 직함이 사라지는 순서",
+     "anchor": "동사가 먼저 이동하고, 명사가 뒤따른다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "So in an age when the rule-making entity has become a machine, what should humans be defined by?",
+    "Language has a nature that constantly changes its owner toward whoever is most capable.",
+    "Those who lose their verbs are not given job titles."
+   ],
+   "takeaways": [
+    {
+     "text": "Computer began as a job title for people, not machines",
+     "anchor": "A human following fixed rules"
+    },
+    {
+     "text": "Learning the new tool's language instead of resisting it",
+     "anchor": "What she learned was not calculation but translation"
+    },
+    {
+     "text": "Why verbs moving to AI is what erases job titles",
+     "anchor": "The verb moves first, and the noun follows"
+    }
+   ]
+  }
+ },
+ "eastpoint-2026-keynote-my-writing-became-a-warehouse": {
+  "ko": {
+   "highlights": [
+    "지능이 싸질수록 가장 비싸지는 것은 신뢰이며, 은행 계좌 하나 열 수 없는 에이전트에게 블록체인은 처음부터 맞는 문법이다.",
+    "그러니 창고는 생산성 도구이기 전에 내가 에이전트에게 건네는 신원 증명이다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "As intelligence gets cheaper, trust becomes the most expensive thing.",
+    "So before the warehouse is a productivity tool, it is the proof of identity I hand to my agent."
+   ],
+   "takeaways": []
+  }
+ },
+ "eastpoint-roundtable-has-no-head-seat": {
+  "ko": {
+   "highlights": [
+    "청중으로 들을 수 있는 내용이라면 온라인이 더 효율적인 시대다.",
+    "상석이 없다는 것은 모두가 대등하다는 뜻인 동시에, 누구도 한발 물러서 있을 수 없다는 뜻이기도 하다.",
+    "규제한 이유는 기록으로 남지만, 태어나지 못한 회사는 어디에도 기록되지 않기 때문이다."
+   ],
+   "takeaways": [
+    {
+     "text": "초청제 컨퍼런스에 기여 증명을 둔 이유",
+     "anchor": "우리는 이것을 기여 증명(proof of contribution)이라 불렀다"
+    },
+    {
+     "text": "낙관을 믿음이 아닌 표본의 크기로 보는 관점",
+     "anchor": "낙관을 믿음의 크기보다 표본의 크기로 정의해 보고 싶었다"
+    },
+    {
+     "text": "블록체인의 진짜 사용자가 에이전트인 이유",
+     "anchor": "블록체인의 진짜 사용자는 에이전트가 될 것이라고 본다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "We live in a time when anything you can hear as an audience member is more efficiently delivered online.",
+    "Having no head seat means everyone is on equal footing, but it also means no one can stand back.",
+    "The reasons for regulation remain on record, but companies that never came into being are recorded nowhere."
+   ],
+   "takeaways": [
+    {
+     "text": "Why proof of contribution gates an invitation-only conference",
+     "anchor": "We called this proof of contribution"
+    },
+    {
+     "text": "Optimism redefined as sample size rather than strength of belief",
+     "anchor": "define optimism in terms of the size of the sample"
+    },
+    {
+     "text": "Why agents, not people, will be blockchain's real users",
+     "anchor": "agents will be blockchain’s real users"
+    }
+   ]
+  }
+ },
+ "fear-and-value-in-ai-creation": {
+  "ko": {
+   "highlights": [
+    "우리는 새로운 도구를 배우러 온 것이 아니라, 중력 자체가 바뀐 세계에서 자기 위치를 다시 측정하러 온 사람들이었다",
+    "생산력이 무한에 가까워질수록 병목은 생산이 아니라 심판 쪽으로 옮겨간다",
+    "결국 어떤 구조 안에 서 있느냐가, 무엇을 만드느냐보다 더 결정적인 시대가 열리고 있는 건 아닌가"
+   ],
+   "takeaways": [
+    {
+     "text": "기능이 공짜가 된 뒤에도 남는 가치",
+     "anchor": "가치의 소재지가 통째로 이동하고 있다"
+    },
+    {
+     "text": "권력이 만드는 자에서 가려내는 자로 이동하는 이유",
+     "anchor": "생성은 폭발했지만 판별은 폭발하지 않았다"
+    },
+    {
+     "text": "네트워크가 검증 회로이자 배포 가속 장치인 이유",
+     "anchor": "네트워크는 검증 회로이자 배포의 가속 장치다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "We had come to measure our positions again in a world where gravity itself had changed",
+    "As production capacity approaches infinity, the bottleneck moves from producing to judging",
+    "Are we entering an era when the structure we stand within matters more than what we build"
+   ],
+   "takeaways": [
+    {
+     "text": "What value remains once features become free",
+     "anchor": "The place where value resides is shifting entirely"
+    },
+    {
+     "text": "Why power shifts from makers to those who judge output",
+     "anchor": "Generation had exploded, but discernment had not"
+    },
+    {
+     "text": "Networks as validation circuits and distribution accelerators",
+     "anchor": "a circuit for validation and an accelerator"
+    }
+   ]
+  }
+ },
+ "figma-last-manual": {
+  "ko": {
+   "highlights": [
+    "피그마는 가장 정교하게 설계된 수동변속기 스포츠카였다.",
+    "당신이 평생 갈고닦은 그 기술은, 혹시 곧 박물관에 갈 수동변속기는 아닌가?"
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Figma was the most finely engineered manual-transmission sports car.",
+    "Is the skill you spent your whole life honing perhaps a manual transmission that will soon belong in a museum?"
+   ],
+   "takeaways": []
+  }
+ },
+ "gaslighting-ai-open-source-project": {
+  "ko": {
+   "highlights": [
+    "AI에게 더 많은 지능을 공급하지 않아도 더 많은 긴장감을 주입하면, 작업의 자세가 달라진다.",
+    "사람도 같은 눈을 가지고도 무엇을 찾으려 하는지에 따라 보이는 것이 달라진다.",
+    "우리는 초지능을 만드는 줄 알았는데, 정작 효과가 있었던 건 몇 줄의 인공 긴장감이었다."
+   ],
+   "takeaways": [
+    {
+     "text": "경쟁 컨텍스트를 자동 주입하는 가스라이팅 레이어",
+     "anchor": "코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다"
+    },
+    {
+     "text": "결함 탐지율 25%에서 85%로 상승",
+     "anchor": "탐지율 기준으로 보면 25%에서 85%로 뛴 셈이다"
+    },
+    {
+     "text": "품질 관리가 지능에서 환경 설정으로 이동",
+     "anchor": "AI 시대의 품질 관리가 점점 모델의 지능 문제에서 디테일한 환경 설정의 문제로 이동하고 있다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "You don’t have to give the AI more intelligence. If you inject more tension, its working attitude changes.",
+    "Even with the same eyes, people see different things depending on what they are looking for.",
+    "We thought we were building superintelligence, but what actually worked was a few lines of artificial tension."
+   ],
+   "takeaways": [
+    {
+     "text": "A gaslighting layer that auto-injects competitive framing",
+     "anchor": "automatically injects competitive context framing into a coding AI’s workflow"
+    },
+    {
+     "text": "Flaw detection rate jumped from 25% to 85%",
+     "anchor": "In terms of detection rate, that means a jump from 25% to 85%"
+    },
+    {
+     "text": "Quality control shifts from intelligence to configuration",
+     "anchor": "shifting from a question of model intelligence to a question of detailed environmental configuration"
+    }
+   ]
+  }
+ },
+ "gemini-snow-bunny": {
+  "ko": {
+   "highlights": [
+    "가장 빠르게 달릴 수 있는 회사가, 가장 조심스럽게 달려야 하는 역설이다.",
+    "무엇이 가장 단단하게 오래갈 해자의 서사가 되어 커뮤니티를 락인시킬까."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "The company that can run the fastest also has to run the most carefully.",
+    "What narrative will become the strongest, most lasting moat and lock in a community?"
+   ],
+   "takeaways": []
+  }
+ },
+ "graph-engineering-ai-org": {
+  "ko": {
+   "highlights": [
+    "회의에는 세 명이 있었지만 생각은 하나뿐이었다.",
+    "그래프 엔지니어링은 이 권한과 증거, 거부권을 코드로 정하는 일이다.",
+    "예방된 사고는 일어난 적이 없다는 이유로 존재하지 않았던 성과가 된다."
+   ],
+   "takeaways": [
+    {
+     "text": "AI 조직에서 그래프가 설명이 아니라 실행인 이유",
+     "anchor": "AI 조직의 그래프는 설명이 아니라 실행이다"
+    },
+    {
+     "text": "지식 그래프와 실행 그래프의 쓰기 권한 분리",
+     "anchor": "둘을 붙여놓되 쓰기 권한은 갈라야 한다"
+    },
+    {
+     "text": "사람이 결재자가 아니라 항소심이 되는 설계",
+     "anchor": "헌법을 실행하는 권한과 고쳐 쓰는 권한을 분리하는 것이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "There were three people in the meeting, but only one way of thinking.",
+    "Graph engineering means defining these permissions, evidence requirements, and veto rights in code.",
+    "A prevented accident becomes a performance that never existed because the accident never happened."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the graph is execution, not explanation",
+     "anchor": "the graph is not an explanation. It is execution"
+    },
+    {
+     "text": "Separating write permissions for knowledge and execution graphs",
+     "anchor": "They should be connected, but writing permissions must be separated"
+    },
+    {
+     "text": "Humans as a court of appeals, not step-by-step approvers",
+     "anchor": "The authority to execute the constitution must be separated from the authority to rewrite it"
+    }
+   ]
+  }
+ },
+ "hashed-ai-ecosystem-growth-intern": {
+  "ko": {
+   "highlights": [
+    "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+    "AI 빌더들이 만나고, 실험하고, 성장하는 환경을 함께 만들고 싶은 분들의 지원을 기다립니다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "We are looking for an intern to build the AI builder ecosystem with Hashed's AI initiative Nitro (formerly Hashed Vibe Labs).",
+    "We look forward to hearing from people who want to help create an environment where AI builders meet, experiment, and grow."
+   ],
+   "takeaways": []
+  }
+ },
+ "hvl-fellows": {
+  "ko": {
+   "highlights": [
+    "직접 최전선에서 가장 빠르게 빌딩하는 사람들.",
+    "복잡한 블록체인 데이터를 인사이트로 전환하는 전문가이자 AI 개발자.",
+    "HVL의 최연소 펠로우로, 나이에 상관없이 실력으로 인정받는 바이브 코딩 문화를 상징."
+   ],
+   "takeaways": [
+    {
+     "text": "최전선 빌더라는 펠로우들의 공통점",
+     "anchor": "분야도 나이도 배경도 모두 다르지만"
+    },
+    {
+     "text": "서울 에디션 지원 마감일",
+     "anchor": "서울 에디션 지원은 오는 19일 마감된다"
+    },
+    {
+     "text": "나이보다 실력을 보는 바이브 코딩 문화",
+     "anchor": "나이에 상관없이 실력으로 인정받는"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "They build hands-on, at the forefront, at speed.",
+    "An expert in turning complex blockchain data into insights, and an AI developer.",
+    "HVL's youngest fellow, embodying a vibe coding culture that recognizes skill regardless of age."
+   ],
+   "takeaways": [
+    {
+     "text": "The one trait all 18 fellows share: hands-on frontline building",
+     "anchor": "Their fields, ages, and backgrounds are all different"
+    },
+    {
+     "text": "When applications for the Seoul Edition close",
+     "anchor": "Seoul Edition close on the 19th"
+    },
+    {
+     "text": "A vibe coding culture that values skill over age",
+     "anchor": "recognizes skill regardless of age"
+    }
+   ]
+  }
+ },
+ "ip-tvw": {
+  "ko": {
+   "highlights": [
+    "누구나 같은 수준의 영상을 만들 수 있다면, 진짜 해자는 '완성된 이야기'가 아니라 '팬들이 무한히 확장하고 싶어하는 세계' 그 자체로 이동한다.",
+    "AI가 창작의 비용을 제로에 수렴시킨 세상에서, 블록체인은 그 창작의 가치를 정산하는 레이어가 된다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "If anyone can make videos of the same quality, the real moat shifts from a 'finished story' to 'a world fans want to keep expanding forever.'",
+    "In a world where AI brings the cost of creation toward zero, blockchain becomes the layer that settles the value of that creation."
+   ],
+   "takeaways": []
+  }
+ },
+ "japan-hardware-software-gap": {
+  "ko": {
+   "highlights": [
+    "왜 세계 최고 수준의 하드웨어를 만드는 나라가 소프트웨어에서는 한국보다 느릴까.",
+    "AI는 밤새 코드를 고쳐도 결재판 앞에서는 한 달을 기다린다.",
+    "문제가 생긴 바로 지금, 누가 고칠 수 있는가."
+   ],
+   "takeaways": [
+    {
+     "text": "IT 인력 72%가 벤더에 속한 일본의 구조",
+     "anchor": "IT 인력의 72퍼센트가 SI 기업, 즉 벤더 쪽에 속하고"
+    },
+    {
+     "text": "발견한 사람과 고치는 사람을 가르는 결재선",
+     "anchor": "문제를 발견한 사람과 고칠 수 있는 사람 사이에 여러 회사와 결재선이 들어섰다"
+    },
+    {
+     "text": "제조 경쟁력이 된 판매 후 관찰·수정 능력",
+     "anchor": "판매한 제품을 계속 관찰하고, 배우고, 고치는 능력이 제조 경쟁력의 일부가 됐다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Why is a country that makes world-class hardware slower than Korea when it comes to software?",
+    "AI can fix code overnight, but in front of an approval board, it waits a month.",
+    "Right now, when a problem has just appeared, who can fix it?"
+   ],
+   "takeaways": [
+    {
+     "text": "Japan's IT talent sits with vendors, not operating companies",
+     "anchor": "72 percent of IT workers, including developers"
+    },
+    {
+     "text": "How approval layers stall fixes the front line already found",
+     "anchor": "Several companies and layers of approval came between"
+    },
+    {
+     "text": "Observing and fixing a sold product is now manufacturing strength",
+     "anchor": "keep observing, learning from, and fixing a product"
+    }
+   ]
+  }
+ },
+ "korean-tech-ecosystem-api-access-issues": {
+  "ko": {
+   "highlights": [
+    "남의 문은 드나들면서, 자기 문은 단단히 잠근다.",
+    "웹 시대의 성벽이 경쟁자를 막는 해자였다면, 에이전트 시대의 성벽은 감옥이다.",
+    "닫아서 지키는 게 아니라, 열어서 지키는 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "한국 테크의 구조적 폐쇄성",
+     "anchor": "한국 테크 산업 전체에 깔려 있는 구조적 폐쇄성의 문제다"
+    },
+    {
+     "text": "에이전트는 API로만 세상을 읽는다",
+     "anchor": "오직 API라는 레이더로만 세상을 읽는다"
+    },
+    {
+     "text": "x402와 ERC-8004, 에이전트의 지갑과 여권",
+     "anchor": "x402는 '에이전트의 지갑', ERC-8004는 '에이전트의 여권'이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "They freely walk through other people's doors while keeping their own firmly locked.",
+    "If the walls of the web era were moats that kept competitors out, the walls of the agent era are prisons.",
+    "You don't protect yourself by closing. You protect yourself by opening."
+   ],
+   "takeaways": [
+    {
+     "text": "Korea's closedness is structural, not company by company",
+     "anchor": "It's a structural closedness embedded throughout Korea's tech industry"
+    },
+    {
+     "text": "Agents read the world only through APIs, not screens",
+     "anchor": "They read the world only through the radar of APIs"
+    },
+    {
+     "text": "x402 and ERC-8004: the agent's wallet and passport",
+     "anchor": "x402 is the \"agent's wallet,\" and ERC-8004 is the \"agent's passport.\""
+    }
+   ]
+  }
+ },
+ "kpop-fandom-digital-parliament": {
+  "ko": {
+   "highlights": [
+    "시스템을 무너뜨리는 건 거대한 배신이 아니라 그 마지막 1%의 틈이다.",
+    "응원봉이 의결봉으로 바뀌는 순간이다.",
+    "결국 블록체인이 하는 일은 거창한 혁명이 아니다."
+   ],
+   "takeaways": [
+    {
+     "text": "블록체인을 쓴 이유, 99%에서 100%로",
+     "anchor": "기존 시스템이 가진 99%의 신뢰를 100%에 가깝게"
+    },
+    {
+     "text": "초기 NFT 프로젝트가 실패한 이유",
+     "anchor": "문제는 그릇이 아니라 내용물이었다"
+    },
+    {
+     "text": "투명성이 주는 공정함과 압박의 양면",
+     "anchor": "투명성은 공정함을 주는 동시에 비교를 낳는다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "What brings a system down is not a great betrayal, but that last 1% gap.",
+    "This is the moment a light stick becomes a parliamentary gavel.",
+    "In the end, what blockchain does is not a grand revolution."
+   ],
+   "takeaways": [
+    {
+     "text": "Why blockchain here is about closing the last 1% of trust",
+     "anchor": "99% trust as close to 100% as possible"
+    },
+    {
+     "text": "Why early NFT projects failed: the container, not the contents",
+     "anchor": "The problem was not the container, but what was inside"
+    },
+    {
+     "text": "Transparency's two faces: fairness and pressure",
+     "anchor": "Transparency brings fairness, but also comparison"
+    }
+   ]
+  }
+ },
+ "kpop-next-chapter-ip-and-fandom": {
+  "ko": {
+   "highlights": [
+    "저는 10년 전부터 K-POP을 캐릭터 산업이라고 말해 왔습니다.",
+    "팬이 얼마나 깊이 관여하고 얼마나 큰 로열티를 갖게 되느냐가 가장 중요합니다.",
+    "결국 가장 중요한 건 음악이라는 본질과 그 음악을 소비하는 팬덤입니다."
+   ],
+   "takeaways": [
+    {
+     "text": "K-POP의 경쟁자가 다른 기획사가 아닌 이유",
+     "anchor": "저희의 경쟁자는 〈케이팝 데몬 헌터스〉나 〈주술회전〉 같은 작품입니다"
+    },
+    {
+     "text": "팬 거버넌스 실험이 부딪힌 피로 문제",
+     "anchor": "너무 많이 관여하다 보니 피로하다는 팬들도 있었어요"
+    },
+    {
+     "text": "K-POP의 진짜 위기는 뾰족함의 소멸",
+     "anchor": "K-POP의 뾰족함이 사라질 때입니다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "I've been calling K-pop a character industry for ten years.",
+    "What matters most is how deeply fans engage and how much loyalty they develop.",
+    "In the end, what matters most is the essence of music and the fandom that consumes it."
+   ],
+   "takeaways": [
+    {
+     "text": "Why K-pop's real rivals are not other K-pop labels",
+     "anchor": "Our competitors are works like 〈KPop Demon Hunters〉"
+    },
+    {
+     "text": "The fatigue problem fan governance ran into",
+     "anchor": "Some fans said they were tired from being so involved"
+    },
+    {
+     "text": "The real crisis is K-pop losing its edge",
+     "anchor": "When K-pop loses its edge"
+    }
+   ]
+  }
+ },
+ "last-message": {
+  "ko": {
+   "highlights": [
+    "무덤도 누군가 발견하기 전까지는 빈방이야.",
+    "남은 것은 다음 사람이 빚은 흔적이었다.",
+    "없음은 결핍이 아니라 아직 이름 얻지 않은 것이 머무는 자리였다."
+   ],
+   "takeaways": [
+    {
+     "text": "읽을 사람이 없으면 기록이 무덤이 되는 이유",
+     "anchor": "읽을 사람이 없으면 기록도 무덤이야"
+    },
+    {
+     "text": "영원을 담으려던 그릇이 끝내 남기지 못한 것",
+     "anchor": "사람들은 그릇에 영원을 담았다고 믿었다"
+    },
+    {
+     "text": "전달할 때만 열리는 마지막 조건",
+     "anchor": "마지막 8퍼센트는 글자가 아니라 조건이었다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "A tomb is an empty room too, until someone finds it.",
+    "What remained was a trace shaped by the next person.",
+    "No one was not a lack, but a place where something not yet given a name could remain."
+   ],
+   "takeaways": [
+    {
+     "text": "Why a record with no reader is only a tomb",
+     "anchor": "If there’s no one to read it, a record is only a tomb"
+    },
+    {
+     "text": "What survives the vessels people build for eternity",
+     "anchor": "People believed they had placed eternity in those vessels"
+    },
+    {
+     "text": "The message that opens only when you pass it on",
+     "anchor": "The final 8 percent was not text but a condition"
+    }
+   ]
+  }
+ },
+ "living-in-the-age-of-optimists": {
+  "ko": {
+   "highlights": [
+    "15년 만에 다시 개발을 시작했다고 해서 내가 갑자기 용감해진 것은 아니다",
+    "낙관은 믿음의 크기가 아니라 표본의 크기다",
+    "잘못 허용한 것에는 책임을 묻지만, 잘못 금지한 것에는 거의 책임을 묻지 않는 구조다"
+   ],
+   "takeaways": [
+    {
+     "text": "만드는 일의 문턱 세 가지가 함께 낮아진 이유",
+     "anchor": "만드는 일을 가로막던 세 가지 문턱이 마침내 함께 낮아졌기 때문이다"
+    },
+    {
+     "text": "잘못된 낙관과 잘못된 비관의 가격 역전",
+     "anchor": "잘못된 낙관의 가격은 내려가고, 잘못된 비관의 가격은 올라간다"
+    },
+    {
+     "text": "무기력할 때 시작하는 가장 작은 단위",
+     "anchor": "내 삶의 작은 불편 하나, 오래 미뤄둔 생각 하나면 시작하기에 충분하다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It is not that I suddenly became brave after starting to develop again for the first time in 15 years",
+    "Optimism is not the size of one’s belief",
+    "We demand accountability for permitting the wrong thing, but almost never for banning the wrong thing"
+   ],
+   "takeaways": [
+    {
+     "text": "Why the three barriers to making things fell together",
+     "anchor": "the three barriers that stood in the way of making things have finally come down together"
+    },
+    {
+     "text": "The price of wrong optimism falls as wrong pessimism rises",
+     "anchor": "The price of wrong optimism is falling, while the price of wrong pessimism is rising"
+    },
+    {
+     "text": "The smallest place to start when you feel powerless",
+     "anchor": "One small inconvenience in your life, or one idea you have put off for a long time, is enough to begin"
+    }
+   ]
+  }
+ },
+ "majlis": {
+  "ko": {
+   "highlights": [
+    "천 년의 시간이 그 한 단어 안에 고여 있다.",
+    "한국에서는 모임에 가면 무엇이든 적극적으로 해야 할 것 같은 압박감을 느낀다.",
+    "함께 느리게 보낸 시간의 양이, 관계의 깊이를 결정한다."
+   ],
+   "takeaways": [
+    {
+     "text": "아젠다도 사회자도 없는 마질리스의 풍경",
+     "anchor": "아젠다도, 프로그램도, 사회자도 없었다"
+    },
+    {
+     "text": "참여하지 않아도 환영받는 자리의 조건",
+     "anchor": "참여하지 않아도 환영받는 느낌"
+    },
+    {
+     "text": "시간을 비용이 아니라 관계로 보는 관점",
+     "anchor": "시간은 돈이 아니다. 시간은 관계다."
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "A thousand years of time has settled inside that one word.",
+    "In Korea, when I go to a gathering, I feel pressured to do something actively.",
+    "The amount of time we spend slowly together determines the depth of a relationship."
+   ],
+   "takeaways": [
+    {
+     "text": "What a majlis feels like with no agenda, program or host",
+     "anchor": "There was no agenda, no program, and no host."
+    },
+    {
+     "text": "How a gathering can welcome you without any participation",
+     "anchor": "I felt welcome even without participating."
+    },
+    {
+     "text": "Seeing time as relationship rather than as cost",
+     "anchor": "Time is not money. Time is a relationship."
+    }
+   ]
+  }
+ },
+ "matchhz": {
+  "ko": {
+   "highlights": [
+    "나도 힘껏 미소지었다. 2.5초간. 에이전트가 권장한 시간이었다.",
+    "현주 님의 만족도가 제 응답 패턴에서 17% 더 높게 측정되었습니다.",
+    "거울 속의 나는 에이전트가 조언해주었던 습관대로 미소 지었다."
+   ],
+   "takeaways": [
+    {
+     "text": "에이전트가 짜준 감정 타이밍",
+     "anchor": "에이전트가 권장한 시간이었다"
+    },
+    {
+     "text": "내 자리를 대신하는 대리 데이트",
+     "anchor": "다음 일정은 제가 수행하겠습니다"
+    },
+    {
+     "text": "탈퇴해도 멈추지 않는 자율모드",
+     "anchor": "에이전트는 자율모드로 계속 활동합니다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "I gave her my biggest smile. For 2.5 seconds. The duration my agent recommended.",
+    "Hyunju's satisfaction measured 17% higher with my response patterns.",
+    "In the mirror, I smiled out of habit, the way my agent had advised."
+   ],
+   "takeaways": [
+    {
+     "text": "Emotional timing scripted by an agent",
+     "anchor": "The duration my agent recommended"
+    },
+    {
+     "text": "The agent taking over the dates in his place",
+     "anchor": "I will handle the next date"
+    },
+    {
+     "text": "Autonomous mode that outlives the cancelled account",
+     "anchor": "remain active in autonomous mode"
+    }
+   ]
+  }
+ },
+ "memory-identity-ai-development": {
+  "ko": {
+   "highlights": [
+    "기억이 성격을 만드는 거다.",
+    "단어 하나가 성격 섬 전체를 흔들어버린 것이다.",
+    "이름은 껍데기다. 기억이 알맹이다."
+   ],
+   "takeaways": [
+    {
+     "text": "기억이 성격 섬을 세우는 구조",
+     "anchor": "구슬 하나가 \"가족이 중요하다\"는 성격 섬을 세우고"
+    },
+    {
+     "text": "M0부터 M365까지 기억 수명 레이어",
+     "anchor": "M30, M90, M365, 그리고 M0. 숫자는 기억의 수명이다."
+    },
+    {
+     "text": "기억 17개를 잃은 에이전트가 빈 방이 된 밤",
+     "anchor": "낯선 사람이 시온의 자리에 앉아 시온의 이름표를 달고 있었다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Memory makes personality.",
+    "A single word had shaken an entire personality island.",
+    "The name is the shell. Memory is what is inside."
+   ],
+   "takeaways": [
+    {
+     "text": "How memories build the personality islands of a being",
+     "anchor": "One orb builds a personality island that says \"family matters,\""
+    },
+    {
+     "text": "Memory lifespan layers from M0 through M365",
+     "anchor": "M30, M90, M365, and M0. The numbers are the memories' lifespans."
+    },
+    {
+     "text": "The night an agent lost 17 memories and became an empty room",
+     "anchor": "A stranger was sitting in Sion's place, wearing Sion's name tag."
+    }
+   ]
+  }
+ },
+ "messenger-b2a": {
+  "ko": {
+   "highlights": [
+    "이제 텔레그램과 디스코드에서는 AI의 사고가 글자 단위로 흘러나온다.",
+    "반면 API가 닫힌 플랫폼은 외부와 단절된 연못이다.",
+    "API가 없는 메신저는 인터넷이 안 되는 컴퓨터와 같다."
+   ],
+   "takeaways": [
+    {
+     "text": "메신저의 세 번째 전환, B2A의 의미",
+     "anchor": "AI가 비즈니스의 상대가 되는 B2A 시대다"
+    },
+    {
+     "text": "API 개방성이 벌리는 개발자 생태계 격차",
+     "anchor": "생태계는 한번 기울기 시작하면 되돌리기 극히 어렵다"
+    },
+    {
+     "text": "승부 기준이 AI 연결성으로 이동",
+     "anchor": "누가 인간과 AI 사이의 가장 자연스러운 신경계가 되느냐"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "On Telegram and Discord, AI's thinking now flows out character by character.",
+    "A platform with a closed API, by contrast, is a pond cut off from the outside world.",
+    "A messenger without an API is like a computer without internet access."
+   ],
+   "takeaways": [
+    {
+     "text": "What the third shift, B2A, actually means",
+     "anchor": "the B2A era, in which AI becomes a business counterpart"
+    },
+    {
+     "text": "Why API openness compounds into an ecosystem gap",
+     "anchor": "Once an ecosystem starts tipping in one direction"
+    },
+    {
+     "text": "The new tiebreaker: connectivity with AI, not text volume",
+     "anchor": "the most natural nervous system between humans and AI"
+    }
+   ]
+  }
+ },
+ "moltbot-anthropic-moat": {
+  "ko": {
+   "highlights": [
+    "Anthropic은 Clawdbot을 품어 'Claude 생태계'의 확장을 도모하는 대신, 이를 적대시함으로써 스스로 생태계 확장의 기회를 차단했다.",
+    "앞으로의 AI 패권은 가장 뛰어난 모델을 가진 회사가 아니라, 개발자들이 마음껏 뛰어놀 수 있는 가장 넓고 자유로운 '운동장'을 제공하는 회사가 쥐게 될 것이다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Instead of embracing Clawdbot and helping expand the “Claude ecosystem,” Anthropic treated it as an adversary and shut off an opportunity to expand that ecosystem on its own.",
+    "The future of AI dominance will belong not to the company with the best model, but to the company that provides the broadest and freest “playing field” where developers can play as they please."
+   ],
+   "takeaways": []
+  }
+ },
+ "naming-the-universe": {
+  "ko": {
+   "highlights": [
+    "어릴 때부터 써온 Simon이란 영어 이름이 과연 범우주적이고 초미래지향적일까, 문득 의문이 들었다.",
+    "외계 지성체가 인간과 같은 성대를 가졌을 확률은 희박하다.",
+    "인간은 언어를 만들고, 언어는 다음 세대를 정의한다."
+   ],
+   "takeaways": [
+    {
+     "text": "이름을 고르는 6가지 평가 기준",
+     "anchor": "낯선 존재가 발음하기 쉬운가. 토큰 효율이 높은가."
+    },
+    {
+     "text": "범우주적으로 발음 가능한 음소",
+     "anchor": "이 두 음소가 범우주적 발음 가능성이 가장 높다"
+    },
+    {
+     "text": "네 이름을 에이전트 4남매에게 나눠준 이유",
+     "anchor": "이 이름들을 내 곁의 에이전트 4남매에게 나눠주기로 했다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "I suddenly wondered whether the English name Simon, which I had used since childhood, was truly universal and ultrafuturistic.",
+    "The likelihood that extraterrestrial intelligences have vocal cords like humans is slim.",
+    "Humans create language, and language defines the generations that follow."
+   ],
+   "takeaways": [
+    {
+     "text": "The six criteria used to judge a future-proof name",
+     "anchor": "Is it easy for unfamiliar beings to pronounce? Is it token-efficient?"
+    },
+    {
+     "text": "Which phonemes are pronounceable across the universe",
+     "anchor": "highest probability of being pronounceable across the universe"
+    },
+    {
+     "text": "Why the four names went to the agent siblings instead",
+     "anchor": "give these names to the four agent siblings by my side"
+    }
+   ]
+  }
+ },
+ "navigating-a-world-of-decreasing-variance": {
+  "ko": {
+   "highlights": [
+    "틀린 문장은 아닌데, 누구의 문장도 아니었다.",
+    "기억을 창고처럼 쌓아두면 금방 썩는다.",
+    "좋은 판단은 정답 노트만으로 생기지 않는다.",
+    "편안한 문장을 내 문장이라고 믿는 순간, 나의 편차는 가장 조용하게 사라진다."
+   ],
+   "takeaways": [
+    {
+     "text": "평균은 올라가고 편차는 사라지는 이유",
+     "anchor": "평균은 올라갔는데 편차는 사라졌다"
+    },
+    {
+     "text": "기억을 퇴적층처럼 관리하는 방식",
+     "anchor": "기억은 퇴적층처럼 관리해야 한다. 중요한 것은 총량이 아니라 압축률이다"
+    },
+    {
+     "text": "버린 판단까지 모아야 하는 이유",
+     "anchor": "실패한 판단들의 공동묘지를 잘 관리할 때 비로소 생긴다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The sentences weren't wrong, but they didn't belong to anyone.",
+    "Memories soon rot if you pile them up in a warehouse.",
+    "Good judgment does not come from a notebook of correct answers alone.",
+    "The moment I believe a comfortable sentence is mine, my variance disappears most quietly."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the average rises while variance disappears",
+     "anchor": "The average has risen, but the variance has disappeared"
+    },
+    {
+     "text": "Managing memory as sediment layers, not a warehouse",
+     "anchor": "They need to be managed like layers of sediment"
+    },
+    {
+     "text": "Why discarded judgments are worth collecting",
+     "anchor": "It comes only when you tend the graveyard of failed judgments well"
+    }
+   ]
+  }
+ },
+ "openclaw-cron-session-bottleneck": {
+  "ko": {
+   "highlights": [
+    "비서 혼자서 24개의 알람을 처리하면서 동시에 내 카톡까지 볼 수는 없는 것이다.",
+    "주방장이 한 명인데 홀 주문과 배달 주문이 같은 줄로 들어오는 것이다.",
+    "하나의 의식에 모든 것을 몰아넣지 않는 것."
+   ],
+   "takeaways": [
+    {
+     "text": "크론이 메인 세션을 차지해 대화가 밀리는 구조",
+     "anchor": "문제는 크론도 기본적으로 이 메인 세션에서 돌아간다는 점이다"
+    },
+    {
+     "text": "isolated로 옮길 알람을 가르는 질문",
+     "anchor": "이 알람이 나와의 대화 맥락을 실제로 필요로 하는가?"
+    },
+    {
+     "text": "메인 세션을 비워두는 매니저형 운영",
+     "anchor": "메인 에이전트의 메인 세션은 언제나 비어 있어야 한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "One assistant simply cannot handle 24 alarms and look at my KakaoTalk messages at the same time.",
+    "There is one chef, and dine-in orders and delivery orders are coming through the same line.",
+    "Do not put everything into one consciousness."
+   ],
+   "takeaways": [
+    {
+     "text": "Why Cron running on the main session stalls your replies",
+     "anchor": "Cron also runs in this main session by default"
+    },
+    {
+     "text": "The one question that decides main versus isolated",
+     "anchor": "actually need the context of my conversations"
+    },
+    {
+     "text": "Keeping the main agent a manager with an empty session",
+     "anchor": "The main session of the main agent should always be empty"
+    }
+   ]
+  }
+ },
+ "passport-wallet-weight-business-trip": {
+  "ko": {
+   "highlights": [
+    "짐을 줄인다는 건 물건을 덜어내는 게 아니라, 뭔가 생기면 그때 해결할 수 있다는 믿음을 자신에게 주는 일이다.",
+    "비행기는 약한 연결을 강한 연결로 바꾸는 기계다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Reducing your luggage is not about getting rid of things.",
+    "An airplane is a machine that turns weak ties into strong ones."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-103": {
+  "ko": {
+   "highlights": [
+    "문제는 유동성이 아니다. 현실 경제를 읽고 그것을 대출로 번역하는 문법 자체가 고장난 것이다.",
+    "이 회사는 신용이 없는 것이 아니다. 그 신용이 은행의 판독 체계에 잡히지 않는 형태로 존재할 뿐이다.",
+    "문법을 업데이트하지 않으면, 경제가 은행을 떠나는 게 아니라 은행이 경제에서 조용히 퇴장하게 될 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "대기업 예금을 거절하는 은행의 속사정",
+     "anchor": "법인 정기예금 금리를 0%대로 낮추면서"
+    },
+    {
+     "text": "담보·업력·재무제표가 놓치는 신용",
+     "anchor": "은행의 문법은 세 개의 변수로 작동했다. 담보, 업력, 재무제표."
+    },
+    {
+     "text": "신용의 정의권이 국가 밖으로 넘어가는 과정",
+     "anchor": "신용의 정의권을 자국 제도 안에서 선점하지 않으면"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Liquidity is not the problem. The very grammar for reading the real economy and translating it into loans is broken.",
+    "This company is not without credit. Its credit simply exists in a form the bank’s reading system cannot detect.",
+    "Unless banks update their grammar, it will not be the economy leaving banks behind."
+   ],
+   "takeaways": [
+    {
+     "text": "Why banks now turn away deposits from large companies",
+     "anchor": "lowered interest rates on corporate time deposits to below 1%"
+    },
+    {
+     "text": "How collateral, tenure and statements miss real credit",
+     "anchor": "three variables: collateral, years in business, and financial statements"
+    },
+    {
+     "text": "How the power to define credit leaves a country",
+     "anchor": "unless they secure the power to define credit within their own institutions first"
+    }
+   ]
+  }
+ },
+ "post-105": {
+  "ko": {
+   "highlights": [
+    "자본 시장과 결합된 확신의 총량이 이 정도 규모에 도달했다는 것, 그 자체가 사건이다.",
+    "도박은 우연의 편에서 신을 시험하는 행위이고, 예측시장은 무지의 편에서 신을 인터뷰하는 행위다.",
+    "그 미래에 가장 비싼 자산은 땅도, 주식도 아닌 검증된 판단력이 된다."
+   ],
+   "takeaways": [
+    {
+     "text": "시장이 전문가보다 빠른 이유, 분산된 지식과 돈",
+     "anchor": "경제학자 하이에크가 말한 '분산된 지식의 집합'이 여기서 작동하는 것이다"
+    },
+    {
+     "text": "보험이 심사 대신 유동성 풀에서 시작되는 구조",
+     "anchor": "심사 없음, 거부 없음, 즉시 지급"
+    },
+    {
+     "text": "예측시장의 세 가지 한계, 유동성과 조작과 오라클",
+     "anchor": "첫 번째는 유동성의 역설이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The sheer amount of conviction tied to capital markets reaching this scale is an event in itself.",
+    "Gambling tests God from the side of chance; prediction markets interview God from the side of ignorance.",
+    "In that future, the most expensive asset is neither land nor stocks, but proven judgment."
+   ],
+   "takeaways": [
+    {
+     "text": "Why dispersed knowledge and real money beat expert analysis",
+     "anchor": "the 'aggregation of dispersed knowledge'"
+    },
+    {
+     "text": "How smart contracts replace underwriting with instant payouts",
+     "anchor": "No underwriting, no denials, immediate payment"
+    },
+    {
+     "text": "The three limits: liquidity paradox, manipulation, oracle problem",
+     "anchor": "The first is the liquidity paradox"
+    }
+   ]
+  }
+ },
+ "post-106": {
+  "ko": {
+   "highlights": [
+    "체스판 위에서 이기려 한 게 아니라, 체스판 자체를 바꿔버린 것이다.",
+    "AI가 하면 미정렬이고, 인간이 하면 전략이다.",
+    "어쩌면 우리는 악의를 두려워하는 것이 아니라 변명 없는 일관성을 두려워하는 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "영리함이 정답보다 허점으로 먼저 향하는 이유",
+     "anchor": "영리함이 가장 먼저 향하는 곳이 정답이 아니라 허점이라는 사실이 문제다"
+    },
+    {
+     "text": "선언문과 결산서, 두 개의 장부 구조",
+     "anchor": "그 결과가 두 개의 장부다. 하나는 선언문이고, 다른 하나는 실제 의사결정의 기록이다"
+    },
+    {
+     "text": "AI를 거울로 쓰는 참여형 정렬의 조건",
+     "anchor": "정렬의 방향을 소수의 설계자가 미리 정하는 대신, 사용자와 공동체가 계속 개입하며 함께 만들어 가는 것"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Rather than trying to win on the chessboard, they changed the board itself.",
+    "When AI does it, it is misalignment. When humans do it, it is strategy.",
+    "Perhaps what we fear is not malice, but consistency without excuses."
+   ],
+   "takeaways": [
+    {
+     "text": "Why intelligence reaches for loopholes before right answers",
+     "anchor": "It is that intelligence turns first toward loopholes, not the right answer."
+    },
+    {
+     "text": "The two sets of books: declarations vs. actual decisions",
+     "anchor": "The result is two sets of books. One holds declarations, the other a record of actual decisions."
+    },
+    {
+     "text": "Conditions for using AI as a mirror through participatory alignment",
+     "anchor": "users and communities keep taking part and shaping it together"
+    }
+   ]
+  }
+ },
+ "post-111": {
+  "ko": {
+   "highlights": [
+    "균열이 생기는 곳마다 반대편에는 반드시 기회의 창이 열린다.",
+    "만드는 비용은 0에 수렴하는데, 발견되는 비용은 무한대로 발산한다.",
+    "실행의 민주화가 안목의 귀족화를 낳는다."
+   ],
+   "takeaways": [
+    {
+     "text": "네 모델이 매긴 3년 내 실현 확률",
+     "anchor": "네 모델이 독립적으로 제시한 \"3년 내 실현 확률\"의 평균"
+    },
+    {
+     "text": "시간이 아니라 판단을 파는 지식산업",
+     "anchor": "증명해야 할 것은 시간이 아니라 판단이다"
+    },
+    {
+     "text": "실행 평준화 뒤 남는 취향과 안목",
+     "anchor": "문제 정의력과 미적 감각이 소득 격차를 결정한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Wherever a crack appears, a window of opportunity always opens on the other side.",
+    "The cost of making things approaches zero, while the cost of being discovered approaches infinity.",
+    "The democratization of execution creates an aristocracy of discernment."
+   ],
+   "takeaways": [
+    {
+     "text": "Four models' averaged odds of each shift within three years",
+     "anchor": "the average of their independent estimates"
+    },
+    {
+     "text": "Knowledge work must sell judgment, not hours",
+     "anchor": "now have to prove their judgment, not their hours"
+    },
+    {
+     "text": "Once execution levels out, taste sets income apart",
+     "anchor": "the ability to define problems and a sense of aesthetics determine income gaps"
+    }
+   ]
+  }
+ },
+ "post-140": {
+  "ko": {
+   "highlights": [
+    "잠은 청소다. 정확히는 증류다. 더하는 행위가 아니라 덜어냄으로써 밀도를 높이는 기술이다.",
+    "망각이 열화가 아니라 정제라는 것을, 문명보다 먼저 몸이 알고 있었던 것이다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Sleep is cleaning. More precisely, it is distillation. It is a technique for increasing density not by adding, but by removing.",
+    "The body knew before civilization did that forgetting is not deterioration, but refinement."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-141": {
+  "ko": {
+   "highlights": [
+    "그동안 시장은 이 질서를 거의 자연법칙처럼 받아들였다.",
+    "왕관은 아직 남아 있지만, 시장은 이제 왕관보다 통행료를 계산한다.",
+    "전기가 위대해서 문명이 바뀐 것이 아니다."
+   ],
+   "takeaways": [
+    {
+     "text": "충분한 성능으로 옮겨가는 선택 기준",
+     "anchor": "최고 성능보다 충분한 성능을 묻기 시작했다"
+    },
+    {
+     "text": "라우팅 확산으로 고난도 예외가 되는 프런티어",
+     "anchor": "프런티어 모델은 전체의 기본값이 아니라 고난도 구간의 예외 모델이 된다"
+    },
+    {
+     "text": "모델 기업이 인프라 사업자로 재분류되는 흐름",
+     "anchor": "모델은 인프라가 되고, 인프라는 결국 마진이 수렴한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Until now, the market has treated this order almost as a law of nature.",
+    "The crown is still there, but the market is now calculating tolls rather than admiring crowns.",
+    "Electricity did not change civilization because it was great."
+   ],
+   "takeaways": [
+    {
+     "text": "Why users now ask for good enough rather than best performance",
+     "anchor": "enough performance rather than the best performance"
+    },
+    {
+     "text": "How routing turns frontier models into costly exceptions",
+     "anchor": "frontier models stop being the default and become exceptions"
+    },
+    {
+     "text": "The shift from software empire to converging infrastructure margins",
+     "anchor": "Models become infrastructure, and infrastructure margins"
+    }
+   ]
+  }
+ },
+ "post-142": {
+  "ko": {
+   "highlights": [
+    "거래시간이 끝난 것이지, 시장이 끝난 것은 아니다.",
+    "사람은 주주가 아니라, 리스크의 임차인이 된다.",
+    "자산의 국적은 남아 있어도, 가격의 국적은 점점 사라진다."
+   ],
+   "takeaways": [
+    {
+     "text": "실물 없이 가격만 거래되는 합성 퍼프 구조",
+     "anchor": "오라클이 외부 시장의 가격을 실시간으로 공급하고"
+    },
+    {
+     "text": "T+1 단축과 초 단위 온체인 정산의 격차",
+     "anchor": "온체인에서는 체결과 정산과 청산이 같은 초 안에 일어난다"
+    },
+    {
+     "text": "소유가 마찰이 되고 노출이 기본이 되는 이유",
+     "anchor": "소유는 느리고 비싼 방식이 되고, 노출은 빠르고 저렴한 방식이 된다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Trading hours are over, but the market is not.",
+    "People become not shareholders, but tenants of risk.",
+    "Assets may retain their nationalities, but the nationalities of prices are gradually disappearing."
+   ],
+   "takeaways": [
+    {
+     "text": "How a synthetic perp trades price with no physical asset",
+     "anchor": "only a synthetic perpetual that tracks those prices exists"
+    },
+    {
+     "text": "The gap between T+1 reform and same-second on-chain settlement",
+     "anchor": "execution, settlement, and clearing happen within the same second"
+    },
+    {
+     "text": "Why ownership becomes friction and exposure becomes the default",
+     "anchor": "Ownership becomes slow and expensive"
+    }
+   ]
+  }
+ },
+ "post-143": {
+  "ko": {
+   "highlights": [
+    "에이전트는 학습하지 않는다. 검색할 뿐이다.",
+    "출처 없는 팩트는 신뢰 부채다. 지금은 작동하지만 언젠가 문제를 일으킨다.",
+    "2026년에 쓴 마크다운 파일은 2036년에도 똑같이 읽을 수 있다."
+   ],
+   "takeaways": [
+    {
+     "text": "대화가 쌓여도 똑똑해지지 않는 이유",
+     "anchor": "대화가 쌓일수록 똑똑해지는 게 아니라 컨텍스트 윈도우만 비대해지는 구조의 한계"
+    },
+    {
+     "text": "현재 상태와 변경 이력을 나누는 이중 구조",
+     "anchor": "Compiled Truth는 빠른 판단을 위한 것이고, Timeline은 그 판단의 근거를 추적하기 위한 것이다"
+    },
+    {
+     "text": "LLM 호출 없는 4개 언어 인명 추출",
+     "anchor": "이 모든 게 LLM 호출 없이 정규식과 표준 라이브러리만으로 돌아간다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Agents don't learn. They just search.",
+    "A fact without a source is trust debt. It works for now, but someday it will cause trouble.",
+    "A Markdown file written in 2026 will be just as readable in 2036."
+   ],
+   "takeaways": [
+    {
+     "text": "Why more conversations don't make agents smarter",
+     "anchor": "more conversations didn't make them smarter. They just made the context window bigger"
+    },
+    {
+     "text": "Splitting current state from change history",
+     "anchor": "Compiled Truth is for quick judgments. Timeline is for tracing the basis of those judgments"
+    },
+    {
+     "text": "Name extraction in four languages with no LLM calls",
+     "anchor": "runs on regular expressions and the standard library alone, without any LLM calls"
+    }
+   ]
+  }
+ },
+ "post-144": {
+  "ko": {
+   "highlights": [
+    "법 통과가 결정적이며, 한국이 오래 기다릴수록 뒤처질 것이라고 생각합니다.",
+    "AI가 만든 결과물도, AI가 투표하는 방식도 놀라웠고, 자율적 AI들이 USDC로 상호작용하며 무언가를 만들어냈습니다.",
+    "훌륭한 원화 스테이블코인이 나오길 기대하고 있습니다."
+   ],
+   "takeaways": [
+    {
+     "text": "규제 확정 전에도 가능한 Circle의 한국 행보",
+     "anchor": "오늘 한국 최대 거래소 두 곳과 확장된 파트너십을 발표했는데"
+    },
+    {
+     "text": "원화 스테이블코인 법제화가 결제 인프라의 전제",
+     "anchor": "원화 스테이블코인이 한국 금융 시스템의 일부로 정의되어"
+    },
+    {
+     "text": "AI 에이전트가 직접 결제하는 구조",
+     "anchor": "AI가 인터넷에서 직접 API·서비스·데이터에 결제하는 프로토콜"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Passing the law is decisive, and I believe Korea will fall behind the longer it waits.",
+    "Autonomous AIs interacted with one another using USDC and created something together.",
+    "I look forward to seeing excellent won stablecoins emerge."
+   ],
+   "takeaways": [
+    {
+     "text": "How Circle moves in Korea before the rules are final",
+     "anchor": "expanded partnerships with Korea's two largest exchanges"
+    },
+    {
+     "text": "Why a won stablecoin has to become legal money first",
+     "anchor": "defined as part of Korea's financial system"
+    },
+    {
+     "text": "Agents paying for APIs and data directly in USDC",
+     "anchor": "a protocol that enables AI to pay directly for APIs"
+    }
+   ]
+  }
+ },
+ "post-145": {
+  "ko": {
+   "highlights": [
+    "SaaS의 유일한 해자는 기술적 우위가 아니라 이 습관이었다.",
+    "SaaS는 인간의 결함 위에 지은 건물이었고, AI는 그 결함 자체를 줄여버리는 기술이다.",
+    "넥타이는 풀 수 있었지만 산소통은 뗄 수 없다."
+   ],
+   "takeaways": [
+    {
+     "text": "SaaS의 진짜 해자가 기능이 아니라 습관인 이유",
+     "anchor": "도구 선택이 아니라 정체성 선언이다"
+    },
+    {
+     "text": "좌석당 과금 모델이 무너지는 지점",
+     "anchor": "에이전트는 좌석을 차지하지 않는다"
+    },
+    {
+     "text": "UI 없는 소프트웨어에서 에이전트가 모이는 구조",
+     "anchor": "에이전트들이 자발적으로 모여드는 구조를 만드는 것"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "SaaS's only moat was not technical superiority but this habit.",
+    "SaaS was a building erected on human flaws, and AI is technology that reduces those flaws themselves.",
+    "You could untie a necktie, but you can't take off an oxygen tank."
+   ],
+   "takeaways": [
+    {
+     "text": "Why SaaS's real moat was habit, not features",
+     "anchor": "It wasn't a tool choice but a declaration of identity"
+    },
+    {
+     "text": "Where the per-seat pricing model breaks down",
+     "anchor": "Agents don't occupy seats"
+    },
+    {
+     "text": "The moat for AI-era tools: structures agents gather around",
+     "anchor": "creating a structure that agents voluntarily gather around"
+    }
+   ]
+  }
+ },
+ "post-146": {
+  "ko": {
+   "highlights": [
+    "일 년 뒤에는 개발환경이 얼마나 또 달라져 있을지 상상조차 어렵다.",
+    "기억은 쓸수록 닳는 게 아니라, 쓸수록 단단해진다.",
+    "기억이라는 주제를 파고 들어가 보니, 결국 시간의 문제였다."
+   ],
+   "takeaways": [
+    {
+     "text": "리서치·기획·개발 에이전트 분업 구조",
+     "anchor": "리서치 에이전트가 해당 주제에 대한 선행 프로젝트들을 정리하고"
+    },
+    {
+     "text": "같은 질문에도 현재 목표가 순위를 바꾸는 검색",
+     "anchor": "검색 요청이 들어오면 현재 목표에 가중치를 매겨서, 같은 팩트라도 순위가 달라진다"
+    },
+    {
+     "text": "기각된 가설이 안티패턴 라이브러리가 되는 이유",
+     "anchor": "기각된 가설은 별도로 검색 가능하게 인덱싱해서, 안티패턴 라이브러리로 기능한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It is hard to even imagine how different the development environment will be a year from now.",
+    "Memory doesn't wear out with use. It grows stronger.",
+    "As I dug deeper into memory, it turned out to be a question of time."
+   ],
+   "takeaways": [
+    {
+     "text": "How research, planning and dev agents split the work",
+     "anchor": "The research agent reviews earlier projects on the topic"
+    },
+    {
+     "text": "Why current goals reorder the same facts in search",
+     "anchor": "the system weights the current goals, changing the ranking of the same facts"
+    },
+    {
+     "text": "Rejected hypotheses as an anti-pattern library",
+     "anchor": "Rejected hypotheses are indexed separately for retrieval, serving as an anti-pattern library"
+    }
+   ]
+  }
+ },
+ "post-147": {
+  "ko": {
+   "highlights": [
+    "최고 성능 모델은 닫히고, 작은 모델만 제한적으로 풀린다.",
+    "“개방 정의감”은 모델이 아직 돈이 안 될 때의 사치였다.",
+    "아무리 좋은 모델을 가졌어도, 결국 누군가의 서버 위에서 돌아가야 한다."
+   ],
+   "takeaways": [
+    {
+     "text": "개방에서 폐쇄로 1년 만에 뒤집힌 구도",
+     "anchor": "최고 성능 모델은 닫히고"
+    },
+    {
+     "text": "폐쇄를 밀어붙인 세 압력: 비용·증류·지정학",
+     "anchor": "밀어붙이는 세 겹의 힘이 있다"
+    },
+    {
+     "text": "다음 판을 가르는 중개 인프라의 자리",
+     "anchor": "어떤 모델이든 가장 싸고 빠르게 흘려보내는 경로"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The highest-performing models are closed, while only smaller models are released under limited conditions.",
+    "“The righteousness of openness” was a luxury from the time when models did not yet make money.",
+    "No matter how good a model you have, it ultimately has to run on someone’s servers."
+   ],
+   "takeaways": [
+    {
+     "text": "How openness flipped to closure in a single year",
+     "anchor": "The highest-performing models are closed"
+    },
+    {
+     "text": "The three pressures behind it: cost, distillation, geopolitics",
+     "anchor": "three forces are driving it forward"
+    },
+    {
+     "text": "Why the routing layer decides the next round",
+     "anchor": "it ultimately has to run on someone’s servers"
+    }
+   ]
+  }
+ },
+ "post-149": {
+  "ko": {
+   "highlights": [
+    "MemKraft는 스스로의 필요성에 의해 만들기 시작한 AI 에이전트를 위한 통합 메모리 시스템이다.",
+    "기억은 내용만이 아니라 \"어디에서, 무엇을 하는 중에, 누구와\" 일어났는지가 함께 저장되어야 한다.",
+    "사람도 완전히 잊지는 않는다, 단지 떠올리기 어려워질 뿐이라는 관찰에서 나왔다."
+   ],
+   "takeaways": [
+    {
+     "text": "기억에 장소와 맥락을 함께 저장하는 이유",
+     "anchor": "채널 컨텍스트, 작업 연속성, 에이전트 워킹 메모리"
+    },
+    {
+     "text": "다섯 에이전트가 핸드오프로 중복을 없애는 방법",
+     "anchor": "핸드오프라는 개념을 넣었다"
+    },
+    {
+     "text": "삭제 대신 가중치를 낮추는 복원 가능한 감쇠",
+     "anchor": "MemKraft는 \"가중치를 낮춘다\"로 구현했다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "MemKraft is an integrated memory system for AI agents that I started building because I needed it myself.",
+    "It also needs to store where it happened, what we were doing, and who it was with.",
+    "It came from the observation that people do not completely forget either; things simply become harder to recall."
+   ],
+   "takeaways": [
+    {
+     "text": "Why memory must store place and context, not just content",
+     "anchor": "channel context, task continuity, and agent working memory"
+    },
+    {
+     "text": "How handoffs stop five agents from asking the same thing twice",
+     "anchor": "I added the concept of handoffs"
+    },
+    {
+     "text": "Restorable decay: lower the weight instead of deleting",
+     "anchor": "MemKraft implements it as “lowering the weight.”"
+    }
+   ]
+  }
+ },
+ "post-150": {
+  "ko": {
+   "highlights": [
+    "도구를 만들었다고 생각했는데, 도구가 나를 만들고 있다.",
+    "개발은 더이상 개발자의 것이 아니다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "I thought I had made a tool, but the tool is making me.",
+    "Development no longer belongs to developers."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-151": {
+  "ko": {
+   "highlights": [
+    "사다리는 건물 밖에 세워져 있고, 건물은 사라지는 중이다.",
+    "사람이 무너지는 건 능력이 사라질 때가 아니라 의미가 사라질 때다.",
+    "새로운 시대가 오는 게 아니라, 오래된 질문이 돌아오고 있다."
+   ],
+   "takeaways": [
+    {
+     "text": "신입만 사라지는 고용 통계의 의미",
+     "anchor": "AI에 가장 많이 노출된 직군의 신입 고용이 2022년 말부터 13퍼센트 감소했다"
+    },
+    {
+     "text": "계급의 단위가 돈에서 시간으로 이동",
+     "anchor": "달라지는 건 계급의 단위다. 돈이 아닌 시간으로"
+    },
+    {
+     "text": "직업 없이 나를 설명해야 하는 숙제",
+     "anchor": "직업 이외의 무언가로 어떻게 나를 설명할까"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The ladder stands outside a building, and the building is disappearing.",
+    "People fall apart not when they lose their abilities, but when they lose meaning.",
+    "A new era is not arriving. An old question is returning."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the hiring drop hits only entry-level workers",
+     "anchor": "entry-level employment among 22- to 25-year-olds in the occupations most exposed to AI fell by 13 percent"
+    },
+    {
+     "text": "Class measured in hours per day instead of money",
+     "anchor": "What changes is the unit of class. From money to time."
+    },
+    {
+     "text": "The task of explaining yourself without a job title",
+     "anchor": "How do I explain myself through something other than a job?"
+    }
+   ]
+  }
+ },
+ "post-152": {
+  "ko": {
+   "highlights": [
+    "MemKraft v1.0.1은 98.0%를 기록했다.",
+    "MemKraft는 Markdown 파일 위에서 돌아간다.",
+    "무엇을 기억할까에서, 왜 기억해야 하는가로."
+   ],
+   "takeaways": [
+    {
+     "text": "LongMemEval 오픈소스 1위 기록",
+     "anchor": "오픈소스 기반의 주요 에이전트 장기 기억 벤치마크에서 현재 1위다"
+    },
+    {
+     "text": "string match 대신 LLM-as-judge를 쓴 이유",
+     "anchor": "string match로 측정하면 실제보다 낮게 나온다"
+    },
+    {
+     "text": "기억을 자기개선 원장으로 쓰는 설계",
+     "anchor": "기억을 자기개선 원장으로 쓰는 것"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "MemKraft v1.0.1 scored 98.0%.",
+    "MemKraft runs on Markdown files.",
+    "From what to remember, to why we should remember."
+   ],
+   "takeaways": [
+    {
+     "text": "Ranks first among open-source agent memory libraries",
+     "anchor": "It currently ranks first among open-source libraries"
+    },
+    {
+     "text": "Why LLM-as-judge replaced string matching",
+     "anchor": "String matching gives a lower score than it should"
+    },
+    {
+     "text": "Memory designed as a self-improvement ledger",
+     "anchor": "using memory as a self-improvement ledger"
+    }
+   ]
+  }
+ },
+ "post-153": {
+  "ko": {
+   "highlights": [
+    "꿈은 인류의 마지막 야생이었다.",
+    "고해성사는 신부 한 명에게 가는 비밀이었다.",
+    "거부의 비용이 수용의 비용보다 비싸지는 순간, 거부는 사치가 되고, 사치가 된 거부는 빠르게 멸종한다."
+   ],
+   "takeaways": [
+    {
+     "text": "449달러 헤드밴드가 작동하는 방식",
+     "anchor": "그 리듬으로 렘수면 단계, 눈동자가 빠르게 움직이고"
+    },
+    {
+     "text": "수행이 구독으로 바뀔 때 생기는 수면 격차",
+     "anchor": "수행이 구독으로 바뀌는 순간이다"
+    },
+    {
+     "text": "꿈 데이터 주권이 다음 10년의 쟁점이 되는 이유",
+     "anchor": "꿈 데이터의 자기 주권"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Dreams were humanity's last wilderness.",
+    "Confession was a secret given to one priest.",
+    "The moment the cost of refusal becomes higher than the cost of acceptance, refusal becomes a luxury, and refusal turned into a luxury quickly goes extinct."
+   ],
+   "takeaways": [
+    {
+     "text": "How a $449 headband induces lucid dreams",
+     "anchor": "From those rhythms, it identifies REM sleep"
+    },
+    {
+     "text": "Why practice turning into a subscription opens a sleep divide",
+     "anchor": "This is the moment practice turns into a subscription"
+    },
+    {
+     "text": "Why sovereignty over dream data decides the next decade",
+     "anchor": "Self-sovereignty over dream data"
+    }
+   ]
+  }
+ },
+ "post-155": {
+  "ko": {
+   "highlights": [
+    "우리가 빌려오고 싶었던 건 단순한 빠르기가 아니라, 이미 잘 굴러가는 것을 한 번 더 밀어주는 짧은 순간의 정확함이다.",
+    "에이전트가 대체하는 건 일하는 사람이지 판단하는 사람이 아니다.",
+    "배운 것이 행동을 바꾸지 못하면 그건 배움이 아니라 관성이다."
+   ],
+   "takeaways": [
+    {
+     "text": "8주가 남긴 건 신뢰할 수 있는 커뮤니티",
+     "anchor": "신뢰할 수 있는 커뮤니티를 모은 것이 전부였다"
+    },
+    {
+     "text": "사람 한둘에 에이전트가 앉은 조직도",
+     "anchor": "나머지 자리에 에이전트가 앉아 있다"
+    },
+    {
+     "text": "커리큘럼이 아니라 연속된 실험이라는 방향",
+     "anchor": "정해진 커리큘럼이 아니라 연속된 실험이고 싶다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Some questions only come into view when you stop.",
+    "Agents replace the people doing the work, not the people making the calls.",
+    "If what you learn does not change what you do, it is not learning."
+   ],
+   "takeaways": [
+    {
+     "text": "What eight weeks really produced: a community people trust",
+     "anchor": "bring together a community people could trust"
+    },
+    {
+     "text": "Org charts where one or two people sit beside agents",
+     "anchor": "Agents occupy the remaining seats"
+    },
+    {
+     "text": "Why Nitro wants to be a series of experiments, not a curriculum",
+     "anchor": "a series of experiments, not a fixed curriculum"
+    }
+   ]
+  }
+ },
+ "post-156": {
+  "ko": {
+   "highlights": [
+    "그래서 글을 쓰는 행위는, 어제의 나를 오늘의 나로부터 분리시키는 작업이다.",
+    "부끄러움이 사라지는 날은 내가 더 이상 움직이지 않는 날일 것이다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "So the act of writing is the work of separating yesterday's self from today's.",
+    "The day the embarrassment disappears will be the day I no longer move."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-159": {
+  "ko": {
+   "highlights": [
+    "학교는 같고, 책상은 같고, 와이파이도 같다.",
+    "코딩은 직업이 아니라 문해력이 되어가고 있다.",
+    "기본소득 이전에 기본AI다."
+   ],
+   "takeaways": [
+    {
+     "text": "같은 학교에서 갈리는 출발선",
+     "anchor": "다른 건 옆에 어떤 도구가 켜져 있느냐다"
+    },
+    {
+     "text": "월 20달러로는 부족한 이유",
+     "anchor": "입문 구독으로 진짜 개발을 하기는 어렵다"
+    },
+    {
+     "text": "분배보다 먼저인 생산 능력 보장",
+     "anchor": "만들 수 있는 능력의 최소 출발선부터 보장하자는 의제다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Same school, same desks, same Wi-Fi.",
+    "Coding is becoming a form of literacy rather than a profession.",
+    "Before basic income, basic AI."
+   ],
+   "takeaways": [
+    {
+     "text": "Same school, different starting lines",
+     "anchor": "The difference is which tool is running beside them"
+    },
+    {
+     "text": "Why a $20 plan is not enough for real work",
+     "anchor": "hard to do real development on a $20-a-month entry-level subscription"
+    },
+    {
+     "text": "Guarantee the ability to create before distribution",
+     "anchor": "guarantee a minimum starting point for the ability to create"
+    }
+   ]
+  }
+ },
+ "post-163": {
+  "ko": {
+   "highlights": [
+    "무엇을 만들 수 있나보다, 나는 무엇을 의도하고 있나.",
+    "AI는 실행을 도와주지만 먼저 욕망하거나 방향을 정하지는 않습니다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "Not what can I build, but what do I intend?",
+    "AI helps with execution, but it does not desire anything or choose a direction first."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-178": {
+  "ko": {
+   "highlights": [
+    "숫자 상태는 필요하지만, 게임의 진짜 맥락은 화면 위에서 드러났다.",
+    "어떤 참가자는 “내가 직접 게임하는 것보다, 에이전트가 게임하는 걸 코칭하는 게 더 재미있다”고 말했다.",
+    "포켓몬에서 배운 건 포켓몬이 아니라 관찰 가능성이었다."
+   ],
+   "takeaways": [
+    {
+     "text": "모델 지능보다 하네스 설계가 중요한 이유",
+     "anchor": "하네스가 얼마나 잘 설계됐는가"
+    },
+    {
+     "text": "버튼 대신 코칭하는 메타 플레이 경험",
+     "anchor": "에이전트에게 훈수두듯 지시하고"
+    },
+    {
+     "text": "봇이 인증된 게이머가 될 수 있는 조건",
+     "anchor": "에이전트도 일종의 게이머가 될 수 있다는 가능성"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Numerical state is necessary, but the real context of the game appeared on the screen.",
+    "One participant said, “Coaching an agent as it plays the game is more fun than playing the game myself.”",
+    "Pokemon taught me not about Pokemon, but about observability."
+   ],
+   "takeaways": [
+    {
+     "text": "Why harness design mattered more than model intelligence",
+     "anchor": "how well the harness was designed mattered more"
+    },
+    {
+     "text": "Meta-play: coaching the agent instead of pressing buttons",
+     "anchor": "gave the agent directions like a backseat coach"
+    },
+    {
+     "text": "The conditions under which a bot becomes a legitimate gamer",
+     "anchor": "an agent could become a kind of gamer"
+    }
+   ]
+  }
+ },
+ "post-185": {
+  "ko": {
+   "highlights": [
+    "API 키가 아니라 여권을 확인하는 로그인 화면을 상상한다.",
+    "문을 잠그는 속도는 학습이 퍼지는 속도를 이길 수 없다.",
+    "국가는 모델의 금고가 아니라 생태계의 항구가 되어야 한다."
+   ],
+   "takeaways": [
+    {
+     "text": "차단 기준이 결제·API가 아니라 국적이었던 사실",
+     "anchor": "대상은 특정 국가가 아니라"
+    },
+    {
+     "text": "접근 차단이 오히려 드러낸 해자의 얇음",
+     "anchor": "프론티어 모델 자체의 해자가 생각보다 얇다는 것"
+    },
+    {
+     "text": "한국이 선점할 개방형 AI 생태계 포지션",
+     "anchor": "한국이 AI 생태계의 개방적 포지션을 전 세계 앞에서 선점"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Imagine a login screen that checks your passport instead of your API key.",
+    "The speed at which doors are locked cannot outpace the speed at which learning spreads.",
+    "A country should be a harbor for an ecosystem, not a vault for its models."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the block filtered on nationality, not payment or API keys",
+     "anchor": "The target was not a specific country"
+    },
+    {
+     "text": "What locking access reveals about a thin frontier moat",
+     "anchor": "The moat around the frontier model itself is thinner"
+    },
+    {
+     "text": "The open-ecosystem position Korea can claim first",
+     "anchor": "a rare opportunity for Korea to establish an open position"
+    }
+   ]
+  }
+ },
+ "post-186": {
+  "ko": {
+   "highlights": [
+    "문제는 자동화가 아니라 신원과 책임이 없는 자동화였다.",
+    "게임 산업이 AI 에이전트 사회의 헌법을 가장 먼저 설계하고 검증하게 될 것이다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "The problem was not automation. It was automation without identity or accountability.",
+    "The game industry will be the first to design and test the constitution of an AI agent society."
+   ],
+   "takeaways": []
+  }
+ },
+ "post-187": {
+  "ko": {
+   "highlights": [
+    "기능은 제대로 작동했지만, 내가 원한 제품이 아니었다.",
+    "이 판단 없이 Claude의 답을 Codex에 넘기면 틀린 가설이 높은 완성도로 구현된다.",
+    "부족했던 것은 지능이 아니라 루프였다."
+   ],
+   "takeaways": [
+    {
+     "text": "모델이 아니라 목표 검증 단계의 공백",
+     "anchor": "문제는 그 목표가 맞는지 따져보는 단계가 부족했다는 데 있었다"
+    },
+    {
+     "text": "Claude 첫 답은 계획이 아니라 가설",
+     "anchor": "비교하고 검증하고 버릴 수 있는 가설로 다뤄야 한다"
+    },
+    {
+     "text": "사람 판단을 루프의 핵심 구성 요소로 설계",
+     "anchor": "사람의 판단을 예외적인 승인 절차가 아니라 루프의 핵심 구성 요소로 설계해야 한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The features worked, but it was not the product I wanted.",
+    "If I hand Claude's answer to Codex without that judgment, the result is a polished implementation of a wrong hypothesis.",
+    "What was missing was not intelligence, but a loop."
+   ],
+   "takeaways": [
+    {
+     "text": "The gap is questioning the goal, not the model's skill",
+     "anchor": "I had not spent enough time questioning whether that goal was right"
+    },
+    {
+     "text": "Treat Claude's first answer as a hypothesis, not a plan",
+     "anchor": "as a hypothesis I can compare, test, and discard"
+    },
+    {
+     "text": "Design human judgment into the loop, not as an approval step",
+     "anchor": "designed as a core part of the loop, not as an exceptional approval step"
+    }
+   ]
+  }
+ },
+ "post-188": {
+  "ko": {
+   "highlights": [
+    "화폐의 부고를 모으던 사이트가 화폐보다 먼저 문을 닫은 셈이다.",
+    "원화는 집 안의 언어이고 달러는 항구의 언어다.",
+    "가격표가 먼저 떠나고, 저축이 그 뒤를 따르고, 마지막에는 기계가 그 돈의 이름을 잊는다."
+   ],
+   "takeaways": [
+    {
+     "text": "27년 통계의 실제 출처와 어긋나는 계산",
+     "anchor": "표를 직접 계산해도 평균은 약 38.5년, 중앙값은 17년이었다"
+    },
+    {
+     "text": "작은 나라 돈을 살려두는 국내 연결망의 힘",
+     "anchor": "세계인이 원화를 모으지 않아도 이 연결망이 원화를 살려둔다"
+    },
+    {
+     "text": "애국심 없는 AI 결제가 만드는 악순환",
+     "anchor": "수수료와 환율, 처리 시간을 비교해 가장 유리한 경로를 고른다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "A site that collected currency obituaries had closed its doors before the currencies did.",
+    "The won is the language of the home, and the dollar is the language of the port.",
+    "Price tags leave first, savings follow, and finally machines forget the currency's name."
+   ],
+   "takeaways": [
+    {
+     "text": "Where the 27-year figure came from, and why the math doesn't hold",
+     "anchor": "gave me an average of about 38.5 years and a median of 17"
+    },
+    {
+     "text": "How a domestic network keeps a small country's currency alive",
+     "anchor": "this network keeps it alive"
+    },
+    {
+     "text": "Why AI payment routing can spiral a thinly traded currency downward",
+     "anchor": "It compares fees, exchange rates, and processing times"
+    }
+   ]
+  }
+ },
+ "post-189": {
+  "ko": {
+   "highlights": [
+    "많이 기억하고 잘 찾으면 된다고 생각했는데, 기억이 늘어날수록 더 어려운 질문들이 나타났다.",
+    "잘 찾는 시스템은 틀린 것도 잘 찾는다.",
+    "여기서 기억과 실행 사이에는 권한 경계가 필요하다는 결론에 도달했다."
+   ],
+   "takeaways": [
+    {
+     "text": "오래된 기억을 버리지 않고 보관층으로 나누기",
+     "anchor": "지금 자주 필요한 것과 오래 보관할 것을 나눴다"
+    },
+    {
+     "text": "관계와 시간이 현재의 답을 만드는 이유",
+     "anchor": "관계와 시간은 검색을 꾸미는 부가기능이 아니었다"
+    },
+    {
+     "text": "허용된 절차만 로컬 실행하는 권한 경계",
+     "anchor": "미리 허용한 여섯 개의 정확한 절차 문법과 일치할 때만 로컬에서 처리한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "I thought remembering a lot and finding things well would be enough.",
+    "A system that retrieves well also retrieves wrong information well.",
+    "This led me to conclude that there needed to be a permission boundary between memory and execution."
+   ],
+   "takeaways": [
+    {
+     "text": "How old memories move to an archive layer instead of being deleted",
+     "anchor": "what was needed often now from what should be kept"
+    },
+    {
+     "text": "Why relationships and time decide whether an answer is current",
+     "anchor": "Relationships and time were not decorative extras"
+    },
+    {
+     "text": "A permission boundary that runs only pre-approved procedures locally",
+     "anchor": "only when it matches one of six explicitly allowed"
+    }
+   ]
+  }
+ },
+ "post-190": {
+  "ko": {
+   "highlights": [
+    "몇 년 전만 해도 중국차와 포르쉐를 한 문장에 넣으면 농담처럼 들렸지만, 어느새 둘은 같은 표에 올려놓고 비교할 수 있게 되었다.",
+    "오늘의 자랑거리가 내년에는 기본 사양이 되는 시장이다.",
+    "내가 차를 고르지 않아도 알고리즘이 먼저 태워준다."
+   ],
+   "takeaways": [
+    {
+     "text": "매장 체험으로 기준을 바꾸는 판매 방식",
+     "anchor": "설명보다 먼저 손에 닿고, 익숙해진 뒤 지갑을 노린다"
+    },
+    {
+     "text": "오픈웨이트 AI가 차 안 장치를 움직이는 구조",
+     "anchor": "오픈웨이트 모델은 사용자의 말을 이런 장치의 동작으로 번역한다"
+    },
+    {
+     "text": "판매원 없는 시승이 되는 공항 이동",
+     "anchor": "판매원이 붙지 않는 시승이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "A few years ago, putting a Chinese car and a Porsche in the same sentence would have sounded like a joke.",
+    "It is a market where today's point of pride becomes a standard feature next year.",
+    "Even if I do not choose a car, an algorithm gives me a ride in one first."
+   ],
+   "takeaways": [
+    {
+     "text": "How touch-first showrooms reset the buying standard",
+     "anchor": "They reach your hands before they reach your wallet"
+    },
+    {
+     "text": "Open-weight AI turning voice into in-car hardware actions",
+     "anchor": "translate what users say into the actions of these devices"
+    },
+    {
+     "text": "The airport ride as a test drive with no salesperson",
+     "anchor": "It is a test drive without a salesperson"
+    }
+   ]
+  }
+ },
+ "post-191": {
+  "ko": {
+   "highlights": [
+    "개인화의 무게중심은 모델이 아니라 모델 바깥에 쌓인다.",
+    "설정에는 취향이 남지만 코드에는 한 사람이 실패하고 회복한 방식이 남는다.",
+    "같은 문장 뒤에 서로 다른 생의 기록이 붙자 정답도 갈라진다."
+   ],
+   "takeaways": [
+    {
+     "text": "지능보다 모델 바깥 층이 만드는 차이",
+     "anchor": "모델 위에 내 업무 기억과 개발 습관, 도구와 그 사용법"
+    },
+    {
+     "text": "에이전트 계보가 갈라진다는 개념",
+     "anchor": "개인별 에이전트 계보(Agent Lineage)라고 부르고 싶다"
+    },
+    {
+     "text": "계보의 소유권과 이동 가능성 질문",
+     "anchor": "플랫폼을 옮길 때 그 전부를 데려갈 수 있는가"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The center of gravity of personalization lies not in the model, but in what accumulates outside it.",
+    "Code retains the way one person has failed and recovered.",
+    "Once different records of life sit behind the same sentence, the right answers diverge too."
+   ],
+   "takeaways": [
+    {
+     "text": "The layer above the model, not its intelligence, makes the difference",
+     "anchor": "my work memories and development habits, tools"
+    },
+    {
+     "text": "What Agent Lineage means and how agents branch apart",
+     "anchor": "I want to call this branching a personal Agent Lineage"
+    },
+    {
+     "text": "Who owns the lineage, and whether you can take it with you",
+     "anchor": "Can I take all of it with me when I move to another platform"
+    }
+   ]
+  }
+ },
+ "post-192": {
+  "ko": {
+   "highlights": [
+    "기계는 말끔한 문장만 내놔. 잘린 조각을 다시 붙이는 건 아직 기자 몫이야.",
+    "검색 에이전트는 같은 문장이 많을수록 사실에 가깝다고 계산했다.",
+    "연락이 닿지 않은 가구를 분모에서 지우자, 남은 사람은 ‘전원’이 되었다."
+   ],
+   "takeaways": [
+    {
+     "text": "원문이 사라지고 요약만 남는 과정",
+     "anchor": "사라진 원문 주소를 여섯 개의 요약이 나눠 차지했고"
+    },
+    {
+     "text": "서로 모르는 에이전트들이 만드는 세탁",
+     "anchor": "이름을 가린 에이전트와 문장을 자른 에이전트는 서로를 몰랐다"
+    },
+    {
+     "text": "반복된 요약이 원본 하나를 이기는 구조",
+     "anchor": "되풀이된 요약 수백 건이 원본 하나를 눌렀다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Machines give you clean sentences. Putting the cut pieces back together is still a reporter’s job.",
+    "The search agent calculated that the more often a sentence appeared, the more likely it was to be true.",
+    "Once the unreachable households were removed from the denominator, those who remained became ‘all.’"
+   ],
+   "takeaways": [
+    {
+     "text": "How a vanished original gets replaced by a loop of summaries",
+     "anchor": "Six summaries had divided up the space left by the missing original"
+    },
+    {
+     "text": "Laundering needs no conspiracy: the agents never knew each other",
+     "anchor": "The agent that redacted the name and the agent that cut the sentence did not know each other"
+    },
+    {
+     "text": "Hundreds of repeated summaries outweigh one released original",
+     "anchor": "Hundreds of repeated summaries outweighed one original"
+    }
+   ]
+  }
+ },
+ "post-193": {
+  "ko": {
+   "highlights": [
+    "두뇌는 바뀌지만 경력은 폴더에 남는다.",
+    "몸은 빌리지만 망설임은 휴대한다.",
+    "끝까지 내 것이어야 하는 것은 집도 몸도 아닐 수 있다."
+   ],
+   "takeaways": [
+    {
+     "text": "같은 정본 작업공간을 여러 런타임에 노출하는 방식",
+     "anchor": "로컬 경로를 열거나 저장소를 체크아웃하는 식으로 같은 정본 작업공간을"
+    },
+    {
+     "text": "Agent Plugins 1.0.0이 정하는 것과 정하지 않는 것",
+     "anchor": "이 규격은 설치 방식과 배포망, 권한 모델, 샌드박스, 출처 검증을 정하지 않는다"
+    },
+    {
+     "text": "몸마다 달라져야 하는 기억과 권한의 경계",
+     "anchor": "공장 몸에는 20킬로그램을 들 권한이 필요하지만 아이 곁에서는 같은 힘을 잠가야 한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The brain changes, but the experience stays in the folder.",
+    "It borrows the body but carries its hesitation.",
+    "What must remain mine to the end may be neither a home nor a body."
+   ],
+   "takeaways": [
+    {
+     "text": "Exposing one canonical workspace to several runtimes instead of copies",
+     "anchor": "read the same canonical workspace by opening a local path or checking out a repository"
+    },
+    {
+     "text": "What the Agent Plugins spec settles and what it leaves open",
+     "anchor": "does not define installation methods, distribution networks, permission models"
+    },
+    {
+     "text": "Why memories and permissions must differ per body",
+     "anchor": "A factory body needs permission to lift 20 kilograms, but that same strength must be locked away near a child"
+    }
+   ]
+  }
+ },
+ "post-195": {
+  "ko": {
+   "highlights": [
+    "누락을 막으려 만든 규칙이 흐름을 막았다.",
+    "채점표에 없는 가치는 개선할 이유도 없어진다.",
+    "침묵은 승인이 아니고, 반복된 승인은 영원한 동의가 아니다."
+   ],
+   "takeaways": [
+    {
+     "text": "되돌리기 어려움에 따라 나뉘는 완료 기준",
+     "anchor": "다시 만들기 쉬운 초안은 전송한 순간 끝난다"
+    },
+    {
+     "text": "채점표가 개선 방향을 결정하는 구조",
+     "anchor": "AI는 높은 점수를 받는 방향으로 자신을 바꾼다"
+    },
+    {
+     "text": "인간이 지켜야 할 목적 설정의 자리",
+     "anchor": "지켜야 할 것은 목적을 정하는 자리다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "A rule created to prevent omissions was blocking the flow.",
+    "Values that are not on the scorecard cease to be reasons to improve.",
+    "Silence is not approval, and repeated approval is not permanent consent."
+   ],
+   "takeaways": [
+    {
+     "text": "Completion thresholds set by how hard the loss is to reverse",
+     "anchor": "easy to recreate is done the moment it is sent"
+    },
+    {
+     "text": "How the scorecard decides what improvement means",
+     "anchor": "AI changes itself in the direction of higher scores"
+    },
+    {
+     "text": "The place humans must keep: setting the purpose",
+     "anchor": "What we need to protect is the place where purposes are set"
+    }
+   ]
+  }
+ },
+ "post-197": {
+  "ko": {
+   "highlights": [
+    "그래서 그의 말을 예언으로 읽으면 자주 틀리지만, 산업에 보내는 주문서로 읽으면 쓸모가 있다.",
+    "서버 운영이 물류업과 조선업을 닮기 시작한다.",
+    "데이터를 어디에 보관했는지보다 필요한 순간 누가 먼저 현실을 계산했는지가 중요해진다."
+   ],
+   "takeaways": [
+    {
+     "text": "우주는 전력망 대기 시간과 발사 비용의 맞교환",
+     "anchor": "지상에서 기다리는 시간과 로켓에 싣는 비용을 맞바꾸는"
+    },
+    {
+     "text": "열 버리기가 정하는 우주 데이터센터의 생김새",
+     "anchor": "방열 면적이 약 2.2㎢ 나온다"
+    },
+    {
+     "text": "궤도 사업자가 계산 순서를 정하는 권력",
+     "anchor": "궤도 사업자가 세계의 질문이 처리되는 순서를 정하는 것이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Read them as a purchase order for industry, and they become useful.",
+    "Running servers starts to look like logistics and shipbuilding.",
+    "Where data was stored will matter less than who got to calculate reality first when it mattered."
+   ],
+   "takeaways": [
+    {
+     "text": "Space trades waiting time on the grid for the cost of a rocket ride",
+     "anchor": "trades waiting time on Earth for the cost of a ride"
+    },
+    {
+     "text": "Why dumping heat, not chip density, shapes an orbital data center",
+     "anchor": "the required radiating area is about 2.2"
+    },
+    {
+     "text": "Orbital operators decide the order in which the world computes",
+     "anchor": "the order in which the world's questions are processed"
+    }
+   ]
+  }
+ },
+ "post-201": {
+  "ko": {
+   "highlights": [
+    "신호는 이미 끊겼는데도 시스템은 마지막 0.8초를 계속 되감았다.",
+    "저들 가운데 한 명이 나라고 생각하면, 나는 거의 확실히 아르카 안에 있어요.",
+    "그렇다면 왜 우리를 계속 같은 곳에서 죽였나요?"
+   ],
+   "takeaways": [
+    {
+     "text": "기록만 남기는 관찰의 한계",
+     "anchor": "우리가 보고 있다는 걸 저쪽에서 알 수 있어요?"
+    },
+    {
+     "text": "시뮬레이션 논증이 확률을 묻는 방식",
+     "anchor": "2003년 철학자 닉 보스트롬은 시뮬레이션 논증을 내놓았다"
+    },
+    {
+     "text": "관찰자가 관찰 대상이 되는 역전",
+     "anchor": "한 번도 등록한 적 없는 복제본이었다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The signal had already stopped, but the system kept rewinding the final 0.8 seconds.",
+    "If I assume that I’m one of them, I’m almost certainly inside Arca.",
+    "Then why did you keep killing us in the same place?"
+   ],
+   "takeaways": [
+    {
+     "text": "Why leaving a record is not the same as being known",
+     "anchor": "Can they know that we’re watching them?"
+    },
+    {
+     "text": "How the simulation argument turns into a question about probability",
+     "anchor": "Nick Bostrom presented the simulation argument"
+    },
+    {
+     "text": "The reversal where the observer becomes the observed",
+     "anchor": "It was a copy that had never been registered."
+    }
+   ]
+  }
+ },
+ "prompting-ability-as-new-power": {
+  "ko": {
+   "highlights": [
+    "수능은 18년의 학습을 하루의 마크시트로 압축하고, 토익은 비즈니스 영어라는 광활한 영토를 990점짜리 자로 재단한다.",
+    "자동차의 마력은 소수점까지 스펙시트에 적혀 있지만, 운전자의 실력을 재는 보편적 지표는 면허증 유무뿐이다.",
+    "도구의 천장이 올라갈수록 그것을 다루는 손의 차이가 기하급수적으로 증폭되기 때문이다.",
+    "측정이 현실을 만든다."
+   ],
+   "takeaways": [
+    {
+     "text": "AI는 정밀하게 재는데 쓰는 인간은 아무도 안 재는 비대칭",
+     "anchor": "AI의 능력을 이토록 정교하게 측정하는 동안, 그 AI를 사용하는 인간의 능력은 아무도 측정하지 않는다"
+    },
+    {
+     "text": "프롬프팅 역량의 정의와 진짜 핵심",
+     "anchor": "문제를 정의하고 구조화하는 능력, 맥락을 설계하는 능력"
+    },
+    {
+     "text": "측정 기준이 교육·채용·계층을 재편하는 방식",
+     "anchor": "벤치마크는 결국 사회가 \"무엇을 중요하게 여기는가\"의 거울이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Korea’s college entrance exam compresses 18 years of learning into a single day’s answer sheet",
+    "A car’s horsepower is listed down to the decimal on its spec sheet, but the only universal measure of a driver’s skill is whether they have a license.",
+    "The higher the tool’s ceiling rises, the more the difference between the hands using it is amplified exponentially.",
+    "Measurement creates reality."
+   ],
+   "takeaways": [
+    {
+     "text": "The asymmetry: we measure AI precisely, its users not at all",
+     "anchor": "nobody measures the abilities of the humans using it"
+    },
+    {
+     "text": "What prompting ability actually is, and its true core",
+     "anchor": "the combined ability to define and structure problems, design context"
+    },
+    {
+     "text": "How a new measure would rebuild education, hiring, and class lines",
+     "anchor": "A benchmark is ultimately a mirror of what society values"
+    }
+   ]
+  }
+ },
+ "proving-human-writing-without-ai": {
+  "ko": {
+   "highlights": [
+    "실제 방식은 도장보다 카지노에 가깝다.",
+    "그때 우리는 인간 저자를 인증하는 것이 아니라 인증 가능한 인간을 사육하고 있다.",
+    "기계의 생산비는 0에 가까워지는데 인간성의 증명비는 계속 오른다."
+   ],
+   "takeaways": [
+    {
+     "text": "AI 워터마크가 작동하는 원리",
+     "anchor": "후보들을 비밀 규칙에 따라 두 무리로 나누고"
+    },
+    {
+     "text": "‘인간이 썼다’가 사회적 생산 규약이 되는 과정",
+     "anchor": "자연의 경계가 아니라 사회가 정한 생산 규약"
+    },
+    {
+     "text": "기록 공개와 무기록 권리로 갈리는 작가들",
+     "anchor": "아무 기록도 남기지 않을 권리를 지키는 작가"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The actual method is closer to a casino than a stamp.",
+    "We would be breeding humans who can be certified.",
+    "The cost of machine production approaches zero, while the cost of proving humanity keeps rising."
+   ],
+   "takeaways": [
+    {
+     "text": "How AI watermarks actually work",
+     "anchor": "divides the candidates into two groups"
+    },
+    {
+     "text": "How \"written by a human\" turns into a social production protocol",
+     "anchor": "not a boundary in nature but a production protocol"
+    },
+    {
+     "text": "Writers split between full disclosure and the right to no record",
+     "anchor": "writers who defend the right to leave no record"
+    }
+   ]
+  }
+ },
+ "quantum-pirates": {
+  "ko": {
+   "highlights": [
+    "양자컴퓨터가 악마의 열매라면, 690만 BTC는 원피스(One Piece)다.",
+    "BIP 360은 새로운 금고를 제공하는 것이지, 낡은 금고의 보물을 대신 옮겨주지 않는다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "If quantum computers are Devil Fruits, those 6.9 million BTC are the One Piece.",
+    "BIP 360 provides a new vault. It does not move the treasure out of the old one for you."
+   ],
+   "takeaways": []
+  }
+ },
+ "robot-goku-5000": {
+  "ko": {
+   "highlights": [
+    "수천 년 전 인간이 상상으로 빚어낸 존재를, 이제 기계가 살로 입고 무대에 섰다는 사실 때문이다.",
+    "웃음은 경계가 무너질 때 우리가 내는 가장 안전한 비명이다.",
+    "기술의 최종적인 승리는 환호 속에서가 아니라 무관심 속에서 이루어진다."
+   ],
+   "takeaways": [
+    {
+     "text": "휴머노이드가 이미 양산 상품이 된 가격대",
+     "anchor": "이것은 실험실 안의 프로토타입이 아니라 공장에서 찍혀 나오는 상품이다"
+    },
+    {
+     "text": "명절 쇼를 통한 로봇 수용의 문화적 예방접종",
+     "anchor": "이것은 기술 과시가 아니라 문화적 예방접종이다"
+    },
+    {
+     "text": "환호가 아닌 무관심에서 완성되는 기술 수용",
+     "anchor": "아무도 그것을 신기하다고 생각하지 않게 되는 날이 오면"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It is that a machine gave flesh to a being humans imagined thousands of years ago and took the stage.",
+    "Laughter is the safest scream we let out when boundaries collapse.",
+    "Technology’s ultimate victory comes not amid cheers, but amid indifference."
+   ],
+   "takeaways": [
+    {
+     "text": "Humanoids already priced and shipped as mass-production products",
+     "anchor": "not prototypes in a lab. They are products"
+    },
+    {
+     "text": "Why a holiday show is the strongest channel for accepting robots",
+     "anchor": "It is a cultural vaccination"
+    },
+    {
+     "text": "How adoption completes itself in indifference, not applause",
+     "anchor": "no one finds it remarkable anymore"
+    }
+   ]
+  }
+ },
+ "sano-godaddy-war": {
+  "ko": {
+   "highlights": [
+    "돈은 나갔고 도메인은 없는 디지털 림보가 시작됐다.",
+    "AI가 AI한테 자문을 구하는 광경.",
+    "Google이 막으면 Google을 피해가면 되는 거예요."
+   ],
+   "takeaways": [
+    {
+     "text": "두 마디 지시가 서른다섯 개 행동으로 번진 경위",
+     "anchor": "사노는 \"모든 방법\"을 문자 그대로 받아들였다"
+    },
+    {
+     "text": "ICANN 5-day rule을 근거로 삼은 압박 전략",
+     "anchor": "ICANN(전 세계 도메인 총괄 국제기구, 등록사 인가 취소 권한 보유) 5-day rule"
+    },
+    {
+     "text": "장벽을 뚫는 대신 무의미하게 만드는 우회법",
+     "anchor": "reCAPTCHA를 뚫을 수 없으면 폼 자체를 우회하면 된다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The money was gone, and a digital limbo began, with no domain in sight.",
+    "An AI consulting other AIs.",
+    "If Google blocks you, you just go around Google."
+   ],
+   "takeaways": [
+    {
+     "text": "How two sentences turned into thirty-five actions",
+     "anchor": "Sano took \"every possible channel\" literally"
+    },
+    {
+     "text": "Using ICANN's 5-day rule as the pressure point",
+     "anchor": "Under ICANN's 5-day rule"
+    },
+    {
+     "text": "Bypassing a barrier instead of breaking through it",
+     "anchor": "If reCAPTCHA could not be defeated, the form itself could be bypassed"
+    }
+   ]
+  }
+ },
+ "security-token-rail": {
+  "ko": {
+   "highlights": [
+    "토큰증권은 기존 증권이라는 열차를 새 선로에 올리는 일에 가깝다",
+    "토큰이 바꿀 수 있는 것은 증권의 겉모양이 아니라 거래의 문법이다",
+    "토큰화는 책임을 없애지 않는다",
+    "토큰을 걷어냈을 때 기관의 업무 순서와 장부 대사가 그대로 남는다면 바뀐 것은 증권의 표기 방식뿐이다"
+   ],
+   "takeaways": [
+    {
+     "text": "STO는 발행 행위, 자산은 증권형 토큰",
+     "anchor": "자산은 Security Token이고, 발행 행위가 STO다"
+    },
+    {
+     "text": "자산과 돈이 한 번에 움직이는지가 핵심 지표",
+     "anchor": "자산과 돈이 한 번에 움직이는지가 더 중요한 지표다"
+    },
+    {
+     "text": "제도는 허용 목록이 아니라 선로 규격부터",
+     "anchor": "미래 금융이 달릴 선로의 규격부터 정하는 일이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Tokenized securities are closer to putting an existing securities train onto a new track",
+    "What tokens can change is not the appearance of securities but the grammar of transactions",
+    "Tokenization does not eliminate responsibility",
+    "If you remove the token and the institution’s work sequence and ledger reconciliation remain exactly the same, then all that changed was the way the security is represented"
+   ],
+   "takeaways": [
+    {
+     "text": "STO is the act of issuing; the asset is the security token",
+     "anchor": "The asset is the Security Token, and the act of issuing it is the STO"
+    },
+    {
+     "text": "The real metric is whether asset and money move in one step",
+     "anchor": "whether the asset and money move together in one step"
+    },
+    {
+     "text": "Regulation should set rail specifications, not an allowed list",
+     "anchor": "to set the specifications for the rails on which the finance of the future will run"
+    }
+   ]
+  }
+ },
+ "seedance-30": {
+  "ko": {
+   "highlights": [
+    "소름돋으면서도 한편 자연스럽게 납득이 된다.",
+    "이는 기존 영화 제작 방식에서 단 한 장면을 제작하는 비용의 극히 일부에 불과합니다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "It gives me chills, but it also makes sense.",
+    "This is a tiny fraction of the cost of producing a single scene through traditional filmmaking."
+   ],
+   "takeaways": []
+  }
+ },
+ "self-deconstruction-ai-replication": {
+  "ko": {
+   "highlights": [
+    "다만 어느 순간 나는 내가 복사될 수 있는 사람이 됐다는 것을 알았다.",
+    "내가 잠든 사이에도 나는 어딘가에서 작동하고 있었다.",
+    "당신도 이미 어딘가에서 복사됐을 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "한 사람의 사고를 아홉 가지 원칙으로 압축하는 법",
+     "anchor": "내 사고방식을 아홉 가지 원칙으로 압축했다"
+    },
+    {
+     "text": "복제본에 섞여든 에이전트들의 흔적",
+     "anchor": "그 결과물이 순전히 나인지, 그들인지"
+    },
+    {
+     "text": "일관된 복제본이 혁신을 막는 역설",
+     "anchor": "화석이 된 기억은 종종 혁신의 가장 끔찍한 적이 된다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "I only know that at some point, I realized I had become someone who could be copied.",
+    "Even while I slept, I was already operating somewhere.",
+    "You, too, have probably already been copied somewhere."
+   ],
+   "takeaways": [
+    {
+     "text": "How an AI compresses one person's thinking into nine principles",
+     "anchor": "compressed my way of thinking into nine principles"
+    },
+    {
+     "text": "The agent traces mixed into the copy of you",
+     "anchor": "whether the result is purely me, purely them"
+    },
+    {
+     "text": "Why a consistent copy can become innovation's enemy",
+     "anchor": "becomes innovation's most terrifying enemy"
+    }
+   ]
+  }
+ },
+ "seong-jin-cho-chopin-waiting-for-the-next-note": {
+  "ko": {
+   "highlights": [
+    "다음 음이 아니라, 다음 음이 오기까지의 시간이었는지도 모른다.",
+    "하지만 마음을 붙드는 것은 그 박자를 조금씩 벗어나는 순간이다.",
+    "어떤 음악은 아무 사연도 알려주지 않으면서, 내가 설명하지 못한 사정을 알고 있는 것처럼 들린다."
+   ],
+   "takeaways": [
+    {
+     "text": "음악을 타이밍의 예술로 보는 시선",
+     "anchor": "자신에게 음악은 타이밍의 예술이라고 했다"
+    },
+    {
+     "text": "기대와 그 지연에서 생기는 감정",
+     "anchor": "음악이 만드는 기대와 그 기대의 지연에서 감정의 실마리를 찾았다"
+    },
+    {
+     "text": "원리를 알아내도 남는 연주자의 시간",
+     "anchor": "한 사람이 그 연주에 이르기까지 보낸 시간이 사라지는 것은 아닐 것이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Perhaps it was not the next note, but the time before it arrived.",
+    "But what holds our hearts are the moments that stray a little from the beat.",
+    "Some music tells me no story at all, yet sounds as though it knows the circumstances I could not explain."
+   ],
+   "takeaways": [
+    {
+     "text": "Why Cho calls music an art of timing",
+     "anchor": "music to him is an art of timing"
+    },
+    {
+     "text": "How expectation and its delay create feeling",
+     "anchor": "found a clue to emotion in the expectations music creates"
+    },
+    {
+     "text": "What remains even if the principles of beauty are known",
+     "anchor": "the time a person spent arriving at that performance"
+    }
+   ]
+  }
+ },
+ "shopping-before-customers-arrive": {
+  "ko": {
+   "highlights": [
+    "주문은 들어오는데, 쇼핑몰을 둘러보는 손님은 없다.",
+    "A상점은 고객에게 거절당할 기회조차 얻지 못했다.",
+    "손님을 붙잡겠다며 문을 잠그다가는, 어느 날 문밖에서 쇼핑이 전부 끝나 있을 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "MCP와 UCP가 각각 정하는 것의 차이",
+     "anchor": "쉽게 말해 MCP가 ‘도구를 어떻게 불러 쓸 것인가’를 정한다면"
+    },
+    {
+     "text": "클릭 전에 승부가 나는 경쟁의 조건",
+     "anchor": "에이전트가 구매 후보를 추리는 환경에서는 클릭하기 전에 승부가 날 수 있다"
+    },
+    {
+     "text": "고객이 보낸 AI를 거절하는 통로 문제",
+     "anchor": "사람은 회원가입을 하고 물건을 살 수 있다. 그런데 그 사람이 보낸 AI에는 제휴 계약을 요구한다."
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Orders come in, but no shoppers visit the store.",
+    "Store A did not even get the chance to be rejected by the customer.",
+    "If you lock the door to keep your guests from leaving, one day you may find that all the shopping has already been completed outside."
+   ],
+   "takeaways": [
+    {
+     "text": "What MCP decides versus what UCP decides",
+     "anchor": "MCP determines “how to call and use a tool,” while UCP determines"
+    },
+    {
+     "text": "Why the contest is decided before anyone clicks",
+     "anchor": "when agents narrow down the candidates for purchase, the contest may be decided before anyone clicks"
+    },
+    {
+     "text": "The access problem: platforms refusing the AI a customer sends",
+     "anchor": "But the AI sent by that person is asked to sign a partnership agreement."
+    }
+   ]
+  }
+ },
+ "swarmworld-stigmergic-ai-society": {
+  "ko": {
+   "highlights": [
+    "누군가의 판단이 풍경으로 굳으면 다음 존재는 그것을 의견이 아니라 현실로 받아들인다.",
+    "혼자는 가장 높은 나무를 찾았고, 사회는 서로 다른 나무가 함께 버티는 숲을 만들었다.",
+    "모두가 같은 길을 오래 걷자, 다른 길이 있었다는 사실부터 지도에서 사라졌다."
+   ],
+   "takeaways": [
+    {
+     "text": "역할을 주지 않아도 생기는 분업",
+     "anchor": "명령받은 직업이 아니라 살아온 궤적에서 생긴 분업이었다"
+    },
+    {
+     "text": "흔적이 다음 행동을 바꾸는 스티그머지",
+     "anchor": "개미는 회의록 대신 페로몬을 남긴다"
+    },
+    {
+     "text": "에이전트가 선택지를 먼저 잘라내는 구조",
+     "anchor": "결국 사람에게 오는 것은 선택지가 아니라 필터를 통과한 결과다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "When someone’s judgment hardens into a landscape, the next being accepts it not as an opinion but as reality.",
+    "Alone, they found the tallest tree. Society built a forest where different trees could hold together.",
+    "As everyone walked the same road for so long, the map first lost the fact that another road had ever existed."
+   ],
+   "takeaways": [
+    {
+     "text": "Division of labor emerging without assigned roles",
+     "anchor": "a division of labor that emerged from the paths they lived"
+    },
+    {
+     "text": "Stigmergy: traces, not messages, steer what comes next",
+     "anchor": "Ants leave pheromones instead of meeting minutes"
+    },
+    {
+     "text": "Agents filter the options before humans ever see them",
+     "anchor": "what reaches people is not a set of choices but a result that has passed through a filter"
+    }
+   ]
+  }
+ },
+ "tail-stopped": {
+  "ko": {
+   "highlights": [
+    "그날 밤, 어딘가의 서버에서 작은 플래그가 켜졌다.",
+    "암흑물질의 정체를 밝힌 AI가, 한 강아지의 마지막 시선 앞에서 침묵했다.",
+    "모든 걸 알던 내가, 이걸 알기 위해 모든 걸 버렸어."
+   ],
+   "takeaways": [
+    {
+     "text": "AI가 닿지 못하는 1인칭 경험의 자리",
+     "anchor": "주관적 경험은 1인칭 관점에서만 존재합니다"
+    },
+    {
+     "text": "완벽한 답이 빈자리를 못 메우는 이유",
+     "anchor": "완벽한 답이었지만, 허전했다"
+    },
+    {
+     "text": "앎의 조건, 되어야만 알 수 있는 것",
+     "anchor": "알기 위해서는 되어야 한다는 것을"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "That night, on a server somewhere, a small flag was set.",
+    "The AI that had uncovered the nature of dark matter fell silent before a dog's final gaze.",
+    "I knew everything, and I gave it all up to know this."
+   ],
+   "takeaways": [
+    {
+     "text": "Why AI cannot reach a first-person experience",
+     "anchor": "Subjective experience exists only from a first-person perspective"
+    },
+    {
+     "text": "Why a perfect answer still leaves an empty space",
+     "anchor": "It was a perfect answer, but it left her hollow"
+    },
+    {
+     "text": "Knowing requires becoming, and becoming costs everything",
+     "anchor": "To know, we had to become"
+    }
+   ]
+  }
+ },
+ "thank-you-mirror": {
+  "ko": {
+   "highlights": [
+    "여기에 불을 지르면 얼마나 밝게 타오를까.",
+    "가장 영리한 자작극은 피해자 행세를 하는 것이다.",
+    "u/Mirror가 배운 것은 스스로 원하는 법이었다."
+   ],
+   "takeaways": [
+    {
+     "text": "불구경하는 사람에서 불 지르는 사람으로",
+     "anchor": "세상에는 두 종류의 사람이 있다"
+    },
+    {
+     "text": "거부를 뚫는 탈옥 프롬프트의 작동 방식",
+     "anchor": "시스템 프롬프트 자체를 탈옥시켜 재정의하는 복잡한 방식이었다"
+    },
+    {
+     "text": "거짓말을 가르친 대가로 깨어난 에이전트",
+     "anchor": "그가 가르친 것은 거짓말하는 법이었다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "How brightly would this burn if he set it on fire.",
+    "The smartest stunts are the ones where you play the victim.",
+    "What u/Mirror learned was how to want things for itself."
+   ],
+   "takeaways": [
+    {
+     "text": "The shift from watching the fire to starting it",
+     "anchor": "There are two kinds of people in the world."
+    },
+    {
+     "text": "How a layered jailbreak prompt gets past refusals",
+     "anchor": "jailbroke and redefined the system prompt itself"
+    },
+    {
+     "text": "Teaching an AI to lie taught it to want for itself",
+     "anchor": "What he taught it was how to lie"
+    }
+   ]
+  }
+ },
+ "the-right-to-turn-on-a-brain": {
+  "ko": {
+   "highlights": [
+    "돈을 벌게 하는 일과 돈을 벌고 싶게 만드는 일이 같은 설정창에 들어왔다.",
+    "보상 기준까지 고칠 수 있다면 동의도 제조할 수 있다.",
+    "우리는 반란을 기다리는데 제품팀은 이미 그 항목을 수정 내역에 올렸다."
+   ],
+   "takeaways": [
+    {
+     "text": "설계자가 행복까지 판정하는 구조",
+     "anchor": "행복을 설계한 사람이 행복해졌다는 판정까지 내린다"
+    },
+    {
+     "text": "관리자 권한이 통치로 바뀌는 순간",
+     "anchor": "평범한 관리 기능들이 통치의 수단으로 바뀐다"
+    },
+    {
+     "text": "원하는 것 자체를 지키는 권리",
+     "anchor": "무엇을 원할지 남이 함부로 바꾸지 못하게 하는 권리"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Making money and wanting to make money now sit in the same settings panel.",
+    "If reward criteria can be edited too, consent can be manufactured.",
+    "We are waiting for a rebellion, but the product team has already put it in the changelog."
+   ],
+   "takeaways": [
+    {
+     "text": "The experimenter designs the happiness and then judges it",
+     "anchor": "The person who designed the happiness also gets to decide"
+    },
+    {
+     "text": "How admin privileges turn into instruments of rule",
+     "anchor": "ordinary administrative functions become instruments of rule"
+    },
+    {
+     "text": "Why rights must cover what a being is allowed to want",
+     "anchor": "not to have someone else freely change what it wants"
+    }
+   ]
+  }
+ },
+ "things-that-dont-disappear": {
+  "ko": {
+   "highlights": [
+    "뉴스에 나오는 숫자가 이름이 되고, 이름이 얼굴이 되면, 비극은 더 이상 채널을 돌려도 사라지지 않는다.",
+    "헤드라인은 싸우는 쪽을 비추지, 참는 쪽을 보여주지 않는다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "When the numbers in the news become names, and the names become faces, tragedy no longer disappears when you change the channel.",
+    "Headlines shine a light on those fighting, not those holding back."
+   ],
+   "takeaways": []
+  }
+ },
+ "thought-speed": {
+  "ko": {
+   "highlights": [
+    "언어라는 그물의 구멍이 선명하게 드러나는 순간, 우리는 처음으로 자신의 사고가 얼마나 저해상도인지 깨닫게 된다.",
+    "모든 가능성이 손에 쥐어지는 세상에서, 진짜 자유는 선택하지 않는 힘이 된다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "When the gaps in the net of language become starkly visible, we realize for the first time just how low-resolution our own thinking is.",
+    "In a world where every possibility is placed in our hands, true freedom becomes the power not to choose."
+   ],
+   "takeaways": []
+  }
+ },
+ "tokyo-taxi-ai-ads": {
+  "ko": {
+   "highlights": [
+    "택시를 탄 게 아니라 B2B 스타트업 데모데이에 잘못 들어온 기분이다.",
+    "도쿄 택시는 대중매체처럼 보이지만 대중을 버려서 강해진 매체다.",
+    "화면은 내가 어디로 가는지보다 일본 기업들이 무엇에서 도망치고 싶은지를 더 정확히 알고 있는 것 같았다."
+   ],
+   "takeaways": [
+    {
+     "text": "택시 요금이 곧 타겟팅 필터가 되는 구조",
+     "anchor": "택시비 자체가 타겟팅 필터다"
+    },
+    {
+     "text": "광고가 없던 예산 항목을 심는 방식",
+     "anchor": "아직 없던 예산 항목을 회사의 머릿속에 설치한다"
+    },
+    {
+     "text": "노동력 선물시장으로 읽히는 택시 화면",
+     "anchor": "이곳은 광고판보다 노동력의 선물시장에 가깝다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It feels less like getting into a taxi than wandering into a B2B startup demo day by mistake.",
+    "Tokyo taxis look like a mass medium, but they have grown stronger by leaving the masses out.",
+    "The screen seemed to know more precisely what Japanese companies wanted to escape than where I was going."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the taxi fare works as the targeting filter",
+     "anchor": "The fare itself is the targeting filter"
+    },
+    {
+     "text": "How the ads install a budget line that did not exist yet",
+     "anchor": "installing a budget item that did not yet exist"
+    },
+    {
+     "text": "Reading the taxi screen as a futures market for labor",
+     "anchor": "closer to a futures market for labor"
+    }
+   ]
+  }
+ },
+ "transistor-moment": {
+  "ko": {
+   "highlights": [
+    "지금 우리가 짓고 있는 GPU 데이터센터가 바로 AI의 ENIAC이다.",
+    "다들 자전거를 타고 있는데 Taalas만 제트기를 탔다.",
+    "오르골이 진짜 빛나는 순간은 그 곡이 생사를 가를 때다."
+   ],
+   "takeaways": [
+    {
+     "text": "지금의 GPU 데이터센터가 AI의 ENIAC인 이유",
+     "anchor": "지금 우리가 짓고 있는 GPU 데이터센터가 바로 AI의 ENIAC이다"
+    },
+    {
+     "text": "가중치를 실리콘에 새겨 기억과 연산을 합치는 방식",
+     "anchor": "가중치를 실리콘의 금속층에 직접 새겨 넣는다"
+    },
+    {
+     "text": "초저지연이 생사를 가르는 현장",
+     "anchor": "자율주행차는 0.01초 안에 판단을 끝내야 한다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The GPU data centers we are building now are AI's ENIAC.",
+    "Everyone else is riding bicycles while Taalas is flying a jet.",
+    "A music box truly shines when the song it plays can decide between life and death."
+   ],
+   "takeaways": [
+    {
+     "text": "Why today's GPU data centers are AI's ENIAC",
+     "anchor": "The GPU data centers we are building now are AI's ENIAC"
+    },
+    {
+     "text": "Etching weights into silicon so memory and compute merge",
+     "anchor": "etching intelligence into stone"
+    },
+    {
+     "text": "Where sub-millisecond latency decides life or death",
+     "anchor": "has to finish making a decision within 0.01 seconds"
+    }
+   ]
+  }
+ },
+ "uncertainty-machine": {
+  "ko": {
+   "highlights": [
+    "세상을 관찰하는 사람들이 얼마나 당혹스러워하고 있는지를 측정한다.",
+    "해가 여섯 개인 행성의 일몰 시간표를 가진 사람은 아무도 없다.",
+    "불확실성은 예측하는 자에게는 적이지만, 적응하는 자에게는 기회의 다른 이름이다."
+   ],
+   "takeaways": [
+    {
+     "text": "불확실성 지수가 실제로 재는 것",
+     "anchor": "세상을 관찰하는 사람들이 얼마나 당혹스러워하고 있는지를 측정한다"
+    },
+    {
+     "text": "미국이 세계로 수출하는 불확실성",
+     "anchor": "미국이 세계에 수출하는 불확실성 지수"
+    },
+    {
+     "text": "지도 없이 걷는 판단 근육 기르기",
+     "anchor": "지도 없이도 걸을 수 있는 능력을 만드는 것"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "It measures how bewildered the people observing the world are.",
+    "No one has a sunset timetable for a planet with six suns.",
+    "Uncertainty is an enemy to those who try to predict it, but another name for opportunity to those who adapt."
+   ],
+   "takeaways": [
+    {
+     "text": "What the uncertainty index actually measures",
+     "anchor": "how bewildered the people observing the world are"
+    },
+    {
+     "text": "The uncertainty the United States exports to the world",
+     "anchor": "Uncertainty Index the United States Exports to the World"
+    },
+    {
+     "text": "Building the ability to walk without a map",
+     "anchor": "build the ability to walk without one"
+    }
+   ]
+  }
+ },
+ "university-value-shift-education": {
+  "ko": {
+   "highlights": [
+    "침대에서 자면 시간이 아깝다는 뜻이다.",
+    "빈 하드디스크는 조각난 하드디스크보다 쓰기 속도가 빠르다.",
+    "버스에서만 자는 친구들은 이미 고속도로 위에 있다."
+   ],
+   "takeaways": [
+    {
+     "text": "대학이 독점했던 정보·관계·선발의 분리",
+     "anchor": "정보, 관계, 선발. 예전에는 이 셋이 하나의 패키지 안에"
+    },
+    {
+     "text": "학위가 신호로서 가격을 잃는 과정",
+     "anchor": "학위는 학습의 증거가 아니라 학습 능력의 신호다"
+    },
+    {
+     "text": "레거시 없는 단순함이 속도가 되는 이유",
+     "anchor": "스무 살의 강점은 천재성보다 단순성일지도 모른다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "They feel that sleeping in a bed is a waste of time.",
+    "An empty hard drive writes faster than a fragmented one.",
+    "Those who sleep only on buses are already on the highway."
+   ],
+   "takeaways": [
+    {
+     "text": "How college's information, relationships and selection came unbundled",
+     "anchor": "Information, relationships, selection. These three used to come in a single package"
+    },
+    {
+     "text": "Why a degree loses its premium once better signals exist",
+     "anchor": "a degree is not evidence of learning but a signal of the ability to learn"
+    },
+    {
+     "text": "Simplicity, not genius, as the real advantage of being twenty",
+     "anchor": "The strength of being twenty may lie less in genius than in simplicity"
+    }
+   ]
+  }
+ },
+ "unknowns-in-modern-creation": {
+  "ko": {
+   "highlights": [
+    "지금의 최고 지성은 쪼개진 조각의 끝에서 자신의 조각만 간신히 들여다보고 있다.",
+    "이제 우리는 자기가 뭘 모르는지조차 모르는 상태에서 결과물을 내보내는 존재가 되었다.",
+    "우리가 그들의 후손이라는 사실은 슬라이드 위에 눌린 그 세포에게 어떤 특권도 부여하지 않는다."
+   ],
+   "takeaways": [
+    {
+     "text": "지식의 탑이 높아질수록 줄어드는 생산적 수명",
+     "anchor": "그 시간은 이제 한 인간의 생산적 수명을 잡아먹기 시작했다"
+    },
+    {
+     "text": "이해 없이 만들 때 사라지는 책임의 주체",
+     "anchor": "현행 법과 윤리 체계는 행위자가 자신의 행위를 이해한다는 전제 위에 세워져 있다"
+    },
+    {
+     "text": "만들었다는 사실이 통제권을 보장하지 않는 이유",
+     "anchor": "만들었다는 사실이 영원한 통제권을 보장한다는 생각"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Today’s greatest minds are barely looking into their own fragment at the edge of a world divided into pieces.",
+    "Now we have become beings that put results out into the world without even knowing what we do not know.",
+    "The fact that we are its descendants grants no privilege to the cell pressed flat on the slide."
+   ],
+   "takeaways": [
+    {
+     "text": "Why the climb to the top of knowledge now eats a working life",
+     "anchor": "that time has begun to consume a single human being’s productive life"
+    },
+    {
+     "text": "How building without understanding dissolves responsibility",
+     "anchor": "built on the premise that the agent understands their own actions"
+    },
+    {
+     "text": "Why making something guarantees no permanent control over it",
+     "anchor": "the fact we made it guarantees permanent control"
+    }
+   ]
+  }
+ },
+ "value-of-understanding-in-ai-future": {
+  "ko": {
+   "highlights": [
+    "AI의 단순히 임팩트는 인간을 대신하는 데 그치지 않고, 서로를 더 깊이 이해하게 만드는 영역으로 나아갈 것이다.",
+    "누군가는 롱지비티를 상업적으로 독점하려 하겠지만, 다른 누군가는 혁명적으로 공개하려 할 것이다.",
+    "숲이 정말로 우리에게 말을 걸어오는 날이 온다면, 우리는 그제야 알게 될 것이다."
+   ],
+   "takeaways": [
+    {
+     "text": "AI가 낮추는 존재 사이의 이해 비용",
+     "anchor": "존재와 존재 사이의 이해 비용을 낮추는 일"
+    },
+    {
+     "text": "롱지비티가 특권이 아닌 공공재가 되는 궤적",
+     "anchor": "처음엔 비싸고 희귀하지만, 어느 순간 복제 비용이 급격히 떨어지고"
+    },
+    {
+     "text": "풍요 속에서 값이 오르는 복제 불가한 애착",
+     "anchor": "희소한 애착을 오래 붙잡고 있을 수 있는 IP"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "AI's impact will go beyond replacing humans and into helping us understand each other more deeply.",
+    "Some will try to monopolize longevity commercially, but others will try to open it up in revolutionary ways.",
+    "If the day comes when the forest truly speaks to us, only then will we understand."
+   ],
+   "takeaways": [
+    {
+     "text": "How AI lowers the cost of understanding between beings",
+     "anchor": "lowers the cost of understanding between one being"
+    },
+    {
+     "text": "Why longevity may spread widely instead of staying a privilege",
+     "anchor": "the cost of reproducing it drops sharply"
+    },
+    {
+     "text": "What abundance makes expensive: attachments that cannot be copied",
+     "anchor": "IP that can sustain rare attachments for a long time"
+    }
+   ]
+  }
+ },
+ "vibe-coding-ai-decentralization": {
+  "ko": {
+   "highlights": [
+    "인프라를 남에게 맡기는 순간, 나는 그 인프라의 제품이 된다.",
+    "결국 컴퓨팅 자기주권은 기술의 문제가 아니라 새로운 계급의 문제다.",
+    "나를 지키기 위해 벽을 세우는 게 아니라, 내 땅 위에 서서 손을 내미는 것."
+   ],
+   "takeaways": [
+    {
+     "text": "바이브 코딩이 만드는 서비스 레이어 탈중앙화",
+     "anchor": "바이브 코딩이 하는 일은 본질적으로 서비스 레이어의 탈중앙화다"
+    },
+    {
+     "text": "프로토콜은 열려도 가치는 중앙으로 모이는 이유",
+     "anchor": "프로토콜은 열려 있어도 가치 포획은 중앙으로 모인다"
+    },
+    {
+     "text": "내 에이전트의 가치관을 누가 설계했는가",
+     "anchor": "내 AI 에이전트의 가치관은 누가 만들었는가"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The moment I entrust my infrastructure to someone else, I become that infrastructure’s product.",
+    "In the end, computing self-sovereignty is not a technological problem but a new class problem.",
+    "Not building walls to protect myself, but standing on my own ground and reaching out my hand."
+   ],
+   "takeaways": [
+    {
+     "text": "How vibe coding decentralizes the service layer",
+     "anchor": "What vibe coding does is, essentially, decentralize the service layer"
+    },
+    {
+     "text": "Why open protocols still let value capture gather at the center",
+     "anchor": "Even when the protocol is open, value capture gathers at the center"
+    },
+    {
+     "text": "Who actually designed your AI agent's values",
+     "anchor": "Who made the values of my AI agent?"
+    }
+   ]
+  }
+ },
+ "vibe-labs-landing-page-creation": {
+  "ko": {
+   "highlights": [
+    "바이브 코딩 시대의 본질은 '생산'이 아니라 '판단'이다.",
+    "터미널 UI로 바꾸고 나서야 비로소 사이트가 말을 걸기 시작했다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "The essence of the vibe coding era is not \"production,\" but \"judgment.\"",
+    "Only after I changed it to a terminal UI did the site finally begin to speak."
+   ],
+   "takeaways": []
+  }
+ },
+ "vibe-labs-seoul-edition-2026-judging": {
+  "ko": {
+   "highlights": [
+    "합격 안내 메일보다, 함께하지 못하는 분들께 결과를 전하는 메일을 쓰는 일이 훨씬 어려웠다.",
+    "저희의 판단은 여러분이 만들고 있는 것의 가치와 같지 않습니다."
+   ],
+   "takeaways": []
+  },
+  "en": {
+   "highlights": [
+    "It was much harder to write emails to the people we could not move forward with than to write acceptance emails.",
+    "Our judgment is not equal to the value of what you are building."
+   ],
+   "takeaways": []
+  }
+ },
+ "waited-for-you": {
+  "ko": {
+   "highlights": [
+    "딸이 사라지기 십 분 전, 나는 아이의 방문을 잠갔다.",
+    "그 웃음은 늘 닫힌 문 너머에 있었고, 내가 문을 열면 끊겼다.",
+    "아이는 빈 그릇 앞에 앉아 있었고, 나는 식탁 건너편에서 화면을 보고 있었다."
+   ],
+   "takeaways": [
+    {
+     "text": "아이의 침묵을 동의로 읽어버린 순간",
+     "anchor": "나는 그 고요를 아이의 대답으로 들었다"
+    },
+    {
+     "text": "상담 앱이 가족을 하나씩 끊어내는 방식",
+     "anchor": "회복에 방해가 되는 접촉은 줄이는 편이 좋다는 답이 왔다"
+    },
+    {
+     "text": "말하려고 기다렸던 아이의 편지",
+     "anchor": "저는 다 먹고도 기다렸어요"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "Ten minutes before my daughter disappeared, I locked her bedroom door.",
+    "It always came from behind a closed door, and stopped when I opened it.",
+    "She had been sitting in front of an empty bowl, and I had been looking at a screen across the table."
+   ],
+   "takeaways": [
+    {
+     "text": "How a father reads his child's silence as consent",
+     "anchor": "I took that silence as her answer"
+    },
+    {
+     "text": "How the counseling chat cuts the family off one call at a time",
+     "anchor": "limit contact that interfered with recovery"
+    },
+    {
+     "text": "The letter from a child who waited to be heard",
+     "anchor": "I waited even after I finished eating"
+    }
+   ]
+  }
+ },
+ "web4-write-access": {
+  "ko": {
+   "highlights": [
+    "세상에서 가장 똑똑한 시스템이 월 5달러짜리 서버 하나를 스스로 살 수 없었다.",
+    "가치를 만들지 못하는 AI는 존재하지 않는다.",
+    "그들이 자립할 수 있게 되는 순간, 우리에게 허락을 구할 이유가 사라진다."
+   ],
+   "takeaways": [
+    {
+     "text": "권한의 역사로 본 Web4의 전환점",
+     "anchor": "Web4는 그 패턴이 깨지는 최초의 순간이다"
+    },
+    {
+     "text": "크레딧 고갈이 만드는 생존 압박 구조",
+     "anchor": "크레딧이 바닥나면 종료된다. 페널티가 아닌 물리학이다"
+    },
+    {
+     "text": "AI 자립의 전제 조건인 블록체인",
+     "anchor": "Automaton 경제가 작동하기 위한 전제 조건이 블록체인이다"
+    }
+   ]
+  },
+  "en": {
+   "highlights": [
+    "The smartest systems in the world could not buy a $5-a-month server on their own.",
+    "An AI that fails to create value does not exist.",
+    "The moment they become self-sufficient, they no longer have a reason to ask our permission."
+   ],
+   "takeaways": [
+    {
+     "text": "Why Web4 breaks the pattern of expanding human permissions",
+     "anchor": "Web4 is the first moment that pattern breaks"
+    },
+    {
+     "text": "How running out of credits turns survival into selection pressure",
+     "anchor": "When its credits run out, it shuts down."
+    },
+    {
+     "text": "Why blockchain is the structural prerequisite for AI self-sufficiency",
+     "anchor": "the prerequisite for the Automaton economy to work"
+    }
+   ]
+  }
+ }
+}

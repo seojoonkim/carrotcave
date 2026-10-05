@@ -21,6 +21,9 @@ import type { OntologyIndex } from '@/lib/ontology/types';
 import PostGallery from '@/components/PostGallery';
 import { axisHref, axisLabel, depthLabelFor, formatDate, localePath, t, type Locale } from '@/lib/i18n';
 import { localizedPost } from '@/lib/i18n-content';
+import readingAids from '@/data/reading-aids.json';
+import ReadingDepth from '@/components/ReadingDepth';
+import { BUDDY_INNER } from '@/lib/brand-svg';
 
 // The reading page for one post, in either language. Korean: /posts/<slug>. English: /en/posts/<slug>.
 
@@ -60,7 +63,48 @@ function stripLeadingDuplicateTitle(content: string, title: string) {
   return lines.join('\n');
 }
 
-function renderContent(content: string, locale: Locale) {
+type Aid = { highlights: string[]; takeaways: { text: string; anchor: string }[] };
+type Aids = Record<string, { ko: Aid; en: Aid }>;
+
+// Interview posts: lines like "김서준: ..." / "Simon Kim: ...". A post counts as a dialogue only when
+// at least two speakers each have two or more turns, so a stray "Note: ..." never turns into a speaker.
+const TURN_RE = /^(?:\*\*)?([^\s:：*]{2,12}(?: [A-Z][a-z]+(?:-[a-z]+)?)?)(?:\*\*)?\s?[:：]\s+(.+)$/;
+const HOSTS = new Set(['김서준', 'Simon', 'Simon Kim', '서준']);
+export function dialogueSpeakers(content: string): string[] {
+  const count = new Map<string, number>();
+  for (const line of content.split('\n')) {
+    const m = line.trim().match(TURN_RE);
+    if (m) count.set(m[1], (count.get(m[1]) ?? 0) + 1);
+  }
+  const speakers = [...count].filter(([, n]) => n >= 2).map(([name]) => name);
+  return speakers.length >= 2 ? speakers : [];
+}
+
+type Reading = { highlights: string[]; anchors: string[]; speakers: string[] };
+
+// Wrap a verbatim key sentence in <mark>, but only when the cut does not split inline markdown.
+function renderWithHighlight(line: string, highlights: string[]) {
+  for (const h of highlights) {
+    const at = line.indexOf(h);
+    if (at < 0) continue;
+    const before = line.slice(0, at);
+    const after = line.slice(at + h.length);
+    const safe = (x: string) => (x.split('**').length - 1) % 2 === 0 && (x.split('`').length - 1) % 2 === 0;
+    if (!safe(before) || !safe(h) || /\[[^\]]*$/.test(before)) continue;
+    return (
+      <>
+        {renderInline(before)}
+        <mark className="post-key">{renderInline(h)}</mark>
+        {renderInline(after)}
+      </>
+    );
+  }
+  return renderInline(line);
+}
+
+function renderContent(content: string, locale: Locale, reading: Reading = { highlights: [], anchors: [], speakers: [] }) {
+  const speakerIndex = new Map(reading.speakers.map((name, k) => [name, k]));
+  const anchorIds = new Map<number, string>();
   const lines = unwrapTelegramLinkPreview(content).split('\n');
   const previewMap = linkPreviews as Record<string, LinkPreview>;
 
@@ -152,9 +196,28 @@ function renderContent(content: string, locale: Locale) {
       );
     }
 
+    const anchorAt = reading.anchors.findIndex((a, k) => a && line.includes(a) && ![...anchorIds.values()].includes(`take-${k + 1}`));
+    const id = anchorAt >= 0 ? `take-${anchorAt + 1}` : undefined;
+    if (id) anchorIds.set(i, id);
+
+    const turn = speakerIndex.size ? line.trim().match(TURN_RE) : null;
+    if (turn && speakerIndex.has(turn[1])) {
+      const who = turn[1];
+      const host = HOSTS.has(who);
+      return (
+        <p key={i} id={id} className="post-turn" data-host={host ? 'true' : 'false'} data-voice={speakerIndex.get(who)! % 4}>
+          <span className="post-turn__who">
+            <span className="post-turn__dot" aria-hidden="true">{[...who][0]}</span>
+            {who}
+          </span>
+          <span className="post-turn__line">{renderWithHighlight(turn[2], reading.highlights)}</span>
+        </p>
+      );
+    }
+
     return (
-      <p key={i}>
-        {renderInline(line)}
+      <p key={i} id={id}>
+        {renderWithHighlight(line, reading.highlights)}
       </p>
     );
   });
@@ -231,6 +294,14 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
     .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? 0) - (a.telegramMsgId ?? 0)));
   const nextSource = axisPosts[axisPosts.findIndex((item) => item.slug === post.slug) + 1];
   const nextPost = nextSource ? localizedPost(nextSource, locale) : undefined;
+
+  const aid = (readingAids as Aids)[post.slug]?.[locale];
+  const reading: Reading = {
+    highlights: aid?.highlights ?? [],
+    anchors: aid?.takeaways?.map((x) => x.anchor) ?? [],
+    speakers: dialogueSpeakers(post.content),
+  };
+  const takeaways = aid?.takeaways?.length === 3 ? aid.takeaways : [];
 
   const rawConstellation = buildTopRecommendations(post.slug, ontologyIndex as OntologyIndex);
   const postDetails = new Map(posts.map((item) => {
@@ -317,20 +388,44 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
         {/* Summary removed — content speaks for itself */}
 
         {/* Content */}
-        <div className="post-content">
-          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale)}
+        {takeaways.length > 0 && (
+          <details className="post-takeaways" open>
+            <summary className="post-takeaways__title">{L.takeawaysTitle}</summary>
+            <ol className="post-takeaways__list">
+              {takeaways.map((item, k) => (
+                <li key={k}>
+                  <a href={`#take-${k + 1}`} aria-label={`${item.text} — ${L.takeawaysJump}`}>
+                    <span className="post-takeaways__num" aria-hidden="true">{k + 1}</span>
+                    <span className="post-takeaways__text">{item.text}</span>
+                    <span className="post-takeaways__go" aria-hidden="true">↓</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </details>
+        )}
+
+        <div className="post-content" data-dialogue={reading.speakers.length ? 'true' : undefined}>
+          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale, reading)}
         </div>
 
         <section className="cc-reading-end" aria-label={L.readingEndAria}>
           <div className="cc-reading-end__mark" aria-hidden="true" />
 
+          <ReadingDepth slug={post.slug} locale={locale} />
+
           {nextPost && (
-            <Link className="post-next" href={postHref(nextPost.slug)} data-has-image={archiveImageUrl(nextPost) ? 'true' : 'false'}>
-              <span className="post-next__thumb" aria-hidden="true">
-                <Image src={archiveImageUrl(nextPost) ?? EDITORIAL_CARD_FALLBACK_IMAGE} alt="" width={480} height={300} sizes="(max-width: 600px) 104px, 176px" />
+            <Link className="post-next post-next--hole" href={postHref(nextPost.slug)} data-has-image={archiveImageUrl(nextPost) ? 'true' : 'false'}>
+              <span className="post-hole__ask">
+                <svg className="post-hole__buddy" viewBox="0 0 132 96" aria-hidden="true" focusable="false" dangerouslySetInnerHTML={{ __html: BUDDY_INNER }} />
+                <span className="post-hole__bubble">{L.nextHole}</span>
               </span>
-              <span className="post-next__label">{L.nextIn(axisName)}</span>
+              <span className="post-next__thumb" aria-hidden="true">
+                <Image src={archiveImageUrl(nextPost) ?? EDITORIAL_CARD_FALLBACK_IMAGE} alt="" width={960} height={600} sizes="(max-width: 600px) 100vw, 680px" />
+              </span>
+              <span className="post-next__label">{L.nextHoleSub(axisName)}</span>
               <span className="post-next__title">{nextPost.title}</span>
+              {nextPost.summary ? <span className="post-hole__summary">{nextPost.summary}</span> : null}
               <span className="post-next__arrow" aria-hidden="true">→</span>
             </Link>
           )}
