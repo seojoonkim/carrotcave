@@ -16,7 +16,7 @@
 .cc-reading-divider,.cc-reading-progress{display:none!important}
 
 @media(max-width:599px){.cc-reading-title{font-size:var(--reader-header-title-size-mobile,15px)}.post-content h2{font-size:var(--reader-section-size-mobile)}.post-content h3{font-size:var(--reader-subsection-size-mobile)}}
-@media(max-width:480px){.cc-brand small{display:none}.cc-footer p:not(.cc-newsletter p){display:none}article:not(.post-reader-article){padding-left:20px!important;padding-right:20px!important}.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));padding:44px 0 70px}.post-reader-header h1{font-size:32px}}
+@media(max-width:480px){.cc-brand small{display:none}.cc-footer p:not(.cc-newsletter p):not(.cc-footer__copy p){display:none}article:not(.post-reader-article){padding-left:20px!important;padding-right:20px!important}.post-reader-article{width:calc(100% - (var(--reader-mobile-gutter) * 2));padding:44px 0 70px}.post-reader-header h1{font-size:32px}}
 /* Editorial cave wall */
 .axis-rail{min-width:0;background:transparent}.axis-rail__inner{width:100%;height:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
 .axis-rail a{min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;padding:0 10px;border-left:1px solid var(--line);font-family:var(--mono)}.axis-rail b{font:500 13px var(--sans)}.axis-rail span{font-size:9px;color:var(--muted)}.axis-rail a:hover,.axis-rail a.active{background:var(--paper);color:var(--graphite)}.axis-rail a.active span{color:var(--graphite)}
@@ -1063,3 +1063,7 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 @keyframes cc-buddy-tilt-v4{0%,100%{transform:translate(4px,12px) scale(.3)}50%{transform:translate(4px,10px) scale(.3) rotate(-3deg)}}
 .cc-footer{background:linear-gradient(180deg,var(--graphite) 0%,var(--cave-0) 38%,var(--cave-0) 100%)}
 @media (prefers-reduced-motion:reduce){.cc-buddy__mark *,.carrot-cave-mark *{animation:none!important;transition:none!important}.cc-buddy__mark .buddy-blink{opacity:0}}
+
+/* Shared footer copyright (data/site-legal.json) */
+.cc-footer__legal{margin:0;color:var(--muted);font:500 11px/1.4 var(--mono);letter-spacing:.04em}.cc-footer__legal small{font-size:inherit}
+@media(max-width:520px){.cc-footer__legal{font-size:10px}}

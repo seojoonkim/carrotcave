@@ -353,6 +353,8 @@ img { border: 0; outline: 0;  }
 .voice-shared-footer__links a:first-child { color: #d9dce8; }
 .voice-shared-footer__links a:hover { color: #f6c07a; }
 .voice-shared-footer__social-icon { width: 14px; height: 14px; flex: 0 0 14px; }
+.voice-shared-footer__legal { color: #8d93a8; font: 500 11px/1.4 var(--font-mono); letter-spacing: .04em; }
+.voice-shared-footer__legal small { font-size: inherit; }
 .overview-insights {
   margin: 0;
   padding-left: 1.5rem;
@@ -380,10 +382,13 @@ img { border: 0; outline: 0;  }
   .transcript-paragraph { padding-bottom: 24px; }
   .long-record-body .utterance { margin-bottom: 24px; }
   .voice-shared-footer { padding: 28px 20px; }
+  /* fixed TOP button (48px) must not cover footer links/copyright at scroll end */
+  .voice-shared-footer { padding-bottom: 88px !important; }
   .voice-footer-rabbit-carrot { height: auto; }
   .voice-shared-footer__copy { gap: 5px; padding-top: 16px; }
   .voice-shared-footer__copy .voice-shared-footer__links { gap: 8px; }
   .voice-shared-footer__links a { font-size: 10px; }
+  .voice-shared-footer__legal { font-size: 10px; }
 }
 /* One borderless control language across every embedded voice reader. */
 .menu-button,

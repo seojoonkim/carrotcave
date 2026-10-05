@@ -4,6 +4,7 @@ import { posts } from '@/data/posts';
 const latestPostDate = posts.reduce((max, post) => (post.date > max ? post.date : max), '');
 import NewsletterForm from './NewsletterForm';
 import type { Locale } from '@/lib/i18n';
+import { copyrightLine } from '@/lib/site-legal';
 
 function XMark() {
   return (
@@ -34,6 +35,7 @@ export default function SiteFooter({ mood = 'all', locale = 'ko' }: { mood?: Sce
             <a href="https://x.com/simonkim_nft" target="_blank" rel="noreferrer"><XMark /><span>@simonkim_nft</span></a>
             <a href="https://t.me/carrotcave" target="_blank" rel="noreferrer"><TelegramMark /><span>TELEGRAM</span></a>
           </p>
+          <p className="cc-footer__legal"><small>{copyrightLine()}</small></p>
         </div>
       </div>
     </footer>

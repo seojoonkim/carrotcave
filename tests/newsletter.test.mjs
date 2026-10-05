@@ -128,7 +128,8 @@ test('wiring: daily 08:00 KST cron, cron route checks CRON_SECRET, admin pages a
 test('mobile footer hide rule never hides the newsletter copy or status', () => {
   const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
   assert.doesNotMatch(css, /\.cc-footer p\{display:none\}/);
-  assert.match(css, /\.cc-footer p:not\(\.cc-newsletter p\)\{display:none\}/);
+  // contact + copyright lines must stay visible on mobile too (Simon 2026-10-05: 푸터에 이메일·저작권 공통으로)
+  assert.match(css, /\.cc-footer p:not\(\.cc-newsletter p\):not\(\.cc-footer__copy p\)\{display:none\}/);
 });
 
 test('admin table scrolls inside its own box and never widens the page', () => {
