@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Generate reading aids (key-sentence highlights + 3-line takeaways) for every post, KO + EN.
+"""Generate reading aids (key-sentence highlights) for every post, KO + EN.
+The 3-line takeaway box was removed on 2026-10-06 at Simon's request; do not bring it back.
 
-Every highlight and takeaway anchor must be an exact substring of one paragraph line of the
+Every highlight must be an exact substring of one paragraph line of the
 post (validated by scripts/verify-reading-aids.mjs). Uses the Claude Code CLI (HOME=/Users/gimseojun).
 Usage: python3 scripts/content/build-reading-aids.py [--only slug,slug] [--jobs 6]
 Writes data/reading-aids.json incrementally (existing valid entries are kept).
@@ -12,7 +13,6 @@ from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OUT = os.path.join(ROOT, 'data', 'reading-aids.json')
 HIGHLIGHT_MIN_CHARS = 1200   # posts shorter than this get no highlights
-TAKEAWAY_MIN_CHARS = 2500    # ~5 min read and up get a 3-line takeaway box
 
 def load_posts():
     js = subprocess.run(['node', '-e', "import('./data/posts.ts').then(m=>process.stdout.write(JSON.stringify(m.posts.map(p=>({slug:p.slug,title:p.title,content:p.content})))))"],
@@ -25,27 +25,22 @@ def lines_of(content):
 def in_one_line(s, lines):
     return any(s in l for l in lines)
 
-def check(entry, ko_lines, en_lines, want_takeaways):
+def check(entry, ko_lines, en_lines):
     errs = []
     for lang, lines in (('ko', ko_lines), ('en', en_lines)):
         e = entry.get(lang) or {}
         for h in e.get('highlights', []):
             if not in_one_line(h, lines): errs.append(f'{lang} highlight not verbatim: {h[:50]}')
-        tk = e.get('takeaways', [])
-        if want_takeaways and len(tk) != 3: errs.append(f'{lang} takeaways != 3')
-        for t in tk:
-            if not in_one_line(t.get('anchor', ''), lines): errs.append(f'{lang} anchor not verbatim: {t.get("anchor","")[:50]}')
     return errs
 
 PROMPT = """You are an editor for a Korean essay blog. Pick reading aids for ONE post. Output ONLY JSON, no prose, no code fence.
 
 Rules:
 - "highlights": {n_hl} sentences that are the most striking, quotable lines, spread across the beginning, middle and end. Each MUST be copied EXACTLY, character for character, from ONE paragraph of the text (a full sentence, 15-110 chars). No paraphrase, no ellipsis, no joining two paragraphs, keep the original punctuation and markdown symbols out (do not include ** or *).
-- "takeaways": {takeaway_rule}. Each item: "text" = what the reader will get, short and concrete (KO <= 38 chars, EN <= 70 chars, no ending period); "anchor" = an EXACT substring (12-60 chars) copied from the paragraph where that point is made, so the reader can jump there. Order them as they appear in the text.
-- Do this separately for the Korean text (key "ko") and the English text (key "en"). The English picks should correspond to the same ideas as the Korean picks.
-- Never invent facts. Korean takeaways in plain, friendly 해요체-free noun phrases (e.g. "팬덤이 거버넌스가 되는 조건").
+- Do this separately for the Korean text (key "ko") and the English text (key "en"). The English picks should correspond to the same sentences as the Korean picks.
+- Never invent facts.
 
-Shape: {{"ko":{{"highlights":[...],"takeaways":[{{"text":"...","anchor":"..."}}]}},"en":{{"highlights":[...],"takeaways":[...]}}}}
+Shape: {{"ko":{{"highlights":[...]}},"en":{{"highlights":[...]}}}}
 
 === KOREAN TITLE ===
 {title_ko}
@@ -71,11 +66,11 @@ def ask(prompt):
     return json.loads(m.group(0))
 
 def clean(entry, ko_lines, en_lines):
-    # drop non-verbatim highlights rather than failing the whole post; takeaways must stay whole
+    # drop non-verbatim highlights rather than failing the whole post; keep highlights only
     for lang, lines in (('ko', ko_lines), ('en', en_lines)):
         e = entry.setdefault(lang, {})
+        entry[lang] = e = {'highlights': e.get('highlights', [])}
         e['highlights'] = [h.strip() for h in e.get('highlights', []) if in_one_line(h.strip(), lines)]
-        e['takeaways'] = [{'text': t['text'].strip().rstrip('.'), 'anchor': t['anchor'].strip()} for t in e.get('takeaways', []) if t.get('text') and t.get('anchor')]
     return entry
 
 def main():
@@ -93,21 +88,19 @@ def main():
         enp = en.get(p['slug'])
         if not enp: continue
         ko_lines, en_lines = lines_of(p['content']), lines_of(enp['content'])
-        want = n >= TAKEAWAY_MIN_CHARS
-        if not only and p['slug'] in data and not check(data[p['slug']], ko_lines, en_lines, want) and data[p['slug']]['ko']['highlights']: continue
-        todo.append((p, enp, ko_lines, en_lines, want, n))
+        if not only and p['slug'] in data and not check(data[p['slug']], ko_lines, en_lines) and data[p['slug']]['ko']['highlights']: continue
+        todo.append((p, enp, ko_lines, en_lines, n))
     print(f'todo {len(todo)}', flush=True)
 
     def work(item):
-        p, enp, ko_lines, en_lines, want, n = item
+        p, enp, ko_lines, en_lines, n = item
         n_hl = '2' if n < 2500 else ('3' if n < 4500 else '4')
-        rule = 'exactly 3 items' if want else 'an empty list []'
-        prompt = PROMPT.format(n_hl=n_hl, takeaway_rule=rule, title_ko=p['title'], ko=p['content'], title_en=enp['title'], en=enp['content'])
+        prompt = PROMPT.format(n_hl=n_hl, title_ko=p['title'], ko=p['content'], title_en=enp['title'], en=enp['content'])
         last = None
         for attempt in range(3):
             try:
                 entry = clean(ask(prompt if attempt == 0 else prompt + f'\n\nYour previous answer failed validation: {last}. Copy text EXACTLY.'), ko_lines, en_lines)
-                errs = check(entry, ko_lines, en_lines, want)
+                errs = check(entry, ko_lines, en_lines)
                 if not entry['ko']['highlights'] or not entry['en']['highlights']: errs.append('no verbatim highlights')
                 if not errs:
                     with lock:

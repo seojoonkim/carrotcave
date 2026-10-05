@@ -63,7 +63,7 @@ function stripLeadingDuplicateTitle(content: string, title: string) {
   return lines.join('\n');
 }
 
-type Aid = { highlights: string[]; takeaways: { text: string; anchor: string }[] };
+type Aid = { highlights: string[] };
 type Aids = Record<string, { ko: Aid; en: Aid }>;
 
 // Interview posts: lines like "김서준: ..." / "Simon Kim: ...". A post counts as a dialogue only when
@@ -87,7 +87,7 @@ export function dialogueSpeakers(content: string): string[] {
   return speakers.length >= 2 ? speakers : [];
 }
 
-type Reading = { highlights: string[]; anchors: string[]; speakers: string[] };
+type Reading = { highlights: string[]; speakers: string[] };
 
 // Wrap a verbatim key sentence in <mark>, but only when the cut does not split inline markdown.
 function renderWithHighlight(line: string, highlights: string[]) {
@@ -109,9 +109,8 @@ function renderWithHighlight(line: string, highlights: string[]) {
   return renderInline(line);
 }
 
-function renderContent(content: string, locale: Locale, reading: Reading = { highlights: [], anchors: [], speakers: [] }) {
+function renderContent(content: string, locale: Locale, reading: Reading = { highlights: [], speakers: [] }) {
   const speakerIndex = new Map(reading.speakers.map((name, k) => [name, k]));
-  const anchorIds = new Map<number, string>();
   const lines = unwrapTelegramLinkPreview(content).split('\n');
   const previewMap = linkPreviews as Record<string, LinkPreview>;
 
@@ -203,16 +202,12 @@ function renderContent(content: string, locale: Locale, reading: Reading = { hig
       );
     }
 
-    const anchorAt = reading.anchors.findIndex((a, k) => a && line.includes(a) && ![...anchorIds.values()].includes(`take-${k + 1}`));
-    const id = anchorAt >= 0 ? `take-${anchorAt + 1}` : undefined;
-    if (id) anchorIds.set(i, id);
-
     const turn = speakerIndex.size ? line.trim().match(TURN_RE) : null;
     if (turn && speakerIndex.has(turn[1])) {
       const who = turn[1];
       const host = HOSTS.has(who);
       return (
-        <p key={i} id={id} className="post-turn" data-host={host ? 'true' : 'false'} data-voice={speakerIndex.get(who)! % 4}>
+        <p key={i} className="post-turn" data-host={host ? 'true' : 'false'} data-voice={speakerIndex.get(who)! % 4}>
           <span className="post-turn__who">
             {SPEAKER_PHOTOS[who] ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -228,7 +223,7 @@ function renderContent(content: string, locale: Locale, reading: Reading = { hig
     }
 
     return (
-      <p key={i} id={id}>
+      <p key={i}>
         {renderWithHighlight(line, reading.highlights)}
       </p>
     );
@@ -310,10 +305,8 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
   const aid = (readingAids as Aids)[post.slug]?.[locale];
   const reading: Reading = {
     highlights: aid?.highlights ?? [],
-    anchors: aid?.takeaways?.map((x) => x.anchor) ?? [],
     speakers: dialogueSpeakers(post.content),
   };
-  const takeaways = aid?.takeaways?.length === 3 ? aid.takeaways : [];
 
   const rawConstellation = buildTopRecommendations(post.slug, ontologyIndex as OntologyIndex);
   const postDetails = new Map(posts.map((item) => {
@@ -400,23 +393,6 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
         {/* Summary removed — content speaks for itself */}
 
         {/* Content */}
-        {takeaways.length > 0 && (
-          <details className="post-takeaways" open>
-            <summary className="post-takeaways__title">{L.takeawaysTitle}</summary>
-            <ol className="post-takeaways__list">
-              {takeaways.map((item, k) => (
-                <li key={k}>
-                  <a href={`#take-${k + 1}`} aria-label={`${item.text} — ${L.takeawaysJump}`}>
-                    <span className="post-takeaways__num" aria-hidden="true">{k + 1}</span>
-                    <span className="post-takeaways__text">{item.text}</span>
-                    <span className="post-takeaways__go" aria-hidden="true">↓</span>
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </details>
-        )}
-
         <div className="post-content" data-dialogue={reading.speakers.length ? 'true' : undefined}>
           {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale, reading)}
         </div>

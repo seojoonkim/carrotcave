@@ -1,5 +1,6 @@
-// Reading aids (2026-10-06): key-sentence highlights, 3-line takeaways, dialogue turns, reading depth.
-// Every highlight/anchor must be quoted verbatim from the post so <mark> and #take-N always land.
+// Reading aids (2026-10-06): key-sentence highlights, dialogue turns, reading depth.
+// Every highlight must be quoted verbatim from the post so <mark> always lands.
+// The 3-line takeaway box ("이 글에서 얻을 것") was removed the same day at Simon's request.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -11,7 +12,7 @@ const aids = JSON.parse(read('data/reading-aids.json'));
 const en = JSON.parse(read('data/en/posts.json'));
 const bySlug = new Map(posts.map((p) => [p.slug, p]));
 
-test('reading aids quote the post verbatim (highlights + takeaway anchors, ko + en)', () => {
+test('reading aids quote the post verbatim (highlights, ko + en)', () => {
   const bad = [];
   for (const [slug, entry] of Object.entries(aids)) {
     const post = bySlug.get(slug);
@@ -21,25 +22,19 @@ test('reading aids quote the post verbatim (highlights + takeaway anchors, ko + 
       const a = entry[lang];
       if (!a) { bad.push(`${slug}/${lang}: missing`); continue; }
       for (const h of a.highlights) if (!lines.some((l) => l.includes(h))) bad.push(`${slug}/${lang} highlight not verbatim: ${h.slice(0, 40)}`);
-      for (const t of a.takeaways) {
-        if (!lines.some((l) => l.includes(t.anchor))) bad.push(`${slug}/${lang} anchor not verbatim: ${t.anchor.slice(0, 40)}`);
-        // one line on a phone: Korean packs more per character than English
-        if (!t.text || t.text.length > (lang === 'ko' ? 40 : 80)) bad.push(`${slug}/${lang} takeaway text empty or too long`);
-      }
-      if (a.takeaways.length && a.takeaways.length !== 3) bad.push(`${slug}/${lang}: takeaways must be exactly 3`);
       if (a.highlights.length > 4) bad.push(`${slug}/${lang}: too many highlights`);
     }
   }
   assert.deepEqual(bad, []);
 });
 
-test('post view wires highlights, takeaways, dialogue turns, depth and the next-hole card', () => {
+test('post view wires highlights, dialogue turns, depth and the next-hole card', () => {
   const view = read('components/views/PostView.tsx');
-  for (const needle of ['post-key', 'post-takeaways', 'post-turn', '<ReadingDepth', 'post-next--hole', "id={id}"]) {
+  for (const needle of ['post-key', 'post-turn', '<ReadingDepth', 'post-next--hole']) {
     assert.ok(view.includes(needle), `PostView missing ${needle}`);
   }
   const css = read('public/reading-end.css');
-  for (const needle of ['.post-key', '.post-takeaways', '.post-turn', '.cc-depth', '.post-next--hole', 'prefers-reduced-motion']) {
+  for (const needle of ['.post-key', '.post-turn', '.cc-depth', '.post-next--hole', 'prefers-reduced-motion']) {
     assert.ok(css.includes(needle), `reading-end.css missing ${needle}`);
   }
 });
@@ -71,7 +66,7 @@ test('reading depth: one floor per 3 finished posts, stored only on the device',
 
 test('i18n has every reading-aid string in both languages', () => {
   const i18n = read('lib/i18n.ts');
-  for (const k of ['takeawaysTitle', 'takeawaysJump', 'nextHole', 'nextHoleSub', 'depthFloor', 'depthNote', 'depthNext']) {
+  for (const k of ['nextHole', 'nextHoleSub', 'depthFloor', 'depthNote', 'depthNext']) {
     assert.equal(i18n.split(`${k}:`).length - 1, 2, `${k} must exist in ko and en`);
   }
 });
@@ -98,5 +93,18 @@ test('every dialogue speaker photo file exists and has a recorded source (2026-1
   for (const f of files) {
     assert.ok(fs.existsSync(new URL('public/people/' + f, root)), `missing public/people/${f}`);
     assert.ok(credits[f]?.source, `no source recorded for ${f}`);
+  }
+});
+
+test('no "이 글에서 얻을 것" takeaway box on any post (removed 2026-10-06 at Simon\'s request)', () => {
+  const view = read('components/views/PostView.tsx');
+  const css = read('public/reading-end.css');
+  const i18n = read('lib/i18n.ts');
+  for (const [name, src] of [['PostView', view], ['reading-end.css', css], ['i18n', i18n]]) {
+    assert.ok(!/takeaway/i.test(src), `${name} still references the takeaway box`);
+  }
+  assert.ok(!i18n.includes('이 글에서 얻을 것'), 'Korean takeaway title still in i18n');
+  for (const [slug, entry] of Object.entries(aids)) {
+    for (const lang of ['ko', 'en']) assert.deepEqual(Object.keys(entry[lang]), ['highlights'], `${slug}/${lang} carries more than highlights`);
   }
 });
