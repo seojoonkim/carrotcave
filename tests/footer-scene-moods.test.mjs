@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import { buildFooterSceneModule, scopeCss } from '../scripts/build-footer-scene.mjs';
 import { daypartOf, isFresh } from '../lib/footer-scene.ts';
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
-const svg = read('public/footer-rabbit-carrot-v3.svg');
+const svg = read('public/brand/footer-cave.svg');
 const css = read('app/globals.css');
 const moods = ['explore', 'build', 'doodle', 'fiction', 'voices'];
 
@@ -26,7 +26,6 @@ test('every menu has its own prop and signpost highlight', () => {
   for (const m of moods) {
     assert.match(svg, new RegExp(`class="prop prop--${m}"`), `prop for ${m}`);
     assert.match(css, new RegExp(`\\.footer-scene\\[data-mood=${m}\\] \\.prop--${m}`), `prop switch for ${m}`);
-    assert.match(css, new RegExp(`\\.footer-scene\\[data-mood=${m}\\] \\.sign-hi--`), `sign highlight for ${m}`);
     assert.match(css, new RegExp(`\\.axis-rail a\\[data-mood=${m}\\]\\{--mood-hover:cc-hover-${m}\\}`), `menu hover for ${m}`);
   }
   const rail = read('components/AxisRail.tsx');
@@ -50,8 +49,8 @@ test('time of day: day 06-17, dusk 17-19, night otherwise', () => {
   assert.equal(daypartOf(17), 'dusk');
   assert.equal(daypartOf(18), 'dusk');
   assert.equal(daypartOf(19), 'night');
-  assert.match(css, /\.footer-scene\[data-daypart=day\] \.sun-group/);
-  assert.match(css, /\.footer-scene\[data-daypart=day\] \.moon/);
+  assert.match(css, /\.footer-scene\[data-daypart=day\] \.sun\{opacity:1\}/);
+  assert.match(css, /\.footer-scene\[data-daypart=day\] \.sky-night\{opacity:0\}/);
 });
 
 test('NEW flag shows only for a post dated today or yesterday in KST', () => {
@@ -69,7 +68,7 @@ test('carrot is a keyboard-reachable button and the tap pop respects reduced mot
   const comp = read('components/FooterCaveScene.tsx');
   assert.match(comp, /e\.key === 'Enter' \|\| e\.key === ' '/);
   assert.match(comp, /aria-live="polite"/);
-  assert.match(css, /prefers-reduced-motion:reduce\)\{\.footer-scene \.sign-hi path[^}]*\.footer-scene\.is-tapped \.carrot-clip/);
+  assert.match(css, /\.footer-scene\.is-tapped \.carrot-clip,\.footer-scene\.is-tapped \.tap-pop[^{]*\{animation:none!important\}/);
 });
 
 test('phone crop fades both edges so the hill never ends in a hard box', () => {

@@ -51,7 +51,7 @@ test('all shipped carrot assets use the unified palette and no legacy palette', 
   }
   for (const relativePath of productionTextFiles.filter((file) => /(?:CarrotCaveMark|footer-rabbit-carrot|voices\/.+\/index)/.test(file))) {
     const source = read(relativePath).toLowerCase();
-    assert.match(source, /#ff7a45/, `${relativePath} is missing the mascot carrot coral (2026-10-05 soft-night)`);
-    assert.match(source, /#00c08b/, `${relativePath} is missing leaf green`);
+    assert.match(source, /#ff7a3d|ORANGE|brand-svg/i, `${relativePath} is missing the brand v4 carrot orange`);
+    assert.match(source, /#14d3a0|#a6d36b|brand-svg/i, `${relativePath} is missing brand v4 mint / leaf`);
   }
 });

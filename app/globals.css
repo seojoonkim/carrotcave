@@ -742,34 +742,26 @@ html[data-torch="on"] .cc-torch{opacity:1}
 /* Footer scene moods 2026.10 — menu props, time of day, NEW flag, carrot tap */
 .footer-scene{position:relative;width:100%}
 .footer-scene__art{display:block;width:100%;line-height:0}
-.footer-scene .footer-rabbit-carrot{display:block;width:100%;height:auto;max-height:190px;aspect-ratio:1100/190;overflow:visible}
+.footer-scene .footer-rabbit-carrot{display:block;width:100%;height:auto;aspect-ratio:1100/220;overflow:visible}
 .footer-scene .prop,.footer-scene .news-flag{display:none}
-.footer-scene[data-mood=explore] .prop--explore,.footer-scene[data-mood=build] .prop--build,.footer-scene[data-mood=doodle] .prop--doodle,.footer-scene[data-mood=fiction] .prop--fiction,.footer-scene[data-mood=voices] .prop--voices{display:inline}
-.footer-scene .sign-hi path{opacity:0;transition:opacity .3s ease}
-.footer-scene[data-mood=explore] .sign-hi--explore,.footer-scene[data-mood=build] .sign-hi--make,.footer-scene[data-mood=doodle] .sign-hi--make,.footer-scene[data-mood=fiction] .sign-hi--make,.footer-scene[data-mood=voices] .sign-hi--voices{animation:cc-sign-pulse 2.4s ease-in-out infinite}
-@keyframes cc-sign-pulse{0%,100%{opacity:.55}50%{opacity:1}}
-.footer-scene .sun-group{opacity:0;transition:opacity .3s ease}
-.footer-scene[data-daypart=day] .sun-group,.footer-scene[data-daypart=dusk] .sun-group{opacity:1}
-.footer-scene[data-daypart=dusk] .sun-disc,.footer-scene[data-daypart=dusk] .sun-halo{fill:#ff9f6b}
-.footer-scene[data-daypart=dusk] .sun-rays{stroke:#ff9f6b;opacity:.6}
-.footer-scene[data-daypart=day] .moon,.footer-scene[data-daypart=dusk] .moon{opacity:0}
-.footer-scene[data-daypart=day] .stars,.footer-scene[data-daypart=day] .fireflies,.footer-scene[data-daypart=day] .shooting{opacity:0!important}
-.footer-scene[data-daypart=dusk] .stars{opacity:.35}
-.footer-scene[data-daypart=day] .sun-rays{animation:cc-sun-spin 24s linear infinite;transform-box:fill-box;transform-origin:center}
-@keyframes cc-sun-spin{to{transform:rotate(360deg)}}
+.footer-scene[data-mood=explore] .prop--explore,.footer-scene[data-mood=build] .prop--build,.footer-scene[data-mood=doodle] .prop--doodle,.footer-scene[data-mood=fiction] .prop--fiction,.footer-scene[data-mood=voices] .prop--voices{display:inline;animation:cc-prop-in .5s var(--motion-ease,ease) both}
+@keyframes cc-prop-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.footer-scene[data-daypart=day] .mouth-sky{fill:#7FB4D8}.footer-scene[data-daypart=day] .sun{opacity:1}.footer-scene[data-daypart=day] .sky-night{opacity:0}
+.footer-scene[data-daypart=dusk] .mouth-sky{fill:#C8774F}.footer-scene[data-daypart=dusk] .sun{opacity:1;transform:translateY(34px)}.footer-scene[data-daypart=dusk] .sky-night{opacity:.5}
 .footer-scene[data-fresh=true] .news-flag{display:inline}
 .footer-scene .carrot-hit{cursor:pointer;outline:none}
-.footer-scene .carrot-hit:focus-visible{stroke:var(--carrot-orange);stroke-width:2;stroke-dasharray:4 4}
+.footer-scene .carrot-hit:focus-visible{stroke:var(--carrot-orange);stroke-width:3;stroke-dasharray:6 6}
 .footer-scene .tap-pop{opacity:0;pointer-events:none}
 .footer-scene.is-tapped .tap-pop{animation:cc-tap-pop 1.8s ease-out both}
 .footer-scene.is-tapped .carrot-clip{transform-box:fill-box;transform-origin:50% 100%;animation:cc-carrot-boing .6s ease-out}
-.footer-scene.is-tapped .tap-heart--a{animation:cc-tap-heart 1.4s ease-out both}
-.footer-scene.is-tapped .tap-heart--b{animation:cc-tap-heart 1.4s .15s ease-out both}
-@keyframes cc-tap-pop{0%{opacity:0;transform:translate(965px,56px) scale(.6)}14%{opacity:1;transform:translate(965px,44px) scale(1.04)}22%,78%{opacity:1;transform:translate(965px,46px) scale(1)}100%{opacity:0;transform:translate(965px,40px) scale(1)}}
+.footer-scene.is-tapped .fc-eyes,.footer-scene.is-tapped .fc-mouth{visibility:hidden}
+.footer-scene.is-tapped .fc-tapface{opacity:1}
+.footer-scene.is-tapped .carrot-dashes{animation:cc-tap-dash .9s ease-out both}
+@keyframes cc-tap-pop{0%{opacity:0;transform:translateY(10px) scale(.92)}14%{opacity:1;transform:translateY(-2px) scale(1.02)}22%,78%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-6px)}}
 @keyframes cc-carrot-boing{0%{transform:scale(1,1)}30%{transform:scale(1.1,.88)}55%{transform:scale(.94,1.08)}80%{transform:scale(1.03,.97)}100%{transform:scale(1,1)}}
-@keyframes cc-tap-heart{0%{opacity:0;transform:translateY(6px)}30%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
-@media(max-width:600px){.footer-scene .footer-rabbit-carrot{height:120px;max-height:none;aspect-ratio:auto}.footer-scene{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}}
-@media(prefers-reduced-motion:reduce){.footer-scene .sign-hi path,.footer-scene .sun-rays,.footer-scene.is-tapped .carrot-clip,.footer-scene.is-tapped .tap-heart--a,.footer-scene.is-tapped .tap-heart--b{animation:none!important}.footer-scene[data-mood] .sign-hi path{opacity:0}.footer-scene[data-mood=explore] .sign-hi--explore,.footer-scene[data-mood=build] .sign-hi--make,.footer-scene[data-mood=doodle] .sign-hi--make,.footer-scene[data-mood=fiction] .sign-hi--make,.footer-scene[data-mood=voices] .sign-hi--voices{opacity:.85}}
+@keyframes cc-tap-dash{0%{opacity:0;transform:scale(.6)}30%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:scale(1)}}
+@media(max-width:600px){.footer-scene .footer-rabbit-carrot{height:150px;aspect-ratio:auto}.footer-scene{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}}
+@media(prefers-reduced-motion:reduce){.footer-scene.is-tapped .carrot-clip,.footer-scene.is-tapped .tap-pop,.footer-scene.is-tapped .carrot-dashes,.footer-scene .prop{animation:none!important}.footer-scene.is-tapped .tap-pop{opacity:1}}
 /* Brand tagline */
 .cc-brand small.cc-brand-tagline{margin-top:6px;font:italic 400 12.5px/1.25 var(--sans);letter-spacing:.005em;text-transform:none;color:var(--ink-2)}
 /* /Footer scene moods */
@@ -885,8 +877,6 @@ html[data-torch="on"] .cc-torch{opacity:1}
 }
 
 /* Logo v4 2026.10 — geometry is drawn in final coordinates; only gentle hover motion remains */
-.carrot-cave-mark__cave{transform:none!important}
-.carrot-cave-mark__rabbit-position{transform:none!important}
 .cc-brand-symbol{width:40px;height:40px;flex:0 0 40px}
 @media(max-width:900px){.cc-brand-symbol{width:38px;height:38px;flex-basis:38px}}
 /* Bridge line 2026.10 — the intro is a quiet caption; post titles below carry the weight */
@@ -1020,13 +1010,11 @@ html[data-torch="on"] .cc-torch{opacity:1}
 
 /* Character pass 2026.10: the rabbit & carrot speak in empty, done and lost states. */
 .cc-buddy{display:flex;align-items:flex-end;gap:12px;margin:8px 0 0}
-.cc-buddy__mark{flex:0 0 auto;width:72px;height:72px}
+.cc-buddy__mark{flex:0 0 auto;width:99px;height:72px}
 .cc-buddy__bubble{position:relative;display:flex;flex-direction:column;gap:4px;max-width:360px;padding:12px 16px;border-radius:16px 16px 16px 4px;background:#343746;color:var(--paper);font:400 var(--t-14,14px)/1.55 var(--sans)}
 .cc-buddy__bubble strong{color:var(--ink-head,#f0f1f7);font-weight:700}
 .cc-buddy__bubble span{color:var(--ink-2,#b7bccf)}
 .cc-buddy--happy .cc-buddy__bubble{background:rgba(0,192,139,.14)}
-.cc-buddy--happy .cc-buddy__mark .carrot-cave-mark__carrot{animation:cc-buddy-bounce .36s ease-out 2}
-.cc-buddy--lost .cc-buddy__mark .carrot-cave-mark__rabbit{transform-box:fill-box;transform-origin:center bottom;animation:cc-buddy-tilt .36s ease-out 2}
 @keyframes cc-buddy-bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes cc-buddy-tilt{0%,100%{transform:rotate(0)}50%{transform:rotate(-6deg)}}
 .archive-empty::before{content:none}
@@ -1034,15 +1022,13 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .cc-newsletter__note .cc-buddy{margin:4px 0 0}
 .cc-lost{display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:640px;margin:0 auto;padding:72px 20px 40px}
 .cc-lost__code{margin:0;color:var(--carrot-orange);font:800 56px/1 var(--sans);letter-spacing:-.02em}
-.cc-lost .cc-buddy__mark{width:112px;height:112px}
+.cc-lost .cc-buddy__mark{width:154px;height:112px}
 .cc-pill-button{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--carrot-orange);color:#252732;font:700 15px/1 var(--sans);text-decoration:none}
 .cc-pill-button:hover{background:#f6ad6e}
 .cc-pill-button:focus-visible{outline:2px solid var(--carrot-orange);outline-offset:3px}
 /* Header logo: the rabbit blinks once on hover/focus (eyes only). */
-.cc-brand .carrot-cave-mark__eye{transform-box:fill-box;transform-origin:center}
-.cc-brand:hover .carrot-cave-mark__eye,.cc-brand:focus-visible .carrot-cave-mark__eye{animation:cc-mark-blink .3s ease-in-out 1}
 @keyframes cc-mark-blink{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.12)}}
-@media (prefers-reduced-motion:reduce){.cc-buddy__mark .carrot-cave-mark__carrot,.cc-buddy__mark .carrot-cave-mark__rabbit,.cc-brand .carrot-cave-mark__eye{animation:none!important}}
+
 
 /* ── KO / EN toggle (every header) ─────────────────────────────────────── */
 .cc-header__inner{position:relative}
@@ -1062,3 +1048,18 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 /* KO/EN on the article meta line (reading pages): pinned to the right end, same row as 탐험·심층·날짜 */
 .cc-lang.cc-lang--inline{position:static;transform:none;margin-left:auto;padding:2px;font-size:10.5px}
 .cc-lang--inline .cc-lang__item{height:22px;min-width:28px;padding:0 7px}
+
+/* Brand v4 2026.10 — dark cave + glyph-kit characters (scripts/brand). One pen (stroke 7), swappable faces. */
+:root{--cave-0:#1e1f28;--cave-1:#272a37;--cave-2:#3a3e52;--glyph-navy:#16324a;--mint-kit:#14d3a0;--carrot-kit:#ff7a3d}
+.carrot-cave-mark{overflow:visible}
+.carrot-cave-mark .mark-face--hi{opacity:0}
+.carrot-cave-mark .mark-rabbit,.carrot-cave-mark .mark-carrot{transition:transform var(--motion-base,.28s) var(--motion-ease,ease)}
+.cc-brand:is(:hover,:focus-visible) .carrot-cave-mark .mark-face--rest{opacity:0}
+.cc-brand:is(:hover,:focus-visible) .carrot-cave-mark .mark-face--hi{opacity:1}
+.cc-brand:is(:hover,:focus-visible) .carrot-cave-mark .mark-carrot{transform:translate(49.5px,36.6px) scale(.19)}
+.cc-buddy--happy .buddy-carrot{animation:cc-buddy-hop .36s var(--motion-ease,ease) 2}
+.cc-buddy--lost .buddy-rabbit{animation:cc-buddy-tilt-v4 .36s var(--motion-ease,ease) 1}
+@keyframes cc-buddy-hop{0%,100%{transform:translate(74px,30px) scale(.24)}50%{transform:translate(74px,24px) scale(.24)}}
+@keyframes cc-buddy-tilt-v4{0%,100%{transform:translate(4px,12px) scale(.3)}50%{transform:translate(4px,10px) scale(.3) rotate(-3deg)}}
+.cc-footer{background:linear-gradient(180deg,var(--graphite) 0%,var(--cave-0) 38%,var(--cave-0) 100%)}
+@media (prefers-reduced-motion:reduce){.cc-buddy__mark *,.carrot-cave-mark *{animation:none!important;transition:none!important}.cc-buddy__mark .buddy-blink{opacity:0}}

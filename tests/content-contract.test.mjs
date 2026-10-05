@@ -810,7 +810,7 @@ test('CARROT CAVE surfaces use the generated carrot-cave symbol instead of dot m
   assert.match(headerSource, /import CarrotCaveMark/);
   assert.match(headerSource, /<CarrotCaveMark className="cc-brand-symbol" \/>/);
   assert.match(liaoReaderSource, /<svg class="brand-mark"[^>]*viewBox="0 0 96 96"/);
-  assert.match(liaoReaderSource, /class="brand-mark__cave"/);
+  assert.match(liaoReaderSource, /class="mark-cave"/);
   assert.doesNotMatch(headerSource, /<i aria-hidden="true"\s*\/>/);
   assert.doesNotMatch(liaoReaderStyles, /\.brand-mark[^}]*border-radius:\s*50%/);
 });

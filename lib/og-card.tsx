@@ -5,18 +5,18 @@ import { titleClamp, titleSize, usableOgImage } from './og-rules';
 
 export { titleClamp, titleSize, titleWidth } from './og-rules';
 
-// One share-card template for every page: soft slate night (#282a36), mascot rabbit + carrot, carrot accent, mint guide line.
+// One share-card template for every page: dark cave (#1e1f28), glyph-kit rabbit + carrot in the cave arch, carrot accent.
 // Rendered at build time (static params), so fonts/images are read from disk.
 
 export const OG_SIZE = { width: 1200, height: 630 };
 
 const ROOT = process.cwd();
-const INK = '#282a36';
-const CARROT = '#f39a52';
-const RABBIT = '#3ddcb4';
+const INK = '#1e1f28';
+const CARROT = '#ff7a3d';
+const RABBIT = '#14d3a0';
 const TITLE = '#f2f3f8';
 const BODY = '#b7bccf';
-const PANEL = '#343746';
+const PANEL = '#2e3142';
 
 let fontCache: { name: string; data: Buffer; weight: 500 | 600 | 700; style: 'normal' }[] | null = null;
 function fonts() {
@@ -58,10 +58,10 @@ export async function localImage(publicPath?: string) {
   return undefined;
 }
 
-// The site's original header icon (components/CarrotCaveMark.tsx), as a static SVG.
-// Same paths and colors; tests keep the two in sync.
-const MARK_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><defs><radialGradient id="og-mark-glow" cx="50%" cy="62%" r="52%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".85"/><stop offset=".5" stop-color="#e8923e" stop-opacity=".32"/><stop offset="1" stop-color="#d06f2d" stop-opacity="0"/></radialGradient></defs><g data-part="cave"><circle cx="48" cy="54" r="40" fill="url(#og-mark-glow)"/><path d="M5 90C7 40 23 9 48 7c25 2 41 33 43 83H76C74 52 64 30 48 27 32 30 22 52 20 90Z" fill="#1e1f28"/><path d="M14 90c2-38 15-61 34-67 19 6 32 29 34 67" fill="none" stroke="#f0b04f" stroke-opacity=".6" stroke-width="2.2"/><path d="M3 90h90" stroke="#f0c15d" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/></g><g data-part="rabbit-position"><g data-part="rabbit"><ellipse cx="35" cy="33" rx="5.2" ry="13.5" fill="#f7f3ea" transform="rotate(-12 35 33)"/><ellipse cx="35" cy="34" rx="2.3" ry="9" fill="#00d9a8" transform="rotate(-12 35 34)"/><ellipse cx="49" cy="32" rx="5.2" ry="14" fill="#f7f3ea" transform="rotate(10 49 32)"/><ellipse cx="49" cy="33" rx="2.3" ry="9.5" fill="#00d9a8" transform="rotate(10 49 33)"/><ellipse cx="42" cy="79" rx="13" ry="10.5" fill="#ebe3d3"/><circle cx="42" cy="56" r="14.5" fill="#f7f3ea"/><circle data-part="eye" cx="36.6" cy="56" r="2.8" fill="#1c2a3a"/><circle data-part="eye" cx="47.4" cy="56" r="2.8" fill="#1c2a3a"/><circle cx="37.5" cy="55" r=".85" fill="#fff"/><circle cx="48.3" cy="55" r=".85" fill="#fff"/><ellipse cx="31.8" cy="61.4" rx="3" ry="1.8" fill="#ff9fb2" opacity=".85"/><ellipse cx="52.2" cy="61.4" rx="3" ry="1.8" fill="#ff9fb2" opacity=".85"/><ellipse cx="42" cy="59.6" rx="1.3" ry="1" fill="#ff8fa8"/><path d="M40.4 61.4q1.6 1.3 3.2 0" fill="none" stroke="#1c2a3a" stroke-width="1.1" stroke-linecap="round"/><ellipse cx="35" cy="88" rx="5.6" ry="2.5" fill="#ebe3d3"/><ellipse cx="49" cy="88" rx="5.6" ry="2.5" fill="#ebe3d3"/><ellipse cx="53.5" cy="74" rx="3.4" ry="2.8" fill="#f7f3ea"/></g></g><g data-part="carrot-position" transform="translate(62 62) rotate(16)"><g data-part="carrot"><ellipse cx="-4.2" cy="-8.6" rx="2.5" ry="4.6" fill="#00c08b" transform="rotate(-28 -4.2 -8.6)"/><ellipse cx="0" cy="-10.2" rx="2.7" ry="5" fill="#00c08b"/><ellipse cx="4.2" cy="-8.6" rx="2.5" ry="4.6" fill="#00c08b" transform="rotate(28 4.2 -8.6)"/><path d="M-7.5 -2C-7.5 -6.5 7.5 -6.5 7.5 -2C7.5 6 3 15 0 21C-3 15 -7.5 6 -7.5 -2Z" fill="#ff7a45"/><path d="M3.6 -4.6C6.6 -4 7.5 -2.8 7.5 -2C7.5 6 3 15 0 21C2.2 13 3.8 5 3.6 -4.6Z" fill="#ec6634"/><circle cx="-2.4" cy="1.2" r="1.25" fill="#1c2a3a"/><circle cx="2.4" cy="1.2" r="1.25" fill="#1c2a3a"/><path d="M-1.2 3.4q1.2.9 2.4 0" fill="none" stroke="#1c2a3a" stroke-width=".9" stroke-linecap="round"/></g></g></svg>`;
+// Brand v4 art from the shared glyph kit (scripts/brand -> lib/brand-svg.ts). Tests keep it in sync.
+import { MARK_SVG, OG_ART_SVG } from './brand-svg';
 export const MARK_DATA_URL = `data:image/svg+xml;base64,${Buffer.from(MARK_SVG).toString('base64')}`;
+export const OG_ART_DATA_URL = `data:image/svg+xml;base64,${Buffer.from(OG_ART_SVG).toString('base64')}`;
 
 /** English-only card copy. Hangul in any field is a bug (tests check the inputs). */
 export const CATEGORY_EN: Record<string, string> = { 탐험: 'EXPLORE', 빌딩: 'BUILD', 낙서: 'DOODLE', 소설: 'FICTION', 목소리: 'VOICES' };
@@ -103,7 +103,7 @@ export async function ogCard(input: OgCardInput) {
           display: 'flex',
           position: 'relative',
           backgroundColor: INK,
-          backgroundImage: 'radial-gradient(circle at 100% 0%, rgba(98,114,165,.22) 0%, rgba(40,42,54,0) 55%), radial-gradient(circle at 0% 100%, rgba(61,220,180,.08) 0%, rgba(40,42,54,0) 45%)',
+          backgroundImage: 'radial-gradient(circle at 82% 120%, rgba(58,62,82,.9) 0%, rgba(30,31,40,0) 62%), radial-gradient(circle at 0% 0%, rgba(20,211,160,.07) 0%, rgba(30,31,40,0) 40%)',
           fontFamily: 'Pretendard',
           overflow: 'hidden',
         }}
@@ -130,10 +130,10 @@ export async function ogCard(input: OgCardInput) {
         {image ? (
           <div style={{ position: 'absolute', right: 60, top: 104, width: 400, height: 410, display: 'flex' }}>
             <div style={{ position: 'absolute', left: 18, top: 18, width: 400, height: 410, borderRadius: 28, background: PANEL, display: 'flex' }} />
-            <img src={image} width={400} height={410} style={{ position: 'absolute', left: 0, top: 0, width: 400, height: 410, objectFit: 'cover', borderRadius: 24, border: '2px solid #44475a' }} />
+            <img src={image} width={400} height={410} style={{ position: 'absolute', left: 0, top: 0, width: 400, height: 410, objectFit: 'cover', borderRadius: 24, border: '2px solid #3a3e52' }} />
           </div>
         ) : (
-          <div style={{ position: 'absolute', right: 56, top: 140, width: 332, height: 350, borderRadius: 28, background: PANEL, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={MARK_DATA_URL} width={290} height={290} /></div>
+          <div style={{ position: 'absolute', right: 40, bottom: 0, width: 380, height: 400, display: 'flex' }}><img src={OG_ART_DATA_URL} width={380} height={400} /></div>
         )}
       </div>
     ),

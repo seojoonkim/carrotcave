@@ -1,16 +1,19 @@
+import { MARK_INNER } from '@/lib/brand-svg';
+
 interface CarrotCaveMarkProps {
   className?: string;
 }
 
-// Logo: a chibi rabbit (big head, pink ears, blush) holding a smiling carrot inside a glowing burrow.
-// Drawn in final coordinates — no CSS transforms are needed to ground the rabbit on the burrow floor (y=90).
+// Brand v4 logo: the rabbit and carrot standing in the cave mouth, drawn from the shared glyph kit
+// (scripts/brand/glyphs.py -> lib/brand-svg.ts). Faces are swappable layers: rest = cool + sparkle, hover = joy + love.
 export default function CarrotCaveMark({ className = '' }: CarrotCaveMarkProps) {
   return (
-    <svg className={`carrot-cave-mark ${className}`.trim()} viewBox="0 0 96 96" aria-hidden="true" focusable="false">
-      <defs><radialGradient id="cc-mark-glow" cx="50%" cy="62%" r="52%"><stop offset="0" stopColor="#ffd27a" stopOpacity=".85" /><stop offset=".5" stopColor="#e8923e" stopOpacity=".32" /><stop offset="1" stopColor="#d06f2d" stopOpacity="0" /></radialGradient></defs>
-      <g className="carrot-cave-mark__cave"><circle cx="48" cy="54" r="40" fill="url(#cc-mark-glow)" /><path d="M5 90C7 40 23 9 48 7c25 2 41 33 43 83H76C74 52 64 30 48 27 32 30 22 52 20 90Z" fill="#1e1f28" /><path d="M14 90c2-38 15-61 34-67 19 6 32 29 34 67" fill="none" stroke="#f0b04f" strokeOpacity=".6" strokeWidth="2.2" /><path d="M3 90h90" stroke="#f0c15d" strokeOpacity=".45" strokeWidth="2.4" strokeLinecap="round" /></g>
-      <g className="carrot-cave-mark__rabbit-position"><g className="carrot-cave-mark__rabbit"><ellipse cx="35" cy="33" rx="5.2" ry="13.5" fill="#f7f3ea" transform="rotate(-12 35 33)" /><ellipse cx="35" cy="34" rx="2.3" ry="9" fill="#00d9a8" transform="rotate(-12 35 34)" /><ellipse cx="49" cy="32" rx="5.2" ry="14" fill="#f7f3ea" transform="rotate(10 49 32)" /><ellipse cx="49" cy="33" rx="2.3" ry="9.5" fill="#00d9a8" transform="rotate(10 49 33)" /><ellipse cx="42" cy="79" rx="13" ry="10.5" fill="#ebe3d3" /><circle cx="42" cy="56" r="14.5" fill="#f7f3ea" /><circle className="carrot-cave-mark__eye" cx="36.6" cy="56" r="2.8" fill="#1c2a3a" /><circle className="carrot-cave-mark__eye" cx="47.4" cy="56" r="2.8" fill="#1c2a3a" /><circle cx="37.5" cy="55" r=".85" fill="#fff" /><circle cx="48.3" cy="55" r=".85" fill="#fff" /><ellipse cx="31.8" cy="61.4" rx="3" ry="1.8" fill="#ff9fb2" opacity=".85" /><ellipse cx="52.2" cy="61.4" rx="3" ry="1.8" fill="#ff9fb2" opacity=".85" /><ellipse cx="42" cy="59.6" rx="1.3" ry="1" fill="#ff8fa8" /><path d="M40.4 61.4q1.6 1.3 3.2 0" fill="none" stroke="#1c2a3a" strokeWidth="1.1" strokeLinecap="round" /><ellipse cx="35" cy="88" rx="5.6" ry="2.5" fill="#ebe3d3" /><ellipse cx="49" cy="88" rx="5.6" ry="2.5" fill="#ebe3d3" /><ellipse cx="53.5" cy="74" rx="3.4" ry="2.8" fill="#f7f3ea" /></g></g>
-      <g className="carrot-cave-mark__carrot-position" transform="translate(62 62) rotate(16)"><g className="carrot-cave-mark__carrot"><ellipse cx="-4.2" cy="-8.6" rx="2.5" ry="4.6" fill="#00c08b" transform="rotate(-28 -4.2 -8.6)" /><ellipse cx="0" cy="-10.2" rx="2.7" ry="5" fill="#00c08b" /><ellipse cx="4.2" cy="-8.6" rx="2.5" ry="4.6" fill="#00c08b" transform="rotate(28 4.2 -8.6)" /><path d="M-7.5 -2C-7.5 -6.5 7.5 -6.5 7.5 -2C7.5 6 3 15 0 21C-3 15 -7.5 6 -7.5 -2Z" fill="#ff7a45" /><path d="M3.6 -4.6C6.6 -4 7.5 -2.8 7.5 -2C7.5 6 3 15 0 21C2.2 13 3.8 5 3.6 -4.6Z" fill="#ec6634" /><circle cx="-2.4" cy="1.2" r="1.25" fill="#1c2a3a" /><circle cx="2.4" cy="1.2" r="1.25" fill="#1c2a3a" /><path d="M-1.2 3.4q1.2.9 2.4 0" fill="none" stroke="#1c2a3a" strokeWidth=".9" strokeLinecap="round" /></g></g>
-    </svg>
+    <svg
+      className={`carrot-cave-mark ${className}`.trim()}
+      viewBox="0 0 96 96"
+      aria-hidden="true"
+      focusable="false"
+      dangerouslySetInnerHTML={{ __html: MARK_INNER }}
+    />
   );
 }

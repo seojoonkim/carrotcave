@@ -30,7 +30,7 @@ test('no neutral surface, ink or line color leans red anywhere on the site', () 
     for (const { text, rgb: [r, g, b] } of colorsIn(src)) {
       const chroma = Math.max(r, g, b) - Math.min(r, g, b);
       // Mascot fur (soft-night 2026-10-05) is a chosen warm cream; only these two exact values are exempt.
-      if (/^#(?:f7f3ea|ebe3d3)$/i.test(text)) continue;
+      if (/^#(?:f7f3ea|ebe3d3|f4eedf|e7ddc6)$/i.test(text)) continue; // brand v4 kit fur + fur shade (scripts/brand/glyphs.py)
       if (chroma <= 60 && r > b + 2 && r + g + b < 760) offenders.push(`${f}: ${text}`);
     }
   }

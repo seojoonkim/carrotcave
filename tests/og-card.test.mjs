@@ -22,14 +22,14 @@ test('pages do not override the generated card with raw thumbnails', () => {
   }
 });
 
-test('card keeps the soft-night palette: slate ink, carrot accent, rounded mascot shapes', () => {
+test('card keeps the brand v4 dark-cave palette: slate ink, carrot accent, rounded mascot shapes', () => {
   const card = read('lib/og-card.tsx');
-  assert.match(card, /INK = '#282a36'/);
-  assert.match(card, /CARROT = '#f39a52'/);
+  assert.match(card, /INK = '#1e1f28'/);
+  assert.match(card, /CARROT = '#ff7a3d'/);
   const radii = [...card.matchAll(/borderRadius: (\d+)/g)].map((m) => Number(m[1]));
   assert.ok(radii.length >= 3 && radii.every((r) => [24, 28, 999].includes(r)), `radii ${radii}`);
-  assert.match(card, /PANEL = '#343746'/);
-  assert.match(card, /<img src=\{MARK_DATA_URL\} width=\{290\} height=\{290\} \/>/, 'no-photo card shows the mascot logo on a rounded panel');
+  assert.match(card, /PANEL = '#2e3142'/);
+  assert.match(card, /OG_ART_SVG/, 'no-photo card shows the glyph-kit cave art');
 });
 
 test('non-JPEG/PNG pictures are converted and a bad picture never breaks the build', () => {
