@@ -1,7 +1,7 @@
 
 :root {
   /* Sampled from Google's official Antigravity dark UI image; accents are 4% more saturated. */
-  --bg: #282a36; --panel: #303241; --panel-2: #383b4c; --line: #44475a;
+  --bg: #252732; --panel: #303241; --panel-2: #383b4c; --line: #44475a;
   --foreground: #d9dce8; --bright-white: #eceef5; --inactive: #b7bccf;
   --ansi-cyan: #f39a52; --ansi-bright-cyan: #f5b27a; --ansi-yellow: #f6c07a;
   --ansi-green: #63c664; --ansi-red: #ef6462;

@@ -1,10 +1,10 @@
-// Eye comfort (2026.10): readable but never glaring on the #282a36 ink background.
+// Eye comfort (2026.10): readable but never glaring on the #252732 ink background.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 const read = (p) => readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
 const lum = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)).reduce((a, c, i) => a + c * [0.2126, 0.7152, 0.0722][i], 0);
-const ratio = (a, b = '#282a36') => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+const ratio = (a, b = '#252732') => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
 
 test('body ink sits in the comfortable 12-14:1 band', () => {
   const r = ratio('#eceef5');

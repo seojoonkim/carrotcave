@@ -8,7 +8,7 @@ const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m);
 test('leaf green is a real second accent with readable contrast', () => {
   const css = read('app/globals.css');
   const leaf = css.match(/--leaf-pop:(#[0-9a-f]{6})/i)[1];
-  assert.ok(ratio(leaf, '#282a36') >= 7, 'leaf accent >= 7:1 on the cave background');
+  assert.ok(ratio(leaf, '#252732') >= 7, 'leaf accent >= 7:1 on the cave background');
   assert.match(css, /\.post-link-card__label\{color:var\(--leaf-pop\)\}/);
   assert.match(css, /\.cc-newsletter__eyebrow\{color:var\(--leaf-pop\)\}/);
 });

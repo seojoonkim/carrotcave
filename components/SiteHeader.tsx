@@ -40,7 +40,8 @@ export default function SiteHeader({ children, readingTitle, readingMeta, readin
             {children && <div className="cc-header__axis cc-header__axis--desktop">{children}</div>}
           </>
         )}
-        <LangToggle locale={locale} />
+        {/* Reading pages put the KO/EN switch on the article meta line so the title keeps the full header width. */}
+        {!readingTitle && <LangToggle locale={locale} />}
       </div>
       {readingTitle && <ReadingProgress label={L.progressAria} />}
     </header>

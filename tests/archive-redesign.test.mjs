@@ -111,7 +111,7 @@ test('archive scrolling uses one simple compositor-safe surface at every width',
     read('app/globals.css'),
     read('public/shared-header-chrome.css'),
   ]);
-  assert.match(css, /:root\{[^}]*--cc-header-background:#252733/);
+  assert.match(css, /:root\{[^}]*--cc-header-background:#22242f/);
   assert.match(css, /\.cc-header\{[^}]*background:var\(--cc-header-background\)/);
   assert.match(headerChrome, /border-bottom: 1px solid var\(--cc-header-divider\) !important;/);
   assert.match(headerChrome, /box-shadow: var\(--cc-header-shadow\) !important;/);
@@ -159,8 +159,8 @@ test('editorial surface uses local Noto KR, a subtle static gradient, and comple
   assert.doesNotMatch(layout, /IBM_Plex_Sans_KR|Playfair_Display|Cormorant_Garamond|\bInter\b/);
   assert.doesNotMatch(css, /cdn\.jsdelivr\.net/);
   assert.match(layout, /href="\/fonts\/pretendard\/pretendardvariable-dynamic-subset\.css"/);
-  assert.match(css, /:root\{--graphite:#282a36/);
-  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#252733 0,#282a36 640px\) no-repeat var\(--graphite\)/);
+  assert.match(css, /:root\{--graphite:#252732/);
+  assert.match(css, /body\{[^}]*background:linear-gradient\(180deg,#22242f 0,#252732 640px\) no-repeat var\(--graphite\)/);
   assert.match(socialMetadata, /siteDescription = '토끼를 따라 더 깊이\. 기술, 사람, 시장과 미래에 관한 기록\.'/);
   assert.match(socialMetadata, /siteOgImage = '\/carrotcave-og-20260814\.png'/);
   assert.match(await read('app/opengraph-image.tsx'), /export const size = OG_SIZE/);

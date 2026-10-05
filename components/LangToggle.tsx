@@ -15,16 +15,16 @@ function swapQuery(search: string, to: Locale) {
   return q ? `?${q}` : '';
 }
 
-// KO / EN switch shown in every header. Each language keeps its own URL (/posts/x ⇄ /en/posts/x),
+// KO / EN switch: in the header on home/list pages, on the article meta line on reading pages. Each language keeps its own URL (/posts/x ⇄ /en/posts/x),
 // so links, search engines and shares always land on one language.
-export default function LangToggle({ locale }: { locale: Locale }) {
+export default function LangToggle({ locale, variant = 'header' }: { locale: Locale; variant?: 'header' | 'inline' }) {
   const pathname = usePathname() || '/';
   const pair = swapLocalePath(pathname);
   const [search, setSearch] = useState('');
   useEffect(() => { setSearch(window.location.search); }, [pathname]);
   const href = (to: Locale) => `${pair[to]}${swapQuery(search, to)}`;
   return (
-    <nav className="cc-lang" aria-label={locale === 'en' ? 'Language' : '언어 선택'}>
+    <nav className={variant === 'inline' ? 'cc-lang cc-lang--inline' : 'cc-lang'} aria-label={locale === 'en' ? 'Language' : '언어 선택'}>
       {(['ko', 'en'] as Locale[]).map((l) => (
         <a
           key={l}

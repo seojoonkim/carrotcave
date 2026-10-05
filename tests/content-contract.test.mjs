@@ -62,7 +62,7 @@ const voiceReaderFixtures = readdirSync(new URL('../public/voices/', import.meta
 test('archive and voice menu headers consume one shared chrome contract', () => {
   assert.match(rootLayoutSource, /<link rel="stylesheet" href="\/shared-header-chrome\.css" \/>/);
   assert.match(voiceReaderSystemStyles, /^@import url\("\.\.\/shared-header-chrome\.css"\);/);
-  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #252733;/);
+  assert.match(sharedHeaderChromeStyles, /--cc-header-surface: #22242f;/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-divider: rgba\(214, 222, 233, 0\.09\);/);
   assert.match(sharedHeaderChromeStyles, /--cc-header-shadow: 0 4px 14px rgba\(0, 0, 0, 0\.22\);/);
   assert.match(sharedHeaderChromeStyles, /\.cc-header,\s*\.site-header\s*\{[^}]*background: var\(--cc-header-surface\) !important;[^}]*border-bottom: 1px solid var\(--cc-header-divider\) !important;[^}]*box-shadow: var\(--cc-header-shadow\) !important;/s);

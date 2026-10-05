@@ -11,6 +11,7 @@ import LinkCard from '@/components/LinkCard';
 import linkPreviews from '@/data/link-previews.json';
 import { INLINE_URL_RE, cleanUrl, findPreviewBlocks, normalizeTitle, prettyUrl, standaloneLinkOf, unwrapTelegramLinkPreview, youTubeIdOf, type LinkPreview, type PreviewBlock } from '@/lib/link-preview';
 import SiteHeader from '@/components/SiteHeader';
+import LangToggle from '@/components/LangToggle';
 import SiteFooter from '@/components/SiteFooter';
 import { axisDestinationLabel, axisMood, axisOf } from '@/components/AxisRail';
 import PostShareButton from '@/components/PostShareButton';
@@ -268,6 +269,7 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
             <span>{depthLabelFor(locale, post.depth)}</span>
             <span aria-hidden="true">·</span>
             <time dateTime={post.date}>{formatDate(locale, post.date)}</time>
+            <LangToggle locale={locale} variant="inline" />
           </p>
         </header>
 

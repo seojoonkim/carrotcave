@@ -312,7 +312,7 @@ img { border: 0; outline: 0;  }
   box-sizing: border-box;
   padding: 38px max(20px, calc((100vw - 1100px) / 2));
   border-top: 0;
-  background: linear-gradient(180deg, #282a36 0%, #1e1f28 55%, #1e1f28 100%);
+  background: linear-gradient(180deg, #252732 0%, #1e1f28 55%, #1e1f28 100%);
   color: #a6abc0;
   font: 500 11px/1.4 var(--font-mono);
   letter-spacing: .04em;
@@ -595,7 +595,7 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .menu-button { transition: none !important; }
 .toc-drawer { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s linear .14s !important; will-change: transform; }
 .toc-drawer.open { transition: transform .14s cubic-bezier(.2, .7, .2, 1), opacity .1s ease, visibility 0s !important; }
-.drawer-backdrop { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(40,42,54, .72) !important; }
+.drawer-backdrop { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: rgba(37,39,50, .72) !important; }
 @media (prefers-reduced-motion: reduce) { .toc-drawer, .toc-drawer.open { transition: none !important; } }
 /* Opening the index must not relayout the long transcript: keep the scrollbar width fixed, and contain scrolling in the drawer instead of locking the page. */
 html { scrollbar-gutter: stable; }
