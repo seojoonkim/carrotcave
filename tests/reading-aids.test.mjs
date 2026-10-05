@@ -84,3 +84,8 @@ test('aid generator runs Claude on the OAuth login, never a stale API key from a
   assert.ok(/API Error: 401/.test(py) && /SystemExit/.test(py), 'a 401 must abort the run instead of retrying every post');
   assert.ok(/print\(f'retry /.test(py), 'retries must be logged with their reason');
 });
+
+test('key-sentence highlight is an underline only, no leading bullet dot (2026-10-06)', () => {
+  const css = read('public/reading-end.css');
+  assert.ok(!/mark\.post-key::before/.test(css), 'mark.post-key must not draw a ::before bullet');
+});
