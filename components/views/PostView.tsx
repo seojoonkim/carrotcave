@@ -263,14 +263,14 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
           <h1>
             {post.title}
           </h1>
-          <p className="post-reader-meta">
+          <div className="post-reader-meta">
             <span className="post-reader-meta__axis">{axisName}</span>
             <span aria-hidden="true">·</span>
             <span>{depthLabelFor(locale, post.depth)}</span>
             <span aria-hidden="true">·</span>
             <time dateTime={post.date}>{formatDate(locale, post.date)}</time>
             <LangToggle locale={locale} variant="inline" />
-          </p>
+          </div>
         </header>
 
         {/* Media section — images (top, skip if video exists) */}

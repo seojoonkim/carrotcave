@@ -77,7 +77,7 @@ test('KO/EN switch: header on list pages, article meta line on reading pages (ti
   const header = read('components/SiteHeader.tsx');
   assert.match(header, /\{!readingTitle && <LangToggle locale=\{locale\} \/>\}/);
   const view = read('components/views/PostView.tsx');
-  const meta = view.slice(view.indexOf('className="post-reader-meta"'), view.indexOf('</p>', view.indexOf('className="post-reader-meta"')));
+  const meta = view.slice(view.indexOf('className="post-reader-meta"'), view.indexOf('</div>', view.indexOf('className="post-reader-meta"')));
   assert.match(meta, /<LangToggle locale=\{locale\} variant="inline" \/>/);
   const css = read('app/globals.css');
   assert.doesNotMatch(css, /cc-header--reading \.cc-header__inner\{padding-right:9?\d+px\}/, 'no header space reserved for a toggle on reading pages');
