@@ -42,7 +42,9 @@ test('text-only voice sources are not labelled as video', () => {
   const runtime = read('public/voices/reading-end.js');
   assert.match(runtime, /"slug":"shin-jeongkyu-astra"[^}]*"video":false/);
   assert.match(runtime, /"slug":"mark-zuckerberg-muse"[^}]*"video":true/);
-  assert.match(runtime, /me\.video \? '원본 영상 보기' : '원본 보기'/);
+  assert.match(runtime, /me\.video \? T\.video : T\.source/);
+  assert.match(runtime, /video: '원본 영상 보기', videoShort: '원본 영상', source: '원본 보기'/);
+  assert.match(runtime, /video: 'Watch original video', videoShort: 'Video', source: 'View original'/);
 });
 
 test('next-in-category card shows the next post thumbnail, falling back to the character art', () => {

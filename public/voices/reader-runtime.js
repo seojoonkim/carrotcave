@@ -73,6 +73,7 @@
     const run = () => {
       if (started || transcript.getAttribute('aria-busy') !== 'false') return;
       if (document.querySelector('.key-sentence, .transcript-highlight')) return;
+      if (document.documentElement?.lang === 'en') return; // key-sentences.json quotes the Korean text
       started = true;
       fetch('key-sentences.json')
         .then((response) => (response.ok ? response.json() : []))
@@ -88,5 +89,83 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', autoKeySentences, { once: true });
   else autoKeySentences();
 
-  window.CarrotReader = Object.freeze({ createStatusController, markKeySentences });
+  // Page language: an English reader page is <html lang="en">; a Korean-only reader framed by the
+  // English site gets ?lang=en so its chrome (toggle, reading end) stays on the English site.
+  const loc = typeof location === 'undefined' ? { search: '', pathname: '' } : location;
+  const queryLang = typeof URLSearchParams === 'undefined' ? null : new URLSearchParams(loc.search).get('lang');
+  const pageLang = queryLang === 'en' || document.documentElement?.lang === 'en' ? 'en' : 'ko';
+  const voiceSlug = (loc.pathname.match(/\/voices\/([^/]+)\//) || [])[1] || '';
+
+  // KO / EN switch at the right end of the date line — the same place as on ordinary posts.
+  const mountLangToggle = () => {
+    const line = document.querySelector('.hero > .hero-date');
+    if (!line || !voiceSlug || line.querySelector('.cc-lang')) return;
+    const nav = document.createElement('nav');
+    nav.className = 'cc-lang cc-lang--inline';
+    nav.setAttribute('aria-label', pageLang === 'en' ? 'Language' : '언어 선택');
+    [['ko', 'KO', ' 한국어', `/voices/${voiceSlug}`], ['en', 'EN', ' English', `/en/voices/${voiceSlug}`]].forEach(([lang, label, full, href]) => {
+      const a = document.createElement('a');
+      a.className = 'cc-lang__item';
+      a.href = href;
+      a.target = '_top';
+      a.hreflang = lang;
+      a.lang = lang;
+      a.dataset.langSwitch = '';
+      if (lang === pageLang) a.setAttribute('aria-current', 'true');
+      a.append(label);
+      const sr = document.createElement('span');
+      sr.className = 'sr-only';
+      sr.textContent = full;
+      a.append(sr);
+      a.addEventListener('click', () => {
+        try { document.cookie = `cc-lang=${lang};path=/;max-age=31536000;samesite=lax`; } catch {}
+      });
+      nav.append(a);
+    });
+    const text = document.createElement('span');
+    text.className = 'hero-date__text';
+    text.append(...line.childNodes);
+    line.append(text, nav);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountLangToggle, { once: true });
+  else mountLangToggle();
+
+  // English readers render transcript-en-reader.json (original English captions) into the same
+  // chapters/anchors as the Korean reader. Returns the number of paragraphs rendered.
+  const renderEnglishTranscript = (data, chapters) => {
+    if (!data || data.language !== 'en' || !Array.isArray(data.items) || !data.items.length) throw new Error('Unexpected English transcript');
+    let previous = null;
+    data.items.forEach((item, index) => {
+      if (!item || item.id !== index || typeof item.text !== 'string' || !item.text.trim() || !item.speaker) throw new Error(`Invalid English paragraph ${index}`);
+      const chapter = chapters.find((section) => item.start >= Number(section.dataset.start) && item.start < Number(section.dataset.end)) || chapters[chapters.length - 1];
+      const paragraph = document.createElement('p');
+      paragraph.className = 'transcript-paragraph transcript-dialogue';
+      paragraph.dataset.start = String(item.start);
+      const anchor = document.createElement('span');
+      anchor.className = 'segment-anchor';
+      anchor.id = `segment-${item.id}`;
+      anchor.dataset.segmentId = String(item.id);
+      anchor.dataset.start = String(item.start);
+      anchor.dataset.end = String(item.end);
+      const copy = document.createElement('span');
+      copy.className = 'paragraph-text';
+      if (item.speaker !== previous) {
+        const meta = document.createElement('span');
+        meta.className = 'transcript-turn-meta';
+        const speaker = document.createElement('strong');
+        speaker.className = 'transcript-speaker';
+        speaker.dataset.role = item.role || 'host';
+        speaker.textContent = item.speaker;
+        meta.append(speaker);
+        copy.append(meta);
+        previous = item.speaker;
+      }
+      copy.append(document.createTextNode(item.text));
+      paragraph.append(anchor, copy);
+      chapter.querySelector('.transcript-segments').append(paragraph);
+    });
+    return data.items.length;
+  };
+
+  window.CarrotReader = Object.freeze({ createStatusController, markKeySentences, renderEnglishTranscript, pageLang, voiceSlug });
 })();

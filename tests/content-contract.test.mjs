@@ -132,8 +132,8 @@ test('every voice reader uses one compact header toggle for its reading index', 
     assert.match(html, /id="tocDrawer" role="region" aria-hidden="true" aria-labelledby="tocTitle"/, `${slug} TOC must be a controlled navigation region`);
     assert.doesNotMatch(html, /id="closeDrawer"|aria-modal="true"|role="dialog"/, `${slug} must not render a second close control or modal contract`);
     assert.match(runtime, /(?:drawer\.)?classList\.contains\(['"]open['"]\)\s*\?\s*closeDrawer\(\)\s*:\s*openDrawer\(\)/, `${slug} menu button must toggle the TOC both ways`);
-    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*['"]목차 닫기['"]\)/, `${slug} must announce the close state`);
-    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*['"]목차 열기['"]\)/, `${slug} must restore the open label`);
+    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*(?:\(document\.documentElement\.lang === 'en' \? 'Close contents' : )?['"]목차 닫기['"]\)?\)/, `${slug} must announce the close state`);
+    assert.match(runtime, /setAttribute\(['"]aria-label['"],\s*(?:\(document\.documentElement\.lang === 'en' \? 'Open contents' : )?['"]목차 열기['"]\)?\)/, `${slug} must restore the open label`);
   }
   for (const required of [
     '.menu-button[aria-expanded="true"] i { transform: rotate(45deg); }',
@@ -308,7 +308,7 @@ test('Tibo voice archive ships a Korean sentence-level transcript with source-sp
   assert.deepEqual(new Set(koreanTranscript.items.map((item) => item.speaker)), allowedSpeakers);
   assert.ok(koreanTranscript.items.some((item, index) => index > 0 && item.speaker !== koreanTranscript.items[index - 1].speaker));
 
-  assert.match(tiboReaderScript, /fetch\('transcript-ko\.json'\)/);
+  assert.match(tiboReaderScript, /fetch\(EN\?'transcript-en-reader\.json':'transcript-ko\.json'\)/);
   assert.doesNotMatch(tiboReaderScript, /fetch\('transcript-en\.json'\)/);
   assert.match(tiboReaderSource, /전체 한국어 번역 전사/);
   assert.match(tiboReaderSource, /Matthew Berman/);

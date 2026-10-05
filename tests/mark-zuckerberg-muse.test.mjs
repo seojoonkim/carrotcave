@@ -15,7 +15,7 @@ test('Zuckerberg metadata and Korean reader refer to the actual Sources intervie
  assert.ok(html.includes('한국어 번역 전사'));
  assert.ok(html.includes('화자'));
  assert.ok(html.includes('4192.799') || html.includes('1:09:52'));
- assert.ok(script.includes("fetch('transcript-ko.json')"));
+ assert.ok(script.includes("fetch(EN ? 'transcript-en-reader.json' : 'transcript-ko.json')"));
  assert.ok(script.includes('data.items.length !== 264'));
  assert.doesNotMatch(html+script,/티보|Tibo|4qjEgPojjzM|Matthew Berman|ZIaOBAjvc38|Garry Tan|샘 올트먼|Startup School|MASAYOSHI|손정의/);
  for(const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g)||[])assert.match(tag,/rel="noopener noreferrer"/);

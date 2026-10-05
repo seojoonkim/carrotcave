@@ -267,7 +267,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 
   const samScript = await read('public/voices/sam-altman-startup-school-2026/script.js');
   for (const required of [
-    "CarrotReader.createStatusController({ readerTitle: '샘 올트먼 인터뷰' })",
+    "CarrotReader.createStatusController({ readerTitle: document.documentElement.lang === 'en' ? 'Sam Altman Interview' : '샘 올트먼 인터뷰' })",
     'readerStatus.setChapter(number,title);',
   ]) assert.ok(samScript.includes(required), `Sam header script missing: ${required}`);
 });
@@ -275,7 +275,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 test('voice readers share one status runtime instead of duplicating header mutation', async () => {
   const runtime = await read('public/voices/reader-runtime.js');
   for (const required of [
-    'window.CarrotReader = Object.freeze({ createStatusController, markKeySentences });',
+    'window.CarrotReader = Object.freeze({ createStatusController, markKeySentences, renderEnglishTranscript, pageLang, voiceSlug });',
     "status.setAttribute('aria-label', `${number} ${title}`.trim());",
     'return Object.freeze({ set, setChapter });',
   ]) assert.ok(runtime.includes(required), `shared reader runtime missing: ${required}`);

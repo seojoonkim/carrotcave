@@ -11,7 +11,7 @@
   const backToTop = document.getElementById('backToTop');
   const chapters = [...document.querySelectorAll('.transcript-chapter')];
   const navLinks = [...document.querySelectorAll('[data-nav-chapter]')];
-  const readerStatus = CarrotReader.createStatusController({ readerTitle: '마크 저커버그 인터뷰' });
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: document.documentElement.lang === 'en' ? 'Mark Zuckerberg Interview' : '마크 저커버그 인터뷰' });
   const boundaries = [0, 514, 903, 1154, 1500, 1831, 2466, 2671, 3249, 3711, 3950, 4210];
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let lastFocus = null;
@@ -122,7 +122,7 @@
     drawer.setAttribute('aria-hidden', 'true');
     drawer.inert = true;
     menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', '목차 열기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Open contents' : '목차 열기'));
     backdrop.hidden = true;
     body.classList.remove('drawer-open');
     if (restoreFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
@@ -133,7 +133,7 @@
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     menuButton.setAttribute('aria-expanded', 'true');
-    menuButton.setAttribute('aria-label', '목차 닫기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Close contents' : '목차 닫기'));
     backdrop.hidden = false;
     body.classList.add('drawer-open');
     drawer.querySelector('a').focus();
@@ -192,13 +192,14 @@
     scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 
-  fetch('transcript-ko.json')
+  const EN = document.documentElement.lang === 'en';
+  fetch(EN ? 'transcript-en-reader.json' : 'transcript-ko.json')
     .then(response => {
       if (!response.ok) throw new Error(`Transcript request failed (${response.status})`);
       return response.json();
     })
     .then(data => {
-      transcript.dataset.segmentCount = String(renderItems(data));
+      transcript.dataset.segmentCount = String(EN ? CarrotReader.renderEnglishTranscript(data, chapters) : renderItems(data));
       loaded = true;
       loading.hidden = true;
       error.hidden = true;
