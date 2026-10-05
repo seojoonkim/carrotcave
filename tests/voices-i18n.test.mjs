@@ -83,3 +83,66 @@ test('English voice transcripts are rebuilt by a script, not edited by hand', ()
   assert.ok(existsSync(new URL('../scripts/i18n/build-voice-en-transcripts.py', import.meta.url)));
   assert.ok(existsSync(new URL('../scripts/i18n/build-voice-en-readers.py', import.meta.url)));
 });
+
+// Voices recorded in another language (Chinese / Japanese / Korean): the English page reads an English
+// translation of the reviewed edition — never the Korean text.
+const TRANSLATED_VOICES = {
+  'liao-heng': (d) => [...d.paragraphs.map((p) => p.text), ...d.chapters.map((c) => c.title), ...d.highlights.map((h) => h.title)],
+  'yang-zhilin': (d) => d.segments.map((s) => s.text),
+  'masayoshi-son-asi-economy': (d) => [...d.items.map((i) => i.text), ...d.chapters.map((c) => c.title)],
+};
+
+test('every published voice has a fully English reader page', () => {
+  const interviews = read('data/interviews.ts');
+  for (const slug of [...interviews.matchAll(/slug: '([^']+)'/g)].map((m) => m[1])) {
+    assert.ok(existsSync(new URL(`../public/voices/${slug}/index.en.html`, import.meta.url)), `${slug}: English reader page missing`);
+    const html = read(`public/voices/${slug}/index.en.html`);
+    assert.match(html, /<html lang="en"/, slug);
+    const visible = html.replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/g, '').replace(/<!--[\s\S]*?-->/g, '');
+    const left = [...visible.matchAll(/>([^<>]*)</g)].map((m) => m[1]).filter((t) => HANGUL.test(t));
+    assert.deepEqual(left, [], `${slug}: Korean left on the English reader`);
+  }
+});
+
+test('translated voices ship an English transcript with the same shape as the Korean one', () => {
+  for (const [slug, texts] of Object.entries(TRANSLATED_VOICES)) {
+    const ko = json(`public/voices/${slug}/transcript-ko.json`);
+    const en = json(`public/voices/${slug}/transcript-en.json`);
+    assert.equal(en.language, 'en', slug);
+    const kt = texts(ko), et = texts(en);
+    assert.equal(et.length, kt.length, `${slug}: same number of paragraphs`);
+    et.forEach((t, i) => {
+      if (kt[i].trim()) assert.ok(t.trim(), `${slug} item ${i} empty`);
+      assert.doesNotMatch(t, HANGUL, `${slug} item ${i} has Korean`);
+    });
+    assert.match(read(`public/voices/${slug}/script.js`), /'transcript-en\.json'/, `${slug}: English page must fetch transcript-en.json`);
+  }
+});
+
+test('English key sentences quote the English text exactly', () => {
+  for (const slug of [...Object.keys(TRANSLATED_VOICES), ...Object.keys(ENGLISH_VOICES)]) {
+    const keys = json(`public/voices/${slug}/key-sentences.en.json`);
+    assert.ok(keys.length >= 10, `${slug}: at least 10 English key sentences (house rule)`);
+    for (const k of keys) assert.doesNotMatch(k.exact_quote, HANGUL, slug);
+    if (ENGLISH_VOICES[slug]) {
+      const items = json(`public/voices/${slug}/transcript-en-reader.json`).items;
+      for (const k of keys) assert.equal(items[k.id].text.split(k.exact_quote).length - 1, 1, `${slug}: quote must occur once in English paragraph ${k.id}`);
+    }
+  }
+});
+
+
+test('voice scripts never emit a Korean-only label on the English page', () => {
+  for (const slug of Object.keys(TRANSLATED_VOICES)) {
+    const dir = `public/voices/${slug}`;
+    for (const file of ['script.js', 'transcript-format.js']) {
+      const path = new URL(`../${dir}/${file}`, import.meta.url);
+      if (!existsSync(path)) continue;
+      const code = read(`${dir}/${file}`).replace(/\/\/.*$/gm, '');
+      for (const m of code.matchAll(/(['`])((?:(?!\1).)*[가-힣](?:(?!\1).)*)\1/g)) {
+        const before = code.slice(Math.max(0, m.index - 220), m.index);
+        assert.match(before, /lang === 'en'|\bEN\b/, `${slug}/${file}: Korean literal ${m[0].slice(0, 40)} has no English branch`);
+      }
+    }
+  }
+});

@@ -12,7 +12,7 @@
   const progressBar = document.getElementById('progressBar');
   const railPercent = document.getElementById('railPercent');
   const backToTop = document.getElementById('backToTop');
-  const readerStatus = CarrotReader.createStatusController({ readerTitle: '랴오헝 인터뷰' });
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: (document.documentElement.lang === 'en' ? 'Liao Heng Interview' : '랴오헝 인터뷰') });
   const railTopics = document.getElementById('railTopics');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let lastFocus = null;
@@ -85,7 +85,7 @@
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     menuButton.setAttribute('aria-expanded', 'true');
-    menuButton.setAttribute('aria-label', '목차 닫기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Close contents' : '목차 닫기'));
     const revealActiveTopic = () => {
       const activeLink = drawer.querySelector(`[data-nav-topic="${CSS.escape(String(drawerTopic))}"]`);
       if (!activeLink || !drawer.classList.contains('open')) return;
@@ -103,7 +103,7 @@
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', '목차 열기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Open contents' : '목차 열기'));
     backdrop.hidden = true;
     body.classList.remove('drawer-open');
     if (restoreFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
@@ -417,7 +417,7 @@
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
   updateProgress();
 
-  Promise.all(['transcript-ko.json', 'key-sentences.json'].map(url => fetch(url).then(response => {
+  Promise.all([(document.documentElement.lang === 'en' ? 'transcript-en.json' : 'transcript-ko.json'), (document.documentElement.lang === 'en' ? 'key-sentences.en.json' : 'key-sentences.json')].map(url => fetch(url).then(response => {
     if (!response.ok) throw new Error(`${url} request failed (${response.status})`);
     return response.json();
   })))

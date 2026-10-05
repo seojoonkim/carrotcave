@@ -73,9 +73,8 @@
     const run = () => {
       if (started || transcript.getAttribute('aria-busy') !== 'false') return;
       if (document.querySelector('.key-sentence, .transcript-highlight')) return;
-      if (document.documentElement?.lang === 'en') return; // key-sentences.json quotes the Korean text
       started = true;
-      fetch('key-sentences.json')
+      fetch(document.documentElement?.lang === 'en' ? 'key-sentences.en.json' : 'key-sentences.json')
         .then((response) => (response.ok ? response.json() : []))
         .then((items) => {
           if (!Array.isArray(items) || !items.length || !items.every((item) => Number.isInteger(item?.id))) return;

@@ -37,7 +37,7 @@
         sentences.push({
           start: segment.start,
           segments: [segment],
-          text: '무음',
+          text: (typeof document !== 'undefined' && document.documentElement.lang === 'en') ? 'Silence' : '무음',
           silence: true,
         });
         return;

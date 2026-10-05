@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 V = ROOT / 'public/voices'
 SRC = ROOT / 'data/voice-sources'
-EN_VOICES = ['mark-zuckerberg-muse', 'tibo-ai-wave', 'sam-altman-startup-school-2026']
+EN_VOICES = ['mark-zuckerberg-muse', 'tibo-ai-wave', 'sam-altman-startup-school-2026', 'liao-heng', 'liang-wenfeng', 'yang-zhilin', 'masayoshi-son-asi-economy', 'shin-jeongkyu-astra']
 HANGUL = re.compile(r'[\uac00-\ud7a3]')
 GLOSSARY = (ROOT / 'scripts/i18n/glossary.md').read_text() if (ROOT / 'scripts/i18n/glossary.md').exists() else ''
 
@@ -47,31 +47,59 @@ def collect(doc):
             found.append(html.unescape(m.group(2)))
     return list(dict.fromkeys(found))
 
-def translate(slug, strings, cache):
-    todo = [s for s in strings if s not in cache]
-    if not todo:
-        return cache
-    prompt = (
-        'Translate the UI and editorial strings of a CarrotCave (carrotcave.com) interview reader page from Korean to natural English.\n'
-        'The page presents the ORIGINAL ENGLISH transcript of the interview, so any wording like "한국어 번역 전사" / "Korean transcript" '
-        'must become "original English transcript" (or "English transcript"); paragraph counts in such labels must be dropped rather than guessed.\n'
-        'Keep names in their official English form (마크 저커버그 → Mark Zuckerberg, 알렉스 히스 → Alex Heath, 티보 → Tibo, 매튜 버먼 → Matthew Berman, '
-        '샘 올트먼 → Sam Altman, 개리 탄 → Garry Tan). Dates in English (2026년 9월 8일 → September 8, 2026). Keep it concise; keep any numbers.\n'
-        'Section names: 목소리 → Voices. 목차 → Contents. 전사 → transcript. 편집자 → editor.\n'
-        + (('Glossary:\n' + GLOSSARY + '\n') if GLOSSARY else '') +
-        'Return ONLY JSON: {"translations": {"<korean string exactly as given>": "<english>", ...}} covering every input string.\n\n'
-        + json.dumps(todo, ensure_ascii=False)
-    )
+ORIGINAL_EN = {'mark-zuckerberg-muse', 'tibo-ai-wave', 'sam-altman-startup-school-2026'}
+SOURCE_LANG = {'liao-heng': 'Chinese', 'liang-wenfeng': 'Chinese', 'yang-zhilin': 'Chinese', 'masayoshi-son-asi-economy': 'Japanese', 'shin-jeongkyu-astra': 'Korean'}
+NAMES = ('마크 저커버그 → Mark Zuckerberg, 알렉스 히스 → Alex Heath, 티보 → Tibo, 매튜 버먼 → Matthew Berman, 샘 올트먼 → Sam Altman, 개리 탄 → Garry Tan, '
+         '랴오헝 → Liao Heng, 샤오쥔 → Xiaojun, 화웨이 → Huawei, 하이실리콘 → HiSilicon, 어센드 → Ascend, 양즈린 → Yang Zhilin, 문샷 → Moonshot AI, 키미 → Kimi, '
+         '량원펑 → Liang Wenfeng, 딥시크 → DeepSeek, 손정의 → Masayoshi Son, 소프트뱅크 → SoftBank, 신정규 → Jeongkyu Shin, 래블업 → Lablup')
+
+def _batches(items, limit=3500):
+    out, cur, size = [], [], 0
+    for s in items:
+        if cur and size + len(s) > limit:
+            out.append(cur); cur, size = [], 0
+        cur.append(s); size += len(s)
+    if cur:
+        out.append(cur)
+    return out
+
+def _prompt(slug, todo):
+    if slug in ORIGINAL_EN:
+        framing = ('The page presents the ORIGINAL ENGLISH transcript of the interview, so any wording like "한국어 번역 전사" / "Korean transcript" '
+                   'must become "original English transcript" (or "English transcript"); paragraph counts in such labels must be dropped rather than guessed.\n')
+    else:
+        lang = SOURCE_LANG.get(slug, 'another language')
+        framing = (f'The talk was originally in {lang}. This English page presents an ENGLISH TRANSLATION (made from the reviewed Korean edition), '
+                   'so wording like "한국어 번역" / "Korean translation" must become "English translation"; keep counts of chapters/paragraphs as given. '
+                   'Body paragraphs are interview text: translate them faithfully and completely, keeping the speaker\'s voice.\n')
+    return ('Translate the UI, editorial and body strings of a CarrotCave (carrotcave.com) interview reader page from Korean to natural English.\n'
+            + framing +
+            f'Keep names in their official English form ({NAMES}). Dates in English (2026년 9월 8일 → September 8, 2026). Keep any numbers.\n'
+            'Section names: 목소리 → Voices. 목차 → Contents. 전사 → transcript. 편집자 → editor.\n'
+            + (('Glossary:\n' + GLOSSARY + '\n') if GLOSSARY else '') +
+            'Return ONLY JSON: {"translations": {"<korean string exactly as given>": "<english>", ...}} covering every input string.\n\n'
+            + json.dumps(todo, ensure_ascii=False))
+
+def _translate_batch(slug, todo):
+    done = {}
     for attempt in range(3):
-        out = llm(prompt).get('translations', {})
-        bad = [s for s in todo if not isinstance(out.get(s), str) or not out[s].strip() or HANGUL.search(out[s])]
+        out = llm(_prompt(slug, todo)).get('translations', {})
         for s in todo:
-            if s not in bad:
-                cache[s] = out[s].strip()
-        todo = bad
+            v = out.get(s)
+            if isinstance(v, str) and v.strip() and not HANGUL.search(v):
+                done[s] = v.strip()
+        todo = [s for s in todo if s not in done]
         if not todo:
-            return cache
+            return done
     raise SystemExit(f'{slug}: untranslated {len(todo)} strings, e.g. {todo[:3]}')
+
+def translate(slug, strings, cache):
+    from concurrent.futures import ThreadPoolExecutor
+    todo = [s for s in strings if s not in cache]
+    with ThreadPoolExecutor(6) as pool:
+        for done in pool.map(lambda b: _translate_batch(slug, b), _batches(todo)):
+            cache.update(done)
+    return cache
 
 def apply(doc, cache):
     spans = protected_spans(doc)

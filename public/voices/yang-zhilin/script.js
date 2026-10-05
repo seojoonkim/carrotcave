@@ -12,7 +12,7 @@
   const progressBar = document.getElementById('progressBar');
   const railPercent = document.getElementById('railPercent');
   const backToTop = document.getElementById('backToTop');
-  const readerStatus = CarrotReader.createStatusController({ readerTitle: '양즈린 인터뷰' });
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: (document.documentElement.lang === 'en' ? 'Yang Zhilin Interview' : '양즈린 인터뷰') });
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const chapters = [...document.querySelectorAll('.transcript-chapter')];
   let lastFocus = null;
@@ -93,7 +93,7 @@
         : segments.map(segment => ({
             start: segment.start,
             segments: [segment],
-            text: segment.text.trim() || '무음',
+            text: segment.text.trim() || (document.documentElement.lang === 'en' ? 'Silence' : '무음'),
             silence: !segment.text.trim(),
           }));
       paragraphs.forEach(part => {
@@ -109,7 +109,7 @@
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
     menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', '목차 열기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Open contents' : '목차 열기'));
     backdrop.hidden = true;
     body.classList.remove('drawer-open');
     if (restoreFocus && lastFocus instanceof HTMLElement) lastFocus.focus();
@@ -119,7 +119,7 @@
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
     menuButton.setAttribute('aria-expanded', 'true');
-    menuButton.setAttribute('aria-label', '목차 닫기');
+    menuButton.setAttribute('aria-label', (document.documentElement.lang === 'en' ? 'Close contents' : '목차 닫기'));
     backdrop.hidden = false;
     body.classList.add('drawer-open');
   };
@@ -155,7 +155,7 @@
   addEventListener('resize', update);
   backToTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
-  fetch('transcript-ko.json').then(response => {
+  fetch(document.documentElement.lang === 'en' ? 'transcript-en.json' : 'transcript-ko.json').then(response => {
     if (!response.ok) throw new Error(`transcript request failed (${response.status})`);
     return response.json();
   }).then(data => {

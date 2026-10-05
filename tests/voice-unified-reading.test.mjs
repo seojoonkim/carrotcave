@@ -11,7 +11,7 @@ const idEpisodes = {
 test('shared runtime marks id-based key sentences for every episode', () => {
   const runtime = read('public/voices/reader-runtime.js');
   assert.match(runtime, /const markKeySentences = \(items\) =>/);
-  assert.match(runtime, /fetch\('key-sentences\.json'\)/);
+  assert.match(runtime, /fetch\(document\.documentElement\?\.lang === 'en' \? 'key-sentences\.en\.json' : 'key-sentences\.json'\)/);
   assert.match(runtime, /mark\.className = 'key-sentence'/);
 });
 test('every id-based episode ships 12-16 exact, single-segment key sentences', () => {

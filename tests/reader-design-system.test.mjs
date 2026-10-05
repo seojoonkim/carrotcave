@@ -247,7 +247,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 
   const liaoScript = await read('public/voices/liao-heng/script.js');
   for (const required of [
-    "CarrotReader.createStatusController({ readerTitle: '랴오헝 인터뷰' })",
+    "CarrotReader.createStatusController({ readerTitle: (document.documentElement.lang === 'en' ? 'Liao Heng Interview' : '랴오헝 인터뷰') })",
     'readerStatus.setChapter(number, chapterTitle);',
     "readerStatus.set(currentMarker.querySelector('.highlight-index')?.textContent || '', currentMarker.querySelector('h3')?.textContent || '', true);",
   ]) assert.ok(liaoScript.includes(required), `Liao header script missing: ${required}`);
@@ -261,7 +261,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
 
   const yangScript = await read('public/voices/yang-zhilin/script.js');
   for (const required of [
-    "CarrotReader.createStatusController({ readerTitle: '양즈린 인터뷰' })",
+    "CarrotReader.createStatusController({ readerTitle: (document.documentElement.lang === 'en' ? 'Yang Zhilin Interview' : '양즈린 인터뷰') })",
     'readerStatus.setChapter(number, chapterTitle);',
   ]) assert.ok(yangScript.includes(required), `Yang header script missing: ${required}`);
 

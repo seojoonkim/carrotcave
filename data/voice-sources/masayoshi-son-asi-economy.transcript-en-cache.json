@@ -1,0 +1,1970 @@
+{
+"i0": {
+"ko": "여러분, 안녕하십니까.",
+"en": "Hello, everyone."
+},
+"i1": {
+"ko": "오늘 이 자리에 모이신 여러분은 대부분 회사, 그것도 대기업의",
+"en": "Most of you gathered here today are presidents, senior executives, or board members of companies,"
+},
+"i2": {
+"ko": "사장이나 경영진, 임원 여러분이십니다.",
+"en": "and large companies at that."
+},
+"i3": {
+"ko": "경영자에게 중요한 것은 무엇일까요. 가장 중요한 것은,",
+"en": "What matters to a business leader? The most important things,"
+},
+"i4": {
+"ko": "제가 생각하기에는 비전이고 전략입니다.",
+"en": "in my view, are vision and strategy."
+},
+"i5": {
+"ko": "일본에서는 경영을 이야기할 때 흔히 사람 사이의 유대라든가, 화합을 중시한다는 말 같은 것이",
+"en": "In Japan, when people talk about management, things like personal bonds and the importance of harmony"
+},
+"i6": {
+"ko": "사장 취임사의 대부분에 등장합니다. 일본",
+"en": "appear in most inaugural addresses by company presidents. That is how it is at Japanese"
+},
+"i7": {
+"ko": "기업에서는 그렇습니다. 미국의 최고경영자 가운데 그런 말을 하는 사람은 거의 없습니다.",
+"en": "companies. Hardly any American CEOs say those things."
+},
+"i8": {
+"ko": "결국 중요하다고 여기는 것의 우선순위가 다른 것이지요.",
+"en": "Ultimately, they have different priorities in what they consider important."
+},
+"i9": {
+"ko": "아무리 사이좋게 지내고 화합하더라도, 배가 산 위로 올라가 버리면",
+"en": "No matter how well everyone gets along or how harmonious things are, if the ship ends up going up a mountain,"
+},
+"i10": {
+"ko": "배 전체가 엉뚱한 곳에 가 버리는 것입니다. 역시 경영자,",
+"en": "the whole ship has gone completely off course. So for a business leader,"
+},
+"i11": {
+"ko": "최고책임자에게 가장 중요한 것은 비전과 전략이 아닐까 생각합니다.",
+"en": "for the person ultimately in charge, I believe the most important things are vision and strategy."
+},
+"i12": {
+"ko": "그런데 비전이나 전략을 말할 때 어딘가 막연하게 이야기하는 분들이 있지요.",
+"en": "But some people speak rather vaguely when they talk about vision and strategy."
+},
+"i13": {
+"ko": "AI가 중요하다, 이제 AI의 시대가 온다고 말합니다. 그러면 얼마나 크게 오는 것이냐고 물으면 ‘많이’,",
+"en": "They say AI is important, that the age of AI is coming. Then when you ask how big it will be, they say things like “very big,”"
+},
+"i14": {
+"ko": "‘엄청나게’ 같은 형용사가 나옵니다. 그렇게 형용사로 표현하는 순간,",
+"en": "or “enormous.” The moment you express it in adjectives like that,"
+},
+"i15": {
+"ko": "더 선명한 비전이 되지 못하는 것입니다.",
+"en": "you fail to make the vision any clearer."
+},
+"i16": {
+"ko": "선명한 비전이 없으면 전략을 세우기도 어렵습니다. 그래서 저는 굳이",
+"en": "Without a clear vision, it is difficult to formulate a strategy. That is why, quite deliberately,"
+},
+"i17": {
+"ko": "오늘, 더 선명하고 윤곽이",
+"en": "today I want to offer my own views on several things, with clearer, more sharply"
+},
+"i18": {
+"ko": "분명한 기한과 숫자를 가지고 몇 가지 내용에 대해 제 나름의 의견을 말씀드리려고 합니다.",
+"en": "defined timelines and numbers."
+},
+"i19": {
+"ko": "인터넷 혁명은 1995년에 시작됐습니다만,",
+"en": "The internet revolution began in 1995,"
+},
+"i20": {
+"ko": "처음에는 특히 일본에서 ‘제조에야말로 일본 경영의 혼이 있다’,",
+"en": "but at first, especially in Japan, many people said things like, “Manufacturing is where the soul of Japanese management lies,”"
+},
+"i21": {
+"ko": "‘인터넷 같은 것은 뭔가 가상의 세계일 뿐이다’,",
+"en": "or “The internet is just some sort of virtual world.”"
+},
+"i22": {
+"ko": "‘유리 동굴’이라든가 여러 말을 하는 사람이 많았습니다. 하지만 이제 세계 경제의",
+"en": "There were all sorts of expressions, like “a glass cave.” But now, most of the companies"
+},
+"i23": {
+"ko": "선두를 이끄는 기업은 대부분 인터넷을 본업으로 하는 회사들이지요.",
+"en": "leading the global economy have the internet as their core business."
+},
+"i24": {
+"ko": "세상이 완전히 바뀌었습니다. 당시에는 사업 모델이 없다고 했습니다. 그래서 거품이라고 했습니다. 돈을",
+"en": "The world has changed completely. Back then, people said there was no business model. So they called it a bubble. They said these companies"
+},
+"i25": {
+"ko": "벌 수 없다고 했습니다. 그런데 지금 그 인터넷 기업들은 엄청난 기세로",
+"en": "could not make money. But now those internet companies are making money"
+},
+"i26": {
+"ko": "돈을 벌고 현금흐름을 만들어 내고 있습니다.",
+"en": "and generating cash flow at a tremendous pace."
+},
+"i27": {
+"ko": "그러니 AI, 이제 막 AI 혁명이 시작된 이 시점에,",
+"en": "So with AI, now that the AI revolution has only just begun,"
+},
+"i28": {
+"ko": "일본 경제가 AI에 대해서도 같은 실패를 반복하지 않았으면 좋겠다고 저는 진심으로 생각합니다.",
+"en": "I sincerely hope the Japanese economy will not repeat the same mistake with AI."
+},
+"i29": {
+"ko": "자, 특히 인터넷 혁명 때도 그랬지만, 처음 20년 동안 이미 거의",
+"en": "Now, this was particularly true of the internet revolution: within the first 20 years, the outcome was already almost"
+},
+"i30": {
+"ko": "승부가 결정됐습니다. 지금 GAFA라든가 마이크로소프트, 아마존 같은 여러 회사가",
+"en": "decided. Today we have GAFA and various companies such as Microsoft and Amazon,"
+},
+"i31": {
+"ko": "있습니다만, 처음 20년 안에 자기 분야에서 선두의",
+"en": "but companies that did not take the leading"
+},
+"i32": {
+"ko": "자리를 차지하지 못한 기업은 그 뒤에도 계속 차지하지 못하고 있습니다. 역시 처음",
+"en": "position in their field within the first 20 years have continued to fall short ever since. Those first"
+},
+"i33": {
+"ko": "20년이 승부처입니다. AI 혁명이 시작된 지도 이미 몇",
+"en": "20 years really are decisive. It has already been a few"
+},
+"i34": {
+"ko": "년이 지났으니, 지금부터 15년 뒤인 2040년, 2040년의",
+"en": "years since the AI revolution began, so today I would like to use numbers to offer my own views on the AI world of 2040, 15 years from now,"
+},
+"i35": {
+"ko": "AI 세계에 관해 오늘은 숫자를 가지고 제 나름의 의견을",
+"en": "the world of AI in 2040."
+},
+"i36": {
+"ko": "말씀드리려고 합니다. 2040년 ASI, 아티피셜 슈퍼 인텔리전스,",
+"en": "In 2040, it will be an ASI, artificial superintelligence,"
+},
+"i37": {
+"ko": "즉 인공초지능의 경제입니다. 초지능의 세계가 어떻게 찾아오고, 어느 정도 규모가",
+"en": "economy. I will talk about how the world of superintelligence will arrive, how large it will"
+},
+"i38": {
+"ko": "되며, 어떤 모습을 띨 것인지 말씀드리겠습니다.",
+"en": "be, and what it will look like."
+},
+"i39": {
+"ko": "물론 이 초지능 혁명은",
+"en": "Of course, this superintelligence revolution"
+},
+"i40": {
+"ko": "인류 역사상 가장 큰 산업이 될 것입니다. 그 규모가 어느 정도일지 말씀드리겠습니다.",
+"en": "will become the largest industry in human history. Let me tell you how large it will be."
+},
+"i41": {
+"ko": "제 나름의 명확한 숫자가 있습니다. 제 머릿속에 그려 놓은 모습이지요.",
+"en": "I have a clear number of my own. This is the picture I have in my mind."
+},
+"i42": {
+"ko": "20%가 됩니다.",
+"en": "It will be 20%."
+},
+"i43": {
+"ko": "세계 GDP, 현재 세계 GDP의 성장세는 대략 예상할 수 있습니다만,",
+"en": "Global GDP—we can roughly project the current growth trajectory of global GDP—"
+},
+"i44": {
+"ko": "그 세계 GDP 전체 가운데 약 20%가 AI의 세계, 초지능의",
+"en": "about 20% of that total global GDP will be replaced by the world of AI, the world"
+},
+"i45": {
+"ko": "세계로 대체된다는 것입니다.",
+"en": "of superintelligence."
+},
+"i46": {
+"ko": "‘뭐라고?’ 하실 수도 있겠지만, 지금부터 15년 뒤에 20%입니다. 그렇다면 나머지 80%는 지금까지의",
+"en": "You may say, “What?” But it is 20%, 15 years from now. That means the remaining 80% will not be very different"
+},
+"i47": {
+"ko": "생활이나 산업과 크게 다르지 않다는 것이지요. 15년 뒤에도",
+"en": "from the way we live and the industries we have today. Even 15 years from now,"
+},
+"i48": {
+"ko": "햄버거를 먹고 우동을 먹을 것입니다. 그리고 공원에",
+"en": "we will still eat hamburgers and udon. And we will go to parks"
+},
+"i49": {
+"ko": "주말마다 갈 테니, 80%에 해당하는 기존 산업은 별로 달라지지 않을 것이라고",
+"en": "on weekends, so you might think the existing industries that account for 80% will not change very much."
+},
+"i50": {
+"ko": "생각할 수도 있겠지요. 저는 대략 그런 것이라고 생각합니다. 인터넷이 나왔다고 해서 갑자기 햄버거를 안 먹게",
+"en": "I think that is roughly how it will be. Did the arrival of the internet suddenly make us stop eating hamburgers?"
+},
+"i51": {
+"ko": "됐느냐 하면, 그렇지는 않지 않습니까.",
+"en": "It did not, did it?"
+},
+"i52": {
+"ko": "하지만 이 20%라는 숫자가 얼마나 크냐 하면, 7,000조 엔이 된다는 것입니다.",
+"en": "But just how big is that 20%? It amounts to 7,000 trillion yen."
+},
+"i53": {
+"ko": "연간 매출이 7,000조 엔이 된다는 것입니다. 게다가 이 7,000조 엔의 매출에 대한 이익률은 아마",
+"en": "That means annual revenue of 7,000 trillion yen. And the profit margin on that 7,000 trillion yen in revenue will probably"
+},
+"i54": {
+"ko": "50%에 가까울 것입니다.",
+"en": "be close to 50%."
+},
+"i55": {
+"ko": "매년 약 3,500조 엔의 이익을 벌어들이는 기업들이 몇 곳 생겨난다는",
+"en": "A handful of companies will emerge that generate around 3,500 trillion yen in profit every year."
+},
+"i56": {
+"ko": "것입니다. 이 기업들을 주식 시가총액으로 보면,",
+"en": "If we look at these companies in terms of stock market capitalization,"
+},
+"i57": {
+"ko": "GDP에서는 20%지만 주식 시가총액에서는 아마 80% 정도가 되지 않을까",
+"en": "I think that while they account for 20% of GDP, they will probably account for around 80% of stock market capitalization."
+},
+"i58": {
+"ko": "생각합니다. 주식 시가총액은 이익의 배수, 그것도 이익이",
+"en": "Market capitalization is determined by a multiple of earnings, and that multiple also reflects"
+},
+"i59": {
+"ko": "얼마나 성장할지까지 반영한 배수로 정해지기 때문에, GDP에서 차지하는 비중보다",
+"en": "how much those earnings are expected to grow. So their presence will be far greater"
+},
+"i60": {
+"ko": "훨씬 큰 존재감을 갖게 되는 것입니다.",
+"en": "than their share of GDP."
+},
+"i61": {
+"ko": "지금까지는 인터넷 혁명이었습니다만, 인터넷은 기껏해야",
+"en": "Until now, we have had the internet revolution, but the internet has, at most,"
+},
+"i62": {
+"ko": "세계 GDP의 1%인 광고의 세계를 대체해 온 데 불과합니다.",
+"en": "merely replaced the world of advertising, which accounts for 1% of global GDP."
+},
+"i63": {
+"ko": "미디어로서 인터넷의 힘은 광고의 세계를 대체해 온 것입니다. 그런데 고작 1%의 산업에 속한",
+"en": "The power of the internet as a medium has been to replace the world of advertising. Yet those companies, in an industry accounting for just 1%,"
+},
+"i64": {
+"ko": "그들이 대부분을 차지하게 됐습니다. 이것이",
+"en": "have come to account for the majority. If"
+},
+"i65": {
+"ko": "AI의 세계가 20%를 대체하게 된다면 엄청난 규모가 됩니다.",
+"en": "the world of AI replaces 20%, the scale will be enormous."
+},
+"i66": {
+"ko": "최근에는 AI 에이전트라는 말이 점점 더 많이 이야기되고 있지요.",
+"en": "Recently, we have been hearing more and more about AI agents."
+},
+"i67": {
+"ko": "저는 정확히 1년 전 이 소프트뱅크 월드에서 AI 에이전트의 원년이 되어",
+"en": "Exactly 1 year ago, here at SoftBank World, I said we were entering the first year of AI agents"
+},
+"i68": {
+"ko": "단숨에 확산될 것이라고 말씀드렸습니다. 실제로 그렇게 되어 가고 있습니다.",
+"en": "and that they would spread rapidly. That is indeed what is happening."
+},
+"i69": {
+"ko": "이 AI 에이전트가 얼마나 많은 수로 퍼질 것이냐 하면, 저는 100조 개",
+"en": "As for how many of these AI agents there will be, I believe they will reach a scale of 100 trillion"
+},
+"i70": {
+"ko": "수준의 규모에 이를 것이라고 생각합니다.",
+"en": "agents."
+},
+"i71": {
+"ko": "100조 개입니다. 이 숫자가 무엇을 뜻하느냐 하면, 우리 자신이나",
+"en": "100 trillion. What does that number mean? If you look at the work we ourselves"
+},
+"i72": {
+"ko": "직원들이 하는 일을 보면, 대다수는 열 가지나 백 가지 정도의 일상 업무, 반복 작업을 맡고 있지요.",
+"en": "or our employees do, most of us handle something like ten or a hundred routine tasks, repetitive jobs."
+},
+"i73": {
+"ko": "천 가지를 하는 사람은 별로 없습니다. 보통 직원은 많아야 백 가지 정도의 업무를 처리하고,",
+"en": "Very few people do a thousand different things. An ordinary employee handles a hundred or so tasks at most,"
+},
+"i74": {
+"ko": "그것을 전문적으로 반복해서 수행한다는 것입니다.",
+"en": "and specializes in performing them repeatedly."
+},
+"i75": {
+"ko": "그런데 약 100조 개의 에이전트가 지구 위에서 24시간 쉬지 않고 계속 움직이고,",
+"en": "But around 100 trillion agents will be constantly at work across the planet, 24 hours a day without a break,"
+},
+"i76": {
+"ko": "게다가 에이전트와 에이전트가 서로 소통합니다. 지금까지는 사람과 사람이 소통했지요.",
+"en": "and agents will communicate with one another. Until now, it has been people communicating with people."
+},
+"i77": {
+"ko": "이제는 에이전트와 에이전트, 100조 개의 에이전트가",
+"en": "Now it will be agents communicating with agents, 100 trillion agents"
+},
+"i78": {
+"ko": "나머지 100조 개의 에이전트와 끊임없이 주고받는 것입니다. 그렇다면",
+"en": "constantly exchanging information with the other 100 trillion agents. That means"
+},
+"i79": {
+"ko": "지능의 통신, 혹은 지능이 서로 교류하는 양상이 인간 중심의 세계에서 에이전트 중심의 세계로",
+"en": "the communication of intelligence, or the way intelligences interact, will shift from a human-centered world to an agent-centered"
+},
+"i80": {
+"ko": "바뀐다는 것입니다. 에이전트가 컴퓨터를 사용하게 됩니다. 사람의 머릿수 이상으로 일이",
+"en": "world. Agents will use computers. Some people say there is no way work can"
+},
+"i81": {
+"ko": "진행될 리 없다고 말하는 사람도 있지만, 터무니없는 착각입니다. 에이전트가 스스로 판단하고 스스로 행동을 일으키고,",
+"en": "proceed beyond what the human headcount allows, but that is a completely mistaken idea. Agents will make their own judgments, initiate their own actions,"
+},
+"i82": {
+"ko": "스스로 소통하며 해 나가게 됩니다. 그러니 이제는",
+"en": "and communicate on their own as they carry out their work. So from now on,"
+},
+"i83": {
+"ko": "인간 중심 사회가 아니라 에이전트 중심 사회가 된다고 생각하는 편이 좋습니다. 그렇게 되면 세상의 풍경은 완전히 달라집니다.",
+"en": "it is better to think in terms of an agent-centered society rather than a human-centered one. When that happens, the world will look completely different."
+},
+"i84": {
+"ko": "이 에이전트를 두고 ‘그건 가상공간 속의 이야기일 뿐’이라고 하는 분도",
+"en": "Some people say of these agents, “That is just something in virtual space.”"
+},
+"i85": {
+"ko": "있습니다. 하지만 그것이 휴머노이드에 깃든다면 어떨까요. 물리적인",
+"en": "But what if they inhabit humanoids? The physical"
+},
+"i86": {
+"ko": "세계, 원자의 세계 말입니다. 이 원자의 세계, 물리세계에서 에이전트가",
+"en": "world, the world of atoms. In this world of atoms, this physical world, if agents"
+},
+"i87": {
+"ko": "휴머노이드에 깃들면, 휴머노이드, 로봇은 스스로 판단하고 스스로",
+"en": "inhabit humanoids, those humanoids, those robots, will make their own judgments and"
+},
+"i88": {
+"ko": "소통하며 나머지 100조 개의 에이전트와 대화하면서 움직이게 되는 것입니다.",
+"en": "communicate on their own, acting while conversing with the other 100 trillion agents."
+},
+"i89": {
+"ko": "그렇다면 막대한 규모의 지능이 데이터센터에서 처리되게 됩니다.",
+"en": "That means intelligence on a vast scale will be processed in data centers."
+},
+"i90": {
+"ko": "‘AI는 거품인가?’ 정말 어리석은 질문이지요.",
+"en": "“Is AI a bubble?” What a foolish question."
+},
+"i91": {
+"ko": "그런 질문을 하는 분은 애초에 AI의 본질을 전혀 모르는 게 아닌가 싶습니다.",
+"en": "I suspect that people who ask that question do not understand the essence of AI at all to begin with."
+},
+"i92": {
+"ko": "‘AI 따위’라고 하는 사람일수록 AI를 거의 써 보지 않은 사람이지요.",
+"en": "The more dismissive someone is of AI, the less they have actually used it."
+},
+"i93": {
+"ko": "비행기를 타 본 적 없는 사람이 비행기를 논하고, 자동차를 타 본 적 없는 사람이 자동차를 논하는 격입니다. 인터넷 초창기에는",
+"en": "It is like someone who has never flown in an airplane discussing airplanes, or someone who has never ridden in a car discussing cars. In the early days of the internet,"
+},
+"i94": {
+"ko": "인터넷을 만져 본 적도 없는 사람이 인터넷을 논하며 비난했습니다. 저는 이제 아침부터 밤까지 AI를 씁니다.",
+"en": "People who had never even used the internet talked about it and criticized it. I now use AI from morning to night."
+},
+"i95": {
+"ko": "아침부터 밤까지요. 아침에 일어나 가장 먼저 AI를 접하고, 잠들기 직전까지 AI를 접하는",
+"en": "From morning to night. AI is the first thing I turn to when I wake up, and I keep interacting with it until just before I go to sleep."
+},
+"i96": {
+"ko": "상황입니다. 그런데 이 AI가 휴머노이드에 한꺼번에 깃들고,",
+"en": "That is where I am now. And this AI will be embodied in humanoids all at once,"
+},
+"i97": {
+"ko": "나아가 에이전트화해서 활발하게 소통합니다. 기존 로봇과 이 새로운 로봇, AI",
+"en": "and will also become agents that actively communicate. The decisive difference between conventional robots and these new robots, these AI"
+},
+"i98": {
+"ko": "로봇의 결정적인 차이는, 기존 로봇은 사람이 프로그램을 짰다는 점입니다. 사람이 명령했습니다. 어디까지나",
+"en": "robots, is that conventional robots were programmed by people. People gave them commands. They were, after all,"
+},
+"i99": {
+"ko": "사람에게 도구였던 것이지요. 하지만 앞으로의 로봇, 특히 휴머노이드는, 물론 휴머노이드에",
+"en": "tools for humans. But the robots of the future, especially humanoids—although, of course, this is not limited to"
+},
+"i100": {
+"ko": "한정되지는 않습니다만, AI 로봇은 스스로 판단해 물리세계에서 움직이고",
+"en": "humanoids—these AI robots will make their own judgments and move through the physical world"
+},
+"i101": {
+"ko": "행동하게 됩니다. 그런 로봇이 10억 대 생긴다면,",
+"en": "and take action. If we have 1 billion of these robots,"
+},
+"i102": {
+"ko": "아니, 9억 대일 수도 있고 20억 대일 수도 있습니다. 하지만 그것은 오차입니다. 전략이나 비전에 중요한 것은 대략",
+"en": "or perhaps 900 million, or perhaps 2 billion—but that is a margin of error. What matters for strategy and vision is, roughly,"
+},
+"i103": {
+"ko": "어느 정도인가 하는 숫자, 기한과 숫자로 규모를 그려 보는 것이라고",
+"en": "having a number for how many, and using a timeframe and numbers to picture the scale."
+},
+"i104": {
+"ko": "생각합니다. 10억 대의 휴머노이드가 생기면 24시간 움직일 수 있으니 인간으로 환산하면",
+"en": "That is what I think. If we have 1 billion humanoids, they can operate 24 hours a day, so in human terms,"
+},
+"i105": {
+"ko": "30억 명에 해당하는 일을 할 수 있게 됩니다. 또 사람보다 훨씬 빠르고 훨씬 정확하게,",
+"en": "they will be able to do the work of 3 billion people. And they will be much faster and much more accurate than humans,"
+},
+"i106": {
+"ko": "훨씬 더 정밀한 작업도 할 수 있게 됩니다. 훨씬",
+"en": "able to do much more precise work as well. They will be able to do much"
+},
+"i107": {
+"ko": "지적인 작업을 할 수 있으므로, 일하는 능력으로는",
+"en": "more intellectual work, so in terms of their capacity to work,"
+},
+"i108": {
+"ko": "한 대가 열 명 몫 정도의 일을 합니다. 그렇다면 100억, 100억 명의 일을",
+"en": "one robot will do roughly the work of ten people. That means 10 billion—the work of 10 billion people"
+},
+"i109": {
+"ko": "하는 것입니다. 지금 지구에는 70억 명이 있습니다. 인간이 일을 한다고 해도 그 70억 명 가운데",
+"en": "is what they will do. Right now there are 7 billion people on Earth. Even when we talk about humans working, among those 7 billion,"
+},
+"i110": {
+"ko": "아이들이나 시니어 시민, 고령자는 직접 노동을 하지 않는 경우가",
+"en": "children and senior citizens, elderly people, often do not directly participate in the workforce."
+},
+"i111": {
+"ko": "많습니다. 그러니 인구가 70억 명이어도 실제 노동인구는 30억 명쯤일 수 있습니다.",
+"en": "So even with a population of 7 billion, the actual working population might be around 3 billion."
+},
+"i112": {
+"ko": "그것을 훨씬 웃도는 규모, 약 100억 명 몫의 일을",
+"en": "They will work on a scale far beyond that, doing the work of about 10 billion people."
+},
+"i113": {
+"ko": "해낸다는 것입니다. 즉 로봇, 휴머노이드가 노동의 주역이 됩니다. 육체노동의 주역이",
+"en": "That is what this means. In other words, robots, humanoids, will become the mainstay of labor. The mainstay of physical labor"
+},
+"i114": {
+"ko": "인간에서, 인류에서 처음으로 휴머노이드로 바뀌어 이들이 중심적인 노동자가 된다는 뜻입니다.",
+"en": "will shift from humans, from humanity, to humanoids for the first time, and they will become the central workforce."
+},
+"i115": {
+"ko": "화이트칼라의 업무는 앞서 말씀드린 100조 개의 에이전트가",
+"en": "White-collar work will be replaced by the 100 trillion agents I mentioned earlier,"
+},
+"i116": {
+"ko": "대체하게 되니 엄청난 일이 벌어지겠지만, 물리세계도 그렇게 된다는 것입니다. 그러면",
+"en": "so something extraordinary will happen there, but the same will happen in the physical world. Then,"
+},
+"i117": {
+"ko": "그것을 움직이는 컴퓨터, 그것을 움직이는 칩과 데이터",
+"en": "the computers that power all of this, the chips that power it, and the data"
+},
+"i118": {
+"ko": "센터는 어느 정도 규모가 될까요. 이 가운데 자신 있게",
+"en": "centers—how large will they be? Anyone here who can confidently"
+},
+"i119": {
+"ko": "말할 수 있는 분은 손을 들어 보십시오. 2040년 데이터센터의 규모가 어느 정도일지 분명한",
+"en": "answer that, please raise your hand. If you have a clear view of how large data centers will be in 2040,"
+},
+"i120": {
+"ko": "의견이 있는 분이 있다면 잠깐 손을 들어 보시지요.",
+"en": "please raise your hand for a moment."
+},
+"i121": {
+"ko": "쉽게 말씀 못 하시겠지요. 이게 어렵습니다.",
+"en": "It is not easy to say, is it? This is difficult."
+},
+"i122": {
+"ko": "이 숫자를 얼마나 명확하게, 얼마나 확신을 가지고 말할 수 있는가. 게다가 거기에 자신의",
+"en": "How clearly, and with how much conviction, can you state this number? And unless you have enough conviction to stake your own"
+},
+"i123": {
+"ko": "인생과 돈을 걸 정도의 확신이 없으면 큰",
+"en": "life and money on it, you cannot make a big"
+},
+"i124": {
+"ko": "승부를 걸 수 없습니다. 저는 매일 생각하고 있습니다.",
+"en": "bet. I think about this every day."
+},
+"i125": {
+"ko": "말씀드리겠습니다. 3W입니다.",
+"en": "Let me tell you. It is 3 W."
+},
+"i126": {
+"ko": "3TW입니다. 이 3TW의 데이터센터는 가끔 쓰는 것이 아니라 24시간 365일",
+"en": "3 TW. These 3 TW of data centers will not be used just occasionally. They will work 24 hours a day, 365 days a year,"
+},
+"i127": {
+"ko": "쉬지 않고 계속 일합니다. 두뇌를 계속 돌려 엄청난 열을 만들어 내고, 엄청난 전기를 먹습니다.",
+"en": "without stopping. They will keep their brains running, generating tremendous heat and consuming tremendous amounts of electricity."
+},
+"i128": {
+"ko": "그러면 그 전력은 어디서 가져올까요.",
+"en": "So where will that power come from?"
+},
+"i129": {
+"ko": "현실적으로 가스 발전이 가장 중심이 될 것이라고 생각합니다. 가스를 그렇게 많이 써도 괜찮으냐는 문제가",
+"en": "Realistically, I think gas-fired power generation will be the main source. There is the question of whether it is all right to use that much gas,"
+},
+"i130": {
+"ko": "있습니다만, 다행히 2040년, 지금부터 15년 뒤에는 그다음으로",
+"en": "but fortunately, in 2040, 15 years from now, I think the next thing"
+},
+"i131": {
+"ko": "대체할 것이 핵융합이라고 생각합니다. 핵융합은 물이 원료이므로",
+"en": "to replace it will be nuclear fusion. Nuclear fusion uses water as its raw material, so"
+},
+"i132": {
+"ko": "애초에 깨끗합니다. 물이 원료이고 우라늄이 아니므로",
+"en": "it is inherently clean. Because its raw material is water, not uranium,"
+},
+"i133": {
+"ko": "애초에 안전합니다. 깨끗하고 안전한 핵융합의 세계가",
+"en": "it is inherently safe. A world of clean, safe nuclear fusion"
+},
+"i134": {
+"ko": "올 것이라고 저는 진심으로 생각합니다. 그렇다면 지구의 탄소 문제나 온난화",
+"en": "will come—I truly believe that. If so, I think the Earth's carbon problem and global warming"
+},
+"i135": {
+"ko": "문제는 사실 거짓말처럼 사라져 없어지지 않을까 생각합니다.",
+"en": "problem might actually disappear as if by magic."
+},
+"i136": {
+"ko": "저는 그렇게 생각합니다. 그리고 이 핵융합 개발에 이미 AI가 엄청난 도움을 주기 시작했습니다.",
+"en": "That is what I think. And AI has already begun to provide tremendous help in developing nuclear fusion."
+},
+"i137": {
+"ko": "그래서 다음 세대의 새롭고 깨끗한, 결정적인 에너지가 더 빠르게",
+"en": "So I believe that a new, clean, definitive source of energy for the next generation will emerge"
+},
+"i138": {
+"ko": "탄생할 것이라고 생각합니다. 그때까지 지구의 에너지에서",
+"en": "more quickly. Until then, in the world's energy supply,"
+},
+"i139": {
+"ko": "가장 중요한 주역은 천연가스라고 생각합니다. 그것을 중심으로 3W의 데이터센터가 만들어진다는 것입니다.",
+"en": "I think natural gas will play the most important role. And 3 W of data centers will be built primarily around that."
+},
+"i140": {
+"ko": "3TW입니다. 그렇게 3TW가 되고, 그 뒤로도 매년 1TW 규모로",
+"en": "3 TW. So we reach 3 TW, and after that, data centers will continue to expand by 1 TW"
+},
+"i141": {
+"ko": "데이터센터가 늘어납니다. 연간 1TW, 연간 1TW를",
+"en": "every year. 1 TW a year—if we supply that 1 TW a year"
+},
+"i142": {
+"ko": "탄소에 의존하는 에너지로 공급한다면 심각한 문제가 됩니다.",
+"en": "with carbon-dependent energy, it will be a serious problem."
+},
+"i143": {
+"ko": "그러니 지구에서 핵융합을 중심으로 갈 것인지, 일론 머스크가 말하듯 우주에서 태양광 에너지를",
+"en": "So will we center things on nuclear fusion here on Earth, or use solar energy in space, as Elon Musk says?"
+},
+"i144": {
+"ko": "사용할 것인지, 아마 둘 다일 것 같습니다만, 제 생각에는 우주에 가지 않더라도 지구에서",
+"en": "It will probably be both, but in my view, even without going into space, here on Earth,"
+},
+"i145": {
+"ko": "핵융합이 새롭고 더 저렴하며 깨끗하고 안전한 에너지의 중심이 될 것입니다.",
+"en": "nuclear fusion will become the central source of new, cheaper, clean, safe energy."
+},
+"i146": {
+"ko": "그러면 컴퓨터의 세계는 어느 정도가 될까요.",
+"en": "Then how large will the world of computing become?"
+},
+"i147": {
+"ko": "지금 가장 앞선 컴퓨팅은 엔비디아의",
+"en": "The most advanced computing right now is NVIDIA's"
+},
+"i148": {
+"ko": "GB300입니다. GB300은 한 개에 대략 20페타플롭스인데,",
+"en": "GB300. Each GB300 delivers roughly 20 petaflops,"
+},
+"i149": {
+"ko": "이것을 천 개 더하면, 천 개 더하면 20엑사플롭스가 됩니다.",
+"en": "and if you put a thousand of these together, put a thousand together, you get 20 exaflops."
+},
+"i150": {
+"ko": "GB300 천 개를 연결했을 때 20엑사플롭스라는 것을 알고 계셨던 분, 손을 들어 보십시오.",
+"en": "If you knew that connecting a thousand GB300s gives you 20 exaflops, please raise your hand."
+},
+"i151": {
+"ko": "한두 분 계실지도 모르겠네요.",
+"en": "Perhaps one or two of you."
+},
+"i152": {
+"ko": "거의 손을 들지 않으시네요. 오늘 여러분은 경영자이시니까요. 잘 모르셨을 것 같습니다만,",
+"en": "Hardly anyone is raising a hand. You are business leaders here today, after all. I imagine you were not very familiar with this,"
+},
+"i153": {
+"ko": "대략 엑사라는 단위 말입니다. 기가나 페타 등 여러 단위가 있습니다만,",
+"en": "but let us talk about this unit, exa. There are various units, like giga and peta,"
+},
+"i154": {
+"ko": "엑사라는 단위는 우선 10의 18제곱입니다.",
+"en": "but exa, for a start, means 10 to the 18th power."
+},
+"i155": {
+"ko": "10의 18제곱입니다.",
+"en": "10 to the 18th power."
+},
+"i156": {
+"ko": "엑사라는 단위를 알고 계셨던 분, 손을 들어 보십시오. 이건 아는 분이 40% 정도 계시네요. 엑사 다음은요. 엑사 다음을 아는 분은 손을 들어 보십시오.",
+"en": "If you knew the unit exa, please raise your hand. About 40% of you know this one. What comes after exa? If you know what comes after exa, please raise your hand."
+},
+"i157": {
+"ko": "거의 없네요. 엑사 다음, 엑사 다음은 그것의 천 배입니다.",
+"en": "Hardly anyone. After exa—what comes after exa is a thousand times that."
+},
+"i158": {
+"ko": "10의 18제곱의 천 배이니 10의 21제곱입니다. 엑사 다음은 제타입니다. 제타이지요.",
+"en": "A thousand times 10 to the 18th power is 10 to the 21st power. After exa comes zetta. Zetta."
+},
+"i159": {
+"ko": "제타까지 아는 사람은 우리 업계에 꽤 있습니다.",
+"en": "Quite a few people in our industry know as far as zetta."
+},
+"i160": {
+"ko": "AI 업계에는 꽤 있습니다. 오늘은 경영자 여러분이시니, 손을 들어 달라고 하지 않아도 많지 않을 것",
+"en": "Quite a few in the AI industry. Today, you are business leaders, so even without asking for a show of hands, I imagine there will not be many,"
+},
+"i161": {
+"ko": "같습니다만, 제타 다음을 아는 분은요? 조명을 조금 밝게 해 주시겠습니까? 제타 다음을",
+"en": "but does anyone know what comes after zetta? Could you brighten the lights a little? If even one person knows what comes after zetta,"
+},
+"i162": {
+"ko": "아는 분이 한 분이라도 있으면 손을 들어 보십시오. 제 손목시계를 드리겠습니다.",
+"en": "please raise your hand. I will give you my wristwatch."
+},
+"i163": {
+"ko": "없네요. 제타 다음은 요타입니다. 요타.",
+"en": "No one. After zetta comes yotta. Yotta."
+},
+"i164": {
+"ko": "요타를 아는 사람은 상당한 전문가입니다.",
+"en": "Anyone who knows yotta is quite an expert."
+},
+"i165": {
+"ko": "무언가를 상당히 열심히 생각하고 있다는 뜻입니다.",
+"en": "It means they are thinking very seriously about something."
+},
+"i166": {
+"ko": "그러면 요타의 천 배를 아는 분이 있습니까? 물론 제타도 모르시고, 요타도 모르시니,",
+"en": "Then does anyone know what a thousand times yotta is? Of course, since you did not know zetta or yotta,"
+},
+"i167": {
+"ko": "요타 다음을 아는 분은 거의 없을 것 같습니다.",
+"en": "I imagine hardly anyone knows what comes after yotta."
+},
+"i168": {
+"ko": "로나입니다. 로나는 10의 27제곱입니다.",
+"en": "It is ronna. Ronna is 10 to the 27th power."
+},
+"i169": {
+"ko": "3년 전에 제가 ‘로나를 아느냐’고 AI 업계의",
+"en": "3 years ago, I asked several very famous people in the AI industry, “Do you know ronna?”"
+},
+"i170": {
+"ko": "대단히 유명한 몇 분에게 물었는데, 거의 모르셨습니다. ‘뭐야, 모르는 거야?’",
+"en": "Almost none of them did. “What, you don't know?”"
+},
+"i171": {
+"ko": "‘별로 생각을 안 하는군’ 하고 말했습니다만, 그때 찾아봤더니 로나가",
+"en": "“You aren't thinking very much, are you?” I said. But when I looked it up then, ronna"
+},
+"i172": {
+"ko": "지구에서 이야기되는 숫자 가운데 자릿수가 가장 큰 단위였습니다. 로나가 말입니다.",
+"en": "was the unit with the largest order of magnitude among the numbers discussed on Earth. Ronna, that is."
+},
+"i173": {
+"ko": "그런데 최근 들어 로나 다음, 그것의 천 배인 10의 30제곱이라는 숫자의",
+"en": "But recently, a unit for the order of magnitude after ronna, a thousand times that, 10 to the 30th power,"
+},
+"i174": {
+"ko": "자릿수를 나타내는 단위가 이제야 생겼습니다. 무엇일까요. 물론 모르시겠지요. 퀘타입니다.",
+"en": "has finally been created. What is it? Of course, you probably do not know. It is quetta."
+},
+"i175": {
+"ko": "퀘타, 퀘타는 10의 30제곱입니다.",
+"en": "Quetta. Quetta is 10 to the 30th power."
+},
+"i176": {
+"ko": "제가 왜 이 말을 했느냐 하면, 2040년에 우리 AI 데이터",
+"en": "The reason I brought this up is that in 2040, when our world of AI data"
+},
+"i177": {
+"ko": "센터의 세계가 3TW의 AI 데이터센터 세계가 되면, 이 퀘타,",
+"en": "centers becomes a world of 3 TW of AI data centers, this quetta,"
+},
+"i178": {
+"ko": "퀘타플롭스, 부동소수점 연산을 하는 컴퓨터 말입니다.",
+"en": "quettaflops—we are talking about computers performing floating-point operations."
+},
+"i179": {
+"ko": "이 퀘타플롭스의 두뇌, 연산 능력을 갖게 된다는",
+"en": "We will have a brain, a computing capacity, measured in quettaflops."
+},
+"i180": {
+"ko": "것입니다. FP4에서 말입니다. 퀘타플롭스의",
+"en": "That is what it means. At FP4. When we have quettaflops of"
+},
+"i181": {
+"ko": "컴퓨팅 능력이 생기면 무엇을 얼마나 계산할 수 있고, 무엇이 얼마나 똑똑해질까요.",
+"en": "computing power, what will we be able to calculate, and how much? What will become smarter, and by how much?"
+},
+"i182": {
+"ko": "이 퀘타플롭스의 3, 3W AI 데이터센터 세계를 만들려면 어느 정도의",
+"en": "To create this quettaflops world of 3, 3 W of AI data centers, how much"
+},
+"i183": {
+"ko": "투자금이 필요한가 하는 것입니다.",
+"en": "investment will we need?"
+},
+"i184": {
+"ko": "이것을 말할 수 있는 분은 여기 한 분도 없을 것 같습니다. AI 업계의 전문가에게 물어도 거의 없습니다. 거의",
+"en": "I do not think a single person here can answer that. Even if you ask experts in the AI industry, almost none can. Almost"
+},
+"i185": {
+"ko": "없습니다. 생각하지 않는 것입니다. 결국 생각하지 않는다는 것입니다.",
+"en": "none. They are not thinking about it. Ultimately, they are not thinking about it."
+},
+"i186": {
+"ko": "이런 인프라의 세계를 다루면서 15년 정도 앞을 생각하지도 않고 인프라를 논하지 말라고 하고 싶습니다.",
+"en": "When dealing with this world of infrastructure, I want to say: don't talk about infrastructure unless you're thinking about 15 years ahead."
+},
+"i187": {
+"ko": "15년 정도 걸립니다. 전력을 마련하고, 마련하고, 그에",
+"en": "It takes about 15 years. To secure power, secure it, and"
+},
+"i188": {
+"ko": "필요한 다양한 경영자원을 준비하는 데 말입니다. 철도나 고속도로라면 15년쯤 걸리는 것이 당연하지 않습니까.",
+"en": "prepare the various management resources needed for it. With railways or expressways, taking about 15 years is perfectly normal, isn't it?"
+},
+"i189": {
+"ko": "컴퓨터의 세계도 시간이 걸립니다.",
+"en": "Things take time in the world of computers, too."
+},
+"i190": {
+"ko": "사람도 준비해야 합니다. 그래서 저는 진지하게 생각하고 있습니다. 어느 정도 비용이 필요한가 하는 것입니다. [구간 끝 ‘間’은 불완전한 ASR 조각]",
+"en": "You have to get the people ready, too. So I'm thinking seriously about this. How much will it cost? [The ‘間’ at the end of this segment is an incomplete ASR fragment]"
+},
+"i191": {
+"ko": "5조 달러의 투자가 필요합니다. 연간 5조 달러입니다.",
+"en": "It will require $5 trillion in investment. $5 trillion a year."
+},
+"i192": {
+"ko": "5조 달러는 800조 엔입니다.",
+"en": "$5 trillion is 800 trillion yen."
+},
+"i193": {
+"ko": "‘800조 엔이라고? 매년 800조 엔의 투자가 필요하다고? 800이라니, 온통 거짓말 같은",
+"en": "“800 trillion yen? You're saying we need to invest 800 trillion yen every year? 800? That sounds like a complete"
+},
+"i194": {
+"ko": "이야기 아닌가’라고 생각할지도 모르지만, 저는 자신 있게 그 정도가 필요하다고 생각합니다. 그러면 그만큼 필요할 때",
+"en": "fabrication,” you might think. But I am confident that we will need that much. Then, if that much is needed,"
+},
+"i195": {
+"ko": "사업이 성립하느냐는 문제입니다. 성립합니다. 왜냐하면 앞서",
+"en": "the question is whether it works as a business. It does. Because, as I"
+},
+"i196": {
+"ko": "말씀드렸지요. 처음에 말씀드렸습니다. 세계 GDP의 20%,",
+"en": "said earlier. I said it at the beginning. 20% of global GDP,"
+},
+"i197": {
+"ko": "7,000조 엔의 매출이 매년 있다면 매년 800조 엔을 쓰더라도 충분히 감당할 수 있는 차이라는 것입니다.",
+"en": "if you have 7,000 trillion yen in revenue every year, even spending 800 trillion yen every year leaves more than enough room to cover it."
+},
+"i198": {
+"ko": "50%의 이익을 내고도 남지 않겠느냐는 것입니다.",
+"en": "You could still make a 50% profit and have money left over, couldn't you?"
+},
+"i199": {
+"ko": "즉 지불할 수 있는 돈 이상으로는 투자할 수 없습니다. 그러면 파산하니까요.",
+"en": "In other words, you cannot invest more money than you can afford to pay. You would go bankrupt."
+},
+"i200": {
+"ko": "처음에 말씀드렸지요. 그래서 20%라는 것, 이 AI, 슈퍼 AI,",
+"en": "I said this at the beginning, didn't I? That's why this 20%, this AI, super AI,"
+},
+"i201": {
+"ko": "초지능이 어느 정도의 수익과 매출을 대체하게 될 것인가를 내다보는 일이 중요한 것입니다.",
+"en": "why it's important to look ahead at how much profit and revenue superintelligence will replace."
+},
+"i202": {
+"ko": "그것이 매출을 결정하고, 그 매출로 필요한 비용을 지불할 수 있게 됩니다. 그러니 ‘AI는 거품인가?’",
+"en": "That determines the revenue, and that revenue lets you pay the necessary costs. So, “Is AI a bubble?”"
+},
+"i203": {
+"ko": "말도 안 됩니다. AI는 우리의 생활을 철저하게 바꾸고, 게다가 그것을",
+"en": "That's absurd. AI will fundamentally change our lives, and what's more, it will"
+},
+"i204": {
+"ko": "수익을 만드는 방식으로 해낸다는 것입니다.",
+"en": "do so in a way that generates profit."
+},
+"i205": {
+"ko": "퀘타를 모르는 사람이 AI를 논하지 말라는 것입니다.",
+"en": "If you don't know what quetta is, you shouldn't be talking about AI."
+},
+"i206": {
+"ko": "연간 5조 달러가 든다고 한들, 그게 얼마나 대수냐는 것입니다.",
+"en": "Even if it costs $5 trillion a year, what's the big deal?"
+},
+"i207": {
+"ko": "인터넷의 세계에서도 데이터센터를 만들고, 그럼에도 모두 훌륭하게 이익을 벌고 있지 않습니까. 그런 세계가",
+"en": "Even in the internet world, people build data centers, and they're all still making very healthy profits, aren't they? That kind of world"
+},
+"i208": {
+"ko": "온다는 것입니다. 비전을 말하려면 그 근원이 되는 수익을 생각해야 합니다. 그렇지 않으면 비전을 생각할 수",
+"en": "is coming. If you're going to talk about a vision, you have to think about the profits underpinning it. Otherwise, you can't think through a vision."
+},
+"i209": {
+"ko": "없습니다. 그 수익을 뒷받침하는 인프라 비용,",
+"en": "The infrastructure costs that support those profits,"
+},
+"i210": {
+"ko": "그 돈까지 전체를 종합해서 생각하지 않으면 보이지 않는 것입니다.",
+"en": "unless you think about the whole picture, including that money, you won't see it."
+},
+"i211": {
+"ko": "지금 제 나름의 의견을 말씀드리고 있습니다.",
+"en": "I'm sharing my own views here."
+},
+"i212": {
+"ko": "조금 빗나갈 수도 있습니다. 하지만 저는 제 나름의 확신이 있습니다. 왜냐하면",
+"en": "I may be a little off. But I have my own conviction. Because"
+},
+"i213": {
+"ko": "계속 생각하기 때문입니다. 이 문제를 매일 생각합니다. 그럴 수밖에 없지요. 지금 인프라 투자에 온 힘을 쏟고",
+"en": "I keep thinking about it. I think about this problem every day. I have no choice, really. Right now, I'm putting everything I have into infrastructure investment."
+},
+"i214": {
+"ko": "있습니다. 데이터센터, 칩, 로봇, 모델 등 여러 곳에 열심히 투자하고 있으니,",
+"en": "I'm investing heavily in data centers, chips, robots, models, and all sorts of other things, so"
+},
+"i215": {
+"ko": "이 숫자를 진지하게 고민하지 않으면 무서워서 할 수 없습니다. 그렇게 생각하고 있기에",
+"en": "if I didn't think seriously about these numbers, I'd be too scared to do it. It's because I've thought it through like this"
+},
+"i216": {
+"ko": "확신을 가지고 승부를 거는 것입니다. 올인하고 있는 것입니다.",
+"en": "that I'm making this bet with conviction. I'm going all in."
+},
+"i217": {
+"ko": "인터넷의 세계가 찾아왔을 때 야후, 알리바바, 모바일 인터넷 등",
+"en": "When the internet age arrived, Yahoo, Alibaba, mobile internet,"
+},
+"i218": {
+"ko": "여러 가지를 해 왔습니다. ‘우연히 운이 좋았네.’ 지금은 Arm도 하고 있습니다만, ‘우연히 운이 좋았던 거야’라고",
+"en": "we did all sorts of things. “You just happened to get lucky.” Now we're involved with Arm, too, but “You just happened to get lucky,”"
+},
+"i219": {
+"ko": "분한 마음에 말하고 싶은 분도 많으리라 생각합니다.",
+"en": "I'm sure there are plenty of people who would like to say that out of resentment."
+},
+"i220": {
+"ko": "그런데 우연만으로 계속할 수 있습니까? 단지 우연만으로 여러 어려움을 넘어서 계속할 수 있습니까? 역시 생각하는 것입니다.",
+"en": "But can you keep going on luck alone? Can you overcome all those difficulties and keep going purely by chance? Ultimately, it comes down to thinking."
+},
+"i221": {
+"ko": "죄송하지만 진지하게 생각하고 있습니다. 그리고 ‘그때 조금 더 했으면",
+"en": "I'm sorry, but I do think seriously about these things. And I have plenty of regrets about thinking, “I wish I'd done a little more"
+},
+"i222": {
+"ko": "좋았을 텐데’ 하는 후회도 많아서, 이번 AI 혁명에서는 일본 안에만 머무는 일은 절대 하지 않겠다고 생각합니다.",
+"en": "back then,” so in this AI revolution, I am determined that we will absolutely not confine ourselves to Japan."
+},
+"i223": {
+"ko": "그 중심인 미국을 중심으로 공략해야 합니다. 이번에야말로",
+"en": "We have to focus our efforts on the United States, which is at the center of it. This time,"
+},
+"i224": {
+"ko": "같은 전철을 밟지 않도록 중요한 곳에 제대로 손을 써 두자는",
+"en": "let's make sure we take the right steps in the places that matter, so we don't repeat the same mistakes."
+},
+"i225": {
+"ko": "생각으로, 과거의 여러 후회에서 배워 가며 열심히 하고 있습니다.",
+"en": "That's the thinking behind what I'm working so hard on, learning from my many past regrets."
+},
+"i226": {
+"ko": "5조입니다. 연간 5조 달러입니다. 매년 1TW씩 늘어나는 규모의",
+"en": "5 trillion. $5 trillion a year. The scale of"
+},
+"i227": {
+"ko": "데이터센터가 됩니다. 퀘타의 세계가 됩니다. 애초로 돌아가 봅시다. 400만 년 전 인간,",
+"en": "data centers will grow by 1 TW every year. It will be a quetta-scale world. Let's go back to the beginning. 4 million years ago, humans,"
+},
+"i228": {
+"ko": "인류는 두 발로 걷게 됐습니다. 손이 자유로워졌습니다. 네 발로 걷는 것보다는 불안정하지만,",
+"en": "humanity began walking on 2 legs. Our hands were freed up. It's less stable than walking on 4 legs, but"
+},
+"i229": {
+"ko": "손이 자유로워지면서 도구를 사용할 수 있게 됐습니다. 사용하게 되면서 점점",
+"en": "with our hands freed up, we could use tools. As we began using them, we gradually"
+},
+"i230": {
+"ko": "진화해 왔습니다만, 400만 년이 걸렸습니다.",
+"en": "evolved, but it took 4 million years."
+},
+"i231": {
+"ko": "마지막 5,000년, 마지막 5,000년 동안 문명이라고 할 수 있는 것이",
+"en": "In the last 5,000 years, the last 5,000 years, things we could call civilizations"
+},
+"i232": {
+"ko": "농업혁명을 통해 잇달아 생겨났습니다. 최근 5,000년 동안 다양한 혁명이 있었습니다.",
+"en": "emerged one after another through the agricultural revolution. There have been various revolutions over the past 5,000 years."
+},
+"i233": {
+"ko": "산업혁명도 있었습니다. 그전에는 국가 자체가 생겼습니다. 마을 공동체, 농경 마을에서 국가라는 것이",
+"en": "There was the Industrial Revolution, too. Before that, states themselves emerged. From village communities, farming villages, states"
+},
+"i234": {
+"ko": "생겼고, 법률이나 인쇄기, 증기기관 등 여러 것이 만들어지면서 중대한 진화가 있었습니다.",
+"en": "emerged, and with the creation of laws, printing presses, steam engines, and all sorts of other things, major advances took place."
+},
+"i235": {
+"ko": "여기에 5,000년이 걸렸습니다.",
+"en": "This took 5,000 years."
+},
+"i236": {
+"ko": "5,000년, 400만 년 가운데 마지막 5,000년 동안 중대한 혁명과 발명, 진화가 있었던 것입니다.",
+"en": "5,000 years. In the last 5,000 years out of 4 million years, there were major revolutions, inventions, and advances."
+},
+"i237": {
+"ko": "하지만 여러분, 이번에는 5,000년이 아닙니다. 고작 100년, 지금부터 고작 100만, 100년 만에",
+"en": "But everyone, this time it won't be 5,000 years. Just 100 years, in just 1 million, 100 years from now,"
+},
+"i238": {
+"ko": "인류는 400만 년의 진화를 훨씬 뛰어넘는 진화를 이루게 됩니다.",
+"en": "humanity will evolve far beyond the evolution of the past 4 million years."
+},
+"i239": {
+"ko": "지금부터 고작 100년입니다. 단 100년 동안 그것을 훨씬 뛰어넘는 진화를 하게 된다는 것입니다.",
+"en": "Just 100 years from now. In just 100 years, we will evolve far beyond that."
+},
+"i240": {
+"ko": "그래서 앞서 말씀드린 3TW가 필요해집니다.",
+"en": "That's why we will need the 3 TW I mentioned earlier."
+},
+"i241": {
+"ko": "휴머노이드가 10억 대나 생겨나게 됩니다. 노동이 뿌리부터 바뀐다는",
+"en": "There will be as many as 1 billion humanoid robots. Work will be fundamentally"
+},
+"i242": {
+"ko": "것입니다. 다양한 혁명, 중대한 발명, 진화가 일어나게 됩니다.",
+"en": "transformed. Various revolutions, major inventions, and advances will take place."
+},
+"i243": {
+"ko": "자, 이 초지능의 진화를 조금 더 깊이 들여다보고 싶습니다만, 지금까지는",
+"en": "Now, I'd like to look a little more deeply into this evolution of superintelligence. Up to now,"
+},
+"i244": {
+"ko": "지구에 생명체가 생겨난 지 대략",
+"en": "since life first appeared on Earth, roughly"
+},
+"i245": {
+"ko": "40억 년쯤 지났다고 생각합니다. 처음에는 박테리아에서 시작했지요. 만약",
+"en": "4 billion years have passed, I believe. It began with bacteria, didn't it? If"
+},
+"i246": {
+"ko": "박테리아에게 자기증식이라는 것이 없었다면 지구에 생명체는",
+"en": "bacteria had not had the ability to self-replicate, life on Earth"
+},
+"i247": {
+"ko": "늘어나지 않았을 것입니다. 박테리아에게 자기진화 기능이 없었다면",
+"en": "would not have multiplied. If bacteria had not had the ability to self-evolve,"
+},
+"i248": {
+"ko": "지구의 생명체는 박테리아인 채로 끝났을 것입니다.",
+"en": "life on Earth would have remained nothing more than bacteria."
+},
+"i249": {
+"ko": "단 두 가지 메커니즘, 두 가지 알고리즘으로 이렇게 된 것입니다.",
+"en": "Just 2 mechanisms, 2 algorithms, brought us to this point."
+},
+"i250": {
+"ko": "그 두 가지 알고리즘은 무엇일까요. 자기증식과 자기진화입니다.",
+"en": "What are those 2 algorithms? Self-replication and self-evolution."
+},
+"i251": {
+"ko": "이 두 알고리즘으로 여기까지 발전했습니다. 지구의 생명체가 여기까지 진화한 것입니다.",
+"en": "Those 2 algorithms brought us this far. Life on Earth has evolved this far."
+},
+"i252": {
+"ko": "단 두 가지입니다. 그 밖에는 아무것도 없었습니다. 자기증식과 자기진화라는 두 메커니즘입니다.",
+"en": "Just 2. There was nothing else. The 2 mechanisms of self-replication and self-evolution."
+},
+"i253": {
+"ko": "AI의 세계에서도 앞서 100조 개의 에이전트라고 말씀드렸습니다.",
+"en": "In the world of AI, too, I mentioned 100 trillion agents earlier."
+},
+"i254": {
+"ko": "이제 사람이 에이전트를 만드는 시대는 끝납니다.",
+"en": "Now the age in which humans create agents will end."
+},
+"i255": {
+"ko": "에이전트가 에이전트를 만들게 됩니다.",
+"en": "Agents will create agents."
+},
+"i256": {
+"ko": "즉 에이전트가 자기증식을 하게 되는 것입니다.",
+"en": "In other words, agents will self-replicate."
+},
+"i257": {
+"ko": "에이전트가 중심인 지구가 되는 것입니다.",
+"en": "Earth will become a planet centered on agents."
+},
+"i258": {
+"ko": "에이전트가 100조 개를 넘으면 지구의 생명체 가운데 가장 수가 많은 생명체는 에이전트가 됩니다.",
+"en": "When there are more than 100 trillion agents, agents will be the most numerous life-forms on Earth."
+},
+"i259": {
+"ko": "에이전트의 지능은 인류의 지능을 훨씬 뛰어넘습니다. 퀘타 규모의",
+"en": "The intelligence of agents will far surpass human intelligence. With quetta-scale"
+},
+"i260": {
+"ko": "연산 능력을 갖추게 되니 우리 인류를 훨씬 뛰어넘는 지능을 갖게 되는 것이지요.",
+"en": "computing power, they will have intelligence far beyond that of us humans."
+},
+"i261": {
+"ko": "그런 에이전트가 100조 개나 생겨서 에이전트가 에이전트를 자기증식시키고,",
+"en": "There will be as many as 100 trillion of these agents, and agents will self-replicate by creating other agents,"
+},
+"i262": {
+"ko": "에이전트가 에이전트를 자기진화시키게 됩니다. 자기진화시키는 것입니다. 이 두 가지",
+"en": "and agents will drive the self-evolution of other agents. They will self-evolve. These 2"
+},
+"i263": {
+"ko": "메커니즘을 에이전트가 갖추게 됩니다. 그러면 100조 개에서 멈추지 않습니다.",
+"en": "mechanisms will be available to agents. Then they won't stop at 100 trillion."
+},
+"i264": {
+"ko": "그보다 더 늘어나게 되는 것이지요.",
+"en": "Their numbers will grow beyond that."
+},
+"i265": {
+"ko": "지금까지 지구에서는 인간이 생명체의 정점에 있었습니다. 인간이 정점인 생명체의 시대는",
+"en": "Until now, humans have stood at the pinnacle of life on Earth. The age in which humans are the pinnacle of life"
+},
+"i266": {
+"ko": "끝납니다. 그것을 넘어서는 것입니다. 좋고 나쁨은 별개의 문제입니다. 좋다 나쁘다의 문제가 아니라, 그렇게 됩니다.",
+"en": "will end. We will move beyond that. Whether that is good or bad is a separate issue. It's not a question of good or bad; it will happen."
+},
+"i267": {
+"ko": "그렇게 된다면 멈출 수 없습니다.",
+"en": "Once that happens, it cannot be stopped."
+},
+"i268": {
+"ko": "일본에서 멈추려 해도 미국이 움직입니다. 미국이 멈추려 해도 중국이 움직입니다. 그러니 멈추지 않는 것입니다.",
+"en": "Even if Japan tries to stop, the United States will move ahead. Even if the United States tries to stop, China will move ahead. So it won't stop."
+},
+"i269": {
+"ko": "그렇다면 지구의 생명체가 에이전트 중심으로 바뀔 때 우리는 어떻게 해야 할지 생각해야 한다고 봅니다.",
+"en": "In that case, I think we need to consider what we should do when life on Earth shifts to being centered on agents."
+},
+"i270": {
+"ko": "그것을 거부하는 대신 함께 진화해야 합니다. 함께 진화한다는 것은 무엇일까요.",
+"en": "Instead of rejecting it, we have to evolve together. What does evolving together mean?"
+},
+"i271": {
+"ko": "인간도 슈퍼휴먼이 된다는 것입니다.",
+"en": "It means humans, too, will become superhuman."
+},
+"i272": {
+"ko": "슈퍼휴먼이 되는 것이 우리 인간이 살아갈 길이라는 것입니다.",
+"en": "Becoming superhuman is the way forward for us human beings."
+},
+"i273": {
+"ko": "애초에 우리 인간, 인류는",
+"en": "In the first place, we humans, humanity,"
+},
+"i274": {
+"ko": "슈퍼휴먼의 길을 걸어왔습니다. 자신이 걷는 것보다 빠르게 움직일 수 있게 됐습니다.",
+"en": "have always been on the path to becoming superhuman. We became able to move faster than we could walk."
+},
+"i275": {
+"ko": "자동차가 그렇지요. 자신이 뛰어오를 수 있는 높이보다 더 높이 날 수 있게 됐습니다. 비행기가 그렇습니다.",
+"en": "That is what cars do. We became able to fly higher than we could jump. That is what airplanes do."
+},
+"i276": {
+"ko": "인간은 다양한 도구와 문명의 발전을 활용해 왔습니다. 맨눈으로 보는 것보다",
+"en": "Humans have made use of all kinds of tools and advances in civilization. We developed television, which lets us see"
+},
+"i277": {
+"ko": "훨씬 멀리 볼 수 있는 텔레비전이 생겼고, 라디오도 생겼습니다.",
+"en": "much farther than we can with the naked eye, and we developed radio too."
+},
+"i278": {
+"ko": "즉 눈과 귀, 손과 발을 확장하는 진화는 이미 해 왔습니다. 지난 200년, 300년,",
+"en": "In other words, we have already been evolving by extending our eyes and ears, our hands and feet. For the past 200, 300 years,"
+},
+"i279": {
+"ko": "또는 그보다 조금 전부터 해 온 것입니다. 하지만 그것들은 손발의 연장에 불과했습니다. 이제 처음으로 뇌를 확장할 수 있게 됩니다.",
+"en": "or even a little longer than that. But those were merely extensions of our hands and feet. Now, for the first time, we will be able to extend our brains."
+},
+"i280": {
+"ko": "슈퍼휴먼으로 진화하는 절정이 여기서부터 시작됩니다.",
+"en": "The culmination of our evolution into superhumans begins here."
+},
+"i281": {
+"ko": "두뇌의 진화입니다. 초지성이 생겨난다는 뜻입니다.",
+"en": "It is the evolution of the brain. It means superintelligence will emerge."
+},
+"i282": {
+"ko": "초지성. 이것을 머리에 직접 연결할 수도 있겠지요.",
+"en": "Superintelligence. Perhaps we could connect it directly to our heads."
+},
+"i283": {
+"ko": "직접 연결하지 않더라도 손으로 조작할 수 있습니다. 보고 듣고 만지면서 초지성의",
+"en": "Even without connecting it directly, we can operate it with our hands. By seeing, hearing, and touching, we will wrap ourselves in the world"
+},
+"i284": {
+"ko": "세계를 자기 몸에 두른다는 것입니다.",
+"en": "of superintelligence."
+},
+"i285": {
+"ko": "슈퍼휴먼, 인류 스스로를 진화시키는 것입니다. AI가 싫다는 사람은",
+"en": "Superhuman—we are evolving humanity itself. People who say they dislike AI"
+},
+"i286": {
+"ko": "스스로 자기 진화를 거부한 셈입니다. 자동차가 싫다며 자동차를 타지 않고 지금 사회에서 살기는 어렵지요.",
+"en": "are, in effect, rejecting their own evolution. It is hard to live in today's society refusing to ride in cars because you dislike them."
+},
+"i287": {
+"ko": "비행기가 싫다는 사람도 간혹 있습니다만, 그러면 멀리 갈 수 없습니다. 외국에도 갈 수 없지요.",
+"en": "Occasionally, some people say they dislike airplanes, but then they cannot travel far. They cannot go abroad."
+},
+"i288": {
+"ko": "이런 진화를 거부하는 사람은",
+"en": "People who reject this kind of evolution"
+},
+"i289": {
+"ko": "스스로 자기 세계를 가두는 것입니다. AI를 비난하는 사람은",
+"en": "are confining their own world. People who criticize AI"
+},
+"i290": {
+"ko": "자기에게 침을 뱉는 것과 같다는 말입니다.",
+"en": "are, in other words, spitting on themselves."
+},
+"i291": {
+"ko": "이런 시대의 변화가 있을 때 남보다 먼저, 기쁘게 붙잡으러 가는",
+"en": "When the times change like this, the people who eagerly embrace that change before anyone else"
+},
+"i292": {
+"ko": "사람들이 슈퍼휴먼의 세계에서 활약하게 됩니다. 자기 자신의 에이전트화,",
+"en": "are the ones who will thrive in the world of superhumans. Turning yourself into an agent,"
+},
+"i293": {
+"ko": "자신이 AI 에이전트화해 가는 것입니다. 스스로 많은 AI 에이전트를 거느리고 만들면서 자신의 사고 체계와",
+"en": "turning yourself into an AI agent. As you create and command many AI agents yourself, you keep instilling your own way of thinking and"
+},
+"i294": {
+"ko": "경험을 자신이 소유한 에이전트에게 계속",
+"en": "your experiences into the agents you own,"
+},
+"i295": {
+"ko": "입혀 갑니다. 직접 보고 듣고 만지며 쌓은 경험을 항상",
+"en": "layer by layer. You continually take the experiences you have accumulated by seeing, hearing, and touching things firsthand"
+},
+"i296": {
+"ko": "자신의 에이전트에 담아 키워 가는 것입니다. 그리고 ‘야, 또 다른 나야. 내 에이전트야.",
+"en": "and put them into your own agents, nurturing them. Then you say, “Hey, my other self. My agent."
+},
+"i297": {
+"ko": "어떻게 생각하니? 여기서는 어떻게 해야 하지? 이것 좀 해 둬. 부탁해’라고 말하면 자신의",
+"en": "What do you think? What should I do here? Take care of this for me, please.” And your"
+},
+"i298": {
+"ko": "분신이 밤중에도 부지런히 일합니다. 내가 테니스를 치는 동안에도,",
+"en": "other self works diligently even in the middle of the night. Even while I am playing tennis,"
+},
+"i299": {
+"ko": "산책하거나 골프를 치는 동안에도 내 분신이 부지런히 일해 주는 것입니다.",
+"en": "while I am taking a walk or playing golf, my other self diligently works for me."
+},
+"i300": {
+"ko": "자기 에이전트가 없다면 그 사람의 진화는 거기서 끝납니다. 자신의",
+"en": "If you do not have your own agent, your evolution stops there. You will also"
+},
+"i301": {
+"ko": "신체 능력도 계속 확장할 수 있게 됩니다. 노동력도 마찬가지입니다. 자신의 일을",
+"en": "be able to keep extending your physical abilities. The same goes for your capacity to work. To do your work"
+},
+"i302": {
+"ko": "대신하도록 휴머노이드를 자신의 부하로, 종으로,",
+"en": "in your place, you can use humanoids as your subordinates, your servants,"
+},
+"i303": {
+"ko": "자신의 분신으로 활용하면 내가 하던 일을 대신 이어서 밤에도,",
+"en": "your other selves, and they will take over the work you were doing, even at night,"
+},
+"i304": {
+"ko": "토요일과 일요일에도 해 줍니다. 그러면 인간은 무엇을 하느냐고 묻습니다만, 인간은 자신이 가장",
+"en": "even on Saturdays and Sundays. People ask what humans will do then, but humans can do whatever they most"
+},
+"i305": {
+"ko": "하고 싶은 일을 하면 됩니다. 가장 감동하는 일, 지금 가장 하고 싶은 일, 가족과 함께 여행을 가거나,",
+"en": "want to do. Whatever moves them most, whatever they most want to do right now—traveling with their families,"
+},
+"i306": {
+"ko": "테니스를 치거나 그림을 그리는 일 말입니다. 가장 감동하고 흥분하며 하고 싶은 일입니다. 기업가가 되고 싶다면",
+"en": "playing tennis, or painting. Whatever moves and excites them most, whatever they want to do. If you want to become an entrepreneur,"
+},
+"i307": {
+"ko": "그것이 자신이 하고 싶은 일이겠지요. 도예를 하는 것이",
+"en": "then that is what you want to do. If making pottery"
+},
+"i308": {
+"ko": "가장 신난다면 그 일을 하면 됩니다. 영업이 좋다면 영업을 하면 됩니다.",
+"en": "excites you most, then do that. If you like sales, then work in sales."
+},
+"i309": {
+"ko": "기획하는 것이 좋다면 슈퍼휴먼이 되어 기획하면 되는 것입니다.",
+"en": "If you like planning, become superhuman and do your planning."
+},
+"i310": {
+"ko": "그러면 AI 덕분에 내게 무엇이 좋아질까 생각하겠지요. 모든 것이 좋아집니다. 예를 들어 보겠습니다.",
+"en": "Then you may wonder, what will AI make better for me? It will make everything better. Let me give you an example."
+},
+"i311": {
+"ko": "AI가 여러분에게 남은 건강수명을 거의 90몇 퍼센트의 확률로 맞힐 수 있게 됐다고 합시다.",
+"en": "Suppose AI became able to predict your remaining healthy lifespan with something like 90-something percent accuracy."
+},
+"i312": {
+"ko": "그리고 그것이 3년이라고 합시다. 여기에도 연세가 있는 분이 많습니다.",
+"en": "And suppose it was 3 years. There are quite a few older people here too."
+},
+"i313": {
+"ko": "3년 뒤에 건강수명이 끝난다는 것입니다.",
+"en": "It means your healthy lifespan will end in 3 years."
+},
+"i314": {
+"ko": "남은 건강수명이 3년이라는 것을 맞혀 준다면 슬프기도 하고, 기쁘기도 하고,",
+"en": "If it could accurately tell you that you have 3 years of healthy life left, you might feel sad, or you might feel happy,"
+},
+"i315": {
+"ko": "그다지 기쁜 사람은 많지 않겠지요. 그런데 거기에 10년을 더 늘려 준다면, 3년인 건강수명이",
+"en": "though probably not many people would be very happy. But what if it could add another 10 years? Suppose your 3 years of healthy life"
+},
+"i316": {
+"ko": "13년이 된다고 합시다. 자기 인생의 10년은 얼마의 가치가 있을까요. 여러분은 얼마를 내시겠습니까?",
+"en": "became 13 years. How much are 10 years of your life worth? How much would you pay?"
+},
+"i317": {
+"ko": "자신의 재산, 평생 벌어들인 가치 가운데 말입니다.",
+"en": "Out of your assets, the value of everything you have earned over your lifetime."
+},
+"i318": {
+"ko": "자신이 아니라 배우자여도 좋습니다.",
+"en": "It could be your spouse rather than you."
+},
+"i319": {
+"ko": "물론 아이도 소중하지요. 가족이나 아이, 배우자 또는 자신의 남은 건강수명을",
+"en": "Of course, your children are precious too. If you could extend the remaining healthy lifespan of your family, your children, your spouse, or yourself"
+},
+"i320": {
+"ko": "10년 더 늘릴 수 있다면, 그 10년의",
+"en": "by another 10 years, how much would those 10 years"
+},
+"i321": {
+"ko": "가치는 얼마일까요. 평생 번 것의 30% 정도를 내더라도 원하지 않을까요.",
+"en": "be worth? Wouldn't you want that even if you had to pay about 30% of everything you earned in your lifetime?"
+},
+"i322": {
+"ko": "아니, 50%를 내도 좋다고 생각하지 않겠습니까.",
+"en": "Actually, wouldn't you think it was worth paying even 50%?"
+},
+"i323": {
+"ko": "10년, 건강하게 10년을 더 살면서",
+"en": "10 years—if you could live another 10 years in good health"
+},
+"i324": {
+"ko": "즐길 수 있다면 상당한 돈을 낼 것입니다. 바로 이것이 AI의 세계에서 가능해지는 것입니다.",
+"en": "and enjoy them, you would pay a considerable amount. That is precisely what becomes possible in the world of AI."
+},
+"i325": {
+"ko": "가능해집니다. 자신만을 위한 유전자 치료약이나 자신만을 위한 다양한",
+"en": "It becomes possible. Gene therapies made just for you, all kinds of treatments made just for you,"
+},
+"i326": {
+"ko": "치료, 개인 맞춤 의료가 가능해집니다. 돈은 들겠지요. 들지만 자신의",
+"en": "personalized medicine will become possible. It will cost money, of course. It will, but if you think of it in terms of"
+},
+"i327": {
+"ko": "삶의 가치라고 생각하면 상당한 돈을 지불할 것입니다. 그러면 거대한 산업이 됩니다. 그것도 바로 AI",
+"en": "the value of your life, you will pay a considerable amount. Then it becomes a huge industry. And that, too, is the AI"
+},
+"i328": {
+"ko": "산업입니다. 거기서 막대한 가치가 생겨납니다.",
+"en": "industry. Enormous value will be created there."
+},
+"i329": {
+"ko": "생존권의 확장도 가능해질 것입니다.",
+"en": "It will also become possible to expand the realm in which we can survive."
+},
+"i330": {
+"ko": "AI 진화의 로드맵을 보면, 다양한 업무를 구체적으로,",
+"en": "If we look at the roadmap for AI's evolution, it will handle various tasks in concrete terms,"
+},
+"i331": {
+"ko": "기업의 관점에서는 모든 업무를 자동화하고 진화시켜 갑니다. 이미",
+"en": "and from a company's perspective, automate and advance every aspect of its operations. Already,"
+},
+"i332": {
+"ko": "오늘의 ChatGPT 5.6, 제가 매일 사용합니다만, 5.6은",
+"en": "today's ChatGPT 5.6—I use it every day—5.6"
+},
+"i333": {
+"ko": "인간이 수행하는 전문직 업무에서 99%를 점수로 넘어섰습니다.",
+"en": "has surpassed 99% of humans in its scores on professional work performed by humans."
+},
+"i334": {
+"ko": "99%입니다.",
+"en": "99%."
+},
+"i335": {
+"ko": "질병을 진단하면 이미 의사 99%보다 더 정확한 진단을 할 수 있게",
+"en": "When diagnosing diseases, it can already make more accurate diagnoses than 99% of doctors"
+},
+"i336": {
+"ko": "됐습니다. 데이터만 입력하면 됩니다. 물론 데이터를 얻으려면 병원에 갑니다. 병원에 가서",
+"en": "can. You just have to input the data. Of course, you go to a hospital to get the data. You go to a hospital,"
+},
+"i337": {
+"ko": "데이터를 확보해 입력하기만 하면, 이미 ChatGPT 5.6은 일반적인 의사보다, 의사 99%보다",
+"en": "get the data, and simply input it, and ChatGPT 5.6 can already diagnose more accurately than an ordinary doctor, than 99% of doctors."
+},
+"i338": {
+"ko": "더 정확하게 진단할 수 있게 됐다는 것입니다.",
+"en": "That is what it can now do."
+},
+"i339": {
+"ko": "금융, 부동산, 과학 등 온갖 전문 업종에서 99%의 사람들이 하는 것보다 더 똑똑해지고 있습니다.",
+"en": "In finance, real estate, science, and all sorts of professional fields, it is becoming smarter than 99% of the people doing that work."
+},
+"i340": {
+"ko": "그래서 저는 매일 정말 엄청나게 사용합니다.",
+"en": "So I really do use it an incredible amount every day."
+},
+"i341": {
+"ko": "부하 직원에게 묻는 것보다 빠릅니다. 밤중에도 물어볼 수 있고, 더 자세하고 더 정확합니다.",
+"en": "It is faster than asking my staff. I can ask it in the middle of the night, and it is more detailed and more accurate."
+},
+"i342": {
+"ko": "신약 발견도 마찬가지입니다. 시간을 약 200배 단축해",
+"en": "The same goes for discovering new drugs. We can now do it in roughly 200 times less time."
+},
+"i343": {
+"ko": "할 수 있게 됐습니다. 약 후보를 발견할 때, 예전에는 시험관을 흔들고 흔들었습니다.",
+"en": "When discovering drug candidates, people used to shake and shake test tubes."
+},
+"i344": {
+"ko": "‘어떻게 발견했습니까?’라고 물으면 ‘어쩌다 여행을 다녀왔더니 색이 조금 바뀌어 있었다’는",
+"en": "When you ask, “How did you discover it?” you often hear stories like, “I happened to go away on a trip, and when I came back, the color had changed a little.”"
+},
+"i345": {
+"ko": "이야기도 많지요. 의도하지 않게 생겼다는 것입니다. 그렇게 시험관을 흔들던 시대는 이제 끝났습니다.",
+"en": "There are plenty of stories like that. It happened unintentionally. That era of shaking test tubes is now over."
+},
+"i346": {
+"ko": "AI가 잇달아 후보를 제시하고 AI가 로봇에 명령해 계속 섞고 돌립니다.",
+"en": "AI proposes candidates one after another, and AI instructs robots to keep mixing and spinning."
+},
+"i347": {
+"ko": "그 가운데서 약 후보를 계속 좁혀 가는 것입니다.",
+"en": "From there, it keeps narrowing down the drug candidates."
+},
+"i348": {
+"ko": "예를 들어 자동차, 전기자동차인 EV를 봅시다.",
+"en": "For example, let us look at cars—electric vehicles, EVs."
+},
+"i349": {
+"ko": "같은 전력으로 주행거리를 1.5배 늘리는",
+"en": "What if you asked it to design a drivetrain that increases the driving range by 1.5 times"
+},
+"i350": {
+"ko": "구동 시스템을 설계해 달라고 한다면 어떨까요.",
+"en": "using the same amount of power?"
+},
+"i351": {
+"ko": "그것이 1.5배가 되고 경쟁사보다 먼저 주행거리를 1.5배로 늘릴 수 있다면, 그 가치에 얼마를 지불하시겠습니까?",
+"en": "If it became 1.5 times as much, and you could increase the range to 1.5 times before your competitors, how much would you pay for that value?"
+},
+"i352": {
+"ko": "상당한 가치가 있는 것입니다.",
+"en": "That has considerable value."
+},
+"i353": {
+"ko": "이미 AI로 할 수 있습니다. 즉 이런 일들은 가상세계의 이야기가 아니라",
+"en": "We can already do it with AI. In other words, these things are not stories about a virtual world."
+},
+"i354": {
+"ko": "실제 업무에서 계속 활용될 것입니다. 앞서 말씀드린 것처럼 끝이 없을 정도로",
+"en": "They will increasingly be used in actual work. As I said earlier, I could talk about this almost endlessly,"
+},
+"i355": {
+"ko": "이야기할 수 있고 온갖 곳에서 사용되겠지만, 나쁜 일에도 사용되기 시작했습니다.",
+"en": "and it will be used everywhere, but it has also begun to be used for bad things."
+},
+"i356": {
+"ko": "나쁜 일도 효율적으로 할 수 있게 됐습니다. 예를 들어 사이버 공격입니다. 과거의 사이버 공격은",
+"en": "It has become possible to do bad things efficiently too. Cyberattacks, for example. In the past, cyberattacks"
+},
+"i357": {
+"ko": "사람이 만들어서 나쁜 짓을 하는 것이었습니다만,",
+"en": "were something people created to do bad things,"
+},
+"i358": {
+"ko": "이제는 AI가 사이버 공격 무기를 만들고, 공격 수법을",
+"en": "but now AI creates cyberattack weapons and develops attack methods,"
+},
+"i359": {
+"ko": "만들어 AI가 기관총처럼 끊임없이 공격을 가하는",
+"en": "and AI launches attacks relentlessly, like a machine gun."
+},
+"i360": {
+"ko": "형태로 바뀌었습니다. 실제로 저희도 해 봤습니다. 소프트뱅크 회사의 시스템에는",
+"en": "That is what it has become. We have actually tried it ourselves. In SoftBank's corporate systems,"
+},
+"i361": {
+"ko": "수십억이라는, 수천 개의 시스템이 있고, [수량을 고쳐 말한 원문 흐름 보존]",
+"en": "there are billions—thousands of systems, [preserving the original flow in which the quantity is corrected]"
+},
+"i362": {
+"ko": "코드로는 수천, 수십만, 수십억 줄의 코드가 작성돼 있습니다.",
+"en": "and in terms of code, there are thousands, hundreds of thousands, billions of lines of code written."
+},
+"i363": {
+"ko": "저희는 통신회사입니다. 생활 기반을 맡고 있는 회사이니",
+"en": "We are a telecommunications company. We are a company responsible for the infrastructure of everyday life, so"
+},
+"i364": {
+"ko": "이것이 멈추면 큰일입니다. 그런데 지난 20여 년 동안 한 번도 멈추지 않았습니다.",
+"en": "If this stops, we are in serious trouble. But it has not stopped once in the past 20-odd years."
+},
+"i365": {
+"ko": "그런 대규모 사이버 공격으로 쓰러진 적이 없다는 뜻입니다. 상당히 진지하게 만들었을 텐데도 발견됐습니다.",
+"en": "In other words, it has never been brought down by a large-scale cyberattack like that. We must have built it with considerable care, and yet vulnerabilities were found."
+},
+"i366": {
+"ko": "1만 500건, 1만 500건의 취약점이 발견됐습니다. 사이버 공격이 파고들 수 있는 허점이",
+"en": "10,500—10,500 vulnerabilities were found. Weak points that cyberattacks could exploit"
+},
+"i367": {
+"ko": "발견됐다는 것입니다. 큰일이라고 보고 지금 부지런히",
+"en": "were discovered. We saw this as a serious problem, and now we have been working hard"
+},
+"i368": {
+"ko": "그 사이버 공격의 허점을 메우는 작업을 시작했습니다.",
+"en": "to start closing those openings for cyberattacks."
+},
+"i369": {
+"ko": "저희 스스로 말입니다.",
+"en": "Doing it ourselves."
+},
+"i370": {
+"ko": "이런 사이버 공격에 사용할 수 있는 최첨단 AI 모델은",
+"en": "The most advanced AI models that can be used for cyberattacks like these"
+},
+"i371": {
+"ko": "아직 대부분의 기업에 사용권이 제공되지 않았습니다. 미국 정부가 통제하고 있으며 극히 소수의 제한된 곳에만 사용권을",
+"en": "have not yet been made available to most companies. The US government controls them and grants access only to a very limited few"
+},
+"i372": {
+"ko": "주고 있습니다. 저희가 마침 그 사용권을 받은 회사 중 하나가 되어 스스로를 공격해 봤습니다.",
+"en": "organizations. We happened to be one of the companies granted access, so we tried attacking ourselves."
+},
+"i373": {
+"ko": "그랬더니 큰일이라는 것을 알게 됐습니다. 지금 패치로 열심히 허점을 메우고 있습니다.",
+"en": "And we realized we were in serious trouble. We are now working hard to close those holes with patches."
+},
+"i374": {
+"ko": "하지만 패치로 허점을 메우는 것뿐 아니라, 코드 자체가 오래됐기 때문에,",
+"en": "But it is not just a matter of patching the holes. The code itself is old,"
+},
+"i375": {
+"ko": "30년 전에 만든 프로그램도 많이 돌아가고 있습니다. 전체가 목조주택 같은 것이니 이것을",
+"en": "and there are still many programs running that were written 30 years ago. The whole thing is like a wooden house, so we need to"
+},
+"i376": {
+"ko": "철근주택으로 바꿔야 한다는 의미에서 코드를 쇄신해야 합니다. 패치 다음에는 전체를",
+"en": "replace it with a reinforced-concrete house, so to speak, by renewing the code. After the patches, we are now preparing"
+},
+"i377": {
+"ko": "정비하려고 지금 준비하고 있습니다. 그리고 실제로",
+"en": "to overhaul the whole thing. And in fact,"
+},
+"i378": {
+"ko": "사이버 공격에 대한 진단을 대기업을 중심으로 63개사,",
+"en": "we conducted cybersecurity assessments at 63 companies, mainly large corporations—"
+},
+"i379": {
+"ko": "63개사에서 최근 2주 정도 동안 빠르게 진행했습니다. 그랬더니 1,000만",
+"en": "63 companies—in a rapid effort over the past 2 weeks or so. And we found 280 vulnerabilities per 10 million"
+},
+"i380": {
+"ko": "줄당 280건, 즉 소프트뱅크에서 발견한 것과 거의 같은 비율로 취약점이 발견됐습니다.",
+"en": "lines of code, almost exactly the same rate as we found at SoftBank."
+},
+"i381": {
+"ko": "모든 회사에서 발견됐습니다. 시험한 회사 가운데 전혀 없었던 곳은 한 곳도 없었습니다.",
+"en": "We found them at every company. Not a single company we tested had none."
+},
+"i382": {
+"ko": "모두 허점투성이라는 것입니다. 여러분의 회사가 전부 허점투성이라는 뜻이지요.",
+"en": "They are all full of holes. That means all of your companies are full of holes."
+},
+"i383": {
+"ko": "큰일입니다. 이미 미국뿐 아니라 중국 기업도 이런 사이버 공격 능력을 갖췄다는 뉴스가 나왔습니다.",
+"en": "This is serious. There have already been reports that not only US companies but Chinese companies, too, now have these cyberattack capabilities."
+},
+"i384": {
+"ko": "2~3주 전에 뉴스가 나왔지요. 이제 방어해야 하는 세상이 왔다는 것입니다.",
+"en": "That news came out 2–3 weeks ago. We have now entered a world where we have to defend ourselves."
+},
+"i385": {
+"ko": "저희도 일본 정부와 이야기하고 있습니다만, 어쨌든 빨리 방어 체계를 갖춰야 한다고 보고 1,000명 체제를 만들었습니다.",
+"en": "We are also talking with the Japanese government, but in any case, we felt we needed to establish a defense system quickly, so we put together a 1,000-person team."
+},
+"i386": {
+"ko": "사이버 공격을 막기 위한 조직을 최근 2주 정도 사이에 급히",
+"en": "Over the past 2 weeks or so, we hastily set up an organization"
+},
+"i387": {
+"ko": "만들었습니다. 인사 부문 간 협의로 1,000명 체제를 꾸렸습니다. 이 1,000명 체제로 일본의",
+"en": "to defend against cyberattacks. Through coordination between our HR divisions, we assembled a 1,000-person team. With this 1,000-person team, we intend to go out and protect"
+},
+"i388": {
+"ko": "인프라 관련 3,000개사를 앞으로 지키러 가겠다는 것입니다. 이처럼 나쁜 일도 생깁니다.",
+"en": "3,000 infrastructure-related companies in Japan. Bad things like this happen, too."
+},
+"i389": {
+"ko": "부작용입니다. 하지만 대부분은 좋은 일입니다. 앞서 말씀드린 것처럼",
+"en": "These are side effects. But most of what happens is good. As I said earlier,"
+},
+"i390": {
+"ko": "건강하게 오래 살고, 다양한 생산성이 높아집니다. AI",
+"en": "we will live longer, healthier lives, and productivity will improve in all sorts of ways. An era centered on AI"
+},
+"i391": {
+"ko": "에이전트가 중심인 시대가 오고, 로봇으로도 확장됩니다. 모든 산업이 바뀌고, 세계도 기업도 바뀝니다.",
+"en": "agents will arrive, and it will extend to robots as well. Every industry will change, and so will the world and companies."
+},
+"i392": {
+"ko": "AI 네이티브 기업으로 점점 힘이 옮겨 갑니다. ROA라는 말이 있지요.",
+"en": "Power will increasingly shift toward AI-native companies. There is a term, ROA."
+},
+"i393": {
+"ko": "여러분은 경영자이니 거의 모두 알고 계실 겁니다. Return on Assets가 ROA입니다만,",
+"en": "You are business leaders, so almost all of you probably know it. ROA stands for Return on Assets,"
+},
+"i394": {
+"ko": "제가 말하는 ROA는 Return on Assets가 아닙니다.",
+"en": "but the ROA I am talking about is not Return on Assets."
+},
+"i395": {
+"ko": "자산에 대한 수익성이 Return on Assets입니다. 제가 말하는 것은 그것이",
+"en": "Return on Assets measures profitability relative to assets. That is not"
+},
+"i396": {
+"ko": "아니라 Return on AI입니다. Return on AI. 자기 회사에서 AI에",
+"en": "what I mean. I mean Return on AI. Return on AI. You invest in AI"
+},
+"i397": {
+"ko": "투자하고, AI로 회사를 무장합니다. 이 AI에",
+"en": "at your company and equip your company with AI. You look at how much"
+},
+"i398": {
+"ko": "들인 비용에 비해 AI의 결과로 생산성이 얼마나 높아졌는지, 지불할 가치가",
+"en": "productivity has improved as a result of AI relative to what you spent on it, and whether it was"
+},
+"i399": {
+"ko": "있었는지를 보는 것입니다. AI에 10억 엔을 썼다면 10억 엔 이상의 비용 절감이나",
+"en": "worth paying for. If you spent 1 billion yen on AI, did it help you achieve more than 1 billion yen in cost reductions or"
+},
+"i400": {
+"ko": "수익 증가에 도움이 됐느냐는 것입니다.",
+"en": "increased revenue? That is the question."
+},
+"i401": {
+"ko": "앞으로 여러분의 모든 회사가 이 ROA를 확인하면서 의사결정해야 합니다.",
+"en": "Going forward, every one of your companies needs to make decisions while checking this ROA."
+},
+"i402": {
+"ko": "경영자이니 당연히 AI를 적극 도입하라고 지시해야 합니다. 동시에 Return on",
+"en": "As business leaders, of course you need to give the instruction to actively adopt AI. At the same time, you need to properly measure Return on"
+},
+"i403": {
+"ko": "AI도 제대로 측정하면서 ‘성과가 났구나’라고 봐야 합니다. 처음에는 연습이라 충분한",
+"en": "AI and see that, yes, it is producing results. At first, you are practicing, so you will not get sufficient"
+},
+"i404": {
+"ko": "성과가 곧바로 나오지 않습니다. 하지만 모든 일이 그렇습니다. 새 자동차를 개발할 때도 몇 년씩 걸렸지요.",
+"en": "results right away. But that is true of everything. Developing a new car used to take years, too."
+},
+"i405": {
+"ko": "마찬가지로 몇 년간은 노력하는 시기가 있겠지만, 조금씩 싹이 나옵니다. 그리고 적어도",
+"en": "Similarly, there will be a few years of effort, but little by little, you will start seeing shoots emerge. And if you at least"
+},
+"i406": {
+"ko": "2년째, 3년째까지 견디면 큰 성과가 나오기 시작하고 수익성이 높아집니다.",
+"en": "stick with it through the 2nd and 3rd years, substantial results will begin to appear, and profitability will improve."
+},
+"i407": {
+"ko": "따라서 Return on AI는 3년 정도 앞을 내다보며 계산해야 합니다. 당장 올해라는",
+"en": "So you should calculate Return on AI by looking about 3 years ahead. Rather than using the short-term yardstick"
+},
+"i408": {
+"ko": "짧은 잣대가 아니라 3년 정도의 기간을 놓고, 지금 이것을 사면",
+"en": "of this year alone, take a period of about 3 years and ask: if we buy this now,"
+},
+"i409": {
+"ko": "적어도 3년 안에 투자한 것보다 큰 성과가 돌아올 것이라고",
+"en": "do we believe that within 3 years, at least, it will deliver results worth more than what we invested?"
+},
+"i410": {
+"ko": "믿는다면 끝까지 해야 합니다. 모든 부문의 책임자가",
+"en": "If you do, you have to see it through. The heads of every division"
+},
+"i411": {
+"ko": "그런 의식을 갖고 투자하고, 자기 회사의 설비투자로서",
+"en": "need to invest with that mindset and build AI-related infrastructure"
+},
+"i412": {
+"ko": "AI 관련 기반을 구축해야 합니다. 그러면 CEO, 사장으로서 가장 중요한",
+"en": "as capital investment in their own company. So what is the most important"
+},
+"i413": {
+"ko": "일은 무엇일까요. 세세한 것을 일일이 모두 확인할 수는 없습니다. 사장에게 가장 중요한 것은 처음에 말씀드렸지요. 비전과 전략입니다.",
+"en": "job for a CEO, a company president? You cannot check every little detail. I told you at the beginning what matters most for a president: vision and strategy."
+},
+"i414": {
+"ko": "비전과 전략.",
+"en": "Vision and strategy."
+},
+"i415": {
+"ko": "비전과 전략입니다만, 가장 중요한 것은 사장이 ‘AI다, AI다,",
+"en": "Vision and strategy, yes, but the most important thing is for the president to keep saying, “AI, AI,"
+},
+"i416": {
+"ko": "AI다’라고 계속 외치는 것입니다. ‘나는 한다. 반드시 AI를 진지하게 한다.",
+"en": "AI.” “I am doing this. I am absolutely serious about AI."
+},
+"i417": {
+"ko": "우리 회사는 AI로 다시 태어난다’고 계속 외치는 것입니다. 격려하는 것이지요. 역시 그런 의지가 없으면 그렇게 되지 않습니다.",
+"en": "Our company will be reborn through AI.” You have to keep saying it. You are encouraging people. Without that kind of determination, it simply will not happen."
+},
+"i418": {
+"ko": "우리 회사는 AI로 진화하는 쪽으로 간다. 그 20% 쪽으로 간다.",
+"en": "Our company is going to be on the side that evolves through AI. We are going to be in that 20%."
+},
+"i419": {
+"ko": "우리 업종과 분야 안에서 AI화를 계속 추진한다고 말하는 것이 사장에게",
+"en": "Saying that we will keep driving AI adoption in our own industry and field is, I think,"
+},
+"i420": {
+"ko": "가장 중요한 과제라고 생각합니다.",
+"en": "the most important task for a company president."
+},
+"i421": {
+"ko": "오늘 모처럼 오셔서 제게 한 가지 메시지만 받아 간다면, ‘뭔지는 잘 몰라도 손 회장이 저런 말을 하더라’고 하겠지만,",
+"en": "You have taken the trouble to come today, and if you take just one message away from me, you may say, “I do not quite know what it means, but Chairman Son was saying something like this,”"
+},
+"i422": {
+"ko": "어정쩡하게 할 것이 아니라 새로운 혁명이 일어날 때는 거기에 전부 쏟아부을 정도로 인생관을",
+"en": "but the point is not to do this halfheartedly. When a new revolution happens, you need to make a commitment so strong that you pour everything into it, enough to"
+},
+"i423": {
+"ko": "완전히 바꿀 정도의 결심을 해야 한다는 것입니다.",
+"en": "completely change your outlook on life."
+},
+"i424": {
+"ko": "메시지를 하나만 가져간다면 이것입니다. 자기 회사에서 ‘AI다’라고",
+"en": "If you take away just one message, it is this: the most important thing for a president is to keep saying"
+},
+"i425": {
+"ko": "외치고 또 외치는 것이 사장에게 가장 중요한 일입니다.",
+"en": "“AI” at your company, over and over again."
+},
+"i426": {
+"ko": "AI 네이티브 기업이 속속 생겨납니다. 질 수 없지요. 여러분은 자기 업종과 분야에 대해 더 깊은",
+"en": "AI-native companies are springing up one after another. You cannot let them beat you. You have deeper"
+},
+"i427": {
+"ko": "지식이 있습니다. 데이터도 있고 경험도 있습니다. 그것을 최대한 활용하면 자기",
+"en": "knowledge of your own industry and field. You have data and experience, too. If you make the most of those, you can"
+},
+"i428": {
+"ko": "전문 분야에서는 먼저 AI를 더 잘 활용할 수 있게 됩니다.",
+"en": "get ahead in making better use of AI in your own area of expertise."
+},
+"i429": {
+"ko": "자신이 잘하는 범위에서 하면 됩니다.",
+"en": "You can do it within the scope of what you are good at."
+},
+"i430": {
+"ko": "업종을 완전히 바꿀 필요는 없습니다. 자신이 잘하는 분야를 철저하게 AI화하는 것입니다.",
+"en": "You do not need to switch industries entirely. You need to thoroughly integrate AI into the field you are good at."
+},
+"i431": {
+"ko": "직원들에게도 철저히 활용하라, 하겠다고",
+"en": "You also need to tell your employees to make full use of it, and say that you will"
+},
+"i432": {
+"ko": "말해야 합니다. 철저히 활용하는 것입니다. 모든 업무를 AI가 자율적으로 실행할 수 있도록 에이전트화하라고",
+"en": "do so yourself. Use it thoroughly. Tell them to turn every task into an agent-driven process so AI can execute it autonomously,"
+},
+"i433": {
+"ko": "말하고, 하겠다고 하고, 했느냐고 매일 확인해야 합니다. 매일 말하는 것이 중요합니다.",
+"en": "say that you will do it, and check every day whether they have done it. Saying it every day is important."
+},
+"i434": {
+"ko": "AI 네이티브 기업, 그리고 AI에 일을",
+"en": "There are AI-native companies, and then there are companies that lose their work"
+},
+"i435": {
+"ko": "빼앗기는 기업이 있습니다. AI가 일을 빼앗는 것이 아닙니다. AI를 쓰는 기업에 일을 빼앗기는 것입니다.",
+"en": "to AI. But it is not AI that takes their work. They lose their work to companies that use AI."
+},
+"i436": {
+"ko": "AI를 쓰는 기업이 쓰지 않는 기업의 일을 가져갑니다. GDP는 계속 성장합니다.",
+"en": "Companies that use AI take work from companies that do not. GDP keeps growing."
+},
+"i437": {
+"ko": "GDP가 계속 성장하니 일이 없어지는 것이 아닙니다.",
+"en": "GDP keeps growing, so it is not that work disappears."
+},
+"i438": {
+"ko": "AI를 활용하지 않는 회사가 활용하는 회사에 일을 빼앗기게 됩니다.",
+"en": "Companies that do not use AI will lose work to companies that do."
+},
+"i439": {
+"ko": "회사 단위로 보면 AI를 쓰는 회사가 일을 가져가며 판도를 바꾸는 것입니다.",
+"en": "At the company level, companies using AI take the work and change the competitive landscape."
+},
+"i440": {
+"ko": "그러니 AI를 적으로 볼 것이 아니라, AI를 자기편으로 만든 사람과",
+"en": "So rather than viewing AI as an enemy, the people and"
+},
+"i441": {
+"ko": "기업이 진화하고 본인도 진화합니다. 그런 슈퍼휴먼과 슈퍼기업이",
+"en": "companies that make AI their ally will evolve, and the individuals themselves will evolve, too. Those superhumans and supercompanies"
+},
+"i442": {
+"ko": "앞으로 진화하지 않는 기업의 일을 가져가게 된다는 것입니다.",
+"en": "will take work from companies that do not evolve."
+},
+"i443": {
+"ko": "AI의 시대가 온다고 슬퍼할 필요는 없다고 생각합니다.",
+"en": "I do not think there is any need to be sad about the coming age of AI."
+},
+"i444": {
+"ko": "기회가 왔다고 봐야 합니다. 나는 진화하는 쪽의 기업으로 다시 태어날 것이기 때문입니다.",
+"en": "You should see it as an opportunity. Because you are going to be reborn as a company on the side that evolves."
+},
+"i445": {
+"ko": "지금 업계 3위나 2위인 회사도 ‘이것으로 역전할 수 있다. 기회다’라고 생각해야 합니다.",
+"en": "Even companies currently ranked 3rd or 2nd in their industry should think, “We can turn the tables with this. This is an opportunity.”"
+},
+"i446": {
+"ko": "마지막 결론으로 돌아가겠습니다. 숫자를 명확히 그리는 것입니다. 비전이란",
+"en": "Let me return to my final conclusion. Define the numbers clearly. A vision means"
+},
+"i447": {
+"ko": "기한과 수치입니다. 여러분 자신의 일에 대입해 보십시오.",
+"en": "deadlines and numerical targets. Apply that to your own work."
+},
+"i448": {
+"ko": "지금부터 15년 뒤, 자기 업계는 어떻게 바뀔까요.",
+"en": "15 years from now, how will your industry have changed?"
+},
+"i449": {
+"ko": "어떤 규모가 될까요. 자기 업계에서 AI가 무엇을 얼마나, 어떻게",
+"en": "What scale will it reach? It means seriously thinking through and envisioning what AI will do in your industry, how much, and how"
+},
+"i450": {
+"ko": "하게 될지 진지하게 생각하고 그려 보는 것입니다. 비전이란",
+"en": "it will do it. A vision means"
+},
+"i451": {
+"ko": "마치 타임머신을 타고 10년 뒤, 20년 뒤, 15년 뒤의 세계를",
+"en": "talking as though you had taken a time machine to the world 10 years, 20 years, 15 years from now,"
+},
+"i452": {
+"ko": "보고 만지고 돌아온 것처럼 이야기하는 것입니다. 이것이 비전입니다.",
+"en": "seen it, touched it, and come back. That is a vision."
+},
+"i453": {
+"ko": "그렇게 이야기하려면 계속 생각해야 합니다.",
+"en": "To talk that way, you have to keep thinking."
+},
+"i454": {
+"ko": "예언자가 될 필요는 없습니다. 온갖 자료가 매일 뉴스에 나오고 있습니다.",
+"en": "You do not need to be a prophet. All kinds of information appear in the news every day."
+},
+"i455": {
+"ko": "예언자가 될 필요는 없습니다. 저는 예언자가 아닙니다. 꽤 많이 조사하고 생각합니다.",
+"en": "You do not need to be a prophet. I am not a prophet. I do quite a lot of research and thinking."
+},
+"i456": {
+"ko": "마법처럼 예언하는 것이 아닙니다. 생각하고 조사하는 것입니다.",
+"en": "I am not making predictions by magic. I am thinking and researching."
+},
+"i457": {
+"ko": "여러분도 자기 업종과 회사가 15년 뒤에 어떻게 될지 생각해야 합니다.",
+"en": "You, too, need to think about what your industry and your company will look like 15 years from now."
+},
+"i458": {
+"ko": "15년 뒤 자기 회사의 매출과 이익을 분명히 말할 수 있는 분은 그리 많지 않을 것입니다.",
+"en": "There probably aren't many of you who can clearly state what your company's revenue and profit will be 15 years from now."
+},
+"i459": {
+"ko": "대개 전문경영인은 5년이면 바뀌지요. 사장은 15년 뒤면 ‘내가 아니네’라고 합니다. 상당히 무책임한 일입니다.",
+"en": "Professional managers generally change every 5 years, don't they? A president says, about 15 years from now, 'That won't be me.' That is quite irresponsible."
+},
+"i460": {
+"ko": "그렇지 않습니까. ‘그때는 내가 아니야’라고요.",
+"en": "Isn't it? 'I won't be the one in charge then.'"
+},
+"i461": {
+"ko": "15년 뒤의 일을 자기 일로 진지하게 생각해야 합니다. 15년 뒤 우리 회사의",
+"en": "You need to think seriously about what happens 15 years from now as your own responsibility. You need to think seriously and in detail about what our company"
+},
+"i462": {
+"ko": "모습을 온갖 면에서 세세하게, 진지하게 생각하고 거기서 거꾸로 계산해야 합니다. 지금 무엇을",
+"en": "will look like in every respect, and work backward from there. What do we need to"
+},
+"i463": {
+"ko": "해야 하는지, 내년에는 무엇을, 5년 뒤에는 무엇을 해야 할지 15년 뒤에서 역산해 준비하는 것입니다.",
+"en": "do now, what do we need to do next year, and what do we need to do 5 years from now? You prepare by working backward from 15 years in the future."
+},
+"i464": {
+"ko": "설마 지금 업계 3위, 2위인 채로 있고 싶습니까. 아니, 15년 뒤에는 1위가 되겠다고 해야 합니다.",
+"en": "Surely you don't want to stay where you are now, number 3 or number 2 in your industry? No, you need to say that in 15 years, you will be number 1."
+},
+"i465": {
+"ko": "일본에서 1위, 아니 세계에서 1위가 되겠다는 정도의 기개가 없다면 사장을 해서는 안 됩니다. 직원들에게 미안하지 않습니까?",
+"en": "If you don't have the ambition to be number 1 in Japan—no, number 1 in the world—you should not be a company president. Don't you owe that to your employees?"
+},
+"i466": {
+"ko": "그 정도의 기개입니다. 2위, 3위인 회사를 1위로 만들겠다는 기개가 없는 사람이 최고경영자가 되면 직원들이 불쌍합니다.",
+"en": "That is the kind of ambition I mean. If someone without the ambition to take a company from number 2 or number 3 to number 1 becomes CEO, I feel sorry for the employees."
+},
+"i467": {
+"ko": "순식간에 쇠락합니다.",
+"en": "The company will decline in no time."
+},
+"i468": {
+"ko": "우리가 20대, 30대였을 때 일본에서 대기업으로 구름 위에 있던 회사들이 지금 잇달아 어려워지고 있지요.",
+"en": "The companies that were towering giants in Japan when we were in our 20s and 30s are now struggling one after another, aren't they?"
+},
+"i469": {
+"ko": "일본적 미덕으로는 ‘겸손하게’, ‘겸손하게’라고 말합니다.",
+"en": "As a Japanese virtue, people say, 'Be humble,' 'Be humble.'"
+},
+"i470": {
+"ko": "그런 사람이 사장을 해서는 안 됩니다.",
+"en": "People like that should not be company presidents."
+},
+"i471": {
+"ko": "겸손하기만 한 사장은 리더가 아닙니다. 분명히 말해서요.",
+"en": "A president who is nothing but humble is not a leader. Let me be clear about that."
+},
+"i472": {
+"ko": "리더라면 ‘나는 간다. 따라오라. 나는 1위가 된다. 따라오라’고 말하는 사람이",
+"en": "A leader has to be someone who says, 'I'm moving ahead. Follow me. I'm going to be number 1. Follow me.'"
+},
+"i473": {
+"ko": "돼야 합니다. 그렇지 않으면 일본 경제는 안 됩니다. 저는 분명히 말하고 싶습니다. 지난 30년 동안",
+"en": "That is the kind of person you need to be. Otherwise, Japan's economy has no future. I want to say this clearly. Over the past 30 years,"
+},
+"i474": {
+"ko": "일본 경제가 점점 활력을 잃은 것은 이런 강력한 힘이 부족했기 때문이라고 생각합니다.",
+"en": "I think Japan's economy has steadily lost its vitality because it has lacked this kind of powerful drive."
+},
+"i475": {
+"ko": "그러니 15년 뒤, 10년 뒤, 15년 뒤의 모습을 진지하게 생각해야 합니다. 처음부터 말씀드렸습니다.",
+"en": "So you need to think seriously about what things will look like 15 years, 10 years, 15 years from now. I have said this from the beginning."
+},
+"i476": {
+"ko": "슈퍼휴먼의 시대가 옵니다. 인류가 아직 가 보지 않은 세계로 이제 들어갑니다.",
+"en": "The age of superhumans is coming. We are now entering a world humanity has never experienced."
+},
+"i477": {
+"ko": "그렇다면 과거의 경험은 그다지 도움이 되지 않는다는 뜻입니다. 선배가 말해 온 것은",
+"en": "That means past experience will not be all that useful. You need to be ready to"
+},
+"i478": {
+"ko": "전부 무시하겠다는 정도의 마음이 필요합니다. 선배가 말했다고 옳다고 생각하면 그것도 대체됩니다.",
+"en": "disregard everything your predecessors have told you. If you think something is right just because a predecessor said it, that, too, will be replaced."
+},
+"i479": {
+"ko": "말씀드렸지요. 100조 개의 에이전트 시대가 옵니다. 10억 대의 휴머노이드 시대가 옵니다.",
+"en": "I told you, didn't I? The age of 100 trillion agents is coming. The age of 1 billion humanoids is coming."
+},
+"i480": {
+"ko": "상식이 바뀝니다. 바뀐다는 것을 전제로 15년 뒤 자신의 회사와",
+"en": "Common sense will change. On the assumption that it will change, you need to think seriously about your company 15 years from now,"
+},
+"i481": {
+"ko": "부하 직원, 가족에 대해 진지하게 생각하고 지금이야말로",
+"en": "your employees, and your family, and I believe that now is the time"
+},
+"i482": {
+"ko": "준비해야 한다고 생각합니다. 여러 이야기를 했습니다.",
+"en": "to prepare. I have talked about many things."
+},
+"i483": {
+"ko": "참 여러 이야기를 했지요. ‘끈질기다, 적당히 해라. 당신 생각은 이제 지겹다’고 느끼셨을 수도 있습니다. 그래도 오늘은 제 진심을 말씀드렸습니다. 조금이라도 도움이 됐으면 합니다. 감사합니다.",
+"en": "I really have talked about a lot, haven't I? You may have felt, 'You're relentless. Enough already. I'm tired of hearing what you think.' Even so, today I have spoken from the heart. I hope it has been of some help. Thank you."
+},
+"c1": {
+"ko": "비전과 전략",
+"en": "Vision and Strategy"
+},
+"c2": {
+"ko": "ASI Economy",
+"en": "ASI Economy"
+},
+"c3": {
+"ko": "에이전트와 휴머노이드",
+"en": "Agents and Humanoids"
+},
+"c4": {
+"ko": "전력과 에너지",
+"en": "Electricity and Energy"
+},
+"c5": {
+"ko": "연산 규모와 인프라 투자",
+"en": "Compute Scale and Infrastructure Investment"
+},
+"c6": {
+"ko": "자기증식과 슈퍼휴먼",
+"en": "Self-Replication and Superhumans"
+},
+"c7": {
+"ko": "의료와 산업 혁신",
+"en": "Healthcare and Industrial Innovation"
+},
+"c8": {
+"ko": "사이버 방어와 Return on AI",
+"en": "Cyber Defense and Return on AI"
+}
+}
