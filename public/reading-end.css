@@ -190,3 +190,19 @@
 .post-turn__who:has(.post-turn__dot--photo){gap:10px}
 .post-turn:has(.post-turn__dot--photo) .post-turn__line{padding-left:46px}
 @media (max-width:520px){.post-turn__dot--photo{width:32px;height:32px}.post-turn:has(.post-turn__dot--photo) .post-turn__line{padding-left:0}}
+
+/* ── Post top polish (2026-10-06): title, meta, lead image, first paragraph ── */
+.post-reader-article .post-reader-header{margin-bottom:32px}
+.post-reader-article .post-reader-header h1{max-width:680px;margin:0 0 16px;line-height:1.2;word-break:keep-all;overflow-wrap:break-word;text-wrap:balance}
+.post-reader-article .post-reader-meta{gap:10px;color:var(--re-ink-3,#959bb2);font-size:13px}
+.post-reader-article .post-reader-meta__axis{font-size:13px}
+.post-reader-article > .post-media-grid,.post-reader-article > .post-gallery,.post-reader-article > .post-media-videos{margin-bottom:48px}
+.post-reader-article .post-media-grid img,.post-reader-article .post-media-videos video{border-radius:12px!important}
+.post-reader-article .post-gallery-stage{border-radius:12px}
+.post-reader-article .post-content > p:first-child{font-size:20px;line-height:1.8;color:var(--re-title,#eceef5)}
+@media (max-width:520px){
+  .post-reader-article .post-reader-header{margin-bottom:24px}
+  .post-reader-article .post-reader-header h1{font-size:30px;line-height:1.24;margin-bottom:14px}
+  .post-reader-article > .post-media-grid,.post-reader-article > .post-gallery,.post-reader-article > .post-media-videos{margin-bottom:36px}
+  .post-reader-article .post-content > p:first-child{font-size:19px}
+}
