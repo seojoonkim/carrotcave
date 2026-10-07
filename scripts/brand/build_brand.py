@@ -12,6 +12,7 @@ Writes:
 Run: python3 scripts/brand/build_brand.py   (then node scripts/brand/raster.mjs for png/ico)
 """
 import json
+import os
 import re
 import sys
 sys.dont_write_bytecode = True  # release gate: verify must leave the tree clean (no __pycache__)
@@ -396,21 +397,34 @@ def scoped_ids(svg, prefix):
     return svg
 
 
+def write_if_changed(path, text):
+    """Atomic, no-op-safe write. Tests run build_brand.py while other tests read the same files in
+    parallel; Path.write_text truncates first, so a concurrent reader could see an empty file
+    (release 8b81767 failed this way). Skip identical content, otherwise replace via rename."""
+    path = Path(path)
+    if path.exists() and path.read_text() == text:
+        return False
+    tmp = path.with_name(f'.{path.name}.{os.getpid()}.tmp')
+    tmp.write_text(text)
+    os.replace(tmp, path)
+    return True
+
+
 def main():
     (ROOT / 'public/brand').mkdir(exist_ok=True)
     mark = mark_svg('cc', with_xmlns=True)
-    (ROOT / 'public/brand/mark.svg').write_text(mark)
-    (ROOT / 'public/favicon.svg').write_text(favicon_svg())
-    (ROOT / 'public/carrot-mark.svg').write_text(carrot_mark_svg())
+    write_if_changed(ROOT / 'public/brand/mark.svg', mark)
+    write_if_changed(ROOT / 'public/favicon.svg', favicon_svg())
+    write_if_changed(ROOT / 'public/carrot-mark.svg', carrot_mark_svg())
     footer = footer_svg()
-    (ROOT / 'public/brand/footer-cave.svg').write_text(footer)
+    write_if_changed(ROOT / 'public/brand/footer-cave.svg', footer)
     # standalone <img> copies for the static voice readers: the site's scoped rules (props, flags, tap) are inlined here.
     lone = '<style>.prop,.news-flag,.tap-pop,.fc-tapface{display:none}.mouth-sky{fill:#2B3550}</style>'
     head_end = footer.index('>') + 1
-    (ROOT / 'public/footer-rabbit-carrot-v3.svg').write_text(footer[:head_end] + lone + footer[head_end:])
+    write_if_changed(ROOT / 'public/footer-rabbit-carrot-v3.svg', footer[:head_end] + lone + footer[head_end:])
     still = lone + ('<style>*{animation:none!important}.fr-eyes,.fr-mouth,.fc-eyes,.fc-mouth,.rabbit-dashes,.carrot-dashes{opacity:0}'
                     '.fr-eyes--joy,.fr-mouth--crescent,.fc-eyes--sparkle,.fc-mouth--crescent{opacity:1}</style>')
-    (ROOT / 'public/footer-rabbit-carrot-static.svg').write_text(footer[:head_end] + still + footer[head_end:])
+    write_if_changed(ROOT / 'public/footer-rabbit-carrot-static.svg', footer[:head_end] + still + footer[head_end:])
     buddy = buddy_svg()
 
     inner = lambda s: re.sub(r'^<svg[^>]*>|</svg>$', '', s)
@@ -420,7 +434,7 @@ def main():
           f'export const OG_ART_SVG = {json.dumps(og_art_svg())};\n'
           f'export const BUDDY_INNER = {json.dumps(inner(buddy))};\n'
           f'export const STROKE = {G.STROKE};\n')
-    (ROOT / 'lib/brand-svg.ts').write_text(ts)
+    write_if_changed(ROOT / 'lib/brand-svg.ts', ts)
 
     # voice readers: swap the whole <svg class="brand-mark"> element
     reader_mark = mark_svg('rd').replace('<svg viewBox="0 0 96 96">',
@@ -430,7 +444,7 @@ def main():
         s = f.read_text()
         s2, k = re.subn(r'<svg class="brand-mark".*?</svg>', lambda _: reader_mark, s, count=1, flags=re.S)
         if k:
-            f.write_text(s2); n += 1
+            write_if_changed(f, s2); n += 1
     print(f'brand: mark, favicon, carrot-mark, footer ({len(footer)//1024}KB), buddy, readers={n}')
 
 
