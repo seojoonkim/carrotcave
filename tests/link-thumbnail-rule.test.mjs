@@ -50,9 +50,10 @@ test('link cards always render a thumbnail: OG image or a branded host tile', ()
   assert.doesNotMatch(card, /image \? \(\s*<span className="post-link-card__media"[\s\S]{0,200}\) : null\}/);
 });
 
-test('post reading-end kicker uses the rabbit-hole theme word', () => {
+test('post reading-end picks are introduced by the rabbit-hole question', () => {
+  // 2026-10-08 (Simon): the descent itself introduces the picks, so the rabbit asking
+  // "더 깊이 갈래?" replaces the separate DOWN THE RABBIT HOLE kicker above the heading.
   const page = readFileSync(new URL('../components/views/PostView.tsx', import.meta.url), 'utf8');
-  assert.match(page, /className="cave-constellation-kicker">\{L\.picksKicker\}</);
-  assert.equal((readFileSync(new URL('../lib/i18n.ts', import.meta.url), 'utf8').match(/picksKicker: 'DOWN THE RABBIT HOLE'/g) ?? []).length, 2, 'same kicker in both languages');
+  assert.match(page, /className="post-hole__ask post-hole__ask--picks"[\s\S]*?\{L\.nextHole\}[\s\S]*?className="cave-constellation-heading">\{L\.picksHeading\}/);
   assert.doesNotMatch(page, /CAVE CONSTELLATION/);
 });

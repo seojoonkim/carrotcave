@@ -402,7 +402,21 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
 
           <ReadingDepth slug={post.slug} locale={locale} />
 
-          {nextPost && (
+          {/* 2026-10-08 (Simon): the descent leads straight into the three picks. The rabbit's
+              "더 깊이 갈래?" introduces them; a separate next-post card only appears when there are
+              no picks, so the end never shows two "read next" blocks in a row. */}
+          {constellation ? (
+            <div className="cave-constellation-shell cave-constellation-shell--descent">
+              <p className="post-hole__ask post-hole__ask--picks">
+                <svg className="post-hole__buddy" viewBox="0 0 132 96" aria-hidden="true" focusable="false" dangerouslySetInnerHTML={{ __html: BUDDY_INNER }} />
+                <span className="post-hole__bubble">{L.nextHole}</span>
+              </p>
+              <h2 className="cave-constellation-heading">{L.picksHeading}</h2>
+              <p className="cave-constellation-intro">{L.picksIntro}</p>
+              <CaveConstellation subgraph={constellation} locale={locale} hrefForSlug={postHref} />
+            </div>
+          ) : (
+            nextPost && (
             <Link className="post-next post-next--hole" href={postHref(nextPost.slug)} data-has-image={archiveImageUrl(nextPost) ? 'true' : 'false'}>
               <span className="post-hole__ask">
                 <svg className="post-hole__buddy" viewBox="0 0 132 96" aria-hidden="true" focusable="false" dangerouslySetInnerHTML={{ __html: BUDDY_INNER }} />
@@ -416,6 +430,7 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
               {nextPost.summary ? <span className="post-hole__summary">{nextPost.summary}</span> : null}
               <span className="post-next__arrow" aria-hidden="true">→</span>
             </Link>
+            )
           )}
 
           <nav className="post-reader-actions post-reader-actions--after-content" aria-label={L.postNavAria}>
@@ -440,14 +455,6 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
             </a>
           </nav>
 
-          {constellation && (
-            <div className="cave-constellation-shell cave-constellation-shell--after-actions">
-              <p className="cave-constellation-kicker">{L.picksKicker}</p>
-              <h2 className="cave-constellation-heading">{L.picksHeading}</h2>
-              <p className="cave-constellation-intro">{L.picksIntro}</p>
-              <CaveConstellation subgraph={constellation} locale={locale} hrefForSlug={postHref} />
-            </div>
-          )}
         </section>
 
       </article>

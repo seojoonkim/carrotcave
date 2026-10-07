@@ -206,3 +206,15 @@
   .post-reader-article > .post-media-grid,.post-reader-article > .post-gallery,.post-reader-article > .post-media-videos{margin-bottom:36px}
   .post-reader-article .post-content > p:first-child{font-size:19px}
 }
+
+/* ── Descent → picks (2026-10-08): "지하 N층" flows straight into the rabbit asking
+   "더 깊이 갈래?", which introduces the three picks. No second next-post card. ── */
+.cc-reading-end .cave-constellation-shell--descent{margin-top:var(--re-gap-next);padding-top:0;border-top:0}
+.cc-reading-end .post-hole__ask--picks{display:flex;align-items:center;gap:12px;margin:0 0 20px}
+.cc-reading-end .post-hole__ask--picks .post-hole__buddy{width:77px;height:56px;flex:0 0 auto}
+.cc-reading-end .post-hole__ask--picks .post-hole__bubble{position:relative;padding:8px 14px;border-radius:12px;background:#eceef5;color:#16324a;font:700 15px/1.3 var(--re-sans);letter-spacing:-.01em}
+.cc-reading-end .post-hole__ask--picks .post-hole__bubble::before{content:"";position:absolute;left:-6px;top:50%;width:12px;height:12px;background:#eceef5;transform:translateY(-50%) rotate(45deg);border-radius:2px}
+.cc-reading-end .post-hole__ask--picks .buddy-face--happy{opacity:1}
+.cc-reading-end .cave-constellation-shell--descent + .post-reader-actions{margin-top:var(--re-gap-next)}
+@media (max-width:600px){.cc-reading-end .post-hole__ask--picks .post-hole__buddy{width:66px;height:48px}}
+

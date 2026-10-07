@@ -187,7 +187,9 @@ test('post reader accent metadata stays bright and titles use the available line
 test('ordinary post endings omit tag chips and separate content, actions, and recommendations', () => {
   assert.doesNotMatch(postSource, /post\.tags\.map|#\{tag\}/);
   assert.match(postSource, /<nav className="post-reader-actions post-reader-actions--after-content"/);
-  assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--after-actions"/);
+  // 2026-10-08: picks follow the depth floor directly; actions come after the picks.
+  assert.match(postSource, /className="cave-constellation-shell cave-constellation-shell--descent"/);
+  assert.ok(postSource.indexOf('cave-constellation-shell--descent') < postSource.indexOf('<nav className="post-reader-actions post-reader-actions--after-content"'), 'actions follow the picks');
   const endCss = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
   assert.match(postSource, /<section className="cc-reading-end" aria-label=\{L\.readingEndAria\}>/);
   assert.match(i18nSource, /readingEndAria: '다 읽은 뒤'/);
