@@ -3,14 +3,14 @@ import { join, extname } from 'node:path';
 import hangulImages from '../data/og-image-hangul.json' with { type: 'json' };
 
 // Share-card rules shared by the renderer (og-card.tsx) and the audits, so they cannot drift.
-export function titleSize(title: string, hasImage: boolean) {
+export function titleSize(title: string, _hasImage: boolean) {
+  // Centered crop-safe column (SAFE.width 570 in og-card.tsx): every English title fits 3 lines at these tiers.
   const n = title.length;
-  if (hasImage) return n > 26 ? 76 : n > 18 ? 80 : 88;
-  return n > 34 ? 76 : n > 24 ? 88 : 100;
+  return n > 46 ? 60 : n > 40 ? 64 : n > 30 ? 70 : n > 20 ? 76 : 84;
 }
 export const titleClamp = (_size: number) => 3;
-/** Title column inner width: card column minus left padding. */
-export const titleWidth = (hasImage: boolean) => (hasImage ? 660 : 780) - 80;
+/** Title column width: the centered crop-safe column (same for picture and no-picture cards). */
+export const titleWidth = (_hasImage: boolean) => 570;
 
 const SUPPORTED = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.avif']);
 /** Pictures with Korean text inside them (OCR, scripts/og-image-hangul.swift). Never shown in share cards. */

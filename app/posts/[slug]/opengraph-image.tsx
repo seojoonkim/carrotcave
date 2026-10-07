@@ -21,3 +21,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   if (!post) return ogCard({ label: 'CARROTCAVE', title: TAGLINE_EN });
   return ogCard({ label: CATEGORY_EN[post.category] ?? 'CARROTCAVE', meta: dateEn(post.date), title: TITLES_EN[post.slug] ?? TAGLINE_EN, image: await localImage(archiveImageUrl(post)) });
 }
+
+// Card layout version (changes the og:image ?hash so Facebook/Kakao refetch): crop-safe centered v2, 2026-10-08

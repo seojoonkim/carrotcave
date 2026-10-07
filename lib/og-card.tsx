@@ -46,12 +46,12 @@ export async function localImage(publicPath?: string) {
   const ext = extname(file).toLowerCase();
   if (!existsSync(file)) return undefined;
   try {
-    if (DIRECT[ext]) return `data:${DIRECT[ext]};base64,${readFileSync(file).toString('base64')}`;
-    if (CONVERT.has(ext)) {
-      const { default: sharp } = await import('sharp');
-      const jpeg = await sharp(file, { animated: false }).resize(800, 800, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 86 }).toBuffer();
-      return `data:image/jpeg;base64,${jpeg.toString('base64')}`;
-    }
+    // The picture is a full-bleed backdrop behind centered text, so it is cover-fit to the card and softly blurred:
+    // words baked into screenshots/thumbnails must not compete with the title at any crop.
+    const { default: sharp } = await import('sharp');
+    if (!DIRECT[ext] && !CONVERT.has(ext)) return undefined;
+    const jpeg = await sharp(file, { animated: false }).resize(1200, 630, { fit: 'cover' }).blur(12).jpeg({ quality: 82 }).toBuffer();
+    return `data:image/jpeg;base64,${jpeg.toString('base64')}`;
   } catch {
     return undefined;
   }
@@ -87,6 +87,14 @@ export interface OgCardInput {
 }
 
 
+/**
+ * Crop-safe layout (2026-10-08). Share surfaces crop the 1200x630 card differently: X/LinkedIn show it whole,
+ * Facebook comments / Messenger / KakaoTalk small previews cut a centered square (x 285-915). So every word
+ * (label, date, title, wordmark) lives inside SAFE (centered, 570 wide); the picture is a darkened full-bleed
+ * background that reads at any crop, and the brand art without a picture sits outside the square.
+ */
+export const SAFE = { x: 315, width: 570 };
+
 export async function ogCard(input: OgCardInput) {
   const label = englishOnly(input.label) ?? 'CARROTCAVE';
   const title = englishOnly(input.title) ?? TAGLINE_EN;
@@ -108,17 +116,25 @@ export async function ogCard(input: OgCardInput) {
           overflow: 'hidden',
         }}
       >
+        {image ? (
+          <img src={image} width={1200} height={630} style={{ position: 'absolute', left: 0, top: 0, width: 1200, height: 630, objectFit: 'cover' }} />
+        ) : (
+          <div style={{ position: 'absolute', right: 24, bottom: 0, width: 250, height: 263, display: 'flex' }}><img src={OG_ART_DATA_URL} width={250} height={263} /></div>
+        )}
+        {image ? (
+          <div style={{ position: 'absolute', left: 0, top: 0, width: 1200, height: 630, display: 'flex', backgroundImage: 'linear-gradient(90deg, rgba(22,23,31,.6) 0%, rgba(22,23,31,.86) 22%, rgba(22,23,31,.9) 50%, rgba(22,23,31,.86) 78%, rgba(22,23,31,.6) 100%)' }} />
+        ) : null}
         <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: 12, background: CARROT, display: 'flex' }} />
 
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '60px 0 56px 80px', width: image ? 660 : 780 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
+        <div style={{ position: 'absolute', left: SAFE.x, top: 0, width: SAFE.width, height: 630, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '52px 0 50px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
             <div style={{ display: 'flex', padding: '10px 24px 11px', borderRadius: 999, background: CARROT, color: INK, fontSize: 34, fontWeight: 700, letterSpacing: 2 }}>{label}</div>
             {meta ? <div style={{ display: 'flex', color: BODY, fontSize: 32, fontWeight: 600, letterSpacing: 1 }}>{meta}</div> : null}
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, lineClamp: titleClamp(size) }}>{title}</div>
-            {sub ? <div style={{ display: 'block', color: RABBIT, fontSize: 34, fontWeight: 600, lineHeight: 1.3, letterSpacing: 0.5, lineClamp: 2 }}>{sub}</div> : null}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, width: SAFE.width }}>
+            <div style={{ display: 'block', color: TITLE, fontSize: size, fontWeight: 700, lineHeight: 1.06, letterSpacing: -2, textAlign: 'center', width: SAFE.width, lineClamp: titleClamp(size) }}>{title}</div>
+            {sub ? <div style={{ display: 'block', color: RABBIT, fontSize: 34, fontWeight: 600, lineHeight: 1.3, letterSpacing: 0.5, textAlign: 'center', lineClamp: 2 }}>{sub}</div> : null}
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -126,15 +142,6 @@ export async function ogCard(input: OgCardInput) {
             <div style={{ display: 'flex', color: CARROT, fontSize: 40, fontWeight: 700 }}>.com</div>
           </div>
         </div>
-
-        {image ? (
-          <div style={{ position: 'absolute', right: 60, top: 104, width: 400, height: 410, display: 'flex' }}>
-            <div style={{ position: 'absolute', left: 18, top: 18, width: 400, height: 410, borderRadius: 28, background: PANEL, display: 'flex' }} />
-            <img src={image} width={400} height={410} style={{ position: 'absolute', left: 0, top: 0, width: 400, height: 410, objectFit: 'cover', borderRadius: 24, border: '2px solid #3a3e52' }} />
-          </div>
-        ) : (
-          <div style={{ position: 'absolute', right: 40, bottom: 0, width: 380, height: 400, display: 'flex' }}><img src={OG_ART_DATA_URL} width={380} height={400} /></div>
-        )}
       </div>
     ),
     { ...OG_SIZE, fonts: fonts() },

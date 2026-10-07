@@ -27,8 +27,7 @@ test('card keeps the brand v4 dark-cave palette: slate ink, carrot accent, round
   assert.match(card, /INK = '#1e1f28'/);
   assert.match(card, /CARROT = '#ff7a3d'/);
   const radii = [...card.matchAll(/borderRadius: (\d+)/g)].map((m) => Number(m[1]));
-  assert.ok(radii.length >= 3 && radii.every((r) => [24, 28, 999].includes(r)), `radii ${radii}`);
-  assert.match(card, /PANEL = '#2e3142'/);
+  assert.ok(radii.length >= 1 && radii.every((r) => [24, 28, 999].includes(r)), `radii ${radii}`);
   assert.match(card, /OG_ART_SVG/, 'no-photo card shows the glyph-kit cave art');
 });
 
@@ -68,10 +67,10 @@ test('share cards use the original header icon, kept in sync with CarrotCaveMark
   for (const d of [...mark.matchAll(/ d="([^"]+)"/g)].map((m) => m[1])) assert.ok(card.includes(d), `icon path in sync: ${d.slice(0, 24)}`);
 });
 
-test('share card type is large: title >= 76px, label/date >= 32px, wordmark 40px', () => {
+test('share card type is large: title >= 60px, label/date >= 32px, wordmark 40px', () => {
   const card = read('lib/og-card.tsx');
-  const sizes = [...read('lib/og-rules.ts').match(/function titleSize[\s\S]*?\n}/)[0].matchAll(/\b(\d{2,3})\b/g)].map((m) => Number(m[1])).filter((n) => n > 40);
-  assert.ok(Math.min(...sizes) >= 76, `smallest title ${Math.min(...sizes)}`);
+  const sizes = [...read('lib/og-rules.ts').match(/function titleSize[\s\S]*?\n}/)[0].matchAll(/\? (\d{2,3})\b|: (\d{2,3});/g)].map((m) => Number(m[1] ?? m[2]));
+  assert.ok(Math.min(...sizes) >= 60, `smallest title ${Math.min(...sizes)}`);
   assert.match(card, /fontSize: 34, fontWeight: 700, letterSpacing: 2 \}\}>\{label\}/);
   assert.match(card, /fontSize: 32, fontWeight: 600, letterSpacing: 1 \}\}>\{meta\}/);
   assert.match(card, /fontSize: 40, fontWeight: 700, letterSpacing: -0\.5 \}\}>carrotcave</);
@@ -79,7 +78,7 @@ test('share card type is large: title >= 76px, label/date >= 32px, wordmark 40px
 
 test('og-card file stays syntactically closed (single ternary per picture slot)', () => {
   const card = read('lib/og-card.tsx');
-  assert.doesNotMatch(card, /\)\s*:\s*\(\s*[\s\S]*?\)\s*:\s*null\}/, 'no dangling second ternary branch');
+  assert.doesNotMatch(card, /\)\s*:\s*\(\s*[\s\S]*?\)\s*:\s*null\}\s*\)\s*:/, 'no dangling second ternary branch');
   assert.doesNotMatch(card, /clipPath/, 'the OG renderer ignores clip-path');
 });
 
@@ -91,10 +90,16 @@ test('wordmark is lowercase carrotcave.com with no icon in front of it', () => {
   assert.doesNotMatch(card, />CarrotCave</, 'no capitalised wordmark');
 });
 
-test('text column never reaches the right-hand picture or icon', () => {
+// 2026-10-08 (Simon: Facebook comment link preview cut the title): FB comments / Messenger / Kakao small previews
+// crop a centered square (x 285-915 of 1200). Every word must live inside it; the art may sit outside.
+test('all card text sits inside the centered square crop (x 285-915)', () => {
   const card = read('lib/og-card.tsx');
-  const [, withPic, noPic] = card.match(/width: image \? (\d+) : (\d+)/).map(Number);
-  // picture starts at 1200-60-400=740, big icon at 1200-40-360=800; text starts at x=80
-  assert.ok(80 + withPic - 80 <= 740 - 20, `picture column ${withPic}`);
-  assert.ok(noPic <= 800 - 20, `icon column ${noPic}`);
+  const [, x, w] = card.match(/SAFE = \{ x: (\d+), width: (\d+) \}/).map(Number);
+  assert.ok(x >= 285 && x + w <= 915, `safe column ${x}-${x + w}`);
+  assert.match(card, /left: SAFE\.x, top: 0, width: SAFE\.width/, 'text block is positioned by SAFE');
+  assert.match(card, /textAlign: 'center', width: SAFE\.width/, 'title is centered in SAFE');
+  assert.match(read('lib/og-rules.ts'), /titleWidth = \(_hasImage: boolean\) => 570/, 'fit audit uses the same width');
+  const art = card.match(/right: (\d+), bottom: 0, width: (\d+)/).map(Number);
+  assert.ok(1200 - art[1] - art[2] >= 915, 'brand art stays outside the square so it never covers words');
+  assert.match(card, /\.blur\(\d+\)/, 'backdrop picture is blurred so baked-in words do not compete');
 });

@@ -17,3 +17,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   if (!voice) return ogCard({ label: 'VOICES', title: TAGLINE_EN });
   return ogCard({ label: 'VOICES', meta: dateEn(voice.sourcePublishedAt), title: voice.nameEn ?? TAGLINE_EN, sub: voice.eyebrow, image: await localImage(voice.thumbnailUrl) });
 }
+
+// Card layout version (changes the og:image ?hash so Facebook/Kakao refetch): crop-safe centered v2, 2026-10-08

@@ -8,3 +8,5 @@ export const alt = `${siteName} · ${TAGLINE_EN}`;
 export default async function Image() {
   return ogCard({ label: 'CARROT CAVE', title: TAGLINE_EN, sub: 'Technology, people, markets and the future.' });
 }
+
+// Card layout version (changes the og:image ?hash so Facebook/Kakao refetch): crop-safe centered v2, 2026-10-08

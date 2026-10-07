@@ -22,3 +22,5 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const title = TITLES_EN[post.slug] ?? localizedPost(post, 'en').title;
   return ogCard({ label: CATEGORY_EN[post.category] ?? 'CARROTCAVE', meta: dateEn(post.date), title: /[\uac00-\ud7a3]/.test(title) ? TAGLINE_EN : title, image: await localImage(archiveImageUrl(post)) });
 }
+
+// Card layout version (changes the og:image ?hash so Facebook/Kakao refetch): crop-safe centered v2, 2026-10-08
