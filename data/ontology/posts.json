@@ -1,4 +1,50 @@
 {
+  "photoshop-became-the-answer-key": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI 에이전트",
+      "tag-오픈소스",
+      "tag-해자"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "photoshop-became-the-answer-key-c1",
+        "text": "9월 30일 깃허브에 올라온 포토크래프트(photocraft)가 일주일 만에 받은 별의 개수다.",
+        "stance": "asserts",
+        "evidence": "9월 30일 깃허브에 올라온 포토크래프트(photocraft)가 일주일 만에 받은 별의 개수다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI 에이전트",
+      "오픈소스",
+      "해자"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "kpop-next-chapter-ip-and-fandom": {
     "primaryTopics": [
       "exploration"

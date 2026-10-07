@@ -379,5 +379,20 @@
       "이스트포인트"
     ],
     "titleEn": "The Next Chapter of K-Pop: IP and Fandom"
+  },
+  "223": {
+    "slug": "photoshop-became-the-answer-key",
+    "title": "포토샵은 어느새 정답지가 되었다",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3996:513544049",
+    "summary": "AI 복제판이 포토샵을 정답지 삼아 따라잡는 시대, 쓸모가 아닌 창업자의 마음과 조직의 루프, 관계와 의미만이 해자로 남는다.",
+    "tags": [
+      "AI 에이전트",
+      "오픈소스",
+      "해자",
+      "어도비"
+    ],
+    "titleEn": "Photoshop Became the Answer Key"
   }
 }

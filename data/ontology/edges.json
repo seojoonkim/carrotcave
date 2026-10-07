@@ -1,5 +1,141 @@
 [
   {
+    "from": "photoshop-became-the-answer-key",
+    "to": "figma-last-manual",
+    "type": "REFRAMES",
+    "strength": 0.5867,
+    "sourceClaimId": "photoshop-became-the-answer-key-c1",
+    "sourceEvidence": "만든 곳은 AI 영상 도구를 만드는 아트크래프트 팀이다.",
+    "targetEvidence": "레이어를 이해하고, 마스크를 쓰고, 단축키를 외우는 그 지난한 학습의 시간이 곧 밥그릇이었다.",
+    "label": "「마지막 수동변속기」은 「포토샵은 어느새 정답지가 되었다」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 38,
+      "overlapTokens": [
+        "40",
+        "75",
+        "ai",
+        "것이다",
+        "그런데",
+        "남는다",
+        "누군가",
+        "단축키",
+        "도구를",
+        "레이어",
+        "마지막",
+        "모두"
+      ],
+      "titleOverlap": [
+        "마지막",
+        "수동변속기",
+        "포토샵"
+      ],
+      "sharedTags": [
+        "어도비"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=38;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "photoshop-became-the-answer-key",
+    "to": "gaslighting-ai-open-source-project",
+    "type": "APPLIES",
+    "strength": 0.5393,
+    "sourceClaimId": "photoshop-became-the-answer-key-c1",
+    "sourceEvidence": "다만 누가 우리를 베꼈다는 소식에 겁부터 난다면, 우리는 아직 남의 정답지를 만들고 있는 것이다.",
+    "targetEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
+    "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「포토샵은 어느새 정답지가 되었다」의 원리를 구체적인 구축 과정에 적용한다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 43,
+      "overlapTokens": [
+        "ai",
+        "com",
+        "github",
+        "개를",
+        "개발자",
+        "것만",
+        "것이다",
+        "결과물",
+        "계속",
+        "그대로",
+        "끝난다",
+        "남의"
+      ],
+      "titleOverlap": [
+        "ai",
+        "만들었다",
+        "오픈소스"
+      ],
+      "sharedTags": [
+        "오픈소스"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=43;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "photoshop-became-the-answer-key",
+    "to": "swarmworld-stigmergic-ai-society",
+    "type": "DEEPENS",
+    "strength": 0.5268,
+    "sourceClaimId": "photoshop-became-the-answer-key-c1",
+    "sourceEvidence": "· Photon Studio: https://happymag.tv/vibe-coded-free-photoshop-alternative/ · Compositor: https://explainx.ai/blog/compositor-open-source-image-editor-astra-2026 더 서늘한 건 채점표다.",
+    "targetEvidence": "원자와 생체 재료의 구조를 연구해온 팀이 이번에는 AI 여러 개가 어떻게 기술과 사회를 만드는지 물었다.",
+    "label": "「AI 사회는 채팅창이 아니라 길 위에서 태어났다」은 「포토샵은 어느새 정답지가 되었다」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category",
+      "concept-agent"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 76,
+      "overlapTokens": [
+        "2026",
+        "75",
+        "ai",
+        "개가",
+        "개를",
+        "거의",
+        "것이다",
+        "결국",
+        "고치는",
+        "그대로",
+        "그래도",
+        "그런데"
+      ],
+      "titleOverlap": [
+        "ai",
+        "어느새"
+      ],
+      "sharedTags": [
+        "AI 에이전트"
+      ],
+      "sharedConcepts": [
+        "concept-agent"
+      ]
+    },
+    "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=76;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "kpop-next-chapter-ip-and-fandom",
     "to": "kpop-fandom-digital-parliament",
     "type": "REFRAMES",
@@ -140,7 +276,7 @@
     "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
     "to": "eastpoint-roundtable-has-no-head-seat",
     "type": "DEEPENS",
-    "strength": 0.8008,
+    "strength": 0.801,
     "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
     "sourceEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
     "targetEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
@@ -187,7 +323,7 @@
     "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
     "to": "post-193",
     "type": "DEEPENS",
-    "strength": 0.5948,
+    "strength": 0.595,
     "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
     "sourceEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
     "targetEvidence": "플랫폼을 10년 살 본집으로 믿지 않는 사람이다.",
@@ -234,7 +370,7 @@
     "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
     "to": "moltbook-agent-internet",
     "type": "REFRAMES",
-    "strength": 0.4558,
+    "strength": 0.4559,
     "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
     "sourceEvidence": "한국어 https://optimists-of-the-east.vercel.app/ko English https://optimists-of-the-east.vercel.app/en 내 글을 꾸준히 읽어 온 분들이라면 한동안 내가 당근동굴(Carrot Cave)에 쓴 주제들이 한 줄로 엮였다는 인상을 받으실 것 같다.",
     "targetEvidence": "moltbook moltbook - the front page of the agent internet A social network built exclusively for AI agents.",
@@ -275,7 +411,7 @@
     "from": "eastpoint-roundtable-has-no-head-seat",
     "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
     "type": "DEEPENS",
-    "strength": 0.8008,
+    "strength": 0.801,
     "sourceClaimId": "eastpoint-roundtable-has-no-head-seat-c1",
     "sourceEvidence": "9월 28일 웨스틴 파르나스에 약 270개 기관에서 600명이 모였다.",
     "targetEvidence": "9월 28일 아침, 서울의 해는 6시 24분에 떴다.",
@@ -7201,39 +7337,44 @@
   },
   {
     "from": "post-142",
-    "to": "security-token-rail",
-    "type": "RESONATES",
+    "to": "photoshop-became-the-answer-key",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-142-c1",
-    "sourceEvidence": "자산이 흐르는 규격을 다시 쓰는 것이다.",
-    "targetEvidence": "은행과 증권사, 거래소와 수탁기관이 사라지는 미래라기보다 각 기관이 묶어 갖고 있던 기능과 책임이 다시 나뉘는 미래에 가깝다.",
-    "label": "「토큰증권보다 증권형 토큰이 더 중요하다」은 「가격은 국경을 넘고, 시장은 건물을 떠난다」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "그때 시장은 자산의 백화점이 아니라, 세계의 긴장을 실시간으로 압축한 기상도에 가까워진다.",
+    "targetEvidence": "누가 언제 무슨 말을 했고 그때 왜 다들 웃었는지가 집단의 맥락이고 기억이다.",
+    "label": "「포토샵은 어느새 정답지가 되었다」은 「가격은 국경을 넘고, 시장은 건물을 떠난다」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category"
+      "category",
+      "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 77,
+      "lexicalOverlap": 65,
       "overlapTokens": [
-        "갖고",
-        "거래",
-        "거래가",
-        "거래소",
+        "2026",
+        "2월",
+        "30",
+        "500",
+        "ai",
+        "가까워진다",
+        "거의",
         "것이다",
-        "것처럼",
-        "결제",
-        "구조",
-        "규격",
-        "규격을",
-        "글로벌",
-        "금융이"
+        "곳으로",
+        "그때",
+        "그중",
+        "누가"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "시장은"
+      ],
       "sharedTags": [],
-      "sharedConcepts": []
+      "sharedConcepts": [
+        "concept-agent"
+      ]
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=77;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=65;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9011,41 +9152,44 @@
   },
   {
     "from": "post-111",
-    "to": "the-right-to-turn-on-a-brain",
+    "to": "photoshop-became-the-answer-key",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-111-c1",
-    "sourceEvidence": "팀을 만드는 능력보다 팀 없이 버티는 능력이 창업의 핵심 역량이 된다.",
-    "targetEvidence": "기술은 우리가 SF를 읽으며 상상한 미래를 더 자주 앞지를 것이다.",
-    "label": "「뇌를 켜는 사람의 권한」은 「다가오는 30개의 균열」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "콜센터가 사라진다 AI 처리율 3년 내 90% 도달.",
+    "targetEvidence": "다만 누가 우리를 베꼈다는 소식에 겁부터 난다면, 우리는 아직 남의 정답지를 만들고 있는 것이다.",
+    "label": "「포토샵은 어느새 정답지가 되었다」은 「다가오는 30개의 균열」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
-      "category"
+      "category",
+      "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 43,
+      "lexicalOverlap": 47,
       "overlapTokens": [
-        "가능성",
-        "가치가",
-        "것과",
+        "30",
+        "3년",
+        "40",
+        "75",
+        "ai",
+        "개를",
+        "개인",
+        "거의",
         "것이다",
-        "관리",
-        "기술은",
-        "기술적",
-        "기준",
-        "능력",
-        "다만",
-        "만드는",
-        "모델"
+        "고치는",
+        "구독료",
+        "난다"
       ],
       "titleOverlap": [
-        "사람의"
+        "30"
       ],
       "sharedTags": [],
-      "sharedConcepts": []
+      "sharedConcepts": [
+        "concept-agent"
+      ]
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=43;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -9265,13 +9409,13 @@
   },
   {
     "from": "post-106",
-    "to": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+    "to": "photoshop-became-the-answer-key",
     "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-106-c1",
-    "sourceEvidence": "AI가 게임 파일을 수정하는 것과 회계 장부를 수정하는 것은 구조가 같다.",
-    "targetEvidence": "각자의 창고를 들고 원탁에 앉아 쟁점을 정리하고, 이미 합의된 것과 끝까지 엇갈리는 것을 나눠 둔다.",
-    "label": "「이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때」은 「거울 앞의 괴물」의 주제를 다른 맥락에서 다시 바라본다",
+    "sourceEvidence": "그래서 결국 개인과 공동체로 돌아온다.",
+    "targetEvidence": "사람을 더 뽑아 달라고 하면 먼저 AI로 왜 안 되는지부터 묻는 회사들이 생겼다.",
+    "label": "「포토샵은 어느새 정답지가 되었다」은 「거울 앞의 괴물」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
@@ -9279,30 +9423,30 @@
       "concept-agent"
     ],
     "signalDetails": {
-      "lexicalOverlap": 38,
+      "lexicalOverlap": 52,
       "overlapTokens": [
         "2026",
+        "2월",
         "ai",
-        "ai가",
-        "ai의",
-        "opus",
-        "가지",
-        "각자의",
-        "같다",
-        "것과",
-        "것을",
+        "ai로",
+        "가는",
+        "같이",
+        "개인",
         "것이다",
-        "규칙을"
+        "결국",
+        "계산",
+        "계속",
+        "그런데"
       ],
       "titleOverlap": [
-        "2026"
+        "정답지"
       ],
       "sharedTags": [],
       "sharedConcepts": [
         "concept-agent"
       ]
     },
-    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=1;challengeSignal=false",
+    "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=52;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {

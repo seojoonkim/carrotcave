@@ -47,6 +47,19 @@
     "description": "폼 제출해주시면, 신원 확인 후 베스트셀러 도서를 카카오 선물하기로 보내드립니다.",
     "image": "/media/link-previews/og-50f485516d5d.png"
   },
+  "https://explainx.ai/blog/compositor-open-source-image-editor-astra-2026": {
+    "kind": "link",
+    "title": "Compositor: Open-Source Photoshop Alternative (2026) | explainx.ai Blog",
+    "description": "Designer Robbie Tilton built Compositor, a free open-source image editor, planned with GPT-6 Astra. It's 12MB versus Photoshop's 6,455MB.",
+    "image": "/media/link-previews/og-7e5a5463f782.webp"
+  },
+  "https://getartcraft.com/apps": {
+    "kind": "link",
+    "title": "Crafting Apps: open-source creative tools",
+    "siteName": "ArtCraft",
+    "description": "Image editing, vector illustration, video, photography, PDFs, motion graphics and page layout: seven native, open-source apps from the ArtCraft team, built in Rust and free to use.",
+    "image": "/media/link-previews/og-146d41d6d2ab.jpg"
+  },
   "https://github.com/juliuschun/simon-writing": {
     "kind": "link",
     "title": "GitHub - juliuschun/simon-writing: 김서준 대표님의 문체 분석 및 비슷하게 쓰는 skill",
@@ -81,6 +94,47 @@
     "siteName": "GitHub",
     "description": "Advanced prompt injection defense system for AI agents. Multi-language detection, severity scoring, and security auditing. - seojoonkim/prompt-guard",
     "image": "/media/link-previews/og-acb38a029e88.png"
+  },
+  "https://github.com/storytold/filmcraft": {
+    "kind": "link",
+    "title": "GitHub - storytold/filmcraft: An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
+    "siteName": "GitHub",
+    "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust. - storytold/filmcraft",
+    "image": "/media/link-previews/og-3da44e26d495.png"
+  },
+  "https://github.com/storytold/lightcraft": {
+    "kind": "link",
+    "title": "GitHub - storytold/lightcraft: An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
+    "siteName": "GitHub",
+    "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust. - storytold/lightcraft",
+    "image": "/media/link-previews/og-ebc275621604.png"
+  },
+  "https://github.com/storytold/photocraft": {
+    "kind": "link",
+    "title": "GitHub - storytold/photocraft: An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
+    "siteName": "GitHub",
+    "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust - storytold/photocraft"
+  },
+  "https://github.com/storytold/printcraft": {
+    "kind": "link",
+    "title": "GitHub - storytold/printcraft: An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust",
+    "siteName": "GitHub",
+    "description": "An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust - storytold/printcraft",
+    "image": "/media/link-previews/og-c6757fb94f26.png"
+  },
+  "https://github.com/storytold/vectorcraft": {
+    "kind": "link",
+    "title": "GitHub - storytold/vectorcraft: An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust.",
+    "siteName": "GitHub",
+    "description": "An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust. - storytold/vectorcraft",
+    "image": "/media/link-previews/og-afb1280abec4.png"
+  },
+  "https://happymag.tv/vibe-coded-free-photoshop-alternative/": {
+    "kind": "link",
+    "title": "Someone just vibe-coded Photoshop and is giving it away for free",
+    "siteName": "Happy Mag",
+    "description": "A solo developer has vibe-coded a Photoshop alternative with AI, creating a surprisingly capable photo editor and giving it away for free",
+    "image": "/media/link-previews/og-92ee1be26572.jpg"
   },
   "https://luma.com/a3u6l9o5": {
     "kind": "link",

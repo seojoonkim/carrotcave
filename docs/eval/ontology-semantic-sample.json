@@ -537,40 +537,40 @@
       "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "post-142",
-      "to": "security-token-rail",
-      "sourceTitle": "가격은 국경을 넘고, 시장은 건물을 떠난다",
-      "targetTitle": "토큰증권보다 증권형 토큰이 더 중요하다",
+      "from": "post-144",
+      "to": "japan-hardware-software-gap",
+      "sourceTitle": "Circle in Seoul: Jeremy Allaire와의 대화",
+      "targetTitle": "왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?",
       "sourceCategory": "탐험",
       "targetCategory": "탐험",
-      "sourceEvidence": "자산이 흐르는 규격을 다시 쓰는 것이다.",
-      "targetEvidence": "은행과 증권사, 거래소와 수탁기관이 사라지는 미래라기보다 각 기관이 묶어 갖고 있던 기능과 책임이 다시 나뉘는 미래에 가깝다.",
+      "sourceEvidence": "가장 큰 전환점은 GENIUS Act 같은 법이 스테이블코인을 경제 내 합법적 디지털 달러로 만들면, 가계·기업·금융회사 모두가 다르게 대우하고 더 편안하게 사용하게 된다는 것입니다.",
+      "targetEvidence": "과거 일본의 고도성장기 기업들은 평생고용을 전제로 범용 인재를 오래 키웠다.",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 77,
+        "lexicalOverlap": 57,
         "overlapTokens": [
-          "갖고",
-          "거래",
-          "거래가",
-          "거래소",
-          "것이다",
-          "것처럼",
-          "결제",
-          "구조",
-          "규격",
-          "규격을",
-          "글로벌",
-          "금융이"
+          "13",
+          "ai",
+          "강력한",
+          "거의",
+          "경제",
+          "고객",
+          "금융",
+          "기술",
+          "기업",
+          "기업들",
+          "달러",
+          "디지털"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "RESONATES",
-      "label": "「토큰증권보다 증권형 토큰이 더 중요하다」은 「가격은 국경을 넘고, 시장은 건물을 떠난다」의 핵심 문제와 맞닿는다"
+      "label": "「왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?」은 「Circle in Seoul: Jeremy Allaire와의 대화」의 핵심 문제와 맞닿는다"
     },
     {
       "from": "can-i-go-ethihad-airlines-iran-conflict",

@@ -310,13 +310,13 @@
  "eastpoint-2026-keynote-my-writing-became-a-warehouse": {
   "ko": {
    "highlights": [
-    "지능이 싸질수록 가장 비싸지는 것은 신뢰이며, 은행 계좌 하나 열 수 없는 에이전트에게 블록체인은 처음부터 맞는 문법이다.",
+    "이 발표자료는 처음부터 끝까지 내 글쓰기 에이전트 시온이 자율주행으로 만들었다.",
     "그러니 창고는 생산성 도구이기 전에 내가 에이전트에게 건네는 신원 증명이다."
    ]
   },
   "en": {
    "highlights": [
-    "As intelligence gets cheaper, trust becomes the most expensive thing.",
+    "My writing agent Sion made this presentation autonomously, from start to finish.",
     "So before the warehouse is a productivity tool, it is the proof of identity I hand to my agent."
    ]
   }
@@ -692,6 +692,22 @@
    "highlights": [
     "Reducing your luggage is not about getting rid of things.",
     "An airplane is a machine that turns weak ties into strong ones."
+   ]
+  }
+ },
+ "photoshop-became-the-answer-key": {
+  "ko": {
+   "highlights": [
+    "어도비가 40년 동안 다듬은 결과물이 베끼는 쪽의 정답지가 되었다.",
+    "로켓이 세 번 터지고도 네 번째를 쏘는 이유는 어느 저장소에도 올라와 있지 않다.",
+    "짝퉁은 오히려 무엇이 진짜인지 더 널리 알린다."
+   ]
+  },
+  "en": {
+   "highlights": [
+    "What Adobe spent 40 years refining has become the copier’s answer key.",
+    "The reason for launching a fourth rocket after three have exploded is not posted in any repository.",
+    "If anything, the fakes make more people aware of what is real."
    ]
   }
  },
