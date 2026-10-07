@@ -1074,3 +1074,27 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 /* Shared footer copyright (data/site-legal.json) */
 .cc-footer__legal{margin:0;color:var(--muted);font:500 11px/1.4 var(--mono);letter-spacing:.04em}.cc-footer__legal small{font-size:inherit}
 @media(max-width:520px){.cc-footer__legal{font-size:10px}}
+
+/* ── Compact link cards on phones (2026-10-08, Simon: "링크가 너무 커서 글읽기에 방해돼").
+   One row: 64px square thumb on the left, label + 2-line title + host on the right.
+   The description and the "열기" button are dropped; the whole card is still the link. ── */
+@media (max-width:600px){
+  .post-content .post-link-card,.post-content .post-link-card--media{flex-direction:row;align-items:center;min-height:0;margin:20px 0;gap:0}
+  .post-content li .post-link-card{margin:10px 0}
+  .post-link-card .post-link-card__media,.post-link-card--media .post-link-card__media{order:0;flex:0 0 64px;width:64px;height:64px;max-width:64px;min-height:0;aspect-ratio:1/1;margin:10px 0 10px 10px;border:0;border-radius:var(--r-thumb);overflow:hidden}
+  .post-link-card__media--tile{gap:0;background-size:12px 12px}
+  .post-link-card__tile-mark{width:34px;height:34px;font-size:17px;border-radius:4px}
+  .post-link-card__tile-host{display:none}
+  .post-link-card__body,.post-link-card--static .post-link-card__body{gap:3px;padding:10px 12px}
+  .post-link-card__label{font-size:11px}
+  .post-link-card__title{font-size:14px;line-height:1.4;-webkit-line-clamp:2}
+  .post-link-card__desc,.post-link-card__cta{display:none}
+  .post-link-card__foot{padding-top:2px;gap:6px}
+  .post-link-card__icon{width:16px;height:16px}
+  .post-link-card__icon img{width:12px;height:12px}
+  .post-link-card__host{font-size:11px}
+  .post-link-card:hover{transform:none;box-shadow:none}
+}
+/* Footer grid column must not grow to the nowrap links row (360px phones overflowed by 0.2px). */
+.cc-footer__copy{grid-template-columns:minmax(0,1fr)}
+
