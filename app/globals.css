@@ -1098,3 +1098,14 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 /* Footer grid column must not grow to the nowrap links row (360px phones overflowed by 0.2px). */
 .cc-footer__copy{grid-template-columns:minmax(0,1fr)}
 
+/* ── Slimmer link cards on web (2026-10-08, Simon: "웹에서도 링크 썸네일 아주 조금만 더 높이 얇게").
+   ~139px → ~112px: tighter body padding/gap, one-line description, smaller CTA.
+   Thumbnail width follows the 1.91:1 OG ratio of the new height so screenshots are not cropped. ── */
+@media (min-width:601px){
+  .post-link-card__body{gap:4px;padding:12px 18px}
+  .post-link-card__desc{-webkit-line-clamp:1;line-clamp:1}
+  .post-link-card__foot{padding-top:2px}
+  .post-link-card__cta{padding:3px 8px}
+  .post-link-card--media .post-link-card__media{flex:0 0 228px;max-width:228px;min-height:108px}
+}
+

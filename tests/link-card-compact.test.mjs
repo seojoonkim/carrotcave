@@ -18,3 +18,13 @@ test('phone link cards are a compact single row', () => {
 test('footer copy grid cannot outgrow narrow phones', () => {
   assert.match(css, /\.cc-footer__copy\{grid-template-columns:minmax\(0,1fr\)\}/);
 });
+
+test('web link cards stay slim: tight body, one-line description, OG-ratio thumb', () => {
+  const css = readFileSync('app/globals.css', 'utf8');
+  const block = css.slice(css.indexOf('Slimmer link cards on web'));
+  assert.match(block, /@media \(min-width:601px\)/);
+  assert.match(block, /\.post-link-card__body\{gap:4px;padding:12px 18px\}/);
+  assert.match(block, /\.post-link-card__desc\{-webkit-line-clamp:1/);
+  assert.match(block, /\.post-link-card--media \.post-link-card__media\{[^}]*min-height:108px/);
+});
+
