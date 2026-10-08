@@ -1,16 +1,16 @@
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail, { axisOf, editorialAxes } from '@/components/AxisRail';
 import ArchiveList, { type ArchiveEntry, type ArchiveFilterOptions } from '@/components/ArchiveList';
-import { DiscoveryGrid, LeadThread, ThreadList } from '@/components/HomeEditorial';
+import { DiscoveryGrid, ThreadList } from '@/components/HomeEditorial';
 import SiteFooter from '@/components/SiteFooter';
 import { axisMood } from '@/components/AxisRail';
 import { posts } from '@/data/posts';
 import { interviews } from '@/data/interviews';
 import { archiveImageUrl } from '@/lib/social-metadata';
 import { postVideo, voiceVideo } from '@/lib/archive-video';
-import { AXIS_FROM_SLUG, axisLabel, depthLabelFor, localePath, t, type Locale } from '@/lib/i18n';
+import { AXIS_FROM_SLUG, axisLabel, localePath, t, type Locale } from '@/lib/i18n';
 import { localizedPost, localizedVoice } from '@/lib/i18n-content';
-import { inboundCounts, latestDate, THREADS, threadName, threadsOf } from '@/lib/threads';
+import { latestDate, THREADS, threadName, threadsOf } from '@/lib/threads';
 
 type Axis = typeof editorialAxes[number];
 
@@ -25,7 +25,6 @@ export default function HomeView({ section, locale }: { section?: string; locale
   const active = resolveSection(section);
   const visiblePosts = (active ? posts.filter((post) => axisOf(post) === active) : [...posts])
     .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? Number(b.id)) || 0) - ((a.telegramMsgId ?? Number(a.id)) || 0));
-  const inbound = inboundCounts(posts);
   const now = latestDate(posts);
   const postEntries: ArchiveEntry[] = visiblePosts.map((source) => {
     const post = localizedPost(source, locale);
@@ -39,8 +38,6 @@ export default function HomeView({ section, locale }: { section?: string; locale
       imageUrl: archiveImageUrl(post),
       video: postVideo(post),
       threads: threadsOf(source),
-      depth: source.depth,
-      inbound: inbound.get(source.slug) ?? 0,
     };
   });
   const voiceEntries: ArchiveEntry[] = interviews.map((source) => {
@@ -62,9 +59,7 @@ export default function HomeView({ section, locale }: { section?: string; locale
   const filters: ArchiveFilterOptions = {
     threads: THREADS.map((thread) => ({ key: thread.key, label: threadName(thread.key, locale), count: postEntries.filter((entry) => entry.threads?.includes(thread.key)).length }))
       .filter((item) => item.count > 0),
-    depths: (['entry', 'mid', 'deep'] as const).map((key) => ({ key, label: depthLabelFor(locale, key).split(' · ')[0], count: postEntries.filter((entry) => entry.depth === key).length })),
   };
-  const leadPost = visiblePosts[0];
   const activeLabel = active ? axisLabel(locale, active) : undefined;
   const postAxis = active;
 
@@ -87,17 +82,14 @@ export default function HomeView({ section, locale }: { section?: string; locale
             storageKey={`${locale === 'en' ? 'en-' : ''}${active ?? 'all'}`}
             locale={locale}
             filters={filters}
-            leadAside={!active && leadPost && visibleEntries[0]?.key === `post-${leadPost.slug}` ? <LeadThread lead={leadPost} all={posts} locale={locale} /> : null}
             afterLead={
               postAxis ? (
                 <div className="ccx-home ccx-home--axis">
-                  <DiscoveryGrid all={posts} now={now} locale={locale} category={postAxis} categoryLabel={activeLabel} />
-                  <ThreadList all={posts} now={now} locale={locale} category={postAxis} categoryLabel={activeLabel} limit={4} />
+                  <DiscoveryGrid all={posts} locale={locale} category={postAxis} categoryLabel={activeLabel} />
                 </div>
               ) : (
                 <div className="ccx-home">
                   <ThreadList all={posts} now={now} locale={locale} />
-                  <DiscoveryGrid all={posts} now={now} locale={locale} />
                   <p className="ccx-k ccx-archive-k">{L.archiveAll(visibleEntries.length)}</p>
                 </div>
               )

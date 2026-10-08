@@ -86,7 +86,7 @@ test('editorial serif stays confined to home titles: self-hosted MaruBuri, never
   assert.ok(fs.existsSync(path.join(root, 'public/fonts/maruburi/maruburi-semibold-subset.woff2')));
   assert.match(read('public/fonts/maruburi/OFL.txt'), /SIL OPEN FONT LICENSE Version 1\.1/);
   const selectors = [...block.matchAll(/([^{}\n]+)\{font-family:var\(--serif\)/g)].flatMap((m) => m[1].split(','));
-  assert.deepEqual(selectors.map((s) => s.trim()).sort(), ['.archive-lead h2', '.ccx-leadthread .ccx-title', '.ccx-threads .ccx-title']);
+  assert.deepEqual(selectors.map((s) => s.trim()).sort(), ['.archive-lead h2', '.ccx-threads .ccx-title']);
   assert.equal((css.match(/var\(--serif\)/g) ?? []).length, 1);
   assert.doesNotMatch(css, /Noto[_ -]Serif|noto-serif/i);
 });

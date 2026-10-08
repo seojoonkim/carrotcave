@@ -21,34 +21,29 @@ export interface ArchiveEntry {
   video?: { duration?: string };
   /** 줄기(thread) 키 — 행 표시와 줄기 필터에 쓴다. */
   threads?: string[];
-  depth?: 'entry' | 'mid' | 'deep';
   /** 다른 글이 이어지는 수 — '많이 이어진 순' 정렬 */
-  inbound?: number;
 }
 
 export interface ArchiveFilterOptions {
   threads: { key: string; label: string; count: number }[];
-  depths: { key: 'entry' | 'mid' | 'deep'; label: string; count: number }[];
 }
 
-type SortKey = 'new' | 'old' | 'linked';
 const FILTER_COPY = {
-  ko: { all: '전체', thread: '줄기', depth: '깊이', sort: '정렬', sorts: { new: '최신순', old: '오래된순', linked: '많이 이어진 순' } as Record<SortKey, string>, filtered: (n: number) => `${n}편을 골랐어요.` },
-  en: { all: 'All', thread: 'Thread', depth: 'Depth', sort: 'Sort', sorts: { new: 'Newest', old: 'Oldest', linked: 'Most linked' } as Record<SortKey, string>, filtered: (n: number) => `${n} ${n === 1 ? 'piece' : 'pieces'} selected.` },
+  ko: { all: '전체', thread: '줄기', filtered: (n: number) => `${n}편을 골랐어요.` },
+  en: { all: 'All', thread: 'Thread', filtered: (n: number) => `${n} ${n === 1 ? 'piece' : 'pieces'} selected.` },
 } as const;
 
 function normalize(value: string) {
   return value.normalize('NFKC').toLocaleLowerCase('ko-KR').replace(/\s+/g, ' ').trim();
 }
 
-function ArchiveMeta({ axis, date, locale, thread }: { axis: string; date: string; locale: Locale; thread?: string }) {
+function ArchiveMeta({ axis, date, locale }: { axis: string; date: string; locale: Locale }) {
   const visual = formatDate(locale, date);
   return (
     <p className="archive-meta">
       <span className="archive-meta__axis">{axisLabel(locale, axis)}</span>
       <span className="archive-meta__dot" aria-hidden="true">·</span>
       <time dateTime={date}>{visual}</time>
-      {thread && <span className="ccx-rowchip">{thread}</span>}
     </p>
   );
 }
@@ -108,8 +103,6 @@ export default function ArchiveList({
   const [visible, setVisible] = useState(ARCHIVE_PAGE_SIZE);
   const [query, setQuery] = useState('');
   const [threadFilter, setThreadFilter] = useState<string | null>(null);
-  const [depthFilter, setDepthFilter] = useState<string | null>(null);
-  const [sort, setSort] = useState<SortKey>('new');
   const [revealFrom, setRevealFrom] = useState<number | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const moreRef = useRef<HTMLButtonElement>(null);
@@ -142,15 +135,12 @@ export default function ArchiveList({
     return new Set(entries.flatMap((entry, index) => (terms.every((term) => searchIndex[index].includes(term)) ? [entry.key] : [])));
   }, [entries, searchIndex, trimmed]);
 
-  const threadLabel = useMemo(() => new Map((filters?.threads ?? []).map((item) => [item.key, item.label])), [filters]);
-  const filtering = threadFilter !== null || depthFilter !== null || sort !== 'new';
+  const filtering = threadFilter !== null;
   const filtered = useMemo(() => {
     if (!filtering) return null;
-    const list = entries.filter((entry) => (!threadFilter || entry.threads?.includes(threadFilter)) && (!depthFilter || entry.depth === depthFilter));
-    if (sort === 'old') return [...list].reverse();
-    if (sort === 'linked') return [...list].sort((a, b) => (b.inbound ?? 0) - (a.inbound ?? 0));
+    const list = entries.filter((entry) => !threadFilter || entry.threads?.includes(threadFilter));
     return list;
-  }, [entries, filtering, threadFilter, depthFilter, sort]);
+  }, [entries, filtering, threadFilter]);
   const pool = filtered ?? entries;
 
   const searching = matches !== null || filtered !== null;
@@ -219,12 +209,6 @@ export default function ArchiveList({
               {filters.threads.map((item) => chip(item.label, item.count, threadFilter === item.key, pick(threadFilter, setThreadFilter, item.key), item.key))}
             </div>
           )}
-          <div className="ccx-frow" role="group" aria-label={`${F.depth} · ${F.sort}`}>
-            <span className="ccx-fl">{F.depth}</span>
-            {filters.depths.map((item) => chip(item.label, item.count, depthFilter === item.key, pick(depthFilter, setDepthFilter, item.key), item.key))}
-            <span className="ccx-fl ccx-fl--sort">{F.sort}</span>
-            {(Object.keys(F.sorts) as SortKey[]).map((key) => chip(F.sorts[key], null, sort === key, () => setSort(key), `sort-${key}`))}
-          </div>
         </div>
       )}
       <p className="archive-status" role="status" aria-live="polite">
@@ -247,7 +231,7 @@ export default function ArchiveList({
               <Link className="archive-row__link" href={entry.href}>
                 <ArchiveThumb entry={entry} priority={false} sizes="(max-width: 900px) 112px, 208px" />
                 <span className="archive-row__copy">
-                  <ArchiveMeta axis={entry.axis} date={entry.date} locale={locale} thread={entry.threads?.[0] ? threadLabel.get(entry.threads[0]) : undefined} />
+                  <ArchiveMeta axis={entry.axis} date={entry.date} locale={locale} />
                   <h2>{entry.title}{entry.video && <span className="sr-only">, {videoLabel(entry, locale)}</span>}</h2>
                   {entry.summary && <span className="archive-row__summary">{entry.summary}</span>}
                 </span>
