@@ -7,6 +7,9 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (relativePath) => fs.readFileSync(path.join(root, relativePath), 'utf8');
 const serifToken = /(?<!sans-)\bserif\b|Noto[_ -]Serif|font-serif|reader-serif|post-reader-serif|noto-serif/i;
+// 2026-10-09 Simon chose option B: MaruBuri SemiBold for home editorial titles only. Strip that one sanctioned block before scanning.
+const EDITORIAL_SERIF_BLOCK = /\/\* ── Editorial serif: MaruBuri[\s\S]*?\.archive-lead h2\{line-height:1\.3\}\n/;
+const withoutEditorialSerif = (source) => source.replace(EDITORIAL_SERIF_BLOCK, '');
 const voiceSlugs = [
   'liao-heng',
   'liang-wenfeng',
@@ -43,7 +46,7 @@ test('archive, post reader, recommendations, and swipe cards all use sans', () =
   assert.match(end, /\.cc-reading-end \.cave-constellation-heading\{[^}]*var\(--re-sans\)/);
   assert.match(end, /\.cc-reading-end \.cave-constellation__thumbnail h3\{[^}]*var\(--re-sans\)/);
   assert.doesNotMatch(end, serifToken);
-  assert.doesNotMatch(css, serifToken);
+  assert.doesNotMatch(withoutEditorialSerif(css), serifToken);
   assert.doesNotMatch(cardSwipe, serifToken);
 });
 
@@ -69,8 +72,21 @@ test('production source and generated public font bundle contain no serif family
   const violations = [];
   for (const file of collectProductTextFiles(root)) {
     const relative = path.relative(root, file);
-    if (serifToken.test(fs.readFileSync(file, 'utf8'))) violations.push(relative);
+    if (serifToken.test(withoutEditorialSerif(fs.readFileSync(file, 'utf8')))) violations.push(relative);
   }
   assert.deepEqual(violations, []);
   assert.equal(fs.existsSync(path.join(root, 'public/fonts/noto-kr/noto-serif-kr')), false);
+});
+
+test('editorial serif stays confined to home titles: self-hosted MaruBuri, never body, reader, or Noto Serif', () => {
+  const css = read('app/globals.css');
+  const block = css.match(EDITORIAL_SERIF_BLOCK)?.[0] ?? '';
+  assert.ok(block, 'sanctioned MaruBuri block present');
+  assert.match(block, /src:url\('\/fonts\/maruburi\/maruburi-semibold-subset\.woff2'\)/);
+  assert.ok(fs.existsSync(path.join(root, 'public/fonts/maruburi/maruburi-semibold-subset.woff2')));
+  assert.match(read('public/fonts/maruburi/OFL.txt'), /SIL OPEN FONT LICENSE Version 1\.1/);
+  const selectors = [...block.matchAll(/([^{}\n]+)\{font-family:var\(--serif\)/g)].flatMap((m) => m[1].split(','));
+  assert.deepEqual(selectors.map((s) => s.trim()).sort(), ['.archive-lead h2', '.ccx-leadthread .ccx-title', '.ccx-threads .ccx-title']);
+  assert.equal((css.match(/var\(--serif\)/g) ?? []).length, 1);
+  assert.doesNotMatch(css, /Noto[_ -]Serif|noto-serif/i);
 });

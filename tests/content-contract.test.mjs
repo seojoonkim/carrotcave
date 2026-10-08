@@ -728,7 +728,7 @@ test('every archive entry keeps consistent metadata, a thumbnail and one type sc
   assert.match(homeSource, /imageUrl: archiveImageUrl\(post\)/);
   assert.match(archiveListSource, /<ArchiveThumb entry=\{entry\}/);
   assert.match(archiveListSource, /<ArchiveThumb entry=\{lead\}/);
-  assert.match(archiveListSource, /<ArchiveMeta axis=\{entry\.axis\} date=\{entry\.date\} locale=\{locale\} \/>/);
+  assert.match(archiveListSource, /<ArchiveMeta axis=\{entry\.axis\} date=\{entry\.date\} locale=\{locale\}(?: thread=\{[^}]*\})? \/>/);
   assert.match(stylesSource, /--t-12:12px;--t-14:14px;--t-17:17px;--t-22:22px;--t-32:32px/);
   assert.match(stylesSource, /\.archive-row h2\{[^}]*var\(--sans\)/);
 });
@@ -750,9 +750,9 @@ test('voice cards render a verified portrait thumbnail for every interview archi
 });
 
 test('post and voice thumbnails share one complete archive list contract', () => {
-  assert.match(homeSource, /import ArchiveList, \{ type ArchiveEntry \} from '@\/components\/ArchiveList'/);
+  assert.match(homeSource, /import ArchiveList, \{ type ArchiveEntry(?:, type ArchiveFilterOptions)? \} from '@\/components\/ArchiveList'/);
   assert.match(voiceListSource, /import ArchiveList, \{ type ArchiveEntry \} from '@\/components\/ArchiveList'/);
-  assert.match(homeSource, /<ArchiveList /);
+  assert.match(homeSource, /<ArchiveList\s/);
   assert.match(voiceListSource, /<ArchiveList /);
   for (const field of ['key', 'href', 'date', 'axis', 'title', 'summary', 'imageUrl']) {
     assert.match(archiveListSource, new RegExp(`  ${field}\\??: string;`));
