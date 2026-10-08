@@ -1149,10 +1149,10 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 .ccx-catgrid .ccx-hubs li{border-top:0}
 .ccx-archive-k{margin:34px 0 0}
 .ccx-filters{display:grid;gap:10px;margin:14px 0 6px}
-.ccx-frow{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none}
+.ccx-frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .ccx-frow::-webkit-scrollbar{display:none}
 .ccx-chip{flex:0 0 auto;white-space:nowrap}
-.ccx-fl{margin-right:4px;color:var(--ink-3);font:600 11px var(--mono);letter-spacing:.1em}
+.ccx-fl{flex:0 0 auto;white-space:nowrap;margin-right:4px;color:var(--ink-3);font:600 11px var(--mono);letter-spacing:.1em}
 .ccx-chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border:1px solid var(--hairline);border-radius:2px;background:transparent;color:var(--ink-2);font:500 13px var(--sans);white-space:nowrap;cursor:pointer}
 .ccx-chip span{color:var(--ink-3);font:500 11px var(--mono)}
 .ccx-chip:hover{color:var(--ink-1);border-color:rgba(236,238,245,.3)}
@@ -1169,7 +1169,7 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-threadlink{grid-template-columns:1fr;padding:14px 0}
   .ccx-threadlink .ccx-m{text-align:left}
   .ccx-thread .ccx-title{font-size:17px}
-  .ccx-frow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:20px}
+  .ccx-frow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
   .ccx-frow::-webkit-scrollbar{display:none}
   .archive-meta{flex-wrap:wrap;row-gap:4px}
 }
