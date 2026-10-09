@@ -12,7 +12,7 @@ let bad = 0;
 const targets = [...PAGES];
 for (let i = 0; i < targets.length; i += 1) {
   const p = targets[i];
-  await pg.goto(base + p, { waitUntil: 'networkidle' });
+  await pg.goto(base + p, { waitUntil: 'load', timeout: 60000 });
   // open every disclosure so collapsed rows are checked too
   await pg.evaluate(() => document.querySelectorAll('details').forEach((d) => { d.open = true; }));
   const res = await pg.evaluate(() => {

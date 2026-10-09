@@ -43,7 +43,8 @@ const measure = () => [...document.querySelectorAll('.ccx-thread')].map((th) => 
 for (const w of [320, 393, 768, 1280]) {
   const pg = await b.newPage({ viewport: { width: w, height: 900 }, deviceScaleFactor: 2 });
   for (const path of ['/', '/en']) {
-    await pg.goto(base + path, { waitUntil: 'networkidle' });
+    await pg.goto(base + path, { waitUntil: 'load', timeout: 60000 });
+    await pg.waitForTimeout(300);
     for (const state of ['closed', 'open']) {
       if (state === 'open') { for (const s of await pg.locator('.ccx-thread > .ccx-more summary').all()) await s.click(); await pg.waitForTimeout(200); }
       const res = await pg.evaluate(measure);
