@@ -16,6 +16,12 @@ const measure = () => [...document.querySelectorAll('.ccx-thread')].map((th) => 
     const r = li.getBoundingClientRect();
     const a = getComputedStyle(li, '::after'); const bf = getComputedStyle(li, '::before');
     const img = li.querySelector('.ccx-tpost__img').getBoundingClientRect();
+    // smoothness: opaque colour (no dark joints where strokes meet), one integer weight, no dashes
+    const alpha = (c) => { const m = c.match(/\/\s*([\d.]+)\)|rgba\([^)]*,\s*([\d.]+)\)/); return m ? parseFloat(m[1] ?? m[2]) : 1; };
+    for (const [k, v] of [['bend', a.borderLeftColor], ['bend-foot', a.borderBottomColor]]) if (alpha(v) < 0.999) errs.push(`translucent ${k} ${v}`);
+    const wts = [a.borderLeftWidth, a.borderBottomWidth]; if (bf.content !== 'none' && bf.content !== 'normal') { wts.push(bf.borderLeftWidth || bf.width); if (alpha(bf.borderLeftColor) < 0.999) errs.push('translucent rail'); }
+    if (new Set(wts.map(px)).size > 1 || wts.some((x) => px(x) % 1)) errs.push(`stroke weights ${wts.join('/')}`);
+    if (a.borderLeftStyle !== 'solid' || a.borderBottomStyle !== 'solid') errs.push('non-solid bend');
     const endX = r.left + px(a.left) + px(a.width);
     const endY = r.top + px(a.top) + px(a.height);
     const railX = r.left + px(a.left);
@@ -26,6 +32,7 @@ const measure = () => [...document.querySelectorAll('.ccx-thread')].map((th) => 
     nodes.push({ top: r.top, bottom: r.bottom, cont: bf.content !== 'none' && bf.content !== 'normal' ? r.bottom : r.top + px(a.height) });
   }
   const sum = th.querySelector(':scope > .ccx-more summary');
+  if (sum && getComputedStyle(sum, '::before').borderLeftStyle !== 'solid') errs.push('dashed more-node');
   if (sum) { const s = sum.getBoundingClientRect(); nodes.push({ top: s.top, bottom: s.bottom, cont: s.top + s.height / 2 }); }
   for (let i = 1; i < nodes.length; i++) if (nodes[i].top - nodes[i - 1].cont > 1.5) errs.push(`rail break before node ${i} (${(nodes[i].top - nodes[i - 1].cont).toFixed(1)}px)`);
   const last = nodes[nodes.length - 1];

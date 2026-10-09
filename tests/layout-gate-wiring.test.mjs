@@ -52,3 +52,8 @@ test('production release runs the thread tail coordinate gate after deploy', () 
   const gate = fs.readFileSync(path.join(root, 'scripts/verify-thread-tail.mjs'), 'utf8');
   assert.match(gate, /elbow-gap/); assert.match(gate, /rail break/); assert.match(gate, /process\.exit\(1\)/);
 });
+
+test('thread tail gate also guards smoothness (opaque, one weight, solid)', () => {
+  const gate = fs.readFileSync(path.join(root, 'scripts/verify-thread-tail.mjs'), 'utf8');
+  assert.match(gate, /translucent/); assert.match(gate, /stroke weights/); assert.match(gate, /dashed more-node/);
+});

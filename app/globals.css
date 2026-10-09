@@ -1243,26 +1243,33 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 @media(max-width:640px){.ccx-catgrid .ccx-hubs{grid-template-columns:minmax(0,1fr)}.ccx-hub,.ccx-hub__from,.ccx-hub__from summary{min-width:0}}
 
 /* 2026-10-10 Simon: "계속 파는 질문이 제목 밑에 달려있는 것처럼 위계를 표현할 수 있어? ...
-   밑에 이어지게 꼬리를 물고 좀 더 gui적으로 표현해보자"
-   One tail per question: a rail drops from under the title, every post hangs off it on a
-   rounded elbow that lands on the thumbnail's vertical centre, and the "N편 더 보기 / 접기"
-   control is the tail's last node. All geometry shares one origin (the <li> box), so the
-   elbow end is computed, not eyeballed: rail x = --rx, elbow end = --ind - --gap. */
-.ccx-thread{--rx:8px;--ind:34px;--gap:8px;--rail:color-mix(in srgb,var(--carrot-orange) 42%,transparent);--rail-w:1.5px}
-.ccx-thread > .ccx-thead{margin-bottom:6px}
+   밑에 이어지게 꼬리를 물고 좀 더 gui적으로 표현해보자" → "좀 더 매끄럽게 연결되게 하자".
+   One tail per question. Smoothness rules (the first cut looked rough):
+   - every stroke is drawn the same way (border-left), integer 2px, so straight runs and
+     bends render at identical weight;
+   - the colour is opaque (carrot pre-mixed into the page background), so the rare 1px seam
+     overlap can never show as a darker joint;
+   - straight run (::before) ends exactly where the bend (::after) starts: no overlap, no gap;
+   - the bend lands on a small node dot just left of the thumbnail's vertical centre.
+   Geometry: rail x = --rx, bend radius = --r, bend end = --ind - --gap (all from the <li>). */
+.ccx-thread{--rx:8px;--ind:36px;--gap:10px;--r:12px;--rail-w:2px;--rail:color-mix(in srgb,var(--carrot-orange) 46%,var(--bg-1));--rail-soft:color-mix(in srgb,var(--carrot-orange) 28%,var(--bg-1))}
+.ccx-thread > .ccx-thead{margin-bottom:4px}
 .ccx-thread .ccx-tposts > li{position:relative;padding-left:var(--ind)}
-.ccx-thread .ccx-tposts > li::after{content:"";position:absolute;left:var(--rx);top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));border-left:var(--rail-w) solid var(--rail);border-bottom:var(--rail-w) solid var(--rail);border-bottom-left-radius:10px;pointer-events:none}
+/* bend: straight from the li top to (50% - r), then a quarter arc into the node */
+.ccx-thread .ccx-tposts > li::after{content:"";position:absolute;left:var(--rx);top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));box-sizing:border-box;border-left:var(--rail-w) solid var(--rail);border-bottom:var(--rail-w) solid var(--rail);border-bottom-left-radius:var(--r);pointer-events:none}
+/* continuing rail: from the bend's start down to the li bottom (only when more nodes follow) */
 .ccx-thread .ccx-tposts > li:not(:last-child)::before,
-.ccx-thread .ccx-tposts--cont > li:last-child::before{content:"";position:absolute;left:var(--rx);top:calc(50% - 10px);bottom:0;width:var(--rail-w);background:var(--rail);pointer-events:none}
-/* the tail starts right under the title: bridge the title gap on the first list */
+.ccx-thread .ccx-tposts--cont > li:last-child::before{content:"";position:absolute;left:var(--rx);top:calc(50% - var(--r));bottom:0;box-sizing:border-box;border-left:var(--rail-w) solid var(--rail);pointer-events:none}
+/* node dot at the end of each bend */
+.ccx-thread .ccx-tpost::before{content:"";position:absolute;left:calc(var(--ind) - var(--gap) - 3px);top:calc(50% - 4px);width:6px;height:6px;border-radius:50%;background:var(--rail);pointer-events:none;transition:background-color .16s ease}
+.ccx-thread .ccx-tpost:hover::before{background:var(--carrot-orange)}
+/* the tail starts right under the title */
 .ccx-thread > .ccx-tposts{position:relative}
-.ccx-thread > .ccx-tposts::before{content:"";position:absolute;left:var(--rx);top:-6px;height:6px;width:var(--rail-w);background:var(--rail)}
-.ccx-thread .ccx-tposts > li:hover::after{border-color:var(--carrot-orange)}
+.ccx-thread > .ccx-tposts::before{content:"";position:absolute;left:var(--rx);top:-4px;height:4px;box-sizing:border-box;border-left:var(--rail-w) solid var(--rail)}
 .ccx-thread .ccx-tpost{padding:6px 0}
-/* last node: "N편 더 보기" (dashed = more below) / "접기" */
+/* last node: "N편 더 보기" / "접기" — same solid bend, softer tone (no dashes: they read as broken) */
 .ccx-thread > .ccx-more summary{position:relative;margin:0 0 0 var(--ind);padding:8px 0}
-.ccx-thread > .ccx-more summary::before{content:"";position:absolute;left:calc(var(--rx) - var(--ind));top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));border-left:var(--rail-w) dashed var(--rail);border-bottom:var(--rail-w) dashed var(--rail);border-bottom-left-radius:10px}
-.ccx-thread > .ccx-more[open] summary::before{border-style:solid}
+.ccx-thread > .ccx-more summary::before{content:"";position:absolute;left:calc(var(--rx) - var(--ind));top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));box-sizing:border-box;border-left:var(--rail-w) solid var(--rail);border-bottom:var(--rail-w) solid var(--rail-soft);border-bottom-left-radius:var(--r)}
 @media(max-width:640px){
-  .ccx-thread{--rx:6px;--ind:26px;--gap:6px}
+  .ccx-thread{--rx:6px;--ind:28px;--gap:8px;--r:10px}
 }
