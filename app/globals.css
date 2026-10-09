@@ -1281,3 +1281,9 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-tpost > .ccx-tpost__t{grid-row:1;grid-column:2;align-self:end}
   .ccx-tpost > .ccx-tpost__d{grid-row:2;grid-column:2;align-self:start;font-size:11px}
 }
+/* Lead card 4:6 (2026-10-10 Simon: image 4 : text 6, text a little bigger, tighter middle gap) */
+@media(min-width:901px){
+  .archive-lead{grid-template-columns:minmax(0,4fr) minmax(0,6fr);column-gap:40px}
+  .archive-lead h2{font-size:36px}
+  .archive-lead__summary{font-size:18px;max-width:none}
+}
