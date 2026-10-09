@@ -21,12 +21,15 @@ const NO_OVERLAP = '.ccx-thead, .ccx-tpost, .ccx-frow, .archive-meta, .archive-r
 const browser = await chromium.launch({ channel: 'chrome' });
 const failures = [];
 let checked = 0;
-for (const w of widths) {
-  for (const p of pages) {
+// Pages are independent, so check them in parallel (LAYOUT_CONCURRENCY, default 6).
+// Sequential checking of 72 width×page combos took ~195s per release.
+const jobs = widths.flatMap((w) => pages.map((p) => [w, p]));
+const concurrency = Math.max(1, Number(process.env.LAYOUT_CONCURRENCY) || 6);
+async function checkOne(w, p) {
     const pg = await browser.newPage({ viewport: { width: w, height: 900 } });
     try {
       const res = await pg.goto(base + p, { waitUntil: 'networkidle', timeout: 45000 });
-      if (!res || res.status() >= 400) { failures.push(`${w} ${p} HTTP ${res?.status()}`); continue; }
+      if (!res || res.status() >= 400) { failures.push(`${w} ${p} HTTP ${res?.status()}`); return; }
       await pg.evaluate(() => document.fonts.ready);
       const inspect = () => pg.evaluate(({ ONE_LINE, NO_OVERLAP }) => {
         const out = [];
@@ -189,8 +192,16 @@ for (const w of widths) {
     } finally {
       await pg.close();
     }
-  }
 }
+let next = 0;
+await Promise.all(Array.from({ length: Math.min(concurrency, jobs.length) }, async () => {
+  while (next < jobs.length) {
+    const [w, p] = jobs[next++];
+    await checkOne(w, p);
+  }
+}));
+// Keep output order deterministic regardless of completion order.
+failures.sort((a, b) => parseInt(a, 10) - parseInt(b, 10) || a.localeCompare(b));
 await browser.close();
 console.log(JSON.stringify({ checked, failures: failures.length }));
 for (const f of failures) console.log('FAIL', f);
