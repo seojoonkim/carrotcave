@@ -96,6 +96,41 @@ for (const w of widths) {
             if (q.right > rb.right + 1 || q.left < rb.left - 1) out.push(`hidden-child ${name(row)} -> ${name(c)}`);
           }
         }
+        // 8) cramped spacing: text vs thumbnail, filter row vs list, search vs filters
+        const mobile = innerWidth < 900;
+        const MIN_TEXT_THUMB = mobile ? 20 : 40;
+        for (const link of [...document.querySelectorAll('.archive-row__link, .archive-lead')].slice(0, 6)) {
+          if (!vis(link)) continue;
+          const thumb = link.querySelector('.archive-thumb');
+          if (!thumb || !vis(thumb)) continue;
+          const tb = thumb.getBoundingClientRect();
+          for (const t of link.querySelectorAll('h2, .archive-row__summary, .archive-lead__summary, .archive-meta')) {
+            if (!vis(t)) continue;
+            const r = t.getBoundingClientRect();
+            if (r.bottom <= tb.top || r.top >= tb.bottom) continue; // not side by side
+            const gap = r.right <= tb.left ? tb.left - r.right : r.left >= tb.right ? r.left - tb.right : -1;
+            if (gap < MIN_TEXT_THUMB) { out.push(`cramped text-thumb ${Math.round(gap)}<${MIN_TEXT_THUMB} ${name(t)}`); break; }
+          }
+        }
+        const firstBelow = (anchorSel, sel) => {
+          const A = document.querySelector(anchorSel); if (!A || !vis(A)) return null;
+          const ab = A.getBoundingClientRect().bottom;
+          return [...document.querySelectorAll(sel)].find((e) => vis(e) && e.getBoundingClientRect().top >= ab - 40) || null;
+        };
+        const V = (a, b, min, label) => {
+          const A = document.querySelector(a), B = firstBelow(a, b);
+          if (!A || !B || !vis(A)) return;
+          const g = B.getBoundingClientRect().top - A.getBoundingClientRect().bottom;
+          if (g < min) out.push(`cramped ${label} ${Math.round(g)}<${min}`);
+        };
+        V('.archive-search', '.ccx-filters', 12, 'search-filters');
+        V('.ccx-filters', '.archive-row, .archive-lead', mobile ? 16 : 20, 'filters-list');
+        // label touching first chip
+        for (const fl of document.querySelectorAll('.ccx-fl')) {
+          const nx = fl.nextElementSibling; if (!nx || !vis(fl) || !vis(nx)) continue;
+          const g = nx.getBoundingClientRect().left - fl.getBoundingClientRect().right;
+          if (g >= 0 && g < 8) out.push(`cramped label-chip ${Math.round(g)}<8`);
+        }
         return [...new Set(out)].slice(0, 12);
       }, { ONE_LINE, NO_OVERLAP });
       checked++;

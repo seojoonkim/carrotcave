@@ -24,3 +24,10 @@ test('desktop thread filter wraps instead of hiding chips; mobile scroll shows a
   assert.match(css, /\.ccx-fl\{flex:0 0 auto;white-space:nowrap;/);
   assert.match(css, /\.ccx-frow\{flex-wrap:nowrap;overflow-x:auto;[^}]*mask-image:linear-gradient/);
 });
+
+test('layout gate checks breathing room (text vs thumbnail, filters vs list)', () => {
+  const src = fs.readFileSync(path.join(root, 'scripts/verify-layout.mjs'), 'utf8');
+  assert.match(src, /cramped text-thumb/);
+  assert.match(src, /filters-list/);
+  assert.match(src, /mobile \? 20 : 40/);
+});

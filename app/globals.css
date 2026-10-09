@@ -1173,3 +1173,11 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-frow::-webkit-scrollbar{display:none}
   .archive-meta{flex-wrap:wrap;row-gap:4px}
 }
+
+/* 2026.10 breathing-room pass: text never hugs the thumbnail or the filter row. */
+.ccx-filters{margin:16px 0 20px}
+.ccx-fl{margin-right:8px}
+@media(max-width:900px){
+  .archive-row__link{gap:24px}
+  .ccx-filters{margin:12px 0 16px}
+}
