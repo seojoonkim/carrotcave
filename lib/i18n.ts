@@ -49,12 +49,12 @@ const DEPTH: Record<Locale, Record<DepthLevel, string>> = {
 };
 export const depthLabelFor = (locale: Locale, depth: DepthLevel) => DEPTH[locale][depth];
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-/** 2026-09-28 → 2026.09.28 (ko) / Sep 28, 2026 (en). */
-export function formatDate(locale: Locale, iso: string) {
-  if (locale === 'ko') return iso.replaceAll('-', '.');
-  const [y, m, d] = iso.split('-').map(Number);
-  return `${MONTHS[m - 1]} ${d}, ${y}`;
+/** ISO 8601 for every reader (2026-10-10 Simon: "글로벌한 표기법으로 바꾸자").
+ *  "10.8" reads as a decimal and "Oct 8, 2026" is US-only; 2026-10-08 is unambiguous everywhere.
+ *  `locale` is kept so callers stay explicit about who they render for. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function formatDate(_locale: Locale, iso: string) {
+  return iso.slice(0, 10);
 }
 
 // ── UI strings ───────────────────────────────────────────────────────────

@@ -67,10 +67,10 @@ export const OG_ART_DATA_URL = `data:image/svg+xml;base64,${Buffer.from(OG_ART_S
 export const CATEGORY_EN: Record<string, string> = { 탐험: 'EXPLORE', 빌딩: 'BUILD', 낙서: 'DOODLE', 소설: 'FICTION', 목소리: 'VOICES' };
 export const TAGLINE_EN = 'Followed the rabbit. Lost the thread.';
 
-const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+/** Share-card date, ISO 8601 like the rest of the site (2026-10-08). */
 export function dateEn(iso?: string) {
   const m = iso && /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
-  return m ? `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}` : undefined;
+  return m ? `${m[1]}-${m[2]}-${m[3]}` : undefined;
 }
 
 const HANGUL = /[\u1100-\u11ff\u3130-\u318f\uac00-\ud7af]/;

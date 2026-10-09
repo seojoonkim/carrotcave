@@ -48,9 +48,9 @@ export default function EditorialCard({
       <div className="wall-card__body">
         <div className="wall-card__meta">
           <time className="wall-card__date" dateTime={date}>
-            <span className="sr-only">발행일 {date.replaceAll('-', '.')}</span>
+            <span className="sr-only">발행일 {date.slice(0, 10)}</span>
             <span className="wall-card__date-visual" aria-hidden="true">
-              {date.replaceAll('-', '.')}
+              {date.slice(0, 10)}
             </span>
           </time>
           <span className="wall-card__axis">{axis}</span>

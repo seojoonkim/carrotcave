@@ -85,7 +85,8 @@ export default function TweetEmbed({ url }: { url: string }) {
   const formatNum = (n: number) => n >= 1000 ? `${(n / 1000).toFixed(1)}K` : String(n);
   const formatDate = (d: string) => {
     try {
-      return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      const t = new Date(d);
+      return Number.isNaN(t.getTime()) ? d : t.toISOString().slice(0, 10);
     } catch { return d; }
   };
 

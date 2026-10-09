@@ -38,7 +38,7 @@ const COPY = {
   },
 } as const;
 
-const short = (locale: Locale, date: string) => (locale === 'ko' ? `${Number(date.slice(5, 7))}.${Number(date.slice(8, 10))}` : formatDate(locale, date));
+const short = (locale: Locale, date: string) => formatDate(locale, date);
 const href = (locale: Locale, post: Post) => localePath(locale, `/posts/${post.slug}`);
 
 const THREAD_PREVIEW = 3;

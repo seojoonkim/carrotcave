@@ -1273,3 +1273,11 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 @media(max-width:640px){
   .ccx-thread{--rx:6px;--ind:28px;--gap:8px;--r:10px}
 }
+/* 2026-10-10 ISO dates (2026-10-08) are wider than "10.8": on phones the date moves under the
+   title so titles keep their full row instead of being cut to ~10 characters. */
+@media(max-width:640px){
+  .ccx-tpost{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:12px;row-gap:2px;align-items:center}
+  .ccx-tpost > .ccx-tpost__img{grid-row:1 / span 2;grid-column:1}
+  .ccx-tpost > .ccx-tpost__t{grid-row:1;grid-column:2;align-self:end}
+  .ccx-tpost > .ccx-tpost__d{grid-row:2;grid-column:2;align-self:start;font-size:11px}
+}

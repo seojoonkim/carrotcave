@@ -57,3 +57,8 @@ test('thread tail gate also guards smoothness (opaque, one weight, solid)', () =
   const gate = fs.readFileSync(path.join(root, 'scripts/verify-thread-tail.mjs'), 'utf8');
   assert.match(gate, /translucent/); assert.match(gate, /stroke weights/); assert.match(gate, /dashed more-node/);
 });
+
+test('production release runs the ISO date gate after deploy', () => {
+  const rel = fs.readFileSync(path.join(root, 'scripts/release-production.mjs'), 'utf8');
+  assert.match(rel, /verify-dates\.mjs','https:\/\/carrotcave\.com'/);
+});

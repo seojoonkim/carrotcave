@@ -42,6 +42,7 @@ try {
   run(process.execPath,['scripts/verify-footer-overlap.mjs','https://carrotcave.com']);
   run(process.execPath,['scripts/verify-layout.mjs','https://carrotcave.com']);
   run(process.execPath,['scripts/verify-thread-tail.mjs','https://carrotcave.com']);
+  run(process.execPath,['scripts/verify-dates.mjs','https://carrotcave.com']);
   console.log(`VERIFIED_RELEASE ${baseline.head}`);
  }
 } catch(e){console.error(e.message);process.exitCode=1;}
