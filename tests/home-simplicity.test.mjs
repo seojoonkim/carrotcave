@@ -29,3 +29,18 @@ test('archive offers one filter row (threads) and no per-row thread chips', () =
   assert.doesNotMatch(list, /depthFilter|SortKey|ccx-rowchip/);
   assert.equal((list.match(/className="ccx-frow"/g) ?? []).length, 1);
 });
+
+// 2026-10-09 Simon: "계속파는 질문은 질문마다 여러개를 보여야지. 3개 + 더보기로 늘려서 볼 수 있게 할까?"
+test('each thread shows its 3 newest posts and a native "more" disclosure for the rest', () => {
+  const editorial = read('components/HomeEditorial.tsx');
+  const block = editorial.slice(editorial.indexOf('export function ThreadList'), editorial.indexOf('export function', editorial.indexOf('export function ThreadList') + 10));
+  assert.match(editorial, /const THREAD_PREVIEW = 3;/, 'three posts up front');
+  assert.match(block, /slice\(0, THREAD_PREVIEW\)/);
+  assert.match(block, /<details className="ccx-more"/, 'rest opens with <details>, no client JS');
+  assert.match(block, /<summary/);
+  assert.match(block, /C\.more\(/, 'more label shows the remaining count');
+  assert.doesNotMatch(block, /className="ccx-last"/, 'no single latest-title line anymore');
+  const css = read('app/globals.css');
+  assert.match(css, /\.ccx-tposts\{/);
+  assert.match(css, /\.ccx-more\b/);
+});

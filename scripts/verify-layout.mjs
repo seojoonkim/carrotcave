@@ -16,7 +16,7 @@ const widths = [320, 360, 390, 430, 768, 1024, 1280, 1440];
 // Elements whose text must never wrap (single-line labels, chips, meta)
 const ONE_LINE = '.ccx-chip, .ccx-fl, .ccx-k, .ccx-m, .archive-meta time, .wall-heading__axis, .site-nav a, .axis-rail a';
 // Containers whose direct children must not overlap each other
-const NO_OVERLAP = '.ccx-threadlink, .ccx-frow, .archive-meta, .archive-row, .ccx-hubs, .site-header, .wall-heading';
+const NO_OVERLAP = '.ccx-thead, .ccx-tpost, .ccx-frow, .archive-meta, .archive-row, .ccx-hubs, .site-header, .wall-heading';
 
 const browser = await chromium.launch({ channel: 'chrome' });
 const failures = [];
@@ -65,7 +65,7 @@ for (const w of widths) {
         }
         // 4) clipped text: content wider than box with hidden overflow and no ellipsis
         for (const el of document.querySelectorAll('h1,h2,h3,b,a,span,p,time')) {
-          if (!vis(el)) continue;
+          if (!vis(el) || !el.innerText.trim()) continue; // text-less boxes (thumbnails) are not "clipped text"
           const cs = getComputedStyle(el);
           if ((cs.overflow === 'hidden' || cs.overflowX === 'hidden') && cs.textOverflow !== 'ellipsis' && !cs.webkitLineClamp?.match(/\d/) && el.scrollWidth > el.clientWidth + 2) out.push(`clipped ${name(el)}`);
         }

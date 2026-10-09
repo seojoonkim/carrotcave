@@ -1133,11 +1133,6 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 .ccx-thread{border-top:1px solid var(--hairline)}
 .ccx-thread:first-child{border-top:0}
 .ccx-thread .ccx-title{font-size:19px}
-.ccx-threadlink{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;row-gap:4px;align-items:baseline;padding:16px 0;text-decoration:none}
-.ccx-threadlink .ccx-m{margin:0;text-align:right}
-.ccx-threadlink .ccx-last{grid-column:1/-1;margin:0}
-.ccx-threadlink:hover .ccx-title{color:var(--carrot-orange)}
-.ccx-last{display:block;margin-top:8px;color:var(--ink-2);font:400 14px/1.5 var(--sans);text-decoration:none;word-break:keep-all;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 .ccx-hubs{list-style:none;margin:0;padding:0;counter-reset:hub}
 .ccx-hubs li{counter-increment:hub;border-top:1px solid var(--hairline)}
@@ -1166,8 +1161,6 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 }
 @media(max-width:640px){
   .ccx-sec{padding:26px 0}
-  .ccx-threadlink{grid-template-columns:1fr;padding:14px 0}
-  .ccx-threadlink .ccx-m{text-align:left}
   .ccx-thread .ccx-title{font-size:17px}
   .ccx-frow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-20px;padding-right:32px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
   .ccx-frow::-webkit-scrollbar{display:none}
@@ -1189,3 +1182,34 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 /* 2026.10 the "전체 기록" label never sits flush on the search box. */
 .ccx-archive-k{margin:34px 0 14px}
 @media(max-width:520px){.ccx-archive-k{margin:28px 0 12px}}
+
+/* 2026.10 계속 파는 질문: each question shows its 3 newest pieces + a native "N편 더 보기". */
+.ccx-thread{padding:18px 0 14px}
+.ccx-thead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:8px}
+.ccx-thead .ccx-title{margin:0;min-width:0;font-size:19px;line-height:1.4}
+.ccx-thead .ccx-m{flex:none;margin:0;text-align:right}
+.ccx-tposts{list-style:none;margin:0;padding:0}
+.ccx-tpost{display:flex;align-items:baseline;gap:16px;padding:7px 0;color:var(--ink-2);text-decoration:none}
+.ccx-tpost__t{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:400 15px/1.5 var(--sans);word-break:keep-all}
+.ccx-tpost__d{flex:none;color:var(--ink-3);font:500 12px/1.5 var(--mono);font-variant-numeric:tabular-nums}
+.ccx-tpost:hover .ccx-tpost__t{color:var(--carrot-orange)}
+.ccx-tpost:focus-visible{outline:2px solid var(--carrot-orange);outline-offset:2px}
+.ccx-more summary{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:6px 0;color:var(--ink-3);font:500 13px/1.4 var(--sans);list-style:none;cursor:pointer}
+.ccx-more summary::-webkit-details-marker{display:none}
+.ccx-more summary::after{content:"";width:6px;height:6px;margin-top:-3px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+.ccx-more[open] summary::after{margin-top:3px;transform:rotate(-135deg)}
+.ccx-more summary:hover{color:var(--carrot-orange)}
+.ccx-more summary:focus-visible{outline:2px solid var(--carrot-orange);outline-offset:2px}
+.ccx-more__close{display:none}
+.ccx-more[open] .ccx-more__open{display:none}
+.ccx-more[open] .ccx-more__close{display:inline}
+.ccx-more[open] summary{order:2}
+.ccx-more[open]{display:flex;flex-direction:column}
+@media(max-width:640px){
+  .ccx-thread{padding:16px 0 12px}
+  .ccx-thead{flex-direction:column;align-items:flex-start;gap:2px;margin-bottom:6px}
+  .ccx-thead .ccx-title{font-size:17px}
+  .ccx-thead .ccx-m{text-align:left}
+  .ccx-tpost{gap:12px;padding:8px 0}
+  .ccx-tpost__t{font-size:14px}
+}
