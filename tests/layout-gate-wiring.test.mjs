@@ -31,3 +31,10 @@ test('layout gate checks breathing room (text vs thumbnail, filters vs list)', (
   assert.match(src, /filters-list/);
   assert.match(src, /mobile \? 20 : 40/);
 });
+
+test('layout gate inspects filtered and search states for stacked overlap', () => {
+  const src = fs.readFileSync(path.join(root, 'scripts/verify-layout.mjs'), 'utf8');
+  assert.match(src, /\[filtered\]/);
+  assert.match(src, /\[search\]/);
+  assert.match(src, /stack-overlap/);
+});

@@ -28,7 +28,7 @@ for (const w of widths) {
       const res = await pg.goto(base + p, { waitUntil: 'networkidle', timeout: 45000 });
       if (!res || res.status() >= 400) { failures.push(`${w} ${p} HTTP ${res?.status()}`); continue; }
       await pg.evaluate(() => document.fonts.ready);
-      const issues = await pg.evaluate(({ ONE_LINE, NO_OVERLAP }) => {
+      const inspect = () => pg.evaluate(({ ONE_LINE, NO_OVERLAP }) => {
         const out = [];
         const vis = (el) => { const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); return r.width > 1 && r.height > 1 && cs.visibility !== 'hidden' && cs.display !== 'none' && cs.opacity !== '0' && !el.closest('.sr-only, [aria-hidden="true"]'); };
         const name = (el) => (el.className && typeof el.className === 'string' ? '.' + el.className.split(' ')[0] : el.tagName.toLowerCase()) + ` "${(el.innerText || '').trim().replace(/\s+/g, ' ').slice(0, 24)}"`;
@@ -125,6 +125,15 @@ for (const w of widths) {
         };
         V('.archive-search', '.ccx-filters', 12, 'search-filters');
         V('.ccx-filters', '.archive-row, .archive-lead', mobile ? 16 : 20, 'filters-list');
+        // 9) archive stack (search / filters / status / list) must never overlap each other
+        const stack = ['.archive-search', '.ccx-filters', '.archive-status', '.archive-list']
+          .map((sel) => document.querySelector(sel)).filter((el) => el && vis(el));
+        for (let i = 0; i < stack.length; i++) {
+          for (let j = i + 1; j < stack.length; j++) {
+            const a = stack[i].getBoundingClientRect(), b = stack[j].getBoundingClientRect();
+            if (b.top < a.bottom - 1) out.push(`stack-overlap ${name(stack[i])} / ${name(stack[j])} ${Math.round(a.bottom - b.top)}px`);
+          }
+        }
         // label touching first chip
         for (const fl of document.querySelectorAll('.ccx-fl')) {
           const nx = fl.nextElementSibling; if (!nx || !vis(fl) || !vis(nx)) continue;
@@ -133,8 +142,26 @@ for (const w of widths) {
         }
         return [...new Set(out)].slice(0, 12);
       }, { ONE_LINE, NO_OVERLAP });
+      const issues = (await inspect()).map((i) => `[base] ${i}`);
+      // State 2: a thread filter picked (status line "N편을 골랐어요." appears)
+      const chips = pg.locator('.ccx-frow .ccx-chip');
+      if (await chips.count() > 1) {
+        await chips.nth((await chips.count()) - 1).click();
+        await pg.waitForTimeout(250);
+        for (const i of await inspect()) issues.push(`[filtered] ${i}`);
+        await chips.first().click();
+        await pg.waitForTimeout(150);
+      }
+      // State 3: a search typed (status line "N개 찾았어요" appears)
+      const input = pg.locator('.archive-search__input');
+      if (await input.count()) {
+        await input.first().fill('AI');
+        await pg.waitForTimeout(350);
+        for (const i of await inspect()) issues.push(`[search] ${i}`);
+        await input.first().fill('');
+      }
       checked++;
-      for (const i of issues) failures.push(`${w} ${p} ${i}`);
+      for (const i of [...new Set(issues)]) failures.push(`${w} ${p} ${i}`);
       if (shotDir && [390, 1280].includes(w)) {
         const f = path.join(shotDir, `${w}-${p.replace(/[^a-z0-9]+/gi, '_') || 'home'}.png`);
         await pg.screenshot({ path: f, fullPage: false, clip: undefined });

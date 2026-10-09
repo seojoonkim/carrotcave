@@ -1181,3 +1181,7 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .archive-row__link{gap:24px}
   .ccx-filters{margin:12px 0 16px}
 }
+
+/* 2026.10 status line sits below the thread filters instead of being pulled up over them. */
+.wall-shell .ccx-filters + .archive-status{margin:0 0 20px}
+.wall-shell .ccx-filters + .archive-status:empty{display:none;margin:0}
