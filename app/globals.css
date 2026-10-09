@@ -1287,3 +1287,18 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .archive-lead h2{font-size:36px}
   .archive-lead__summary{font-size:18px;max-width:none}
 }
+/* Mobile thread readability (2026-10-10 Simon: "모바일에서 조금만 더 가독성 좋게 줄간격 등 조절하자")
+   - post titles: 15px / 1.5, up to 2 lines instead of a one-line "…" cut
+   - 4px between title and date, 9px row padding, 8px from the question meta to the first post
+   - the tail connector under the title grows with that 8px so the line stays unbroken */
+@media(max-width:640px){
+  .ccx-thread{padding:20px 0 14px}
+  .ccx-thread > .ccx-thead{gap:4px;margin-bottom:8px}
+  .ccx-thread > .ccx-tposts::before{top:-8px;height:8px}
+  .ccx-thread .ccx-thead .ccx-title{line-height:1.45}
+  .ccx-thread .ccx-tpost{padding:9px 0}
+  .ccx-thread .ccx-tpost{row-gap:4px}
+  .ccx-thread .ccx-tpost__t{font-size:15px;line-height:1.5;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-overflow:clip}
+  .ccx-thread .ccx-tpost__d{font-size:11.5px;line-height:1.4}
+  .ccx-thread > .ccx-more summary{padding:10px 0}
+}
