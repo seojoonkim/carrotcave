@@ -9,24 +9,34 @@ import type { Locale } from '@/lib/i18n';
 export interface ThreadDef {
   key: string;
   name: Record<Locale, string>;
+  /** 이 줄기가 붙잡고 있는 질문 한 줄 (홈 줄기 이름 아래) */
+  question: Record<Locale, string>;
   kw: string[];
   /** 기간이 정해진 현장 연재 */
   series?: boolean;
 }
 
 export const THREADS: ThreadDef[] = [
-  { key: 'moat', name: { ko: '해자는 어디로 갔나', en: 'Where did the moat go?' }, kw: ['해자', '수동변속기', '어도비', '피그마', '정답지', '소프트웨어를', '바이브 코딩이', '벽 위에'] },
-  { key: 'agents', name: { ko: '에이전트들의 사회', en: 'A society of agents' }, kw: ['에이전트 사회', '몰트북', 'SwarmWorld', '에이전트 인터넷', '에이전트 커머스', '그래프 엔지니어링', '노마드', '700개', '상석'] },
-  { key: 'money', name: { ko: '돈이 타는 새 배관', en: 'New pipes for money' }, kw: ['달러', '화폐', '스테이블', '크립토', '국민 지분', '자본주의', '비트코인', 'BTC', '증권형', '국가를 만든'] },
-  { key: 'life', name: { ko: '생명의 스위치', en: 'The switch of life' }, kw: ['뇌를', '뇌는', '디지털 생명', '의식', '재귀적'] },
-  { key: 'east', name: { ko: '이스트포인트 2026 현장', en: 'Live from Eastpoint 2026' }, kw: ['이스트포인트'], series: true },
+  { key: 'moat', name: { ko: '해자는 어디로 갔나', en: 'Where did the moat go?' }, question: { ko: '누구나 똑같이 만들 수 있게 되면, 무엇이 남을까?', en: 'Once anyone can build the same thing, what is left?' }, kw: ['해자', '수동변속기', '어도비', '피그마', '정답지', '소프트웨어를', '바이브 코딩이', '벽 위에'] },
+  { key: 'agents', name: { ko: '에이전트들의 사회', en: 'A society of agents' }, question: { ko: 'AI끼리 모이면 어떤 규칙과 질서가 생길까?', en: 'When AIs gather, what rules and order do they make?' }, kw: ['에이전트 사회', '몰트북', 'SwarmWorld', '에이전트 인터넷', '에이전트 커머스', '그래프 엔지니어링', '노마드', '700개', '상석'] },
+  { key: 'money', name: { ko: '돈이 타는 새 배관', en: 'New pipes for money' }, question: { ko: '돈이 코드 위를 흐르면, 누가 얻고 누가 잃을까?', en: 'When money runs on code, who gains and who loses?' }, kw: ['달러', '화폐', '스테이블', '크립토', '국민 지분', '자본주의', '비트코인', 'BTC', '증권형', '국가를 만든'] },
+  { key: 'life', name: { ko: '생명의 스위치', en: 'The switch of life' }, question: { ko: '뇌를 복제할 수 있다면, 생명은 누가 정의할까?', en: 'If a brain can be copied, who decides what is alive?' }, kw: ['뇌를', '뇌는', '디지털 생명', '의식', '재귀적'] },
+  { key: 'east', name: { ko: '이스트포인트 2026 현장', en: 'Live from Eastpoint 2026' }, question: { ko: '아시아의 낙관은 현장에서 어떤 모습이었을까?', en: 'What did Asian optimism look like up close?' }, kw: ['이스트포인트'], series: true },
 ];
 
 /** 글별 수동 지정 (slug → thread keys). 규칙보다 우선한다. */
-export const THREAD_OVERRIDES: Record<string, string[]> = {};
+export const THREAD_OVERRIDES: Record<string, string[]> = {
+  // 2026-10-10 키워드('크립토'·'중국')로 엉뚱한 줄기에 들어간 글을 바로잡는다.
+  'robot-goku-5000': [],
+  'agentlinter-v040': [],
+  'ip-tvw': ['moat'],
+  'ai-hires-ai': ['agents', 'money'],
+  'eastpoint-roundtable-has-no-head-seat': ['east', 'agents'],
+};
 
 const BY_KEY = new Map(THREADS.map((thread) => [thread.key, thread]));
 export const threadName = (key: string, locale: Locale) => BY_KEY.get(key)?.name[locale] ?? key;
+export const threadQuestion = (key: string, locale: Locale) => BY_KEY.get(key)?.question[locale] ?? '';
 
 export function threadsOf(post: Pick<Post, 'slug' | 'title' | 'tags'>): string[] {
   const manual = THREAD_OVERRIDES[post.slug];
@@ -71,6 +81,24 @@ export function summarizeThreads(all: Post[], now: string, within?: (post: Post)
     .filter((summary): summary is ThreadSummary => summary !== null)
     // 가장 최근에 새 글이 붙은 줄기가 위로
     .sort((a, b) => byNewest(a.posts[0], b.posts[0]));
+}
+
+export interface ThreadPreview { summary: ThreadSummary; head: Post[]; rest: Post[] }
+
+/**
+ * 줄기마다 앞에 보일 글을 고른다. 이미 위 줄기 앞에 보인 글은 다른 글로 대신해
+ * 같은 글이 여러 줄기 맨 앞에 반복되지 않게 한다. 빠진 글은 "더 보기" 안에 그대로 남는다.
+ */
+export function threadPreviews(summaries: ThreadSummary[], size = 3): ThreadPreview[] {
+  const shown = new Set<string>();
+  return summaries.map((summary) => {
+    const fresh = summary.posts.filter((post) => !shown.has(post.slug));
+    const pick = new Set((fresh.length >= Math.min(size, summary.posts.length) ? fresh : summary.posts).slice(0, size).map((post) => post.slug));
+    if (pick.size < Math.min(size, summary.posts.length)) for (const post of summary.posts) if (pick.size < size) pick.add(post.slug);
+    const head = summary.posts.filter((post) => pick.has(post.slug));
+    head.forEach((post) => shown.add(post.slug));
+    return { summary, head, rest: summary.posts.filter((post) => !pick.has(post.slug)) };
+  });
 }
 
 export interface LeadThread {

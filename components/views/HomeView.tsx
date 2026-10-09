@@ -86,6 +86,7 @@ export default function HomeView({ section, locale }: { section?: string; locale
               postAxis ? (
                 <div className="ccx-home ccx-home--axis">
                   <DiscoveryGrid all={posts} locale={locale} category={postAxis} categoryLabel={activeLabel} />
+                  <p className="ccx-k ccx-archive-k">{L.archiveIn(activeLabel ?? postAxis, visibleEntries.length)}</p>
                 </div>
               ) : (
                 <div className="ccx-home">

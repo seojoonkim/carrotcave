@@ -35,7 +35,8 @@ test('each thread shows its 3 newest posts and a native "more" disclosure for th
   const editorial = read('components/HomeEditorial.tsx');
   const block = editorial.slice(editorial.indexOf('export function ThreadList'), editorial.indexOf('export function', editorial.indexOf('export function ThreadList') + 10));
   assert.match(editorial, /const THREAD_PREVIEW = 3;/, 'three posts up front');
-  assert.match(block, /slice\(0, THREAD_PREVIEW\)/);
+  // 2026-10-10: picks come from threadPreviews (avoids repeating one post across thread heads)
+  assert.match(block, /threadPreviews\(summaries, THREAD_PREVIEW\)/);
   assert.match(block, /<details className="ccx-more"/, 'rest opens with <details>, no client JS');
   assert.match(block, /<summary/);
   assert.match(block, /C\.more\(/, 'more label shows the remaining count');

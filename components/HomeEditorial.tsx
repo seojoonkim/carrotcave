@@ -3,20 +3,21 @@ import Link from 'next/link';
 import type { Post } from '@/data/posts';
 import { formatDate, localePath, type Locale } from '@/lib/i18n';
 import { localizedPost } from '@/lib/i18n-content';
-import { hubPosts, summarizeThreads, threadName } from '@/lib/threads';
+import { hubPosts, summarizeThreads, threadName, threadPreviews, threadQuestion } from '@/lib/threads';
 import { archiveImageUrl } from '@/lib/social-metadata';
 import { EDITORIAL_CARD_FALLBACK_IMAGE } from '@/components/EditorialCard';
 
 const COPY = {
   ko: {
     threads: '계속 파는 질문',
+    threadsWhy: '한 편으로 답이 끝나지 않아 계속 이어 쓰는 질문들이에요. 새 글이 붙은 질문이 위로 올라와요.',
     inCategory: (cat: string) => `${cat} 안의 줄기`,
     threadShort: (n: number, last: string) => `${n}편 · 최근 ${last}`,
     more: (n: number) => `${n}편 더 보기`,
     less: '접기',
     hubs: '처음 왔다면',
     hubsIn: (cat: string) => `${cat}, 여기서부터`,
-    hubsWhy: '뒤에 나온 글들이 가장 많이 다시 꺼내 쓴 글이에요. 먼저 읽으면 이어지는 글이 더 잘 읽혀요.',
+    hubsWhy: (cat: string, n: number) => `${cat} 글 ${n}편 가운데, 뒤에 나온 글들이 가장 자주 다시 꺼내 쓴 글이에요. 이 글부터 읽으면 나머지가 서로 이어져 보여요.`,
     inbound: (n: number) => `이 글을 이어받은 글 ${n}편`,
     inboundLatest: (title: string, rest: number) => rest > 0 ? `최근: ${title} 외 ${rest}편` : `최근: ${title}`,
     inboundOpen: '이어받은 글 보기',
@@ -24,13 +25,14 @@ const COPY = {
   },
   en: {
     threads: 'Questions still being dug',
+    threadsWhy: 'Questions one piece could not settle, so I keep writing about them. The one with the newest piece rises to the top.',
     inCategory: (cat: string) => `Threads in ${cat}`,
     threadShort: (n: number, last: string) => `${n} pieces · latest ${last}`,
     more: (n: number) => `${n} more`,
     less: 'Show less',
     hubs: 'New here?',
     hubsIn: (cat: string) => `Start ${cat} here`,
-    hubsWhy: 'Later pieces keep coming back to these. Read one first and the rest make more sense.',
+    hubsWhy: (cat: string, n: number) => `Of ${n} ${cat} pieces, these are the ones later writing returns to most. Start here and the rest connect.`,
     inbound: (n: number) => `${n} ${n === 1 ? 'follow-up' : 'follow-ups'}`,
     inboundLatest: (title: string, rest: number) => rest > 0 ? `Latest: ${title} + ${rest} more` : `Latest: ${title}`,
     inboundOpen: 'See which pieces',
@@ -74,15 +76,15 @@ export function ThreadList({ all, now, locale, category, categoryLabel, limit }:
   return (
     <section className="ccx-sec" aria-label={label}>
       <span className="ccx-k">{label}</span>
+      {!category && <p className="ccx-why">{C.threadsWhy}</p>}
       <ol className="ccx-threads">
-        {summaries.map((summary) => {
-          const head = summary.posts.slice(0, THREAD_PREVIEW);
-          const rest = summary.posts.slice(THREAD_PREVIEW);
+        {threadPreviews(summaries, THREAD_PREVIEW).map(({ summary, head, rest }) => {
           const name = threadName(summary.key, locale);
           return (
             <li key={summary.key} className="ccx-thread" data-state={summary.state}>
               <div className="ccx-thead">
                 <h3 className="ccx-title">{name}</h3>
+                <p className="ccx-q">{threadQuestion(summary.key, locale)}</p>
                 <span className="ccx-m">{C.threadShort(summary.posts.length, short(locale, summary.posts[0].date))}</span>
               </div>
               <ol className={`ccx-tposts${rest.length ? ' ccx-tposts--cont' : ''}`} aria-label={name}>
@@ -112,7 +114,7 @@ export function DiscoveryGrid({ all, locale, category, categoryLabel }: { all: P
   return (
     <section className="ccx-sec ccx-catgrid" aria-label={C.hubsIn(categoryLabel ?? category)}>
       <span className="ccx-k">{C.hubsIn(categoryLabel ?? category)}</span>
-      <p className="ccx-why">{C.hubsWhy}</p>
+      <p className="ccx-why">{C.hubsWhy(categoryLabel ?? category, all.filter((post) => post.category === category).length)}</p>
       <ol className="ccx-hubs">
         {hubs.map(({ post, inbound, from }) => {
           const p = localizedPost(post, locale);

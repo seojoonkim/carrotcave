@@ -1302,3 +1302,12 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-thread .ccx-tpost__d{font-size:11.5px;line-height:1.4}
   .ccx-thread > .ccx-more summary{padding:10px 0}
 }
+/* Thread question line (2026-10-10 Simon: "메뉴별 컨텐츠 리스트 구성을 더욱 잘 와닿고 통찰력있게") */
+.ccx-thread > .ccx-thead{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:16px;row-gap:2px;align-items:baseline}
+.ccx-thead .ccx-q{grid-column:1 / -1;grid-row:2;margin:0;color:var(--ink-2);font:400 15px/1.55 var(--sans);word-break:keep-all;text-wrap:pretty}
+.ccx-thead .ccx-m{grid-column:2;grid-row:1}
+.ccx-sec > .ccx-why{margin:-4px 0 20px}
+@media(max-width:640px){
+  .ccx-thread > .ccx-thead{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+  .ccx-thead .ccx-q{font-size:14px;line-height:1.55}
+}
