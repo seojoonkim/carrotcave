@@ -125,6 +125,18 @@ for (const w of widths) {
         };
         V('.archive-search', '.ccx-filters', 12, 'search-filters');
         V('.ccx-filters', '.archive-row, .archive-lead', mobile ? 16 : 20, 'filters-list');
+        // 10) a label sitting right above a boxed control (search field) needs breathing room
+        for (const box of document.querySelectorAll('.archive-search')) {
+          if (!vis(box)) continue;
+          const bt = box.getBoundingClientRect().top;
+          let best = null;
+          for (const t of document.querySelectorAll('.ccx-k, .wall-heading, h1, h2, h3, p')) {
+            if (!vis(t) || box.contains(t) || t.contains(box)) continue;
+            const r = t.getBoundingClientRect();
+            if (r.bottom <= bt + 1 && r.right > box.getBoundingClientRect().left && (!best || r.bottom > best.r.bottom)) best = { t, r };
+          }
+          if (best && bt - best.r.bottom < 12) out.push(`label-hugs-box ${name(best.t)} / .archive-search ${Math.round(bt - best.r.bottom)}px`);
+        }
         // 9) archive stack (search / filters / status / list) must never overlap each other
         const stack = ['.archive-search', '.ccx-filters', '.archive-status', '.archive-list']
           .map((sel) => document.querySelector(sel)).filter((el) => el && vis(el));

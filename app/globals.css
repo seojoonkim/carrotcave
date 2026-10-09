@@ -1185,3 +1185,7 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 /* 2026.10 status line sits below the thread filters instead of being pulled up over them. */
 .wall-shell .ccx-filters + .archive-status{margin:0 0 20px}
 .wall-shell .ccx-filters + .archive-status:empty{display:none;margin:0}
+
+/* 2026.10 the "전체 기록" label never sits flush on the search box. */
+.ccx-archive-k{margin:34px 0 14px}
+@media(max-width:520px){.ccx-archive-k{margin:28px 0 12px}}

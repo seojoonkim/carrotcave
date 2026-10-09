@@ -38,3 +38,10 @@ test('layout gate inspects filtered and search states for stacked overlap', () =
   assert.match(src, /\[search\]/);
   assert.match(src, /stack-overlap/);
 });
+
+test('layout gate checks that labels never sit flush on the search box', () => {
+  const s = fs.readFileSync(path.join(root, 'scripts/verify-layout.mjs'), 'utf8');
+  assert.match(s, /label-hugs-box/);
+  const css = fs.readFileSync(path.join(root, 'app/globals.css'), 'utf8');
+  assert.match(css, /\.ccx-archive-k\{margin:34px 0 14px\}/);
+});
