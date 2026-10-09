@@ -85,13 +85,13 @@ export function ThreadList({ all, now, locale, category, categoryLabel, limit }:
                 <h3 className="ccx-title">{name}</h3>
                 <span className="ccx-m">{C.threadShort(summary.posts.length, short(locale, summary.posts[0].date))}</span>
               </div>
-              <ol className="ccx-tposts" aria-label={name}>
+              <ol className={`ccx-tposts${rest.length ? ' ccx-tposts--cont' : ''}`} aria-label={name}>
                 {head.map((post) => <ThreadPost key={post.slug} post={post} locale={locale} />)}
               </ol>
               {rest.length ? (
                 <details className="ccx-more">
                   <summary><span className="ccx-more__open">{C.more(rest.length)}</span><span className="ccx-more__close">{C.less}</span></summary>
-                  <ol className="ccx-tposts" start={THREAD_PREVIEW + 1}>
+                  <ol className="ccx-tposts ccx-tposts--cont" start={THREAD_PREVIEW + 1}>
                     {rest.map((post) => <ThreadPost key={post.slug} post={post} locale={locale} />)}
                   </ol>
                 </details>

@@ -1241,3 +1241,28 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-tpost__img{width:56px}
 }
 @media(max-width:640px){.ccx-catgrid .ccx-hubs{grid-template-columns:minmax(0,1fr)}.ccx-hub,.ccx-hub__from,.ccx-hub__from summary{min-width:0}}
+
+/* 2026-10-10 Simon: "계속 파는 질문이 제목 밑에 달려있는 것처럼 위계를 표현할 수 있어? ...
+   밑에 이어지게 꼬리를 물고 좀 더 gui적으로 표현해보자"
+   One tail per question: a rail drops from under the title, every post hangs off it on a
+   rounded elbow that lands on the thumbnail's vertical centre, and the "N편 더 보기 / 접기"
+   control is the tail's last node. All geometry shares one origin (the <li> box), so the
+   elbow end is computed, not eyeballed: rail x = --rx, elbow end = --ind - --gap. */
+.ccx-thread{--rx:8px;--ind:34px;--gap:8px;--rail:color-mix(in srgb,var(--carrot-orange) 42%,transparent);--rail-w:1.5px}
+.ccx-thread > .ccx-thead{margin-bottom:6px}
+.ccx-thread .ccx-tposts > li{position:relative;padding-left:var(--ind)}
+.ccx-thread .ccx-tposts > li::after{content:"";position:absolute;left:var(--rx);top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));border-left:var(--rail-w) solid var(--rail);border-bottom:var(--rail-w) solid var(--rail);border-bottom-left-radius:10px;pointer-events:none}
+.ccx-thread .ccx-tposts > li:not(:last-child)::before,
+.ccx-thread .ccx-tposts--cont > li:last-child::before{content:"";position:absolute;left:var(--rx);top:calc(50% - 10px);bottom:0;width:var(--rail-w);background:var(--rail);pointer-events:none}
+/* the tail starts right under the title: bridge the title gap on the first list */
+.ccx-thread > .ccx-tposts{position:relative}
+.ccx-thread > .ccx-tposts::before{content:"";position:absolute;left:var(--rx);top:-6px;height:6px;width:var(--rail-w);background:var(--rail)}
+.ccx-thread .ccx-tposts > li:hover::after{border-color:var(--carrot-orange)}
+.ccx-thread .ccx-tpost{padding:6px 0}
+/* last node: "N편 더 보기" (dashed = more below) / "접기" */
+.ccx-thread > .ccx-more summary{position:relative;margin:0 0 0 var(--ind);padding:8px 0}
+.ccx-thread > .ccx-more summary::before{content:"";position:absolute;left:calc(var(--rx) - var(--ind));top:0;height:50%;width:calc(var(--ind) - var(--rx) - var(--gap));border-left:var(--rail-w) dashed var(--rail);border-bottom:var(--rail-w) dashed var(--rail);border-bottom-left-radius:10px}
+.ccx-thread > .ccx-more[open] summary::before{border-style:solid}
+@media(max-width:640px){
+  .ccx-thread{--rx:6px;--ind:26px;--gap:6px}
+}

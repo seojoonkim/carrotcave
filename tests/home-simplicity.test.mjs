@@ -68,3 +68,13 @@ test('hub numbering rules never leak into the nested follow-up list', () => {
   const css = read('app/globals.css');
   assert.doesNotMatch(css, /\.ccx-hubs a(?:\{|::before|:hover)/, 'scope numbered rows to .ccx-hubs > li > a');
 });
+
+// 2026-10-10 Simon: "계속 파는 질문이 제목 밑에 달려있는 것처럼 위계를 표현할 수 있어? ... 꼬리를 물고 좀 더 gui적으로"
+test('thread posts hang off a tail under the question title', () => {
+  const css = read('app/globals.css');
+  const tsx = read('components/HomeEditorial.tsx');
+  assert.match(css, /\.ccx-thread\{--rx:[^}]*--ind:[^}]*--rail:/, 'tail geometry lives in shared tokens');
+  assert.match(css, /\.ccx-thread \.ccx-tposts > li::after\{[^}]*border-bottom-left-radius/, 'each post has a rounded elbow');
+  assert.match(css, /\.ccx-thread > \.ccx-more summary::before\{/, 'the more/less control is the last node on the tail');
+  assert.match(tsx, /ccx-tposts--cont/, 'lists that continue into the more node keep the rail going');
+});

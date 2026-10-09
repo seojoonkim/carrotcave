@@ -45,3 +45,10 @@ test('layout gate checks that labels never sit flush on the search box', () => {
   const css = fs.readFileSync(path.join(root, 'app/globals.css'), 'utf8');
   assert.match(css, /\.ccx-archive-k\{margin:34px 0 14px\}/);
 });
+
+test('production release runs the thread tail coordinate gate after deploy', () => {
+  const rel = fs.readFileSync(path.join(root, 'scripts/release-production.mjs'), 'utf8');
+  assert.match(rel, /verify-thread-tail\.mjs','https:\/\/carrotcave\.com'/);
+  const gate = fs.readFileSync(path.join(root, 'scripts/verify-thread-tail.mjs'), 'utf8');
+  assert.match(gate, /elbow-gap/); assert.match(gate, /rail break/); assert.match(gate, /process\.exit\(1\)/);
+});
