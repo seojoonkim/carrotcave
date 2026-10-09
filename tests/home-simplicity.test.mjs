@@ -44,3 +44,27 @@ test('each thread shows its 3 newest posts and a native "more" disclosure for th
   assert.match(css, /\.ccx-tposts\{/);
   assert.match(css, /\.ccx-more\b/);
 });
+
+// 2026-10-09 Simon: "다른 글 7편이 어떻게 이어지는지 설명이 불친절해 / 그리고 모든 글 리스트에는 썸네일 넣자"
+test('hub picks explain why and name the pieces that build on them', () => {
+  const editorial = read('components/HomeEditorial.tsx');
+  assert.doesNotMatch(editorial, /다른 글 \$\{n\}편이 이어짐/, 'bare count line is gone');
+  assert.match(editorial, /hubsWhy:/);
+  assert.match(editorial, /inboundLatest:/, 'shows the latest piece by name');
+  assert.match(editorial, /from\.map\(/, 'lists every piece that builds on the hub');
+  assert.match(read('lib/threads.ts'), /export function inboundPosts/);
+});
+
+test('every post list on home shows a thumbnail with a sketch fallback', () => {
+  const editorial = read('components/HomeEditorial.tsx');
+  assert.match(editorial, /function Thumb\(/);
+  assert.match(editorial, /EDITORIAL_CARD_FALLBACK_IMAGE/);
+  assert.match(editorial, /<Thumb post=\{post\} className="ccx-tpost__img"/, 'thread rows');
+  assert.match(editorial, /<Thumb post=\{post\} className="ccx-hub__img"/, 'hub cards');
+  assert.match(read('components/ArchiveList.tsx'), /ARCHIVE_FALLBACK_IMAGE/, 'archive rows already fall back');
+});
+
+test('hub numbering rules never leak into the nested follow-up list', () => {
+  const css = read('app/globals.css');
+  assert.doesNotMatch(css, /\.ccx-hubs a(?:\{|::before|:hover)/, 'scope numbered rows to .ccx-hubs > li > a');
+});

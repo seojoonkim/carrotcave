@@ -1137,9 +1137,9 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 .ccx-hubs{list-style:none;margin:0;padding:0;counter-reset:hub}
 .ccx-hubs li{counter-increment:hub;border-top:1px solid var(--hairline)}
 .ccx-hubs li:first-child{border-top:0}
-.ccx-hubs a{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:8px;padding:12px 0;text-decoration:none}
-.ccx-hubs a::before{content:counter(hub,decimal-leading-zero);grid-row:span 2;color:var(--ink-3);font:500 12px/1.6 var(--mono)}
-.ccx-hubs a:hover .ccx-title{color:var(--carrot-orange)}
+.ccx-hubs > li > a{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:8px;padding:12px 0;text-decoration:none}
+.ccx-hubs > li > a::before{content:counter(hub,decimal-leading-zero);grid-row:span 2;color:var(--ink-3);font:500 12px/1.6 var(--mono)}
+.ccx-hubs > li > a:hover .ccx-title{color:var(--carrot-orange)}
 .ccx-catgrid .ccx-hubs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .ccx-catgrid .ccx-hubs li{border-top:0}
 .ccx-archive-k{margin:34px 0 0}
@@ -1213,3 +1213,31 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .ccx-tpost{gap:12px;padding:8px 0}
   .ccx-tpost__t{font-size:14px}
 }
+
+/* 2026.10 every home list carries a thumbnail; hubs say which pieces build on them. */
+.ccx-tpost{align-items:center}
+.ccx-tpost__img{position:relative;flex:none;width:64px;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--panel)}
+.ccx-tpost__img img,.ccx-hub__img img{display:block;width:100%;height:100%;object-fit:cover}
+.ccx-tpost__img--sketch img,.ccx-hub__img--sketch img{opacity:.9}
+.ccx-why{max-width:46em;margin:-4px 0 16px;color:var(--ink-3);font:400 14px/1.6 var(--sans);word-break:keep-all}
+.ccx-hubs a.ccx-hub__main{display:flex;flex-direction:column;gap:12px;padding:0;text-decoration:none}
+.ccx-hubs a.ccx-hub__main::before{content:none}
+.ccx-hub__img{position:relative;display:block;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--panel)}
+.ccx-hub__body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ccx-hub__body .ccx-title{font-size:17px;line-height:1.4;word-break:keep-all}
+.ccx-hub__body .ccx-m{margin:0}
+.ccx-hub__main:hover .ccx-title{color:var(--carrot-orange)}
+.ccx-hub__from summary{display:flex;align-items:flex-start;max-width:100%;margin-top:8px;text-align:left}
+.ccx-hub__from summary .ccx-more__open{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.5}
+.ccx-hub__from[open] .ccx-more__open{display:none}
+.ccx-hub__from summary::after{flex:none;margin-top:5px}
+.ccx-hub__from .ccx-tposts{margin-top:4px}
+.ccx-hub__from .ccx-tpost__t{white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+@media(max-width:640px){
+  .ccx-catgrid .ccx-hubs li.ccx-hub{padding:16px 0}
+  .ccx-catgrid .ccx-hubs li.ccx-hub:first-child{padding-top:4px}
+  .ccx-hubs a.ccx-hub__main{flex-direction:row;align-items:flex-start;gap:14px}
+  .ccx-hub__img{width:112px;flex:none}
+  .ccx-tpost__img{width:56px}
+}
+@media(max-width:640px){.ccx-catgrid .ccx-hubs{grid-template-columns:minmax(0,1fr)}.ccx-hub,.ccx-hub__from,.ccx-hub__from summary{min-width:0}}

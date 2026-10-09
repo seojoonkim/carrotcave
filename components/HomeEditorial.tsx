@@ -1,8 +1,11 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import type { Post } from '@/data/posts';
 import { formatDate, localePath, type Locale } from '@/lib/i18n';
 import { localizedPost } from '@/lib/i18n-content';
 import { hubPosts, summarizeThreads, threadName } from '@/lib/threads';
+import { archiveImageUrl } from '@/lib/social-metadata';
+import { EDITORIAL_CARD_FALLBACK_IMAGE } from '@/components/EditorialCard';
 
 const COPY = {
   ko: {
@@ -13,7 +16,11 @@ const COPY = {
     less: '접기',
     hubs: '처음 왔다면',
     hubsIn: (cat: string) => `${cat}, 여기서부터`,
-    inbound: (n: number) => `다른 글 ${n}편이 이어짐`,
+    hubsWhy: '뒤에 나온 글들이 가장 많이 다시 꺼내 쓴 글이에요. 먼저 읽으면 이어지는 글이 더 잘 읽혀요.',
+    inbound: (n: number) => `이 글을 이어받은 글 ${n}편`,
+    inboundLatest: (title: string, rest: number) => rest > 0 ? `최근: ${title} 외 ${rest}편` : `최근: ${title}`,
+    inboundOpen: '이어받은 글 보기',
+    inboundClose: '접기',
   },
   en: {
     threads: 'Questions still being dug',
@@ -23,7 +30,11 @@ const COPY = {
     less: 'Show less',
     hubs: 'New here?',
     hubsIn: (cat: string) => `Start ${cat} here`,
-    inbound: (n: number) => `${n} pieces lead here`,
+    hubsWhy: 'Later pieces keep coming back to these. Read one first and the rest make more sense.',
+    inbound: (n: number) => `${n} ${n === 1 ? 'follow-up' : 'follow-ups'}`,
+    inboundLatest: (title: string, rest: number) => rest > 0 ? `Latest: ${title} + ${rest} more` : `Latest: ${title}`,
+    inboundOpen: 'See which pieces',
+    inboundClose: 'Show less',
   },
 } as const;
 
@@ -32,11 +43,22 @@ const href = (locale: Locale, post: Post) => localePath(locale, `/posts/${post.s
 
 const THREAD_PREVIEW = 3;
 
+/** Every post list on the home page shows a thumbnail; posts without media fall back to the sketch card. */
+function Thumb({ post, className, sizes }: { post: Post; className: string; sizes: string }) {
+  const src = archiveImageUrl(post);
+  return (
+    <span className={`${className}${src ? '' : ` ${className}--sketch`}`} aria-hidden="true">
+      <Image src={src ?? EDITORIAL_CARD_FALLBACK_IMAGE} alt="" width={480} height={300} sizes={sizes} />
+    </span>
+  );
+}
+
 function ThreadPost({ post, locale }: { post: Post; locale: Locale }) {
   const p = localizedPost(post, locale);
   return (
     <li>
       <Link className="ccx-tpost" href={href(locale, p)}>
+        <Thumb post={post} className="ccx-tpost__img" sizes="96px" />
         <span className="ccx-tpost__t">{p.title}</span>
         <time className="ccx-tpost__d" dateTime={p.date}>{short(locale, p.date)}</time>
       </Link>
@@ -90,10 +112,28 @@ export function DiscoveryGrid({ all, locale, category, categoryLabel }: { all: P
   return (
     <section className="ccx-sec ccx-catgrid" aria-label={C.hubsIn(categoryLabel ?? category)}>
       <span className="ccx-k">{C.hubsIn(categoryLabel ?? category)}</span>
+      <p className="ccx-why">{C.hubsWhy}</p>
       <ol className="ccx-hubs">
-        {hubs.map(({ post, inbound }) => {
+        {hubs.map(({ post, inbound, from }) => {
           const p = localizedPost(post, locale);
-          return <li key={p.slug}><Link href={href(locale, p)}><b className="ccx-title">{p.title}</b><span className="ccx-m">{C.inbound(inbound)}</span></Link></li>;
+          const latest = localizedPost(from[0], locale);
+          return (
+            <li key={p.slug} className="ccx-hub">
+              <Link className="ccx-hub__main" href={href(locale, p)}>
+                <Thumb post={post} className="ccx-hub__img" sizes="(max-width: 640px) 112px, 340px" />
+                <span className="ccx-hub__body">
+                  <b className="ccx-title">{p.title}</b>
+                  <span className="ccx-m">{C.inbound(inbound)}</span>
+                </span>
+              </Link>
+              <details className="ccx-more ccx-hub__from">
+                <summary><span className="ccx-more__open">{C.inboundLatest(latest.title, inbound - 1)}</span><span className="ccx-more__close">{C.inboundClose}</span></summary>
+                <ol className="ccx-tposts" aria-label={C.inbound(inbound)}>
+                  {from.map((item) => <ThreadPost key={item.slug} post={item} locale={locale} />)}
+                </ol>
+              </details>
+            </li>
+          );
         })}
       </ol>
     </section>

@@ -106,13 +106,21 @@ export function inboundCounts(all: Post[]) {
   return counts;
 }
 
+/** 이 글을 relatedSlugs로 가리키는 글들(최신순) — '어떤 글이 이어지는지'를 보여 줄 때 쓴다. */
+export function inboundPosts(all: Post[], slug: string) {
+  return all.filter((post) => post.slug !== slug && post.relatedSlugs.includes(slug)).sort(byNewest);
+}
+
 export function hubPosts(all: Post[], limit = 3, within?: (post: Post) => boolean) {
   const counts = inboundCounts(all);
   return all
     .filter((post) => (!within || within(post)) && (counts.get(post.slug) ?? 0) > 0)
     .sort((a, b) => (counts.get(b.slug) ?? 0) - (counts.get(a.slug) ?? 0) || byNewest(a, b))
     .slice(0, limit)
-    .map((post) => ({ post, inbound: counts.get(post.slug) ?? 0 }));
+    .map((post) => {
+      const from = inboundPosts(all, post.slug);
+      return { post, inbound: from.length, from };
+    });
 }
 
 /** 최근 windowDays 안에 처음 등장한 태그(최근 등장 순) */
