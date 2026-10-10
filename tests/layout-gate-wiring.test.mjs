@@ -62,3 +62,15 @@ test('production release runs the ISO date gate after deploy', () => {
   const rel = fs.readFileSync(path.join(root, 'scripts/release-production.mjs'), 'utf8');
   assert.match(rel, /verify-dates\.mjs','https:\/\/carrotcave\.com'/);
 });
+
+test('post-deploy gates run concurrently and still block the release on any failure', () => {
+  const rel = fs.readFileSync(path.join(root, 'scripts/release-production.mjs'), 'utf8');
+  const deploy = rel.indexOf("run('vercel'");
+  const gates = rel.indexOf('await runAll([', deploy);
+  const verified = rel.indexOf('console.log(`VERIFIED_RELEASE');
+  assert.ok(deploy > 0 && gates > deploy && verified > gates, 'gates run after deploy and before VERIFIED_RELEASE');
+  const block = rel.slice(gates, verified);
+  assert.equal((block.match(/scripts\/verify-/g) || []).length, 10, 'all ten live gates are in the concurrent batch');
+  assert.doesNotMatch(block, /\brun\(process\.execPath/, 'no gate falls back to the sequential runner');
+  assert.match(rel, /if\(failed\.length\)throw new Error/, 'any failed gate throws before VERIFIED_RELEASE');
+});
