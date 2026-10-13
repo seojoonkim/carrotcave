@@ -28,6 +28,9 @@ test('posts that belong to a question show that question at the reading end', ()
   const editorial = read('components/HomeEditorial.tsx');
   assert.match(editorial, /export function PostThreads/);
   assert.match(editorial, /aria-current=\{current \? 'page'/, 'the current post is marked in its thread');
+  // 2026-10-13 release: the "you just read" label sat inside <time> and failed the live ISO date gate.
+  assert.doesNotMatch(editorial, /<time[^>]*>\{[^}]*COPY\[locale\]\.here/, '"you just read" never goes inside <time>');
+  assert.match(editorial, /<span className="ccx-tpost__d ccx-tpost__here">/);
   assert.match(editorial, /if \(!keys\.length\) return null/, 'posts outside any thread render nothing');
 });
 

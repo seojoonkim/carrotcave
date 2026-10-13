@@ -66,7 +66,10 @@ function ThreadPost({ post, locale, current }: { post: Post; locale: Locale; cur
       <Link className="ccx-tpost" href={href(locale, p)} aria-current={current ? 'page' : undefined}>
         <Thumb post={post} className="ccx-tpost__img" sizes="96px" />
         <span className="ccx-tpost__t">{p.title}</span>
-        <time className="ccx-tpost__d" dateTime={p.date}>{current ? COPY[locale].here : short(locale, p.date)}</time>
+        {/* <time> must always hold an ISO date (verify-dates gate); the "you just read" label is a plain span */}
+        {current
+          ? <span className="ccx-tpost__d ccx-tpost__here">{COPY[locale].here}</span>
+          : <time className="ccx-tpost__d" dateTime={p.date}>{short(locale, p.date)}</time>}
       </Link>
     </li>
   );
