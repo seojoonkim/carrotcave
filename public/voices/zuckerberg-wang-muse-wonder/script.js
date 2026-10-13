@@ -1,0 +1,41 @@
+(() => {
+  'use strict';
+  const body = document.body;
+  const sourceUrl = body.dataset.sourceUrl;
+  const transcript = document.getElementById('transcript');
+  const loading = document.getElementById('transcriptLoading');
+  const error = document.getElementById('transcriptError');
+  const drawer = document.getElementById('tocDrawer');
+  const backdrop = document.getElementById('drawerBackdrop');
+  const menuButton = document.getElementById('menuButton');
+  const progressBar = document.getElementById('progressBar');
+  const railPercent = document.getElementById('railPercent');
+  const backToTop = document.getElementById('backToTop');
+  const readerStatus = CarrotReader.createStatusController({ readerTitle: document.documentElement.lang === 'en' ? 'Zuckerberg and Wang on Muse Wonder' : '저커버그와 왕의 뮤즈 원더' });
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const chapters = [...document.querySelectorAll('.transcript-chapter')];
+  const speakerNames = { '마크 저커버그': '마크 저커버그', '알렉산더 왕': '알렉산더 왕', '존 콜리슨': '존 콜리슨' };
+  let lastFocus = null;
+  const renderSegments = data => {
+    if (!Array.isArray(data.segments) || data.segments.length !== 23) throw new Error('Unexpected transcript count');
+    data.segments.forEach((segment,index) => {
+      if (!segment || segment.id !== index || !speakerNames[segment.speaker] || typeof segment.text !== 'string' || !segment.text.trim()) throw new Error(`Invalid segment ${index}`);
+      const chapter=chapters.find(item=>Number(segment.start)>=Number(item.dataset.start)&&Number(segment.start)<Number(item.dataset.end));
+      if (!chapter) throw new Error(`No chapter for segment ${index}`);
+      const p=document.createElement('p'); p.className='transcript-paragraph transcript-dialogue'; p.dataset.start=String(segment.start);
+      const anchor=document.createElement('span'); anchor.className='segment-anchor'; anchor.id=`segment-${segment.id}`; anchor.dataset.segmentId=String(segment.id); anchor.dataset.start=String(segment.start); anchor.dataset.end=String(segment.end);
+      const copy=document.createElement('span'); copy.className='paragraph-text';
+      const meta=document.createElement('span'); meta.className='transcript-turn-meta';
+      const speaker=document.createElement('strong'); speaker.className='transcript-speaker'; speaker.dataset.role=segment.speaker==='마크 저커버그'?'main':segment.speaker==='알렉산더 왕'?'guest':'host'; speaker.textContent=speakerNames[segment.speaker];
+      meta.append(speaker); copy.append(meta,document.createTextNode(segment.text)); p.append(anchor,copy); chapter.querySelector('.transcript-segments').append(p);
+    });
+    return data.segments.length;
+  };
+  const closeDrawer=({restoreFocus=true}={})=>{drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label',(document.documentElement.lang === 'en' ? 'Open contents' : '목차 열기'));backdrop.hidden=true;body.classList.remove('drawer-open');if(restoreFocus&&lastFocus instanceof HTMLElement)lastFocus.focus();};
+  const openDrawer=()=>{lastFocus=document.activeElement;drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');menuButton.setAttribute('aria-expanded','true');menuButton.setAttribute('aria-label',(document.documentElement.lang === 'en' ? 'Close contents' : '목차 닫기'));backdrop.hidden=false;body.classList.add('drawer-open');};
+  menuButton.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer()); backdrop.addEventListener('click',()=>closeDrawer()); addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();}); drawer.addEventListener('click',e=>{if(e.target.closest('a'))closeDrawer({restoreFocus:false});});
+  const update=()=>{const max=document.documentElement.scrollHeight-innerHeight;const percent=max>0?Math.min(100,Math.max(0,scrollY/max*100)):0;progressBar.style.transform=`scaleX(${percent/100})`;document.getElementById('readingProgress').setAttribute('aria-valuenow',String(Math.round(percent)));railPercent.textContent=`${Math.round(percent)}%`;backToTop.classList.toggle('visible',scrollY>innerHeight*.7);const probe=document.querySelector('.site-header').getBoundingClientRect().bottom+26;let current=null;chapters.forEach(ch=>{if(ch.getBoundingClientRect().top<=probe)current=ch;});const number=current?.dataset.chapter||null;const title=current?.querySelector('.chapter-heading h2')?.textContent||'';readerStatus.setChapter(number,title);document.querySelectorAll('[data-nav-chapter]').forEach(link=>{const active=link.dataset.navChapter===number;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});};
+  let ticking=false;addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{ticking=false;update();});},{passive:true});addEventListener('resize',update);backToTop.addEventListener('click',()=>scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+  const EN=document.documentElement.lang==='en';
+  fetch(EN?'transcript-en-reader.json':'transcript-ko.json').then(r=>{if(!r.ok)throw new Error(`transcript request failed (${r.status})`);return r.json();}).then(data=>{const count=EN?CarrotReader.renderEnglishTranscript(data,chapters):renderSegments(data);const populated=chapters.filter(ch=>ch.querySelector('.transcript-segments').children.length>0).length;if(populated!==chapters.length)throw new Error(`Only ${populated} chapters populated`);transcript.dataset.segmentCount=String(count);transcript.setAttribute('aria-busy','false');loading.hidden=true;error.hidden=true;update();}).catch(reason=>{console.error(reason);loading.hidden=true;error.hidden=false;transcript.setAttribute('aria-busy','false');transcript.classList.add('load-failed');});
+})();

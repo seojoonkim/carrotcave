@@ -46,5 +46,11 @@
     "title": "At the Beginning of Infinity",
     "summary": "Yang Zhilin discusses K2’s reinforcement learning and a general-purpose agent strategy, viewing AI as a tool that amplifies problem-solving to expand the boundaries of knowledge and civilization.",
     "sourceHash": "cdbae24e28a2444f"
+  },
+  "zuckerberg-wang-muse-wonder": {
+    "name": "Mark Zuckerberg & Alexandr Wang",
+    "title": "Muse Wonder: A $100 Billion AI Bet",
+    "summary": "Zuckerberg and Wang say that as personal agents take on tasks, model behavior will distinguish products and change how purchases are delegated, what devices people use, and how development costs are recouped.",
+    "sourceHash": "3f1ae62ebe7dde62"
   }
 }
