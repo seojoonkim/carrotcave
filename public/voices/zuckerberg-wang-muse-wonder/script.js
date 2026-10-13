@@ -27,7 +27,7 @@
       const copy=document.createElement('span'); copy.className='paragraph-text';
       const meta=document.createElement('span'); meta.className='transcript-turn-meta';
       const speaker=document.createElement('strong'); speaker.className='transcript-speaker'; speaker.dataset.role=segment.speaker==='마크 저커버그'?'main':segment.speaker==='알렉산더 왕'?'guest':'host'; speaker.textContent=speakerNames[segment.speaker];
-      meta.append(speaker); copy.append(meta,document.createTextNode(segment.text)); p.append(anchor,copy); chapter.querySelector('.transcript-segments').append(p);
+      meta.append(speaker); const box=chapter.querySelector('.transcript-segments'); if(box.dataset.lastSpeaker!==segment.speaker){copy.append(meta);box.dataset.lastSpeaker=segment.speaker;} copy.append(document.createTextNode(segment.text)); p.append(anchor,copy); chapter.querySelector('.transcript-segments').append(p);
     });
     return data.segments.length;
   };
