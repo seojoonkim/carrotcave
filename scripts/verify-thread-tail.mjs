@@ -42,9 +42,19 @@ const measure = () => [...document.querySelectorAll('.ccx-thread')].map((th) => 
 });
 for (const w of [320, 393, 768, 1280]) {
   const pg = await b.newPage({ viewport: { width: w, height: 900 }, deviceScaleFactor: 2 });
+  // 2026-10-13 Simon: threads left the main menus and live at the end of their posts.
   for (const path of ['/', '/en']) {
     await pg.goto(base + path, { waitUntil: 'load', timeout: 60000 });
+    const onHome = await pg.locator('.ccx-thread').count();
+    if (onHome) { bad += 1; console.log('FAIL', w, path, `main menu still shows ${onHome} question threads`); }
+  }
+  // middle of a long thread, newest post of a thread, and a post that belongs to two threads
+  for (const path of ['/posts/ip-tvw', '/en/posts/ip-tvw', '/posts/photoshop-became-the-answer-key', '/posts/ai-hires-ai']) {
+    await pg.goto(base + path, { waitUntil: 'load', timeout: 60000 });
+    await pg.locator('.ccx-post-threads').scrollIntoViewIfNeeded();
     await pg.waitForTimeout(300);
+    const here = await pg.locator('.ccx-post-threads .ccx-tpost[aria-current="page"]').count();
+    if (!here) { bad += 1; console.log('FAIL', w, path, 'current post not marked in its thread'); }
     for (const state of ['closed', 'open']) {
       if (state === 'open') { for (const s of await pg.locator('.ccx-thread > .ccx-more summary').all()) await s.click(); await pg.waitForTimeout(200); }
       const res = await pg.evaluate(measure);

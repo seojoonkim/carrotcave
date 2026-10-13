@@ -44,7 +44,4 @@ test('category pages explain why the start pieces and label the full list', () =
   const editorial = read('components/HomeEditorial.tsx');
   assert.doesNotMatch(editorial, /뒤에 나온 글들이 가장 많이 다시 꺼내 쓴 글이에요/, 'generic hub line replaced');
   assert.match(editorial, /hubsWhy: \(cat: string/, 'hub explanation names the category');
-  const home = read('components/views/HomeView.tsx');
-  const axisBranch = home.slice(home.indexOf('postAxis ? ('), home.indexOf(') : ('));
-  assert.match(axisBranch, /archiveIn\(/, 'category archive gets its own heading');
 });

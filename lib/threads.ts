@@ -101,6 +101,17 @@ export function threadPreviews(summaries: ThreadSummary[], size = 3): ThreadPrev
   });
 }
 
+/**
+ * 글 안에서 보여줄 줄기 미리보기: 지금 글을 가운데 두고 앞뒤 글을 size개까지 보여준다.
+ * 줄기의 맨 앞(최신)이나 맨 끝(가장 오래된)이면 창이 그 끝에 붙는다. 나머지는 "더 보기"로 간다.
+ */
+export function threadAround(list: Post[], slug: string, size = 3): { head: Post[]; rest: Post[] } {
+  const at = Math.max(0, list.findIndex((post) => post.slug === slug));
+  const start = Math.min(Math.max(0, at - Math.floor((size - 1) / 2)), Math.max(0, list.length - size));
+  const head = list.slice(start, start + size);
+  return { head, rest: list.filter((post) => !head.includes(post)) };
+}
+
 export interface LeadThread {
   key: string;
   position: number;

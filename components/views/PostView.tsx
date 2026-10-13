@@ -23,6 +23,7 @@ import { axisHref, axisLabel, depthLabelFor, formatDate, localePath, t, type Loc
 import { localizedPost } from '@/lib/i18n-content';
 import readingAids from '@/data/reading-aids.json';
 import ReadingDepth from '@/components/ReadingDepth';
+import { PostThreads } from '@/components/HomeEditorial';
 import { BUDDY_INNER } from '@/lib/brand-svg';
 
 // The reading page for one post, in either language. Korean: /posts/<slug>. English: /en/posts/<slug>.
@@ -401,6 +402,9 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
           <div className="cc-reading-end__mark" aria-hidden="true" />
 
           <ReadingDepth slug={post.slug} locale={locale} />
+
+          {/* 2026-10-13 (Simon): the question this post keeps digging, only on posts that belong to one. */}
+          <PostThreads post={source} all={posts} locale={locale} />
 
           {/* 2026-10-08 (Simon): the descent leads straight into the three picks. The rabbit's
               "더 깊이 갈래?" introduces them; a separate next-post card only appears when there are

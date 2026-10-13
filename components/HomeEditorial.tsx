@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Post } from '@/data/posts';
 import { formatDate, localePath, type Locale } from '@/lib/i18n';
 import { localizedPost } from '@/lib/i18n-content';
-import { hubPosts, summarizeThreads, threadName, threadPreviews, threadQuestion } from '@/lib/threads';
+import { hubPosts, summarizeThreads, threadAround, threadName, threadPreviews, threadQuestion, threadsOf, latestDate } from '@/lib/threads';
 import { archiveImageUrl } from '@/lib/social-metadata';
 import { EDITORIAL_CARD_FALLBACK_IMAGE } from '@/components/EditorialCard';
 
@@ -22,6 +22,8 @@ const COPY = {
     inboundLatest: (title: string, rest: number) => rest > 0 ? `최근: ${title} 외 ${rest}편` : `최근: ${title}`,
     inboundOpen: '이어받은 글 보기',
     inboundClose: '접기',
+    inPost: '이 글이 이어가는 질문',
+    here: '지금 읽은 글',
   },
   en: {
     threads: 'Questions still being dug',
@@ -37,6 +39,8 @@ const COPY = {
     inboundLatest: (title: string, rest: number) => rest > 0 ? `Latest: ${title} + ${rest} more` : `Latest: ${title}`,
     inboundOpen: 'See which pieces',
     inboundClose: 'Show less',
+    inPost: 'The question this piece keeps digging',
+    here: 'You just read this',
   },
 } as const;
 
@@ -55,16 +59,60 @@ function Thumb({ post, className, sizes }: { post: Post; className: string; size
   );
 }
 
-function ThreadPost({ post, locale }: { post: Post; locale: Locale }) {
+function ThreadPost({ post, locale, current }: { post: Post; locale: Locale; current?: boolean }) {
   const p = localizedPost(post, locale);
   return (
     <li>
-      <Link className="ccx-tpost" href={href(locale, p)}>
+      <Link className="ccx-tpost" href={href(locale, p)} aria-current={current ? 'page' : undefined}>
         <Thumb post={post} className="ccx-tpost__img" sizes="96px" />
         <span className="ccx-tpost__t">{p.title}</span>
-        <time className="ccx-tpost__d" dateTime={p.date}>{short(locale, p.date)}</time>
+        <time className="ccx-tpost__d" dateTime={p.date}>{current ? COPY[locale].here : short(locale, p.date)}</time>
       </Link>
     </li>
+  );
+}
+
+/**
+ * 2026-10-13 (Simon): 계속 파는 질문은 메인이 아니라, 그 질문에 속한 글을 다 읽은 뒤에만 보인다.
+ * 지금 글을 줄기 안에 표시하고 앞뒤 글을 보여준다. 줄기에 속하지 않은 글에서는 아무것도 그리지 않는다.
+ */
+export function PostThreads({ post, all, locale }: { post: Post; all: Post[]; locale: Locale }) {
+  const C = COPY[locale];
+  const keys = threadsOf(post);
+  if (!keys.length) return null;
+  const summaries = summarizeThreads(all, latestDate(all))
+    .filter((summary) => keys.includes(summary.key) && summary.posts.length > 1);
+  if (!summaries.length) return null;
+  return (
+    <section className="ccx-sec ccx-post-threads" aria-label={C.inPost}>
+      <span className="ccx-k">{C.inPost}</span>
+      <ol className="ccx-threads">
+        {summaries.map((summary) => {
+          const name = threadName(summary.key, locale);
+          const { head, rest } = threadAround(summary.posts, post.slug, THREAD_PREVIEW);
+          return (
+            <li key={summary.key} className="ccx-thread" data-state={summary.state}>
+              <div className="ccx-thead">
+                <h3 className="ccx-title">{name}</h3>
+                <p className="ccx-q">{threadQuestion(summary.key, locale)}</p>
+                <span className="ccx-m">{C.threadShort(summary.posts.length, short(locale, summary.posts[0].date))}</span>
+              </div>
+              <ol className={`ccx-tposts${rest.length ? ' ccx-tposts--cont' : ''}`} aria-label={name}>
+                {head.map((item) => <ThreadPost key={item.slug} post={item} locale={locale} current={item.slug === post.slug} />)}
+              </ol>
+              {rest.length ? (
+                <details className="ccx-more">
+                  <summary><span className="ccx-more__open">{C.more(rest.length)}</span><span className="ccx-more__close">{C.less}</span></summary>
+                  <ol className="ccx-tposts ccx-tposts--cont">
+                    {rest.map((item) => <ThreadPost key={item.slug} post={item} locale={locale} />)}
+                  </ol>
+                </details>
+              ) : null}
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   );
 }
 

@@ -12,9 +12,8 @@ const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
 test('home keeps a single editorial block between the lead post and the archive', () => {
   const home = read('components/views/HomeView.tsx');
   assert.doesNotMatch(home, /LeadThread|leadAside=/, 'no extra block glued under the lead post');
-  const allBranch = home.slice(home.indexOf(') : ('));
-  assert.match(allBranch, /<ThreadList /);
-  assert.doesNotMatch(allBranch, /<DiscoveryGrid /, 'discovery grid is category-only');
+  // 2026-10-13 Simon: main menus show only the lead card and the list (threads moved into posts).
+  assert.doesNotMatch(home, /<ThreadList |<DiscoveryGrid |afterLead=/, 'nothing between the lead card and the list');
 });
 
 test('thread rows carry no status column, sparkline, or arrow decorations', () => {

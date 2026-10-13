@@ -1,7 +1,6 @@
 import SiteHeader from '@/components/SiteHeader';
 import AxisRail, { axisOf, editorialAxes } from '@/components/AxisRail';
-import ArchiveList, { type ArchiveEntry, type ArchiveFilterOptions } from '@/components/ArchiveList';
-import { DiscoveryGrid, ThreadList } from '@/components/HomeEditorial';
+import ArchiveList, { type ArchiveEntry } from '@/components/ArchiveList';
 import SiteFooter from '@/components/SiteFooter';
 import { axisMood } from '@/components/AxisRail';
 import { posts } from '@/data/posts';
@@ -10,7 +9,7 @@ import { archiveImageUrl } from '@/lib/social-metadata';
 import { postVideo, voiceVideo } from '@/lib/archive-video';
 import { AXIS_FROM_SLUG, axisLabel, localePath, t, type Locale } from '@/lib/i18n';
 import { localizedPost, localizedVoice } from '@/lib/i18n-content';
-import { latestDate, THREADS, threadName, threadsOf } from '@/lib/threads';
+import { threadsOf } from '@/lib/threads';
 
 type Axis = typeof editorialAxes[number];
 
@@ -25,7 +24,6 @@ export default function HomeView({ section, locale }: { section?: string; locale
   const active = resolveSection(section);
   const visiblePosts = (active ? posts.filter((post) => axisOf(post) === active) : [...posts])
     .sort((a, b) => b.date.localeCompare(a.date) || ((b.telegramMsgId ?? Number(b.id)) || 0) - ((a.telegramMsgId ?? Number(a.id)) || 0));
-  const now = latestDate(posts);
   const postEntries: ArchiveEntry[] = visiblePosts.map((source) => {
     const post = localizedPost(source, locale);
     return {
@@ -56,12 +54,6 @@ export default function HomeView({ section, locale }: { section?: string; locale
   const visibleEntries = active
     ? postEntries
     : [...postEntries, ...voiceEntries].sort((a, b) => b.date.localeCompare(a.date));
-  const filters: ArchiveFilterOptions = {
-    threads: THREADS.map((thread) => ({ key: thread.key, label: threadName(thread.key, locale), count: postEntries.filter((entry) => entry.threads?.includes(thread.key)).length }))
-      .filter((item) => item.count > 0),
-  };
-  const activeLabel = active ? axisLabel(locale, active) : undefined;
-  const postAxis = active;
 
   return (
     <main lang={locale}>
@@ -75,26 +67,14 @@ export default function HomeView({ section, locale }: { section?: string; locale
             {active ? L.axisNotes[active] : L.wallAll}
           </h1>
         </header>
+        {/* 2026-10-13 (Simon): main menus show only the lead card and the list.
+            Question threads live at the end of the posts that belong to them (PostThreads). */}
         {visibleEntries.length ? (
           <ArchiveList
             key={`${locale}-${active ?? 'all'}`}
             entries={visibleEntries}
             storageKey={`${locale === 'en' ? 'en-' : ''}${active ?? 'all'}`}
             locale={locale}
-            filters={filters}
-            afterLead={
-              postAxis ? (
-                <div className="ccx-home ccx-home--axis">
-                  <DiscoveryGrid all={posts} locale={locale} category={postAxis} categoryLabel={activeLabel} />
-                  <p className="ccx-k ccx-archive-k">{L.archiveIn(activeLabel ?? postAxis, visibleEntries.length)}</p>
-                </div>
-              ) : (
-                <div className="ccx-home">
-                  <ThreadList all={posts} now={now} locale={locale} />
-                  <p className="ccx-k ccx-archive-k">{L.archiveAll(visibleEntries.length)}</p>
-                </div>
-              )
-            }
           />
         ) : <p className="archive-empty">{L.emptyAxis}</p>}
       </section>
