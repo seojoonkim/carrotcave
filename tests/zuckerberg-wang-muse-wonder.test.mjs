@@ -27,7 +27,7 @@ test('Korean transcript keeps every Substack speaker turn, in order, with three 
   const data = JSON.parse(await read(`${dir}transcript-ko.json`));
   const names = new Set(['존 콜리슨', '마크 저커버그', '알렉산더 왕']);
   assert.equal(data.source, video);
-  assert.equal(data.segments.length, 23); // key-sentence excerpts only, not the full transcript
+  assert.equal(data.segments.length, 667); // full transcript: every official speaker turn (Simon confirmed rights, 2026-10-13)
   data.segments.forEach((s, i) => {
     assert.equal(s.id, i);
     assert.ok(names.has(s.speaker), `speaker ${i}`);
@@ -36,20 +36,24 @@ test('Korean transcript keeps every Substack speaker turn, in order, with three 
   });
 });
 
-test('third-party podcast: only short key-quote excerpts are published, never the full transcript', async () => {
+test('full transcript: English reader is every official turn verbatim, Korean mirrors it 1:1', async () => {
   const en = JSON.parse(await read(`${dir}transcript-en-reader.json`));
   const ko = JSON.parse(await read(`${dir}transcript-ko.json`));
-  assert.equal(en.items.length, 23);
-  assert.equal(ko.segments.length, 23);
-  assert.match(en.method, /excerpts/i);
-  assert.match(ko.method, /excerpts/i);
-  for (const it of en.items) assert.ok(it.text.length <= 600, `excerpt ${it.id} too long`);
+  assert.equal(en.items.length, 667);
+  assert.equal(ko.segments.length, 667);
+  assert.doesNotMatch(en.method + ko.method, /excerpt/i);
+  const counts = {};
+  en.items.forEach((it, i) => { assert.ok(it.text.trim(), `en ${i}`); counts[it.speaker] = (counts[it.speaker] || 0) + 1;
+    assert.equal(ko.segments[i].start, it.start, `start ${i}`); });
+  assert.deepEqual(counts, { 'John Collison': 245, 'Mark Zuckerberg': 229, 'Alexandr Wang': 193 });
   const total = en.items.reduce((n, it) => n + it.text.length, 0);
-  assert.ok(total < 12000, `published English text ${total} chars looks like a full transcript`);
+  assert.ok(total > 100000, `full English text expected, got ${total}`);
   const enKeys = JSON.parse(await read(`${dir}key-sentences.en.json`));
-  assert.deepEqual(enKeys.map((k) => k.exact_quote), en.items.map((i) => i.text));
+  for (const k of enKeys) assert.ok(en.items[k.id].text.includes(k.exact_quote), `en key ${k.id}`);
   const html = await read(`${dir}index.html`);
   assert.match(html, /cheekypint\.substack\.com\/p\/muse-wonder-zuckerberg-and-wangs/);
+  assert.doesNotMatch(html, /발췌 안내|key quotes only/);
+  assert.match(html, /667 TURNS/);
 });
 
 test('reader page: 12 official chapters, date line, hero photo, three-speaker roles, 10+ key sentences', async () => {

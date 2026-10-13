@@ -17,7 +17,7 @@
   const speakerNames = { '마크 저커버그': '마크 저커버그', '알렉산더 왕': '알렉산더 왕', '존 콜리슨': '존 콜리슨' };
   let lastFocus = null;
   const renderSegments = data => {
-    if (!Array.isArray(data.segments) || data.segments.length !== 23) throw new Error('Unexpected transcript count');
+    if (!Array.isArray(data.segments) || data.segments.length !== 667) throw new Error('Unexpected transcript count');
     data.segments.forEach((segment,index) => {
       if (!segment || segment.id !== index || !speakerNames[segment.speaker] || typeof segment.text !== 'string' || !segment.text.trim()) throw new Error(`Invalid segment ${index}`);
       const chapter=chapters.find(item=>Number(segment.start)>=Number(item.dataset.start)&&Number(segment.start)<Number(item.dataset.end));

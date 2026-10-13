@@ -1,94 +1,94 @@
 [
  {
-  "id": 0,
+  "id": 19,
   "exact_quote": "Because really basically what it’s doing, it’s like, you know, within the agent, I’m not seeing any code, but it basically is writing this whole video processing, image processing pipeline."
  },
  {
-  "id": 1,
+  "id": 41,
   "exact_quote": "And I think that for the success of a product like Muse and the success of a lot of these consumer use cases, it really depends on the ability to be strong and multimodal."
  },
  {
-  "id": 2,
+  "id": 56,
   "exact_quote": "One thing that we talked about from early on, is that basically there is this pattern where I think the products are getting thinner and the model is getting to be more of the product, right?"
  },
  {
-  "id": 3,
+  "id": 59,
   "exact_quote": "Well, it’s ultimately in model design decisions, which ultimately boil down to training methods or data or evals or, you know, all these things."
  },
  {
-  "id": 4,
+  "id": 94,
   "exact_quote": "So we’ve designed basically both the model and a system for the model to use to develop a much stronger form of memory."
  },
  {
-  "id": 5,
+  "id": 111,
   "exact_quote": "And then when faced with various setbacks along the way, the ability to identify other solutions to those problems in an aligned way."
  },
  {
-  "id": 6,
+  "id": 157,
   "exact_quote": "And so you’re kind of outsourcing all of your product thinking to that PhD student who happened to make a viral benchmark."
  },
  {
-  "id": 7,
+  "id": 256,
   "exact_quote": "I think it’s the fact that we’re scaling both pre-training and scaling our recipes in RL kind of concurrently."
  },
  {
-  "id": 8,
+  "id": 286,
   "exact_quote": "You guys are saying that the essence of training a frontier model is you have to push your chips all in before you’ve been dealt the cards."
  },
  {
-  "id": 9,
+  "id": 353,
   "exact_quote": "But if we want to be kind of an interesting company that is like inventing new things that matter to people in the future, I don’t see how you can do that if you don’t have the ability to build end-to-end your own superintelligence and build them into the products that people use."
  },
  {
-  "id": 10,
+  "id": 368,
   "exact_quote": "So in the long arc, you’d clearly expect that demand will shift from current avenues more and more towards agentic demand."
  },
  {
-  "id": 11,
+  "id": 399,
   "exact_quote": "Because I think, like, over time, I think that the question is, is the total addressable market for all of commerce just increasing dramatically?"
  },
  {
-  "id": 12,
+  "id": 421,
   "exact_quote": "OpenRouter already routes more than 10 trillion tokens a day and handles much of the complexity of working with different models through a single API"
  },
  {
-  "id": 13,
+  "id": 432,
   "exact_quote": "For voice overall, it’s quite high bandwidth for you to communicate with voice, but in terms of consuming information, having someone speak to you is very inefficient compared to having it be visual."
  },
  {
-  "id": 14,
+  "id": 449,
   "exact_quote": "So it’s voice in and out and It’ll be able to see what you see, and it’ll be able to kind of paint the pixels."
  },
  {
-  "id": 15,
+  "id": 460,
   "exact_quote": "and that over time there are lots of different ways to effectively take a small cut of what you are saving or making for people, and that will end up being a very large revenue stream."
  },
  {
-  "id": 16,
+  "id": 479,
   "exact_quote": "And now, like, if you can grow it a few percent faster by using these models to accelerate these things, then that ends up funding a huge amount of this too as you’re scaling it out."
  },
  {
-  "id": 17,
+  "id": 508,
   "exact_quote": "you can pack very strong intelligence capabilities into smaller and smaller models, which enables us to serve them at much wider scale."
  },
  {
-  "id": 18,
+  "id": 510,
   "exact_quote": "And there’s lots of sort of, like, decisions that people make at all levels in terms of where they work or who they do business with or what business deals they do that sort of, like, drive towards a more equalized outcome."
  },
  {
-  "id": 19,
+  "id": 543,
   "exact_quote": "he can ensure that we have kind of like a global optimization towards this sort of like AI maximalist version of Meta versus the natural inertia of an organization towards just local optimization ad infinitum."
  },
  {
-  "id": 20,
+  "id": 604,
   "exact_quote": "It’s like you go from being very technical to you go to a role where you’re, you’re not like in the details anymore, and then you very quickly become not technical or don’t kind of understand it much faster than you probably realize."
  },
  {
-  "id": 21,
+  "id": 618,
   "exact_quote": "once he internalizes certain beliefs, like the— speed and magnitude of willing to change prior actions and pivot towards the worldview that is consistent with those beliefs."
  },
  {
-  "id": 22,
+  "id": 632,
   "exact_quote": "But then you look at, like, what they’re actually doing and how consistent are their actions with that belief."
  }
 ]

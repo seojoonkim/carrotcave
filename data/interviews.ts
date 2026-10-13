@@ -26,7 +26,7 @@ export const interviews: InterviewArchive[] = [
     eyebrow: 'CHEEKY PINT / AI / AGENTS',
     title: '뮤즈 원더, 1,000억 달러짜리 AI 베팅',
     summary: '개인 에이전트가 일을 대신하면 모델의 행동이 제품을 가르고, 구매를 맡는 방식과 기기, 개발비를 버는 구조까지 바뀐다고 저커버그와 왕이 말한다.',
-    description: 'Cheeky Pint에서 존 콜리슨이 마크 저커버그, 알렉산더 왕과 나눈 뮤즈 원더 대담. 12개 장 요약과 장별 핵심 발언 23개를 한국어로 옮겼습니다.',
+    description: 'Cheeky Pint에서 존 콜리슨이 마크 저커버그, 알렉산더 왕과 나눈 뮤즈 원더 대담. 2시간 14분 대화 전체(발언 667개)를 한국어로 옮기고 12개 장으로 나눴습니다.',
     sourcePublishedAt: '2026-10-12', // Official YouTube upload_date, verified with yt-dlp.
     thumbnailUrl: '/voices/zuckerberg-wang-muse-wonder/assets/muse-wonder.jpg',
     sourceUrl: 'https://www.youtube.com/watch?v=XfdIhd1g6EI',
