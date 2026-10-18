@@ -38,6 +38,21 @@ try {
     assert.equal(date, post.date, `Source date #${message.id}`);
     proof.items.push({ id: message.id, title, slug: post.slug, date, sourceDatetime: message.datetime, sourceUrl: `https://t.me/carrotcave/${message.id}`, bodySha256Normalized: hash(norm(content)), status: base ? 'live-verified' : 'source-local-match', media: post.mediaUrls || [] });
   }
+  // A local match is NOT "unchanged": #224 sat in data/posts.ts for hours while the
+  // canonical page 404'd, and the 6h sync kept reporting it unchanged. Always probe
+  // the canonical KO+EN pages; any non-200 forces the deploy path (exit 2).
+  const canonical = process.env.CANONICAL_URL || 'https://carrotcave.com';
+  const needsDeploy = [];
+  for (const item of proof.items) {
+    for (const prefix of ['', '/en']) {
+      const url = `${canonical}${prefix}/posts/${item.slug}`;
+      let status;
+      try { status = (await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(20000) })).status; } catch (e) { status = `error:${e.message}`; }
+      (item.canonical ||= {})[prefix || '/'] = status;
+      if (status !== 200) needsDeploy.push(`#${item.id} ${url} → ${status}`);
+    }
+  }
+  proof.needsDeploy = needsDeploy;
   if (base) {
     const errors = [];
     page.on('pageerror', e => errors.push(e.message));
@@ -47,7 +62,8 @@ try {
       for (const item of proof.items) assert.equal(await page.locator(`a[href="/posts/${item.slug}"]`).count(), 1);
       assert.equal(await page.locator('.wall-card__date-part').count(), 0);
       assert.equal(await page.locator('.wall-heading').innerText().then(t => /ENTRIES|THE CAVE WALL/.test(t)), false);
-      assert.equal(await page.locator('.footer-rabbit-carrot').getAttribute('src'), '/footer-rabbit-carrot-v3.svg');
+      // Footer rabbit is an inline animated <svg> since fee8836 (was <img src=v3.svg>); assert presence, not the old src.
+      assert.equal(await page.locator('.footer-rabbit-carrot').count(), 1);
       await page.locator(`a[href="/posts/${proof.items[0].slug}"]`).click();
       await page.waitForURL(`**/posts/${proof.items[0].slug}`);
       const pages = [];
@@ -57,9 +73,15 @@ try {
         assert.equal(await page.locator('article h1').innerText(), item.title);
         const post = posts.find(p => p.slug === item.slug);
         const body = norm(await page.locator('.post-content').innerText());
-        // Plain URLs may render as rich embeds: verify every prose paragraph independently.
-        const paragraphs = post.content.split(/\n\s*\n/).map(norm).filter(p => p && !/^https?:\/\/\S+$/.test(p));
-        for (const paragraph of paragraphs) assert.ok(body.includes(paragraph), `Missing prose #${item.id}: ${paragraph.slice(0, 70)}`);
+        // Plain URLs and "label + URL" lines render as link cards (tests/post-links), so
+        // verify text lines as text and link lines by their rendered href.
+        const lines = post.content.split('\n').map(norm).filter(Boolean).map(l => l.replace(/^[-*•]\s+/, ''));
+        for (const line of lines) {
+          const link = line.match(/(https?:\/\/\S+)$/);
+          if (link) assert.ok(await page.locator(`.post-content a[href="${link[1]}"]`).count() >= 1, `Missing link #${item.id}: ${link[1]}`);
+          else assert.ok(body.includes(line), `Missing prose #${item.id}: ${line.slice(0, 70)}`);
+        }
+        const paragraphs = lines;
         assert.equal(await page.locator(`a[href="${item.sourceUrl}"]`).count(), 1);
         const images = await page.locator('.post-media-grid img').evaluateAll(nodes => nodes.map(n => ({ src: n.getAttribute('src'), loaded: n.complete && n.naturalWidth > 0 })));
         assert.ok(images.every(x => x.loaded));
@@ -72,7 +94,7 @@ try {
     assert.deepEqual(errors, []);
     proof.pageErrors = errors;
     proof.assets = [];
-    for (const path of [...new Set(proof.items.flatMap(x => x.media)), '/footer-rabbit-carrot-v3.svg']) {
+    for (const path of [...new Set(proof.items.flatMap(x => x.media))]) {
       const response = await page.request.get(`${base}${path}`);
       assert.equal(response.status(), 200);
       const bytes = await response.body();
@@ -83,4 +105,8 @@ try {
   mkdirSync('docs/eval', { recursive: true });
   writeFileSync(output, JSON.stringify(proof, null, 2) + '\n');
   console.log(JSON.stringify(proof, null, 2));
+  if (needsDeploy.length) {
+    console.error(`NEEDS_DEPLOY (local matches source but canonical is not live — do NOT report unchanged):\n${needsDeploy.join('\n')}`);
+    process.exitCode = 2;
+  }
 } finally { await browser.close(); }
