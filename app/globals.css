@@ -976,6 +976,9 @@ html[data-torch="on"] .cc-torch{opacity:1}
 .wall-shell .archive-status{margin:-24px 0 24px;color:var(--ink-2);font-size:14px}
 @media(hover:hover) and (pointer:fine){.wall-shell .archive-search__hint{display:inline-block;padding:2px 7px;border:1px solid #44475a;border-radius:3px;color:var(--ink-3);font:500 12px/1.3 var(--mono)}.wall-shell .archive-search:focus-within .archive-search__hint{display:none}}
 @media(max-width:520px){.wall-shell{padding-top:28px}.wall-heading.wall-heading--bridge{gap:6px;margin:0 8px 16px}.wall-heading--bridge #wall-heading{font-size:14px}.wall-heading__kicker .wall-heading__count{display:inline}.wall-shell .archive-search{height:46px;margin-bottom:24px;padding:0 14px}.wall-shell .archive-search__hint{display:none!important}}
+/* 2026-10-18: lead card's bottom hairline sat flush on the search pill — give the search its own breathing room below the divider. */
+.wall-shell .ccx-lead + .archive-search{margin-top:32px}
+@media(max-width:520px){.wall-shell .ccx-lead + .archive-search{margin-top:24px}}
 
 /* One-line bridge 2026.10 */
 .wall-heading.wall-heading--bridge{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px;row-gap:4px;margin:0 auto 20px;padding:0;border:0}
