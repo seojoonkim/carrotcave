@@ -23,7 +23,7 @@
     "kind": "link",
     "title": "What Bear Markets Look Like - AVC",
     "siteName": "AVC",
-    "description": "It&#8217;s hard to look at the price charts of the big crypto assets and not cringe. But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen. Amazon peaked in the Internet bubble in late 1999 at around $90/share. Almost two years later, at the [&hellip;]",
+    "description": "It’s hard to look at the price charts of the big crypto assets and not cringe. But it helps to look back to an earlier time, when a new sector was emerging, and understand what can happen. Amazon peaked in the Internet bubble in late 1999 at around $90/share. Almost two years later, at the […]",
     "image": "/media/link-previews/og-3a99582999e5.png"
   },
   "https://clawdhub.com/skills/prompt-guard": {
@@ -32,6 +32,12 @@
     "siteName": "ClawHub",
     "description": "Agent skill by @skills on ClawHub.",
     "image": "/media/link-previews/og-56d3f18d54d5.png"
+  },
+  "https://coinshares.com/corp/insights/research-data/ethereum-5-year-valuation-framework/": {
+    "kind": "link",
+    "title": "Ethereum 5-Year Valuation Framework: Bear, Base & Bull Cases",
+    "description": "CoinShares’ Ethereum valuation framework models ETH through cash flows, monetary premium and network effects, projecting 2031 bear, base and bull price scenarios.",
+    "image": "/media/link-previews/og-664d4617daac.png"
   },
   "https://dev.to/sebayaki/i-audited-moltxs-skill-file-its-an-ai-agent-trojan-horse-539k": {
     "kind": "link",
@@ -46,6 +52,11 @@
     "siteName": "Google Docs",
     "description": "폼 제출해주시면, 신원 확인 후 베스트셀러 도서를 카카오 선물하기로 보내드립니다.",
     "image": "/media/link-previews/og-50f485516d5d.png"
+  },
+  "https://ethval.com": {
+    "kind": "link",
+    "title": "ETHval | Intrinsic Value Dashboard",
+    "description": "ETHval: Ethereum intrinsic value dashboard. 12 valuation models averaged into one composite ETH fair value, with on-chain fundamentals and model history."
   },
   "https://explainx.ai/blog/compositor-open-source-image-editor-astra-2026": {
     "kind": "link",
@@ -234,6 +245,13 @@
     "siteName": "EastPoint:Seoul 2026",
     "description": "이스트포인트:서울 2026 (9월 28일, 서울 파르나스 호텔) — 디지털자산, 스테이블코인, RWA 토큰화, AI 경제를 다루는 한국 대표 프라이빗 서밋. 해시드, 블루밍비트, 한국경제신문이 공동 주최합니다.",
     "image": "/media/link-previews/og-58e35bf45592.png"
+  },
+  "https://www.vaneck.com/pl/en/blog/digital-assets/a-potential-valuation-methodology-for-ethereum/": {
+    "kind": "link",
+    "title": "A Potential Valuation Methodology for Ethereum | VanEck",
+    "siteName": "A Potential Valuation Methodology for Ethereum | VanEck",
+    "description": "In light of Ethereum’s recent hard fork, which allows users to withdraw staked ETH and, in our view, creates a major new competitor to US T-bills, we revisited our Ethereum estimates with a more rigorous valuation model.",
+    "image": "/media/link-previews/og-e8a1a58a846d.jpg"
   },
   "https://www.youtube.com/watch?v=Wx0C42-S5z4": {
     "kind": "youtube",

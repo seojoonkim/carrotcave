@@ -394,5 +394,35 @@
       "어도비"
     ],
     "titleEn": "Photoshop Became the Answer Key"
+  },
+  "224": {
+    "slug": "ethval-v1-valuation-from-calculation-to-validation",
+    "title": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
+    "category": "빌딩",
+    "depth": "deep",
+    "contentHash": "3382:183639361",
+    "summary": "ETHval v1.0은 평가모형의 숫자보다 가정과 한계를 검증하는 데 집중한다. 과거 예측과 시장 반응을 구분하며 이더리움 가치평가의 근거를 되묻는다.",
+    "tags": [
+      "이더리움",
+      "ETHval",
+      "가치평가",
+      "바이브코딩"
+    ],
+    "titleEn": "ETHval: From Calculation to Validation"
+  },
+  "232": {
+    "slug": "intelligence-expiration-date",
+    "title": "지능의 유통기한",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "3612:3076143930",
+    "summary": "딥시크의 20센트 정답은 미국 AI 랩이 파는 시간의 웃돈을 줄인다. 값이 몇 달 만에 상하는 지능 앞에서 반도체와 한국의 다음 몫을 묻는다.",
+    "tags": [
+      "AI",
+      "딥시크",
+      "프론티어 랩",
+      "반도체"
+    ],
+    "titleEn": "The Expiration Date of Intelligence"
   }
 }

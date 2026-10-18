@@ -6,6 +6,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { posts } from '../data/posts.ts';
+import { decodeEntities, fetchWithCookies } from './lib/fetch-with-cookies.mjs';
 import { findPreviewBlocks, standaloneLinkOf, unwrapTelegramLinkPreview, youTubeIdOf } from '../lib/link-preview.ts';
 
 const OUT = new URL('../data/link-previews.json', import.meta.url);
@@ -15,7 +16,7 @@ const refresh = process.argv.includes('--refresh');
 const previews = existsSync(OUT) && !refresh ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
 mkdirSync(THUMB_DIR, { recursive: true });
 
-const decode = (s) => s?.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;|&#x27;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim();
+const decode = decodeEntities;
 const metaOf = (html, key) => decode(
   html.match(new RegExp(`<meta[^>]+(?:property|name)=["']${key}["'][^>]*content=["']([^"']*)`, 'i'))?.[1]
   ?? html.match(new RegExp(`<meta[^>]+content=["']([^"']*)["'][^>]*(?:property|name)=["']${key}["']`, 'i'))?.[1],
@@ -72,7 +73,7 @@ async function youtube(url, id) {
 async function page(url) {
   const entry = { kind: 'link' };
   try {
-    const r = await fetch(url, { headers: UA, redirect: 'follow', signal: AbortSignal.timeout(15000) });
+    const r = await fetchWithCookies(url);
     if (r.ok) {
       const html = (await r.text()).slice(0, 600000);
       const title = metaOf(html, 'og:title') ?? metaOf(html, 'twitter:title') ?? decode(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]);
@@ -111,7 +112,9 @@ for (const post of posts) {
 let added = 0;
 for (const [url, fb] of telegramFallback) if (previews[url] && !previews[url].title) Object.assign(previews[url], { title: fb.title, siteName: previews[url].siteName ?? fb.site, description: previews[url].description ?? fb.description, source: 'telegram-preview' });
 for (const url of [...urls].sort()) {
-  if (previews[url]) continue;
+  // A stored fetch failure (status, no title) is retried instead of kept forever;
+  // otherwise one transient error blocks every later release at the title gate.
+  if (previews[url] && !(previews[url].status && !previews[url].title)) continue;
   const id = youTubeIdOf(url);
   previews[url] = id ? await youtube(url, id) : await page(url);
   const fb = telegramFallback.get(url);

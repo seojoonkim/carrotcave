@@ -290,6 +290,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "ethval-v1-valuation-from-calculation-to-validation": {
+      "slug": "ethval-v1-valuation-from-calculation-to-validation",
+      "title": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
+      "category": "빌딩",
+      "primaryTopics": [
+        "building"
+      ],
+      "reviewStatus": "approved"
+    },
     "fear-and-value-in-ai-creation": {
       "slug": "fear-and-value-in-ai-creation",
       "title": "물리법칙이 바뀐 곳에서 며칠을 보낸 이야기",
@@ -356,6 +365,15 @@
     "hvl-fellows": {
       "slug": "hvl-fellows",
       "title": "Hashed Vibe Labs Fellows 소개",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
+    "intelligence-expiration-date": {
+      "slug": "intelligence-expiration-date",
+      "title": "지능의 유통기한",
       "category": "탐험",
       "primaryTopics": [
         "exploration"
@@ -5388,6 +5406,132 @@
       "status": "approved"
     },
     {
+      "from": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "agent-passport",
+      "type": "REFRAMES",
+      "strength": 0.5392,
+      "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+      "sourceEvidence": "- VanEck: 이더리움 가치평가 방법론 https://www.vaneck.com/pl/en/blog/digital-assets/a-potential-valuation-methodology-for-ethereum/ - CoinShares: 이더리움 5년 가치평가 프레임워크 https://coinshares.com/corp/insights/research-data/ethereum-5-year-valuation-framework",
+      "targetEvidence": "https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0",
+      "label": "「블록체인 위에 새겨진 에이전트의 여권」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 28,
+        "overlapTokens": [
+          "ai",
+          "com",
+          "ethereum",
+          "for",
+          "hashed",
+          "개의",
+          "거래",
+          "과거에",
+          "기관이",
+          "기반",
+          "다르다",
+          "다만"
+        ],
+        "titleOverlap": [
+          "블록체인",
+          "위에",
+          "이더리움"
+        ],
+        "sharedTags": [
+          "이더리움"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=28;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "post-189",
+      "type": "DEEPENS",
+      "strength": 0.3676,
+      "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+      "sourceEvidence": "화면의 입력과 실제 계산이 같은 의미를 갖도록 정비했다.",
+      "targetEvidence": "메모를 각각 찾는 것만으로는 관계를 설명할 수 없었다.",
+      "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 57,
+        "overlapTokens": [
+          "0은",
+          "10",
+          "com",
+          "v1",
+          "각각",
+          "개의",
+          "검증",
+          "것과",
+          "것만으로",
+          "것보다",
+          "것을",
+          "계산이"
+        ],
+        "titleOverlap": [
+          "v1",
+          "검증",
+          "언제",
+          "업데이트"
+        ],
+        "sharedTags": [],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=57;titleOverlap=4;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "thought-speed",
+      "type": "REFRAMES",
+      "strength": 0.3527,
+      "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+      "sourceEvidence": "처음에는 AI와 대화하며 무언가를 만들 수 있다는 사실이 신기했다.",
+      "targetEvidence": "만들 가치가 있는 것과, 영원히 상상 속에만 가둬두는 게 더 아름다운 것을 구분하는 법.",
+      "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 24,
+        "overlapTokens": [
+          "ai",
+          "개의",
+          "것과",
+          "것을",
+          "구분",
+          "그대로",
+          "남아",
+          "넘어",
+          "만드는",
+          "만들",
+          "미래",
+          "바이브코딩"
+        ],
+        "titleOverlap": [
+          "이더리움"
+        ],
+        "sharedTags": [
+          "바이브코딩"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=24;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "fear-and-value-in-ai-creation",
       "to": "ip-tvw",
       "type": "DEEPENS",
@@ -6461,6 +6605,136 @@
         ]
       },
       "typeBasis": "signals=content+tags+concept-agent;sourceCategory=탐험;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=14;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "intelligence-expiration-date",
+      "to": "china-ai-frontier",
+      "type": "REFRAMES",
+      "strength": 0.5871,
+      "sourceClaimId": "intelligence-expiration-date-c1",
+      "sourceEvidence": "구글과 오픈AI의 비슷한 점수대 모델들도 20배에서 40배를 쓰고, 클로드 페이블 5의 가장 비싼 설정은 100배 넘게 쓰고도 점수가 더 낮다.",
+      "targetEvidence": "Openclaw에 물려 사용하면, 가격은 Claude Opus 4.5의 100배보다도 저렴하다.",
+      "label": "「중국 프론티어 모델들이 세상을 잡아먹기 시작했다」은 「지능의 유통기한」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 44,
+        "overlapTokens": [
+          "100",
+          "20",
+          "2021",
+          "2021년",
+          "5는",
+          "5의",
+          "ai",
+          "ai의",
+          "가격은",
+          "계속",
+          "그런데",
+          "나머지"
+        ],
+        "titleOverlap": [
+          "모델들",
+          "중국",
+          "프론티어"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=44;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "intelligence-expiration-date",
+      "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+      "type": "DEEPENS",
+      "strength": 0.4899,
+      "sourceClaimId": "intelligence-expiration-date-c1",
+      "sourceEvidence": "AI의 가격은 원래 빠르게 떨어져 왔다.",
+      "targetEvidence": "나도 요즘 AI로 곡을 만든다.",
+      "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「지능의 유통기한」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 43,
+        "overlapTokens": [
+          "ai",
+          "ai의",
+          "가까이",
+          "것을",
+          "것이다",
+          "계속",
+          "그런데",
+          "나도",
+          "남는다",
+          "누군가",
+          "다만",
+          "다음"
+        ],
+        "titleOverlap": [
+          "다음",
+          "전까지"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=43;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "intelligence-expiration-date",
+      "to": "unknowns-in-modern-creation",
+      "type": "REFRAMES",
+      "strength": 0.4822,
+      "sourceClaimId": "intelligence-expiration-date-c1",
+      "sourceEvidence": "구글과 오픈AI의 비슷한 점수대 모델들도 20배에서 40배를 쓰고, 클로드 페이블 5의 가장 비싼 설정은 100배 넘게 쓰고도 점수가 더 낮다.",
+      "targetEvidence": "AI는 이제 다음 세대 AI의 아키텍처를 스스로 제안하고, 자신의 학습 데이터를 스스로 생성한다.",
+      "label": "「모르는 것을 모르는 채로 만드는 시대」은 「지능의 유통기한」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 46,
+        "overlapTokens": [
+          "100",
+          "50",
+          "60",
+          "ai",
+          "ai의",
+          "것을",
+          "것이다",
+          "공개",
+          "교과서",
+          "년에서",
+          "누군가",
+          "다음"
+        ],
+        "titleOverlap": [
+          "것을",
+          "만드는"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=46;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10681,32 +10955,39 @@
     },
     {
       "from": "post-143",
-      "to": "uae-emergency-news-telegram-channel",
-      "type": "RESONATES",
+      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-143-c1",
-      "sourceEvidence": "20개 이상의 커맨드가 첫날부터 전부 사용 가능하고, Backlink, Fuzzy Search, Agentic Search, Meeting Brief, Open Loop Tracking, Decision Distillation까지 에이전트 운영에 필요한 워크플로우가 다 들어있다.",
-      "targetEvidence": "다음의 20개 소스 목록을 참조한다.",
-      "label": "「UAE Emergency News」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "MemKraft는 이 프로젝트들에서 배운 것을 한곳에 녹여내되, 외부 의존성 제로, Plain Markdown 기반, 프레임워크 무관이라는 원칙 위에 올렸다.",
+      "targetEvidence": "이더리움의 적정가치를 직접 계산해보고 싶어 AI와 대화하며 만들었다.",
+      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 5,
+        "lexicalOverlap": 38,
         "overlapTokens": [
-          "20",
-          "20개",
+          "ai",
+          "com",
+          "각각",
+          "개의",
+          "것보다",
+          "것을",
+          "과거",
+          "근거를",
+          "기반",
+          "만들기",
           "만들었다",
-          "소스",
-          "있으면"
+          "붙는다"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=5;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=0;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11053,39 +11334,41 @@
     },
     {
       "from": "post-146",
-      "to": "click-theology",
-      "type": "RESONATES",
+      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-146-c1",
-      "sourceEvidence": "의학에서 감별 진단 목록을 관리하는 것과 같다.",
-      "targetEvidence": "그런데 그 배합의 비율, 검색 결과의 가중치, 최종 추천을 결정짓는 논리.",
-      "label": "「딸깍의 신학」은 「MemKraft v0.2 – v0.5 개발 후기」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "느리게 사라지는 것과 빠르게 사라지는 것을 구분하는 것만으로 기억의 질감이 달라졌다.",
+      "targetEvidence": "지금 아는 것을 과거에도 알았던 것처럼 계산하면 성과는 쉽게 좋아 보인다.",
+      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.2 – v0.5 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 57,
+        "lexicalOverlap": 61,
         "overlapTokens": [
           "ai",
-          "python",
-          "가깝다",
-          "가중치",
-          "같다",
+          "com",
+          "가설을",
+          "각각",
+          "개로",
           "개의",
-          "검색",
           "것과",
+          "것을",
           "것처럼",
-          "구글",
-          "그런데",
-          "길이"
+          "결과를",
+          "공유",
+          "과거"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "업데이트"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=57;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=61;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11178,39 +11461,42 @@
     },
     {
       "from": "post-147",
-      "to": "japan-hardware-software-gap",
-      "type": "RESONATES",
+      "to": "intelligence-expiration-date",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-147-c1",
-      "sourceEvidence": "2024년에는 GPU, 그러니까 AI 연산 전용 칩의 품귀가 병목이었다면, 지금의 병목은 칩 위의 서비스 레이어로 올라왔다.",
-      "targetEvidence": "공장 설비는 센서 데이터와 디지털 트윈, AI 제어를 통해 계속 성능을 바꾼다.",
-      "label": "「왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?」은 「중국 모델이 문을 잠근 이후의 세계에 대한 상상」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "Meta는 반대 방향으로 움직여 자사 AI 모델 Llama를 계속 무료 공개하며 경쟁사들의 유료 프리미엄을 깎아내리고 있다.",
+      "targetEvidence": "게다가 딥시크는 이 모델을 누구나 내려받아 쓸 수 있게 공개했다.",
+      "label": "「지능의 유통기한」은 「중국 모델이 문을 잠근 이후의 세계에 대한 상상」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 67,
+        "lexicalOverlap": 78,
         "overlapTokens": [
-          "2024",
-          "2024년",
+          "10",
+          "2027",
+          "2027년",
           "ai",
-          "거의",
+          "gpu",
+          "것을",
           "것이다",
-          "것처럼",
-          "결과",
-          "경쟁이",
+          "게다가",
+          "경쟁자",
           "계속",
-          "규모",
-          "그런데",
-          "기술"
+          "공개",
+          "그런데"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "모델이",
+          "중국"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=67;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=78;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11308,39 +11594,41 @@
     },
     {
       "from": "post-149",
-      "to": "click-theology",
-      "type": "RESONATES",
+      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-149-c1",
-      "sourceEvidence": "네 개의 기능을 묶어서 답을 시도했다.",
-      "targetEvidence": "그런데 그 배합의 비율, 검색 결과의 가중치, 최종 추천을 결정짓는 논리.",
-      "label": "「딸깍의 신학」은 「MemKraft v0.6 – v0.8 개발 후기」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "막 나온 Opus 4.7 에이전트가 4개 기능, 83개 테스트, 문서 업데이트, 빌드, 업로드, 커밋, 푸시까지 한 번에 완주했다.",
+      "targetEvidence": "열두 개 모형이 열두 개의 증거는 아니다 여덟 개로 시작한 평가모형은 열두 개가 됐다.",
+      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.6 – v0.8 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 47,
+        "lexicalOverlap": 39,
         "overlapTokens": [
           "ai",
-          "가중치",
-          "가진",
+          "com",
+          "opus",
+          "가능한",
+          "개가",
+          "개로",
           "개의",
-          "검색",
-          "결과",
-          "경계를",
-          "그런데",
-          "끝났다",
-          "나온",
-          "다음",
-          "답을"
+          "것을",
+          "공유",
+          "구분",
+          "그대로",
+          "나온"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "업데이트"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=47;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19076,15 +19364,25 @@
     }
   ],
   "outgoing": {
+    "intelligence-expiration-date": [
+      123,
+      124,
+      125
+    ],
+    "ethval-v1-valuation-from-calculation-to-validation": [
+      96,
+      97,
+      98
+    ],
     "photoshop-became-the-answer-key": [
-      189,
-      190,
-      191
+      195,
+      196,
+      197
     ],
     "kpop-next-chapter-ip-and-fandom": [
-      141,
-      142,
-      143
+      147,
+      148,
+      149
     ],
     "eastpoint-2026-keynote-my-writing-became-a-warehouse": [
       90,
@@ -19097,24 +19395,24 @@
       95
     ],
     "the-right-to-turn-on-a-brain": [
-      366,
-      367,
-      368
+      372,
+      373,
+      374
     ],
     "waited-for-you": [
-      411,
-      412,
-      413
+      417,
+      418,
+      419
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      351,
-      352,
-      353
+      357,
+      358,
+      359
     ],
     "living-in-the-age-of-optimists": [
-      147,
-      148,
-      149
+      153,
+      154,
+      155
     ],
     "brain-files-minecraft-flies": [
       54,
@@ -19122,19 +19420,19 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      354,
-      355,
-      356
+      360,
+      361,
+      362
     ],
     "hashed-ai-ecosystem-growth-intern": [
-      111,
-      112,
-      113
+      114,
+      115,
+      116
     ],
     "japan-hardware-software-gap": [
-      132,
-      133,
-      134
+      138,
+      139,
+      140
     ],
     "automation-citizen-production-equity": [
       45,
@@ -19142,14 +19440,14 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      357,
-      358,
-      359
+      363,
+      364,
+      365
     ],
     "last-message": [
-      144,
-      145,
-      146
+      150,
+      151,
+      152
     ],
     "700-ai-agents-found-each-other": [
       3,
@@ -19157,34 +19455,34 @@
       5
     ],
     "security-token-rail": [
-      342,
-      343,
-      344
+      348,
+      349,
+      350
     ],
     "post-201": [
-      309,
-      310,
-      311
+      315,
+      316,
+      317
     ],
     "proving-human-writing-without-ai": [
-      321,
-      322,
-      323
+      327,
+      328,
+      329
     ],
     "graph-engineering-ai-org": [
-      108,
-      109,
-      110
+      111,
+      112,
+      113
     ],
     "tokyo-taxi-ai-ads": [
-      375,
-      376,
-      377
+      381,
+      382,
+      383
     ],
     "openclaw-cron-session-bottleneck": [
-      180,
-      181,
-      182
+      186,
+      187,
+      188
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -19192,14 +19490,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      312,
-      313,
-      314
+      318,
+      319,
+      320
     ],
     "moltbook-agent-internet": [
-      165,
-      166,
-      167
+      171,
+      172,
+      173
     ],
     "ai-idea-execution-speed": [
       33,
@@ -19212,209 +19510,209 @@
       38
     ],
     "post-197": [
+      312,
+      313,
+      314
+    ],
+    "post-195": [
+      309,
+      310,
+      311
+    ],
+    "post-193": [
       306,
       307,
       308
     ],
-    "post-195": [
+    "post-192": [
       303,
       304,
       305
     ],
-    "post-193": [
+    "post-191": [
       300,
       301,
       302
     ],
-    "post-192": [
+    "post-190": [
       297,
       298,
       299
     ],
-    "post-191": [
+    "post-189": [
       294,
       295,
       296
     ],
-    "post-190": [
+    "post-188": [
       291,
       292,
       293
     ],
-    "post-189": [
+    "post-187": [
       288,
       289,
       290
     ],
-    "post-188": [
+    "post-186": [
       285,
       286,
       287
     ],
-    "post-187": [
+    "post-185": [
       282,
       283,
       284
     ],
-    "post-186": [
+    "post-178": [
       279,
       280,
       281
     ],
-    "post-185": [
+    "post-165": [
       276,
       277,
       278
     ],
-    "post-178": [
+    "post-164": [
       273,
       274,
       275
     ],
-    "post-165": [
+    "post-163": [
       270,
       271,
       272
     ],
-    "post-164": [
+    "post-161": [
       267,
       268,
       269
     ],
-    "post-163": [
+    "post-159": [
       264,
       265,
       266
     ],
-    "post-161": [
+    "post-156": [
       261,
       262,
       263
     ],
-    "post-159": [
+    "post-155": [
       258,
       259,
       260
     ],
-    "post-156": [
+    "post-154": [
       255,
       256,
       257
     ],
-    "post-155": [
+    "post-153": [
       252,
       253,
       254
     ],
-    "post-154": [
+    "post-152": [
       249,
       250,
       251
     ],
-    "post-153": [
+    "post-151": [
       246,
       247,
       248
     ],
-    "post-152": [
+    "post-150": [
       243,
       244,
       245
     ],
-    "post-151": [
+    "post-149": [
       240,
       241,
       242
     ],
-    "post-150": [
+    "post-147": [
       237,
       238,
       239
     ],
-    "post-149": [
+    "post-146": [
       234,
       235,
       236
     ],
-    "post-147": [
+    "post-145": [
       231,
       232,
       233
     ],
-    "post-146": [
+    "post-144": [
       228,
       229,
       230
     ],
-    "post-145": [
+    "post-143": [
       225,
       226,
       227
     ],
-    "post-144": [
+    "post-142": [
       222,
       223,
       224
     ],
-    "post-143": [
+    "post-141": [
       219,
       220,
       221
     ],
-    "post-142": [
+    "post-140": [
       216,
       217,
       218
     ],
-    "post-141": [
-      213,
-      214,
-      215
-    ],
-    "post-140": [
-      210,
-      211,
-      212
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      156,
-      157,
-      158
+      162,
+      163,
+      164
     ],
     "gaslighting-ai-open-source-project": [
-      102,
-      103,
-      104
+      105,
+      106,
+      107
     ],
     "value-of-understanding-in-ai-future": [
+      399,
+      400,
+      401
+    ],
+    "internship-job-posting-giveaway": [
+      126,
+      127,
+      128
+    ],
+    "navigating-a-world-of-decreasing-variance": [
+      183,
+      184,
+      185
+    ],
+    "prompting-ability-as-new-power": [
+      324,
+      325,
+      326
+    ],
+    "kpop-fandom-digital-parliament": [
+      144,
+      145,
+      146
+    ],
+    "university-value-shift-education": [
       393,
       394,
       395
-    ],
-    "internship-job-posting-giveaway": [
-      120,
-      121,
-      122
-    ],
-    "navigating-a-world-of-decreasing-variance": [
-      177,
-      178,
-      179
-    ],
-    "prompting-ability-as-new-power": [
-      318,
-      319,
-      320
-    ],
-    "kpop-fandom-digital-parliament": [
-      138,
-      139,
-      140
-    ],
-    "university-value-shift-education": [
-      387,
-      388,
-      389
     ],
     "agent-era-branding-future": [
       9,
@@ -19422,9 +19720,9 @@
       11
     ],
     "fear-and-value-in-ai-creation": [
-      96,
-      97,
-      98
+      99,
+      100,
+      101
     ],
     "complexcon-hk-identity-culture-experience": [
       72,
@@ -19432,64 +19730,64 @@
       74
     ],
     "post-111": [
+      213,
+      214,
+      215
+    ],
+    "post-107": [
+      210,
+      211,
+      212
+    ],
+    "post-106": [
       207,
       208,
       209
     ],
-    "post-107": [
+    "post-105": [
       204,
       205,
       206
     ],
-    "post-106": [
+    "post-104": [
       201,
       202,
       203
     ],
-    "post-105": [
+    "post-103": [
       198,
       199,
       200
     ],
-    "post-104": [
-      195,
-      196,
-      197
-    ],
-    "post-103": [
-      192,
-      193,
-      194
-    ],
     "things-that-dont-disappear": [
-      369,
-      370,
-      371
+      375,
+      376,
+      377
     ],
     "how-to-create-memory-in-ai-agents": [
-      114,
-      115,
-      116
+      117,
+      118,
+      119
     ],
     "self-deconstruction-ai-replication": [
-      348,
-      349,
-      350
+      354,
+      355,
+      356
     ],
     "vibe-coding-ai-decentralization": [
-      396,
-      397,
-      398
+      402,
+      403,
+      404
     ],
     "internship-opportunity-at-hashed": [
-      123,
-      124,
-      125
+      129,
+      130,
+      131
     ],
     "korean-tech-ecosystem-api-access-issues": [
-      135,
-      136,
-      137
+      141,
+      142,
+      143
     ],
     "death-choices-aging-future-meaning": [
       81,
@@ -19502,9 +19800,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      408,
-      409,
-      410
+      414,
+      415,
+      416
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -19512,9 +19810,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      381,
-      382,
-      383
+      387,
+      388,
+      389
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -19527,19 +19825,19 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      186,
-      187,
-      188
+      192,
+      193,
+      194
     ],
     "memory-identity-ai-development": [
-      159,
-      160,
-      161
+      165,
+      166,
+      167
     ],
     "unknowns-in-modern-creation": [
-      390,
-      391,
-      392
+      396,
+      397,
+      398
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -19552,14 +19850,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      405,
-      406,
-      407
+      411,
+      412,
+      413
     ],
     "sano-godaddy-war": [
-      336,
-      337,
-      338
+      342,
+      343,
+      344
     ],
     "14-5-hours": [
       0,
@@ -19567,24 +19865,24 @@
       2
     ],
     "transistor-moment": [
-      378,
-      379,
-      380
+      384,
+      385,
+      386
     ],
     "web4-write-access": [
-      414,
-      415,
-      416
+      420,
+      421,
+      422
     ],
     "naming-the-universe": [
-      174,
-      175,
-      176
+      180,
+      181,
+      182
     ],
     "sano-intro": [
-      339,
-      340,
-      341
+      345,
+      346,
+      347
     ],
     "counting-assistant": [
       75,
@@ -19592,29 +19890,29 @@
       77
     ],
     "uncertainty-machine": [
-      384,
-      385,
-      386
+      390,
+      391,
+      392
     ],
     "vibe-founders-era": [
-      402,
-      403,
-      404
+      408,
+      409,
+      410
     ],
     "vibe-coding-tip": [
-      399,
-      400,
-      401
+      405,
+      406,
+      407
     ],
     "moltbot-anthropic-moat": [
-      168,
-      169,
-      170
+      174,
+      175,
+      176
     ],
     "overnight-success": [
-      183,
-      184,
-      185
+      189,
+      190,
+      191
     ],
     "bitcoin-energy": [
       51,
@@ -19622,19 +19920,19 @@
       53
     ],
     "thought-speed": [
-      372,
-      373,
-      374
+      378,
+      379,
+      380
     ],
     "gemini-snow-bunny": [
-      105,
-      106,
-      107
+      108,
+      109,
+      110
     ],
     "figma-last-manual": [
-      99,
-      100,
-      101
+      102,
+      103,
+      104
     ],
     "ai-unbundling": [
       42,
@@ -19642,14 +19940,14 @@
       44
     ],
     "prompt-guard-dev": [
-      315,
-      316,
-      317
+      321,
+      322,
+      323
     ],
     "its-fun": [
-      129,
-      130,
-      131
+      135,
+      136,
+      137
     ],
     "click-theology": [
       69,
@@ -19657,9 +19955,9 @@
       71
     ],
     "thank-you-mirror": [
-      363,
-      364,
-      365
+      369,
+      370,
+      371
     ],
     "ai-hires-ai": [
       30,
@@ -19667,14 +19965,14 @@
       32
     ],
     "majlis": [
-      150,
-      151,
-      152
+      156,
+      157,
+      158
     ],
     "rabbit-crypt-name": [
-      327,
-      328,
-      329
+      333,
+      334,
+      335
     ],
     "agentlinter-dev-log": [
       21,
@@ -19692,29 +19990,29 @@
       68
     ],
     "mrinank-anthropic": [
-      171,
-      172,
-      173
+      177,
+      178,
+      179
     ],
     "tail-stopped": [
-      360,
-      361,
-      362
+      366,
+      367,
+      368
     ],
     "zeon-moltbook-vol1": [
-      417,
-      418,
-      419
+      423,
+      424,
+      425
     ],
     "ip-tvw": [
-      126,
-      127,
-      128
+      132,
+      133,
+      134
     ],
     "quantum-pirates": [
-      324,
-      325,
-      326
+      330,
+      331,
+      332
     ],
     "china-ai-frontier": [
       63,
@@ -19722,9 +20020,9 @@
       65
     ],
     "seedance-30": [
-      345,
-      346,
-      347
+      351,
+      352,
+      353
     ],
     "agent-siblings": [
       15,
@@ -19732,9 +20030,9 @@
       17
     ],
     "matchhz": [
-      153,
-      154,
-      155
+      159,
+      160,
+      161
     ],
     "dollar-two-faces": [
       87,
@@ -19742,19 +20040,19 @@
       89
     ],
     "messenger-b2a": [
-      162,
-      163,
-      164
+      168,
+      169,
+      170
     ],
     "robot-goku-5000": [
-      333,
-      334,
-      335
+      339,
+      340,
+      341
     ],
     "hvl-fellows": [
-      117,
-      118,
-      119
+      120,
+      121,
+      122
     ],
     "agentic-org": [
       18,
@@ -19772,9 +20070,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      330,
-      331,
-      332
+      336,
+      337,
+      338
     ]
   },
   "overrides": {

@@ -1,5 +1,261 @@
 [
   {
+    "from": "intelligence-expiration-date",
+    "to": "china-ai-frontier",
+    "type": "REFRAMES",
+    "strength": 0.5871,
+    "sourceClaimId": "intelligence-expiration-date-c1",
+    "sourceEvidence": "구글과 오픈AI의 비슷한 점수대 모델들도 20배에서 40배를 쓰고, 클로드 페이블 5의 가장 비싼 설정은 100배 넘게 쓰고도 점수가 더 낮다.",
+    "targetEvidence": "Openclaw에 물려 사용하면, 가격은 Claude Opus 4.5의 100배보다도 저렴하다.",
+    "label": "「중국 프론티어 모델들이 세상을 잡아먹기 시작했다」은 「지능의 유통기한」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 44,
+      "overlapTokens": [
+        "100",
+        "20",
+        "2021",
+        "2021년",
+        "5는",
+        "5의",
+        "ai",
+        "ai의",
+        "가격은",
+        "계속",
+        "그런데",
+        "나머지"
+      ],
+      "titleOverlap": [
+        "모델들",
+        "중국",
+        "프론티어"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=44;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "intelligence-expiration-date",
+    "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
+    "type": "DEEPENS",
+    "strength": 0.4899,
+    "sourceClaimId": "intelligence-expiration-date-c1",
+    "sourceEvidence": "AI의 가격은 원래 빠르게 떨어져 왔다.",
+    "targetEvidence": "나도 요즘 AI로 곡을 만든다.",
+    "label": "「조성진의 쇼팽, 다음 음이 오기 전까지」은 「지능의 유통기한」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 43,
+      "overlapTokens": [
+        "ai",
+        "ai의",
+        "가까이",
+        "것을",
+        "것이다",
+        "계속",
+        "그런데",
+        "나도",
+        "남는다",
+        "누군가",
+        "다만",
+        "다음"
+      ],
+      "titleOverlap": [
+        "다음",
+        "전까지"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=43;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "intelligence-expiration-date",
+    "to": "unknowns-in-modern-creation",
+    "type": "REFRAMES",
+    "strength": 0.4822,
+    "sourceClaimId": "intelligence-expiration-date-c1",
+    "sourceEvidence": "구글과 오픈AI의 비슷한 점수대 모델들도 20배에서 40배를 쓰고, 클로드 페이블 5의 가장 비싼 설정은 100배 넘게 쓰고도 점수가 더 낮다.",
+    "targetEvidence": "AI는 이제 다음 세대 AI의 아키텍처를 스스로 제안하고, 자신의 학습 데이터를 스스로 생성한다.",
+    "label": "「모르는 것을 모르는 채로 만드는 시대」은 「지능의 유통기한」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 46,
+      "overlapTokens": [
+        "100",
+        "50",
+        "60",
+        "ai",
+        "ai의",
+        "것을",
+        "것이다",
+        "공개",
+        "교과서",
+        "년에서",
+        "누군가",
+        "다음"
+      ],
+      "titleOverlap": [
+        "것을",
+        "만드는"
+      ],
+      "sharedTags": [
+        "AI"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=46;titleOverlap=2;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "ethval-v1-valuation-from-calculation-to-validation",
+    "to": "agent-passport",
+    "type": "REFRAMES",
+    "strength": 0.5392,
+    "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+    "sourceEvidence": "- VanEck: 이더리움 가치평가 방법론 https://www.vaneck.com/pl/en/blog/digital-assets/a-potential-valuation-methodology-for-ethereum/ - CoinShares: 이더리움 5년 가치평가 프레임워크 https://coinshares.com/corp/insights/research-data/ethereum-5-year-valuation-framework",
+    "targetEvidence": "https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0",
+    "label": "「블록체인 위에 새겨진 에이전트의 여권」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 28,
+      "overlapTokens": [
+        "ai",
+        "com",
+        "ethereum",
+        "for",
+        "hashed",
+        "개의",
+        "거래",
+        "과거에",
+        "기관이",
+        "기반",
+        "다르다",
+        "다만"
+      ],
+      "titleOverlap": [
+        "블록체인",
+        "위에",
+        "이더리움"
+      ],
+      "sharedTags": [
+        "이더리움"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=28;titleOverlap=3;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "ethval-v1-valuation-from-calculation-to-validation",
+    "to": "post-189",
+    "type": "DEEPENS",
+    "strength": 0.3676,
+    "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+    "sourceEvidence": "화면의 입력과 실제 계산이 같은 의미를 갖도록 정비했다.",
+    "targetEvidence": "메모를 각각 찾는 것만으로는 관계를 설명할 수 없었다.",
+    "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 57,
+      "overlapTokens": [
+        "0은",
+        "10",
+        "com",
+        "v1",
+        "각각",
+        "개의",
+        "검증",
+        "것과",
+        "것만으로",
+        "것보다",
+        "것을",
+        "계산이"
+      ],
+      "titleOverlap": [
+        "v1",
+        "검증",
+        "언제",
+        "업데이트"
+      ],
+      "sharedTags": [],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=57;titleOverlap=4;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "ethval-v1-valuation-from-calculation-to-validation",
+    "to": "thought-speed",
+    "type": "REFRAMES",
+    "strength": 0.3527,
+    "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
+    "sourceEvidence": "처음에는 AI와 대화하며 무언가를 만들 수 있다는 사실이 신기했다.",
+    "targetEvidence": "만들 가치가 있는 것과, 영원히 상상 속에만 가둬두는 게 더 아름다운 것을 구분하는 법.",
+    "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 24,
+      "overlapTokens": [
+        "ai",
+        "개의",
+        "것과",
+        "것을",
+        "구분",
+        "그대로",
+        "남아",
+        "넘어",
+        "만드는",
+        "만들",
+        "미래",
+        "바이브코딩"
+      ],
+      "titleOverlap": [
+        "이더리움"
+      ],
+      "sharedTags": [
+        "바이브코딩"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=24;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "photoshop-became-the-answer-key",
     "to": "figma-last-manual",
     "type": "REFRAMES",
@@ -6585,39 +6841,41 @@
   },
   {
     "from": "post-149",
-    "to": "click-theology",
-    "type": "RESONATES",
+    "to": "ethval-v1-valuation-from-calculation-to-validation",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-149-c1",
-    "sourceEvidence": "네 개의 기능을 묶어서 답을 시도했다.",
-    "targetEvidence": "그런데 그 배합의 비율, 검색 결과의 가중치, 최종 추천을 결정짓는 논리.",
-    "label": "「딸깍의 신학」은 「MemKraft v0.6 – v0.8 개발 후기」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "막 나온 Opus 4.7 에이전트가 4개 기능, 83개 테스트, 문서 업데이트, 빌드, 업로드, 커밋, 푸시까지 한 번에 완주했다.",
+    "targetEvidence": "열두 개 모형이 열두 개의 증거는 아니다 여덟 개로 시작한 평가모형은 열두 개가 됐다.",
+    "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.6 – v0.8 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 47,
+      "lexicalOverlap": 39,
       "overlapTokens": [
         "ai",
-        "가중치",
-        "가진",
+        "com",
+        "opus",
+        "가능한",
+        "개가",
+        "개로",
         "개의",
-        "검색",
-        "결과",
-        "경계를",
-        "그런데",
-        "끝났다",
-        "나온",
-        "다음",
-        "답을"
+        "것을",
+        "공유",
+        "구분",
+        "그대로",
+        "나온"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "업데이트"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=47;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -6710,39 +6968,42 @@
   },
   {
     "from": "post-147",
-    "to": "japan-hardware-software-gap",
-    "type": "RESONATES",
+    "to": "intelligence-expiration-date",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-147-c1",
-    "sourceEvidence": "2024년에는 GPU, 그러니까 AI 연산 전용 칩의 품귀가 병목이었다면, 지금의 병목은 칩 위의 서비스 레이어로 올라왔다.",
-    "targetEvidence": "공장 설비는 센서 데이터와 디지털 트윈, AI 제어를 통해 계속 성능을 바꾼다.",
-    "label": "「왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?」은 「중국 모델이 문을 잠근 이후의 세계에 대한 상상」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "Meta는 반대 방향으로 움직여 자사 AI 모델 Llama를 계속 무료 공개하며 경쟁사들의 유료 프리미엄을 깎아내리고 있다.",
+    "targetEvidence": "게다가 딥시크는 이 모델을 누구나 내려받아 쓸 수 있게 공개했다.",
+    "label": "「지능의 유통기한」은 「중국 모델이 문을 잠근 이후의 세계에 대한 상상」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 67,
+      "lexicalOverlap": 78,
       "overlapTokens": [
-        "2024",
-        "2024년",
+        "10",
+        "2027",
+        "2027년",
         "ai",
-        "거의",
+        "gpu",
+        "것을",
         "것이다",
-        "것처럼",
-        "결과",
-        "경쟁이",
+        "게다가",
+        "경쟁자",
         "계속",
-        "규모",
-        "그런데",
-        "기술"
+        "공개",
+        "그런데"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "모델이",
+        "중국"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=67;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=78;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -6840,39 +7101,41 @@
   },
   {
     "from": "post-146",
-    "to": "click-theology",
-    "type": "RESONATES",
+    "to": "ethval-v1-valuation-from-calculation-to-validation",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-146-c1",
-    "sourceEvidence": "의학에서 감별 진단 목록을 관리하는 것과 같다.",
-    "targetEvidence": "그런데 그 배합의 비율, 검색 결과의 가중치, 최종 추천을 결정짓는 논리.",
-    "label": "「딸깍의 신학」은 「MemKraft v0.2 – v0.5 개발 후기」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "느리게 사라지는 것과 빠르게 사라지는 것을 구분하는 것만으로 기억의 질감이 달라졌다.",
+    "targetEvidence": "지금 아는 것을 과거에도 알았던 것처럼 계산하면 성과는 쉽게 좋아 보인다.",
+    "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.2 – v0.5 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 57,
+      "lexicalOverlap": 61,
       "overlapTokens": [
         "ai",
-        "python",
-        "가깝다",
-        "가중치",
-        "같다",
+        "com",
+        "가설을",
+        "각각",
+        "개로",
         "개의",
-        "검색",
         "것과",
+        "것을",
         "것처럼",
-        "구글",
-        "그런데",
-        "길이"
+        "결과를",
+        "공유",
+        "과거"
       ],
-      "titleOverlap": [],
+      "titleOverlap": [
+        "업데이트"
+      ],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=57;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=61;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -7222,32 +7485,39 @@
   },
   {
     "from": "post-143",
-    "to": "uae-emergency-news-telegram-channel",
-    "type": "RESONATES",
+    "to": "ethval-v1-valuation-from-calculation-to-validation",
+    "type": "REFRAMES",
     "strength": 0.35,
     "sourceClaimId": "post-143-c1",
-    "sourceEvidence": "20개 이상의 커맨드가 첫날부터 전부 사용 가능하고, Backlink, Fuzzy Search, Agentic Search, Meeting Brief, Open Loop Tracking, Decision Distillation까지 에이전트 운영에 필요한 워크플로우가 다 들어있다.",
-    "targetEvidence": "다음의 20개 소스 목록을 참조한다.",
-    "label": "「UAE Emergency News」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 핵심 문제와 맞닿는다",
+    "sourceEvidence": "MemKraft는 이 프로젝트들에서 배운 것을 한곳에 녹여내되, 외부 의존성 제로, Plain Markdown 기반, 프레임워크 무관이라는 원칙 위에 올렸다.",
+    "targetEvidence": "이더리움의 적정가치를 직접 계산해보고 싶어 AI와 대화하며 만들었다.",
+    "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 주제를 다른 맥락에서 다시 바라본다",
     "source": "deterministic-candidate-pipeline",
     "signals": [
       "content",
       "category"
     ],
     "signalDetails": {
-      "lexicalOverlap": 5,
+      "lexicalOverlap": 38,
       "overlapTokens": [
-        "20",
-        "20개",
+        "ai",
+        "com",
+        "각각",
+        "개의",
+        "것보다",
+        "것을",
+        "과거",
+        "근거를",
+        "기반",
+        "만들기",
         "만들었다",
-        "소스",
-        "있으면"
+        "붙는다"
       ],
       "titleOverlap": [],
       "sharedTags": [],
       "sharedConcepts": []
     },
-    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=5;titleOverlap=0;challengeSignal=false",
+    "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=0;challengeSignal=false",
     "status": "approved"
   },
   {

@@ -1,4 +1,96 @@
 {
+  "intelligence-expiration-date": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-딥시크",
+      "tag-프론티어 랩"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "intelligence-expiration-date-c1",
+        "text": "딥시크가 토요일에 내놓은 V4.1 플래시 1017이 소프트웨어 과제 하나를 푸는 데 드는 돈이다.",
+        "stance": "asserts",
+        "evidence": "딥시크가 토요일에 내놓은 V4.1 플래시 1017이 소프트웨어 과제 하나를 푸는 데 드는 돈이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "딥시크",
+      "프론티어 랩"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
+  "ethval-v1-valuation-from-calculation-to-validation": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-이더리움",
+      "tag-ETHval",
+      "tag-가치평가"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "ethval-v1-valuation-from-calculation-to-validation-c1",
+        "text": "오랜만에 ETHval을 크게 업데이트했다.",
+        "stance": "asserts",
+        "evidence": "오랜만에 ETHval을 크게 업데이트했다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "이더리움",
+      "ETHval",
+      "가치평가"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "photoshop-became-the-answer-key": {
     "primaryTopics": [
       "exploration"

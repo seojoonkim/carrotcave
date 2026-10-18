@@ -728,51 +728,45 @@
       "label": "「아, 재밌다!!!」은 「갈 수 있을까」의 문제를 더 깊이 파고든다"
     },
     {
-      "from": "gaslighting-ai-open-source-project",
-      "to": "agentic-org",
-      "sourceTitle": "AI를 가스라이팅하는 오픈소스를 만들었다",
-      "targetTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
+      "from": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "post-189",
+      "sourceTitle": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
+      "targetTitle": "기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트",
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
-      "sourceEvidence": "https://github.com/seojoonkim/Gaslight-My-AI 이 오픈소스 프로젝트는 코딩 AI의 작업 흐름 안에 경쟁 컨텍스트 프레이밍을 자동으로 주입한다.",
-      "targetEvidence": "AI는 인간을 대체하지 않는다.",
+      "sourceEvidence": "화면의 입력과 실제 계산이 같은 의미를 갖도록 정비했다.",
+      "targetEvidence": "메모를 각각 찾는 것만으로는 관계를 설명할 수 없었다.",
       "signals": [
         "content",
-        "tags",
-        "category",
-        "concept-agent"
+        "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 26,
+        "lexicalOverlap": 57,
         "overlapTokens": [
-          "100",
-          "20",
-          "ai",
-          "ai는",
-          "ai를",
+          "0은",
+          "10",
           "com",
-          "seojoonkim",
-          "결과는",
-          "단순히",
-          "레이어",
-          "많이",
-          "모든"
+          "v1",
+          "각각",
+          "개의",
+          "검증",
+          "것과",
+          "것만으로",
+          "것보다",
+          "것을",
+          "계산이"
         ],
         "titleOverlap": [
-          "20",
-          "ai",
-          "ai를",
-          "에이전트"
+          "v1",
+          "검증",
+          "언제",
+          "업데이트"
         ],
-        "sharedTags": [
-          "AI"
-        ],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
+        "sharedTags": [],
+        "sharedConcepts": []
       },
       "type": "DEEPENS",
-      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「AI를 가스라이팅하는 오픈소스를 만들었다」의 문제를 더 깊이 파고든다"
+      "label": "「기억은 언제 행동이 되는가: MemKraft v3까지 업데이트 노트」은 「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」의 문제를 더 깊이 파고든다"
     },
     {
       "from": "matchhz",

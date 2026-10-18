@@ -1,43 +1,45 @@
 {
-  "checkedAt": "2026-09-08T06:14:07.074Z",
+  "checkedAt": "2026-10-17T07:19:44.557Z",
   "source": "https://t.me/s/carrotcave",
   "base": null,
   "items": [
     {
-      "id": 213,
-      "title": "조성진의 쇼팽, 다음 음이 오기 전까지",
-      "slug": "seong-jin-cho-chopin-waiting-for-the-next-note",
-      "date": "2026-09-08",
-      "sourceDatetime": "2026-09-07T16:48:23+00:00",
-      "sourceUrl": "https://t.me/carrotcave/213",
-      "bodySha256Normalized": "34f92acd1e124079d2c24986004ee8378bdb323ce6631506469b2cd215843ed6",
+      "id": 223,
+      "title": "포토샵은 어느새 정답지가 되었다",
+      "slug": "photoshop-became-the-answer-key",
+      "date": "2026-10-08",
+      "sourceDatetime": "2026-10-07T16:14:10+00:00",
+      "sourceUrl": "https://t.me/carrotcave/223",
+      "bodySha256Normalized": "6f1c3deaf4c393a2adcb8e3f9ffc8ecfd3070e9ec1be0b3c737bd99243927dee",
       "status": "source-local-match",
       "media": [
-        "/media/msg-213-0.jpg"
+        "/media/msg-223-0.jpg"
       ]
     },
     {
-      "id": 211,
-      "title": "낙관론자들의 시대를 살아가는 방법",
-      "slug": "living-in-the-age-of-optimists",
-      "date": "2026-09-07",
-      "sourceDatetime": "2026-09-07T00:33:50+00:00",
-      "sourceUrl": "https://t.me/carrotcave/211",
-      "bodySha256Normalized": "ce90994ba3c8af0335bd14003397032a354b1221fa80e34ed4f3edc6565f54ef",
-      "status": "source-local-match",
-      "media": []
-    },
-    {
-      "id": 210,
-      "title": "뇌는 파일이 되고, 파리는 마인크래프트를 날아다닌다",
-      "slug": "brain-files-minecraft-flies",
-      "date": "2026-09-06",
-      "sourceDatetime": "2026-09-06T12:30:54+00:00",
-      "sourceUrl": "https://t.me/carrotcave/210",
-      "bodySha256Normalized": "82330b1521f5099354060eaaf6e133c4dbc6a1cf9483515ffed67cc35e9ae3b4",
+      "id": 222,
+      "title": "K-POP의 다음 챕터, IP와 팬덤: 모드하우스 정병기 대표, SM엔터테인먼트 이성수 대표와의 대화",
+      "slug": "kpop-next-chapter-ip-and-fandom",
+      "date": "2026-10-05",
+      "sourceDatetime": "2026-10-04T18:21:03+00:00",
+      "sourceUrl": "https://t.me/carrotcave/222",
+      "bodySha256Normalized": "1539782944705de2ddd2c7b5f6052bd2a93e0ef4896afdebf777c1afaecaf8ab",
       "status": "source-local-match",
       "media": [
-        "/media/msg-210-0.jpg"
+        "/media/msg-222-0.jpg"
+      ]
+    },
+    {
+      "id": 221,
+      "title": "이스트포인트 2026 기조연설, 내 글이 창고가 되었을 때",
+      "slug": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
+      "date": "2026-10-04",
+      "sourceDatetime": "2026-10-04T14:05:11+00:00",
+      "sourceUrl": "https://t.me/carrotcave/221",
+      "bodySha256Normalized": "1cae2141e70990b908285854d1abc0bdd82278dc3ea82521db0313be89f0a7fa",
+      "status": "source-local-match",
+      "media": [
+        "/media/msg-221-0.jpg"
       ]
     }
   ],
