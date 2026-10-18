@@ -182,6 +182,10 @@ test('post reader accent metadata stays bright and titles use the available line
   assert.match(depthBadgeSource, /fontWeight: 650/);
   assert.match(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:wrap;overflow-wrap:anywhere/);
   assert.doesNotMatch(stylesSource, /\.post-reader-header h1\{[^}]*text-wrap:balance/);
+  // Archive titles: balance split a long Korean lead title into 3 short lines with a
+  // ragged first line (2026-10-18, #224 on mobile). The last archive h2 rule must fill lines.
+  const archiveWrap = [...stylesSource.matchAll(/\.archive-row h2,\.archive-lead h2\{[^}]*text-wrap:(\w+)/g)].at(-1)?.[1];
+  assert.equal(archiveWrap, 'pretty');
 });
 
 test('ordinary post endings omit tag chips and separate content, actions, and recommendations', () => {
