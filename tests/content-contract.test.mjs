@@ -186,6 +186,8 @@ test('post reader accent metadata stays bright and titles use the available line
   // ragged first line (2026-10-18, #224 on mobile). The last archive h2 rule must fill lines.
   const archiveWrap = [...stylesSource.matchAll(/\.archive-row h2,\.archive-lead h2\{[^}]*text-wrap:(\w+)/g)].at(-1)?.[1];
   assert.equal(archiveWrap, 'pretty');
+  // List titles use the same serif face as the featured title (2026-10-18).
+  assert.match(stylesSource, /\.archive-lead h2,\.archive-row h2,[^{]*\{font-family:var\(--serif\)/);
   // Search pill must not touch the lead card's bottom hairline (2026-10-18).
   assert.match(stylesSource, /\.wall-shell \.ccx-lead \+ \.archive-search\{margin-top:(2[4-9]|[3-9]\d)px\}/);
 });
