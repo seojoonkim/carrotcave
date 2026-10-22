@@ -1,4 +1,50 @@
 {
+  "nitro-seoul-second-lap-needs-team-radio": {
+    "primaryTopics": [
+      "building"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-Nitro",
+      "tag-에이전트",
+      "tag-창업"
+    ],
+    "questions": [
+      "building-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "nitro-seoul-second-lap-needs-team-radio-c1",
+        "text": "작년 11월 말 오퍼스 4.5가 공개된 뒤로 흐른 시간이다.",
+        "stance": "asserts",
+        "evidence": "작년 11월 말 오퍼스 4.5가 공개된 뒤로 흐른 시간이다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "Nitro",
+      "에이전트",
+      "창업"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "building"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "intelligence-expiration-date": {
     "primaryTopics": [
       "exploration"

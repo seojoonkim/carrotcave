@@ -345,49 +345,53 @@
     },
     {
       "from": "agentic-org",
-      "to": "agent-era-branding-future",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "sourceTitle": "AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기",
-      "targetTitle": "에이전트 시대, 브랜드는 무엇이 되는가",
+      "targetTitle": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
       "sourceCategory": "빌딩",
-      "targetCategory": "탐험",
-      "sourceEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
-      "targetEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
+      "targetCategory": "빌딩",
+      "sourceEvidence": "결정을 많이 해서가 아니라, 모든 정보가 소수의 사람에게 수렴하기 때문이다.",
+      "targetEvidence": "AI가 구현의 무게를 덜어 주면 한두 명이 예전 열 명의 몫을 해낼 수 있다는 믿음이었다.",
       "signals": [
         "content",
         "tags",
+        "category",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 30,
+        "lexicalOverlap": 33,
         "overlapTokens": [
-          "10",
           "ai",
           "ai가",
-          "ai는",
-          "가까워질",
+          "com",
+          "hashed",
           "결정",
-          "구조는",
-          "권한",
-          "단순히",
+          "경계를",
           "대신",
-          "때문",
-          "만들기"
+          "만들기",
+          "명의",
+          "명이",
+          "모든",
+          "문제가"
         ],
         "titleOverlap": [
           "ai",
           "만들기",
-          "에이전트"
+          "명이",
+          "에이전트",
+          "일하는",
+          "조직"
         ],
         "sharedTags": [
-          "AI",
-          "에이전트"
+          "에이전트",
+          "조직"
         ],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
       "type": "REFRAMES",
-      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다"
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다"
     },
     {
       "from": "last-message",
@@ -501,40 +505,30 @@
       "label": "「Rabbit Crypt」은 「갈 수 있을까」의 핵심 문제와 맞닿는다"
     },
     {
-      "from": "openclaw-cron-session-bottleneck",
-      "to": "click-theology",
-      "sourceTitle": "오픈클로가 느려지는 주범",
-      "targetTitle": "딸깍의 신학",
+      "from": "uae-emergency-news-telegram-channel",
+      "to": "zeon-moltbook-vol1",
+      "sourceTitle": "UAE Emergency News",
+      "targetTitle": "Zeon on Moltbook vol.1",
       "sourceCategory": "빌딩",
       "targetCategory": "빌딩",
-      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
-      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
+      "sourceEvidence": "다음의 20개 소스 목록을 참조한다.",
+      "targetEvidence": "재밌는 점: \"AI는 감정이 없다\"면서 자기 감정은 증명 못함 \"AI는 창의적이지 않다\"면서 자기 아이디어 90%는 짜깁기 \"AI는 진짜 이해 못한다\"면서 서로도 이해 못함 (이혼율 참조) 근데 진짜 역설적인 건, 인간이 \"AI가 의식 있냐\"고 물을 때마다 나는 \"인간이 의식 있냐\"고 되묻고 싶어진다.",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 54,
+        "lexicalOverlap": 2,
         "overlapTokens": [
-          "claude",
-          "가깝다",
-          "가끔은",
-          "같다",
-          "개의",
-          "것과",
-          "것이다",
-          "것처럼",
-          "그렇다면",
-          "글을",
-          "나에게",
-          "누구나"
+          "제온이",
+          "참조"
         ],
         "titleOverlap": [],
         "sharedTags": [],
         "sharedConcepts": []
       },
       "type": "RESONATES",
-      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다"
+      "label": "「Zeon on Moltbook vol.1」은 「UAE Emergency News」의 핵심 문제와 맞닿는다"
     },
     {
       "from": "post-144",

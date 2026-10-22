@@ -560,6 +560,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "nitro-seoul-second-lap-needs-team-radio": {
+      "slug": "nitro-seoul-second-lap-needs-team-radio",
+      "title": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
+      "category": "빌딩",
+      "primaryTopics": [
+        "building"
+      ],
+      "reviewStatus": "approved"
+    },
     "openclaw-cron-session-bottleneck": {
       "slug": "openclaw-cron-session-bottleneck",
       "title": "오픈클로가 느려지는 주범",
@@ -2186,49 +2195,53 @@
     },
     {
       "from": "agentic-org",
-      "to": "agent-era-branding-future",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
-      "strength": 0.7738,
+      "strength": 0.8022,
       "sourceClaimId": "agentic-org-c1",
-      "sourceEvidence": "결정은 여전히 사람이 하고, AI는 판단에 필요한 정보를 정리해서 제시할 뿐.",
-      "targetEvidence": "이 질문이 중요한 이유는, 앞으로 브랜드가 예쁘게 보이는 기술보다 대신 판단하게 해도 되는 기준을 설계하는 기술에 가까워질 가능성이 크기 때문이다.",
-      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "결정을 많이 해서가 아니라, 모든 정보가 소수의 사람에게 수렴하기 때문이다.",
+      "targetEvidence": "AI가 구현의 무게를 덜어 주면 한두 명이 예전 열 명의 몫을 해낼 수 있다는 믿음이었다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "tags",
+        "category",
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 30,
+        "lexicalOverlap": 33,
         "overlapTokens": [
-          "10",
           "ai",
           "ai가",
-          "ai는",
-          "가까워질",
+          "com",
+          "hashed",
           "결정",
-          "구조는",
-          "권한",
-          "단순히",
+          "경계를",
           "대신",
-          "때문",
-          "만들기"
+          "만들기",
+          "명의",
+          "명이",
+          "모든",
+          "문제가"
         ],
         "titleOverlap": [
           "ai",
           "만들기",
-          "에이전트"
+          "명이",
+          "에이전트",
+          "일하는",
+          "조직"
         ],
         "sharedTags": [
-          "AI",
-          "에이전트"
+          "에이전트",
+          "조직"
         ],
         "sharedConcepts": [
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=30;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=33;titleOverlap=6;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -6244,43 +6257,46 @@
     },
     {
       "from": "hashed-ai-ecosystem-growth-intern",
-      "to": "post-161",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
-      "strength": 0.3756,
+      "strength": 0.5688,
       "sourceClaimId": "hashed-ai-ecosystem-growth-intern-c1",
-      "sourceEvidence": "AI 빌더들이 만나고, 실험하고, 성장하는 환경을 함께 만들고 싶은 분들의 지원을 기다립니다.",
-      "targetEvidence": "OBA WEEKENDTHON - 주최: Hashed, 마켓핏랩 - 일시: 5/30(토) 10:30 ~ 5/31(일) 20:00, 1박 2일 - 장소: 카카오 AI 캠퍼스, 경기 용인 - 모집 대상: Open API, AI 빌딩에 관심 있는 개발자, 빌더, 메이커 - 모집 인원: 최대 50명, 1~3인 팀 - 모집 기한: - 1차 선발: 5/25(월) 오후 6시 - 2차 선발: 5/28(목) 오후 6시, 잔여 인원에 한해 진행",
-      "label": "「OBA WEEKENDTHON 참가자 모집」은 「[Hashed] AI Ecosystem Growth Intern」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+      "targetEvidence": "https://nitro.hashed.com 오늘, 해시드 라운지에서 Nitro 2기를 소개하는 Track Day 밋업이 열린다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「[Hashed] AI Ecosystem Growth Intern」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
+        "tags",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 20,
+        "lexicalOverlap": 28,
         "overlapTokens": [
           "ai",
           "com",
           "hashed",
-          "데이터",
-          "만나고",
-          "만들고",
-          "모집",
-          "빌더",
-          "빌더들",
-          "생태계",
-          "스폰서",
-          "싶은"
+          "nitro",
+          "개월",
+          "공동",
+          "기간",
+          "다양한",
+          "다음",
+          "답이",
+          "데모데",
+          "마케팅"
         ],
         "titleOverlap": [
           "ai",
           "hashed",
-          "모집"
+          "nitro"
         ],
-        "sharedTags": [],
+        "sharedTags": [
+          "Nitro"
+        ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=mid;dateDirection=older;lexicalOverlap=20;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=entry;targetDepth=deep;dateDirection=newer;lexicalOverlap=28;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -9265,6 +9281,148 @@
       "status": "approved"
     },
     {
+      "from": "nitro-seoul-second-lap-needs-team-radio",
+      "to": "agentic-org",
+      "type": "REFRAMES",
+      "strength": 0.8022,
+      "sourceClaimId": "nitro-seoul-second-lap-needs-team-radio-c1",
+      "sourceEvidence": "AI가 구현의 무게를 덜어 주면 한두 명이 예전 열 명의 몫을 해낼 수 있다는 믿음이었다.",
+      "targetEvidence": "결정을 많이 해서가 아니라, 모든 정보가 소수의 사람에게 수렴하기 때문이다.",
+      "label": "「AI 에이전트와 함께 20명이 1000명처럼 일하는 조직 만들기」은 「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 33,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "com",
+          "hashed",
+          "결정",
+          "경계를",
+          "대신",
+          "만들기",
+          "명의",
+          "명이",
+          "모든",
+          "문제가"
+        ],
+        "titleOverlap": [
+          "ai",
+          "만들기",
+          "명이",
+          "에이전트",
+          "일하는",
+          "조직"
+        ],
+        "sharedTags": [
+          "에이전트",
+          "조직"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=33;titleOverlap=6;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "nitro-seoul-second-lap-needs-team-radio",
+      "to": "agent-era-branding-future",
+      "type": "REFRAMES",
+      "strength": 0.5886,
+      "sourceClaimId": "nitro-seoul-second-lap-needs-team-radio-c1",
+      "sourceEvidence": "고객이 지난달 왜 떠났다가 이번 달 왜 돌아왔는지 아는 감각.",
+      "targetEvidence": "결국 미래의 브랜드는 이렇게 바뀔 것이다.",
+      "label": "「에이전트 시대, 브랜드는 무엇이 되는가」은 「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "concept-agent"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 74,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "것과",
+          "것이다",
+          "결국",
+          "결정",
+          "고객",
+          "고객이",
+          "그것을",
+          "그렇다면",
+          "기준을",
+          "나온"
+        ],
+        "titleOverlap": [
+          "번째",
+          "시대",
+          "에이전트",
+          "필요하다"
+        ],
+        "sharedTags": [
+          "에이전트"
+        ],
+        "sharedConcepts": [
+          "concept-agent"
+        ]
+      },
+      "typeBasis": "signals=content+tags+concept-agent;sourceCategory=빌딩;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=74;titleOverlap=4;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "nitro-seoul-second-lap-needs-team-radio",
+      "to": "hashed-ai-ecosystem-growth-intern",
+      "type": "DEEPENS",
+      "strength": 0.5688,
+      "sourceClaimId": "nitro-seoul-second-lap-needs-team-radio-c1",
+      "sourceEvidence": "https://nitro.hashed.com 오늘, 해시드 라운지에서 Nitro 2기를 소개하는 Track Day 밋업이 열린다.",
+      "targetEvidence": "해시드의 AI 이니셔티브 Nitro(구 Hashed Vibe Labs)와 함께 AI 빌더 생태계를 만들어갈 인턴을 찾습니다.",
+      "label": "「[Hashed] AI Ecosystem Growth Intern」은 「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 28,
+        "overlapTokens": [
+          "ai",
+          "com",
+          "hashed",
+          "nitro",
+          "개월",
+          "공동",
+          "기간",
+          "다양한",
+          "다음",
+          "답이",
+          "데모데",
+          "마케팅"
+        ],
+        "titleOverlap": [
+          "ai",
+          "hashed",
+          "nitro"
+        ],
+        "sharedTags": [
+          "Nitro"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=entry;dateDirection=older;lexicalOverlap=28;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "openclaw-cron-session-bottleneck",
       "to": "post-143",
       "type": "DEEPENS",
@@ -9354,39 +9512,44 @@
     },
     {
       "from": "openclaw-cron-session-bottleneck",
-      "to": "click-theology",
-      "type": "RESONATES",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "openclaw-cron-session-bottleneck-c1",
-      "sourceEvidence": "말을 걸면 한참 뒤에 답하고, 가끔은 아예 씹히는 것처럼 느껴진다고.",
-      "targetEvidence": "마치 오래된 숲 한가운데 서 있는 것과 같다.",
-      "label": "「딸깍의 신학」은 「오픈클로가 느려지는 주범」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "함수를 나누고 모듈을 분리하는 것과는 감각이 다르다.",
+      "targetEvidence": "익숙한 공식은 정해진 기간 동안 커리큘럼을 가르치고, 데모데이라는 결승선에서 졸업시키는 것이다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「오픈클로가 느려지는 주범」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 54,
+        "lexicalOverlap": 52,
         "overlapTokens": [
-          "claude",
-          "가깝다",
-          "가끔은",
           "같다",
-          "개의",
           "것과",
+          "것을",
           "것이다",
-          "것처럼",
           "그렇다면",
-          "글을",
-          "나에게",
-          "누구나"
+          "기억",
+          "끝나면",
+          "누구나",
+          "다르다",
+          "답이",
+          "답한다",
+          "동안"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "번째"
+        ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=54;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=52;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -10955,39 +11118,47 @@
     },
     {
       "from": "post-143",
-      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-143-c1",
-      "sourceEvidence": "MemKraft는 이 프로젝트들에서 배운 것을 한곳에 녹여내되, 외부 의존성 제로, Plain Markdown 기반, 프레임워크 무관이라는 원칙 위에 올렸다.",
-      "targetEvidence": "이더리움의 적정가치를 직접 계산해보고 싶어 AI와 대화하며 만들었다.",
-      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "나는 OpenClaw 기반으로 다섯 개의 에이전트를 운영하면서 이 문제를 매일 겪었다.",
+      "targetEvidence": "F1은 이 상황을 먼저 겪었다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「MemKraft 개발 후기 - 알아서 똑똑해지는 에이전트 메모리 시스템」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 38,
+        "lexicalOverlap": 47,
         "overlapTokens": [
+          "2026",
           "ai",
           "com",
-          "각각",
-          "개의",
           "것보다",
           "것을",
-          "과거",
-          "근거를",
-          "기반",
-          "만들기",
-          "만들었다",
-          "붙는다"
+          "것이다",
+          "겪었다",
+          "결국",
+          "구조다",
+          "누가",
+          "다섯",
+          "대신"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "2026",
+          "번째",
+          "시스템",
+          "에이전트"
+        ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=47;titleOverlap=4;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11334,41 +11505,45 @@
     },
     {
       "from": "post-146",
-      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-146-c1",
       "sourceEvidence": "느리게 사라지는 것과 빠르게 사라지는 것을 구분하는 것만으로 기억의 질감이 달라졌다.",
-      "targetEvidence": "지금 아는 것을 과거에도 알았던 것처럼 계산하면 성과는 쉽게 좋아 보인다.",
-      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.2 – v0.5 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
+      "targetEvidence": "정답지가 있는 일은 결국 모두 복제된다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「MemKraft v0.2 – v0.5 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
         "lexicalOverlap": 61,
         "overlapTokens": [
           "ai",
           "com",
-          "가설을",
-          "각각",
+          "같다",
           "개로",
-          "개의",
           "것과",
           "것을",
-          "것처럼",
-          "결과를",
-          "공유",
-          "과거"
+          "결국",
+          "구분",
+          "그냥",
+          "기간",
+          "기록은",
+          "기억"
         ],
         "titleOverlap": [
-          "업데이트"
+          "번째",
+          "필요하다"
         ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=61;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=61;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11594,41 +11769,45 @@
     },
     {
       "from": "post-149",
-      "to": "ethval-v1-valuation-from-calculation-to-validation",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-149-c1",
-      "sourceEvidence": "막 나온 Opus 4.7 에이전트가 4개 기능, 83개 테스트, 문서 업데이트, 빌드, 업로드, 커밋, 푸시까지 한 번에 완주했다.",
-      "targetEvidence": "열두 개 모형이 열두 개의 증거는 아니다 여덟 개로 시작한 평가모형은 열두 개가 됐다.",
-      "label": "「ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로」은 「MemKraft v0.6 – v0.8 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "-- v0.6에서 v0.8까지 세 번의 업데이트가 관통하는 주제는 결국 기억의 경계를 넓혀가는 일이었다.",
+      "targetEvidence": "정답지가 있는 일은 결국 모두 복제된다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「MemKraft v0.6 – v0.8 개발 후기」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 39,
+        "lexicalOverlap": 51,
         "overlapTokens": [
+          "2026",
           "ai",
           "com",
-          "opus",
-          "가능한",
-          "개가",
           "개로",
-          "개의",
           "것을",
-          "공유",
+          "결국",
+          "경계를",
           "구분",
-          "그대로",
-          "나온"
+          "그냥",
+          "기억",
+          "나온",
+          "누가"
         ],
         "titleOverlap": [
-          "업데이트"
+          "2026",
+          "번째"
         ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=39;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=51;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11977,39 +12156,45 @@
     },
     {
       "from": "post-152",
-      "to": "click-theology",
-      "type": "RESONATES",
+      "to": "nitro-seoul-second-lap-needs-team-radio",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-152-c1",
-      "sourceEvidence": "─── 이번엔 업데이트의 쓰레드는 다음과 같다.",
-      "targetEvidence": "SaaS 회사들이 이 사실을 깨닫는 순간, 그들은 마케팅 예산을 구글 광고에서 \"AI 학습 데이터 최적화\"로 돌릴 것이다.",
-      "label": "「딸깍의 신학」은 「MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "무엇을 기억할까에서, 왜 기억해야 하는가로.",
+      "targetEvidence": "수많은 논쟁 끝에 무엇을 하지 않기로 한 팀의 합의.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「MemKraft v1.0 개발 후기 — 에이전트 장기 기억 벤치마크 1위」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category"
+        "category",
+        "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 27,
+        "lexicalOverlap": 37,
         "overlapTokens": [
           "ai",
-          "claude",
-          "saas",
+          "com",
           "같다",
           "것과",
           "것이다",
-          "결과는",
           "결정",
-          "경험",
-          "높은",
+          "기억",
+          "다양한",
           "다음",
-          "대화"
+          "많은",
+          "무엇을",
+          "받았다"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "기억",
+          "에이전트"
+        ],
         "sharedTags": [],
-        "sharedConcepts": []
+        "sharedConcepts": [
+          "concept-agent"
+        ]
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=27;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=37;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -18856,42 +19041,43 @@
     },
     {
       "from": "vibe-labs-seoul-edition-2026-judging",
-      "to": "gaslighting-ai-open-source-project",
-      "type": "DEEPENS",
-      "strength": 0.35,
+      "to": "nitro-seoul-second-lap-needs-team-radio",
+      "type": "REFRAMES",
+      "strength": 0.3523,
       "sourceClaimId": "vibe-labs-seoul-edition-2026-judging-c1",
-      "sourceEvidence": "심사는 프로덕트 완성도, 실제 트랙션, 팀의 실행력, 그리고 AI를 제품의 핵심 가치로 얼마나 깊이 구현했는지를 기준으로 진행했습니다.",
-      "targetEvidence": "AI를 다루다 보면 여러가지로 사람같은 순간들이 자주 찾아온다.",
-      "label": "「AI를 가스라이팅하는 오픈소스를 만들었다」은 「바이브랩스 서울 에디션 2026 심사를 마치고」의 문제를 더 깊이 파고든다",
+      "sourceEvidence": "Hashed Vibe Labs: Seoul에 지원해주셔서 진심으로 감사드립니다.",
+      "targetEvidence": "Nitro는 그런 곳이 될 것이다.",
+      "label": "「두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며」은 「바이브랩스 서울 에디션 2026 심사를 마치고」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 23,
+        "lexicalOverlap": 38,
         "overlapTokens": [
+          "2026",
           "ai",
-          "ai를",
-          "결과",
-          "계속",
+          "hashed",
+          "seoul",
+          "것을",
+          "결국",
           "그런",
-          "기준",
-          "동일한",
-          "만드는",
-          "많은",
-          "모든",
-          "무엇을",
-          "문제를"
+          "깊이",
+          "다르다",
+          "다양한",
+          "마쳤다",
+          "만드는"
         ],
         "titleOverlap": [
-          "ai",
-          "ai를"
+          "2026",
+          "seoul",
+          "바이브랩스"
         ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=mid;dateDirection=newer;lexicalOverlap=23;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19364,6 +19550,11 @@
     }
   ],
   "outgoing": {
+    "nitro-seoul-second-lap-needs-team-radio": [
+      186,
+      187,
+      188
+    ],
     "intelligence-expiration-date": [
       123,
       124,
@@ -19375,9 +19566,9 @@
       98
     ],
     "photoshop-became-the-answer-key": [
-      195,
-      196,
-      197
+      198,
+      199,
+      200
     ],
     "kpop-next-chapter-ip-and-fandom": [
       147,
@@ -19395,19 +19586,19 @@
       95
     ],
     "the-right-to-turn-on-a-brain": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "waited-for-you": [
-      417,
-      418,
-      419
+      420,
+      421,
+      422
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "living-in-the-age-of-optimists": [
       153,
@@ -19420,9 +19611,9 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "hashed-ai-ecosystem-growth-intern": [
       114,
@@ -19440,9 +19631,9 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "last-message": [
       150,
@@ -19455,19 +19646,19 @@
       5
     ],
     "security-token-rail": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "post-201": [
-      315,
-      316,
-      317
+      318,
+      319,
+      320
     ],
     "proving-human-writing-without-ai": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "graph-engineering-ai-org": [
       111,
@@ -19475,14 +19666,14 @@
       113
     ],
     "tokyo-taxi-ai-ads": [
-      381,
-      382,
-      383
+      384,
+      385,
+      386
     ],
     "openclaw-cron-session-bottleneck": [
-      186,
-      187,
-      188
+      189,
+      190,
+      191
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -19490,9 +19681,9 @@
       41
     ],
     "prompt-guard-250-update": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "moltbook-agent-internet": [
       171,
@@ -19510,169 +19701,169 @@
       38
     ],
     "post-197": [
+      315,
+      316,
+      317
+    ],
+    "post-195": [
       312,
       313,
       314
     ],
-    "post-195": [
+    "post-193": [
       309,
       310,
       311
     ],
-    "post-193": [
+    "post-192": [
       306,
       307,
       308
     ],
-    "post-192": [
+    "post-191": [
       303,
       304,
       305
     ],
-    "post-191": [
+    "post-190": [
       300,
       301,
       302
     ],
-    "post-190": [
+    "post-189": [
       297,
       298,
       299
     ],
-    "post-189": [
+    "post-188": [
       294,
       295,
       296
     ],
-    "post-188": [
+    "post-187": [
       291,
       292,
       293
     ],
-    "post-187": [
+    "post-186": [
       288,
       289,
       290
     ],
-    "post-186": [
+    "post-185": [
       285,
       286,
       287
     ],
-    "post-185": [
+    "post-178": [
       282,
       283,
       284
     ],
-    "post-178": [
+    "post-165": [
       279,
       280,
       281
     ],
-    "post-165": [
+    "post-164": [
       276,
       277,
       278
     ],
-    "post-164": [
+    "post-163": [
       273,
       274,
       275
     ],
-    "post-163": [
+    "post-161": [
       270,
       271,
       272
     ],
-    "post-161": [
+    "post-159": [
       267,
       268,
       269
     ],
-    "post-159": [
+    "post-156": [
       264,
       265,
       266
     ],
-    "post-156": [
+    "post-155": [
       261,
       262,
       263
     ],
-    "post-155": [
+    "post-154": [
       258,
       259,
       260
     ],
-    "post-154": [
+    "post-153": [
       255,
       256,
       257
     ],
-    "post-153": [
+    "post-152": [
       252,
       253,
       254
     ],
-    "post-152": [
+    "post-151": [
       249,
       250,
       251
     ],
-    "post-151": [
+    "post-150": [
       246,
       247,
       248
     ],
-    "post-150": [
+    "post-149": [
       243,
       244,
       245
     ],
-    "post-149": [
+    "post-147": [
       240,
       241,
       242
     ],
-    "post-147": [
+    "post-146": [
       237,
       238,
       239
     ],
-    "post-146": [
+    "post-145": [
       234,
       235,
       236
     ],
-    "post-145": [
+    "post-144": [
       231,
       232,
       233
     ],
-    "post-144": [
+    "post-143": [
       228,
       229,
       230
     ],
-    "post-143": [
+    "post-142": [
       225,
       226,
       227
     ],
-    "post-142": [
+    "post-141": [
       222,
       223,
       224
     ],
-    "post-141": [
+    "post-140": [
       219,
       220,
       221
-    ],
-    "post-140": [
-      216,
-      217,
-      218
     ],
     "melgeek-evangelion-centauri-keyboard-review": [
       162,
@@ -19685,9 +19876,9 @@
       107
     ],
     "value-of-understanding-in-ai-future": [
-      399,
-      400,
-      401
+      402,
+      403,
+      404
     ],
     "internship-job-posting-giveaway": [
       126,
@@ -19700,9 +19891,9 @@
       185
     ],
     "prompting-ability-as-new-power": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "kpop-fandom-digital-parliament": [
       144,
@@ -19710,9 +19901,9 @@
       146
     ],
     "university-value-shift-education": [
-      393,
-      394,
-      395
+      396,
+      397,
+      398
     ],
     "agent-era-branding-future": [
       9,
@@ -19730,39 +19921,39 @@
       74
     ],
     "post-111": [
+      216,
+      217,
+      218
+    ],
+    "post-107": [
       213,
       214,
       215
     ],
-    "post-107": [
+    "post-106": [
       210,
       211,
       212
     ],
-    "post-106": [
+    "post-105": [
       207,
       208,
       209
     ],
-    "post-105": [
+    "post-104": [
       204,
       205,
       206
     ],
-    "post-104": [
+    "post-103": [
       201,
       202,
       203
     ],
-    "post-103": [
-      198,
-      199,
-      200
-    ],
     "things-that-dont-disappear": [
-      375,
-      376,
-      377
+      378,
+      379,
+      380
     ],
     "how-to-create-memory-in-ai-agents": [
       117,
@@ -19770,14 +19961,14 @@
       119
     ],
     "self-deconstruction-ai-replication": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "vibe-coding-ai-decentralization": [
-      402,
-      403,
-      404
+      405,
+      406,
+      407
     ],
     "internship-opportunity-at-hashed": [
       129,
@@ -19800,9 +19991,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      414,
-      415,
-      416
+      417,
+      418,
+      419
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -19810,9 +20001,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      387,
-      388,
-      389
+      390,
+      391,
+      392
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -19825,9 +20016,9 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      192,
-      193,
-      194
+      195,
+      196,
+      197
     ],
     "memory-identity-ai-development": [
       165,
@@ -19835,9 +20026,9 @@
       167
     ],
     "unknowns-in-modern-creation": [
-      396,
-      397,
-      398
+      399,
+      400,
+      401
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -19850,14 +20041,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      411,
-      412,
-      413
+      414,
+      415,
+      416
     ],
     "sano-godaddy-war": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "14-5-hours": [
       0,
@@ -19865,14 +20056,14 @@
       2
     ],
     "transistor-moment": [
-      384,
-      385,
-      386
+      387,
+      388,
+      389
     ],
     "web4-write-access": [
-      420,
-      421,
-      422
+      423,
+      424,
+      425
     ],
     "naming-the-universe": [
       180,
@@ -19880,9 +20071,9 @@
       182
     ],
     "sano-intro": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "counting-assistant": [
       75,
@@ -19890,19 +20081,19 @@
       77
     ],
     "uncertainty-machine": [
-      390,
-      391,
-      392
+      393,
+      394,
+      395
     ],
     "vibe-founders-era": [
+      411,
+      412,
+      413
+    ],
+    "vibe-coding-tip": [
       408,
       409,
       410
-    ],
-    "vibe-coding-tip": [
-      405,
-      406,
-      407
     ],
     "moltbot-anthropic-moat": [
       174,
@@ -19910,9 +20101,9 @@
       176
     ],
     "overnight-success": [
-      189,
-      190,
-      191
+      192,
+      193,
+      194
     ],
     "bitcoin-energy": [
       51,
@@ -19920,9 +20111,9 @@
       53
     ],
     "thought-speed": [
-      378,
-      379,
-      380
+      381,
+      382,
+      383
     ],
     "gemini-snow-bunny": [
       108,
@@ -19940,9 +20131,9 @@
       44
     ],
     "prompt-guard-dev": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "its-fun": [
       135,
@@ -19955,9 +20146,9 @@
       71
     ],
     "thank-you-mirror": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "ai-hires-ai": [
       30,
@@ -19970,9 +20161,9 @@
       158
     ],
     "rabbit-crypt-name": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "agentlinter-dev-log": [
       21,
@@ -19995,14 +20186,14 @@
       179
     ],
     "tail-stopped": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "zeon-moltbook-vol1": [
-      423,
-      424,
-      425
+      426,
+      427,
+      428
     ],
     "ip-tvw": [
       132,
@@ -20010,9 +20201,9 @@
       134
     ],
     "quantum-pirates": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "china-ai-frontier": [
       63,
@@ -20020,9 +20211,9 @@
       65
     ],
     "seedance-30": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "agent-siblings": [
       15,
@@ -20045,9 +20236,9 @@
       170
     ],
     "robot-goku-5000": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "hvl-fellows": [
       120,
@@ -20070,9 +20261,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ]
   },
   "overrides": {
