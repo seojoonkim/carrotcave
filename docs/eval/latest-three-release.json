@@ -1,0 +1,49 @@
+{
+  "checkedAt": "2026-10-22T08:37:51.258Z",
+  "releaseCommit": "ec76bbf232c4bf3f6a7a54331eb9a3e11604ee8f",
+  "deploymentId": "GaRJX3GTmnUcEhyxVeJiiwJdabJu",
+  "deploymentUrl": "https://carrotcave-hpnv3fxza-seojoonkims-projects.vercel.app",
+  "counts": {
+    "new": 1,
+    "updated": 0,
+    "unchanged": 2,
+    "pending": 0
+  },
+  "items": [
+    {
+      "telegramId": 233,
+      "exactTitle": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
+      "slug": "nitro-seoul-second-lap-needs-team-radio",
+      "sourceHash": "9e6bc6c1a1cc0a1f92eda015b54aaaa7e17af73c087adaefd926246d1d3d9af5",
+      "result": "new-live",
+      "canonicalUrl": "https://carrotcave.com/posts/nitro-seoul-second-lap-needs-team-radio"
+    },
+    {
+      "telegramId": 232,
+      "exactTitle": "지능의 유통기한",
+      "slug": "intelligence-expiration-date",
+      "sourceHash": "705f9ce8f199e77e325c456b827627eedc6489085d3fccdb85ade43acb6eacc3",
+      "result": "unchanged-live",
+      "canonicalUrl": "https://carrotcave.com/posts/intelligence-expiration-date"
+    },
+    {
+      "telegramId": 224,
+      "exactTitle": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
+      "slug": "ethval-v1-valuation-from-calculation-to-validation",
+      "sourceHash": "ab0aba79f031e79629c8e7fe15e003647bcc58aba88bee9fa9ff96d9dabce554",
+      "result": "unchanged-live",
+      "canonicalUrl": "https://carrotcave.com/posts/ethval-v1-valuation-from-calculation-to-validation"
+    }
+  ],
+  "verification": {
+    "testsPassed": 496,
+    "liveVerifierExit": 0,
+    "releaseExit": 0,
+    "mediaVerified": 10,
+    "widths": [
+      390,
+      1280
+    ]
+  },
+  "proofSha256": "fc0377c8af91c6df9f36428bb53d58da18e4f75f8d11ad25a6436ebb76f1e36e"
+}

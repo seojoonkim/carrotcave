@@ -1,0 +1,209 @@
+{
+  "checkedAt": "2026-10-22T08:37:51.258Z",
+  "source": "https://t.me/s/carrotcave",
+  "base": "https://carrotcave.com",
+  "items": [
+    {
+      "id": 233,
+      "title": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
+      "slug": "nitro-seoul-second-lap-needs-team-radio",
+      "date": "2026-10-22",
+      "sourceDatetime": "2026-10-21T19:03:37+00:00",
+      "sourceUrl": "https://t.me/carrotcave/233",
+      "bodySha256Normalized": "9e6bc6c1a1cc0a1f92eda015b54aaaa7e17af73c087adaefd926246d1d3d9af5",
+      "status": "live-verified",
+      "media": [
+        "/media/msg-233-0.jpg"
+      ],
+      "canonical": {
+        "/": 200,
+        "/en": 200
+      }
+    },
+    {
+      "id": 232,
+      "title": "지능의 유통기한",
+      "slug": "intelligence-expiration-date",
+      "date": "2026-10-18",
+      "sourceDatetime": "2026-10-17T20:50:43+00:00",
+      "sourceUrl": "https://t.me/carrotcave/232",
+      "bodySha256Normalized": "705f9ce8f199e77e325c456b827627eedc6489085d3fccdb85ade43acb6eacc3",
+      "status": "live-verified",
+      "media": [
+        "/media/msg-232-0.jpg"
+      ],
+      "canonical": {
+        "/": 200,
+        "/en": 200
+      }
+    },
+    {
+      "id": 224,
+      "title": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
+      "slug": "ethval-v1-valuation-from-calculation-to-validation",
+      "date": "2026-10-17",
+      "sourceDatetime": "2026-10-17T13:35:13+00:00",
+      "sourceUrl": "https://t.me/carrotcave/224",
+      "bodySha256Normalized": "ab0aba79f031e79629c8e7fe15e003647bcc58aba88bee9fa9ff96d9dabce554",
+      "status": "live-verified",
+      "media": [
+        "/media/msg-224-0.jpg",
+        "/media/msg-224-1.jpg",
+        "/media/msg-224-2.jpg",
+        "/media/msg-224-3.jpg",
+        "/media/msg-224-4.jpg",
+        "/media/msg-224-5.jpg",
+        "/media/msg-224-6.jpg",
+        "/media/msg-224-7.jpg"
+      ],
+      "canonical": {
+        "/": 200,
+        "/en": 200
+      }
+    }
+  ],
+  "viewports": [
+    {
+      "width": 390,
+      "pages": [
+        {
+          "id": 233,
+          "status": 200,
+          "proseParagraphsVerified": 25,
+          "bodySha256": "0e6c0a27e5dada659b6cad917f18f2f3410c2190eb249504d58daa8fadbb3a79",
+          "images": [
+            {
+              "src": "/media/msg-233-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 232,
+          "status": 200,
+          "proseParagraphsVerified": 22,
+          "bodySha256": "705f9ce8f199e77e325c456b827627eedc6489085d3fccdb85ade43acb6eacc3",
+          "images": [
+            {
+              "src": "/media/msg-232-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 224,
+          "status": 200,
+          "proseParagraphsVerified": 37,
+          "bodySha256": "4b212239810264286b9ec062827e2e09125504fe82504ec342f159f4fb022898",
+          "images": [],
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "pages": [
+        {
+          "id": 233,
+          "status": 200,
+          "proseParagraphsVerified": 25,
+          "bodySha256": "714fa1101c48b92653cb5922b23f1911d08606b841b921ca8a35e8ad1bfc8aae",
+          "images": [
+            {
+              "src": "/media/msg-233-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 232,
+          "status": 200,
+          "proseParagraphsVerified": 22,
+          "bodySha256": "705f9ce8f199e77e325c456b827627eedc6489085d3fccdb85ade43acb6eacc3",
+          "images": [
+            {
+              "src": "/media/msg-232-0.jpg",
+              "loaded": true
+            }
+          ],
+          "overflow": false
+        },
+        {
+          "id": 224,
+          "status": 200,
+          "proseParagraphsVerified": 37,
+          "bodySha256": "f5436375a2db06f03b3d87dc29bfc2258a18a5dbdaa9bb910b2b07bcc9f8da29",
+          "images": [],
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "needsDeploy": [],
+  "pageErrors": [],
+  "assets": [
+    {
+      "path": "/media/msg-233-0.jpg",
+      "status": 200,
+      "sha256": "bc579329bcc3c0b2a90a1f3a39793ddd5992eef9d89fce31ba545781f0edc1e0",
+      "bytes": 83913
+    },
+    {
+      "path": "/media/msg-232-0.jpg",
+      "status": 200,
+      "sha256": "e97fa7816961f7c0fcf9b817eb07d1edb5683e72c7b7660a035d4e6dd8020e3a",
+      "bytes": 57980
+    },
+    {
+      "path": "/media/msg-224-0.jpg",
+      "status": 200,
+      "sha256": "6db7d87462d76ed47dbe88881973f5584f1d839bf867a173a59e225ea8374f54",
+      "bytes": 44847
+    },
+    {
+      "path": "/media/msg-224-1.jpg",
+      "status": 200,
+      "sha256": "e9dcfd1d9879472a654533ea81cb27599a0166a3b90858e55cb47a869933f918",
+      "bytes": 52762
+    },
+    {
+      "path": "/media/msg-224-2.jpg",
+      "status": 200,
+      "sha256": "6f944bdcbdf20941112856d2315ed488a2bada6db092fb27b0207eb9ee8f9412",
+      "bytes": 52687
+    },
+    {
+      "path": "/media/msg-224-3.jpg",
+      "status": 200,
+      "sha256": "faa8bc568409223141bf8cb6516bf83f3f18a092f456e69b551935975fcc7b54",
+      "bytes": 56132
+    },
+    {
+      "path": "/media/msg-224-4.jpg",
+      "status": 200,
+      "sha256": "f2da256aa051cf0fb2806ff17f3cc0dedaa187a2c34400ce8d48205432e786d4",
+      "bytes": 55656
+    },
+    {
+      "path": "/media/msg-224-5.jpg",
+      "status": 200,
+      "sha256": "f51c9715245c9e82feec00b6541a3bfa1ada706953eb47bb7b71d0c5fb9db255",
+      "bytes": 52691
+    },
+    {
+      "path": "/media/msg-224-6.jpg",
+      "status": 200,
+      "sha256": "f8d385910f4d3a836eed6903b7478d275151125ce669b86d4f0c8ab35d983f1f",
+      "bytes": 46407
+    },
+    {
+      "path": "/media/msg-224-7.jpg",
+      "status": 200,
+      "sha256": "422c5c8668835d34d3050f7e139e51f203e4253f1fa8595ac48495e95e349825",
+      "bytes": 67288
+    }
+  ]
+}
