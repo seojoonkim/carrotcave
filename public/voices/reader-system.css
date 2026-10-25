@@ -711,3 +711,13 @@ html:focus-within { scroll-behavior: smooth; }
   .toc-drawer header { margin: -6px -10px 2px !important; padding: 16px 20px 10px !important; background: #2b2d3a; border-radius: 14px 14px 0 0; }
   .drawer-backdrop { background: rgba(37, 39, 50, .45) !important; }
 }
+
+/* Header rhythm 2026.10c — the same calm header on voices and posts.
+   Logo, label and title sit close as one group; the label is a quiet sans line, not a loud mono run. */
+.site-header { grid-template-columns: 44px minmax(0, 1fr) auto !important; column-gap: 16px !important; }
+.header-titles { gap: 5px; }
+.header-site-title { font-family: var(--font-sans) !important; font-weight: 500; letter-spacing: .01em !important; opacity: .9; }
+.header-status #readingStatus { line-height: 1.2; letter-spacing: -.015em; }
+.menu-button { gap: 10px; }
+.menu-button span { color: rgba(236, 238, 245, .72); font-weight: 500; }
+@media (max-width: 599px) { .site-header { column-gap: 12px !important; } .header-titles { gap: 4px; } }

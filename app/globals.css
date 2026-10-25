@@ -1325,3 +1325,9 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 @media(max-width:520px){.cc-reading-end .ccx-post-threads{margin-top:44px;padding-top:32px}}
 .cc-reading-end .ccx-post-threads .ccx-thread + .ccx-thread{margin-top:12px;padding-top:24px}
 .ccx-thread .ccx-tpost__here{color:var(--carrot-orange)}
+
+/* Header rhythm 2026.10c — posts match voice readers: logo group then label/title, 16px apart. */
+.cc-header--reading .cc-header__inner{grid-template-columns:44px minmax(0,1fr)!important;column-gap:16px!important}
+.cc-header--reading .cc-reading-info{gap:5px}
+.cc-header--reading .cc-reading-info small{font-family:var(--sans);font-size:12px;letter-spacing:.01em}
+@media(max-width:599px){.cc-header--reading .cc-header__inner{column-gap:12px!important}.cc-header--reading .cc-reading-info{gap:4px}}
