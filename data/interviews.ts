@@ -20,6 +20,23 @@ export interface InterviewArchive {
 
 export const interviews: InterviewArchive[] = [
   {
+    slug: 'jk-entertech-forum-ai',
+    name: '김종윤·최혁재·김서준',
+    nameEn: 'Jongyoon Kim, Hyukjae Choi & Simon Kim',
+    eyebrow: 'JAPAN–KOREA ENTERTECH FORUM / AI / IP',
+    title: 'AI는 콘텐츠의 주인을 바꾼다',
+    summary: '김종윤, 최혁재, 김서준은 AI가 콘텐츠의 주도권을 유저에게 넘기고 제작비를 낮추는 가운데 IP의 가치와 한일 협업이 어디로 향하는지 논의한다.',
+    description: '2026년 10월 23일 도쿄 시부야 한일 엔터테크 포럼 세션 1 「엔터테인먼트 산업에서의 AI 진화상」 패널을 7개 장, 23개 주제, 44개 발화로 정리한 기록입니다. 사회는 성호철 조선일보 도쿄지국장이 맡았습니다.',
+    sourcePublishedAt: '2026-10-23', // Panel date; no public recording URL.
+    thumbnailUrl: '/voices/jk-entertech-forum-ai/session1-stage.jpg',
+    sourceUrl: 'https://jk-entertech-panel.vercel.app/',
+    duration: '7개 장',
+    chapters: 7,
+    segments: 44,
+    embedPath: '/voices/jk-entertech-forum-ai/index.html',
+    status: 'published',
+  },
+  {
     slug: 'zuckerberg-wang-muse-wonder',
     name: '마크 저커버그·알렉산더 왕',
     nameEn: 'Mark Zuckerberg & Alexandr Wang',

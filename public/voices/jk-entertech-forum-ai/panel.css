@@ -1,0 +1,9 @@
+/* Panel: four speakers on the voices reader. Host keeps the reader's host blue;
+   Simon keeps carrot orange; the two other panelists get quiet companion tones. */
+#transcript .transcript-speaker[data-sid="kjy"] { color: #7fcfa0; }
+#transcript .transcript-speaker[data-sid="chj"] { color: #b9a2ec; }
+#transcript .transcript-speaker[data-sid="kjy"],
+#transcript .transcript-speaker[data-sid="chj"] { background: rgba(217, 220, 232, .06); }
+
+
+#transcript .transcript-speaker[data-sid="emcee"] { color: var(--muted, #b3b8cb); background: rgba(217, 220, 232, .05); }

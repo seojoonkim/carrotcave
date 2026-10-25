@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 V = ROOT / 'public/voices'
 SRC = ROOT / 'data/voice-sources'
-EN_VOICES = ['mark-zuckerberg-muse', 'tibo-ai-wave', 'sam-altman-startup-school-2026', 'liao-heng', 'liang-wenfeng', 'yang-zhilin', 'masayoshi-son-asi-economy', 'shin-jeongkyu-astra']
+EN_VOICES = ['mark-zuckerberg-muse', 'tibo-ai-wave', 'sam-altman-startup-school-2026', 'liao-heng', 'liang-wenfeng', 'yang-zhilin', 'masayoshi-son-asi-economy', 'shin-jeongkyu-astra', 'jk-entertech-forum-ai']
 HANGUL = re.compile(r'[\uac00-\ud7a3]')
 GLOSSARY = (ROOT / 'scripts/i18n/glossary.md').read_text() if (ROOT / 'scripts/i18n/glossary.md').exists() else ''
 
