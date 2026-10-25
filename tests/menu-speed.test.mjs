@@ -14,7 +14,20 @@ test('active marker moves on pointerdown, before the server answers', () => {
   const src = read('components/AxisRailInstant.tsx');
   assert.match(src, /'pointerdown'/);
   assert.match(src, /classList\.toggle\('active'/);
-  assert.match(src, /classList\.remove\('cc-axis-pending'\)/);
+  assert.match(src, /classList\.remove\(PENDING\)/);
+});
+
+test('page dims only for a real navigation and can never stay dim (2026-10-23)', () => {
+  const src = read('components/AxisRailInstant.tsx');
+  // Dim is set on click to a different URL — never on pointerdown.
+  const down = src.slice(src.indexOf('const onDown'), src.indexOf('const onUp'));
+  assert.doesNotMatch(down, /PENDING/);
+  assert.match(src, /if \(isSameUrl\(link\)\) return;/);
+  // Cancelled presses restore the marker; a hard timeout and history events clear the dim.
+  assert.match(src, /'pointercancel', onCancel/);
+  assert.match(src, /PENDING_MAX_MS = \d{4}/);
+  assert.match(src, /'popstate', onLeave/);
+  assert.match(src, /'pageshow', onLeave/);
 });
 
 test('prefetched pages stay warm between taps', () => {
