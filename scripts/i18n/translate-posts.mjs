@@ -34,6 +34,7 @@ Hard rules for "content":
 - Korean company/product names: use their official English names (모드하우스 → MODHAUS, 해시드 → Hashed, 트리플에스 → tripleS).
 - Dates in English (2026년 9월 28일 → September 28, 2026).
 - When the Korean gives an original-language name in parentheses (트리플에스(tripleS)), write the name once (tripleS) — never "tripleS (tripleS)".
+- The English summary must not start with a word or name that already appears in the English title (link previews show the title right above it); open with the substance instead.
 ${glossary ? `\nGlossary (follow exactly):\n${glossary}\n` : ''}
 ${TITLES_EN[p.slug] ? `Use exactly this English title (already published on share cards): ${JSON.stringify(TITLES_EN[p.slug])}\n` : ''}
 Return ONLY a JSON object, no code fences, no commentary:

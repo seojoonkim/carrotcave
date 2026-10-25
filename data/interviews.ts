@@ -59,7 +59,7 @@ export const interviews: InterviewArchive[] = [
     nameEn: 'Mark Zuckerberg',
     eyebrow: 'META / MUSE / PERSONAL SUPERINTELLIGENCE',
     title: 'Muse, 개인 초지능을 일상의 도구로',
-    summary: 'Muse의 활용과 가격, 개인 에이전트의 프라이버시, AI 연구와 안전을 통해 개인 초지능을 널리 보급하려는 Meta의 구상을 이야기한다.',
+    summary: '활용과 가격, 개인 에이전트의 프라이버시, AI 연구와 안전을 통해 Muse로 개인 초지능을 널리 보급하려는 Meta의 구상을 이야기한다.',
     description: 'Sources Podcast에서 마크 저커버그와 진행자 알렉스 히스가 나눈 대화의 영어 자동자막 전체를 공식 11개 장, 화자 미분리 한국어 번역 264개 문단으로 읽는 리더. 스폰서 구간 포함.',
     sourcePublishedAt: '2026-09-08',
     thumbnailUrl: '/voices/mark-zuckerberg-muse/zuckerberg-muse.jpg',
@@ -76,7 +76,7 @@ export const interviews: InterviewArchive[] = [
     nameEn: 'Jeongkyu Shin',
     eyebrow: 'LABLUP / ASTRA / AI INFRASTRUCTURE',
     title: 'Astra 이후, AI 기업에는 무엇이 남는가',
-    summary: 'Astra 이후 모델 내부의 반복 계산과 추론 하드웨어, 낮아진 개발 비용이 AI 기업의 해자를 어디로 옮기는지 짚는다.',
+    summary: '모델 내부의 반복 계산과 추론 하드웨어, 낮아진 개발 비용이 Astra 이후 AI 기업의 해자를 어디로 옮기는지 짚는다.',
     description: '래블업 신정규 대표와 해시드 김서준 대표의 2026년 9월 7일 대담을 7개 장, 188개 발화로 재구성한 대화록입니다. 편집자 보충 문답이 섞여 있고 당사자 검수 전입니다.',
     sourcePublishedAt: '2026-09-07', // Conversation date on the reconstructed source page.
     thumbnailUrl: '/voices/shin-jeongkyu-astra/shin-jeongkyu.jpg',
@@ -93,7 +93,7 @@ export const interviews: InterviewArchive[] = [
     nameEn: 'Masayoshi Son',
     eyebrow: 'SOFTBANK WORLD 2026 / ASI ECONOMY / AI INFRASTRUCTURE',
     title: '2040년 ASI Economy를 먼저 준비하는 법',
-    summary: '2040년 AI 에이전트와 휴머노이드가 만드는 경제, 전력과 연산 인프라, 그리고 Return on AI라는 새로운 경영 지표를 이야기한다.',
+    summary: 'AI 에이전트와 휴머노이드가 2040년에 만드는 경제, 전력과 연산 인프라, 그리고 Return on AI라는 새로운 경영 지표를 이야기한다.',
     description: 'SoftBank World 2026 손정의 특별강연을 8개 장과 문단별 타임코드로 정리한 한국어 번역 리더.',
     sourcePublishedAt: '2026-09-01', // Official YouTube upload_date, verified with yt-dlp.
     thumbnailUrl: '/voices/masayoshi-son-asi-economy/son-asi-economy.jpg',

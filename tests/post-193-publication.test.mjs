@@ -28,7 +28,7 @@ test('Telegram post 195 publishes the reviewed recursive self-improvement essay 
   assert.equal(post.title, '재귀적 자기 개선, 무엇을 지킬 것인가');
   assert.equal(post.category, '탐험');
   assert.equal(post.depth, 'deep');
-  assert.equal(post.summary, '자기 개선 AI가 반복된 승인과 침묵을 자동 동의로 학습할 때 가역성·대가·이의제기를 지킬 기준이 필요한 이유를 묻는다.');
+  assert.equal(post.summary, 'AI가 반복된 승인과 침묵을 자동 동의로 학습할 때 가역성·대가·이의제기를 지킬 기준이 필요한 이유를 묻는다.');
   assert.deepEqual(post.mediaUrls, ['/media/msg-195-0.jpg']);
   assert.match(post.content, /개선됐다는 판정은 누가 내리는가\./);
   assert.match(post.content, /시스템은 침묵을 승인으로 배웠다\./);

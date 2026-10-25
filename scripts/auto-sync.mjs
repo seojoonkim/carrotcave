@@ -18,6 +18,7 @@
  * Usage: node scripts/auto-sync.mjs [--dry-run] [--force-all] [--audit-only] [--no-git]
  */
 
+import { repeatedTitleOpening } from '../lib/og-description-rule.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync, createWriteStream, renameSync, unlinkSync, openSync, fsyncSync, closeSync } from 'fs';
 import { join, dirname, extname, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -553,6 +554,7 @@ summary 작성 원칙:
 - 낙서는 평가나 의미 부여 없이 무슨 일이 있었는지만 건조하게 쓸 것
 - 낙서에는 '~를 보여준다', '~를 되새긴다', '~를 강조한다', '~를 돌아본다', '~를 읽어낸다', '~를 감상한다' 같은 평론형 서술을 쓰지 말 것
 - 제목이나 본문 첫 문장을 그대로 반복하지 말 것
+- 첫 단어를 제목에 이미 있는 단어나 이름으로 시작하지 말 것(링크 미리보기에서 제목 바로 아래에 붙어 반복으로 보임). 내용의 핵심부터 시작할 것
 - 말줄임표, URL, 표 조각, 줄바꿈, 반응 이모지를 넣지 말 것
 - 독자가 본문을 열기 전에 무엇을 다루고 어떤 핵심을 말하는 글인지 알 수 있게 쓸 것`;
 
@@ -700,6 +702,7 @@ export function assertPublishableAbstract(summary, content, title, category) {
   if (!/[.!?。！？]$/.test(value)) errors.push('missing terminal punctuation');
   if (normalized(value) === normalized(title ?? '')) errors.push('duplicates title');
   if (normalized(value) === normalized(firstSentence)) errors.push('copies opening sentence');
+  { const hit = repeatedTitleOpening(title, value); if (hit) errors.push(`repeats title word "${hit}" at the start`); }
   if (category === '낙서' && /보여준다|드러낸다|강조한다|되새긴다|돌아본다|읽어낸다|감상한다|의미를 덧붙인다|산물임/.test(value)) errors.push('critical doodle voice');
   if (category === '소설' && /(?:소설|이야기|작품)(?:이|가|은|는|을|를)?다?[.!?。！？]?$/.test(value)) errors.push('fiction meta description');
   if (errors.length) throw new Error(`Unpublishable post abstract: ${errors.join(', ')}`);
