@@ -60,6 +60,11 @@ test('ordinary posts and voice readers share one explicit reading scale', async 
   for (const contract of voiceSectionContracts) {
     assert.ok(normalizedShared.includes(normalizeDeclarationSpacing(contract)), `voice reader system missing ${contract}`);
   }
+  for (const contract of [
+    '@media (min-width: 600px) {\n  :root {\n    --reader-title-size: clamp(34px, calc(5.5vw + 1px), 48px);\n    --reader-section-size: 40px;\n    --reader-subsection-size: 30px;\n    --reader-header-title-size: 17px;',
+  ]) {
+    assert.ok(normalizedShared.includes(normalizeDeclarationSpacing(contract)), `voice desktop title scale missing ${contract}`);
+  }
   assert.ok(normalizedGlobals.includes('--reader-section-size:42px'), 'ordinary post section titles must stay 42px');
   assert.ok(normalizedGlobals.includes('--reader-section-size-mobile:34px'), 'ordinary post mobile section titles must stay 34px');
 });

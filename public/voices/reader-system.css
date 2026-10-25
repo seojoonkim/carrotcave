@@ -31,6 +31,16 @@
   --cyan: var(--reader-accent);
 }
 
+/* Voice desktop titles run one step larger than ordinary posts (Simon, 2026-10-25). Mobile keeps the shared scale. */
+@media (min-width: 600px) {
+  :root {
+    --reader-title-size: clamp(34px, calc(5.5vw + 1px), 48px);
+    --reader-section-size: 40px;
+    --reader-subsection-size: 30px;
+    --reader-header-title-size: 17px;
+  }
+}
+
 .reader-shell { width:100%; min-width:0; padding:0 20px; overflow-x:hidden; }
 .content-column { max-width: var(--reader-measure); }
 .content-column { width:100%; max-width:var(--reader-measure); min-width:0; margin-inline:auto; }
