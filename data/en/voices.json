@@ -2,61 +2,61 @@
   "mark-zuckerberg-muse": {
     "name": "Mark Zuckerberg",
     "title": "Muse: Personal Superintelligence for Everyday Use",
-    "summary": "Mark Zuckerberg discusses Meta’s plans to make personal superintelligence widely available, covering Muse’s uses and pricing, privacy for personal agents, and AI research and safety.",
-    "sourceHash": "c394fddb4eedf646"
+    "summary": "Meta’s plan to make personal superintelligence widely available, covering Muse’s uses and pricing, privacy for personal agents, and AI research and safety.",
+    "sourceHash": "03bc22c8614854a2"
   },
   "shin-jeongkyu-astra": {
     "name": "Jeongkyu Shin",
     "title": "What Remains for AI Companies After Astra?",
-    "summary": "Jeongkyu Shin examines how iterative computation within models, inference hardware, and lower development costs are shifting AI companies’ competitive advantages after Astra.",
-    "sourceHash": "40ee9e2e5ab6ac78"
+    "summary": "How iterative computation within models, inference hardware, and lower development costs are shifting AI companies’ competitive advantages after Astra.",
+    "sourceHash": "a5bd903252740e14"
   },
   "masayoshi-son-asi-economy": {
     "name": "Masayoshi Son",
     "title": "Preparing for the ASI Economy of 2040",
-    "summary": "Masayoshi Son discusses an economy shaped by AI agents and humanoid robots in 2040, the power and computing infrastructure it requires, and a new business metric called Return on AI.",
-    "sourceHash": "c8bd89b6f36134d4"
+    "summary": "An economy shaped by AI agents and humanoid robots in 2040, the power and computing infrastructure it requires, and a new business metric called Return on AI.",
+    "sourceHash": "059f0846977ffada"
   },
   "tibo-ai-wave": {
     "name": "Tibo",
     "title": "Understanding the Next AI Wave Early",
-    "summary": "Tibo argues that personal agents, voice interfaces, ultrafast inference, and self-improvement will make the next wave of AI fit more naturally into people’s lives.",
-    "sourceHash": "0417c1108ee02fc0"
+    "summary": "Why personal agents, voice interfaces, ultrafast inference, and self-improvement will make the next wave of AI fit more naturally into people’s lives.",
+    "sourceHash": "d48828029cea57c8"
   },
   "sam-altman-startup-school-2026": {
     "name": "Sam Altman",
     "title": "No Better Time to Start a Company",
-    "summary": "Sam Altman and Garry Tan discuss starting companies in the AI agent era, convictions that challenge conventional wisdom, safety, decentralizing power, and a future that preserves freedom.",
-    "sourceHash": "ad849c8e6e27c8f6"
+    "summary": "With Garry Tan: starting companies in the AI agent era, convictions that challenge conventional wisdom, safety, decentralizing power, and a future that preserves freedom.",
+    "sourceHash": "b55e90d03b49852a"
   },
   "liao-heng": {
     "name": "Liao Heng",
     "title": "A Semiconductor Researcher’s Field Notes",
-    "summary": "Drawing on the development history of Huawei’s Ascend, Liao Heng argues that competition in AI chips hinges not on individual chips but on economically sustainable co-design across the supply chain, software, and wider ecosystem.",
-    "sourceHash": "a2c42c22d6de778b"
+    "summary": "Drawing on the development history of Huawei’s Ascend: competition in AI chips hinges not on individual chips but on economically sustainable co-design across the supply chain, software, and wider ecosystem.",
+    "sourceHash": "654eb780bbd5ae47"
   },
   "liang-wenfeng": {
     "name": "Liang Wenfeng",
     "title": "Restraint in Pursuit of AGI",
-    "summary": "Liang Wenfeng argues that open source and keeping profits reasonable offer better prospects for achieving AGI through continual learning than pursuing short-term commercialization.",
-    "sourceHash": "cd0098131e056636"
+    "summary": "Why open source and keeping profits reasonable offer better prospects for achieving AGI through continual learning than pursuing short-term commercialization.",
+    "sourceHash": "fa1979a0b96b5409"
   },
   "yang-zhilin": {
     "name": "Yang Zhilin",
     "title": "At the Beginning of Infinity",
-    "summary": "Yang Zhilin discusses K2’s reinforcement learning and a general-purpose agent strategy, viewing AI as a tool that amplifies problem-solving to expand the boundaries of knowledge and civilization.",
-    "sourceHash": "cdbae24e28a2444f"
+    "summary": "K2’s reinforcement learning, a general-purpose agent strategy, and AI as a tool that amplifies problem-solving to expand the boundaries of knowledge and civilization.",
+    "sourceHash": "fa586b658e68a696"
   },
   "zuckerberg-wang-muse-wonder": {
     "name": "Mark Zuckerberg & Alexandr Wang",
     "title": "Muse Wonder: A $100 Billion AI Bet",
-    "summary": "Zuckerberg and Wang say that as personal agents take on tasks, model behavior will distinguish products and change how purchases are delegated, what devices people use, and how development costs are recouped.",
-    "sourceHash": "3f1ae62ebe7dde62"
+    "summary": "As personal agents take on tasks, model behavior will distinguish products and change how purchases are delegated, what devices people use, and how development costs are recouped.",
+    "sourceHash": "d42b135157441dc6"
   },
   "jk-entertech-forum-ai": {
     "name": "Jongyoon Kim, Hyukjae Choi & Simon Kim",
     "title": "AI Is Changing Who Owns Content",
-    "summary": "Jongyoon Kim, Hyukjae Choi, and Simon Kim discuss where IP value and Japan–Korea collaboration are heading as AI shifts control of content to users and lowers production costs.",
-    "sourceHash": "f6985dd5c845ac6c"
+    "summary": "As AI shifts control of content to users and lowers production costs, where are IP value and Japan–Korea collaboration heading?",
+    "sourceHash": "e3d04827fc755c6c"
   }
 }
