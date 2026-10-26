@@ -9,7 +9,7 @@ import { localizedVoice } from '@/lib/i18n-content';
 
 export default function VoicesView({ locale }: { locale: Locale }) {
   const L = t(locale);
-  const entries: ArchiveEntry[] = interviews.map((source) => {
+  const entries: ArchiveEntry[] = [...interviews].sort((a, b) => b.sourcePublishedAt.localeCompare(a.sourcePublishedAt)).map((source) => {
     const item = localizedVoice(source, locale);
     return {
       key: `voice-${item.slug}`,
