@@ -247,7 +247,7 @@ test('voice headers expose the same two-row meta and title hierarchy as ordinary
   for (const [path, meta] of expectedMeta) {
     const html = await read(path);
     assert.match(html, new RegExp(`<span class="header-site-title">${meta}<\\/span>`), `${path} must expose the full interview title`);
-    assert.match(html, /<span id="readingStatus" class="is-overview" aria-label="OVERVIEW"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/, `${path} must expose Overview without a numeric prefix`);
+    assert.match(html, /<span id="readingStatus" class="is-overview" aria-label="개요"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">개요<\/span><\/span>/, `${path} must expose the Korean overview (개요) without a numeric prefix`);
   }
 
   const liaoScript = await read('public/voices/liao-heng/script.js');
@@ -327,6 +327,7 @@ test('shared status runtime executes overview, chapter, subchapter, aria, and gr
   const context = {
     window: {},
     document: {
+      documentElement: { lang: 'ko' },
       getElementById: id => nodes[id] ?? null,
       querySelector: selector => selector === '.header-mobile-title' ? mobileTitle : null,
     },
@@ -335,11 +336,19 @@ test('shared status runtime executes overview, chapter, subchapter, aria, and gr
   const controller = context.window.CarrotReader.createStatusController({ readerTitle: '테스트 리더' });
 
   controller.setChapter(null, '');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['00', '테스트 리더: Overview', '', 'OVERVIEW', 'OVERVIEW', true]);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['00', '테스트 리더: 개요', '', '개요', '개요', true]);
   controller.setChapter(2, '두 번째 장');
-  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['CH 2', '테스트 리더: Chapter 2', 'Ch2', '두 번째 장', 'Ch2 두 번째 장', false]);
+  assert.deepEqual([chapterNumber.textContent, mobileTitle.textContent, numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-overview')], ['CH 2', '테스트 리더: 2장', 'Ch2', '두 번째 장', 'Ch2 두 번째 장', false]);
   controller.set('2-3', '세부 항목', true);
   assert.deepEqual([numberNode.textContent, titleNode.textContent, status.attrs['aria-label'], classNames.has('is-subchapter')], ['2-3', '세부 항목', '2-3 세부 항목', true]);
+
+  context.document.documentElement.lang = 'en';
+  const english = context.window.CarrotReader.createStatusController({ readerTitle: 'Test Reader' });
+  english.setChapter(null, '');
+  assert.deepEqual([mobileTitle.textContent, titleNode.textContent, status.attrs['aria-label']], ['Test Reader: Overview', 'OVERVIEW', 'OVERVIEW']);
+  english.setChapter(3, 'Third');
+  assert.equal(mobileTitle.textContent, 'Test Reader: Chapter 3');
+  context.document.documentElement.lang = 'ko';
 
   nodes.readingStatus = null;
   const fallback = context.window.CarrotReader.createStatusController({ readerTitle: '누락 리더' });

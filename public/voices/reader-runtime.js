@@ -23,14 +23,18 @@
       status.classList.toggle('is-subchapter', isSubchapter);
     };
 
+    // Korean readers name the overview and chapters in Korean; English keeps OVERVIEW.
+    const isKorean = document.documentElement?.lang === 'ko';
+    const overviewLabel = isKorean ? '개요' : 'OVERVIEW';
+
     const setChapter = (chapter, title) => {
       const normalized = chapter ? String(Number(chapter)) : '';
       if (chapterNumber) chapterNumber.textContent = normalized ? `CH ${normalized}` : '00';
       if (mobileTitle) mobileTitle.textContent = normalized
-        ? `${readerTitle}: Chapter ${normalized}`
-        : `${readerTitle}: Overview`;
+        ? (isKorean ? `${readerTitle}: ${normalized}장` : `${readerTitle}: Chapter ${normalized}`)
+        : (isKorean ? `${readerTitle}: 개요` : `${readerTitle}: Overview`);
       if (normalized) set(`Ch${normalized}`, title);
-      else set('', 'OVERVIEW');
+      else set('', overviewLabel);
     };
 
     return Object.freeze({ set, setChapter });

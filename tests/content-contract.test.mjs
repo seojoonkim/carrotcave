@@ -122,7 +122,8 @@ test('all voice readers use unpadded chapter labels and a period title separator
   }
   assert.match(voiceRuntimeSource, /const normalized = chapter \? String\(Number\(chapter\)\) : '';/);
   assert.match(voiceRuntimeSource, /if \(normalized\) set\(`Ch\$\{normalized\}`, title\);/);
-  assert.match(voiceRuntimeSource, /else set\('', 'OVERVIEW'\);/);
+  assert.match(voiceRuntimeSource, /const overviewLabel = isKorean \? '개요' : 'OVERVIEW';/);
+  assert.match(voiceRuntimeSource, /else set\('', overviewLabel\);/);
   assert.doesNotMatch(voiceRuntimeSource, /padStart\(2, '0'\)/);
 });
 
@@ -535,8 +536,8 @@ test('Yang Zhilin transcript starts at the real introduction after removing the 
 
 test('Liang Wenfeng header exposes the same structured live chapter contract as the other voice readers', () => {
   assert.match(liangReaderSource, /id="currentChapterNumber">00<\/span>/);
-  assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: Overview<\/span>/);
-  assert.match(liangReaderSource, /id="readingStatus" class="is-overview" aria-label="OVERVIEW"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">OVERVIEW<\/span><\/span>/);
+  assert.match(liangReaderSource, /class="header-mobile-title">량원펑 회의 기록: 개요<\/span>/);
+  assert.match(liangReaderSource, /id="readingStatus" class="is-overview" aria-label="개요"><span class="reading-status-number"><\/span><span class="reading-status-separator" aria-hidden="true">\. <\/span><span class="reading-status-title">개요<\/span><\/span>/);
   assert.match(liangReaderSource, /<script src="\.\.\/reader-runtime\.js"><\/script>/);
   assert.match(liangReaderSource, /readerStatus=CarrotReader\.createStatusController\(\{readerTitle:'량원펑 회의 기록'\}\)/);
   assert.match(liangReaderSource, /readerStatus\.setChapter\(n,chapterTitle\)/);
