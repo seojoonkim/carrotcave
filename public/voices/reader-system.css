@@ -559,8 +559,9 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .hero > .hero-date { display: flex; align-items: center; gap: 8px; margin: 0 auto 22px !important; }
 .hero > .hero-date::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--carrot-leaf); flex: 0 0 6px; }
 
-/* Deck: softer accent rule. */
-.hero-deck { border-left: 2px solid rgba(243, 154, 82, .55) !important; padding-left: 16px !important; color: #ccd0de !important; }
+/* Deck: plain paragraph. No one-sided accent rule (Simon 2026-10-22: banned pattern; review 2026-10-27 item 7).
+   Overrides the per-episode styles.css border-left as well. */
+.hero-deck { border-left: 0 !important; padding-left: 0 !important; color: #ccd0de !important; }
 
 /* Stats: rounded quiet card instead of hard table lines. */
 .hero-stats { border-radius: 12px; background: rgba(255, 255, 255, .025); }
