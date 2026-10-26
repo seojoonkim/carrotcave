@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { t, type Locale } from '@/lib/i18n';
+import FigureCaption from '@/components/FigureCaption';
 
 /**
  * Multi-image post gallery: one large image with a thumbnail strip below.
  * The stage is a native scroll-snap track, so touch swipe, trackpad and
  * keyboard all work without a gesture library; thumbnails jump to a slide.
  */
-export default function PostGallery({ urls, locale = 'ko' }: { urls: string[]; locale?: Locale }) {
+export default function PostGallery({ urls, locale = 'ko', sourceMsgId }: { urls: string[]; locale?: Locale; sourceMsgId?: number }) {
   const L = t(locale);
   const trackRef = useRef<HTMLDivElement>(null);
   const thumbsRef = useRef<HTMLDivElement>(null);
@@ -98,6 +99,7 @@ export default function PostGallery({ urls, locale = 'ko' }: { urls: string[]; l
           </button>
         ))}
       </div>
+      <FigureCaption index={active + 1} total={urls.length} locale={locale} sourceMsgId={sourceMsgId} />
     </figure>
   );
 }

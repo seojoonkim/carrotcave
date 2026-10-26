@@ -7,7 +7,7 @@ const gallery = await readFile(new URL('../components/PostGallery.tsx', import.m
 const css = await readFile(new URL('../app/globals.css', import.meta.url), 'utf8');
 
 test('posts with 2+ images use the gallery, not a grid', () => {
-  assert.match(page, /post\.mediaUrls\.length > 1 \? \(\s*<PostGallery urls=\{post\.mediaUrls\} locale=\{locale\} \/>/);
+  assert.match(page, /post\.mediaUrls\.length > 1 \? \(\s*<PostGallery urls=\{post\.mediaUrls\} locale=\{locale\} sourceMsgId=\{post\.telegramMsgId\} \/>/);
   assert.doesNotMatch(page, /post\.mediaUrls\.map\(/, 'no multi-image grid on the post page');
 });
 

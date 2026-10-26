@@ -20,6 +20,7 @@ import ontologyIndex from '@/data/ontology/index.json';
 import { buildTopRecommendations } from '@/lib/ontology/build-subgraph';
 import type { OntologyIndex } from '@/lib/ontology/types';
 import PostGallery from '@/components/PostGallery';
+import FigureCaption from '@/components/FigureCaption';
 import { axisHref, axisLabel, depthLabelFor, formatDate, localePath, t, type Locale } from '@/lib/i18n';
 import { localizedPost } from '@/lib/i18n-content';
 import readingAids from '@/data/reading-aids.json';
@@ -346,14 +347,17 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
   // Images move below the first two plain paragraphs; posts that open with a heading, link, or dialogue keep them on top.
   const imageMedia = post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0)
     ? (post.mediaUrls.length > 1 ? (
-        <PostGallery urls={post.mediaUrls} locale={locale} />
+        <PostGallery urls={post.mediaUrls} locale={locale} sourceMsgId={post.telegramMsgId} />
       ) : (
-        <div
-          className="post-media-grid"
-          data-count={post.mediaUrls.length}
-        >
-          <img src={post.mediaUrls[0]} alt="" loading="eager" decoding="async" />
-        </div>
+        <figure className="post-figure">
+          <div
+            className="post-media-grid"
+            data-count={post.mediaUrls.length}
+          >
+            <img src={post.mediaUrls[0]} alt="" loading="eager" decoding="async" />
+          </div>
+          <FigureCaption index={1} total={1} locale={locale} sourceMsgId={post.telegramMsgId} />
+        </figure>
       ))
     : null;
   const renderedContent = renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale, reading);
