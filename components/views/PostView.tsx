@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { isValidElement, type ReactNode } from 'react';
 import Image from 'next/image';
 import { archiveImageUrl } from '@/lib/social-metadata';
 import { EDITORIAL_CARD_FALLBACK_IMAGE } from '@/components/EditorialCard';
@@ -291,6 +292,22 @@ function linkifyBareUrls(text: string) {
   });
 }
 
+/** Insert the post's images after its first LEAD_PARAGRAPHS plain paragraphs, when the post opens with prose and keeps going after them. */
+const LEAD_PARAGRAPHS = 2;
+export function placeLeadMedia(nodes: ReactNode[], media: ReactNode): { nodes: ReactNode[]; placed: boolean } {
+  if (!media) return { nodes, placed: false };
+  const shown = nodes.map((node, index) => ({ node, index })).filter(({ node }) => node != null);
+  if (shown.length <= LEAD_PARAGRAPHS) return { nodes, placed: false };
+  const lead = shown.slice(0, LEAD_PARAGRAPHS);
+  const plain = lead.every(({ node }) => isValidElement(node) && node.type === 'p' && !(node.props as { className?: string }).className);
+  if (!plain) return { nodes, placed: false };
+  const at = lead[LEAD_PARAGRAPHS - 1].index + 1;
+  return {
+    nodes: [...nodes.slice(0, at), <div key="lead-media" className="post-lead-media">{media}</div>, ...nodes.slice(at)],
+    placed: true,
+  };
+}
+
 export default function PostView({ post: source, locale }: { post: Post; locale: Locale }) {
   const L = t(locale);
   const post = localizedPost(source, locale);
@@ -325,6 +342,23 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
       }
     : null;
 
+  // 2026-10-27 review item 6: a chart or photo should not open the post before the words do.
+  // Images move below the first two plain paragraphs; posts that open with a heading, link, or dialogue keep them on top.
+  const imageMedia = post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0)
+    ? (post.mediaUrls.length > 1 ? (
+        <PostGallery urls={post.mediaUrls} locale={locale} />
+      ) : (
+        <div
+          className="post-media-grid"
+          data-count={post.mediaUrls.length}
+        >
+          <img src={post.mediaUrls[0]} alt="" loading="eager" decoding="async" />
+        </div>
+      ))
+    : null;
+  const renderedContent = renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale, reading);
+  const { nodes: contentNodes, placed: leadMediaPlaced } = placeLeadMedia(renderedContent, imageMedia);
+
   return (
     <div className="post-reader-page min-h-screen" lang={locale}>
       <SiteHeader
@@ -350,19 +384,8 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
           </div>
         </header>
 
-        {/* Media section — images (top, skip if video exists) */}
-        {post.mediaUrls && post.mediaUrls.length > 0 && !(post.videoUrls && post.videoUrls.length > 0) && (
-          post.mediaUrls.length > 1 ? (
-            <PostGallery urls={post.mediaUrls} locale={locale} />
-          ) : (
-            <div
-              className="post-media-grid"
-              data-count={post.mediaUrls.length}
-            >
-              <img src={post.mediaUrls[0]} alt="" loading="eager" decoding="async" />
-            </div>
-          )
-        )}
+        {/* Media section — images go after the opening paragraphs (see placeLeadMedia); top only when the post opens without prose */}
+        {imageMedia && !leadMediaPlaced && imageMedia}
 
         {/* Media section — videos (top) */}
         {post.videoUrls && post.videoUrls.length > 0 && (
@@ -395,7 +418,7 @@ export default function PostView({ post: source, locale }: { post: Post; locale:
 
         {/* Content */}
         <div className="post-content" data-dialogue={reading.speakers.length ? 'true' : undefined}>
-          {renderContent(stripLeadingDuplicateTitle(stripTrailingReactionSignature(post.content), post.title), locale, reading)}
+          {contentNodes}
         </div>
 
         <section className="cc-reading-end" aria-label={L.readingEndAria}>

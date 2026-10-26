@@ -715,6 +715,8 @@ html[data-torch="on"] .cc-torch{opacity:1}
 
 /* Multi-image post gallery: one large slide + thumbnail strip; swipe via native scroll-snap. */
 .post-gallery{margin:0 0 40px;min-width:0}
+/* Review item 6 (2026-10-27): images sit after the two opening paragraphs, inside the text column. */
+.post-lead-media{margin:8px 0 0;min-width:0;line-height:normal}
 .post-gallery-stage{position:relative;background:#000;border-radius:2px;overflow:hidden}
 .post-gallery-track{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:0}
 .post-gallery-track::-webkit-scrollbar{display:none}
