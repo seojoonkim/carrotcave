@@ -24,6 +24,8 @@ const COPY = {
     inboundClose: '접기',
     inPost: '이 글이 이어가는 질문',
     here: '지금 읽은 글',
+    newer: '다음 기록',
+    older: '앞 기록',
   },
   en: {
     threads: 'Questions still being dug',
@@ -41,6 +43,8 @@ const COPY = {
     inboundClose: 'Show less',
     inPost: 'The question this piece keeps digging',
     here: 'You just read this',
+    newer: 'Next record',
+    older: 'Earlier record',
   },
 } as const;
 
@@ -59,7 +63,10 @@ function Thumb({ post, className, sizes }: { post: Post; className: string; size
   );
 }
 
-function ThreadPost({ post, locale, current }: { post: Post; locale: Locale; current?: boolean }) {
+/** 줄기 안에서 지금 글 바로 앞(더 오래된)·바로 뒤(더 새로운) 기록 표시 — 디자인 검수 아이디어 2 (2026-10-27) */
+type Neighbor = 'newer' | 'older';
+
+function ThreadPost({ post, locale, current, rel }: { post: Post; locale: Locale; current?: boolean; rel?: Neighbor }) {
   const p = localizedPost(post, locale);
   return (
     <li>
@@ -69,7 +76,9 @@ function ThreadPost({ post, locale, current }: { post: Post; locale: Locale; cur
         {/* <time> must always hold an ISO date (verify-dates gate); the "you just read" label is a plain span */}
         {current
           ? <span className="ccx-tpost__d ccx-tpost__here">{COPY[locale].here}</span>
-          : <time className="ccx-tpost__d" dateTime={p.date}>{short(locale, p.date)}</time>}
+          : rel
+            ? <span className="ccx-tpost__d ccx-tpost__nb" data-rel={rel}><span className="ccx-tpost__rel">{COPY[locale][rel]}</span> <time dateTime={p.date}>{short(locale, p.date)}</time></span>
+            : <time className="ccx-tpost__d" dateTime={p.date}>{short(locale, p.date)}</time>}
       </Link>
     </li>
   );
@@ -93,6 +102,9 @@ export function PostThreads({ post, all, locale }: { post: Post; all: Post[]; lo
         {summaries.map((summary) => {
           const name = threadName(summary.key, locale);
           const { head, rest } = threadAround(summary.posts, post.slug, THREAD_PREVIEW);
+          const at = summary.posts.findIndex((item) => item.slug === post.slug);
+          const relOf = (slug: string): Neighbor | undefined =>
+            summary.posts[at - 1]?.slug === slug ? 'newer' : summary.posts[at + 1]?.slug === slug ? 'older' : undefined;
           return (
             <li key={summary.key} className="ccx-thread" data-state={summary.state}>
               <div className="ccx-thead">
@@ -101,7 +113,7 @@ export function PostThreads({ post, all, locale }: { post: Post; all: Post[]; lo
                 <span className="ccx-m">{C.threadShort(summary.posts.length, short(locale, summary.posts[0].date))}</span>
               </div>
               <ol className={`ccx-tposts${rest.length ? ' ccx-tposts--cont' : ''}`} aria-label={name}>
-                {head.map((item) => <ThreadPost key={item.slug} post={item} locale={locale} current={item.slug === post.slug} />)}
+                {head.map((item) => <ThreadPost key={item.slug} post={item} locale={locale} current={item.slug === post.slug} rel={relOf(item.slug)} />)}
               </ol>
               {rest.length ? (
                 <details className="ccx-more">

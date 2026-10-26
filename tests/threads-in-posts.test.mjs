@@ -65,3 +65,19 @@ test('home questions skip dated field series and follow the newest activity', as
   assert.ok(qs.every((q) => q.question.endsWith('?') && q.count === 1));
   assert.equal(T.homeQuestions(list, 'en')[0].question, 'Once anyone can build the same thing, what is left?');
 });
+
+// 2026-10-27 design review idea 2 (Simon: '모두 다 해보자'): the posts right next to this one in the same
+// question are labelled as its previous and next record, not as generic related posts.
+test('the reading-end thread names the previous and next record of the same question', () => {
+  const editorial = read('components/HomeEditorial.tsx');
+  assert.match(editorial, /newer: '다음 기록'/);
+  assert.match(editorial, /older: '앞 기록'/);
+  assert.match(editorial, /newer: 'Next record'/);
+  assert.match(editorial, /older: 'Earlier record'/);
+  assert.match(editorial, /summary\.posts\[at - 1\]\?\.slug === slug \? 'newer'/, 'newer neighbour = one step up the newest-first list');
+  assert.match(editorial, /summary\.posts\[at \+ 1\]\?\.slug === slug \? 'older'/);
+  // the date stays an ISO <time>; the label sits outside it
+  assert.match(editorial, /<span className="ccx-tpost__rel">\{COPY\[locale\]\[rel\]\}<\/span> <time dateTime=\{p\.date\}>/);
+  const css = read('app/globals.css');
+  assert.match(css, /\.ccx-tpost__rel\{color:var\(--leaf-pop\)/, 'labels use the leaf accent, never carrot');
+});

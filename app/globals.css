@@ -1331,6 +1331,9 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 .ccx-thread .ccx-tpost[aria-current="page"]::before{background:var(--carrot-orange);box-shadow:0 0 0 3px color-mix(in srgb,var(--carrot-orange) 22%,transparent)}
 @media(max-width:520px){.cc-reading-end .ccx-post-threads{margin-top:44px;padding-top:32px}}
 .cc-reading-end .ccx-post-threads .ccx-thread + .ccx-thread{margin-top:12px;padding-top:24px}
+/* idea 2 (2026-10-27): the posts right before/after this one in the same question read as its previous and next record */
+.ccx-tpost__nb{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap}
+.ccx-tpost__rel{color:var(--leaf-pop);font:600 11px/1.5 var(--mono);letter-spacing:.02em}
 .ccx-thread .ccx-tpost__here{color:var(--carrot-orange)}
 
 /* Header rhythm 2026.10c — posts match voice readers: logo group then label/title, 16px apart. */
