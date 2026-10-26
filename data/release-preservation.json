@@ -142,8 +142,9 @@
   },
   "requiredAssets": [
     "editorial-card-fallback-v6.png",
+    "editorial-card-fallback-v7.png",
     "media/msg-210-v0.mp4",
     "media/msg-215-v0.mp4"
   ],
-  "fallbackImage": "/editorial-card-fallback-v6.png"
+  "fallbackImage": "/editorial-card-fallback-v7.png"
 }

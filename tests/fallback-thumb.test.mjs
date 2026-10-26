@@ -5,23 +5,25 @@ import { inflateSync } from 'node:zlib';
 
 const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8');
 
-test('fallback thumbnail is the logo-toned v5 art on the exact site background', () => {
+test('fallback thumbnail is an empty cave mouth on the exact site background (characters only in logo and footer scene, 2026-10-27)', () => {
   for (const f of ['components/ArchiveList.tsx', 'components/EditorialCard.tsx']) {
-    assert.match(readFileSync(new URL('../' + f, import.meta.url), 'utf8'), /editorial-card-fallback-v6\.png/);
+    assert.match(readFileSync(new URL('../' + f, import.meta.url), 'utf8'), /editorial-card-fallback-v7\.png/);
   }
   assert.match(css, /--graphite:#252732/);
   assert.match(css, /\.archive-thumb--sketch\{background:#252732\}/);
   assert.match(css, /\.archive-thumb--sketch::after\{box-shadow:none\}/, 'no outline: art melts into the page');
   assert.match(css, /\.archive-thumb--sketch img\{filter:none\}/, 'no dimming filter on the fallback art');
-  const buf = readFileSync(new URL('../public/editorial-card-fallback-v6.png', import.meta.url));
+  const buf = readFileSync(new URL('../public/editorial-card-fallback-v7.png', import.meta.url));
   assert.equal(buf.subarray(1, 4).toString(), 'PNG');
   assert.equal(buf.readUInt32BE(16), 1200);
   assert.equal(buf.readUInt32BE(20), 800);
   assert.ok(buf.length < 120_000, 'logo-based fallback stays light');
+  const gen = readFileSync(new URL('../scripts/make-fallback-v7.mjs', import.meta.url), 'utf8');
+  assert.doesNotMatch(gen, /#F4EEDF|#FF7A3D|#14D3A0|#A6D36B/i, 'no rabbit or carrot colours in list thumbnails');
 });
 
-test('image-free reading-end recommendations reuse the character fallback, not stripes', () => {
+test('image-free reading-end recommendations reuse the empty-cave fallback, not stripes', () => {
   const end = readFileSync(new URL('../public/reading-end.css', import.meta.url), 'utf8');
-  assert.match(end, /data-has-image="false"\]::before\{background:#252732 url\(\/editorial-card-fallback-v6\.png\)/);
+  assert.match(end, /data-has-image="false"\]::before\{background:#252732 url\(\/editorial-card-fallback-v7\.png\)/);
   assert.doesNotMatch(end, /repeating-linear-gradient\(112deg/);
 });

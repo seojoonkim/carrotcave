@@ -11,7 +11,7 @@ import chartMedia from '@/data/chart-media.json';
 const CHART_MEDIA = new Set(Object.keys(chartMedia.media));
 
 export const ARCHIVE_PAGE_SIZE = 12;
-export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v6.png';
+export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v7.png';
 
 export interface ArchiveEntry {
   key: string;
