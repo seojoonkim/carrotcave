@@ -63,8 +63,8 @@ test('Sam Altman archive metadata, loader count, navigation, and assets stay ali
     read('data/interviews.ts'),
   ]);
   assert.match(interviews, /slug: 'sam-altman-startup-school-2026'[\s\S]*?sourceUrl: 'https:\/\/www\.youtube\.com\/watch\?v=ZIaOBAjvc38'[\s\S]*?duration: '38:59'[\s\S]*?chapters: 7,[\s\S]*?segments: 99,/);
-  assert.match(html, /07 CHAPTERS/);
-  assert.match(html, /99 PARAGRAPHS/);
+  assert.match(html, /7개 장/);
+  assert.match(html, /99개 문단/);
   assert.match(script, /data\.segments\.length !== 99/);
   assert.match(html, /class="brand" href="\/voices" target="_top" aria-label="목소리 목록으로 돌아가기"/);
   for (const tag of html.match(/<a\b[^>]*target="_blank"[^>]*>/g) ?? []) {

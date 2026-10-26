@@ -554,6 +554,8 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
 .hero #page-title { margin-bottom: 14px !important; }
 .hero > .hero-deck { margin-left: auto !important; margin-right: auto !important; }
 .hero #page-title em { color: var(--carrot-orange); font-style: normal; }
+/* Event-led voices: the event is a small leaf label above the topic, so the topic carries the title. */
+.hero #page-title em.event-name { display: block; margin: 0 0 10px; color: var(--carrot-leaf); font: 600 15px/22px var(--font-sans); letter-spacing: 0; }
 
 /* Date: a small leaf dot leads the line. */
 .hero > .hero-date { display: flex; align-items: center; gap: 8px; margin: 0 auto 22px !important; }

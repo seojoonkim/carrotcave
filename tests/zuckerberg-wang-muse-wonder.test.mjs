@@ -53,7 +53,7 @@ test('full transcript: English reader is every official turn verbatim, Korean mi
   const html = await read(`${dir}index.html`);
   assert.match(html, /cheekypint\.substack\.com\/p\/muse-wonder-zuckerberg-and-wangs/);
   assert.doesNotMatch(html, /발췌 안내|key quotes only/);
-  assert.match(html, /667 TURNS/);
+  assert.match(html, /667개 발언/);
 });
 
 test('reader page: 12 official chapters, date line, hero photo, three-speaker roles, 10+ key sentences', async () => {
