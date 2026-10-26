@@ -178,3 +178,14 @@ export function freshTags(all: Post[], now: string, windowDays = 60, limit = 5) 
 export function latestDate(all: Post[]) {
   return all.reduce((max, post) => (post.date > max ? post.date : max), '0000-00-00');
 }
+
+/**
+ * 홈 '계속 파는 질문' 3줄 (2026-10-26 Simon 승인). 기간이 정해진 현장 연재는 빼고,
+ * 가장 최근에 글이 붙은 질문부터 고른다. 글 목록에서 규칙으로 계산되므로 새 글이 붙으면 순서가 바뀐다.
+ */
+export function homeQuestions(all: Post[], locale: Locale, size = 3) {
+  return summarizeThreads(all, latestDate(all))
+    .filter((summary) => !BY_KEY.get(summary.key)?.series)
+    .slice(0, size)
+    .map((summary) => ({ key: summary.key, question: threadQuestion(summary.key, locale), count: summary.posts.length }));
+}

@@ -1351,3 +1351,21 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
   .archive-row__link{grid-template-columns:minmax(0,1fr) 72px;gap:20px}
   .archive-row .archive-thumb{margin-top:4px}
 }
+
+/* 2026-10-27 review idea 1 (Simon "모두 다 해보자"): one compact row of three questions under the lead card.
+   Plain hairline rows like the archive list — no boxes, no one-sided accent rules. Pressing a question narrows the list. */
+.wall-shell .ccx-qrow{margin:32px 0 0}
+.wall-shell .ccx-qrow .ccx-k{margin:0 0 6px;font:600 12px/1.4 var(--sans);letter-spacing:.02em}
+.wall-shell .ccx-qrow ~ .archive-status{margin:-8px 0 24px}
+.ccx-qlist{margin:0;padding:0;list-style:none}
+.ccx-qlist > li + li{border-top:1px solid var(--hairline)}
+.ccx-qbtn{display:flex;width:100%;min-height:48px;align-items:baseline;justify-content:space-between;gap:16px;padding:12px 8px;border:0;border-radius:12px;background:transparent;color:var(--ink-1);text-align:left;cursor:pointer;transition:background-color .18s ease,color .18s ease}
+.ccx-qbtn__q{min-width:0;font:500 16px/1.5 var(--sans);word-break:keep-all;text-wrap:pretty}
+.ccx-qbtn__n{flex:none;color:var(--ink-3);font:500 12px/1.5 var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.ccx-qbtn:hover{background:var(--surface-1)}}
+.ccx-qbtn[aria-pressed=true]{color:var(--carrot-orange)}
+.ccx-qbtn[aria-pressed=true] .ccx-qbtn__n{color:inherit}
+.ccx-qbtn:focus-visible,.ccx-qclear:focus-visible{outline:2px solid var(--carrot-orange);outline-offset:2px}
+.ccx-qclear{margin:8px 0 0 8px;padding:6px 0;border:0;background:transparent;color:var(--ink-2);font:500 13px/1.4 var(--sans);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.wall-shell .ccx-qrow + .archive-search{margin-top:32px}
+@media(max-width:520px){.wall-shell .ccx-qrow{margin-top:24px}.ccx-qbtn{padding:12px 4px}.ccx-qbtn__q{font-size:15px}.wall-shell .ccx-qrow + .archive-search{margin-top:24px}}

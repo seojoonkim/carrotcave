@@ -9,7 +9,7 @@ import { archiveImageUrl } from '@/lib/social-metadata';
 import { postVideo, voiceVideo } from '@/lib/archive-video';
 import { AXIS_FROM_SLUG, axisLabel, localePath, t, type Locale } from '@/lib/i18n';
 import { localizedPost, localizedVoice } from '@/lib/i18n-content';
-import { threadsOf } from '@/lib/threads';
+import { homeQuestions, threadsOf } from '@/lib/threads';
 
 type Axis = typeof editorialAxes[number];
 
@@ -68,14 +68,16 @@ export default function HomeView({ section, locale }: { section?: string; locale
             {active ? L.axisNotes[active] : L.wallAll}
           </h1>
         </header>
-        {/* 2026-10-13 (Simon): main menus show only the lead card and the list.
-            Question threads live at the end of the posts that belong to them (PostThreads). */}
+        {/* 2026-10-13 (Simon): main menus show only the lead card and the list; full thread trees live at the end of posts (PostThreads).
+            2026-10-26 (Simon, "모두 다 해보자"): the all-records home adds one compact row of 3 questions under the lead card;
+            pressing a question narrows the same list instead of adding another block. */}
         {visibleEntries.length ? (
           <ArchiveList
             key={`${locale}-${active ?? 'all'}`}
             entries={visibleEntries}
             storageKey={`${locale === 'en' ? 'en-' : ''}${active ?? 'all'}`}
             locale={locale}
+            questions={active ? undefined : homeQuestions(posts, locale)}
           />
         ) : <p className="archive-empty">{L.emptyAxis}</p>}
       </section>

@@ -13,7 +13,21 @@ test('home keeps a single editorial block between the lead post and the archive'
   const home = read('components/views/HomeView.tsx');
   assert.doesNotMatch(home, /LeadThread|leadAside=/, 'no extra block glued under the lead post');
   // 2026-10-13 Simon: main menus show only the lead card and the list (threads moved into posts).
-  assert.doesNotMatch(home, /<ThreadList |<DiscoveryGrid |afterLead=/, 'nothing between the lead card and the list');
+  assert.doesNotMatch(home, /<ThreadList |<DiscoveryGrid |afterLead=/, 'no thread tree or hub block between the lead card and the list');
+});
+
+// 2026-10-26 Simon "모두 다 해보자" (design review idea 1): the all-records home gets ONE compact row of
+// 3 questions under the lead card. It is not a new block of posts: pressing a question narrows the same list.
+test('home shows three question rows that filter the archive in place', () => {
+  const home = read('components/views/HomeView.tsx');
+  assert.match(home, /questions=\{active \? undefined : homeQuestions\(posts, locale\)\}/, 'only on the all-records home');
+  const list = read('components/ArchiveList.tsx');
+  assert.match(list, /className="ccx-qrow"/);
+  assert.match(list, /aria-pressed=\{threadFilter === item\.key\}/, 'question rows drive the existing thread filter');
+  assert.match(read('lib/threads.ts'), /export function homeQuestions\(all: Post\[\], locale: Locale, size = 3\)/);
+  const css = read('app/globals.css');
+  const block = css.slice(css.indexOf('.ccx-qlist'));
+  assert.doesNotMatch(block.slice(0, block.indexOf('@media(max-width:520px){.wall-shell .ccx-qrow')), /border-left|box-shadow:inset/, 'no one-sided accent rule');
 });
 
 test('thread rows carry no status column, sparkline, or arrow decorations', () => {

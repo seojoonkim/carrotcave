@@ -16,7 +16,7 @@ test('every main menu shows only the lead card and the list', () => {
   const home = read('components/views/HomeView.tsx');
   assert.doesNotMatch(home, /<ThreadList\b/, 'no question threads on the home page');
   assert.doesNotMatch(home, /<DiscoveryGrid\b/, 'no hub block on category menus');
-  assert.doesNotMatch(home, /filters=\{/, 'no thread filter chips above the list');
+  assert.doesNotMatch(home, /filters=\{/, 'no thread filter chips above the list (the 3 question rows replace them)');
 });
 
 test('posts that belong to a question show that question at the reading end', () => {
@@ -49,4 +49,19 @@ test('real posts: 28-ish thread posts get a block, the rest do not', async () =>
   const { posts } = await jiti.import(path.join(root, 'data/posts.ts'));
   const inThread = posts.filter((p) => T.threadsOf(p).length);
   assert.ok(inThread.length > 0 && inThread.length < posts.length);
+});
+
+test('home questions skip dated field series and follow the newest activity', async () => {
+  const list = [
+    { ...post('a', '2026-10-05', '이스트포인트 현장'), slug: 'a' },
+    post('b', '2026-10-04', '해자 이야기'),
+    post('c', '2026-09-01', '스테이블 달러'),
+    post('d', '2026-08-01', '에이전트 사회 실험'),
+    post('e', '2026-07-01', '뇌를 복제'),
+  ];
+  const qs = T.homeQuestions(list, 'ko');
+  assert.equal(qs.length, 3);
+  assert.deepEqual(qs.map((q) => q.key), ['moat', 'money', 'agents']);
+  assert.ok(qs.every((q) => q.question.endsWith('?') && q.count === 1));
+  assert.equal(T.homeQuestions(list, 'en')[0].question, 'Once anyone can build the same thing, what is left?');
 });

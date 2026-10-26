@@ -34,9 +34,12 @@ export interface ArchiveFilterOptions {
   threads: { key: string; label: string; count: number }[];
 }
 
+/** 홈 대표 글 아래 '계속 파는 질문' 줄. 누르면 그 질문에 속한 글만 목록에 남는다. */
+export interface ArchiveQuestion { key: string; question: string; count: number }
+
 const FILTER_COPY = {
-  ko: { all: '전체', thread: '줄기', filtered: (n: number) => `${n}편을 골랐어요.` },
-  en: { all: 'All', thread: 'Thread', filtered: (n: number) => `${n} ${n === 1 ? 'piece' : 'pieces'} selected.` },
+  ko: { all: '전체', thread: '줄기', filtered: (n: number) => `${n}편을 골랐어요.`, questions: '계속 파는 질문', pieces: (n: number) => `${n}편`, clear: '전체 기록 보기' },
+  en: { all: 'All', thread: 'Thread', filtered: (n: number) => `${n} ${n === 1 ? 'piece' : 'pieces'} selected.`, questions: 'Questions still being dug', pieces: (n: number) => `${n} ${n === 1 ? 'piece' : 'pieces'}`, clear: 'Show every record' },
 } as const;
 
 function normalize(value: string) {
@@ -94,6 +97,7 @@ export default function ArchiveList({
   filters,
   leadAside,
   afterLead,
+  questions,
 }: {
   entries: ArchiveEntry[];
   storageKey: string;
@@ -104,6 +108,8 @@ export default function ArchiveList({
   leadAside?: ReactNode;
   /** 최신 글과 전체 목록 사이 편집 블록 — 검색·필터 중엔 숨긴다 */
   afterLead?: ReactNode;
+  /** 대표 글 아래 질문 3줄 — 누르면 목록이 그 질문의 글로 좁혀진다 */
+  questions?: ArchiveQuestion[];
 }) {
   const L = t(locale);
   const F = FILTER_COPY[locale];
@@ -188,6 +194,30 @@ export default function ArchiveList({
         </div>
       )}
       {!searching && afterLead}
+      {questions && questions.length > 0 && (
+        <nav className="ccx-qrow" aria-label={F.questions}>
+          <span className="ccx-k">{F.questions}</span>
+          <ol className="ccx-qlist">
+            {questions.map((item) => (
+              <li key={item.key}>
+                <button
+                  type="button"
+                  className="ccx-qbtn"
+                  aria-pressed={threadFilter === item.key}
+                  data-thread={item.key}
+                  onClick={pick(threadFilter, setThreadFilter, item.key)}
+                >
+                  <span className="ccx-qbtn__q">{item.question}</span>
+                  <span className="ccx-qbtn__n">{F.pieces(item.count)}</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+          {threadFilter !== null && (
+            <button type="button" className="ccx-qclear" onClick={() => setThreadFilter(null)}>{F.clear}</button>
+          )}
+        </nav>
+      )}
       <div className="archive-search" role="search">
         <label className="sr-only" htmlFor={`archive-search-${storageKey}`}>{L.searchLabel}</label>
         <svg className="archive-search__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
