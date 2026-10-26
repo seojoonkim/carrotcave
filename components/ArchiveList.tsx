@@ -19,6 +19,8 @@ export interface ArchiveEntry {
   date: string;
   axis: string;
   title: string;
+  /** Speaker line for voices: shown small under the title so the title carries only the topic. */
+  byline?: string;
   summary?: string;
   imageUrl?: string;
   /** Set when the entry is (or is built around) a video; shown as a play badge + length. */
@@ -130,7 +132,7 @@ export default function ArchiveList({
   }, []);
 
   const searchIndex = useMemo(
-    () => entries.map((entry) => normalize(`${entry.title} ${entry.summary ?? ''} ${entry.axis} ${axisLabel(locale, entry.axis)}`)),
+    () => entries.map((entry) => normalize(`${entry.title} ${entry.byline ?? ''} ${entry.summary ?? ''} ${entry.axis} ${axisLabel(locale, entry.axis)}`)),
     [entries, locale],
   );
   const trimmed = normalize(query);
@@ -178,6 +180,7 @@ export default function ArchiveList({
             <span className="archive-lead__copy">
               <ArchiveMeta axis={lead.axis} date={lead.date} locale={locale} />
               <h2>{lead.title}{lead.video && <span className="sr-only">, {videoLabel(lead, locale)}</span>}</h2>
+              {lead.byline && <span className="archive-byline">{lead.byline}</span>}
               {lead.summary && <span className="archive-lead__summary">{lead.summary}</span>}
             </span>
           </Link>
@@ -238,6 +241,7 @@ export default function ArchiveList({
                 <span className="archive-row__copy">
                   <ArchiveMeta axis={entry.axis} date={entry.date} locale={locale} />
                   <h2>{entry.title}{entry.video && <span className="sr-only">, {videoLabel(entry, locale)}</span>}</h2>
+                  {entry.byline && <span className="archive-byline">{entry.byline}</span>}
                   {entry.summary && <span className="archive-row__summary">{entry.summary}</span>}
                 </span>
               </Link>
