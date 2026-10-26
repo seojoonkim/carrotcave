@@ -376,6 +376,8 @@ body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 .archive-thumb--sketch{background:#252732}
 .archive-thumb--sketch::after{box-shadow:none}
 .archive-thumb--sketch img{filter:none}
+.archive-thumb--chart{background:#2d303c}
+.archive-thumb--chart img{object-fit:contain;padding:6px;box-sizing:border-box;filter:none}
 
 /* Lead entry */
 .archive-lead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:36px;align-items:center;padding:20px 0 36px;border-bottom:1px solid var(--hairline)}

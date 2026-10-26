@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import CaveBuddy from './CaveBuddy';
 import { axisLabel, formatDate, t, type Locale } from '@/lib/i18n';
+import chartMedia from '@/data/chart-media.json';
+
+/** Charts and document screenshots are shown whole, never cropped (data/chart-media.json). */
+const CHART_MEDIA = new Set(Object.keys(chartMedia.media));
 
 export const ARCHIVE_PAGE_SIZE = 12;
 export const ARCHIVE_FALLBACK_IMAGE = '/editorial-card-fallback-v6.png';
@@ -50,9 +54,10 @@ function ArchiveMeta({ axis, date, locale }: { axis: string; date: string; local
 
 function ArchiveThumb({ entry, priority, sizes }: { entry: ArchiveEntry; priority: boolean; sizes: string }) {
   const isFallback = !entry.imageUrl;
+  const isChart = !!entry.imageUrl && CHART_MEDIA.has(entry.imageUrl);
   const video = entry.video;
   return (
-    <span className={`archive-thumb${isFallback ? ' archive-thumb--sketch' : ''}${video ? ' archive-thumb--video' : ''}`}>
+    <span className={`archive-thumb${isFallback ? ' archive-thumb--sketch' : ''}${isChart ? ' archive-thumb--chart' : ''}${video ? ' archive-thumb--video' : ''}`}>
       <Image
         src={entry.imageUrl ?? ARCHIVE_FALLBACK_IMAGE}
         alt=""

@@ -1,0 +1,19 @@
+{
+  "_rule": "Charts, tables and document screenshots lose their title, axes or legend when cropped. Archive thumbnails show these whole (object-fit: contain on the site graphite plate); photos keep cover. Selected 2026-10-27 from a scan of every post's first image (light-pixel share >= 0.3) plus visual review.",
+  "media": {
+    "/media/msg-18-0.jpg": "stock price chart",
+    "/media/msg-73-0.jpg": "METR time-horizon chart",
+    "/media/msg-105-0.jpg": "Dune prediction-market chart",
+    "/media/msg-43-0.jpg": "line and bar chart",
+    "/media/msg-72-0.jpg": "tokens-per-second bar chart",
+    "/media/msg-188-0.jpg": "fiat currency lifespan chart",
+    "/media/msg-145-0.jpg": "software meltdown table",
+    "/media/msg-232-0.jpg": "DeepSWE scatter chart",
+    "/media/msg-71-0.jpg": "WEB 4.0 essay page with chart",
+    "/media/msg-103-0.jpg": "news article screenshot",
+    "/media/posts/hvl-fellows-0.jpg": "news article screenshot",
+    "/media/posts/mrinank-anthropic-0.jpg": "letter screenshot",
+    "/media/msg-8-0.jpg": "event page screenshot",
+    "/media/msg-11-0.jpg": "profile page screenshot"
+  }
+}
