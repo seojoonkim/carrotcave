@@ -13,3 +13,12 @@ test('item 7: voice hero deck drops the left accent rule in the shared reader sy
   assert.match(last, /padding-left:\s*0\s*!important/);
   for (const r of rules) assert.doesNotMatch(r, /border-left:\s*\d+px\s+solid/);
 });
+
+test('item 7 (rest): voice transcript disclaimer drops the one-sided accent rule too', () => {
+  const rules = [...css.matchAll(/^\.transcript-disclaimer\s*\{([^}]*)\}/gm)].map((m) => m[1]);
+  assert.ok(rules.length > 0, 'shared .transcript-disclaimer override missing');
+  const last = rules[rules.length - 1];
+  assert.match(last, /border-left:\s*0\s*!important/);
+  assert.match(last, /border-radius:\s*\d+px/);
+  for (const r of rules) assert.doesNotMatch(r, /border-left:\s*\d+px\s+solid/);
+});

@@ -565,6 +565,10 @@ html { scrollbar-color: rgba(243, 154, 82, .38) transparent; scrollbar-width: th
    Overrides the per-episode styles.css border-left as well. */
 .hero-deck { border-left: 0 !important; padding-left: 0 !important; color: #ccd0de !important; }
 
+/* Transcript note: quiet rounded tint card, no one-sided accent rule (Simon 2026-10-22 ban; review 2026-10-26 Argon find #1).
+   Overrides the per-episode styles.css border-left. */
+.transcript-disclaimer { border-left: 0 !important; border-radius: 12px; }
+
 /* Stats: rounded quiet card instead of hard table lines. */
 .hero-stats { border-radius: 12px; background: rgba(255, 255, 255, .025); }
 
