@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-22T08:30:31.546Z",
+  "checkedAt": "2026-10-28T22:06:07.295Z",
   "source": "https://t.me/s/carrotcave",
   "base": null,
   "items": [
@@ -16,8 +16,8 @@
         "/media/msg-233-0.jpg"
       ],
       "canonical": {
-        "/": 404,
-        "/en": 404
+        "/": 200,
+        "/en": 200
       }
     },
     {
@@ -63,8 +63,5 @@
     }
   ],
   "viewports": [],
-  "needsDeploy": [
-    "#233 https://carrotcave.com/posts/nitro-seoul-second-lap-needs-team-radio → 404",
-    "#233 https://carrotcave.com/en/posts/nitro-seoul-second-lap-needs-team-radio → 404"
-  ]
+  "needsDeploy": []
 }
