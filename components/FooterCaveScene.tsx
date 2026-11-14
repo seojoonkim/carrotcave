@@ -60,7 +60,7 @@ export default function FooterCaveScene({ mood = 'all', latest, locale = 'ko' }:
     return () => { root.removeEventListener('click', onClick); root.removeEventListener('keydown', onKey); root.removeEventListener('animationend', onEnd); };
   }, [lines]);
 
-  const svg = locale === 'ko' ? FOOTER_SCENE_SVG : FOOTER_SCENE_SVG.replaceAll('당근 쓰다듬기', L.carrotHit).replaceAll('토끼 쓰다듬기', L.rabbitHit);
+  const svg = locale === 'ko' ? FOOTER_SCENE_SVG : FOOTER_SCENE_SVG.replaceAll('당근 쓰다듬기', L.carrotHit).replaceAll('토끼 쓰다듬기', L.rabbitHit).replaceAll('>들켰다!<', `>${lines[0]}<`);
 
   return (
     <div ref={ref} className="footer-scene" data-mood={mood} data-daypart={daypart} data-fresh={fresh ? 'true' : 'false'}>

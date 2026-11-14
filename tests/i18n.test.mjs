@@ -83,3 +83,12 @@ test('KO/EN switch: header on list pages, article meta line on reading pages (ti
   assert.doesNotMatch(css, /cc-header--reading \.cc-header__inner\{padding-right:9?\d+px\}/, 'no header space reserved for a toggle on reading pages');
   assert.match(css, /\.cc-lang\.cc-lang--inline\{position:static;transform:none;margin-left:auto/);
 });
+
+// 2026-11-14: 영어 화면 푸터 장면의 숨은 말풍선 기본 글자가 한국어("들켰다!")로 남아 있었다.
+test('English footer scene swaps the default carrot speech line', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const scene = await readFile(new URL('../components/FooterCaveScene.tsx', import.meta.url), 'utf8');
+  const svg = await readFile(new URL('../components/footer-scene-svg.ts', import.meta.url), 'utf8');
+  assert.ok(svg.includes('>들켰다!<'), 'generated scene still carries the Korean default line to replace');
+  assert.match(scene, /replaceAll\('>들켰다!<', `>\$\{lines\[0\]\}<`\)/);
+});
