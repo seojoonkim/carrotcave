@@ -218,3 +218,12 @@
 .cc-reading-end .cave-constellation-shell--descent + .post-reader-actions{margin-top:var(--re-gap-next)}
 @media (max-width:600px){.cc-reading-end .post-hole__ask--picks .post-hole__buddy{width:66px;height:48px}}
 
+
+/* ── 2026-11-14 design pass: picks read as a mono index, one radius system ── */
+.cc-reading-end .cave-constellation__rank{color:#3ddcb4;font:500 12px/1 var(--re-mono);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.cc-reading-end .cave-constellation__recommendation article:is(:hover,:focus-within) .cave-constellation__rank{color:#3ddcb4}
+.cc-reading-end .cave-constellation__relationship-type{padding:0;border-radius:0;background:none;color:var(--re-ink-2);font:500 12px/1.35 var(--re-sans)}
+.cc-reading-end .cave-constellation__relationship-type::before{content:"· ";color:var(--re-ink-2);opacity:.6}
+.cc-reading-end .cave-constellation__recommendation-header{gap:6px}
+.cc-reading-end .cave-constellation__thumbnail::before,.cc-reading-end .cave-constellation__thumbnail::after,.cc-reading-end .cave-constellation__thumbnail img{border-radius:12px}
+.cc-reading-end .post-reader-actions{border-radius:16px}

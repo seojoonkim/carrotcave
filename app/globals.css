@@ -1381,3 +1381,16 @@ html:has(.cc-lang__item:active)::view-transition-old(root),html:has(.cc-lang__it
 .post-figcaption__total{color:#7d8296}
 .post-figcaption__source a{color:#c3c7d6;text-decoration:underline;text-decoration-color:rgba(195,199,214,.4);text-underline-offset:3px}
 .post-figcaption__source a:hover{color:var(--carrot-orange,#f39a52)}
+
+/* ── 2026-11-14 design pass (Fable 5.2 review): quieter, more technical detail ── */
+.ccx-qlist{counter-reset:ccq}
+.ccx-qbtn{align-items:baseline}
+.ccx-qbtn__q::before{counter-increment:ccq;content:"Q" counter(ccq);display:inline-block;min-width:30px;margin-right:6px;color:var(--leaf-pop);font:500 12px/1.5 var(--mono);letter-spacing:.04em;opacity:.85}
+.ccx-qbtn[aria-pressed=true] .ccx-qbtn__q::before{color:inherit;opacity:1}
+.archive-more{font-family:var(--mono);letter-spacing:.02em}
+.cc-footer__copy p.cc-footer__status{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:2px 0 4px;color:var(--muted);font:400 12px/1.5 var(--mono);letter-spacing:.02em}
+.cc-footer__status time{color:var(--ink-2);font-variant-numeric:tabular-nums}
+.cc-footer__prompt{color:var(--leaf-pop)}
+.cc-footer__still{color:var(--leaf-pop);opacity:.85}
+.cc-footer__still::before{content:"· ";color:var(--muted)}
+@media(max-width:520px){.cc-footer__copy p.cc-footer__status{font-size:11px}.ccx-qbtn__q::before{display:none}}

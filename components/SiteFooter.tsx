@@ -3,7 +3,7 @@ import { posts } from '@/data/posts';
 
 const latestPostDate = posts.reduce((max, post) => (post.date > max ? post.date : max), '');
 import NewsletterForm from './NewsletterForm';
-import type { Locale } from '@/lib/i18n';
+import { t, type Locale } from '@/lib/i18n';
 import { copyrightLine } from '@/lib/site-legal';
 
 function XMark() {
@@ -30,6 +30,13 @@ export default function SiteFooter({ mood = 'all', locale = 'ko' }: { mood?: Sce
         <NewsletterForm locale={locale} />
         <div className="cc-footer__copy">
           <p className="cc-footer__identity"><strong>CARROT CAVE</strong> by Simon Kim</p>
+          {/* 2026-11-14 design pass: one quiet terminal-style status line, computed from the post list */}
+          <p className="cc-footer__status">
+            <span className="cc-footer__prompt" aria-hidden="true">&gt;</span>
+            <span>{t(locale).footerStatus}</span>
+            <time dateTime={latestPostDate}>{latestPostDate}</time>
+            <span className="cc-footer__still">{t(locale).footerStill}</span>
+          </p>
           <p className="cc-footer__links">
             <a href="mailto:simon@hashed.com">simon@hashed.com</a>
             <a href="https://x.com/simonkim_nft" target="_blank" rel="noreferrer"><XMark /><span>@simonkim_nft</span></a>

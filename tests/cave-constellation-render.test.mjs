@@ -95,7 +95,7 @@ test('shows category, title, and summary together inside each thumbnail', () => 
     '이 글 읽기',
   ]) assert.match(html, new RegExp(value));
   assert.match(html, /href="\/posts\/first"/);
-  assert.match(html, /<span>1순위<\/span>/);
+  assert.match(html, /<span>01<\/span>/); // 2026-11-14: ranks read as a mono index (01/02/03), not '1순위'
   assert.equal((html.match(/첫 번째 글의 핵심 내용입니다\./g) ?? []).length, 1);
   assert.match(html, /class="cave-constellation__thumbnail-copy"><span class="cave-constellation__thumbnail-category">빌딩<\/span><h3>첫 번째 글<\/h3><p>첫 번째 글의 핵심 내용입니다\.<\/p><\/div>/);
   assert.equal((html.match(/<h3>첫 번째 글<\/h3>/g) ?? []).length, 1);
