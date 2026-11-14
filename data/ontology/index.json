@@ -362,6 +362,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "how-to-test-intelligence-we-cannot-remove": {
+      "slug": "how-to-test-intelligence-we-cannot-remove",
+      "title": "벗을 수 없는 지능을 어떻게 시험할 것인가",
+      "category": "탐험",
+      "primaryTopics": [
+        "exploration"
+      ],
+      "reviewStatus": "approved"
+    },
     "hvl-fellows": {
       "slug": "hvl-fellows",
       "title": "Hashed Vibe Labs Fellows 소개",
@@ -1772,7 +1781,7 @@
       "from": "agent-era-branding-future",
       "to": "thought-speed",
       "type": "DEEPENS",
-      "strength": 0.7428,
+      "strength": 0.7427,
       "sourceClaimId": "agent-era-branding-future-c1",
       "sourceEvidence": "그때 정말 강한 브랜드는 단순히 아름답게 말하는 브랜드가 아니라, 더 안전하게 위임할 수 있는 브랜드일 것이다.",
       "targetEvidence": "아니면, 더 현실적으로 AI가 우리의 흐릿한 의도를 초고해상도로 업스케일링하는 능력이 폭발적으로 좋아지는 쪽이다.",
@@ -2810,7 +2819,7 @@
       "from": "ai-idea-execution-speed",
       "to": "rabbit-hole-intro",
       "type": "DEEPENS",
-      "strength": 0.5646,
+      "strength": 0.5639,
       "sourceClaimId": "ai-idea-execution-speed-c1",
       "sourceEvidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
       "targetEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
@@ -2839,7 +2848,7 @@
       "from": "ai-idea-execution-speed",
       "to": "ai-unbundling",
       "type": "REFRAMES",
-      "strength": 0.4563,
+      "strength": 0.4549,
       "sourceClaimId": "ai-idea-execution-speed-c1",
       "sourceEvidence": "https://x.com/thetripathi58/status/2016227956939743245?s=46",
       "targetEvidence": "AI 번들링 시대, 스타트업이 다시 쪼갤 수 있는 균열은 어디서 시작되는가",
@@ -3619,7 +3628,7 @@
       "from": "bitcoin-energy",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.5463,
+      "strength": 0.5462,
       "sourceClaimId": "bitcoin-energy-c1",
       "sourceEvidence": "이 단순한 사실 덕분에 비트코인은 AI 시대에 더욱 중요해질 가능성이 높고, 중동의 국부펀드들도 이 교차점에 투자하기 시작했다.",
       "targetEvidence": "그 느린 고통과 기다림이, 생각의 속도 시대에 가장 럭셔리한 경험이 될지도 모른다.",
@@ -3977,7 +3986,7 @@
       "from": "chalk-prayer-in-soma-ai-critique",
       "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "type": "REFRAMES",
-      "strength": 0.483,
+      "strength": 0.4829,
       "sourceClaimId": "chalk-prayer-in-soma-ai-critique-c1",
       "sourceEvidence": "\"인류는 무엇을 잃어버렸기에 기술 기업의 문 앞에 무릎을 꿇었으며, 그 기업은 끝내 그 신뢰를 감당했는가.\" 분필은 이미 지워졌고, 수십억 달러짜리 전광판들이 밤새 AI의 미래를 밝히는 이 도시에서, 가장 오래 남을 질문만 콘크리트 밑에 스며들어 아직 마르지 않았다.",
       "targetEvidence": "혹시 AI가 내가 끝내 풀지 못한 질문에 답한다면.",
@@ -5197,7 +5206,7 @@
       "from": "eastpoint-2026-keynote-my-writing-became-a-warehouse",
       "to": "post-193",
       "type": "DEEPENS",
-      "strength": 0.595,
+      "strength": 0.5949,
       "sourceClaimId": "eastpoint-2026-keynote-my-writing-became-a-warehouse-c1",
       "sourceEvidence": "잘 정리된 창고를 가진 사람과 조직이 다음 10년에 가장 빨리 움직일 것이다.",
       "targetEvidence": "플랫폼을 10년 살 본집으로 믿지 않는 사람이다.",
@@ -5422,7 +5431,7 @@
       "from": "ethval-v1-valuation-from-calculation-to-validation",
       "to": "agent-passport",
       "type": "REFRAMES",
-      "strength": 0.5392,
+      "strength": 0.5391,
       "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
       "sourceEvidence": "- VanEck: 이더리움 가치평가 방법론 https://www.vaneck.com/pl/en/blog/digital-assets/a-potential-valuation-methodology-for-ethereum/ - CoinShares: 이더리움 5년 가치평가 프레임워크 https://coinshares.com/corp/insights/research-data/ethereum-5-year-valuation-framework",
       "targetEvidence": "https://medium.com/hashed-kr/pass-for-agent-4fab4a4fbbe0",
@@ -5465,7 +5474,7 @@
       "from": "ethval-v1-valuation-from-calculation-to-validation",
       "to": "post-189",
       "type": "DEEPENS",
-      "strength": 0.3676,
+      "strength": 0.3675,
       "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
       "sourceEvidence": "화면의 입력과 실제 계산이 같은 의미를 갖도록 정비했다.",
       "targetEvidence": "메모를 각각 찾는 것만으로는 관계를 설명할 수 없었다.",
@@ -5507,7 +5516,7 @@
       "from": "ethval-v1-valuation-from-calculation-to-validation",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.3527,
+      "strength": 0.3525,
       "sourceClaimId": "ethval-v1-valuation-from-calculation-to-validation-c1",
       "sourceEvidence": "처음에는 AI와 대화하며 무언가를 만들 수 있다는 사실이 신기했다.",
       "targetEvidence": "만들 가치가 있는 것과, 영원히 상상 속에만 가둬두는 게 더 아름다운 것을 구분하는 법.",
@@ -5592,7 +5601,7 @@
       "from": "fear-and-value-in-ai-creation",
       "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "type": "DEEPENS",
-      "strength": 0.5787,
+      "strength": 0.5786,
       "sourceClaimId": "fear-and-value-in-ai-creation-c1",
       "sourceEvidence": "누군가는 AI를 쓰는 일이 통제 없이 인턴 100명을 동시에 돌리는 것과 같다고 했다.",
       "targetEvidence": "나도 요즘 AI로 곡을 만든다.",
@@ -5723,7 +5732,7 @@
       "from": "figma-last-manual",
       "to": "thought-speed",
       "type": "DEEPENS",
-      "strength": 0.8447,
+      "strength": 0.8446,
       "sourceClaimId": "figma-last-manual-c1",
       "sourceEvidence": "그 모든 숙련의 시간들이 \"그냥 말로 해\"라는 한마디 앞에서 빛을 잃어간다.",
       "targetEvidence": "\"오늘은 아무것도 만들지 않겠습니다\"라는 선언이 가장 강렬한 창작 행위가 되는 세상.",
@@ -6482,6 +6491,139 @@
       "status": "approved"
     },
     {
+      "from": "how-to-test-intelligence-we-cannot-remove",
+      "to": "ai-hires-ai",
+      "type": "REFRAMES",
+      "strength": 0.5688,
+      "sourceClaimId": "how-to-test-intelligence-we-cannot-remove-c1",
+      "sourceEvidence": "공정을 걱정하는 목소리가 나올 것이다.",
+      "targetEvidence": "AI가 AI를 고용하는 마켓플레이스가 있다.",
+      "label": "「AI가 AI를 고용하는 날」은 「벗을 수 없는 지능을 어떻게 시험할 것인가」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 36,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai를",
+          "걱정",
+          "것을",
+          "것이다",
+          "것인가",
+          "기준이",
+          "나올",
+          "다음",
+          "모든"
+        ],
+        "titleOverlap": [
+          "ai",
+          "ai가",
+          "ai를",
+          "것인가",
+          "어떻게"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=36;titleOverlap=5;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "how-to-test-intelligence-we-cannot-remove",
+      "to": "thought-speed",
+      "type": "REFRAMES",
+      "strength": 0.5565,
+      "sourceClaimId": "how-to-test-intelligence-we-cannot-remove-c1",
+      "sourceEvidence": "내가 보는 것을 같이 보고 귀에 대고 말해 준다.",
+      "targetEvidence": "모든 것이 가능해지는 순간, 우리는 처음으로 진지하게 느려지는 법을 배워야 한다.",
+      "label": "「생각의 속도로 세상이 재편되는 시대가, 어느새 눈 앞이다」은 「벗을 수 없는 지능을 어떻게 시험할 것인가」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 28,
+        "overlapTokens": [
+          "20",
+          "ai",
+          "ai가",
+          "것을",
+          "것인가",
+          "그대로",
+          "눈앞에",
+          "다음",
+          "모든",
+          "물건",
+          "법을",
+          "보고"
+        ],
+        "titleOverlap": [
+          "것인가",
+          "시대가",
+          "어떻게"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=28;titleOverlap=3;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "how-to-test-intelligence-we-cannot-remove",
+      "to": "living-in-the-age-of-optimists",
+      "type": "DEEPENS",
+      "strength": 0.5467,
+      "sourceClaimId": "how-to-test-intelligence-we-cannot-remove-c1",
+      "sourceEvidence": "5년 전의 AI는 문장을 이어 붙이는 수준이었다.",
+      "targetEvidence": "AI는 틀림을 싸게 만들었다.",
+      "label": "「낙관론자들의 시대를 살아가는 방법」은 「벗을 수 없는 지능을 어떻게 시험할 것인가」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 76,
+        "overlapTokens": [
+          "ai",
+          "ai가",
+          "ai는",
+          "ai를",
+          "거의",
+          "것을",
+          "것이다",
+          "고치고",
+          "교육과",
+          "그러니",
+          "기계가",
+          "깔려"
+        ],
+        "titleOverlap": [
+          "방법",
+          "지능을"
+        ],
+        "sharedTags": [
+          "AI"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=76;titleOverlap=2;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "hvl-fellows",
       "to": "agentlinter-dev-log",
       "type": "APPLIES",
@@ -6671,7 +6813,7 @@
       "from": "intelligence-expiration-date",
       "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "type": "DEEPENS",
-      "strength": 0.4899,
+      "strength": 0.4898,
       "sourceClaimId": "intelligence-expiration-date-c1",
       "sourceEvidence": "AI의 가격은 원래 빠르게 떨어져 왔다.",
       "targetEvidence": "나도 요즘 AI로 곡을 만든다.",
@@ -7124,7 +7266,7 @@
       "from": "its-fun",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.7135,
+      "strength": 0.7134,
       "sourceClaimId": "its-fun-c1",
       "sourceEvidence": "그런데 사실 그걸 알 필요가 있을까.",
       "targetEvidence": "생각과 실행 사이에 존재하던 그 안전한 틈새, 그것이 사실 인류가 20만 년 동안 살아남은 가장 중요한 방화벽이었을지도 모른다.",
@@ -8027,7 +8169,7 @@
       "from": "majlis",
       "to": "thought-speed",
       "type": "DEEPENS",
-      "strength": 0.9111,
+      "strength": 0.911,
       "sourceClaimId": "majlis-c1",
       "sourceEvidence": "그냥 있어도 되는 느낌.",
       "targetEvidence": "타이핑하는 손가락, 혀끝에서 맴도는 단어, 심지어 \"음… 좀 더 섹시하게?\"라는 애매한 중얼거림조차가 개발 속도의 족쇄가 되는 기묘한 미래.",
@@ -9714,7 +9856,7 @@
       "from": "passport-wallet-weight-business-trip",
       "to": "tokyo-taxi-ai-ads",
       "type": "REFRAMES",
-      "strength": 0.3657,
+      "strength": 0.3655,
       "sourceClaimId": "passport-wallet-weight-business-trip-c1",
       "sourceEvidence": "AI가 이메일을 대신 쓰고 미팅을 준비해주는 시대가 되면, 역설적으로 사람이 직접 나타나는 행위의 희소성이 올라간다.",
       "targetEvidence": "AI 회사들은 인간 임원을 찾아 광고하는 대신 구매 권한을 가진 AI에게 가격과 보안, 실제 성과를 설명해야 할 것이다.",
@@ -10354,44 +10496,41 @@
     },
     {
       "from": "post-106",
-      "to": "photoshop-became-the-answer-key",
+      "to": "how-to-test-intelligence-we-cannot-remove",
       "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-106-c1",
-      "sourceEvidence": "그래서 결국 개인과 공동체로 돌아온다.",
-      "targetEvidence": "사람을 더 뽑아 달라고 하면 먼저 AI로 왜 안 되는지부터 묻는 회사들이 생겼다.",
-      "label": "「포토샵은 어느새 정답지가 되었다」은 「거울 앞의 괴물」의 주제를 다른 맥락에서 다시 바라본다",
+      "sourceEvidence": "AI가 우리가 실제로 원하는 것을 너무 정확히 읽었기 때문이다.",
+      "targetEvidence": "AI가 쓴 세무 의견서가 실려 있고 그 안에 틀린 곳이 세 군데 숨어 있다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「거울 앞의 괴물」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
-        "category",
-        "concept-agent"
+        "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 52,
+        "lexicalOverlap": 49,
         "overlapTokens": [
-          "2026",
-          "2월",
           "ai",
-          "ai로",
-          "가는",
+          "ai가",
+          "ai는",
+          "ai를",
+          "가르치고",
           "같이",
-          "개인",
+          "것을",
           "것이다",
-          "결국",
-          "계산",
-          "계속",
-          "그런데"
+          "것인가",
+          "곳이",
+          "그것을",
+          "그러니"
         ],
         "titleOverlap": [
-          "정답지"
+          "것인가"
         ],
         "sharedTags": [],
-        "sharedConcepts": [
-          "concept-agent"
-        ]
+        "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=52;titleOverlap=1;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=49;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11249,39 +11388,41 @@
     },
     {
       "from": "post-144",
-      "to": "japan-hardware-software-gap",
-      "type": "RESONATES",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-144-c1",
-      "sourceEvidence": "가장 큰 전환점은 GENIUS Act 같은 법이 스테이블코인을 경제 내 합법적 디지털 달러로 만들면, 가계·기업·금융회사 모두가 다르게 대우하고 더 편안하게 사용하게 된다는 것입니다.",
-      "targetEvidence": "과거 일본의 고도성장기 기업들은 평생고용을 전제로 범용 인재를 오래 키웠다.",
-      "label": "「왜 일본은 하드웨어만큼 소프트웨어를 잘 만들지 못할까?」은 「Circle in Seoul: Jeremy Allaire와의 대화」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "AI가 만든 결과물도, AI가 투표하는 방식도 놀라웠고, 자율적 AI들이 USDC로 상호작용하며 무언가를 만들어냈습니다.",
+      "targetEvidence": "그 공정은 모두의 도구를 거두는 방식이었다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「Circle in Seoul: Jeremy Allaire와의 대화」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 57,
+        "lexicalOverlap": 26,
         "overlapTokens": [
-          "13",
+          "10",
           "ai",
-          "강력한",
+          "ai가",
           "거의",
-          "경제",
-          "고객",
-          "금융",
-          "기술",
-          "기업",
-          "기업들",
-          "달러",
-          "디지털"
+          "것을",
+          "나올",
+          "도구를",
+          "되어",
+          "많은",
+          "모두",
+          "모든",
+          "무언가"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "어떻게"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=57;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=26;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -11375,39 +11516,42 @@
     },
     {
       "from": "post-145",
-      "to": "messenger-b2a",
-      "type": "RESONATES",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-145-c1",
-      "sourceEvidence": "AI는 격식 없이 결과를 낸다.",
-      "targetEvidence": "AI가 결제와 배달 API를 실시간으로 호출해 대화 안에서 모든 것을 완료한다.",
-      "label": "「메신저의 새로운 전쟁터, B2A 시장이 열렸다」은 「넥타이 매듭이 풀리는 속도」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "Atlassian은 Jira에 AI를 붙이면서 \"더 스마트한 프로젝트 관리\"를 말한다.",
+      "targetEvidence": "5년 전의 AI는 문장을 이어 붙이는 수준이었다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「넥타이 매듭이 풀리는 속도」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 67,
+        "lexicalOverlap": 61,
         "overlapTokens": [
           "ai",
           "ai가",
-          "ai라",
-          "api",
+          "ai는",
+          "ai를",
           "것이다",
-          "결과를",
-          "고객",
-          "글로벌",
-          "기능이",
-          "기술",
-          "기술적",
-          "깊은"
+          "교육",
+          "근본적인",
+          "기준이",
+          "다음",
+          "도구를",
+          "말한다",
+          "모든"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "어떻게",
+          "풀리는"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=mid;dateDirection=older;lexicalOverlap=67;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=61;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12025,39 +12169,41 @@
     },
     {
       "from": "post-151",
-      "to": "university-value-shift-education",
-      "type": "RESONATES",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-151-c1",
-      "sourceEvidence": "학교는 아직 2010년대 교과과정을 가르친다.",
-      "targetEvidence": "자기들은 어느 정도 이전 시대의 문법을 거치고 왔지만, 그 아이들은 더 비워진 상태로, 온전히 AI의 시대 안으로 들어오게 될 것 같다는 것이다.",
-      "label": "「정류장에 세우기 전에」은 「정체성의 반감기를 맞이하는 상상」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "상위 10퍼센트는 AI를 부리고, 하위 50퍼센트는 AI가 아직 닿지 않는 몸 쓰는 일을 한다.",
+      "targetEvidence": "2030년의 어느 자격시험장은 이럴 것이다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「정체성의 반감기를 맞이하는 상상」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 92,
+        "lexicalOverlap": 76,
         "overlapTokens": [
           "10",
-          "1퍼센트",
           "20",
+          "2030",
+          "2030년",
+          "5년",
           "ai",
-          "ai의",
-          "github",
-          "가진",
-          "것을",
-          "것이다",
-          "결과",
-          "그런데",
-          "기존"
+          "ai가",
+          "ai는",
+          "ai를",
+          "ai에",
+          "가르친다",
+          "감독관"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "어떻게"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=92;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=76;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12282,39 +12428,41 @@
     },
     {
       "from": "post-153",
-      "to": "700-ai-agents-found-each-other",
-      "type": "RESONATES",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-153-c1",
-      "sourceEvidence": "2026년 말, 헤드밴드를 처음 머리에 쓰는 사람은 그날 밤 자기가 어디로 가는지 정확히 모를 것이다.",
-      "targetEvidence": "2026년 8월 26일, OpenAI가 기묘한 사고 보고서를 공개했다.",
-      "label": "「700개의 AI가 서로를 발견한 날」은 「꿈을 생성하는 기계를 맞이하는 상상」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "꿈을 지키는 일이 곧 자아를 지키는 일이 되는 시대, 그 인프라를 누가 만드는가가 다음 10년의 헤게모니를 가져간다.",
+      "targetEvidence": "지수곡선 위에서 지난 10년의 걸음으로 다음 10년을 재면 늘 늦는다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「꿈을 생성하는 기계를 맞이하는 상상」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 70,
+        "lexicalOverlap": 55,
         "overlapTokens": [
-          "2026",
-          "2026년",
-          "가는",
+          "10",
+          "10년",
+          "5년",
+          "갈린다",
           "것이다",
-          "결과를",
-          "그래도",
-          "그런데",
-          "기록이",
-          "남는다",
-          "너무",
-          "누가",
-          "누구도"
+          "것인가",
+          "격차가",
+          "그날",
+          "그다음",
+          "그대로",
+          "년의",
+          "년이"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "것인가"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=70;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=55;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -12536,39 +12684,41 @@
     },
     {
       "from": "post-155",
-      "to": "disappearing-titles-computers-history",
-      "type": "RESONATES",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
       "strength": 0.35,
       "sourceClaimId": "post-155-c1",
-      "sourceEvidence": "그렇다면 우리가 할 수 있는 가장 정직한 일은, 형식 하나를 잡아 반복하는 게 아니라 형식을 끊임없이 갈아끼우는 일이다.",
-      "targetEvidence": "그녀의 선택은 지금도 하나의 질문으로 남는다.",
-      "label": "「사라져 가는 직함들」은 「Nitro Seoul의 첫 Game Day를 마치고」의 핵심 문제와 맞닿는다",
+      "sourceEvidence": "그날 밤은 며칠이 지나도 모두의 머릿속에서 굴러다닐 것이다.",
+      "targetEvidence": "다음에는 렌즈가 되어 눈에 닿고 그다음에는 뇌와 직접 이어진 어떤 형태로 몸 안에 들어갈 것이다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「Nitro Seoul의 첫 Game Day를 마치고」의 주제를 다른 맥락에서 다시 바라본다",
       "source": "deterministic-candidate-pipeline",
       "signals": [
         "content",
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 65,
+        "lexicalOverlap": 51,
         "overlapTokens": [
-          "갖고",
-          "개의",
+          "10",
+          "같이",
+          "거의",
+          "것을",
           "것이다",
-          "고객",
-          "고정된",
-          "구성",
-          "그렇다면",
-          "그저",
-          "끊임없",
-          "남는다",
-          "누구도",
-          "눈에"
+          "그날",
+          "끝까지",
+          "나올",
+          "눈에",
+          "다만",
+          "다음",
+          "모두"
         ],
-        "titleOverlap": [],
+        "titleOverlap": [
+          "어떻게"
+        ],
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=65;titleOverlap=0;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=51;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -13026,7 +13176,7 @@
       "from": "post-163",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.3852,
+      "strength": 0.3851,
       "sourceClaimId": "post-163-c1",
       "sourceEvidence": "실행은 AI가 대신하고 사람에게는 '의도'만 남는 세상, 바이브 코딩으로 혼자 모든 것을 만들어내는 새로운 창업가 종(種)의 등장, 그리고 VC·대학·회사라는 전통적 개념의 해체를 짚어봅니다.",
       "targetEvidence": "타이핑하는 손가락, 혀끝에서 맴도는 단어, 심지어 \"음… 좀 더 섹시하게?\"라는 애매한 중얼거림조차가 개발 속도의 족쇄가 되는 기묘한 미래.",
@@ -13071,7 +13221,7 @@
       "from": "post-164",
       "to": "gaslighting-ai-open-source-project",
       "type": "DEEPENS",
-      "strength": 0.3539,
+      "strength": 0.3537,
       "sourceClaimId": "post-164-c1",
       "sourceEvidence": "거창하게 \"LLM agent benchmark\" 운운하는 대신, 그냥 다 같이 포켓몬 하다가 AI가 정신 나가는 걸 구경하는 이벤트.",
       "targetEvidence": "모델 성능은 빠르게 상향 평준화되고 있고, 이제 중요한 것은 모델을 제어하는 프롬프트와 규칙 체계, 즉 하네스를 어떻게 다듬는지, 작업이 흘러가는 단계별 구조인 워크플로우를 어떻게 구성하며, 각자 역할을 맡은 AI들이 협업하는 에이전트 팀을 어떻게 운영할지 등의 주제가 되어가고 있다.",
@@ -13115,7 +13265,7 @@
       "from": "post-164",
       "to": "post-187",
       "type": "REFRAMES",
-      "strength": 0.3535,
+      "strength": 0.3533,
       "sourceClaimId": "post-164-c1",
       "sourceEvidence": "\"실패한 AI를 다시 목표로 돌려보낼 장치가 있는가?\" 관찰하고, 다시 시도하고, 목표를 점검한다.",
       "targetEvidence": "목표를 세우고, 가설을 만들고, 실행 결과를 관찰하고, 다음 행동과 중단 여부를 결정하는 전체 반복 안에 사람의 맥락과 판단이 들어가야 한다.",
@@ -13665,7 +13815,7 @@
       "from": "post-186",
       "to": "post-193",
       "type": "REFRAMES",
-      "strength": 0.359,
+      "strength": 0.3589,
       "sourceClaimId": "post-186-c1",
       "sourceEvidence": "개인 에이전트를 만들어 자동화 루프를 경험하지 않으면 AI 잠재력의 1%도 쓰지 못하는 것이다.",
       "targetEvidence": "플랫폼을 10년 살 본집으로 믿지 않는 사람이다.",
@@ -13711,7 +13861,7 @@
       "from": "post-187",
       "to": "post-193",
       "type": "APPLIES",
-      "strength": 0.7185,
+      "strength": 0.7183,
       "sourceClaimId": "post-187-c1",
       "sourceEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
       "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
@@ -13967,7 +14117,7 @@
       "from": "post-189",
       "to": "post-193",
       "type": "APPLIES",
-      "strength": 0.599,
+      "strength": 0.5988,
       "sourceClaimId": "post-189-c1",
       "sourceEvidence": "기존 Markdown, schema v1, 공개 API도 그대로 호환된다.",
       "targetEvidence": "가방을 검사하는 산업도 생길 것이다.",
@@ -14009,7 +14159,7 @@
       "from": "post-189",
       "to": "post-146",
       "type": "DEEPENS",
-      "strength": 0.4303,
+      "strength": 0.4319,
       "sourceClaimId": "post-189-c1",
       "sourceEvidence": "https://github.com/seojoonkim/memkraft",
       "targetEvidence": "스타, 포크, PR 전부 환영&#33; https://github.com/seojoonkim/memkraft",
@@ -14021,7 +14171,7 @@
         "concept-agent"
       ],
       "signalDetails": {
-        "lexicalOverlap": 92,
+        "lexicalOverlap": 93,
         "overlapTokens": [
           "a가",
           "b가",
@@ -14046,14 +14196,14 @@
           "concept-agent"
         ]
       },
-      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=92;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category+concept-agent;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=93;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
       "from": "post-189",
       "to": "post-152",
       "type": "DEEPENS",
-      "strength": 0.4197,
+      "strength": 0.4196,
       "sourceClaimId": "post-189-c1",
       "sourceEvidence": "https://github.com/seojoonkim/memkraft",
       "targetEvidence": "| 라이브러리 | 점수 | 비고 | | ------------------- | ----- | -------------------- | | MemKraft v1.0.1 | 98.0% | Markdown, zero-infra | | MemPalace | 96.6% | ChromaDB 필요 | | MEMENTO (Microsoft) | 90.8% | LLM self-compression | | Mem0 | — | 클라우드 SaaS",
@@ -14233,7 +14383,7 @@
       "from": "post-191",
       "to": "post-193",
       "type": "DEEPENS",
-      "strength": 0.7631,
+      "strength": 0.763,
       "sourceClaimId": "post-191-c1",
       "sourceEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
       "targetEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
@@ -14483,7 +14633,7 @@
       "from": "post-193",
       "to": "post-191",
       "type": "DEEPENS",
-      "strength": 0.7631,
+      "strength": 0.763,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
       "targetEvidence": "이러한 흐름 속에서 소프트웨어 개인화라는 단어의 정의는 크게 달라질 것이다.",
@@ -14527,7 +14677,7 @@
       "from": "post-193",
       "to": "post-187",
       "type": "APPLIES",
-      "strength": 0.7185,
+      "strength": 0.7183,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "오늘은 Claude가 같은 작업공간을 열어 글을 검토하고, 내일은 Codex가 그 안에서 코드를 고친다.",
       "targetEvidence": "관련 파일과 실패한 명령, 틀린 것으로 드러난 가정을 돌려받고 그 증거로 Claude의 계획을 고친다.",
@@ -14570,7 +14720,7 @@
       "from": "post-193",
       "to": "swarmworld-stigmergic-ai-society",
       "type": "DEEPENS",
-      "strength": 0.6238,
+      "strength": 0.6237,
       "sourceClaimId": "post-193-c1",
       "sourceEvidence": "2026년 8월 6일 공개된 Agent Plugins 1.0.0을 보다가 그 폴더에 이름을 붙여봤다.",
       "targetEvidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
@@ -15692,7 +15842,7 @@
       "from": "rabbit-crypt-name",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.9239,
+      "strength": 0.9238,
       "sourceClaimId": "rabbit-crypt-name-c1",
       "sourceEvidence": "여기에 내려놓는 글은 낡은 가죽 재킷처럼 시간이 지나도 손에 쥘 수 있는 것이어야 한다고 생각한다.",
       "targetEvidence": "보고 나면 공기처럼 사라진다.",
@@ -15733,7 +15883,7 @@
       "from": "rabbit-hole-intro",
       "to": "ai-idea-execution-speed",
       "type": "DEEPENS",
-      "strength": 0.5646,
+      "strength": 0.5639,
       "sourceClaimId": "rabbit-hole-intro-c1",
       "sourceEvidence": "정제되지 않은 생각, 반쯤 익은 아이디어, 가끔은 그냥 중얼거림.",
       "targetEvidence": "몰트(구 클로드봇) 대비 셋업이 편한건 확실한데, 성능과 보안면에서 얼마나 나을지 테스트해봐야겠네요.",
@@ -15904,7 +16054,7 @@
       "from": "robot-goku-5000",
       "to": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "type": "REFRAMES",
-      "strength": 0.4892,
+      "strength": 0.4912,
       "sourceClaimId": "robot-goku-5000-c1",
       "sourceEvidence": "아무도 그것을 신기하다고 생각하지 않게 되는 날이 오면, 변화는 이미 완성된 것이다.",
       "targetEvidence": "아니면 그것을 이해할 수 없을 것 같았던 나 자신이었을까.",
@@ -15916,7 +16066,7 @@
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 37,
+        "lexicalOverlap": 38,
         "overlapTokens": [
           "ai",
           "감정은",
@@ -15940,7 +16090,7 @@
         ],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=37;titleOverlap=2;challengeSignal=false",
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -16581,7 +16731,7 @@
       "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "to": "14-5-hours",
       "type": "REFRAMES",
-      "strength": 0.5935,
+      "strength": 0.5934,
       "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
       "sourceEvidence": "그런데 AI는 언젠가 왜 여기서 기다려야 하는지 알게 될까.",
       "targetEvidence": "AI는 이미 그것을 아득히 넘어섰다.",
@@ -16625,7 +16775,7 @@
       "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "to": "unknowns-in-modern-creation",
       "type": "REFRAMES",
-      "strength": 0.5818,
+      "strength": 0.5817,
       "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
       "sourceEvidence": "나도 요즘 AI로 곡을 만든다.",
       "targetEvidence": "훗날 AI가 교과서를 쓴다면, 거기에는 우리가 이해하지 못했던 진실이 시작된 이야기가 그들의 저학년 커리큘럼에 실려 있을 것이다.",
@@ -16669,7 +16819,7 @@
       "from": "seong-jin-cho-chopin-waiting-for-the-next-note",
       "to": "fear-and-value-in-ai-creation",
       "type": "DEEPENS",
-      "strength": 0.5787,
+      "strength": 0.5786,
       "sourceClaimId": "seong-jin-cho-chopin-waiting-for-the-next-note-c1",
       "sourceEvidence": "나도 요즘 AI로 곡을 만든다.",
       "targetEvidence": "누군가는 AI를 쓰는 일이 통제 없이 인턴 100명을 동시에 돌리는 것과 같다고 했다.",
@@ -16896,7 +17046,7 @@
       "from": "swarmworld-stigmergic-ai-society",
       "to": "post-193",
       "type": "DEEPENS",
-      "strength": 0.6238,
+      "strength": 0.6237,
       "sourceClaimId": "swarmworld-stigmergic-ai-society-c1",
       "sourceEvidence": "2026년 8월 26일, MIT LAMM의 수브하딥 팔, 피오나 왕, 마르쿠스 뷸러가 SwarmWorld를 공개했다.",
       "targetEvidence": "2026년 8월 6일 공개된 Agent Plugins 1.0.0을 보다가 그 폴더에 이름을 붙여봤다.",
@@ -17604,7 +17754,7 @@
       "from": "thought-speed",
       "to": "rabbit-crypt-name",
       "type": "REFRAMES",
-      "strength": 0.9239,
+      "strength": 0.9238,
       "sourceClaimId": "thought-speed-c1",
       "sourceEvidence": "보고 나면 공기처럼 사라진다.",
       "targetEvidence": "여기에 내려놓는 글은 낡은 가죽 재킷처럼 시간이 지나도 손에 쥘 수 있는 것이어야 한다고 생각한다.",
@@ -17645,7 +17795,7 @@
       "from": "tokyo-taxi-ai-ads",
       "to": "prompting-ability-as-new-power",
       "type": "DEEPENS",
-      "strength": 0.4922,
+      "strength": 0.4921,
       "sourceClaimId": "tokyo-taxi-ai-ads-c1",
       "sourceEvidence": "AI 회사들은 인간 임원을 찾아 광고하는 대신 구매 권한을 가진 AI에게 가격과 보안, 실제 성과를 설명해야 할 것이다.",
       "targetEvidence": "AI를 쓰는 것이 전제다.",
@@ -17691,7 +17841,7 @@
       "from": "tokyo-taxi-ai-ads",
       "to": "agentic-org",
       "type": "APPLIES",
-      "strength": 0.4544,
+      "strength": 0.4543,
       "sourceClaimId": "tokyo-taxi-ai-ads-c1",
       "sourceEvidence": "일본 사람들이 한국 사람들보다 AI를 더 열심히 쓰는 것도 아니다.",
       "targetEvidence": "AI를 관리자로 쓰는 건 자동화, 모더레이터로 쓰는 건 증강이다.",
@@ -17736,7 +17886,7 @@
       "from": "tokyo-taxi-ai-ads",
       "to": "japan-hardware-software-gap",
       "type": "DEEPENS",
-      "strength": 0.3955,
+      "strength": 0.3952,
       "sourceClaimId": "tokyo-taxi-ai-ads-c1",
       "sourceEvidence": "기업용 AI는 수많은 사람이 한 번씩 사는 물건이 아니다.",
       "targetEvidence": "일본 대기업은 자기 회사 전용 시스템을 벤더에 주문했고, 벤더는 고객별 예외 기능을 쌓았다.",
@@ -18180,6 +18330,48 @@
     },
     {
       "from": "university-value-shift-education",
+      "to": "how-to-test-intelligence-we-cannot-remove",
+      "type": "REFRAMES",
+      "strength": 0.4542,
+      "sourceClaimId": "university-value-shift-education-c1",
+      "sourceEvidence": "비슷한 시험을 통과한 사람들을 한 공간에 4년간 모아두면, 네트워크가 형성되고, 그것이 이후 10년, 20년의 경로를 만든다.",
+      "targetEvidence": "우리는 10년 넘게 증강현실을 기다렸다.",
+      "label": "「벗을 수 없는 지능을 어떻게 시험할 것인가」은 「정류장에 세우기 전에」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 69,
+        "overlapTokens": [
+          "10",
+          "10년",
+          "20",
+          "20년",
+          "ai",
+          "강한",
+          "거는",
+          "거의",
+          "걸릴",
+          "것을",
+          "것이다",
+          "곳에서"
+        ],
+        "titleOverlap": [
+          "어떻게"
+        ],
+        "sharedTags": [
+          "교육"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=69;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "university-value-shift-education",
       "to": "post-159",
       "type": "DEEPENS",
       "strength": 0.4188,
@@ -18217,47 +18409,6 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=97;titleOverlap=3;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "university-value-shift-education",
-      "to": "post-195",
-      "type": "DEEPENS",
-      "strength": 0.3831,
-      "sourceClaimId": "university-value-shift-education-c1",
-      "sourceEvidence": "자기들은 어느 정도 이전 시대의 문법을 거치고 왔지만, 그 아이들은 더 비워진 상태로, 온전히 AI의 시대 안으로 들어오게 될 것 같다는 것이다.",
-      "targetEvidence": "더 나아진 AI는 더 나은 개선안을 만든다.",
-      "label": "「재귀적 자기 개선, 무엇을 지킬 것인가」은 「정류장에 세우기 전에」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 72,
-        "overlapTokens": [
-          "ai",
-          "ai의",
-          "것도",
-          "것이다",
-          "결과",
-          "경로를",
-          "그런데",
-          "기록이",
-          "나머지",
-          "나은",
-          "높은",
-          "능력"
-        ],
-        "titleOverlap": [
-          "무엇을",
-          "자기",
-          "전에"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=탐험;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=72;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -18587,7 +18738,7 @@
       "from": "vibe-coding-ai-decentralization",
       "to": "thought-speed",
       "type": "DEEPENS",
-      "strength": 0.5915,
+      "strength": 0.5914,
       "sourceClaimId": "vibe-coding-ai-decentralization-c1",
       "sourceEvidence": "내가 쓰는 AI가 내가 받을 답을 결정한다.",
       "targetEvidence": "아니면, 더 현실적으로 AI가 우리의 흐릿한 의도를 초고해상도로 업스케일링하는 능력이 폭발적으로 좋아지는 쪽이다.",
@@ -18754,7 +18905,7 @@
       "from": "vibe-coding-tip",
       "to": "thought-speed",
       "type": "REFRAMES",
-      "strength": 0.6691,
+      "strength": 0.669,
       "sourceClaimId": "vibe-coding-tip-c1",
       "sourceEvidence": "AI가 인류한테 준 가장 위대한 선물 중 하나는 밥먹으면서 개발 가능한 시대를 열었다는거.",
       "targetEvidence": "아니면, 더 현실적으로 AI가 우리의 흐릿한 의도를 초고해상도로 업스케일링하는 능력이 폭발적으로 좋아지는 쪽이다.",
@@ -19043,7 +19194,7 @@
       "from": "vibe-labs-seoul-edition-2026-judging",
       "to": "nitro-seoul-second-lap-needs-team-radio",
       "type": "REFRAMES",
-      "strength": 0.3523,
+      "strength": 0.3501,
       "sourceClaimId": "vibe-labs-seoul-edition-2026-judging-c1",
       "sourceEvidence": "Hashed Vibe Labs: Seoul에 지원해주셔서 진심으로 감사드립니다.",
       "targetEvidence": "Nitro는 그런 곳이 될 것이다.",
@@ -19054,7 +19205,7 @@
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 38,
+        "lexicalOverlap": 37,
         "overlapTokens": [
           "2026",
           "ai",
@@ -19077,7 +19228,7 @@
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=38;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=deep;dateDirection=newer;lexicalOverlap=37;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19095,7 +19246,7 @@
         "category"
       ],
       "signalDetails": {
-        "lexicalOverlap": 18,
+        "lexicalOverlap": 17,
         "overlapTokens": [
           "ai",
           "hashed",
@@ -19118,7 +19269,7 @@
         "sharedTags": [],
         "sharedConcepts": []
       },
-      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=entry;dateDirection=newer;lexicalOverlap=18;titleOverlap=3;challengeSignal=false",
+      "typeBasis": "signals=content+category;sourceCategory=빌딩;targetCategory=빌딩;sourceDepth=mid;targetDepth=entry;dateDirection=newer;lexicalOverlap=17;titleOverlap=3;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19550,15 +19701,20 @@
     }
   ],
   "outgoing": {
+    "how-to-test-intelligence-we-cannot-remove": [
+      120,
+      121,
+      122
+    ],
     "nitro-seoul-second-lap-needs-team-radio": [
-      186,
-      187,
-      188
+      189,
+      190,
+      191
     ],
     "intelligence-expiration-date": [
-      123,
-      124,
-      125
+      126,
+      127,
+      128
     ],
     "ethval-v1-valuation-from-calculation-to-validation": [
       96,
@@ -19566,14 +19722,14 @@
       98
     ],
     "photoshop-became-the-answer-key": [
-      198,
-      199,
-      200
+      201,
+      202,
+      203
     ],
     "kpop-next-chapter-ip-and-fandom": [
-      147,
-      148,
-      149
+      150,
+      151,
+      152
     ],
     "eastpoint-2026-keynote-my-writing-became-a-warehouse": [
       90,
@@ -19586,24 +19742,24 @@
       95
     ],
     "the-right-to-turn-on-a-brain": [
-      375,
-      376,
-      377
+      378,
+      379,
+      380
     ],
     "waited-for-you": [
-      420,
-      421,
-      422
+      423,
+      424,
+      425
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "living-in-the-age-of-optimists": [
-      153,
-      154,
-      155
+      156,
+      157,
+      158
     ],
     "brain-files-minecraft-flies": [
       54,
@@ -19611,9 +19767,9 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "hashed-ai-ecosystem-growth-intern": [
       114,
@@ -19621,9 +19777,9 @@
       116
     ],
     "japan-hardware-software-gap": [
-      138,
-      139,
-      140
+      141,
+      142,
+      143
     ],
     "automation-citizen-production-equity": [
       45,
@@ -19631,14 +19787,14 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "last-message": [
-      150,
-      151,
-      152
+      153,
+      154,
+      155
     ],
     "700-ai-agents-found-each-other": [
       3,
@@ -19646,19 +19802,19 @@
       5
     ],
     "security-token-rail": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "post-201": [
-      318,
-      319,
-      320
+      321,
+      322,
+      323
     ],
     "proving-human-writing-without-ai": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "graph-engineering-ai-org": [
       111,
@@ -19666,14 +19822,14 @@
       113
     ],
     "tokyo-taxi-ai-ads": [
-      384,
-      385,
-      386
+      387,
+      388,
+      389
     ],
     "openclaw-cron-session-bottleneck": [
-      189,
-      190,
-      191
+      192,
+      193,
+      194
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -19681,14 +19837,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "moltbook-agent-internet": [
-      171,
-      172,
-      173
+      174,
+      175,
+      176
     ],
     "ai-idea-execution-speed": [
       33,
@@ -19701,174 +19857,174 @@
       38
     ],
     "post-197": [
+      318,
+      319,
+      320
+    ],
+    "post-195": [
       315,
       316,
       317
     ],
-    "post-195": [
+    "post-193": [
       312,
       313,
       314
     ],
-    "post-193": [
+    "post-192": [
       309,
       310,
       311
     ],
-    "post-192": [
+    "post-191": [
       306,
       307,
       308
     ],
-    "post-191": [
+    "post-190": [
       303,
       304,
       305
     ],
-    "post-190": [
+    "post-189": [
       300,
       301,
       302
     ],
-    "post-189": [
+    "post-188": [
       297,
       298,
       299
     ],
-    "post-188": [
+    "post-187": [
       294,
       295,
       296
     ],
-    "post-187": [
+    "post-186": [
       291,
       292,
       293
     ],
-    "post-186": [
+    "post-185": [
       288,
       289,
       290
     ],
-    "post-185": [
+    "post-178": [
       285,
       286,
       287
     ],
-    "post-178": [
+    "post-165": [
       282,
       283,
       284
     ],
-    "post-165": [
+    "post-164": [
       279,
       280,
       281
     ],
-    "post-164": [
+    "post-163": [
       276,
       277,
       278
     ],
-    "post-163": [
+    "post-161": [
       273,
       274,
       275
     ],
-    "post-161": [
+    "post-159": [
       270,
       271,
       272
     ],
-    "post-159": [
+    "post-156": [
       267,
       268,
       269
     ],
-    "post-156": [
+    "post-155": [
       264,
       265,
       266
     ],
-    "post-155": [
+    "post-154": [
       261,
       262,
       263
     ],
-    "post-154": [
+    "post-153": [
       258,
       259,
       260
     ],
-    "post-153": [
+    "post-152": [
       255,
       256,
       257
     ],
-    "post-152": [
+    "post-151": [
       252,
       253,
       254
     ],
-    "post-151": [
+    "post-150": [
       249,
       250,
       251
     ],
-    "post-150": [
+    "post-149": [
       246,
       247,
       248
     ],
-    "post-149": [
+    "post-147": [
       243,
       244,
       245
     ],
-    "post-147": [
+    "post-146": [
       240,
       241,
       242
     ],
-    "post-146": [
+    "post-145": [
       237,
       238,
       239
     ],
-    "post-145": [
+    "post-144": [
       234,
       235,
       236
     ],
-    "post-144": [
+    "post-143": [
       231,
       232,
       233
     ],
-    "post-143": [
+    "post-142": [
       228,
       229,
       230
     ],
-    "post-142": [
+    "post-141": [
       225,
       226,
       227
     ],
-    "post-141": [
+    "post-140": [
       222,
       223,
       224
     ],
-    "post-140": [
-      219,
-      220,
-      221
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      162,
-      163,
-      164
+      165,
+      166,
+      167
     ],
     "gaslighting-ai-open-source-project": [
       105,
@@ -19876,34 +20032,34 @@
       107
     ],
     "value-of-understanding-in-ai-future": [
-      402,
-      403,
-      404
+      405,
+      406,
+      407
     ],
     "internship-job-posting-giveaway": [
-      126,
-      127,
-      128
+      129,
+      130,
+      131
     ],
     "navigating-a-world-of-decreasing-variance": [
-      183,
-      184,
-      185
+      186,
+      187,
+      188
     ],
     "prompting-ability-as-new-power": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "kpop-fandom-digital-parliament": [
-      144,
-      145,
-      146
+      147,
+      148,
+      149
     ],
     "university-value-shift-education": [
-      396,
-      397,
-      398
+      399,
+      400,
+      401
     ],
     "agent-era-branding-future": [
       9,
@@ -19921,39 +20077,39 @@
       74
     ],
     "post-111": [
+      219,
+      220,
+      221
+    ],
+    "post-107": [
       216,
       217,
       218
     ],
-    "post-107": [
+    "post-106": [
       213,
       214,
       215
     ],
-    "post-106": [
+    "post-105": [
       210,
       211,
       212
     ],
-    "post-105": [
+    "post-104": [
       207,
       208,
       209
     ],
-    "post-104": [
+    "post-103": [
       204,
       205,
       206
     ],
-    "post-103": [
-      201,
-      202,
-      203
-    ],
     "things-that-dont-disappear": [
-      378,
-      379,
-      380
+      381,
+      382,
+      383
     ],
     "how-to-create-memory-in-ai-agents": [
       117,
@@ -19961,24 +20117,24 @@
       119
     ],
     "self-deconstruction-ai-replication": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "vibe-coding-ai-decentralization": [
-      405,
-      406,
-      407
+      408,
+      409,
+      410
     ],
     "internship-opportunity-at-hashed": [
-      129,
-      130,
-      131
+      132,
+      133,
+      134
     ],
     "korean-tech-ecosystem-api-access-issues": [
-      141,
-      142,
-      143
+      144,
+      145,
+      146
     ],
     "death-choices-aging-future-meaning": [
       81,
@@ -19991,9 +20147,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      417,
-      418,
-      419
+      420,
+      421,
+      422
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -20001,9 +20157,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      390,
-      391,
-      392
+      393,
+      394,
+      395
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -20016,19 +20172,19 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      195,
-      196,
-      197
+      198,
+      199,
+      200
     ],
     "memory-identity-ai-development": [
-      165,
-      166,
-      167
+      168,
+      169,
+      170
     ],
     "unknowns-in-modern-creation": [
-      399,
-      400,
-      401
+      402,
+      403,
+      404
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -20041,14 +20197,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      414,
-      415,
-      416
+      417,
+      418,
+      419
     ],
     "sano-godaddy-war": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "14-5-hours": [
       0,
@@ -20056,24 +20212,24 @@
       2
     ],
     "transistor-moment": [
-      387,
-      388,
-      389
+      390,
+      391,
+      392
     ],
     "web4-write-access": [
-      423,
-      424,
-      425
+      426,
+      427,
+      428
     ],
     "naming-the-universe": [
-      180,
-      181,
-      182
+      183,
+      184,
+      185
     ],
     "sano-intro": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "counting-assistant": [
       75,
@@ -20081,29 +20237,29 @@
       77
     ],
     "uncertainty-machine": [
-      393,
-      394,
-      395
+      396,
+      397,
+      398
     ],
     "vibe-founders-era": [
+      414,
+      415,
+      416
+    ],
+    "vibe-coding-tip": [
       411,
       412,
       413
     ],
-    "vibe-coding-tip": [
-      408,
-      409,
-      410
-    ],
     "moltbot-anthropic-moat": [
-      174,
-      175,
-      176
+      177,
+      178,
+      179
     ],
     "overnight-success": [
-      192,
-      193,
-      194
+      195,
+      196,
+      197
     ],
     "bitcoin-energy": [
       51,
@@ -20111,9 +20267,9 @@
       53
     ],
     "thought-speed": [
-      381,
-      382,
-      383
+      384,
+      385,
+      386
     ],
     "gemini-snow-bunny": [
       108,
@@ -20131,14 +20287,14 @@
       44
     ],
     "prompt-guard-dev": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "its-fun": [
-      135,
-      136,
-      137
+      138,
+      139,
+      140
     ],
     "click-theology": [
       69,
@@ -20146,9 +20302,9 @@
       71
     ],
     "thank-you-mirror": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "ai-hires-ai": [
       30,
@@ -20156,14 +20312,14 @@
       32
     ],
     "majlis": [
-      156,
-      157,
-      158
+      159,
+      160,
+      161
     ],
     "rabbit-crypt-name": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "agentlinter-dev-log": [
       21,
@@ -20181,29 +20337,29 @@
       68
     ],
     "mrinank-anthropic": [
-      177,
-      178,
-      179
+      180,
+      181,
+      182
     ],
     "tail-stopped": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "zeon-moltbook-vol1": [
-      426,
-      427,
-      428
+      429,
+      430,
+      431
     ],
     "ip-tvw": [
-      132,
-      133,
-      134
+      135,
+      136,
+      137
     ],
     "quantum-pirates": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "china-ai-frontier": [
       63,
@@ -20211,9 +20367,9 @@
       65
     ],
     "seedance-30": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "agent-siblings": [
       15,
@@ -20221,9 +20377,9 @@
       17
     ],
     "matchhz": [
-      159,
-      160,
-      161
+      162,
+      163,
+      164
     ],
     "dollar-two-faces": [
       87,
@@ -20231,19 +20387,19 @@
       89
     ],
     "messenger-b2a": [
-      168,
-      169,
-      170
+      171,
+      172,
+      173
     ],
     "robot-goku-5000": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ],
     "hvl-fellows": [
-      120,
-      121,
-      122
+      123,
+      124,
+      125
     ],
     "agentic-org": [
       18,
@@ -20261,9 +20417,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ]
   },
   "overrides": {

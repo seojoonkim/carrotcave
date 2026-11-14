@@ -1,4 +1,50 @@
 {
+  "how-to-test-intelligence-we-cannot-remove": {
+    "primaryTopics": [
+      "exploration"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-교육",
+      "tag-증강지능"
+    ],
+    "questions": [
+      "exploration-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "how-to-test-intelligence-we-cannot-remove-c1",
+        "text": "다음 주 수능 시험장에서는 감독관이 요청하면 수험생이 안경을 벗어 책상 위에 올려놓아야 한다.",
+        "stance": "asserts",
+        "evidence": "다음 주 수능 시험장에서는 감독관이 요청하면 수험생이 안경을 벗어 책상 위에 올려놓아야 한다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "교육",
+      "증강지능"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "exploration"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "nitro-seoul-second-lap-needs-team-radio": {
     "primaryTopics": [
       "building"

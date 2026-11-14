@@ -20,3 +20,12 @@ test('design idea 3: every post image has a numbered caption, then the original 
   assert.match(css, /\.post-figcaption__label\{color:var\(--leaf-pop\)/, 'caption label uses the leaf label colour, not orange');
   assert.doesNotMatch(css.match(/\.post-figcaption[^{]*\{[^}]*\}/g).join(''), /border-left|border-bottom/, 'no accent rule lines on captions');
 });
+
+// 2026-11-14: #234 sat as "대기" for five sync runs because the release gate counted every
+// Telegram source link on the page and expected 1, while each figure caption adds one more.
+test('latest-three gate tolerates the figure-caption source link', async () => {
+  const gate = await readFile(new URL('../scripts/verify-latest-three.mjs', import.meta.url), 'utf8');
+  assert.doesNotMatch(gate, /locator\(`a\[href="\$\{item\.sourceUrl\}"\]`\)\.count\(\), 1\)/);
+  assert.match(gate, /a\.post-reader-action--telegram\[href="\$\{item\.sourceUrl\}"\]/);
+  assert.match(gate, /figcaption a\[href="\$\{item\.sourceUrl\}"\]/);
+});

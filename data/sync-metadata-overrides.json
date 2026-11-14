@@ -1,14 +1,4 @@
 {
-  "233": {
-    "slug": "nitro-seoul-second-lap-needs-team-radio",
-    "title": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
-    "category": "빌딩",
-    "depth": "deep",
-    "contentHash": "3835:707346663",
-    "summary": "누구나 빠르게 만드는 시대, Nitro 2기는 개인의 실행력을 팀의 판단과 고객의 응답으로 잇는다. 복제되지 않는 신뢰를 쌓는 무전망을 시작한다.",
-    "tags": ["Nitro", "에이전트", "창업", "조직"],
-    "titleEn": "Nitro Seoul: Lap Two Needs Team Radio"
-  },
   "12": {
     "slug": "ai-jobs-consumption-crisis",
     "title": "AI가 일자리를 가져간 후, 누가 물건을 살까",
@@ -434,5 +424,34 @@
       "반도체"
     ],
     "titleEn": "The Expiration Date of Intelligence"
+  },
+  "233": {
+    "slug": "nitro-seoul-second-lap-needs-team-radio",
+    "title": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
+    "category": "빌딩",
+    "depth": "deep",
+    "contentHash": "3835:707346663",
+    "summary": "누구나 빠르게 만드는 시대, Nitro 2기는 개인의 실행력을 팀의 판단과 고객의 응답으로 잇는다. 복제되지 않는 신뢰를 쌓는 무전망을 시작한다.",
+    "tags": [
+      "Nitro",
+      "에이전트",
+      "창업",
+      "조직"
+    ],
+    "titleEn": "Nitro Seoul: Lap Two Needs Team Radio"
+  },
+  "234": {
+    "slug": "how-to-test-intelligence-we-cannot-remove",
+    "title": "벗을 수 없는 지능을 어떻게 시험할 것인가",
+    "category": "탐험",
+    "depth": "deep",
+    "contentHash": "2824:3736397398",
+    "summary": "AI 안경의 시험장 금지에서 출발해, 증강지능과 함께 일할 사람의 판단과 책임을 평가하도록 교육과 선발 제도를 바꿀 것을 제안한다.",
+    "tags": [
+      "AI",
+      "교육",
+      "증강지능"
+    ],
+    "titleEn": "Testing Intelligence We Cannot Remove"
   }
 }

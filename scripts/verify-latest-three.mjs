@@ -82,7 +82,12 @@ try {
           else assert.ok(body.includes(line), `Missing prose #${item.id}: ${line.slice(0, 70)}`);
         }
         const paragraphs = lines;
-        assert.equal(await page.locator(`a[href="${item.sourceUrl}"]`).count(), 1);
+        // The reader action bar carries exactly one source link. Figure captions (6535db7) repeat the
+        // same Telegram link once per figure, so a page-wide count of 1 blocked every post with a figure.
+        assert.equal(await page.locator(`a.post-reader-action--telegram[href="${item.sourceUrl}"]`).count(), 1, `Source link #${item.id}`);
+        const sourceLinks = await page.locator(`a[href="${item.sourceUrl}"]`).count();
+        const captionLinks = await page.locator(`figcaption a[href="${item.sourceUrl}"]`).count();
+        assert.equal(sourceLinks, 1 + captionLinks, `Unexpected extra source link #${item.id}`);
         const images = await page.locator('.post-media-grid img').evaluateAll(nodes => nodes.map(n => ({ src: n.getAttribute('src'), loaded: n.complete && n.naturalWidth > 0 })));
         assert.ok(images.every(x => x.loaded));
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth);

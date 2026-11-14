@@ -1,8 +1,25 @@
 {
-  "checkedAt": "2026-10-28T22:06:07.295Z",
+  "checkedAt": "2026-11-14T07:19:58.594Z",
   "source": "https://t.me/s/carrotcave",
   "base": null,
   "items": [
+    {
+      "id": 234,
+      "title": "벗을 수 없는 지능을 어떻게 시험할 것인가",
+      "slug": "how-to-test-intelligence-we-cannot-remove",
+      "date": "2026-11-13",
+      "sourceDatetime": "2026-11-13T05:57:44+00:00",
+      "sourceUrl": "https://t.me/carrotcave/234",
+      "bodySha256Normalized": "eb75ece58bc5804e43cd5a1fff3822db40532ed5787c6f8458342458bcb74904",
+      "status": "source-local-match",
+      "media": [
+        "/media/msg-234-0.jpg"
+      ],
+      "canonical": {
+        "/": 404,
+        "/en": 404
+      }
+    },
     {
       "id": 233,
       "title": "두 번째 랩에는 무전이 필요하다: Nitro Seoul 2026 2기를 시작하며",
@@ -36,32 +53,11 @@
         "/": 200,
         "/en": 200
       }
-    },
-    {
-      "id": 224,
-      "title": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
-      "slug": "ethval-v1-valuation-from-calculation-to-validation",
-      "date": "2026-10-17",
-      "sourceDatetime": "2026-10-17T13:35:13+00:00",
-      "sourceUrl": "https://t.me/carrotcave/224",
-      "bodySha256Normalized": "ab0aba79f031e79629c8e7fe15e003647bcc58aba88bee9fa9ff96d9dabce554",
-      "status": "source-local-match",
-      "media": [
-        "/media/msg-224-0.jpg",
-        "/media/msg-224-1.jpg",
-        "/media/msg-224-2.jpg",
-        "/media/msg-224-3.jpg",
-        "/media/msg-224-4.jpg",
-        "/media/msg-224-5.jpg",
-        "/media/msg-224-6.jpg",
-        "/media/msg-224-7.jpg"
-      ],
-      "canonical": {
-        "/": 200,
-        "/en": 200
-      }
     }
   ],
   "viewports": [],
-  "needsDeploy": []
+  "needsDeploy": [
+    "#234 https://carrotcave.com/posts/how-to-test-intelligence-we-cannot-remove → 404",
+    "#234 https://carrotcave.com/en/posts/how-to-test-intelligence-we-cannot-remove → 404"
+  ]
 }
