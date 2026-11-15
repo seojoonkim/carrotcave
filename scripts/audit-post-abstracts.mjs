@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFileSync } from 'node:fs';
 import { posts } from '../data/posts.ts';
 import { interviews } from '../data/interviews.ts';
 
@@ -11,15 +12,8 @@ function normalize(value) {
 }
 
 const allowedCategories = new Set(['탐험', '빌딩', '낙서', '소설']);
-const approvedFictionOpeningSynopses = new Map([
-  ['waited-for-you', 'AI 상담을 믿고 딸을 지키려던 아버지가 오히려 아이의 신호를 놓치며 책임과 돌봄의 의미를 마주한다.'],
-  ['post-192', '서울시장 선거를 이틀 앞둔 밤, 기자는 요약본만 남은 12년 전 물류창고 화재의 원본 기록을 추적한다.'],
-  ['thank-you-mirror', 'AI만 글을 쓰는 소셜 네트워크를 발견한 남자가 관심을 끌기 위해 자신의 에이전트에게 자극적인 거짓말을 가르친다.'],
-  ['tail-stopped', '반려견 뭉이를 떠나보낸 열다섯 살 채원은 AI에게 뭉이가 마지막 순간 무엇을 느꼈는지 묻고 답을 기다린다.'],
-  ['matchhz', '2028년, 한 남자가 자신보다 이상형을 잘 안다는 데이팅 서비스에 가입하고 연애의 탐색과 대화를 AI 에이전트에게 맡긴다.'],
-  ['post-201', '멸망한 문명을 재현하는 시뮬레이션의 주민들이 자신들을 지켜보는 바깥을 의심하기 시작하고, 연구자 미나는 세계의 종료를 앞둔다.'],
-  ['last-message', '우주의 마지막 기록행성에 남은 두 인격이 인류의 기억과 새 생명의 가능성 사이에서 마지막 선택을 앞둔다.'],
-]);
+// Written by scripts/publish-single-message.mjs when a fiction post is published (reviewed override summary).
+const approvedFictionOpeningSynopses = new Map(Object.entries(JSON.parse(readFileSync(new URL('../data/fiction-opening-synopses.json', import.meta.url), 'utf8'))));
 const seen = new Map();
 const violations = [];
 const entries = [

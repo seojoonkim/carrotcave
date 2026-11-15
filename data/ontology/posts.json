@@ -1,4 +1,50 @@
 {
+  "echoes-that-stay-warm": {
+    "primaryTopics": [
+      "fiction"
+    ],
+    "secondaryTopics": [
+      "depth-deep",
+      "tag-AI",
+      "tag-기억",
+      "tag-가족"
+    ],
+    "questions": [
+      "fiction-reading-question"
+    ],
+    "claims": [
+      {
+        "id": "echoes-that-stay-warm-c1",
+        "text": "에코 스테이션 7호점 입구에는 긴 나무 선반이 있다.",
+        "stance": "asserts",
+        "evidence": "에코 스테이션 7호점 입구에는 긴 나무 선반이 있다."
+      }
+    ],
+    "entities": [],
+    "methods": [
+      "close-reading"
+    ],
+    "motifs": [
+      "AI",
+      "기억",
+      "가족"
+    ],
+    "readerPrerequisites": [],
+    "readerOutcomes": [
+      "fiction"
+    ],
+    "reviewStatus": "approved",
+    "provenance": {
+      "generator": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category",
+        "relatedSlugs",
+        "legacy-relations"
+      ]
+    }
+  },
   "how-to-test-intelligence-we-cannot-remove": {
     "primaryTopics": [
       "exploration"

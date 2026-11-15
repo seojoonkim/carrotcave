@@ -16,3 +16,14 @@ Repository: `seojoonkim/carrotcave`; canonical: https://carrotcave.com; Vercel l
 ## Why the previous attempts stopped
 
 Baseline at `dd5c10f`: 188/193 tests passed; five legacy assertions contradicted intentional UI changes. Commit `3b355ec` removed the home ENTRIES/SECTION chrome and segmented date boxes, while retaining accessible dates. `dd5c10f` restored animated `footer-rabbit-carrot-v2.svg` and removed the static CSS override. Stale assertions lived in `archive-redesign.test.mjs` (two), `content-contract.test.mjs`, `editorial-card-render.test.mjs`, and `footer-header-contract.test.mjs`. This release updates only those assertions to the current intentional behavior. Existing animation/timeline/reduced-motion contracts remain enabled. No UI or SVG changes belong in routine content sync.
+
+## Pending is not a final state
+
+A run may not end with a post left `pending` because a local gate failed. When `npm run verify` or the publisher rejects a post, read the exact reason, fix the **data that the gate asks for** in the same run, rerun the gate, then commit, push, deploy and read back the live pages. Never weaken, skip or edit a gate or test to pass.
+
+- Fiction (`소설`): the override `summary` must be an opening synopsis — the premise and first situation, 45–99 chars, no ending or theme reveal. The publisher records it in `data/fiction-opening-synopses.json`. If a fiction post is already in `data/posts.ts` but missing there (`fiction-opening-synopsis-not-reviewed`), write the synopsis into the override, `data/posts.ts` and that file together, then rerun `python3 scripts/i18n/run-with-lb.py node scripts/i18n/translate-posts.mjs --only <slug>` and `node scripts/i18n/bundle-en.mjs --strict` because the summary is part of the translation hash.
+- Abstract length/duplicate, `titleEn` missing or too long, link preview title missing, stale translation, ontology sample missing: rewrite or regenerate the named field and rerun.
+- Leftover local work from an earlier blocked run (modified `data/*`, untracked `public/media/msg-<ID>-*`, `data/en/posts/<slug>.json`) is this job's own work: finish and ship it rather than reporting it again.
+
+Report `pending` only when the blocker needs Simon: the source text itself is missing or ambiguous, credentials or an account are required, or the same gate still fails after three different fixes. Then state the exact gate output and what was tried.
+

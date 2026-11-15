@@ -19,6 +19,7 @@ const forbidden = [
 const allowed = [
   /^data\/(posts\.ts|posts\.ts\.bak|scraped-posts\.json|sync-state\.json|last-sync-report\.json|ontology\/.*\.json)$/,
   /^data\/sync-metadata-overrides\.json$/,
+  /^data\/fiction-opening-synopses\.json$/,
   /^public\/media\//,
   /^scripts\/audit-post-abstracts\.mjs$/,
   /^scripts\/auto-sync\.mjs$/,

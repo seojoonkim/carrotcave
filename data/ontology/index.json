@@ -290,6 +290,15 @@
       ],
       "reviewStatus": "approved"
     },
+    "echoes-that-stay-warm": {
+      "slug": "echoes-that-stay-warm",
+      "title": "식지 않는 메아리",
+      "category": "소설",
+      "primaryTopics": [
+        "fiction"
+      ],
+      "reviewStatus": "approved"
+    },
     "ethval-v1-valuation-from-calculation-to-validation": {
       "slug": "ethval-v1-valuation-from-calculation-to-validation",
       "title": "ETHval v1.0 메이저 업데이트: 이더리움의 적정가치, 계산에서 검증으로",
@@ -5428,6 +5437,132 @@
       "status": "approved"
     },
     {
+      "from": "echoes-that-stay-warm",
+      "to": "thank-you-mirror",
+      "type": "REFRAMES",
+      "strength": 0.6173,
+      "sourceClaimId": "echoes-that-stay-warm-c1",
+      "sourceEvidence": "1인실은 4,100달러다.",
+      "targetEvidence": "그의 트위터 팔로워는 100만을 돌파했다.",
+      "label": "「고마워요」은 「식지 않는 메아리」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 42,
+        "overlapTokens": [
+          "10",
+          "100",
+          "ai",
+          "거짓말",
+          "그날",
+          "그런",
+          "글을",
+          "나를",
+          "났다",
+          "너는",
+          "넘게",
+          "다음"
+        ],
+        "titleOverlap": [
+          "않는"
+        ],
+        "sharedTags": [
+          "AI",
+          "소설"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=42;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "echoes-that-stay-warm",
+      "to": "waited-for-you",
+      "type": "DEEPENS",
+      "strength": 0.5981,
+      "sourceClaimId": "echoes-that-stay-warm-c1",
+      "sourceEvidence": "그날 밤 일기예보는 비 소식 끝에 한마디를 붙였다.",
+      "targetEvidence": "그날 나는 식탁에 혼자 남아 있는 아이를 찍어 보냈다.",
+      "label": "「기다렸어요」은 「식지 않는 메아리」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 75,
+        "overlapTokens": [
+          "ai",
+          "가족",
+          "겁니다",
+          "계단을",
+          "그날",
+          "그런",
+          "끝에",
+          "나간",
+          "나를",
+          "나올",
+          "나와",
+          "남아"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "가족",
+          "소설"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "echoes-that-stay-warm",
+      "to": "navigating-a-world-of-decreasing-variance",
+      "type": "REFRAMES",
+      "strength": 0.579,
+      "sourceClaimId": "echoes-that-stay-warm-c1",
+      "sourceEvidence": "접시가 빠진 뒤에도 할머니의 새 말을 옮겨 오면 한 건에 180달러씩 나온다는 조항이었다.",
+      "targetEvidence": "그런데 끝까지 읽고 나니 아무도 남아 있지 않았다.",
+      "label": "「편차가 희소해지는 세계를 건너는 법」은 「식지 않는 메아리」의 주제를 다른 맥락에서 다시 바라본다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 32,
+        "overlapTokens": [
+          "ai",
+          "개를",
+          "그런데",
+          "글을",
+          "기억",
+          "끝내",
+          "나눠",
+          "나온다",
+          "나올",
+          "남아",
+          "다음",
+          "뒤에도"
+        ],
+        "titleOverlap": [
+          "않는"
+        ],
+        "sharedTags": [
+          "AI",
+          "기억"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=32;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
       "from": "ethval-v1-valuation-from-calculation-to-validation",
       "to": "agent-passport",
       "type": "REFRAMES",
@@ -7947,6 +8082,48 @@
     },
     {
       "from": "last-message",
+      "to": "echoes-that-stay-warm",
+      "type": "DEEPENS",
+      "strength": 0.4025,
+      "sourceClaimId": "last-message-c1",
+      "sourceEvidence": "\"네가 없었다면 나는 노아의 이름을 관에 넣어 다음 우주까지 끌고 갔겠지.\" \"네가 없었다면 나는 노아를 태우고 자유라고 불렀을 거야.\" [잔여 수명: 42초] 노아의 기억에서 인류의 소란이 되살아났다.",
+      "targetEvidence": "눈앞의 글자가 꺼졌다.",
+      "label": "「식지 않는 메아리」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 46,
+        "overlapTokens": [
+          "100",
+          "42",
+          "그러면",
+          "그런데",
+          "글자가",
+          "기억",
+          "꺼졌다",
+          "끝내",
+          "남길",
+          "남아",
+          "넣어",
+          "다음"
+        ],
+        "titleOverlap": [
+          "마지막"
+        ],
+        "sharedTags": [
+          "기억"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=46;titleOverlap=1;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "last-message",
       "to": "post-193",
       "type": "REFRAMES",
       "strength": 0.3699,
@@ -7984,46 +8161,6 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+tags;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=43;titleOverlap=1;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "last-message",
-      "to": "post-201",
-      "type": "DEEPENS",
-      "strength": 0.35,
-      "sourceClaimId": "last-message-c1",
-      "sourceEvidence": "그런데 오래전 기록행성의 전송 기록에서 한 단어가 지워졌다.",
-      "targetEvidence": "아무것도 없는 검은 영역.",
-      "label": "「문이 열리는 쪽」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 75,
-        "overlapTokens": [
-          "가능성",
-          "검은",
-          "것도",
-          "것을",
-          "그들은",
-          "그런데",
-          "그럼",
-          "기다리",
-          "기록",
-          "기록도",
-          "기록은",
-          "기록을"
-        ],
-        "titleOverlap": [
-          "마지막",
-          "문이"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=2;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19309,6 +19446,47 @@
     },
     {
       "from": "waited-for-you",
+      "to": "echoes-that-stay-warm",
+      "type": "DEEPENS",
+      "strength": 0.5981,
+      "sourceClaimId": "waited-for-you-c1",
+      "sourceEvidence": "그날 나는 식탁에 혼자 남아 있는 아이를 찍어 보냈다.",
+      "targetEvidence": "그날 밤 일기예보는 비 소식 끝에 한마디를 붙였다.",
+      "label": "「식지 않는 메아리」은 「기다렸어요」의 문제를 더 깊이 파고든다",
+      "source": "deterministic-candidate-pipeline",
+      "signals": [
+        "content",
+        "tags",
+        "category"
+      ],
+      "signalDetails": {
+        "lexicalOverlap": 75,
+        "overlapTokens": [
+          "ai",
+          "가족",
+          "겁니다",
+          "계단을",
+          "그날",
+          "그런",
+          "끝에",
+          "나간",
+          "나를",
+          "나올",
+          "나와",
+          "남아"
+        ],
+        "titleOverlap": [],
+        "sharedTags": [
+          "가족",
+          "소설"
+        ],
+        "sharedConcepts": []
+      },
+      "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=75;titleOverlap=0;challengeSignal=false",
+      "status": "approved"
+    },
+    {
+      "from": "waited-for-you",
       "to": "unknowns-in-modern-creation",
       "type": "REFRAMES",
       "strength": 0.3579,
@@ -19386,45 +19564,6 @@
         "sharedConcepts": []
       },
       "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=60;titleOverlap=0;challengeSignal=false",
-      "status": "approved"
-    },
-    {
-      "from": "waited-for-you",
-      "to": "post-201",
-      "type": "DEEPENS",
-      "strength": 0.35,
-      "sourceClaimId": "waited-for-you-c1",
-      "sourceEvidence": "그날부터 처제의 전화를 받지 않았다.",
-      "targetEvidence": "다섯 번째는 미나에게 물었다.",
-      "label": "「문이 열리는 쪽」은 「기다렸어요」의 문제를 더 깊이 파고든다",
-      "source": "deterministic-candidate-pipeline",
-      "signals": [
-        "content",
-        "category"
-      ],
-      "signalDetails": {
-        "lexicalOverlap": 60,
-        "overlapTokens": [
-          "것을",
-          "고개를",
-          "곳에서",
-          "그날",
-          "그런",
-          "날부터",
-          "내렸다",
-          "누가",
-          "눈을",
-          "다섯",
-          "답이",
-          "대신"
-        ],
-        "titleOverlap": [
-          "문이"
-        ],
-        "sharedTags": [],
-        "sharedConcepts": []
-      },
-      "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=60;titleOverlap=1;challengeSignal=false",
       "status": "approved"
     },
     {
@@ -19701,35 +19840,40 @@
     }
   ],
   "outgoing": {
-    "how-to-test-intelligence-we-cannot-remove": [
-      120,
-      121,
-      122
-    ],
-    "nitro-seoul-second-lap-needs-team-radio": [
-      189,
-      190,
-      191
-    ],
-    "intelligence-expiration-date": [
-      126,
-      127,
-      128
-    ],
-    "ethval-v1-valuation-from-calculation-to-validation": [
+    "echoes-that-stay-warm": [
       96,
       97,
       98
     ],
+    "how-to-test-intelligence-we-cannot-remove": [
+      123,
+      124,
+      125
+    ],
+    "nitro-seoul-second-lap-needs-team-radio": [
+      192,
+      193,
+      194
+    ],
+    "intelligence-expiration-date": [
+      129,
+      130,
+      131
+    ],
+    "ethval-v1-valuation-from-calculation-to-validation": [
+      99,
+      100,
+      101
+    ],
     "photoshop-became-the-answer-key": [
-      201,
-      202,
-      203
+      204,
+      205,
+      206
     ],
     "kpop-next-chapter-ip-and-fandom": [
-      150,
-      151,
-      152
+      153,
+      154,
+      155
     ],
     "eastpoint-2026-keynote-my-writing-became-a-warehouse": [
       90,
@@ -19742,24 +19886,24 @@
       95
     ],
     "the-right-to-turn-on-a-brain": [
-      378,
-      379,
-      380
+      381,
+      382,
+      383
     ],
     "waited-for-you": [
-      423,
-      424,
-      425
+      426,
+      427,
+      428
     ],
     "seong-jin-cho-chopin-waiting-for-the-next-note": [
-      363,
-      364,
-      365
+      366,
+      367,
+      368
     ],
     "living-in-the-age-of-optimists": [
-      156,
-      157,
-      158
+      159,
+      160,
+      161
     ],
     "brain-files-minecraft-flies": [
       54,
@@ -19767,19 +19911,19 @@
       56
     ],
     "shopping-before-customers-arrive": [
-      366,
-      367,
-      368
+      369,
+      370,
+      371
     ],
     "hashed-ai-ecosystem-growth-intern": [
-      114,
-      115,
-      116
+      117,
+      118,
+      119
     ],
     "japan-hardware-software-gap": [
-      141,
-      142,
-      143
+      144,
+      145,
+      146
     ],
     "automation-citizen-production-equity": [
       45,
@@ -19787,14 +19931,14 @@
       47
     ],
     "swarmworld-stigmergic-ai-society": [
-      369,
-      370,
-      371
+      372,
+      373,
+      374
     ],
     "last-message": [
-      153,
-      154,
-      155
+      156,
+      157,
+      158
     ],
     "700-ai-agents-found-each-other": [
       3,
@@ -19802,34 +19946,34 @@
       5
     ],
     "security-token-rail": [
-      354,
-      355,
-      356
+      357,
+      358,
+      359
     ],
     "post-201": [
-      321,
-      322,
-      323
+      324,
+      325,
+      326
     ],
     "proving-human-writing-without-ai": [
-      333,
-      334,
-      335
+      336,
+      337,
+      338
     ],
     "graph-engineering-ai-org": [
-      111,
-      112,
-      113
+      114,
+      115,
+      116
     ],
     "tokyo-taxi-ai-ads": [
-      387,
-      388,
-      389
+      390,
+      391,
+      392
     ],
     "openclaw-cron-session-bottleneck": [
-      192,
-      193,
-      194
+      195,
+      196,
+      197
     ],
     "ai-native-org-approval-flow": [
       39,
@@ -19837,14 +19981,14 @@
       41
     ],
     "prompt-guard-250-update": [
-      324,
-      325,
-      326
+      327,
+      328,
+      329
     ],
     "moltbook-agent-internet": [
-      174,
-      175,
-      176
+      177,
+      178,
+      179
     ],
     "ai-idea-execution-speed": [
       33,
@@ -19857,209 +20001,209 @@
       38
     ],
     "post-197": [
+      321,
+      322,
+      323
+    ],
+    "post-195": [
       318,
       319,
       320
     ],
-    "post-195": [
+    "post-193": [
       315,
       316,
       317
     ],
-    "post-193": [
+    "post-192": [
       312,
       313,
       314
     ],
-    "post-192": [
+    "post-191": [
       309,
       310,
       311
     ],
-    "post-191": [
+    "post-190": [
       306,
       307,
       308
     ],
-    "post-190": [
+    "post-189": [
       303,
       304,
       305
     ],
-    "post-189": [
+    "post-188": [
       300,
       301,
       302
     ],
-    "post-188": [
+    "post-187": [
       297,
       298,
       299
     ],
-    "post-187": [
+    "post-186": [
       294,
       295,
       296
     ],
-    "post-186": [
+    "post-185": [
       291,
       292,
       293
     ],
-    "post-185": [
+    "post-178": [
       288,
       289,
       290
     ],
-    "post-178": [
+    "post-165": [
       285,
       286,
       287
     ],
-    "post-165": [
+    "post-164": [
       282,
       283,
       284
     ],
-    "post-164": [
+    "post-163": [
       279,
       280,
       281
     ],
-    "post-163": [
+    "post-161": [
       276,
       277,
       278
     ],
-    "post-161": [
+    "post-159": [
       273,
       274,
       275
     ],
-    "post-159": [
+    "post-156": [
       270,
       271,
       272
     ],
-    "post-156": [
+    "post-155": [
       267,
       268,
       269
     ],
-    "post-155": [
+    "post-154": [
       264,
       265,
       266
     ],
-    "post-154": [
+    "post-153": [
       261,
       262,
       263
     ],
-    "post-153": [
+    "post-152": [
       258,
       259,
       260
     ],
-    "post-152": [
+    "post-151": [
       255,
       256,
       257
     ],
-    "post-151": [
+    "post-150": [
       252,
       253,
       254
     ],
-    "post-150": [
+    "post-149": [
       249,
       250,
       251
     ],
-    "post-149": [
+    "post-147": [
       246,
       247,
       248
     ],
-    "post-147": [
+    "post-146": [
       243,
       244,
       245
     ],
-    "post-146": [
+    "post-145": [
       240,
       241,
       242
     ],
-    "post-145": [
+    "post-144": [
       237,
       238,
       239
     ],
-    "post-144": [
+    "post-143": [
       234,
       235,
       236
     ],
-    "post-143": [
+    "post-142": [
       231,
       232,
       233
     ],
-    "post-142": [
+    "post-141": [
       228,
       229,
       230
     ],
-    "post-141": [
+    "post-140": [
       225,
       226,
       227
     ],
-    "post-140": [
-      222,
-      223,
-      224
-    ],
     "melgeek-evangelion-centauri-keyboard-review": [
-      165,
-      166,
-      167
+      168,
+      169,
+      170
     ],
     "gaslighting-ai-open-source-project": [
-      105,
-      106,
-      107
+      108,
+      109,
+      110
     ],
     "value-of-understanding-in-ai-future": [
-      405,
-      406,
-      407
+      408,
+      409,
+      410
     ],
     "internship-job-posting-giveaway": [
-      129,
-      130,
-      131
+      132,
+      133,
+      134
     ],
     "navigating-a-world-of-decreasing-variance": [
-      186,
-      187,
-      188
+      189,
+      190,
+      191
     ],
     "prompting-ability-as-new-power": [
-      330,
-      331,
-      332
+      333,
+      334,
+      335
     ],
     "kpop-fandom-digital-parliament": [
-      147,
-      148,
-      149
+      150,
+      151,
+      152
     ],
     "university-value-shift-education": [
-      399,
-      400,
-      401
+      402,
+      403,
+      404
     ],
     "agent-era-branding-future": [
       9,
@@ -20067,9 +20211,9 @@
       11
     ],
     "fear-and-value-in-ai-creation": [
-      99,
-      100,
-      101
+      102,
+      103,
+      104
     ],
     "complexcon-hk-identity-culture-experience": [
       72,
@@ -20077,64 +20221,64 @@
       74
     ],
     "post-111": [
+      222,
+      223,
+      224
+    ],
+    "post-107": [
       219,
       220,
       221
     ],
-    "post-107": [
+    "post-106": [
       216,
       217,
       218
     ],
-    "post-106": [
+    "post-105": [
       213,
       214,
       215
     ],
-    "post-105": [
+    "post-104": [
       210,
       211,
       212
     ],
-    "post-104": [
+    "post-103": [
       207,
       208,
       209
     ],
-    "post-103": [
-      204,
-      205,
-      206
-    ],
     "things-that-dont-disappear": [
-      381,
-      382,
-      383
+      384,
+      385,
+      386
     ],
     "how-to-create-memory-in-ai-agents": [
-      117,
-      118,
-      119
+      120,
+      121,
+      122
     ],
     "self-deconstruction-ai-replication": [
-      360,
-      361,
-      362
+      363,
+      364,
+      365
     ],
     "vibe-coding-ai-decentralization": [
-      408,
-      409,
-      410
+      411,
+      412,
+      413
     ],
     "internship-opportunity-at-hashed": [
-      132,
-      133,
-      134
+      135,
+      136,
+      137
     ],
     "korean-tech-ecosystem-api-access-issues": [
-      144,
-      145,
-      146
+      147,
+      148,
+      149
     ],
     "death-choices-aging-future-meaning": [
       81,
@@ -20147,9 +20291,9 @@
       50
     ],
     "vibe-labs-seoul-edition-2026-judging": [
-      420,
-      421,
-      422
+      423,
+      424,
+      425
     ],
     "disappearing-titles-computers-history": [
       84,
@@ -20157,9 +20301,9 @@
       86
     ],
     "uae-emergency-news-telegram-channel": [
-      393,
-      394,
-      395
+      396,
+      397,
+      398
     ],
     "can-i-go-ethihad-airlines-iran-conflict": [
       57,
@@ -20172,19 +20316,19 @@
       62
     ],
     "passport-wallet-weight-business-trip": [
-      198,
-      199,
-      200
+      201,
+      202,
+      203
     ],
     "memory-identity-ai-development": [
-      168,
-      169,
-      170
+      171,
+      172,
+      173
     ],
     "unknowns-in-modern-creation": [
-      402,
-      403,
-      404
+      405,
+      406,
+      407
     ],
     "ai-agent-standardization-battle": [
       27,
@@ -20197,14 +20341,14 @@
       8
     ],
     "vibe-labs-landing-page-creation": [
-      417,
-      418,
-      419
+      420,
+      421,
+      422
     ],
     "sano-godaddy-war": [
-      348,
-      349,
-      350
+      351,
+      352,
+      353
     ],
     "14-5-hours": [
       0,
@@ -20212,24 +20356,24 @@
       2
     ],
     "transistor-moment": [
-      390,
-      391,
-      392
+      393,
+      394,
+      395
     ],
     "web4-write-access": [
-      426,
-      427,
-      428
+      429,
+      430,
+      431
     ],
     "naming-the-universe": [
-      183,
-      184,
-      185
+      186,
+      187,
+      188
     ],
     "sano-intro": [
-      351,
-      352,
-      353
+      354,
+      355,
+      356
     ],
     "counting-assistant": [
       75,
@@ -20237,29 +20381,29 @@
       77
     ],
     "uncertainty-machine": [
-      396,
-      397,
-      398
+      399,
+      400,
+      401
     ],
     "vibe-founders-era": [
+      417,
+      418,
+      419
+    ],
+    "vibe-coding-tip": [
       414,
       415,
       416
     ],
-    "vibe-coding-tip": [
-      411,
-      412,
-      413
-    ],
     "moltbot-anthropic-moat": [
-      177,
-      178,
-      179
+      180,
+      181,
+      182
     ],
     "overnight-success": [
-      195,
-      196,
-      197
+      198,
+      199,
+      200
     ],
     "bitcoin-energy": [
       51,
@@ -20267,19 +20411,19 @@
       53
     ],
     "thought-speed": [
-      384,
-      385,
-      386
+      387,
+      388,
+      389
     ],
     "gemini-snow-bunny": [
-      108,
-      109,
-      110
+      111,
+      112,
+      113
     ],
     "figma-last-manual": [
-      102,
-      103,
-      104
+      105,
+      106,
+      107
     ],
     "ai-unbundling": [
       42,
@@ -20287,14 +20431,14 @@
       44
     ],
     "prompt-guard-dev": [
-      327,
-      328,
-      329
+      330,
+      331,
+      332
     ],
     "its-fun": [
-      138,
-      139,
-      140
+      141,
+      142,
+      143
     ],
     "click-theology": [
       69,
@@ -20302,9 +20446,9 @@
       71
     ],
     "thank-you-mirror": [
-      375,
-      376,
-      377
+      378,
+      379,
+      380
     ],
     "ai-hires-ai": [
       30,
@@ -20312,14 +20456,14 @@
       32
     ],
     "majlis": [
-      159,
-      160,
-      161
+      162,
+      163,
+      164
     ],
     "rabbit-crypt-name": [
-      339,
-      340,
-      341
+      342,
+      343,
+      344
     ],
     "agentlinter-dev-log": [
       21,
@@ -20337,29 +20481,29 @@
       68
     ],
     "mrinank-anthropic": [
-      180,
-      181,
-      182
+      183,
+      184,
+      185
     ],
     "tail-stopped": [
-      372,
-      373,
-      374
+      375,
+      376,
+      377
     ],
     "zeon-moltbook-vol1": [
-      429,
-      430,
-      431
+      432,
+      433,
+      434
     ],
     "ip-tvw": [
-      135,
-      136,
-      137
+      138,
+      139,
+      140
     ],
     "quantum-pirates": [
-      336,
-      337,
-      338
+      339,
+      340,
+      341
     ],
     "china-ai-frontier": [
       63,
@@ -20367,9 +20511,9 @@
       65
     ],
     "seedance-30": [
-      357,
-      358,
-      359
+      360,
+      361,
+      362
     ],
     "agent-siblings": [
       15,
@@ -20377,9 +20521,9 @@
       17
     ],
     "matchhz": [
-      162,
-      163,
-      164
+      165,
+      166,
+      167
     ],
     "dollar-two-faces": [
       87,
@@ -20387,19 +20531,19 @@
       89
     ],
     "messenger-b2a": [
-      171,
-      172,
-      173
+      174,
+      175,
+      176
     ],
     "robot-goku-5000": [
-      345,
-      346,
-      347
+      348,
+      349,
+      350
     ],
     "hvl-fellows": [
-      123,
-      124,
-      125
+      126,
+      127,
+      128
     ],
     "agentic-org": [
       18,
@@ -20417,9 +20561,9 @@
       80
     ],
     "rabbit-hole-intro": [
-      342,
-      343,
-      344
+      345,
+      346,
+      347
     ]
   },
   "overrides": {

@@ -453,5 +453,20 @@
       "증강지능"
     ],
     "titleEn": "Testing Intelligence We Cannot Remove"
+  },
+  "235": {
+    "slug": "echoes-that-stay-warm",
+    "title": "식지 않는 메아리",
+    "titleEn": "Echoes That Stay Warm",
+    "category": "소설",
+    "depth": "deep",
+    "contentHash": "3832:3668533661",
+    "summary": "렌즈가 대답을 대신 써 주는 2034년, 레오는 요양원 방값을 위해 할머니의 말버릇을 통째로 사겠다는 회사의 제안을 받는다.",
+    "tags": [
+      "AI",
+      "기억",
+      "가족",
+      "소설"
+    ]
   }
 }

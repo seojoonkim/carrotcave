@@ -289,6 +289,7 @@ export async function publishSingleMessage({
   const titlesEnPath = join(dataDir, 'post-titles-en.json');
   const previewsPath = join(dataDir, 'link-previews.json');
   const ogHangulPath = join(dataDir, 'og-image-hangul.json');
+  const fictionSynopsesPath = join(dataDir, 'fiction-opening-synopses.json');
   const mediaDir = join(root, 'public', 'media');
 
   const postsSource = readFileSync(postsPath, 'utf8');
@@ -327,7 +328,7 @@ export async function publishSingleMessage({
     join(root, 'docs', 'eval', 'ontology-semantic-sample.json'),
   ];
   const snapshots = new Map(
-    [postsPath, statePath, titlesEnPath, previewsPath, ogHangulPath, ...generatedPaths].map((path) => [
+    [postsPath, statePath, titlesEnPath, previewsPath, fictionSynopsesPath, ogHangulPath, ...generatedPaths].map((path) => [
       path,
       existsSync(path) ? readFileSync(path) : null,
     ]),
@@ -344,6 +345,11 @@ export async function publishSingleMessage({
     writeAtomically(statePath, `${JSON.stringify(nextState, null, 2)}\n`);
     const titlesEn = existsSync(titlesEnPath) ? JSON.parse(readFileSync(titlesEnPath, 'utf8')) : {};
     writeAtomically(titlesEnPath, `${JSON.stringify({ [metadata.slug]: metadata.titleEn.trim(), ...titlesEn }, null, 2)}\n`);
+    if (metadata.category === '소설') {
+      // The release audit only accepts fiction summaries listed here; the reviewed override summary is that synopsis.
+      const synopses = existsSync(fictionSynopsesPath) ? JSON.parse(readFileSync(fictionSynopsesPath, 'utf8')) : {};
+      writeAtomically(fictionSynopsesPath, `${JSON.stringify({ ...synopses, [metadata.slug]: metadata.summary.trim() }, null, 2)}\n`);
+    }
     await updatePreviews({ root });
     await checkShareCard({ root });
     await regenerate({ root });
@@ -366,7 +372,7 @@ export async function publishSingleMessage({
 export function publishArtifacts(slug, media = [], videos = []) {
   return [
     'data/posts.ts', 'data/sync-state.json', 'data/sync-metadata-overrides.json',
-    'data/post-titles-en.json', 'data/link-previews.json', 'public/media/link-previews/', 'data/og-image-hangul.json',
+    'data/post-titles-en.json', 'data/link-previews.json', 'public/media/link-previews/', 'data/og-image-hangul.json', 'data/fiction-opening-synopses.json',
     'data/ontology/posts.json', 'data/ontology/edges.json', 'data/ontology/vocabulary.json', 'data/ontology/index.json',
     'docs/eval/ontology-semantic-sample.json',
     ...[...media, ...videos].map((u) => `public${u}`),

@@ -340,3 +340,57 @@ test('share-card checks run at publish time, and a failing check rolls the post 
   assert.match(src, /ogHangulPath, \.\.\.generatedPaths/);
   assert.ok(publishArtifacts('x').includes('data/og-image-hangul.json'));
 });
+
+// 2026-11-15: #235 (fiction) sat in "pending" because the abstract audit kept its approved
+// synopses in a hand-edited list that the publisher never wrote. The publisher owns that list now.
+async function fictionFixture() {
+  const base = await fixture();
+  const overridesPath = join(base.root, 'data', 'sync-metadata-overrides.json');
+  const overrides = JSON.parse(await readFile(overridesPath, 'utf8'));
+  overrides[198].category = '소설';
+  overrides[198].summary = '단일 게시 경로를 지키던 관리자가 어느 밤 지정하지 않은 메시지 하나가 스스로 발행된 흔적을 발견한다.';
+  await writeFile(overridesPath, JSON.stringify(overrides, null, 2));
+  await writeFile(join(base.root, 'data', 'fiction-opening-synopses.json'), `${JSON.stringify({ old: '옛 소설의 첫 장면 줄거리.' }, null, 2)}\n`);
+  return { ...base, summary: overrides[198].summary };
+}
+const fictionFetch = async (url) => {
+  if (String(url) === 'https://t.me/carrotcave/198?embed=1&mode=tme') return { ok: true, status: 200, text: async () => telegramHtml };
+  return { ok: true, status: 200, arrayBuffer: async () => Buffer.alloc(6 * 1024, 42) };
+};
+
+test('publishing a fiction post registers its reviewed opening synopsis so the release audit passes without a manual edit', async () => {
+  const { root, summary } = await fictionFixture();
+  await publishSingleMessage({ id: 198, root, fetchImpl: fictionFetch, regenerate: async () => {}, updatePreviews: async () => {}, checkShareCard: async () => {} });
+  const registry = JSON.parse(await readFile(join(root, 'data', 'fiction-opening-synopses.json'), 'utf8'));
+  assert.equal(registry['reviewed-new-post'], summary);
+  assert.equal(registry.old, '옛 소설의 첫 장면 줄거리.');
+  assert.ok(publishArtifacts('reviewed-new-post').includes('data/fiction-opening-synopses.json'));
+});
+
+test('a failed fiction publish rolls the synopsis registry back', async () => {
+  const { root } = await fictionFixture();
+  const before = await readFile(join(root, 'data', 'fiction-opening-synopses.json'), 'utf8');
+  await assert.rejects(publishSingleMessage({ id: 198, root, fetchImpl: fictionFetch, regenerate: async () => { throw new Error('ontology down'); }, updatePreviews: async () => {}, checkShareCard: async () => {} }), /ontology down/);
+  assert.equal(await readFile(join(root, 'data', 'fiction-opening-synopses.json'), 'utf8'), before);
+});
+
+test('non-fiction publishing leaves the fiction synopsis registry untouched', async () => {
+  const { root } = await fixture();
+  await publishSingleMessage({ id: 198, root, fetchImpl: fictionFetch, regenerate: async () => {}, updatePreviews: async () => {}, checkShareCard: async () => {} });
+  await assert.rejects(readFile(join(root, 'data', 'fiction-opening-synopses.json'), 'utf8'), /ENOENT/);
+});
+
+test('the abstract audit reads fiction synopses from the registry the publisher writes, and release allows that file', () => {
+  const audit = readFileSync(new URL('../scripts/audit-post-abstracts.mjs', import.meta.url), 'utf8');
+  assert.match(audit, /fiction-opening-synopses\.json/);
+  assert.doesNotMatch(audit, /\['waited-for-you',/);
+  const registry = JSON.parse(readFileSync(new URL('../data/fiction-opening-synopses.json', import.meta.url), 'utf8'));
+  assert.ok(Object.keys(registry).length >= 8);
+  assert.match(readFileSync(new URL('../scripts/assert-content-only-release.mjs', import.meta.url), 'utf8'), /fiction-opening-synopses/);
+});
+
+test('the scheduled sync guide tells the job to clear a pending post instead of leaving it', () => {
+  const guide = readFileSync(new URL('../docs/latest-three-sync.md', import.meta.url), 'utf8');
+  assert.match(guide, /Pending is not a final state/);
+  assert.match(guide, /fiction-opening-synopses\.json/);
+});

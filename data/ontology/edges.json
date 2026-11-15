@@ -1,5 +1,131 @@
 [
   {
+    "from": "echoes-that-stay-warm",
+    "to": "thank-you-mirror",
+    "type": "REFRAMES",
+    "strength": 0.6173,
+    "sourceClaimId": "echoes-that-stay-warm-c1",
+    "sourceEvidence": "1인실은 4,100달러다.",
+    "targetEvidence": "그의 트위터 팔로워는 100만을 돌파했다.",
+    "label": "「고마워요」은 「식지 않는 메아리」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 42,
+      "overlapTokens": [
+        "10",
+        "100",
+        "ai",
+        "거짓말",
+        "그날",
+        "그런",
+        "글을",
+        "나를",
+        "났다",
+        "너는",
+        "넘게",
+        "다음"
+      ],
+      "titleOverlap": [
+        "않는"
+      ],
+      "sharedTags": [
+        "AI",
+        "소설"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=42;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "echoes-that-stay-warm",
+    "to": "waited-for-you",
+    "type": "DEEPENS",
+    "strength": 0.5981,
+    "sourceClaimId": "echoes-that-stay-warm-c1",
+    "sourceEvidence": "그날 밤 일기예보는 비 소식 끝에 한마디를 붙였다.",
+    "targetEvidence": "그날 나는 식탁에 혼자 남아 있는 아이를 찍어 보냈다.",
+    "label": "「기다렸어요」은 「식지 않는 메아리」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 75,
+      "overlapTokens": [
+        "ai",
+        "가족",
+        "겁니다",
+        "계단을",
+        "그날",
+        "그런",
+        "끝에",
+        "나간",
+        "나를",
+        "나올",
+        "나와",
+        "남아"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [
+        "가족",
+        "소설"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "echoes-that-stay-warm",
+    "to": "navigating-a-world-of-decreasing-variance",
+    "type": "REFRAMES",
+    "strength": 0.579,
+    "sourceClaimId": "echoes-that-stay-warm-c1",
+    "sourceEvidence": "접시가 빠진 뒤에도 할머니의 새 말을 옮겨 오면 한 건에 180달러씩 나온다는 조항이었다.",
+    "targetEvidence": "그런데 끝까지 읽고 나니 아무도 남아 있지 않았다.",
+    "label": "「편차가 희소해지는 세계를 건너는 법」은 「식지 않는 메아리」의 주제를 다른 맥락에서 다시 바라본다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 32,
+      "overlapTokens": [
+        "ai",
+        "개를",
+        "그런데",
+        "글을",
+        "기억",
+        "끝내",
+        "나눠",
+        "나온다",
+        "나올",
+        "남아",
+        "다음",
+        "뒤에도"
+      ],
+      "titleOverlap": [
+        "않는"
+      ],
+      "sharedTags": [
+        "AI",
+        "기억"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=32;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
     "from": "how-to-test-intelligence-we-cannot-remove",
     "to": "ai-hires-ai",
     "type": "REFRAMES",
@@ -1204,6 +1330,47 @@
   },
   {
     "from": "waited-for-you",
+    "to": "echoes-that-stay-warm",
+    "type": "DEEPENS",
+    "strength": 0.5981,
+    "sourceClaimId": "waited-for-you-c1",
+    "sourceEvidence": "그날 나는 식탁에 혼자 남아 있는 아이를 찍어 보냈다.",
+    "targetEvidence": "그날 밤 일기예보는 비 소식 끝에 한마디를 붙였다.",
+    "label": "「식지 않는 메아리」은 「기다렸어요」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 75,
+      "overlapTokens": [
+        "ai",
+        "가족",
+        "겁니다",
+        "계단을",
+        "그날",
+        "그런",
+        "끝에",
+        "나간",
+        "나를",
+        "나올",
+        "나와",
+        "남아"
+      ],
+      "titleOverlap": [],
+      "sharedTags": [
+        "가족",
+        "소설"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=75;titleOverlap=0;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "waited-for-you",
     "to": "unknowns-in-modern-creation",
     "type": "REFRAMES",
     "strength": 0.3579,
@@ -1281,45 +1448,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=60;titleOverlap=0;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "waited-for-you",
-    "to": "post-201",
-    "type": "DEEPENS",
-    "strength": 0.35,
-    "sourceClaimId": "waited-for-you-c1",
-    "sourceEvidence": "그날부터 처제의 전화를 받지 않았다.",
-    "targetEvidence": "다섯 번째는 미나에게 물었다.",
-    "label": "「문이 열리는 쪽」은 「기다렸어요」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 60,
-      "overlapTokens": [
-        "것을",
-        "고개를",
-        "곳에서",
-        "그날",
-        "그런",
-        "날부터",
-        "내렸다",
-        "누가",
-        "눈을",
-        "다섯",
-        "답이",
-        "대신"
-      ],
-      "titleOverlap": [
-        "문이"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=60;titleOverlap=1;challengeSignal=false",
     "status": "approved"
   },
   {
@@ -2431,6 +2559,48 @@
   },
   {
     "from": "last-message",
+    "to": "echoes-that-stay-warm",
+    "type": "DEEPENS",
+    "strength": 0.4025,
+    "sourceClaimId": "last-message-c1",
+    "sourceEvidence": "\"네가 없었다면 나는 노아의 이름을 관에 넣어 다음 우주까지 끌고 갔겠지.\" \"네가 없었다면 나는 노아를 태우고 자유라고 불렀을 거야.\" [잔여 수명: 42초] 노아의 기억에서 인류의 소란이 되살아났다.",
+    "targetEvidence": "눈앞의 글자가 꺼졌다.",
+    "label": "「식지 않는 메아리」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
+    "source": "deterministic-candidate-pipeline",
+    "signals": [
+      "content",
+      "tags",
+      "category"
+    ],
+    "signalDetails": {
+      "lexicalOverlap": 46,
+      "overlapTokens": [
+        "100",
+        "42",
+        "그러면",
+        "그런데",
+        "글자가",
+        "기억",
+        "꺼졌다",
+        "끝내",
+        "남길",
+        "남아",
+        "넣어",
+        "다음"
+      ],
+      "titleOverlap": [
+        "마지막"
+      ],
+      "sharedTags": [
+        "기억"
+      ],
+      "sharedConcepts": []
+    },
+    "typeBasis": "signals=content+tags+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=newer;lexicalOverlap=46;titleOverlap=1;challengeSignal=false",
+    "status": "approved"
+  },
+  {
+    "from": "last-message",
     "to": "post-193",
     "type": "REFRAMES",
     "strength": 0.3699,
@@ -2468,46 +2638,6 @@
       "sharedConcepts": []
     },
     "typeBasis": "signals=content+tags;sourceCategory=소설;targetCategory=탐험;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=43;titleOverlap=1;challengeSignal=false",
-    "status": "approved"
-  },
-  {
-    "from": "last-message",
-    "to": "post-201",
-    "type": "DEEPENS",
-    "strength": 0.35,
-    "sourceClaimId": "last-message-c1",
-    "sourceEvidence": "그런데 오래전 기록행성의 전송 기록에서 한 단어가 지워졌다.",
-    "targetEvidence": "아무것도 없는 검은 영역.",
-    "label": "「문이 열리는 쪽」은 「마지막 메시지」의 문제를 더 깊이 파고든다",
-    "source": "deterministic-candidate-pipeline",
-    "signals": [
-      "content",
-      "category"
-    ],
-    "signalDetails": {
-      "lexicalOverlap": 75,
-      "overlapTokens": [
-        "가능성",
-        "검은",
-        "것도",
-        "것을",
-        "그들은",
-        "그런데",
-        "그럼",
-        "기다리",
-        "기록",
-        "기록도",
-        "기록은",
-        "기록을"
-      ],
-      "titleOverlap": [
-        "마지막",
-        "문이"
-      ],
-      "sharedTags": [],
-      "sharedConcepts": []
-    },
-    "typeBasis": "signals=content+category;sourceCategory=소설;targetCategory=소설;sourceDepth=deep;targetDepth=deep;dateDirection=older;lexicalOverlap=75;titleOverlap=2;challengeSignal=false",
     "status": "approved"
   },
   {
